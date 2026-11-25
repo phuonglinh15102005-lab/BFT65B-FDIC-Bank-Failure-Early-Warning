@@ -1,0 +1,22 @@
+{
+  "CONFIG.json": "a41247ae6d63dc36bef8f5bc79940cf8834047908b7b50a8642deb427be445f6",
+  "REF/fold_keys/early_bank_stress.npz": "71655c894d31eaa64413ec49be1a20b7c44fced38a3512bb91e4f3faeb798280",
+  "REF/fold_keys/global_financial_crisis.npz": "ec51b124acfb89a0ba83e8ecab05dd1870411b7f3a8ccfb78c5c52d79e0d0a33",
+  "REF/fold_keys/post_stress_transition.npz": "44bb994b010c07b487005b0504251dca58e3a1a2a2f29967b1d494cf9d6372cf",
+  "REF/hgb_candidate_fold_metrics.csv": "c1c1571173f3aa72e27fc840c99c705c9226c64e3ff01eec8edbcd1b59764385",
+  "REF/part5_protocol_freeze.json": "994f72de6e2446916db8c2fcd36847c45cc68eb6fef5ef67f07acc0476c6d911",
+  "REF/part5_step02b_audit.json": "9ded251be492ccac2d4f6bf9d506fe099b6d1b9cddbb4f8045ee1d74cbf3851d",
+  "REF/predictions/HGB_L15_LR0p05_I150_L21_CLnone__early_bank_stress.npz": "89cc0284952ead2b5004b08c8d7a151a0d5b5f3c2a2d7cbc931de88c3cd89678",
+  "REF/predictions/HGB_L15_LR0p05_I150_L21_CLnone__global_financial_crisis.npz": "82e6d4713cab95eb332567a2df89eeb5c452e99c0f3483ef65ca3e46d38dcea8",
+  "REF/predictions/HGB_L15_LR0p05_I150_L21_CLnone__post_stress_transition.npz": "b7ba325c1559284913543ce70857e58874e9b3ec93d88ebd88113347efb238c9",
+  "REFERENCE_HASHES.json": "e6bfeb9139822cce8f090592e7e6990da21f21952ae74733f1064151021002bf",
+  "ablation_runner.py": "39b8e997c0bc435c80f2112a423d3b0040b54d21affa0dc5343d7904f12fac48",
+  "original/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "original/part4_v2_train_only_pipeline.py": "168a08f0e3ffb0de3fa9e12e00c6671172a4ecb952fd8f67fc4254469f31b9a3",
+  "original/part5_step01_baseline_dev_only.py": "7aa0d432ce85d72ea3af7e16f6085f3622f218db27ece3330c9961217ba84253",
+  "original/part5_step02_hgb_grid_dev.py": "79d2d6d2f1c8505c444db5dd419a5f90175058e91dc13187c299ab94f097581c",
+  "requirements-windows-current-pinned.txt": "7af6bd984b8a5ae5aa72c6d7c5d3b318ccdf8f6670eac6b1a420660ecfe33c68",
+  "safety.py": "a5c4c273b33ed6c210ae78f9dfb5ec39984cfa2c651c6c381d061a7da6fff705",
+  "start_windows.py": "76d2f8feb37537b8e003d0e6ce2ee19510c4455bb965e4e5794e271c9bbc93fe",
+  "tests_no_model_fit.py": "6e26f823d71159ee7915683a4b3d75e951e01f0461f04c554826d0471a86bfef"
+}

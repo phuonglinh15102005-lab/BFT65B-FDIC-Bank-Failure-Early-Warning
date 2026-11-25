@@ -1,0 +1,30 @@
+{
+  "status": "PASS_PRODUCER_EXECUTION_COMPARISON_REQUIRED",
+  "error": null,
+  "stage": "development-features",
+  "started_utc": "2026-11-19T01:22:27.634629+00:00",
+  "finished_utc": "2026-11-19T01:22:37.937934+00:00",
+  "source_sha256": "7807ecebefca1a2d592d450c7c42930578e6d9b5086f39494cf83078c0ff13b3",
+  "command": [
+    "%USERPROFILE%\\miniconda3\\python.exe",
+    "-B",
+    "%USERPROFILE%\\Downloads\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\04_PART4_FEATURE_PIPELINE\\code\\part4_v2_relabel_asof_gate.py",
+    "--clean",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts\\panel_clean.parquet",
+    "--pit",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts\\panel_pit_base.parquet",
+    "--registry-zip",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts\\part2_clean_review_bundle.zip",
+    "--step01-source",
+    "%USERPROFILE%\\Downloads\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\04_PART4_FEATURE_PIPELINE\\code\\part4_step01_reference_UNCHANGED.py",
+    "--out-dir",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\development-features\\artifacts",
+    "--asof-quarters",
+    "0",
+    "--production-only"
+  ],
+  "guard": "Python write/network/frozen-model guard,not an OS/native-Arrow sandbox",
+  "closed_checks_reexecuted": false,
+  "new_model_fits": 0,
+  "final_test_inference": false
+}

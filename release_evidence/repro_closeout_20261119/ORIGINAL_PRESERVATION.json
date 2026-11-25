@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "original_release_manifest_entries_checked": 388,
+  "native_science_sources_byte_unchanged": 61,
+  "frozen_protocol_sha256": "994f72de6e2446916db8c2fcd36847c45cc68eb6fef5ef67f07acc0476c6d911",
+  "new_fits": 0,
+  "final_test_inference": false
+}

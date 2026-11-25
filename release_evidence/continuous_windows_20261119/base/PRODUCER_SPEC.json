@@ -1,0 +1,19 @@
+{
+  "stage": "base",
+  "run": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e",
+  "start": "raw",
+  "inputs": {
+    "raw_fdic_dir": "%USERPROFILE%\\data_raw\\fdic",
+    "prepared_audit": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z",
+    "step2": "%USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509",
+    "step2b": "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509",
+    "step2c": "%USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509",
+    "development": "%USERPROFILE%\\BFT65B_outputs\\part4_v2_dev_only_outputs\\development_primary_binary_v2.parquet"
+  },
+  "arguments": [
+    "--audit-dir",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts",
+    "--out",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\base\\artifacts"
+  ]
+}

@@ -1,0 +1,1 @@
+PASS: supplemental file hashes, blocked/paired/layout/action medians, bootstrap endpoints, original 363-row Spark–Polars parity, archived replay census. No engine execution.

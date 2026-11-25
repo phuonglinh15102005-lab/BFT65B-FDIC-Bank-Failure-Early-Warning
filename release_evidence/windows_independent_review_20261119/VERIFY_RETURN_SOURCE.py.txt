@@ -1,0 +1,132 @@
+"""Inspect returned execution evidence only. Never imports science code or data."""
+from pathlib import Path, PureWindowsPath
+from datetime import datetime, timezone
+import csv, hashlib, json, platform, sys, zipfile
+
+WORK=Path('/workspace/work')
+SOURCE=WORK/'BFT65B_SUBMISSION_CODE_RELEASE_20261118'
+RETURN=WORK/'BFT65B_RELEASE_RETURN_20261119_082051'
+ARCHIVE=Path('/workspace/attachments/f3b9a194-bc4d-4f85-afb8-59e61949c9c2/20261119_082051_38aac2a6_GUI_LAI_CHO_CODEX.zip')
+OUT=WORK/'BFT65B_WINDOWS_RETURN_INDEPENDENT_REVIEW_20261119'
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
+def norm(p):return str(PureWindowsPath(p)).casefold()
+def dump(p,v):p.write_text(json.dumps(v,indent=2,ensure_ascii=False),encoding='utf-8')
+def main():
+    OUT.mkdir(exist_ok=False)
+    started=datetime.now(timezone.utc).isoformat()
+    all_inputs={str(p):sha(p) for p in sorted(RETURN.rglob('*')) if p.is_file()}
+    all_inputs[str(ARCHIVE)]=sha(ARCHIVE)
+    for p in sorted((SOURCE/'config').glob('*.json')):all_inputs[str(p)]=sha(p)
+    all_inputs[str(Path(__file__))]=sha(Path(__file__))
+    checks=[];datasets=[];rehashes=[];inputs=[]
+    def check(name,condition,detail):
+        checks.append(dict(check=name,status='PASS' if condition else 'FAIL',detail=detail))
+        if not condition:raise AssertionError(name+': '+str(detail))
+    try:
+        with zipfile.ZipFile(ARCHIVE) as z:
+            check('archive_crc',z.testzip() is None,'All 56 archived entries read without CRC errors')
+            names=z.namelist();check('archive_unique_and_exact_export',len(names)==len(set(names))==56 and set(names)=={p.relative_to(RETURN).as_posix() for p in RETURN.rglob('*') if p.is_file()},len(names))
+            check('extraction_byte_identity',all(hashlib.sha256(z.read(n)).hexdigest()==sha(RETURN/n) for n in names),'Extraction did not transform archived bytes')
+            check('no_exported_bank_row_payload',all(Path(n).suffix.lower() in {'.json','.csv','.txt'} for n in names),'No Parquet, model, NPZ or nested ZIP')
+        config=read(SOURCE/'config/default.json');summary=read(RETURN/'REPLAY_RESULT.json')
+        source_manifest=read(SOURCE/'config/source_manifest.json')
+        check('released_source_manifest_unchanged',all(sha(SOURCE/p)==h for p,h in source_manifest.items()),len(source_manifest))
+        check('executed_manifest_matches_delivered_release',summary['source_manifest_sha256']==sha(SOURCE/'config/source_manifest.json'),summary['source_manifest_sha256'])
+        check('executed_config_matches_delivered_config',summary['config_sha256']==sha(SOURCE/'config/default.json') and read(RETURN/'CONFIG_USED.json')==config,'Actual input/config contracts are the delivered contracts')
+        expected_env=read(SOURCE/'config/environments.json')['engineering'];env=summary['environment']
+        check('exact_engineering_runtime',env['python']==expected_env['python'] and all(env['packages'].get(k)==v for k,v in expected_env['packages'].items()),dict(python=env['python'],packages={k:env['packages'].get(k) for k in expected_env['packages']}))
+        check('no_reported_source_drift',summary['source_integrity_error'] is None,summary['source_integrity_error'])
+        check('no_fits_or_test_inference_requested',summary['new_model_fits']==0 and summary['final_test_inference'] is False,'Flags cross-checked against actual source-pinned commands below; not OS attestation')
+        check('full_e2e_not_overclaimed',summary['full_clean_room_E2E']=='NOT_EXECUTED','Checkpoint replay retains original Step2A/B provenance')
+        stages={'p2-base':'02_PART2_DATA_QUALITY_PANEL/code/02_build_panel_base.py','p2-clean':'02_PART2_DATA_QUALITY_PANEL/code/02c_finalize_panel.py','development-features':'04_PART4_FEATURE_PIPELINE/code/part4_v2_relabel_asof_gate.py'}
+        check('exact_three_requested_stages',set(summary['stages'])==set(stages),list(summary['stages']))
+        outpath=PureWindowsPath(summary['command'][summary['command'].index('--out')+1])
+        observations={}; output_observations={}
+        for stage,relative in stages.items():
+            root=RETURN/stage;rec=read(root/'STAGE_RESULT.json');worker=read(root/'WORKER_RESULT.json')
+            check(stage+'_summary_matches_stage_file',summary['stages'][stage]==rec,'Embedded and standalone stage evidence agree')
+            check(stage+'_worker_source_hash',worker['source_sha256']==sha(SOURCE/relative),worker['source_sha256'])
+            check(stage+'_producer_cli_matches_recorded_arguments',worker['command'][3:]==read(root/'ARGUMENTS.json') and norm(worker['command'][2]).endswith(norm(relative)),worker['command'])
+            check(stage+'_controller_worker_cli',read(root/'COMMAND.json')==rec['command'] and rec['command'][-6:]==['--stage',stage,'--job',str(outpath/stage),'--arguments-file',str(outpath/stage/'ARGUMENTS.json')],rec['command'])
+            check(stage+'_exact_interpreter',norm(rec['command'][0])==norm(env['executable'])==norm(worker['command'][0]) and rec['environment']==env,'Exact selected engineering interpreter')
+            check(stage+'_new_output_isolated',norm(rec['artifact_directory'])==norm(outpath/stage/'artifacts'),'Original inputs/checkpoints outside new output; regenerated parent is allowed')
+            check(stage+'_no_closed_work_dispatched',worker['new_model_fits']==rec['new_model_fits']==0 and worker['final_test_inference'] is rec['final_test_inference'] is False and worker['closed_checks_reexecuted'] is False,'Only recorded data-only native producer was dispatched')
+            check(stage+'_input_preservation',rec['input_sha256_before']==rec['input_sha256_after'],len(rec['input_sha256_before']))
+            for p,h in rec['input_sha256_before'].items():
+                inputs.append(dict(stage=stage,path=p,sha256=h))
+                key=norm(p)
+                check(stage+'_cross_stage_input_'+str(len(inputs)),key not in observations or observations[key]==h,'Same input identity consistent across stages: '+p)
+                observations[key]=h
+            for name,h in rec['output_sha256'].items():
+                p=root/name
+                if p.is_file():
+                    actual=sha(p);check(stage+'_export_hash_'+name,actual==h,name)
+                    rehashes.append(dict(stage=stage,file=(Path(stage)/name).as_posix(),sha256=actual))
+                output_observations[norm(outpath/stage/name)]=h
+            # Worker and producer stderr should be inspected, not inferred from a PASS flag.
+            check(stage+'_stderr_empty',all((root/n).read_text(encoding='utf-8').strip()=='' for n in ['STDERR.txt','comparison_command/STDERR.txt']),'No producer/comparison stderr')
+            check(stage+'_complete_comparison_consistency',read(root/'comparison/COMPARISON_RESULT.json')['results']==rec['comparison_results'],'Embedded comparison records agree')
+        # Prepared snapshot, original signed Step2B and cache scope identities are fixed independently of return PASS statuses.
+        rawprep=config['inputs']['prepared_audit']
+        for item in read(SOURCE/'config/prepared_snapshot_manifest.json'):
+            ending=norm(PureWindowsPath(rawprep)/item['relative_path'])
+            matches=[h for p,h in observations.items() if p.endswith(ending)]
+            check('prepared_snapshot_'+item['relative_path'],matches==[item['sha256']],item['relative_path'])
+        for name,h in read(SOURCE/'config/step2b_snapshot_hashes.json').items():
+            ending=norm(PureWindowsPath(config['inputs']['step2b'])/name)
+            check('step2b_'+name,[v for p,v in observations.items() if p.endswith(ending)]==[h],name)
+        for item in read(SOURCE/'config/frozen_scope_requests.json'):
+            basename=hashlib.sha256(item['url'].encode()).hexdigest()+'.body'
+            check('frozen_cache_'+basename,[v for p,v in observations.items() if p.endswith(norm(PureWindowsPath(config['inputs']['step2c'])/config['read_only_cache']/basename))]==[item['sha256']],basename)
+        clean_args=read(RETURN/'p2-clean/ARGUMENTS.json')
+        check('offline_read_only_cache_arguments','--offline' in clean_args and '--cache-dir' in clean_args,'No HTTP fallback requested')
+        dev=read(RETURN/'development-features/STAGE_RESULT.json');args=read(RETURN/'development-features/ARGUMENTS.json')
+        check('producer_only_development_arguments','--production-only' in args and args[args.index('--asof-quarters')+1]=='0' and not any(x in args for x in ['--self-test','--old-dev','--pandas-oracle-source','--assistance-events-csv']),args)
+        for flag,filename in [('--clean','panel_clean.parquet'),('--pit','panel_pit_base.parquet'),('--registry-zip','part2_clean_review_bundle.zip')]:
+            actual=args[args.index(flag)+1];expected=outpath/'p2-clean'/'artifacts'/filename
+            check('new_parent_lineage_'+filename,norm(actual)==norm(expected) and dev['input_sha256_before'][actual]==output_observations[norm(expected)],dict(path=actual,sha256=dev['input_sha256_before'][actual]))
+        check('no_checkpoint_fallback_used','NEW Part2C artifacts' in dev['lineage'],'Development consumed the verified fresh clean/PIT/registry outputs')
+        flatten=[]
+        for stage,name,rows in [('p2-base','base',1682616),('p2-clean','clean',1669802),('p2-clean','pit',1629398),('development-features','development',1231631)]:
+            v=read(RETURN/stage/'comparison'/f'{name}.json')
+            spec=read(RETURN/stage/'COMPARISON_SPEC.json');sp=next(x for x in spec['datasets'] if x['id']==name)
+            ref=config['reference_files'][name];stage_rec=read(RETURN/stage/'STAGE_RESULT.json')
+            check(name+'_reference_identity',v['reference_sha256']==ref['sha256']==stage_rec['input_sha256_before'][sp['reference']],v['reference_sha256'])
+            check(name+'_new_output_identity',v['new_sha256']==output_observations[norm(sp['new'])],v['new_sha256'])
+            check(name+'_rows_schema',v['new_rows']==v['reference_rows']==rows and v['schema_equal'] and v['new_schema']==v['reference_schema'],rows)
+            names=[x.split(':',1)[0] for x in v['new_schema'].splitlines()]
+            check(name+'_all_nonkey_columns_present',len(names)==len(set(names)) and set(x['column'] for x in v['columns'])==set(names)-set(v['keys']) and len(v['columns'])==len(names)-len(v['keys']),len(v['columns']))
+            check(name+'_exact_keys',len(v['key_checks'])==6 and all(x==0 for x in v['key_checks'].values()),v['key_checks'])
+            check(name+'_all_values_masks_equal',all(c['rows']==rows and c['null_mismatches']==c['nan_mismatches']==c['value_mismatches']==0 and c['max_abs_difference']==0 and c['nonfinite_difference'] is False for c in v['columns']),'Every compared column reports zero delta/mismatch, not merely within tolerance')
+            check(name+'_byte_identity_consistent',v['byte_identical']==(v['new_sha256']==v['reference_sha256']),v['byte_identical'])
+            if name!='development':check(name+'_original_bytes_reproduced',v['byte_identical'],'Known frozen reference digest reproduced')
+            datasets.append(dict(dataset=name,rows=rows,columns=len(names),compared_nonkey_columns=len(v['columns']),schema_equal=True,key_mismatches=sum(v['key_checks'].values()),null_mismatches=sum(c['null_mismatches'] for c in v['columns']),nan_mismatches=sum(c['nan_mismatches'] for c in v['columns']),value_mismatches=sum(c['value_mismatches'] for c in v['columns']),max_abs_difference=max(c['max_abs_difference'] for c in v['columns']),new_sha256=v['new_sha256'],reference_sha256=v['reference_sha256'],byte_identical=v['byte_identical'],status='VERIFIED_WINDOWS_REPLAY_EVIDENCE'))
+            flatten+=v['columns']
+        with (RETURN/'NUMERICAL_COMPARISON.csv').open(encoding='utf-8-sig',newline='') as f:
+            exported=list(csv.DictReader(f))
+        check('aggregate_csv_matches_full_column_json',len(exported)==len(flatten) and all({k:str(v) for k,v in original.items()}==row for original,row in zip(flatten,exported)),len(flatten))
+        controls=read(RETURN/'comparator_controls/synthetic/SELFTEST_RESULT.json')
+        expected={'identical':True,'reordered':True,'finite_vs_infinite':False,'opposite_infinities':False,'null_to_nan':False,'duplicate_keys':False,'label_mutation':False,'tolerated_float_roundoff':True,'strict_float_roundoff_rejected':False,'wrong_schema':False}
+        check('ten_controls_all_present',len(controls['cases'])==10 and set(x['case'] for x in controls['cases'])==set(expected),'No omitted/duplicate synthetic case')
+        for c in controls['cases']:
+            raw=read(RETURN/'comparator_controls/synthetic'/f"{c['case']}.json")
+            equivalent=raw['status']=='PASS_NUMERICAL_SCHEMA_EQUIVALENCE'
+            check('synthetic_'+c['case'],equivalent==expected[c['case']]==c['expected_numerical_equivalence'] and raw['status']==c['actual_comparison_status'] and c['new_sha256']==raw['new_sha256'] and c['reference_sha256']==raw['reference_sha256'],'Intentional mismatches correctly rejected' if not equivalent else 'Expected equivalence accepted')
+        check('control_before_real_producers',controls['finished_utc']<=summary['stages']['p2-base']['started_utc'],'Controls completed before first real stage')
+        check('top_level_status_consistent',all(v['status']=='PASS' for v in summary['stages'].values()) and summary['status']=='PASS_PERMITTED_PRODUCER_REPLAY_REVIEW_REQUIRED','PASS status agrees with independently inspected evidence')
+        result_status='PASS_INDEPENDENT_RETURN_EVIDENCE_REVIEW'
+    except Exception as e:
+        result_status='FAIL';checks.append(dict(check='unhandled_or_failed_assertion',status='FAIL',detail=type(e).__name__+': '+str(e)))
+    after={name:sha(Path(name)) for name in all_inputs}
+    if after!=all_inputs:result_status='FAIL';checks.append(dict(check='audit_input_preservation',status='FAIL',detail='Input changed'))
+    result=dict(status=result_status,started_utc=started,finished_utc=datetime.now(timezone.utc).isoformat(),command=[sys.executable,'-B',str(Path(__file__))],environment=dict(python=platform.python_version(),platform=platform.platform(),libraries='stdlib only; no science imports'),archive_sha256=sha(ARCHIVE),input_sha256_before=all_inputs,input_sha256_after=after,checks=checks,datasets=datasets,input_observations=len(inputs),unique_input_files=len(observations),exported_output_files_rehashed=len(rehashes),compared_nonkey_columns=sum(d['compared_nonkey_columns'] for d in datasets),comparison_row_column_cells=sum(d['rows']*d['compared_nonkey_columns'] for d in datasets),full_clean_room_E2E='NOT_EXECUTED',new_model_fits_during_this_review=0,final_test_inference_during_this_review=False,scope='Independent consistency/hash review of returned Windows logs and comparison outputs. Raw Parquet stays on Windows; no cloud re-execution or independent direct raw-file rehash.',output_sha256={})
+    for name,data in [('DATASET_COMPARISON.csv',datasets),('EXPORTED_OUTPUT_HASH_CHECKS.csv',rehashes),('WINDOWS_INPUT_IDENTITIES.csv',inputs)]:
+        with (OUT/name).open('w',encoding='utf-8-sig',newline='') as f:
+            if data:w=csv.DictWriter(f,fieldnames=list(data[0]));w.writeheader();w.writerows(data)
+        result['output_sha256'][name]=sha(OUT/name)
+    dump(OUT/'INDEPENDENT_REVIEW.json',result)
+    print(json.dumps({k:v for k,v in result.items() if k not in ['checks','input_sha256_before','input_sha256_after','environment','datasets']},indent=2))
+    print('CHECKS',len(checks),'FAILURES',[c for c in checks if c['status']=='FAIL'])
+    return 0 if result_status.startswith('PASS') else 1
+if __name__=='__main__':sys.exit(main())

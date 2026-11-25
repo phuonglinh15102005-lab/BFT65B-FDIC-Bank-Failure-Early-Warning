@@ -1,0 +1,5 @@
+# S3 — 24–25 November integrated examiner reconciliation
+
+Read the current 25 November manuscript separately. `part1` through `part7` contain the dated examiner reconciliations and selected aggregate outputs, not raw financial records or fitted models. Some notes predate the integrated revision, so references to proposed edits refer to the older manuscript. `part4/R23_RECOVERED.md` supersedes the earlier statement that only legacy independent preprocessing checks were available. `ARCHIVE_MEMBER_LEDGER.json` distinguishes original archive-member and released digests; user-home prefixes were redacted only in copied evidence. The underlying original private archive is not shipped. Numeric and protocol evidence is preserved.
+
+Scope: Part 1 storage ranges and schema; Part 2 key-level lag and DQ; Part 3 fair timing, plans and original Spark audit; Part 4 original oracle and R23; Part 5 development-only bootstrap and severity-cost analysis; Part 6 pilot design; Part 7 local clone/provenance. The 25 November report adds a fixed-policy severity objective verified by `verify_final_review.py`. No final-test score was regenerated.

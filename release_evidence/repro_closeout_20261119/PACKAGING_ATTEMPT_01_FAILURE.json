@@ -1,0 +1,24 @@
+{
+  "status": "FAIL_PACKAGING_QA_RESOLVED_AFTER_NESTED_CSV_WHITELIST",
+  "actual_command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/work/finalize_bft65b_repro_closeout_20261119.py"
+  ],
+  "exit_code": 1,
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41"
+  },
+  "observation": "Actual packaging attempt failed at assert of Git ignore cases; one vetted aggregate STAGE_STATUS.csv was excluded",
+  "failed_case": {
+    "path": "release_evidence/EXECUTED_OUTPUTS/C06_ACTUAL_REPLAY_CLOUD_PREFLIGHT/STAGE_STATUS.csv",
+    "expected_ignored": false,
+    "actual_git_check_ignore_exit_code": 0
+  },
+  "input_sha256": {
+    "executed_packager": "a6cfc181191ecac32b9cf2a4dd40e4de28fc4c00c372437446af02e9c49c5998",
+    "gitignore_before_fix": "a6f052a6a3e716f1dd192bb1d50675335f65362a5da068434c05ede3d62d4f89"
+  },
+  "scope": "Publication inclusion defect, not a failed bank-data/model check; no model operation executed"
+}

@@ -1,0 +1,37 @@
+{
+  "python": "3.13.9",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "pyspark": "4.3.0",
+  "spark": "4.3.0",
+  "java": {
+    "java_home": null,
+    "ready": true,
+    "returncode": 0,
+    "version_output": "openjdk version \"17.0.21\" 2026-10-20\nOpenJDK Runtime Environment Temurin-17.0.21+9 (build 17.0.21+9)\nOpenJDK 64-Bit Server VM Temurin-17.0.21+9 (build 17.0.21+9, mixed mode, sharing)",
+    "major": 17
+  },
+  "spark_startup_seconds": 18.888,
+  "master": "local[4]",
+  "cores": 4,
+  "driver_memory": "3g",
+  "sql_shuffle_partitions": "8",
+  "adaptive_query_execution": "true",
+  "sql_timezone": "UTC",
+  "input_files": {
+    "clean": {
+      "path": "<LOCAL_USER>\\BFT65B_outputs\\step2c_20261108_145539_477509\\panel_clean.parquet",
+      "bytes": 148079236,
+      "sha256": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107"
+    },
+    "pit": {
+      "path": "<LOCAL_USER>\\BFT65B_outputs\\step2c_20261108_145539_477509\\panel_pit_base.parquet",
+      "bytes": 144394972,
+      "sha256": "3fce669406ff1898ac85d9c41c6385b7f8c6b27e29ecd041bb0a3c59f6337421"
+    }
+  },
+  "reference_zip": {
+    "name": "part3_step01_polars_evidence.zip",
+    "sha256": "bd6282e261486bfa69c7f71cd2d95bce2b7622f8a491340cb7e92b7415ea8f97"
+  },
+  "measurement_warning": "One execution per task; durations are diagnostic, not statistically comparable to Step 03 medians"
+}

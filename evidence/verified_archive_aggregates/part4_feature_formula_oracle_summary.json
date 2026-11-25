@@ -1,0 +1,136 @@
+{
+  "status": "PASS_INDEPENDENT_TEST_FEATURE_FORMULAS",
+  "rows": 364440,
+  "n_features": 15,
+  "total_cell_comparisons": 5466600,
+  "total_mismatches": 0,
+  "source_hashes": {
+    "cohort": "15ee908a4faf197dba8787821b8fd83bf2c7de5da2a325939b5b5e078a348298",
+    "clean": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107",
+    "pit": "3fce669406ff1898ac85d9c41c6385b7f8c6b27e29ecd041bb0a3c59f6337421"
+  },
+  "reference": "Independent Part 4 pandas quarter-ID oracle, matched exact sha original PIT, clean and cohort",
+  "boundary": "Test feature formulas and missingness are audited after scoring; this does not establish historical statement-vintage availability, assess 25 excluded test rows or change model scores.",
+  "details": [
+    {
+      "feature": "log_assets",
+      "rows": 364440,
+      "mismatches": 0,
+      "max_abs_discrepancy": null,
+      "stored_missing": 0,
+      "reconstructed_missing": 0
+    },
+    {
+      "feature": "equity_to_assets",
+      "rows": 364440,
+      "mismatches": 0,
+      "max_abs_discrepancy": null,
+      "stored_missing": 558,
+      "reconstructed_missing": 558
+    },
+    {
+      "feature": "negative_equity_flag",
+      "rows": 364440,
+      "mismatches": 0,
+      "max_abs_discrepancy": null,
+      "stored_missing": 558,
+      "reconstructed_missing": 558
+    },
+    {
+      "feature": "asset_log_growth_1q",
+      "rows": 364440,
+      "mismatches": 0,
+      "max_abs_discrepancy": null,
+      "stored_missing": 90,
+      "reconstructed_missing": 90
+    },
+    {
+      "feature": "asset_log_growth_4q",
+      "rows": 364440,
+      "mismatches": 0,
+      "max_abs_discrepancy": null,
+      "stored_missing": 390,
+      "reconstructed_missing": 390
+    },
+    {
+      "feature": "nclnls_to_loans",
+      "rows": 364440,
+      "mismatches": 0,
+      "max_abs_discrepancy": null,
+      "stored_missing": 2541,
+      "reconstructed_missing": 2541
+    },
+    {
+      "feature": "loan_allowance_to_loans",
+      "rows": 364440,
+      "mismatches": 0,
+      "max_abs_discrepancy": null,
+      "stored_missing": 3102,
+      "reconstructed_missing": 3102
+    },
+    {
+      "feature": "cash_to_assets",
+      "rows": 364440,
+      "mismatches": 0,
+      "max_abs_discrepancy": null,
+      "stored_missing": 0,
+      "reconstructed_missing": 0
+    },
+    {
+      "feature": "cash_and_securities_to_assets",
+      "rows": 364440,
+      "mismatches": 0,
+      "max_abs_discrepancy": null,
+      "stored_missing": 3,
+      "reconstructed_missing": 3
+    },
+    {
+      "feature": "deposits_to_assets",
+      "rows": 364440,
+      "mismatches": 0,
+      "max_abs_discrepancy": null,
+      "stored_missing": 0,
+      "reconstructed_missing": 0
+    },
+    {
+      "feature": "net_loans_to_assets",
+      "rows": 364440,
+      "mismatches": 0,
+      "max_abs_discrepancy": null,
+      "stored_missing": 0,
+      "reconstructed_missing": 0
+    },
+    {
+      "feature": "roa_reported_percent",
+      "rows": 364440,
+      "mismatches": 0,
+      "max_abs_discrepancy": null,
+      "stored_missing": 0,
+      "reconstructed_missing": 0
+    },
+    {
+      "feature": "nimy_reported_percent",
+      "rows": 364440,
+      "mismatches": 0,
+      "max_abs_discrepancy": null,
+      "stored_missing": 0,
+      "reconstructed_missing": 0
+    },
+    {
+      "feature": "loss_flag_roa_negative",
+      "rows": 364440,
+      "mismatches": 0,
+      "max_abs_discrepancy": null,
+      "stored_missing": 0,
+      "reconstructed_missing": 0
+    },
+    {
+      "feature": "loan_denominator_invalid_flag",
+      "rows": 364440,
+      "mismatches": 0,
+      "max_abs_discrepancy": null,
+      "stored_missing": 0,
+      "reconstructed_missing": 0
+    }
+  ]
+}

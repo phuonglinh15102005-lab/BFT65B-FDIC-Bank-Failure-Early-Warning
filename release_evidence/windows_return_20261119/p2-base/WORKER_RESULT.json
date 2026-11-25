@@ -1,0 +1,21 @@
+{
+  "status": "PASS_PRODUCER_EXECUTION_COMPARISON_REQUIRED",
+  "error": null,
+  "stage": "p2-base",
+  "started_utc": "2026-11-19T01:21:08.479705+00:00",
+  "finished_utc": "2026-11-19T01:21:18.596219+00:00",
+  "source_sha256": "bbfe7ba51b165aabfc6d0a027d4058ead4321e5973273fdf6ec971c99fef89d0",
+  "command": [
+    "%USERPROFILE%\\miniconda3\\python.exe",
+    "-B",
+    "%USERPROFILE%\\Downloads\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\02_PART2_DATA_QUALITY_PANEL\\code\\02_build_panel_base.py",
+    "--audit-dir",
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z",
+    "--out",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-base\\artifacts"
+  ],
+  "guard": "Python write/network/frozen-model guard,not an OS/native-Arrow sandbox",
+  "closed_checks_reexecuted": false,
+  "new_model_fits": 0,
+  "final_test_inference": false
+}

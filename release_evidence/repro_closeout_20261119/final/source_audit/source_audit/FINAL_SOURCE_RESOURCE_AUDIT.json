@@ -1,0 +1,3802 @@
+{
+  "status": "PASS_SOURCE_RESOURCE_AND_PUBLICATION_CONTENT",
+  "errors": [],
+  "python_sources": 95,
+  "science_python_sources": 61,
+  "sources": [
+    {
+      "file": "01_PART1_ACQUISITION_STORAGE/code/00_check_acquisition.py",
+      "sha256": "f4e9dbfedd5619126c3a4fdd228ba90a39ca674245ef832654c03e97e89fa004",
+      "imports": [
+        "acquisition_validation",
+        "argparse",
+        "calendar",
+        "datetime",
+        "importlib.util",
+        "json",
+        "pathlib"
+      ],
+      "calls": [
+        {
+          "line": 34,
+          "call": "json.loads((root / 'manifest_financials.json').read_text(encoding='utf-8-sig'))"
+        },
+        {
+          "line": 36,
+          "call": "json.loads(sp.read_text(encoding='utf-8-sig'))"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "01_PART1_ACQUISITION_STORAGE/code/01b_benchmark_storage.py",
+      "sha256": "fab4ab46d7fd4e7e65d576644880453456cd366eafba5d92e18b26d1cedca842",
+      "imports": [
+        "__future__",
+        "argparse",
+        "calendar",
+        "collections",
+        "csv",
+        "datetime",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "platform",
+        "polars",
+        "psutil",
+        "random",
+        "shutil",
+        "statistics",
+        "subprocess",
+        "sys",
+        "threading",
+        "time",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 62,
+          "call": "json.loads(Path(path).read_text(encoding='utf-8-sig'))"
+        },
+        {
+          "line": 167,
+          "call": "pl.scan_parquet([str(p) for p in files], hive_partitioning=False)"
+        },
+        {
+          "line": 228,
+          "call": "json.loads(json.dumps(fingerprint(frame)))"
+        },
+        {
+          "line": 256,
+          "call": "subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8')"
+        },
+        {
+          "line": 99,
+          "call": "pl.scan_parquet(info['path'], hive_partitioning=False)"
+        },
+        {
+          "line": 104,
+          "call": "pl.scan_parquet(str(Path(info['path']) / '**/*.parquet'), hive_partitioning=True, hive_schema=hs)"
+        },
+        {
+          "line": 209,
+          "call": "pl.scan_parquet([str(p) for p in inputs], hive_partitioning=False).sink_parquet(yd / 'part-000.parquet', compression='zstd', compression_level=3, row_group_size=ROW_GROUP_SIZE)"
+        },
+        {
+          "line": 215,
+          "call": "pl.scan_parquet(p, hive_partitioning=False).sink_parquet(qd / 'part-000.parquet', compression='zstd', compression_level=3, row_group_size=ROW_GROUP_SIZE)"
+        },
+        {
+          "line": 209,
+          "call": "pl.scan_parquet([str(p) for p in inputs], hive_partitioning=False)"
+        },
+        {
+          "line": 215,
+          "call": "pl.scan_parquet(p, hive_partitioning=False)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "01_PART1_ACQUISITION_STORAGE/code/acquisition_validation.py",
+      "sha256": "45a3d5e58baf13903d7c10e13d8e3f780ec7b6229f0f34caf591a4cc070eabef",
+      "imports": [
+        "datetime",
+        "hashlib",
+        "json",
+        "os",
+        "pandas",
+        "pathlib",
+        "tempfile"
+      ],
+      "calls": [
+        {
+          "line": 114,
+          "call": "(reader or pd.read_parquet)(path)"
+        },
+        {
+          "line": 41,
+          "call": "frame.to_parquet(temporary, index=False)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "01_PART1_ACQUISITION_STORAGE/code/audit_fdic.py",
+      "sha256": "26066adeb80152732dc9c75fb0ff84ce51a811d01f6727113b1e6701afbe9b5f",
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "csv",
+        "datetime",
+        "hashlib",
+        "importlib",
+        "json",
+        "pathlib",
+        "platform",
+        "polars",
+        "pyarrow.parquet",
+        "re",
+        "sys"
+      ],
+      "calls": [
+        {
+          "line": 86,
+          "call": "frame.write_parquet(target, compression='zstd')"
+        },
+        {
+          "line": 219,
+          "call": "json.loads(manifest_path.read_text(encoding='utf-8-sig'))"
+        },
+        {
+          "line": 251,
+          "call": "pl.read_parquet(path)"
+        },
+        {
+          "line": 329,
+          "call": "pl.read_parquet(path)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "01_PART1_ACQUISITION_STORAGE/code/fdic_download_starter.py",
+      "sha256": "9baf073bbb3f8a08438d76165d03311fa7213a4028e1d36e386cbb3c57b25b86",
+      "imports": [
+        "__future__",
+        "acquisition_validation",
+        "argparse",
+        "datetime",
+        "json",
+        "pandas",
+        "pathlib",
+        "requests",
+        "sys",
+        "time"
+      ],
+      "calls": [
+        {
+          "line": 235,
+          "call": "json.loads((out / 'manifest_financials.json').read_text())"
+        },
+        {
+          "line": 278,
+          "call": "download_financials(out, quarters)"
+        },
+        {
+          "line": 280,
+          "call": "download_small_tables(out)"
+        },
+        {
+          "line": 187,
+          "call": "json.loads(manifest_path.read_text())"
+        },
+        {
+          "line": 211,
+          "call": "json.loads(manifest_path.read_text())"
+        },
+        {
+          "line": 244,
+          "call": "json.loads((out / 'manifest_small_tables.json').read_text())"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "01_PART1_ACQUISITION_STORAGE/code/inspect_rowgroups.py",
+      "sha256": "bb76d53d577e5d08099c641270897b4b2fae665ee83d23810c69c76e96aa2a46",
+      "imports": [
+        "__future__",
+        "argparse",
+        "csv",
+        "datetime",
+        "pathlib",
+        "pyarrow.parquet",
+        "thrift.Thrift",
+        "thrift.protocol",
+        "thrift.transport"
+      ],
+      "calls": [],
+      "science_source": true
+    },
+    {
+      "file": "01_PART1_ACQUISITION_STORAGE/code/plot_part1_latency.py",
+      "sha256": "89f9839183353df9528a82095b5789302049521117afd48cd15bd0ee5ebd542a",
+      "imports": [
+        "argparse",
+        "csv",
+        "matplotlib",
+        "matplotlib.pyplot",
+        "os",
+        "pathlib"
+      ],
+      "calls": [],
+      "science_source": true
+    },
+    {
+      "file": "01_PART1_ACQUISITION_STORAGE/verify_part1_evidence.py",
+      "sha256": "d25c5018b548312b3e5f88fcce43882d7dd2a54b5e1bdbd8a5f2382d7cea9d36",
+      "imports": [
+        "argparse",
+        "collections",
+        "csv",
+        "datetime",
+        "hashlib",
+        "json",
+        "math",
+        "pathlib",
+        "re",
+        "statistics"
+      ],
+      "calls": [
+        {
+          "line": 60,
+          "call": "json.loads((bench / 'storage_summary.json').read_text(encoding='utf-8-sig'))"
+        },
+        {
+          "line": 61,
+          "call": "json.loads((base / 'acquisition_audit_summary.json').read_text(encoding='utf-8-sig'))"
+        },
+        {
+          "line": 62,
+          "call": "json.loads((base / 'panel_summary.json').read_text(encoding='utf-8-sig'))"
+        },
+        {
+          "line": 84,
+          "call": "json.loads((bench / 'reference_fingerprints.json').read_text(encoding='utf-8-sig'))"
+        },
+        {
+          "line": 90,
+          "call": "json.loads((bench / 'runs' / f\"{int(r['run_order']):03d}.json\").read_text(encoding='utf-8-sig'))"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "02_PART2_DATA_QUALITY_PANEL/code/02_build_panel_base.py",
+      "sha256": "bbfe7ba51b165aabfc6d0a027d4058ead4321e5973273fdf6ec971c99fef89d0",
+      "imports": [
+        "__future__",
+        "argparse",
+        "datetime",
+        "hashlib",
+        "json",
+        "pathlib",
+        "platform",
+        "polars",
+        "pyarrow.parquet",
+        "sys",
+        "time",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 100,
+          "call": "json.loads((audit_dir / 'summary.json').read_text(encoding='utf-8-sig'))"
+        },
+        {
+          "line": 122,
+          "call": "pl.scan_parquet([str(p) for p in files])"
+        },
+        {
+          "line": 137,
+          "call": "pl.read_parquet(prepared / 'institutions.parquet')"
+        },
+        {
+          "line": 138,
+          "call": "pl.read_parquet(prepared / 'failures_all.parquet')"
+        },
+        {
+          "line": 164,
+          "call": "pl.scan_parquet(target)"
+        },
+        {
+          "line": 256,
+          "call": "inst.write_parquet(evidence / 'institutions_AUDIT_ONLY.parquet', compression='zstd')"
+        },
+        {
+          "line": 257,
+          "call": "events.write_parquet(evidence / 'events_AUDIT_ONLY.parquet', compression='zstd')"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "02_PART2_DATA_QUALITY_PANEL/code/02b_collect_exit_evidence.py",
+      "sha256": "9935d369667b4b5ff17dc5853bc81ccc7ee0af9f87792d2fb62f30c9f021f3ec",
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "csv",
+        "datetime",
+        "hashlib",
+        "json",
+        "pathlib",
+        "platform",
+        "re",
+        "shutil",
+        "sys",
+        "time",
+        "urllib.error",
+        "urllib.parse",
+        "urllib.request",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 77,
+          "call": "json.loads(Path(path).read_text(encoding='utf-8-sig'))"
+        },
+        {
+          "line": 221,
+          "call": "json.loads(self.get(url))"
+        },
+        {
+          "line": 226,
+          "call": "payload['meta'].get('index')"
+        },
+        {
+          "line": 224,
+          "call": "payload['meta'].get('total')"
+        },
+        {
+          "line": 579,
+          "call": "json.loads(v)"
+        },
+        {
+          "line": 222,
+          "call": "payload.get('meta')"
+        },
+        {
+          "line": 222,
+          "call": "payload.get('data')"
+        },
+        {
+          "line": 194,
+          "call": "urlopen(request, timeout=45)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "02_PART2_DATA_QUALITY_PANEL/code/02c_finalize_panel.py",
+      "sha256": "8db73a30252bb2bf61f3569d16f6f335e29fbf55d0d7a6efa9cbd69ec8b4067f",
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "datetime",
+        "hashlib",
+        "importlib.util",
+        "json",
+        "pathlib",
+        "platform",
+        "polars",
+        "shutil",
+        "sys",
+        "time",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 74,
+          "call": "spec.loader.exec_module(mod)"
+        },
+        {
+          "line": 386,
+          "call": "pl.read_parquet(panel_path)"
+        },
+        {
+          "line": 405,
+          "call": "clean.write_parquet(out / 'panel_clean.parquet', compression='zstd', row_group_size=100000)"
+        },
+        {
+          "line": 429,
+          "call": "pit.write_parquet(out / 'panel_pit_base.parquet', compression='zstd', row_group_size=100000)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "02_PART2_DATA_QUALITY_PANEL/code/02d_preflight_part2.py",
+      "sha256": "6ac70c53d7dbe05249c5445788702e6ed99ffe57794c2cc21b425c92ce1819e3",
+      "imports": [
+        "__future__",
+        "argparse",
+        "datetime",
+        "gc",
+        "hashlib",
+        "json",
+        "pathlib",
+        "platform",
+        "polars",
+        "sys",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 38,
+          "call": "json.loads(Path(p).read_text(encoding='utf-8-sig'))"
+        },
+        {
+          "line": 94,
+          "call": "pl.read_parquet(files['panel_base.parquet'])"
+        },
+        {
+          "line": 95,
+          "call": "pl.read_parquet(files['panel_clean.parquet'])"
+        },
+        {
+          "line": 115,
+          "call": "pl.read_parquet(files['panel_pit_base.parquet'])"
+        },
+        {
+          "line": 81,
+          "call": "pl.read_parquet_schema(p)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "02_PART2_DATA_QUALITY_PANEL/code/independent_part2_review.py",
+      "sha256": "448f192345501211f0b2485fc5f727457de768e314a049a3af0d6baec7ed1766",
+      "imports": [
+        "argparse",
+        "calendar",
+        "collections",
+        "csv",
+        "datetime",
+        "decimal",
+        "hashlib",
+        "io",
+        "json",
+        "pathlib",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 66,
+          "call": "json.loads(za.read('step2_summary.json'))"
+        },
+        {
+          "line": 67,
+          "call": "json.loads(zb.read('step2b_summary.json'))"
+        },
+        {
+          "line": 68,
+          "call": "json.loads(zc.read('step2c_summary.json'))"
+        },
+        {
+          "line": 71,
+          "call": "json.loads(zc.read('step2c_config.json'))"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "02_PART2_DATA_QUALITY_PANEL/code/review_preflight_evidence.py",
+      "sha256": "a7154f32abdcbe2344c163d6419dadfa9a52f5f66bc74bd9e0a58cfb9877419e",
+      "imports": [
+        "argparse",
+        "calendar",
+        "csv",
+        "hashlib",
+        "io",
+        "json",
+        "pathlib",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 32,
+          "call": "json.loads(z.read(name).decode('utf-8-sig'))"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "02_PART2_DATA_QUALITY_PANEL/code/test_preflight_synthetic.py",
+      "sha256": "75777c45111d191277abe7f295849ee47ae4c43043912f299ce97c294bf42019",
+      "imports": [
+        "calendar",
+        "contextlib",
+        "datetime",
+        "hashlib",
+        "importlib.util",
+        "io",
+        "json",
+        "pathlib",
+        "polars",
+        "tempfile",
+        "unittest"
+      ],
+      "calls": [
+        {
+          "line": 16,
+          "call": "spec.loader.exec_module(m)"
+        },
+        {
+          "line": 47,
+          "call": "base.write_parquet(a / 'panel_base.parquet')"
+        },
+        {
+          "line": 47,
+          "call": "clean.write_parquet(c / 'panel_clean.parquet')"
+        },
+        {
+          "line": 47,
+          "call": "pit.write_parquet(c / 'panel_pit_base.parquet')"
+        },
+        {
+          "line": 81,
+          "call": "pl.read_parquet(p).with_columns((pl.col('ASSET') + 1).alias('ASSET'))"
+        },
+        {
+          "line": 81,
+          "call": "d.write_parquet(p)"
+        },
+        {
+          "line": 84,
+          "call": "pl.read_parquet(p).with_columns((pl.col('NETINC') + 1).alias('NETINC'))"
+        },
+        {
+          "line": 84,
+          "call": "d.write_parquet(p)"
+        },
+        {
+          "line": 87,
+          "call": "pl.read_parquet(p).with_columns(pl.col('SOURCE_REPDTE').alias('DECISION_DATE'))"
+        },
+        {
+          "line": 87,
+          "call": "d.write_parquet(p)"
+        },
+        {
+          "line": 90,
+          "call": "pl.read_parquet(p)"
+        },
+        {
+          "line": 90,
+          "call": "pl.concat([d, d.head(1)]).write_parquet(p)"
+        },
+        {
+          "line": 81,
+          "call": "pl.read_parquet(p)"
+        },
+        {
+          "line": 84,
+          "call": "pl.read_parquet(p)"
+        },
+        {
+          "line": 87,
+          "call": "pl.read_parquet(p)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "02_PART2_DATA_QUALITY_PANEL/code/verify_part2_outputs.py",
+      "sha256": "499b7464b5b83214c826044117cd51ea1dc539562cf0348fbbebf33a322ba236",
+      "imports": [
+        "argparse",
+        "collections",
+        "csv",
+        "datetime",
+        "hashlib",
+        "importlib.util",
+        "io",
+        "json",
+        "pathlib",
+        "polars",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 24,
+          "call": "spec.loader.exec_module(m)"
+        },
+        {
+          "line": 33,
+          "call": "json.loads(z.read(name))"
+        },
+        {
+          "line": 47,
+          "call": "load_module()"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "03_PART3_SCALABLE_PROCESSING/code/00_preflight_user.py",
+      "sha256": "b084abe87e06d6e21cab4ea0e8c40399d7d53b9c258e780e973ec87e91be2e0e",
+      "imports": [
+        "__future__",
+        "argparse",
+        "datetime",
+        "hashlib",
+        "importlib",
+        "json",
+        "os",
+        "pathlib",
+        "platform",
+        "psutil",
+        "pyarrow.parquet",
+        "shutil",
+        "subprocess",
+        "sys"
+      ],
+      "calls": [
+        {
+          "line": 78,
+          "call": "subprocess.run([executable, '-version'], capture_output=True, text=True, check=False, timeout=10)"
+        },
+        {
+          "line": 195,
+          "call": "payload['warnings'].append('Java is not ready. Polars/pandas can run, but Spark will need Java.')"
+        },
+        {
+          "line": 200,
+          "call": "payload['warnings'].append('The reviewed environment used Python 3.12; please report your version.')"
+        },
+        {
+          "line": 206,
+          "call": "payload['files'].get(label, {})"
+        },
+        {
+          "line": 176,
+          "call": "payload['warnings'].append('PyArrow is missing. Install the existing course requirements before rerunning.')"
+        },
+        {
+          "line": 198,
+          "call": "payload['warnings'].append(f'{library} is missing; it is needed at a later Part 3 step.')"
+        },
+        {
+          "line": 190,
+          "call": "payload['files'].values()"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "03_PART3_SCALABLE_PROCESSING/code/01_polars_core.py",
+      "sha256": "b44ce5c4f36cd79f6d3761b1772cf2320a55221aecc35277980ab9c41e35b49a",
+      "imports": [
+        "__future__",
+        "argparse",
+        "datetime",
+        "hashlib",
+        "json",
+        "math",
+        "os",
+        "pathlib",
+        "platform",
+        "polars",
+        "sys",
+        "time",
+        "uuid",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 106,
+          "call": "pl.scan_parquet(str(clean_file)).filter(pl.col('REPDTE').is_between(CRISIS_FIRST, CRISIS_LAST)).select('CERT', 'REPDTE', 'ASSET', 'DEP', 'EQ', 'ROA', 'LNLSGR', 'NCLNLS').with_columns(pl.when(pl.col('ASSET') > 0).then(pl.col('EQ') / pl.col('ASSET')).otherwise(None).alias('EQ_ASSET'), pl.when(pl.col('LNLSGR') > 0).then(pl.col('NCLNLS') / pl.col('LNLSGR')).otherwise(None).alias('NCLNLS_LOANS')).group"
+        },
+        {
+          "line": 134,
+          "call": "build_calendar_lag(pl, pl.scan_parquet(str(clean_file))).group_by('REPDTE').agg(pl.len().alias('REPORTS'), pl.col('PREV_PRESENT').is_not_null().sum().alias('MATCHED_PRIOR_QUARTER'), pl.col('ASSET_GROWTH').is_not_null().sum().alias('VALID_ASSET_GROWTH'), pl.col('ASSET_GROWTH').mean().alias('MEAN_ASSET_GROWTH'), pl.col('ASSET').mean().alias('MEAN_ASSET')).sort('REPDTE')"
+        },
+        {
+          "line": 149,
+          "call": "pl.scan_parquet(str(pit_file)).filter(pl.col('DECISION_DATE') <= DECISION_LAST).select('CERT', 'DECISION_DATE', 'SOURCE_REPDTE', 'ASSET', 'EQ', 'ROA', 'P3ASSET').with_columns(pl.when(pl.col('ASSET') > 0).then(pl.col('EQ') / pl.col('ASSET')).otherwise(None).alias('EQ_ASSET')).group_by('DECISION_DATE').agg(pl.len().alias('DECISIONS'), pl.col('ASSET').mean().alias('MEAN_ASSET'), pl.col('EQ_ASSET').me"
+        },
+        {
+          "line": 284,
+          "call": "pl.scan_parquet(str(path)).collect_schema()"
+        },
+        {
+          "line": 106,
+          "call": "pl.scan_parquet(str(clean_file)).filter(pl.col('REPDTE').is_between(CRISIS_FIRST, CRISIS_LAST)).select('CERT', 'REPDTE', 'ASSET', 'DEP', 'EQ', 'ROA', 'LNLSGR', 'NCLNLS').with_columns(pl.when(pl.col('ASSET') > 0).then(pl.col('EQ') / pl.col('ASSET')).otherwise(None).alias('EQ_ASSET'), pl.when(pl.col('LNLSGR') > 0).then(pl.col('NCLNLS') / pl.col('LNLSGR')).otherwise(None).alias('NCLNLS_LOANS')).group"
+        },
+        {
+          "line": 134,
+          "call": "build_calendar_lag(pl, pl.scan_parquet(str(clean_file))).group_by('REPDTE').agg(pl.len().alias('REPORTS'), pl.col('PREV_PRESENT').is_not_null().sum().alias('MATCHED_PRIOR_QUARTER'), pl.col('ASSET_GROWTH').is_not_null().sum().alias('VALID_ASSET_GROWTH'), pl.col('ASSET_GROWTH').mean().alias('MEAN_ASSET_GROWTH'), pl.col('ASSET').mean().alias('MEAN_ASSET'))"
+        },
+        {
+          "line": 149,
+          "call": "pl.scan_parquet(str(pit_file)).filter(pl.col('DECISION_DATE') <= DECISION_LAST).select('CERT', 'DECISION_DATE', 'SOURCE_REPDTE', 'ASSET', 'EQ', 'ROA', 'P3ASSET').with_columns(pl.when(pl.col('ASSET') > 0).then(pl.col('EQ') / pl.col('ASSET')).otherwise(None).alias('EQ_ASSET')).group_by('DECISION_DATE').agg(pl.len().alias('DECISIONS'), pl.col('ASSET').mean().alias('MEAN_ASSET'), pl.col('EQ_ASSET').me"
+        },
+        {
+          "line": 284,
+          "call": "pl.scan_parquet(str(path))"
+        },
+        {
+          "line": 106,
+          "call": "pl.scan_parquet(str(clean_file)).filter(pl.col('REPDTE').is_between(CRISIS_FIRST, CRISIS_LAST)).select('CERT', 'REPDTE', 'ASSET', 'DEP', 'EQ', 'ROA', 'LNLSGR', 'NCLNLS').with_columns(pl.when(pl.col('ASSET') > 0).then(pl.col('EQ') / pl.col('ASSET')).otherwise(None).alias('EQ_ASSET'), pl.when(pl.col('LNLSGR') > 0).then(pl.col('NCLNLS') / pl.col('LNLSGR')).otherwise(None).alias('NCLNLS_LOANS')).group"
+        },
+        {
+          "line": 134,
+          "call": "build_calendar_lag(pl, pl.scan_parquet(str(clean_file))).group_by('REPDTE')"
+        },
+        {
+          "line": 149,
+          "call": "pl.scan_parquet(str(pit_file)).filter(pl.col('DECISION_DATE') <= DECISION_LAST).select('CERT', 'DECISION_DATE', 'SOURCE_REPDTE', 'ASSET', 'EQ', 'ROA', 'P3ASSET').with_columns(pl.when(pl.col('ASSET') > 0).then(pl.col('EQ') / pl.col('ASSET')).otherwise(None).alias('EQ_ASSET')).group_by('DECISION_DATE')"
+        },
+        {
+          "line": 106,
+          "call": "pl.scan_parquet(str(clean_file)).filter(pl.col('REPDTE').is_between(CRISIS_FIRST, CRISIS_LAST)).select('CERT', 'REPDTE', 'ASSET', 'DEP', 'EQ', 'ROA', 'LNLSGR', 'NCLNLS').with_columns(pl.when(pl.col('ASSET') > 0).then(pl.col('EQ') / pl.col('ASSET')).otherwise(None).alias('EQ_ASSET'), pl.when(pl.col('LNLSGR') > 0).then(pl.col('NCLNLS') / pl.col('LNLSGR')).otherwise(None).alias('NCLNLS_LOANS'))"
+        },
+        {
+          "line": 149,
+          "call": "pl.scan_parquet(str(pit_file)).filter(pl.col('DECISION_DATE') <= DECISION_LAST).select('CERT', 'DECISION_DATE', 'SOURCE_REPDTE', 'ASSET', 'EQ', 'ROA', 'P3ASSET').with_columns(pl.when(pl.col('ASSET') > 0).then(pl.col('EQ') / pl.col('ASSET')).otherwise(None).alias('EQ_ASSET'))"
+        },
+        {
+          "line": 134,
+          "call": "pl.scan_parquet(str(clean_file))"
+        },
+        {
+          "line": 106,
+          "call": "pl.scan_parquet(str(clean_file)).filter(pl.col('REPDTE').is_between(CRISIS_FIRST, CRISIS_LAST)).select('CERT', 'REPDTE', 'ASSET', 'DEP', 'EQ', 'ROA', 'LNLSGR', 'NCLNLS')"
+        },
+        {
+          "line": 149,
+          "call": "pl.scan_parquet(str(pit_file)).filter(pl.col('DECISION_DATE') <= DECISION_LAST).select('CERT', 'DECISION_DATE', 'SOURCE_REPDTE', 'ASSET', 'EQ', 'ROA', 'P3ASSET')"
+        },
+        {
+          "line": 106,
+          "call": "pl.scan_parquet(str(clean_file)).filter(pl.col('REPDTE').is_between(CRISIS_FIRST, CRISIS_LAST))"
+        },
+        {
+          "line": 149,
+          "call": "pl.scan_parquet(str(pit_file)).filter(pl.col('DECISION_DATE') <= DECISION_LAST)"
+        },
+        {
+          "line": 106,
+          "call": "pl.scan_parquet(str(clean_file))"
+        },
+        {
+          "line": 149,
+          "call": "pl.scan_parquet(str(pit_file))"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "03_PART3_SCALABLE_PROCESSING/code/02_pandas_parity.py",
+      "sha256": "a253771553de1b754794f54549397c0f0c9cb5e4fcad8671b2ac1d0ce2e9e38f",
+      "imports": [
+        "__future__",
+        "argparse",
+        "datetime",
+        "hashlib",
+        "io",
+        "json",
+        "math",
+        "numpy",
+        "os",
+        "pandas",
+        "pathlib",
+        "platform",
+        "sys",
+        "time",
+        "uuid",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 147,
+          "call": "pd.read_parquet(clean, columns=fields)"
+        },
+        {
+          "line": 167,
+          "call": "pd.read_parquet(clean, columns=['CERT', 'REPDTE', 'ASSET'])"
+        },
+        {
+          "line": 183,
+          "call": "pd.read_parquet(pit, columns=fields)"
+        },
+        {
+          "line": 106,
+          "call": "json.loads(package.read('polars_audit.json'))"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "03_PART3_SCALABLE_PROCESSING/code/03_benchmark_local.py",
+      "sha256": "dca0168526bdf75c1551f99dd70afda79acb3c82e6349ecbbb408b13bfb88ec2",
+      "imports": [
+        "__future__",
+        "argparse",
+        "csv",
+        "datetime",
+        "hashlib",
+        "importlib.metadata",
+        "io",
+        "json",
+        "math",
+        "os",
+        "pandas",
+        "pathlib",
+        "platform",
+        "polars",
+        "psutil",
+        "pyarrow",
+        "random",
+        "runpy",
+        "statistics",
+        "subprocess",
+        "sys",
+        "threading",
+        "time",
+        "traceback",
+        "uuid",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 275,
+          "call": "subprocess.run(command, env=env, capture_output=True, text=True, timeout=900, check=False)"
+        },
+        {
+          "line": 286,
+          "call": "json.loads(matches[0])"
+        },
+        {
+          "line": 89,
+          "call": "json.loads(a.read('polars_audit.json'))"
+        },
+        {
+          "line": 90,
+          "call": "json.loads(b.read('pandas_parity_audit.json'))"
+        },
+        {
+          "line": 223,
+          "call": "load_reference(args.polars_zip, args.task)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "03_PART3_SCALABLE_PROCESSING/code/04_spark_parity_fixed.py",
+      "sha256": "e56f96c48c4f7f4adb3c3498cf141db635f71a74ebe1bb0d11810ad9a3385992",
+      "imports": [
+        "__future__",
+        "argparse",
+        "contextlib",
+        "csv",
+        "datetime",
+        "hashlib",
+        "io",
+        "json",
+        "math",
+        "os",
+        "pathlib",
+        "platform",
+        "pyspark",
+        "pyspark.sql",
+        "pyspark.sql.types",
+        "re",
+        "subprocess",
+        "sys",
+        "time",
+        "traceback",
+        "uuid",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 114,
+          "call": "json.loads(z.read('polars_audit.json'))"
+        },
+        {
+          "line": 133,
+          "call": "subprocess.run(['java', '-version'], capture_output=True, text=True, timeout=15, check=False)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "03_PART3_SCALABLE_PROCESSING/code/05_fair_baseline_sensitivity.py",
+      "sha256": "14f3187446f7d36520551e8811aecedf9c177e4c892f14e400a36a95b00d8b02",
+      "imports": [
+        "__future__",
+        "argparse",
+        "csv",
+        "datetime",
+        "hashlib",
+        "io",
+        "json",
+        "math",
+        "os",
+        "pandas",
+        "pathlib",
+        "platform",
+        "polars",
+        "psutil",
+        "pyarrow",
+        "random",
+        "runpy",
+        "statistics",
+        "subprocess",
+        "sys",
+        "threading",
+        "time",
+        "traceback",
+        "uuid",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 146,
+          "call": "pd.read_parquet(root / EXPECTED['pit'][0], columns=fields)"
+        },
+        {
+          "line": 277,
+          "call": "subprocess.run(cmd, env=env, capture_output=True, text=True, timeout=1200)"
+        },
+        {
+          "line": 282,
+          "call": "json.loads(records[0])"
+        },
+        {
+          "line": 305,
+          "call": "pl.scan_parquet(str(args.data_dir / EXPECTED['clean'][0]))"
+        },
+        {
+          "line": 306,
+          "call": "pl.scan_parquet(str(args.data_dir / EXPECTED['pit'][0]))"
+        },
+        {
+          "line": 88,
+          "call": "json.loads(z.read('polars_audit.json'))"
+        },
+        {
+          "line": 109,
+          "call": "pd.read_parquet(root / EXPECTED['clean'][0], columns=fields, filters=[('REPDTE', '>=', date(2008, 3, 31)), ('REPDTE', '<=', date(2014, 12, 31))])"
+        },
+        {
+          "line": 125,
+          "call": "pd.read_parquet(root / EXPECTED['clean'][0], columns=['CERT', 'REPDTE', 'ASSET'])"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "03_PART3_SCALABLE_PROCESSING/code/06_layout_ablation.py",
+      "sha256": "346b92643249e5efe00b7d65d9236e86d41e9c66882970adadaa988b04eaa37e",
+      "imports": [
+        "__future__",
+        "argparse",
+        "csv",
+        "datetime",
+        "hashlib",
+        "json",
+        "pandas",
+        "pathlib",
+        "polars",
+        "pyarrow.parquet",
+        "statistics",
+        "time"
+      ],
+      "calls": [
+        {
+          "line": 47,
+          "call": "pl.scan_parquet(path).filter(pl.col('REPDTE').is_between(START, END)).group_by('REPDTE').agg(pl.len().alias('n'), pl.col('ASSET').mean().alias('mean_asset')).sort('REPDTE')"
+        },
+        {
+          "line": 67,
+          "call": "pl.read_parquet(src)"
+        },
+        {
+          "line": 70,
+          "call": "original.sort(['REPDTE', 'CERT']).write_parquet(target, compression='zstd', row_group_size=a.row_group_size, statistics=True)"
+        },
+        {
+          "line": 73,
+          "call": "pl.read_parquet(target)"
+        },
+        {
+          "line": 47,
+          "call": "pl.scan_parquet(path).filter(pl.col('REPDTE').is_between(START, END)).group_by('REPDTE').agg(pl.len().alias('n'), pl.col('ASSET').mean().alias('mean_asset'))"
+        },
+        {
+          "line": 47,
+          "call": "pl.scan_parquet(path).filter(pl.col('REPDTE').is_between(START, END)).group_by('REPDTE')"
+        },
+        {
+          "line": 47,
+          "call": "pl.scan_parquet(path).filter(pl.col('REPDTE').is_between(START, END))"
+        },
+        {
+          "line": 47,
+          "call": "pl.scan_parquet(path)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "03_PART3_SCALABLE_PROCESSING/code/07_interleaved_benchmark.py",
+      "sha256": "2eacce856e3160533fae5b6d12b0ecbd13c9ee20362df19ad728d54db93edaac",
+      "imports": [
+        "__future__",
+        "argparse",
+        "csv",
+        "hashlib",
+        "importlib.util",
+        "json",
+        "os",
+        "pandas",
+        "pathlib",
+        "polars",
+        "random",
+        "statistics",
+        "subprocess",
+        "sys",
+        "time"
+      ],
+      "calls": [
+        {
+          "line": 51,
+          "call": "sp.loader.exec_module(old)"
+        },
+        {
+          "line": 105,
+          "call": "sp.loader.exec_module(b)"
+        },
+        {
+          "line": 107,
+          "call": "sp1.loader.exec_module(s1)"
+        },
+        {
+          "line": 109,
+          "call": "sp2.loader.exec_module(s2)"
+        },
+        {
+          "line": 68,
+          "call": "subprocess.run(cmd, capture_output=True, text=True, timeout=180, check=False, env={**os.environ, 'POLARS_MAX_THREADS': str(args.threads), 'OMP_NUM_THREADS': str(args.threads)})"
+        },
+        {
+          "line": 72,
+          "call": "json.loads(report.read_text())"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "03_PART3_SCALABLE_PROCESSING/code/08_synthetic_scaling.py",
+      "sha256": "45c8fca6b0e7a0d9139c3145e20f497885c78f21495613b3f11b133e6103d14e",
+      "imports": [
+        "argparse",
+        "csv",
+        "hashlib",
+        "json",
+        "pandas",
+        "pathlib",
+        "polars",
+        "psutil",
+        "statistics",
+        "time"
+      ],
+      "calls": [
+        {
+          "line": 59,
+          "call": "pl.scan_parquet(input).select(pl.col('CERT').max().alias('mx'), pl.col('CERT').min().alias('mn'), pl.len().alias('n')).collect().row(0)"
+        },
+        {
+          "line": 22,
+          "call": "pl.scan_parquet([str(x) for x in paths])"
+        },
+        {
+          "line": 24,
+          "call": "pd.read_parquet(p, columns=['REPDTE', 'ASSET', 'EQ', 'CERT'])"
+        },
+        {
+          "line": 59,
+          "call": "pl.scan_parquet(input).select(pl.col('CERT').max().alias('mx'), pl.col('CERT').min().alias('mn'), pl.len().alias('n')).collect()"
+        },
+        {
+          "line": 74,
+          "call": "pl.scan_parquet(input).with_columns((pl.col('CERT') + i * stride).alias('CERT')).sink_parquet(target, compression='zstd')"
+        },
+        {
+          "line": 59,
+          "call": "pl.scan_parquet(input).select(pl.col('CERT').max().alias('mx'), pl.col('CERT').min().alias('mn'), pl.len().alias('n'))"
+        },
+        {
+          "line": 74,
+          "call": "pl.scan_parquet(input).with_columns((pl.col('CERT') + i * stride).alias('CERT'))"
+        },
+        {
+          "line": 59,
+          "call": "pl.scan_parquet(input)"
+        },
+        {
+          "line": 74,
+          "call": "pl.scan_parquet(input)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "03_PART3_SCALABLE_PROCESSING/code/09_spark_action_benchmark.py",
+      "sha256": "28d1bf5dda701ab48f91d534ca2eeae59d90e0065e22675a090710b4dccf316b",
+      "imports": [
+        "argparse",
+        "csv",
+        "importlib.util",
+        "json",
+        "pathlib",
+        "pyspark.sql",
+        "statistics",
+        "time"
+      ],
+      "calls": [
+        {
+          "line": 28,
+          "call": "spec.loader.exec_module(m)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "03_PART3_SCALABLE_PROCESSING/code/final_checks/01b_storage_empty_null.py",
+      "sha256": "3c54657508e93843f6481018e13cc2883560985270f3cdc1b1ca9cea7dc97f0c",
+      "imports": [
+        "__future__",
+        "argparse",
+        "calendar",
+        "collections",
+        "csv",
+        "datetime",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "platform",
+        "polars",
+        "psutil",
+        "random",
+        "shutil",
+        "statistics",
+        "subprocess",
+        "sys",
+        "threading",
+        "time",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 64,
+          "call": "json.loads(Path(path).read_text(encoding='utf-8-sig'))"
+        },
+        {
+          "line": 169,
+          "call": "pl.scan_parquet([str(p) for p in files], hive_partitioning=False)"
+        },
+        {
+          "line": 233,
+          "call": "json.loads(json.dumps(fingerprint(frame)))"
+        },
+        {
+          "line": 261,
+          "call": "subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8')"
+        },
+        {
+          "line": 101,
+          "call": "pl.scan_parquet(info['path'], hive_partitioning=False)"
+        },
+        {
+          "line": 106,
+          "call": "pl.scan_parquet(str(Path(info['path']) / '**/*.parquet'), hive_partitioning=True, hive_schema=hs)"
+        },
+        {
+          "line": 214,
+          "call": "pl.scan_parquet([str(p) for p in inputs], hive_partitioning=False).sink_parquet(yd / 'part-000.parquet', compression='zstd', compression_level=3, row_group_size=ROW_GROUP_SIZE)"
+        },
+        {
+          "line": 220,
+          "call": "pl.scan_parquet(p, hive_partitioning=False).sink_parquet(qd / 'part-000.parquet', compression='zstd', compression_level=3, row_group_size=ROW_GROUP_SIZE)"
+        },
+        {
+          "line": 214,
+          "call": "pl.scan_parquet([str(p) for p in inputs], hive_partitioning=False)"
+        },
+        {
+          "line": 220,
+          "call": "pl.scan_parquet(p, hive_partitioning=False)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "03_PART3_SCALABLE_PROCESSING/code/final_checks/02_reconcile_part2_evidence.py",
+      "sha256": "31bb943c9216187fab2aa7428fc274bd59a80077e76beb14007961d286d3d278",
+      "imports": [
+        "__future__",
+        "argparse",
+        "csv",
+        "io",
+        "json",
+        "pathlib",
+        "statistics",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 24,
+          "call": "json.loads(z.read('step2c_summary.json'))"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "03_PART3_SCALABLE_PROCESSING/code/final_checks/04_spark_parity_frozen.py",
+      "sha256": "bb144284a1d50f832f44b21438b938761480a0ec5ed3664199498313e4dbbddd",
+      "imports": [
+        "__future__",
+        "argparse",
+        "contextlib",
+        "csv",
+        "datetime",
+        "hashlib",
+        "io",
+        "json",
+        "math",
+        "os",
+        "pathlib",
+        "platform",
+        "pyspark",
+        "pyspark.sql",
+        "pyspark.sql.types",
+        "re",
+        "subprocess",
+        "sys",
+        "time",
+        "traceback",
+        "uuid",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 111,
+          "call": "json.loads(z.read('polars_audit.json'))"
+        },
+        {
+          "line": 130,
+          "call": "subprocess.run(['java', '-version'], capture_output=True, text=True, timeout=15, check=False)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "03_PART3_SCALABLE_PROCESSING/code/final_checks/06_layout_ablation_paired.py",
+      "sha256": "eacb8408521f7b5b57c4ac490bd8949c877b3ad33d2a20ae066a656bcede4ac3",
+      "imports": [
+        "__future__",
+        "argparse",
+        "csv",
+        "datetime",
+        "hashlib",
+        "json",
+        "math",
+        "pathlib",
+        "polars",
+        "pyarrow.parquet",
+        "random",
+        "statistics",
+        "time"
+      ],
+      "calls": [
+        {
+          "line": 44,
+          "call": "pl.scan_parquet(path).filter(pl.col('REPDTE').is_between(START, END)).group_by('REPDTE').agg(pl.len().alias('n'), pl.col('ASSET').mean().alias('mean_asset')).sort('REPDTE')"
+        },
+        {
+          "line": 69,
+          "call": "pl.read_parquet(original)"
+        },
+        {
+          "line": 71,
+          "call": "src.sort(['REPDTE', 'CERT']).write_parquet(target, compression=codec, row_group_size=v.row_group_size, statistics=True)"
+        },
+        {
+          "line": 74,
+          "call": "pl.read_parquet(target)"
+        },
+        {
+          "line": 44,
+          "call": "pl.scan_parquet(path).filter(pl.col('REPDTE').is_between(START, END)).group_by('REPDTE').agg(pl.len().alias('n'), pl.col('ASSET').mean().alias('mean_asset'))"
+        },
+        {
+          "line": 44,
+          "call": "pl.scan_parquet(path).filter(pl.col('REPDTE').is_between(START, END)).group_by('REPDTE')"
+        },
+        {
+          "line": 44,
+          "call": "pl.scan_parquet(path).filter(pl.col('REPDTE').is_between(START, END))"
+        },
+        {
+          "line": 44,
+          "call": "pl.scan_parquet(path)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "03_PART3_SCALABLE_PROCESSING/code/final_checks/07_interleaved_paired.py",
+      "sha256": "cdde3485c3b2d6ae938e15c6be0ecfd7f7b19f9a5cfdcddb7e13405c17260906",
+      "imports": [
+        "__future__",
+        "argparse",
+        "csv",
+        "hashlib",
+        "importlib.util",
+        "json",
+        "os",
+        "pandas",
+        "pathlib",
+        "polars",
+        "pyarrow",
+        "pyarrow.parquet",
+        "random",
+        "statistics",
+        "subprocess",
+        "sys",
+        "time"
+      ],
+      "calls": [
+        {
+          "line": 51,
+          "call": "sp.loader.exec_module(old)"
+        },
+        {
+          "line": 134,
+          "call": "sp.loader.exec_module(b)"
+        },
+        {
+          "line": 136,
+          "call": "sp1.loader.exec_module(s1)"
+        },
+        {
+          "line": 138,
+          "call": "sp2.loader.exec_module(s2)"
+        },
+        {
+          "line": 68,
+          "call": "subprocess.run(cmd, capture_output=True, text=True, timeout=180, check=False, env={**os.environ, 'POLARS_MAX_THREADS': str(args.threads), 'OMP_NUM_THREADS': str(args.threads), 'ARROW_NUM_THREADS': str(args.threads)})"
+        },
+        {
+          "line": 72,
+          "call": "json.loads(report.read_text())"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "03_PART3_SCALABLE_PROCESSING/code/final_checks/08_scaling_subprocess_peak.py",
+      "sha256": "060f027df09de0a5d79a3ff4e0203db4edd90d07ece7036784d94fc5e2338f0e",
+      "imports": [
+        "__future__",
+        "argparse",
+        "csv",
+        "datetime",
+        "hashlib",
+        "json",
+        "os",
+        "pandas",
+        "pathlib",
+        "polars",
+        "psutil",
+        "pyarrow",
+        "pyarrow.parquet",
+        "random",
+        "shutil",
+        "statistics",
+        "subprocess",
+        "sys",
+        "time"
+      ],
+      "calls": [
+        {
+          "line": 37,
+          "call": "pl.scan_parquet(original).select(pl.col('CERT').min().alias('mn'), pl.col('CERT').max().alias('mx'), pl.len().alias('n')).collect().row(0)"
+        },
+        {
+          "line": 103,
+          "call": "subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, env=env)"
+        },
+        {
+          "line": 46,
+          "call": "pl.scan_parquet(original).with_columns((pl.col('CERT') + i * stride).alias('CERT')).sink_parquet(target, compression='zstd')"
+        },
+        {
+          "line": 60,
+          "call": "pl.scan_parquet(paths).select('CERT', 'REPDTE', 'ASSET')"
+        },
+        {
+          "line": 37,
+          "call": "pl.scan_parquet(original).select(pl.col('CERT').min().alias('mn'), pl.col('CERT').max().alias('mx'), pl.len().alias('n')).collect()"
+        },
+        {
+          "line": 98,
+          "call": "json.loads(a.paths_json)"
+        },
+        {
+          "line": 46,
+          "call": "pl.scan_parquet(original).with_columns((pl.col('CERT') + i * stride).alias('CERT'))"
+        },
+        {
+          "line": 60,
+          "call": "pl.scan_parquet(paths)"
+        },
+        {
+          "line": 74,
+          "call": "pd.read_parquet(p, columns=['CERT', 'REPDTE', 'ASSET'])"
+        },
+        {
+          "line": 37,
+          "call": "pl.scan_parquet(original).select(pl.col('CERT').min().alias('mn'), pl.col('CERT').max().alias('mx'), pl.len().alias('n'))"
+        },
+        {
+          "line": 168,
+          "call": "json.loads(dest.read_text())"
+        },
+        {
+          "line": 46,
+          "call": "pl.scan_parquet(original)"
+        },
+        {
+          "line": 37,
+          "call": "pl.scan_parquet(original)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "03_PART3_SCALABLE_PROCESSING/code/final_checks/09_spark_action_rebuild.py",
+      "sha256": "cccd022544155acc0e111c31f3215c5e869140f7e44c3d0376428807f9ae488b",
+      "imports": [
+        "__future__",
+        "argparse",
+        "csv",
+        "importlib.util",
+        "json",
+        "pathlib",
+        "pyspark.sql",
+        "random",
+        "statistics",
+        "time"
+      ],
+      "calls": [
+        {
+          "line": 32,
+          "call": "sp.loader.exec_module(m)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "04_PART4_FEATURE_PIPELINE/code/part4_step01_reference_UNCHANGED.py",
+      "sha256": "a651be686ca57dc65f9e59e444cab99088ce010247fed56d8986a0b7939cc763",
+      "imports": [
+        "__future__",
+        "argparse",
+        "datetime",
+        "hashlib",
+        "io",
+        "json",
+        "pathlib",
+        "polars",
+        "sys",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 113,
+          "call": "pl.scan_parquet(pit_path)"
+        },
+        {
+          "line": 119,
+          "call": "pl.scan_parquet(clean_path).select('CERT', 'REPDTE', 'ASSET')"
+        },
+        {
+          "line": 209,
+          "call": "load_registry(args.bundle)"
+        },
+        {
+          "line": 95,
+          "call": "json.loads(archive.read('step2c_summary.json'))"
+        },
+        {
+          "line": 265,
+          "call": "part.write_parquet(args.out_dir / f'feature_label_{split}.parquet', compression='zstd')"
+        },
+        {
+          "line": 119,
+          "call": "pl.scan_parquet(clean_path)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "04_PART4_FEATURE_PIPELINE/code/part4_step03_pandas_oracle_UNCHANGED.py",
+      "sha256": "971e499ff79b71ddbf437d73fdd514177850c642e5a0a4bec092c896c8ef3668",
+      "imports": [
+        "__future__",
+        "argparse",
+        "datetime",
+        "hashlib",
+        "io",
+        "json",
+        "numpy",
+        "pandas",
+        "pathlib",
+        "sklearn.impute",
+        "sklearn.preprocessing",
+        "traceback",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 208,
+          "call": "json.loads(args.step01_summary.read_text(encoding='utf-8'))"
+        },
+        {
+          "line": 209,
+          "call": "json.loads(args.step02_audit.read_text(encoding='utf-8'))"
+        },
+        {
+          "line": 221,
+          "call": "pd.read_parquet(args.development, engine='pyarrow')"
+        },
+        {
+          "line": 241,
+          "call": "pd.read_parquet(args.pit, columns=RAW, engine='pyarrow')"
+        },
+        {
+          "line": 254,
+          "call": "pd.read_parquet(args.clean, columns=['CERT', 'REPDTE', 'ASSET'], engine='pyarrow')"
+        },
+        {
+          "line": 267,
+          "call": "load_registry(args.registry)"
+        },
+        {
+          "line": 184,
+          "call": "median.fit_transform(train[CONTINUOUS])"
+        },
+        {
+          "line": 185,
+          "call": "RobustScaler(quantile_range=(25, 75)).fit(X)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "04_PART4_FEATURE_PIPELINE/code/part4_v2_relabel_asof_gate.py",
+      "sha256": "7807ecebefca1a2d592d450c7c42930578e6d9b5086f39494cf83078c0ff13b3",
+      "imports": [
+        "__future__",
+        "argparse",
+        "datetime",
+        "hashlib",
+        "importlib.util",
+        "json",
+        "numpy",
+        "pandas",
+        "pathlib",
+        "polars",
+        "tempfile",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 65,
+          "call": "spec.loader.exec_module(module)"
+        },
+        {
+          "line": 116,
+          "call": "pl.read_parquet(args.clean, columns=['CERT', 'REPDTE', 'ASSET'])"
+        },
+        {
+          "line": 117,
+          "call": "pl.scan_parquet(args.pit)"
+        },
+        {
+          "line": 185,
+          "call": "pl.scan_parquet(clean_path)"
+        },
+        {
+          "line": 190,
+          "call": "pl.scan_parquet(pit_path).filter(pl.col('DECISION_DATE') <= pl.lit(DEV_END)).select(module.RAW_REPORT_FIELDS)"
+        },
+        {
+          "line": 241,
+          "call": "load_original_step01(args.step01_source)"
+        },
+        {
+          "line": 242,
+          "call": "module.load_registry(args.registry_zip)"
+        },
+        {
+          "line": 340,
+          "call": "primary.write_parquet(args.out_dir / 'development_primary_binary_v2.parquet', compression='zstd')"
+        },
+        {
+          "line": 341,
+          "call": "old.write_parquet(args.out_dir / 'development_legacy_censor_sensitivity_v2.parquet', compression='zstd')"
+        },
+        {
+          "line": 279,
+          "call": "pl.read_parquet(args.old_dev)"
+        },
+        {
+          "line": 382,
+          "call": "data.write_parquet(args.out_dir / 'development_failure_assistance_SENSITIVITY.parquet', compression='zstd')"
+        },
+        {
+          "line": 148,
+          "call": "pit.write_parquet(pp)"
+        },
+        {
+          "line": 190,
+          "call": "pl.scan_parquet(pit_path).filter(pl.col('DECISION_DATE') <= pl.lit(DEV_END))"
+        },
+        {
+          "line": 318,
+          "call": "spec.loader.exec_module(oracle)"
+        },
+        {
+          "line": 319,
+          "call": "pd.read_parquet(args.clean, columns=['CERT', 'REPDTE', 'ASSET'])"
+        },
+        {
+          "line": 151,
+          "call": "frame.write_parquet(cp)"
+        },
+        {
+          "line": 190,
+          "call": "pl.scan_parquet(pit_path)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "04_PART4_FEATURE_PIPELINE/code/part4_v2_train_only_pipeline.py",
+      "sha256": "168a08f0e3ffb0de3fa9e12e00c6671172a4ecb952fd8f67fc4254469f31b9a3",
+      "imports": [
+        "__future__",
+        "numpy",
+        "pandas",
+        "sklearn.base",
+        "sklearn.compose",
+        "sklearn.impute",
+        "sklearn.linear_model",
+        "sklearn.pipeline",
+        "sklearn.preprocessing"
+      ],
+      "calls": [
+        {
+          "line": 98,
+          "call": "tx.fit_transform(train)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "04_PART4_FEATURE_PIPELINE/code/reproduce_development_sensitivities.py",
+      "sha256": "45d71a563c6f9649515d428a17f3a0f92b345880cc388310a1eb322b1dea658e",
+      "imports": [
+        "argparse",
+        "hashlib",
+        "io",
+        "json",
+        "numpy",
+        "pandas",
+        "pathlib",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 50,
+          "call": "pd.read_parquet(path, columns=['CERT', 'FAILDATE', 'RESTYPE'])"
+        },
+        {
+          "line": 133,
+          "call": "pd.read_parquet(args.pit, columns=['CERT', 'DECISION_DATE'])"
+        },
+        {
+          "line": 140,
+          "call": "load_registry(args.registry)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "04_PART4_FEATURE_PIPELINE/code/verify_protocol_freeze.py",
+      "sha256": "46f8a332853235749701405d8b48352f5108439a9e2c95c1a4963df2d6fb9d4c",
+      "imports": [
+        "hashlib",
+        "json",
+        "pathlib"
+      ],
+      "calls": [
+        {
+          "line": 11,
+          "call": "json.loads(config.read_text(encoding='utf-8'))"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part4_v2_train_only_pipeline.py",
+      "sha256": "168a08f0e3ffb0de3fa9e12e00c6671172a4ecb952fd8f67fc4254469f31b9a3",
+      "imports": [
+        "__future__",
+        "numpy",
+        "pandas",
+        "sklearn.base",
+        "sklearn.compose",
+        "sklearn.impute",
+        "sklearn.linear_model",
+        "sklearn.pipeline",
+        "sklearn.preprocessing"
+      ],
+      "calls": [
+        {
+          "line": 98,
+          "call": "tx.fit_transform(train)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step01_baseline_dev_only.py",
+      "sha256": "7aa0d432ce85d72ea3af7e16f6085f3622f218db27ece3330c9961217ba84253",
+      "imports": [
+        "__future__",
+        "argparse",
+        "datetime",
+        "hashlib",
+        "json",
+        "math",
+        "numpy",
+        "os",
+        "pandas",
+        "pathlib",
+        "platform",
+        "sklearn",
+        "sklearn.compose",
+        "sklearn.impute",
+        "sklearn.linear_model",
+        "sklearn.metrics",
+        "sklearn.pipeline",
+        "sklearn.preprocessing",
+        "sys",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 62,
+          "call": "json.loads(path.read_text(encoding='utf-8'))"
+        },
+        {
+          "line": 143,
+          "call": "model.fit(train[['equity_to_assets']], train['Y_4Q'].to_numpy(dtype=np.int8))"
+        },
+        {
+          "line": 220,
+          "call": "baseline.fit(train[['equity_to_assets']], train['Y_4Q'])"
+        },
+        {
+          "line": 224,
+          "call": "baseline.predict_proba(val_poison)"
+        },
+        {
+          "line": 249,
+          "call": "pd.read_parquet(args.dev)"
+        },
+        {
+          "line": 151,
+          "call": "model.predict_proba(valid[['equity_to_assets']])"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step02_hgb_grid_dev.py",
+      "sha256": "79d2d6d2f1c8505c444db5dd419a5f90175058e91dc13187c299ab94f097581c",
+      "imports": [
+        "__future__",
+        "argparse",
+        "gc",
+        "hashlib",
+        "json",
+        "math",
+        "numpy",
+        "os",
+        "pandas",
+        "part4_v2_train_only_pipeline",
+        "part5_step01_baseline_dev_only",
+        "pathlib",
+        "platform",
+        "sklearn",
+        "sklearn.ensemble",
+        "sklearn.metrics",
+        "sklearn.pipeline",
+        "sys",
+        "time",
+        "warnings",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 122,
+          "call": "model.fit(xtr, tr.Y_4Q.to_numpy(dtype=np.int8))"
+        },
+        {
+          "line": 261,
+          "call": "pd.read_parquet(a.dev)"
+        },
+        {
+          "line": 109,
+          "call": "json.loads(rowpath.read_text(encoding='utf-8'))"
+        },
+        {
+          "line": 137,
+          "call": "model.predict_proba(xva)"
+        },
+        {
+          "line": 188,
+          "call": "(out / 'predictions').glob('*.npz')"
+        },
+        {
+          "line": 225,
+          "call": "model.fit(d.iloc[:400], y[:400])"
+        },
+        {
+          "line": 231,
+          "call": "model.predict_proba(noisy)"
+        },
+        {
+          "line": 85,
+          "call": "np.load(path, allow_pickle=False)"
+        },
+        {
+          "line": 111,
+          "call": "np.load(path, allow_pickle=False)"
+        },
+        {
+          "line": 225,
+          "call": "model.predict_proba(d.iloc[400:])"
+        },
+        {
+          "line": 258,
+          "call": "json.loads(metap.read_text())"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step02_logistic_grid_dev.py",
+      "sha256": "d512d44f6efb049b8f9290a93a458ac21140bbce0eae8b0d070438f906dd1c87",
+      "imports": [
+        "__future__",
+        "argparse",
+        "datetime",
+        "gc",
+        "hashlib",
+        "json",
+        "math",
+        "numpy",
+        "os",
+        "pandas",
+        "part4_v2_train_only_pipeline",
+        "part5_step01_baseline_dev_only",
+        "pathlib",
+        "platform",
+        "sklearn",
+        "sklearn.exceptions",
+        "sklearn.linear_model",
+        "sklearn.metrics",
+        "sklearn.pipeline",
+        "sys",
+        "time",
+        "warnings",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 267,
+          "call": "pd.read_parquet(args.dev)"
+        },
+        {
+          "line": 110,
+          "call": "json.loads(row_path.read_text(encoding='utf-8'))"
+        },
+        {
+          "line": 127,
+          "call": "model.fit(Xtr, ytr)"
+        },
+        {
+          "line": 147,
+          "call": "model.predict_proba(Xva)"
+        },
+        {
+          "line": 196,
+          "call": "(out / 'predictions').glob('*.npz')"
+        },
+        {
+          "line": 232,
+          "call": "model.fit(a.iloc[:500], y[:500])"
+        },
+        {
+          "line": 236,
+          "call": "model.predict_proba(aa)"
+        },
+        {
+          "line": 87,
+          "call": "np.load(dest, allow_pickle=False)"
+        },
+        {
+          "line": 112,
+          "call": "np.load(pred_path, allow_pickle=False)"
+        },
+        {
+          "line": 232,
+          "call": "model.predict_proba(a.iloc[500:])"
+        },
+        {
+          "line": 264,
+          "call": "json.loads(meta.read_text())"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step03_development_policy.py",
+      "sha256": "63388bff8cfdd1d41dc459a98df6d68a8bea40c72f43fdc735decce4336df433",
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "datetime",
+        "hashlib",
+        "io",
+        "json",
+        "math",
+        "numpy",
+        "pandas",
+        "pathlib",
+        "sklearn.linear_model",
+        "sklearn.metrics",
+        "sys",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 54,
+          "call": "json.loads(z.read(manifest))"
+        },
+        {
+          "line": 78,
+          "call": "array_from_zip(z, f'predictions/{cfg}__{fold}.npz', 'score').astype(np.float64)"
+        },
+        {
+          "line": 199,
+          "call": "json.loads(zbase.read('part5_step01_audit.json'))"
+        },
+        {
+          "line": 371,
+          "call": "json.loads(pr.read_text(encoding='utf-8'))"
+        },
+        {
+          "line": 66,
+          "call": "np.load(io.BytesIO(z.read(name)), allow_pickle=False)"
+        },
+        {
+          "line": 71,
+          "call": "np.load(io.BytesIO(z.read(f'fold_keys/{fold}.npz')), allow_pickle=False)"
+        },
+        {
+          "line": 92,
+          "call": "pd.read_parquet(path)"
+        },
+        {
+          "line": 344,
+          "call": "cal.fit(logit(train.score), train.y)"
+        },
+        {
+          "line": 389,
+          "call": "pd.read_parquet(args.dev, columns=['CERT', 'Y_4Q'])"
+        },
+        {
+          "line": 346,
+          "call": "cal.predict_proba(logit(valid.score))"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step04_spark_mllib.py",
+      "sha256": "b434d34b53826b1b00686ab95d389c0f98f535d67d3a787e7b88bd1665ea9685",
+      "imports": [
+        "__future__",
+        "argparse",
+        "hashlib",
+        "io",
+        "json",
+        "numpy",
+        "os",
+        "pandas",
+        "pathlib",
+        "platform",
+        "pyspark",
+        "pyspark.ml",
+        "pyspark.ml.classification",
+        "pyspark.ml.feature",
+        "pyspark.ml.functions",
+        "pyspark.sql",
+        "sklearn.metrics",
+        "sys",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 43,
+          "call": "json.loads(Path(p).read_text(encoding='utf8'))"
+        },
+        {
+          "line": 59,
+          "call": "json.loads(z.read('part5_step01_audit.json'))"
+        },
+        {
+          "line": 173,
+          "call": "ml.fit(train)"
+        },
+        {
+          "line": 175,
+          "call": "fitted.transform(valid).select(F.col('CERT').cast('long').alias('CERT'), F.date_format(F.col('DECISION_DATE').cast('date'), 'yyyy-MM-dd').alias('DECISION_DATE'), F.col('Y_4Q').cast('int').alias('Y_4Q'), vector_to_array('probability')[1].alias('spark_score')).toPandas()"
+        },
+        {
+          "line": 180,
+          "call": "compare_predictions(pred, base)"
+        },
+        {
+          "line": 175,
+          "call": "fitted.transform(valid).select(F.col('CERT').cast('long').alias('CERT'), F.date_format(F.col('DECISION_DATE').cast('date'), 'yyyy-MM-dd').alias('DECISION_DATE'), F.col('Y_4Q').cast('int').alias('Y_4Q'), vector_to_array('probability')[1].alias('spark_score'))"
+        },
+        {
+          "line": 175,
+          "call": "fitted.transform(valid)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step05_refit_and_lock.py",
+      "sha256": "d7dc3ebbfc5ea2a9f69f6388716a18b3d9d1dd922d03a396bed3571aa82f9563",
+      "imports": [
+        "__future__",
+        "argparse",
+        "hashlib",
+        "io",
+        "joblib",
+        "json",
+        "numpy",
+        "os",
+        "pandas",
+        "part4_v2_train_only_pipeline",
+        "part5_step01_baseline_dev_only",
+        "pathlib",
+        "platform",
+        "sklearn",
+        "sklearn.ensemble",
+        "sklearn.pipeline",
+        "sys",
+        "tempfile",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 46,
+          "call": "json.loads(z.read(n).decode('utf-8'))"
+        },
+        {
+          "line": 271,
+          "call": "pd.read_parquet(args.dev)"
+        },
+        {
+          "line": 280,
+          "call": "model.fit(dev[FEATURES], dev['Y_4Q'].to_numpy(dtype='int8'))"
+        },
+        {
+          "line": 327,
+          "call": "json.loads(lockp.read_text(encoding='utf-8'))"
+        },
+        {
+          "line": 356,
+          "call": "m.fit(train, y)"
+        },
+        {
+          "line": 383,
+          "call": "refit(a)"
+        },
+        {
+          "line": 62,
+          "call": "load_json(z, 'part5_step01_audit.json')"
+        },
+        {
+          "line": 68,
+          "call": "load_json(z, 'part5_step02a_audit.json')"
+        },
+        {
+          "line": 72,
+          "call": "load_json(z, 'part5_step02b_audit.json')"
+        },
+        {
+          "line": 89,
+          "call": "load_json(z, 'part5_step03_audit.json')"
+        },
+        {
+          "line": 122,
+          "call": "load_json(z, 'part5_step04_audit.json')"
+        },
+        {
+          "line": 258,
+          "call": "json.loads(lockp.read_text(encoding='utf-8'))"
+        },
+        {
+          "line": 291,
+          "call": "model.predict_proba(probe)"
+        },
+        {
+          "line": 300,
+          "call": "joblib.load(tmp)"
+        },
+        {
+          "line": 359,
+          "call": "m.predict_proba(train.iloc[:6])"
+        },
+        {
+          "line": 368,
+          "call": "m.predict_proba(noisy)"
+        },
+        {
+          "line": 301,
+          "call": "reloaded.predict_proba(probe)"
+        },
+        {
+          "line": 332,
+          "call": "(out / 'final_hgb_refit.joblib').stat()"
+        },
+        {
+          "line": 363,
+          "call": "joblib.load(path).predict_proba(train.iloc[:6])"
+        },
+        {
+          "line": 363,
+          "call": "joblib.load(path)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step06b2_one_time_final_evaluation.py",
+      "sha256": "7df7b706894413988e6b14fb75db20f797ee9da86ee5f720b3e9cc462b989a96",
+      "imports": [
+        "__future__",
+        "argparse",
+        "datetime",
+        "gzip",
+        "hashlib",
+        "importlib.metadata",
+        "joblib",
+        "json",
+        "math",
+        "numpy",
+        "os",
+        "pandas",
+        "part4_v2_train_only_pipeline",
+        "pathlib",
+        "platform",
+        "sklearn.metrics",
+        "sys",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 99,
+          "call": "pd.read_parquet(path)"
+        },
+        {
+          "line": 259,
+          "call": "json.loads(Path(args.lock).read_text(encoding='utf8'))"
+        },
+        {
+          "line": 260,
+          "call": "json.loads((home / 'part5_protocol_freeze.json').read_text(encoding='utf8'))"
+        },
+        {
+          "line": 321,
+          "call": "joblib.load(args.model)"
+        },
+        {
+          "line": 323,
+          "call": "pd.read_parquet(args.cohort)"
+        },
+        {
+          "line": 263,
+          "call": "json.loads(z.read('part5_step06b1_cohort_audit.json'))"
+        },
+        {
+          "line": 266,
+          "call": "json.loads(z.read('part5_step06a_pretest_audit.json'))"
+        },
+        {
+          "line": 351,
+          "call": "model.predict_proba(X)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/step04_independent_audit.py",
+      "sha256": "fda6c4e61bdeb78356520346382515cc865d78fb03e122d3a818ea6a72377f63",
+      "imports": [
+        "argparse",
+        "hashlib",
+        "io",
+        "json",
+        "numpy",
+        "pandas",
+        "pathlib",
+        "sklearn.metrics",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 12,
+          "call": "json.loads(z.read('part5_step04_audit.json'))"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/test_part5_step03.py",
+      "sha256": "2769ca218feb45d332a6092050877dd6882880318c91663dd0dbc7c2c99156e6",
+      "imports": [
+        "itertools",
+        "numpy",
+        "pandas",
+        "part5_step03_development_policy",
+        "unittest"
+      ],
+      "calls": [],
+      "science_source": true
+    },
+    {
+      "file": "05_PART5_MODELLING_VALIDATION/code/postscore_audits/part4_step03_pandas_oracle_UNCHANGED.py",
+      "sha256": "971e499ff79b71ddbf437d73fdd514177850c642e5a0a4bec092c896c8ef3668",
+      "imports": [
+        "__future__",
+        "argparse",
+        "datetime",
+        "hashlib",
+        "io",
+        "json",
+        "numpy",
+        "pandas",
+        "pathlib",
+        "sklearn.impute",
+        "sklearn.preprocessing",
+        "traceback",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 208,
+          "call": "json.loads(args.step01_summary.read_text(encoding='utf-8'))"
+        },
+        {
+          "line": 209,
+          "call": "json.loads(args.step02_audit.read_text(encoding='utf-8'))"
+        },
+        {
+          "line": 221,
+          "call": "pd.read_parquet(args.development, engine='pyarrow')"
+        },
+        {
+          "line": 241,
+          "call": "pd.read_parquet(args.pit, columns=RAW, engine='pyarrow')"
+        },
+        {
+          "line": 254,
+          "call": "pd.read_parquet(args.clean, columns=['CERT', 'REPDTE', 'ASSET'], engine='pyarrow')"
+        },
+        {
+          "line": 267,
+          "call": "load_registry(args.registry)"
+        },
+        {
+          "line": 184,
+          "call": "median.fit_transform(train[CONTINUOUS])"
+        },
+        {
+          "line": 185,
+          "call": "RobustScaler(quantile_range=(25, 75)).fit(X)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "05_PART5_MODELLING_VALIDATION/code/postscore_audits/part4_v2_train_only_pipeline.py",
+      "sha256": "168a08f0e3ffb0de3fa9e12e00c6671172a4ecb952fd8f67fc4254469f31b9a3",
+      "imports": [
+        "__future__",
+        "numpy",
+        "pandas",
+        "sklearn.base",
+        "sklearn.compose",
+        "sklearn.impute",
+        "sklearn.linear_model",
+        "sklearn.pipeline",
+        "sklearn.preprocessing"
+      ],
+      "calls": [
+        {
+          "line": 98,
+          "call": "tx.fit_transform(train)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "05_PART5_MODELLING_VALIDATION/code/postscore_audits/part5_dev_permutation.py",
+      "sha256": "48fbf053228c883e7036790d6768b8b7b2e742ae5a25b04c867fd39bf586d151",
+      "imports": [
+        "__future__",
+        "argparse",
+        "hashlib",
+        "json",
+        "numpy",
+        "pandas",
+        "part4_v2_train_only_pipeline",
+        "pathlib",
+        "sklearn.ensemble",
+        "sklearn.metrics",
+        "sklearn.pipeline",
+        "sys",
+        "time"
+      ],
+      "calls": [
+        {
+          "line": 39,
+          "call": "pd.read_parquet(args.dev)"
+        },
+        {
+          "line": 62,
+          "call": "m.fit(tr[FEATURES], tr.Y_4Q.to_numpy(dtype=np.int8))"
+        },
+        {
+          "line": 55,
+          "call": "np.load(refbase / 'fold_keys' / f'{name}.npz', allow_pickle=False)"
+        },
+        {
+          "line": 63,
+          "call": "m.predict_proba(va[FEATURES])"
+        },
+        {
+          "line": 64,
+          "call": "np.load(refbase / 'predictions' / f'{HGB}__{name}.npz', allow_pickle=False)"
+        },
+        {
+          "line": 83,
+          "call": "m.predict_proba(vx)"
+        },
+        {
+          "line": 90,
+          "call": "m.predict_proba(shifted)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "05_PART5_MODELLING_VALIDATION/code/postscore_audits/part5_test_oracle_postscore.py",
+      "sha256": "9958a8e54059f182d0d6f7bcf22374850c6365dc960ad2073ed8c69b5a030c59",
+      "imports": [
+        "__future__",
+        "argparse",
+        "hashlib",
+        "json",
+        "numpy",
+        "pandas",
+        "part4_v2_train_only_pipeline",
+        "pathlib"
+      ],
+      "calls": [
+        {
+          "line": 42,
+          "call": "pd.read_parquet(a.cohort)"
+        },
+        {
+          "line": 59,
+          "call": "pd.read_parquet(a.failures)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "05_PART5_MODELLING_VALIDATION/code/postscore_audits/test_cost_weighted_postscore.py",
+      "sha256": "173f81312bebe6b0b36838fb6d4415034f0f216e63070af760934eb757bf1e2f",
+      "imports": [
+        "argparse",
+        "hashlib",
+        "json",
+        "numpy",
+        "pandas",
+        "pathlib"
+      ],
+      "calls": [
+        {
+          "line": 25,
+          "call": "pd.read_parquet(a.failures)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "05_PART5_MODELLING_VALIDATION/code/postscore_audits/test_feature_formula_oracle.py",
+      "sha256": "6941cd53108d9f9aed009798e7daecc86c6a5601a61e0d956d68ea9e9ec09da5",
+      "imports": [
+        "argparse",
+        "hashlib",
+        "json",
+        "numpy",
+        "pandas",
+        "part4_step03_pandas_oracle_UNCHANGED",
+        "pathlib"
+      ],
+      "calls": [
+        {
+          "line": 26,
+          "call": "pd.read_parquet(a.cohort)"
+        },
+        {
+          "line": 30,
+          "call": "pd.read_parquet(a.pit, columns=RAW)"
+        },
+        {
+          "line": 39,
+          "call": "pd.read_parquet(a.clean, columns=['CERT', 'REPDTE', 'ASSET'])"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "05_PART5_MODELLING_VALIDATION/code/recovered_cohort_producer/part4_step01_reference_UNCHANGED.py",
+      "sha256": "a651be686ca57dc65f9e59e444cab99088ce010247fed56d8986a0b7939cc763",
+      "imports": [
+        "__future__",
+        "argparse",
+        "datetime",
+        "hashlib",
+        "io",
+        "json",
+        "pathlib",
+        "polars",
+        "sys",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 113,
+          "call": "pl.scan_parquet(pit_path)"
+        },
+        {
+          "line": 119,
+          "call": "pl.scan_parquet(clean_path).select('CERT', 'REPDTE', 'ASSET')"
+        },
+        {
+          "line": 209,
+          "call": "load_registry(args.bundle)"
+        },
+        {
+          "line": 95,
+          "call": "json.loads(archive.read('step2c_summary.json'))"
+        },
+        {
+          "line": 265,
+          "call": "part.write_parquet(args.out_dir / f'feature_label_{split}.parquet', compression='zstd')"
+        },
+        {
+          "line": 119,
+          "call": "pl.scan_parquet(clean_path)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "05_PART5_MODELLING_VALIDATION/code/recovered_cohort_producer/part4_v2_train_only_pipeline.py",
+      "sha256": "168a08f0e3ffb0de3fa9e12e00c6671172a4ecb952fd8f67fc4254469f31b9a3",
+      "imports": [
+        "__future__",
+        "numpy",
+        "pandas",
+        "sklearn.base",
+        "sklearn.compose",
+        "sklearn.impute",
+        "sklearn.linear_model",
+        "sklearn.pipeline",
+        "sklearn.preprocessing"
+      ],
+      "calls": [
+        {
+          "line": 98,
+          "call": "tx.fit_transform(train)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "05_PART5_MODELLING_VALIDATION/code/recovered_cohort_producer/part5_step06b1_test_v2_cohort_audit.py",
+      "sha256": "104310892b23f4f95dd94270915183740adcdf2cb93884ae08e6c39192ef0773",
+      "imports": [
+        "__future__",
+        "argparse",
+        "datetime",
+        "hashlib",
+        "importlib.util",
+        "json",
+        "numpy",
+        "pandas",
+        "pathlib",
+        "platform",
+        "polars",
+        "sys",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 117,
+          "call": "json.loads((home / 'part5_protocol_freeze.json').read_text(encoding='utf8'))"
+        },
+        {
+          "line": 118,
+          "call": "json.loads(Path(args.lock).read_text(encoding='utf8'))"
+        },
+        {
+          "line": 134,
+          "call": "spec.loader.exec_module(module)"
+        },
+        {
+          "line": 138,
+          "call": "module.load_registry(home / 'part2_clean_review_bundle.zip')"
+        },
+        {
+          "line": 207,
+          "call": "filtered.write_parquet(parquet, compression='zstd', statistics=True, row_group_size=100000)"
+        },
+        {
+          "line": 112,
+          "call": "json.loads(z.read('part5_step06a_pretest_audit.json'))"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "05_PART5_MODELLING_VALIDATION/code/registered_lr_parity/part4_v2_train_only_pipeline.py",
+      "sha256": "168a08f0e3ffb0de3fa9e12e00c6671172a4ecb952fd8f67fc4254469f31b9a3",
+      "imports": [
+        "__future__",
+        "numpy",
+        "pandas",
+        "sklearn.base",
+        "sklearn.compose",
+        "sklearn.impute",
+        "sklearn.linear_model",
+        "sklearn.pipeline",
+        "sklearn.preprocessing"
+      ],
+      "calls": [
+        {
+          "line": 98,
+          "call": "tx.fit_transform(train)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "05_PART5_MODELLING_VALIDATION/code/registered_lr_parity/run_registered_spark_recheck.py",
+      "sha256": "4eff4e261da863efef728933fea4ef6f95e41cfb64b1c0dd00d31fc8b5139f5d",
+      "imports": [
+        "argparse",
+        "hashlib",
+        "json",
+        "pathlib"
+      ],
+      "calls": [],
+      "science_source": true
+    },
+    {
+      "file": "05_PART5_MODELLING_VALIDATION/code/registered_lr_parity/spark_registered_logistic_parity.py",
+      "sha256": "be65c001b3d6c13530e6ba8a3d9fc23f9edcd54c3668a463af1b1f1356fb97f2",
+      "imports": [
+        "__future__",
+        "argparse",
+        "hashlib",
+        "json",
+        "numpy",
+        "os",
+        "pandas",
+        "part4_v2_train_only_pipeline",
+        "pathlib",
+        "pyspark",
+        "pyspark.ml.classification",
+        "pyspark.ml.feature",
+        "pyspark.ml.functions",
+        "pyspark.sql",
+        "sklearn.exceptions",
+        "sklearn.linear_model",
+        "sklearn.metrics",
+        "sys",
+        "warnings"
+      ],
+      "calls": [
+        {
+          "line": 52,
+          "call": "pd.read_parquet(a.dev)"
+        },
+        {
+          "line": 58,
+          "call": "np.load(a.reference_dir / 'registered_fold1_keys.npz', allow_pickle=False)"
+        },
+        {
+          "line": 64,
+          "call": "prep.fit_transform(train[FEATURES])"
+        },
+        {
+          "line": 62,
+          "call": "np.load(a.reference_dir / 'registered_fold1_LR_scores.npz', allow_pickle=False)"
+        },
+        {
+          "line": 72,
+          "call": "original_skl.fit(xx, ytr)"
+        },
+        {
+          "line": 74,
+          "call": "original_skl.predict_proba(xv)"
+        },
+        {
+          "line": 90,
+          "call": "tight.fit(xtr, ytr)"
+        },
+        {
+          "line": 92,
+          "call": "tight.predict_proba(xva)"
+        },
+        {
+          "line": 118,
+          "call": "block.to_parquet(path, index=False)"
+        },
+        {
+          "line": 135,
+          "call": "lr.fit(tr)"
+        },
+        {
+          "line": 136,
+          "call": "fitted.transform(va).select('rowid', vector_to_array('probability').getItem(1).alias('p_spark')).toPandas().sort_values('rowid', kind='mergesort')"
+        },
+        {
+          "line": 142,
+          "call": "fitted.coefficients.toArray()"
+        },
+        {
+          "line": 145,
+          "call": "pd.DataFrame({'CERT': val.CERT.to_numpy(), 'DECISION_DATE': val.DECISION_DATE.to_numpy(), 'Y_4Q': yval, 'registered_sklearn_score': original, 'local_refit_sklearn_score': p_original_refit, 'tight_sklearn_score': ptight, 'Spark_score': pp}).to_csv(a.out / 'lr_parity_validation_scores.csv.gz', index=False, compression='gzip')"
+        },
+        {
+          "line": 136,
+          "call": "fitted.transform(va).select('rowid', vector_to_array('probability').getItem(1).alias('p_spark')).toPandas()"
+        },
+        {
+          "line": 136,
+          "call": "fitted.transform(va).select('rowid', vector_to_array('probability').getItem(1).alias('p_spark'))"
+        },
+        {
+          "line": 136,
+          "call": "fitted.transform(va)"
+        }
+      ],
+      "science_source": true
+    },
+    {
+      "file": "completed_analyses/ablation/ablation_runner.py",
+      "sha256": "39b8e997c0bc435c80f2112a423d3b0040b54d21affa0dc5343d7904f12fac48",
+      "imports": [
+        "argparse",
+        "csv",
+        "datetime",
+        "gc",
+        "hashlib",
+        "importlib.metadata",
+        "json",
+        "numpy",
+        "original.part4_v2_train_only_pipeline",
+        "original.part5_step01_baseline_dev_only",
+        "os",
+        "pandas",
+        "pathlib",
+        "platform",
+        "safety",
+        "sklearn",
+        "sklearn.ensemble",
+        "sklearn.metrics",
+        "sys",
+        "tempfile",
+        "threadpoolctl",
+        "time",
+        "traceback"
+      ],
+      "calls": [
+        {
+          "line": 110,
+          "call": "json.loads((HERE / 'CONFIG.json').read_text())"
+        },
+        {
+          "line": 82,
+          "call": "np.load(HERE / 'REF/fold_keys' / (fold + '.npz'), allow_pickle=False)"
+        },
+        {
+          "line": 86,
+          "call": "np.load(HERE / 'REF/predictions' / (config['full_config_id'] + '__' + fold + '.npz'), allow_pickle=False)"
+        },
+        {
+          "line": 123,
+          "call": "json.loads((HERE / 'RUNTIME_HASHES.json').read_text())"
+        },
+        {
+          "line": 125,
+          "call": "json.loads((HERE / 'REFERENCE_HASHES.json').read_text()).items()"
+        },
+        {
+          "line": 145,
+          "call": "pd.read_parquet(devpath)"
+        },
+        {
+          "line": 151,
+          "call": "load_reference(fold['id'], va, metrics, config)"
+        },
+        {
+          "line": 125,
+          "call": "json.loads((HERE / 'REFERENCE_HASHES.json').read_text())"
+        },
+        {
+          "line": 157,
+          "call": "load_reference(name, va, metrics, config)"
+        },
+        {
+          "line": 160,
+          "call": "prep.fit_transform(tr[FEATURES])"
+        },
+        {
+          "line": 173,
+          "call": "reserve_fit_attempt(claimfile, claim, name)"
+        },
+        {
+          "line": 175,
+          "call": "model.fit(xtr, tr.Y_4Q.to_numpy(dtype=np.int8))"
+        },
+        {
+          "line": 177,
+          "call": "model.predict_proba(xva)"
+        }
+      ],
+      "science_source": false
+    },
+    {
+      "file": "completed_analyses/ablation/original/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "imports": [],
+      "calls": [],
+      "science_source": false
+    },
+    {
+      "file": "completed_analyses/ablation/original/part4_v2_train_only_pipeline.py",
+      "sha256": "168a08f0e3ffb0de3fa9e12e00c6671172a4ecb952fd8f67fc4254469f31b9a3",
+      "imports": [
+        "__future__",
+        "numpy",
+        "pandas",
+        "sklearn.base",
+        "sklearn.compose",
+        "sklearn.impute",
+        "sklearn.linear_model",
+        "sklearn.pipeline",
+        "sklearn.preprocessing"
+      ],
+      "calls": [
+        {
+          "line": 98,
+          "call": "tx.fit_transform(train)"
+        }
+      ],
+      "science_source": false
+    },
+    {
+      "file": "completed_analyses/ablation/original/part5_step01_baseline_dev_only.py",
+      "sha256": "7aa0d432ce85d72ea3af7e16f6085f3622f218db27ece3330c9961217ba84253",
+      "imports": [
+        "__future__",
+        "argparse",
+        "datetime",
+        "hashlib",
+        "json",
+        "math",
+        "numpy",
+        "os",
+        "pandas",
+        "pathlib",
+        "platform",
+        "sklearn",
+        "sklearn.compose",
+        "sklearn.impute",
+        "sklearn.linear_model",
+        "sklearn.metrics",
+        "sklearn.pipeline",
+        "sklearn.preprocessing",
+        "sys",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 62,
+          "call": "json.loads(path.read_text(encoding='utf-8'))"
+        },
+        {
+          "line": 143,
+          "call": "model.fit(train[['equity_to_assets']], train['Y_4Q'].to_numpy(dtype=np.int8))"
+        },
+        {
+          "line": 220,
+          "call": "baseline.fit(train[['equity_to_assets']], train['Y_4Q'])"
+        },
+        {
+          "line": 224,
+          "call": "baseline.predict_proba(val_poison)"
+        },
+        {
+          "line": 249,
+          "call": "pd.read_parquet(args.dev)"
+        },
+        {
+          "line": 151,
+          "call": "model.predict_proba(valid[['equity_to_assets']])"
+        }
+      ],
+      "science_source": false
+    },
+    {
+      "file": "completed_analyses/ablation/original/part5_step02_hgb_grid_dev.py",
+      "sha256": "79d2d6d2f1c8505c444db5dd419a5f90175058e91dc13187c299ab94f097581c",
+      "imports": [
+        "__future__",
+        "argparse",
+        "gc",
+        "hashlib",
+        "json",
+        "math",
+        "numpy",
+        "os",
+        "pandas",
+        "part4_v2_train_only_pipeline",
+        "part5_step01_baseline_dev_only",
+        "pathlib",
+        "platform",
+        "sklearn",
+        "sklearn.ensemble",
+        "sklearn.metrics",
+        "sklearn.pipeline",
+        "sys",
+        "time",
+        "warnings",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 122,
+          "call": "model.fit(xtr, tr.Y_4Q.to_numpy(dtype=np.int8))"
+        },
+        {
+          "line": 261,
+          "call": "pd.read_parquet(a.dev)"
+        },
+        {
+          "line": 109,
+          "call": "json.loads(rowpath.read_text(encoding='utf-8'))"
+        },
+        {
+          "line": 137,
+          "call": "model.predict_proba(xva)"
+        },
+        {
+          "line": 188,
+          "call": "(out / 'predictions').glob('*.npz')"
+        },
+        {
+          "line": 225,
+          "call": "model.fit(d.iloc[:400], y[:400])"
+        },
+        {
+          "line": 231,
+          "call": "model.predict_proba(noisy)"
+        },
+        {
+          "line": 85,
+          "call": "np.load(path, allow_pickle=False)"
+        },
+        {
+          "line": 111,
+          "call": "np.load(path, allow_pickle=False)"
+        },
+        {
+          "line": 225,
+          "call": "model.predict_proba(d.iloc[400:])"
+        },
+        {
+          "line": 258,
+          "call": "json.loads(metap.read_text())"
+        }
+      ],
+      "science_source": false
+    },
+    {
+      "file": "completed_analyses/ablation/safety.py",
+      "sha256": "a5c4c273b33ed6c210ae78f9dfb5ec39984cfa2c651c6c381d061a7da6fff705",
+      "imports": [
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "sys"
+      ],
+      "calls": [],
+      "science_source": false
+    },
+    {
+      "file": "completed_analyses/ablation/start_windows.py",
+      "sha256": "76d2f8feb37537b8e003d0e6ce2ee19510c4455bb965e4e5794e271c9bbc93fe",
+      "imports": [
+        "csv",
+        "datetime",
+        "hashlib",
+        "importlib.metadata",
+        "json",
+        "os",
+        "pathlib",
+        "shutil",
+        "subprocess",
+        "sys",
+        "traceback",
+        "uuid",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 14,
+          "call": "json.loads(claim.read_text(encoding='utf-8'))"
+        },
+        {
+          "line": 31,
+          "call": "json.loads((HERE / 'CONFIG.json').read_text())"
+        },
+        {
+          "line": 64,
+          "call": "subprocess.Popen(['explorer.exe', '/select,' + str(zpath)])"
+        },
+        {
+          "line": 18,
+          "call": "subprocess.Popen(['explorer.exe', str(folder)])"
+        },
+        {
+          "line": 36,
+          "call": "subprocess.Popen(args, env=env, stdout=subprocess.PIPE, stderr=stderr, text=True, encoding='utf-8', bufsize=1)"
+        },
+        {
+          "line": 41,
+          "call": "json.loads(record.read_text())"
+        },
+        {
+          "line": 32,
+          "call": "json.loads((HERE / 'RUNTIME_HASHES.json').read_text())"
+        }
+      ],
+      "science_source": false
+    },
+    {
+      "file": "completed_analyses/ablation/tests_no_model_fit.py",
+      "sha256": "6e26f823d71159ee7915683a4b3d75e951e01f0461f04c554826d0471a86bfef",
+      "imports": [
+        "ablation_runner",
+        "json",
+        "numpy",
+        "pandas",
+        "pathlib",
+        "safety",
+        "sklearn.ensemble",
+        "tempfile",
+        "unittest",
+        "unittest.mock"
+      ],
+      "calls": [
+        {
+          "line": 11,
+          "call": "json.loads((a.HERE / 'CONFIG.json').read_text())"
+        },
+        {
+          "line": 23,
+          "call": "prep.fit_transform(data)"
+        },
+        {
+          "line": 32,
+          "call": "prep.fit(train)"
+        },
+        {
+          "line": 84,
+          "call": "json.loads((a.HERE / 'REF/part5_protocol_freeze.json').read_text())"
+        },
+        {
+          "line": 73,
+          "call": "prep.fit_transform(self.sample())"
+        },
+        {
+          "line": 80,
+          "call": "reserve_fit_attempt(path, value, 'fourth_forbidden')"
+        },
+        {
+          "line": 79,
+          "call": "reserve_fit_attempt(path, value, fold)"
+        },
+        {
+          "line": 81,
+          "call": "json.loads(path.read_text())"
+        }
+      ],
+      "science_source": false
+    },
+    {
+      "file": "completed_analyses/development_ci/CODE/paired_ci.py",
+      "sha256": "9006463c19f50ab34558625dc908fd178b7a441f9221762662d9b0c5c23e2211",
+      "imports": [
+        "argparse",
+        "csv",
+        "hashlib",
+        "json",
+        "numpy",
+        "pandas",
+        "pathlib",
+        "platform",
+        "sklearn.metrics",
+        "sys",
+        "threadpoolctl",
+        "time"
+      ],
+      "calls": [
+        {
+          "line": 66,
+          "call": "json.loads((ROOT / 'INPUT_HASHES.json').read_text())"
+        },
+        {
+          "line": 104,
+          "call": "json.loads((ROOT / 'METHOD_FIXED_BEFORE_RUN.json').read_text())"
+        },
+        {
+          "line": 106,
+          "call": "load()"
+        },
+        {
+          "line": 77,
+          "call": "np.load(ROOT / 'INPUTS' / folder / 'fold_keys' / (fold + '.npz'), allow_pickle=False)"
+        },
+        {
+          "line": 79,
+          "call": "np.load(ROOT / 'INPUTS' / folder / 'predictions' / (config + '__' + fold + '.npz'), allow_pickle=False)"
+        }
+      ],
+      "science_source": false
+    },
+    {
+      "file": "completed_analyses/test_ci/bootstrap_locked_scores.py",
+      "sha256": "62774b14633e51ccde69a0c02888e43961eeec999822bd3866245bfa7c8d5ef6",
+      "imports": [
+        "__future__",
+        "argparse",
+        "hashlib",
+        "json",
+        "math",
+        "numpy",
+        "pandas",
+        "pathlib",
+        "sklearn.metrics"
+      ],
+      "calls": [
+        {
+          "line": 53,
+          "call": "json.loads(files.read_text(encoding='utf-8'))"
+        }
+      ],
+      "science_source": false
+    },
+    {
+      "file": "completed_analyses/test_ci/reproduce_saved_posthoc.py",
+      "sha256": "e245b7c440194244a2ff80918fb090a1da068aada8805d5070caeaf14ef24abd",
+      "imports": [
+        "argparse",
+        "hashlib",
+        "json",
+        "numpy",
+        "pandas",
+        "pathlib",
+        "platform",
+        "sys",
+        "threadpoolctl",
+        "time"
+      ],
+      "calls": [
+        {
+          "line": 21,
+          "call": "json.loads((E / '008_NEW_POSTHOC_BOOTSTRAP_RESULTS.json').read_text())"
+        }
+      ],
+      "science_source": false
+    },
+    {
+      "file": "run.py",
+      "sha256": "83a2514046010be5f6ac51ea2b736e59d94252f8713e355f0597a1579b2b9b12",
+      "imports": [
+        "sys",
+        "workflow.engine"
+      ],
+      "calls": [],
+      "science_source": false
+    },
+    {
+      "file": "tests/test_continuous_contracts.py",
+      "sha256": "19c8439ce053424726c56107cb307788f38f027123ae2065bf21af2d821b8ee2",
+      "imports": [
+        "argparse",
+        "csv",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "sys",
+        "tempfile",
+        "unittest",
+        "unittest.mock",
+        "workflow",
+        "workflow.common",
+        "workflow.continuous_compare",
+        "workflow.continuous_contract",
+        "workflow.engine",
+        "workflow.offline_part2b"
+      ],
+      "calls": [
+        {
+          "line": 114,
+          "call": "load_native()"
+        },
+        {
+          "line": 122,
+          "call": "load_native()"
+        },
+        {
+          "line": 131,
+          "call": "load_native()"
+        },
+        {
+          "line": 137,
+          "call": "load_native()"
+        },
+        {
+          "line": 61,
+          "call": "load_native().input_signature(base)"
+        },
+        {
+          "line": 61,
+          "call": "load_native()"
+        }
+      ],
+      "science_source": false
+    },
+    {
+      "file": "tests/test_failure_export.py",
+      "sha256": "af96cb2728a52833e3bab88d140192579f3e553b18bf69d8a0b03780153d7bc7",
+      "imports": [
+        "argparse",
+        "json",
+        "pathlib",
+        "tempfile",
+        "unittest",
+        "unittest.mock",
+        "workflow",
+        "workflow.common"
+      ],
+      "calls": [
+        {
+          "line": 18,
+          "call": "json.loads((out / 'REPLAY_RESULT.json').read_text())"
+        },
+        {
+          "line": 37,
+          "call": "json.loads((out / 'REPLAY_RESULT.json').read_text())"
+        }
+      ],
+      "science_source": false
+    },
+    {
+      "file": "tests/test_release_contracts.py",
+      "sha256": "161d88e390c9b5630464479d88e24bb391022a41a80fe242ac33a2f03d336f0d",
+      "imports": [
+        "copy",
+        "json",
+        "math",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "tempfile",
+        "unittest",
+        "unittest.mock",
+        "workflow",
+        "workflow.compare",
+        "workflow.engine",
+        "workflow.policy"
+      ],
+      "calls": [
+        {
+          "line": 41,
+          "call": "subprocess.run([sys.executable, '-B', '-c', program], cwd=common.ROOT, capture_output=True, text=True)"
+        },
+        {
+          "line": 47,
+          "call": "json.loads((common.ROOT / 'config/default.json').read_text(encoding='utf-8'))"
+        },
+        {
+          "line": 53,
+          "call": "common.load_config(path)"
+        },
+        {
+          "line": 44,
+          "call": "json.loads(child.stdout)"
+        }
+      ],
+      "science_source": false
+    },
+    {
+      "file": "workflow/__init__.py",
+      "sha256": "bde026e2e09df8bad33050a1344d6000e42eac7a411acdd731dd818255623f33",
+      "imports": [],
+      "calls": [],
+      "science_source": false
+    },
+    {
+      "file": "workflow/closeout_checks.py",
+      "sha256": "c8a22ffb0f4cc423ba0e80b5a476b3f64500da78235ec3b51f8d7474bedffe40",
+      "imports": [
+        "argparse",
+        "datetime",
+        "hashlib",
+        "importlib.metadata",
+        "json",
+        "os",
+        "pathlib",
+        "platform",
+        "subprocess",
+        "sys",
+        "workflow.common"
+      ],
+      "calls": [
+        {
+          "line": 37,
+          "call": "subprocess.run(cmd, cwd=ROOT, env=env, stdout=stdout, stderr=stderr)"
+        }
+      ],
+      "science_source": false
+    },
+    {
+      "file": "workflow/common.py",
+      "sha256": "3309843f03ff70e05b295e76a8716845be88a3684b28fffd707db94c911b32f1",
+      "imports": [
+        "datetime",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "sys"
+      ],
+      "calls": [
+        {
+          "line": 9,
+          "call": "json.loads(Path(path).read_text(encoding='utf-8-sig'))"
+        }
+      ],
+      "science_source": false
+    },
+    {
+      "file": "workflow/compare.py",
+      "sha256": "0c76a33428ec0fce772ff8a4b50374fb0fcb53fea35f7bcd06d8d5512431599e",
+      "imports": [
+        "json",
+        "math",
+        "pathlib",
+        "polars",
+        "pyarrow.parquet",
+        "workflow.common"
+      ],
+      "calls": [
+        {
+          "line": 22,
+          "call": "pl.scan_parquet(new)"
+        },
+        {
+          "line": 22,
+          "call": "pl.scan_parquet(reference)"
+        }
+      ],
+      "science_source": false
+    },
+    {
+      "file": "workflow/compare_worker.py",
+      "sha256": "1d7128d935298b551fe2ce73e8a5a0810a775d7e36ddd565186aca5f5f49c313",
+      "imports": [
+        "argparse",
+        "os",
+        "pathlib",
+        "sys",
+        "tempfile",
+        "traceback",
+        "workflow.common",
+        "workflow.compare",
+        "workflow.policy"
+      ],
+      "calls": [],
+      "science_source": false
+    },
+    {
+      "file": "workflow/comparison_selftest.py",
+      "sha256": "739af85bea2263db5892f924528f9c53992b38e5652fbf292eba6b49f47632a2",
+      "imports": [
+        "argparse",
+        "os",
+        "pathlib",
+        "polars",
+        "pyarrow",
+        "pyarrow.parquet",
+        "sys",
+        "tempfile",
+        "traceback",
+        "workflow.common",
+        "workflow.compare"
+      ],
+      "calls": [],
+      "science_source": false
+    },
+    {
+      "file": "workflow/continuous.py",
+      "sha256": "941f2b5884581974befc4e81a2b288aad7350bc29a274c182374513d4d62c422",
+      "imports": [
+        "csv",
+        "datetime",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "traceback",
+        "uuid",
+        "workflow.common",
+        "workflow.continuous_contract",
+        "workflow.engine",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 176,
+          "call": "load_config(args.config)"
+        },
+        {
+          "line": 221,
+          "call": "subprocess.Popen(['explorer.exe', '/select,' + str(export)])"
+        }
+      ],
+      "science_source": false
+    },
+    {
+      "file": "workflow/continuous_compare.py",
+      "sha256": "ec00143f8978599a7a334d33a16ecb0f92b8157ca3b60d2e8771f3b357342cb3",
+      "imports": [
+        "argparse",
+        "collections",
+        "csv",
+        "hashlib",
+        "io",
+        "json",
+        "os",
+        "pathlib",
+        "sys",
+        "tempfile",
+        "traceback",
+        "workflow.common",
+        "workflow.compare",
+        "workflow.policy",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 27,
+          "call": "csv_payload(spec['new'], spec.get('new_member'))"
+        },
+        {
+          "line": 27,
+          "call": "csv_payload(spec['reference'], spec.get('reference_member'))"
+        },
+        {
+          "line": 17,
+          "call": "payload.decode('utf-8-sig')"
+        }
+      ],
+      "science_source": false
+    },
+    {
+      "file": "workflow/continuous_contract.py",
+      "sha256": "5e1f9e8d7151a1b6c743f34ec710b6d861a67e1e3e9fe1084af9a4441e2dc9a6",
+      "imports": [
+        "pathlib",
+        "workflow.common"
+      ],
+      "calls": [],
+      "science_source": false
+    },
+    {
+      "file": "workflow/continuous_worker.py",
+      "sha256": "7e53c279ad3e1ed58b11940e448848d9eb27d5839cf6e74c476da361f03485b2",
+      "imports": [
+        "argparse",
+        "os",
+        "pathlib",
+        "runpy",
+        "sys",
+        "tempfile",
+        "traceback",
+        "workflow.common",
+        "workflow.continuous_contract",
+        "workflow.offline_part2b",
+        "workflow.policy"
+      ],
+      "calls": [],
+      "science_source": false
+    },
+    {
+      "file": "workflow/controller_smoke_test.py",
+      "sha256": "8e6f88960c6e6bf19ba08c807d51f8d8d1611825867c6f3a33139b43e427a49a",
+      "imports": [
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 8,
+          "call": "subprocess.run([sys.executable, '-B', str(ROOT / 'workflow/windows_start.py')], capture_output=True, text=True, env={**os.environ, 'USERPROFILE': '/workspace/NO_WINDOWS_INPUT_PROFILE', 'LOCALAPPDATA': str(BASE), 'PYTHONDONTWRITEBYTECODE': '1', 'PYTHONUTF8': '1'})"
+        },
+        {
+          "line": 14,
+          "call": "json.loads(archive.read('REPLAY_RESULT.json'))"
+        }
+      ],
+      "science_source": false
+    },
+    {
+      "file": "workflow/engine.py",
+      "sha256": "423f9e6b7b6b288c4017656d0e5f5c2e696f890bb02471f87ba3911ad6f17b3a",
+      "imports": [
+        "argparse",
+        "ast",
+        "csv",
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "platform",
+        "shutil",
+        "subprocess",
+        "sys",
+        "traceback",
+        "uuid",
+        "workflow.common",
+        "workflow.continuous",
+        "workflow.policy",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 13,
+          "call": "subprocess.run([str(python), '-B', str(ROOT / 'workflow/environment_probe.py')], capture_output=True, text=True, timeout=45, env={**os.environ, 'PYTHONDONTWRITEBYTECODE': '1', 'PYTHONUTF8': '1'})"
+        },
+        {
+          "line": 16,
+          "call": "json.loads(child.stdout)"
+        },
+        {
+          "line": 171,
+          "call": "load_config(args.config)"
+        },
+        {
+          "line": 99,
+          "call": "subprocess.Popen(command, stdout=subprocess.PIPE, stderr=stderr, text=True, encoding='utf-8', bufsize=1, env=environment, cwd=cwd)"
+        },
+        {
+          "line": 230,
+          "call": "subprocess.Popen(['explorer.exe', '/select,' + str(export)])"
+        },
+        {
+          "line": 245,
+          "call": "load_config(args.config)"
+        }
+      ],
+      "science_source": false
+    },
+    {
+      "file": "workflow/environment_probe.py",
+      "sha256": "079e4a74fe071c9a5cc85e3a2b94ba51f7a92b71aea0ed9f88adb9f7ac234214",
+      "imports": [
+        "importlib.metadata",
+        "json",
+        "platform",
+        "sys"
+      ],
+      "calls": [],
+      "science_source": false
+    },
+    {
+      "file": "workflow/offline_part2b.py",
+      "sha256": "16fef8134f4ae3cc98b985306f521579524c5158dfe1fdbecae643feffed2fe6",
+      "imports": [
+        "importlib.util",
+        "pathlib",
+        "sys",
+        "workflow.common"
+      ],
+      "calls": [
+        {
+          "line": 16,
+          "call": "spec.loader.exec_module(module)"
+        },
+        {
+          "line": 34,
+          "call": "load_native()"
+        }
+      ],
+      "science_source": false
+    },
+    {
+      "file": "workflow/policy.py",
+      "sha256": "0baea04b8040bfb91db4cc6a0b36d19a7cde65b8ce6410361fc25ab759c55f89",
+      "imports": [
+        "os",
+        "pathlib",
+        "sys",
+        "workflow.common"
+      ],
+      "calls": [],
+      "science_source": false
+    },
+    {
+      "file": "workflow/release_audit.py",
+      "sha256": "8ea540ca5a8db2b6ac428bf28943ca5f4b4d99374d64de9a30b49579e646cfe3",
+      "imports": [
+        "argparse",
+        "ast",
+        "csv",
+        "json",
+        "os",
+        "pathlib",
+        "sys",
+        "workflow.common"
+      ],
+      "calls": [],
+      "science_source": false
+    },
+    {
+      "file": "workflow/test_recorder.py",
+      "sha256": "d02e4ba90fb699e10fd64145c7bd20355535f80c4e3bfc5293a6092aee843a66",
+      "imports": [
+        "argparse",
+        "datetime",
+        "hashlib",
+        "importlib.metadata",
+        "json",
+        "os",
+        "pathlib",
+        "platform",
+        "subprocess",
+        "sys"
+      ],
+      "calls": [
+        {
+          "line": 25,
+          "call": "subprocess.run(command, cwd=ROOT, stdout=stdout, stderr=stderr, env={**os.environ, 'PYTHONDONTWRITEBYTECODE': '1', 'PYTHONUTF8': '1'})"
+        },
+        {
+          "line": 11,
+          "call": "json.loads((ROOT / 'config/release_tests.json').read_text())"
+        }
+      ],
+      "science_source": false
+    },
+    {
+      "file": "workflow/windows_start.py",
+      "sha256": "f57d5cc0e650b9bad7502c3713e4b5ab3a6405a61e43b43f9dd84ad1944c7180",
+      "imports": [
+        "datetime",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "traceback",
+        "uuid",
+        "zipfile"
+      ],
+      "calls": [
+        {
+          "line": 17,
+          "call": "subprocess.Popen(command, stdout=subprocess.PIPE, stderr=stderr, text=True, encoding='utf-8', bufsize=1, env={**os.environ, 'PYTHONDONTWRITEBYTECODE': '1', 'PYTHONUTF8': '1'})"
+        },
+        {
+          "line": 32,
+          "call": "subprocess.Popen(['explorer.exe', '/select,' + str(exported)])"
+        }
+      ],
+      "science_source": false
+    },
+    {
+      "file": "workflow/worker.py",
+      "sha256": "94e82c8de557fa4de2127bd956a8dbca293b3005de20ee4a81a5af13c121df29",
+      "imports": [
+        "argparse",
+        "json",
+        "os",
+        "pathlib",
+        "runpy",
+        "sys",
+        "tempfile",
+        "traceback",
+        "workflow.common",
+        "workflow.policy"
+      ],
+      "calls": [],
+      "science_source": false
+    }
+  ],
+  "literal_sibling_resources": [
+    {
+      "source": "02_PART2_DATA_QUALITY_PANEL/code/02c_finalize_panel.py",
+      "line": 69,
+      "resource": "02_PART2_DATA_QUALITY_PANEL/code/02b_collect_exit_evidence.py",
+      "exists": true
+    },
+    {
+      "source": "02_PART2_DATA_QUALITY_PANEL/code/review_preflight_evidence.py",
+      "line": 158,
+      "resource": "02_PART2_DATA_QUALITY_PANEL/code/02d_preflight_part2.py",
+      "exists": true
+    },
+    {
+      "source": "02_PART2_DATA_QUALITY_PANEL/code/test_preflight_synthetic.py",
+      "line": 14,
+      "resource": "02_PART2_DATA_QUALITY_PANEL/code/02d_preflight_part2.py",
+      "exists": true
+    },
+    {
+      "source": "02_PART2_DATA_QUALITY_PANEL/code/verify_part2_outputs.py",
+      "line": 22,
+      "resource": "02_PART2_DATA_QUALITY_PANEL/code/02c_finalize_panel.py",
+      "exists": true
+    },
+    {
+      "source": "02_PART2_DATA_QUALITY_PANEL/code/verify_part2_outputs.py",
+      "line": 54,
+      "resource": "02_PART2_DATA_QUALITY_PANEL/code/02c_finalize_panel.py",
+      "exists": true
+    },
+    {
+      "source": "03_PART3_SCALABLE_PROCESSING/code/09_spark_action_benchmark.py",
+      "line": 26,
+      "resource": "03_PART3_SCALABLE_PROCESSING/code/04_spark_parity_fixed.py",
+      "exists": true
+    },
+    {
+      "source": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step02_hgb_grid_dev.py",
+      "line": 253,
+      "resource": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part4_v2_train_only_pipeline.py",
+      "exists": true
+    },
+    {
+      "source": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step02_logistic_grid_dev.py",
+      "line": 277,
+      "resource": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part4_v2_train_only_pipeline.py",
+      "exists": true
+    },
+    {
+      "source": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step02_logistic_grid_dev.py",
+      "line": 262,
+      "resource": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part4_v2_train_only_pipeline.py",
+      "exists": true
+    },
+    {
+      "source": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step05_refit_and_lock.py",
+      "line": 168,
+      "resource": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part4_v2_train_only_pipeline.py",
+      "exists": true
+    },
+    {
+      "source": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step05_refit_and_lock.py",
+      "line": 169,
+      "resource": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step01_baseline_dev_only.py",
+      "exists": true
+    },
+    {
+      "source": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step05_refit_and_lock.py",
+      "line": 170,
+      "resource": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step02_hgb_grid_dev.py",
+      "exists": true
+    },
+    {
+      "source": "completed_analyses/ablation/original/part5_step02_hgb_grid_dev.py",
+      "line": 253,
+      "resource": "completed_analyses/ablation/original/part4_v2_train_only_pipeline.py",
+      "exists": true
+    }
+  ],
+  "no_raw_model_prediction_archives": true,
+  "full_E2E": "NOT_EXECUTED",
+  "new_real_data_producers": "PENDING_WINDOWS",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/work/BFT65B_REPRO_CLOSEOUT_20261119/workflow/release_audit.py",
+    "--out",
+    "/workspace/work/BFT65B_CLOSEOUT_FINAL_EVIDENCE_20261119/source_audit/source_audit"
+  ],
+  "finished_utc": "2026-11-19T04:20:41.904462+00:00"
+}

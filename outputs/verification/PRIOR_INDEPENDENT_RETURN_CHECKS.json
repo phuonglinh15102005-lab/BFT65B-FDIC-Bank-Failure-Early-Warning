@@ -1,0 +1,42 @@
+[
+  {
+    "check": "status_reconciliation",
+    "status": "PASS",
+    "detail": "84 checks;74PASS/0FAIL/2BLOCKED;remaining scoped statuses retained"
+  },
+  {
+    "check": "55_native_commands",
+    "status": "PASS",
+    "detail": "52CLIhelp+3data/SQL commands, all exactallowlistSHA and exit0; noMLexecutionmode"
+  },
+  {
+    "check": "source6_preserved",
+    "status": "PASS",
+    "detail": "base/clean/PIT/dev/test/model hashes expected=before=after;modelhashonly"
+  },
+  {
+    "check": "Step2B5identities",
+    "status": "PASS",
+    "detail": "5/5 source input byte identities recovered;notproducerreplay"
+  },
+  {
+    "check": "33field_contract_counters",
+    "status": "PASS",
+    "detail": "1669802clean and1629398PIT rowdigests match;Windows execution evidence+independentreturnedaccounting;rawnotreopenedcloud"
+  },
+  {
+    "check": "nine_aggregate_CSVs",
+    "status": "PASS",
+    "detail": "Independentlyrecomputed9CSVcomparisons/1089rows;exactcounts,floattolerances,recordedhashes"
+  },
+  {
+    "check": "candidate_transport_audit",
+    "status": "PASS",
+    "detail": "22indexed,16exportedSHAverified,6Pythonfilesomittedbyexporter;notmissingonthePC"
+  },
+  {
+    "check": "new_posthoc_summary_provenance",
+    "status": "PASS",
+    "detail": "seed20261117/1500;inputhashes andpointmetricsmatched;CIendpointsnotreproducedwithoutproducer/drawCSV;notoriginalCI"
+  }
+]

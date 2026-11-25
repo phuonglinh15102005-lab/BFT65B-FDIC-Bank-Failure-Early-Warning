@@ -1,0 +1,43 @@
+{
+  "status": "VERIFIED_CHECKPOINT_REPLAY_READY_FOR_INDEPENDENT_REVIEW",
+  "windows_execution_date": "2026-11-19",
+  "uploaded_return_sha256": "30e4f95b91392916076e48bfa25795582af64bc95ff09ae870ceeefa751ac2a2",
+  "verified_producers": [
+    "p2-base",
+    "p2-clean",
+    "development-features"
+  ],
+  "verified_dataset_rows": {
+    "base": 1682616,
+    "clean": 1669802,
+    "pit": 1629398,
+    "development": 1231631
+  },
+  "compared_nonkey_columns": 112,
+  "all_reported_null_nan_value_mismatches": 0,
+  "all_reported_max_abs_differences": 0,
+  "synthetic_windows_controls": 10,
+  "development_lineage": "NEW verified Part2C outputs; no fallback",
+  "science_and_workflow_python": "BYTE_UNCHANGED_FROM_EXECUTED_RELEASE",
+  "release_qa_historical_counts": {
+    "PASS": 16,
+    "BLOCKED": 2,
+    "FAIL": 1
+  },
+  "corrected_historical_qa_failure": "C17 invalid Git context corrected by C18; original FAIL retained",
+  "final_source_validation": "C19 PASS",
+  "publication_ignore_validation": "C18 PASS",
+  "full_clean_room_E2E": "NOT_EXECUTED",
+  "clean_environment_install": "NOT_EXECUTED",
+  "public_repository_access": "NOT_VERIFIED",
+  "scientific_disclosures": [
+    "historical filing/revision vintages",
+    "assumed operating costs/avoidability/conditional optimality",
+    "historical bootstrap provenance versus verified posthoc CI",
+    "late ablation execution date",
+    "event recall versus COST-weighted recall"
+  ],
+  "new_model_fits": 0,
+  "final_test_inference": false,
+  "report_or_part6_edited": false
+}

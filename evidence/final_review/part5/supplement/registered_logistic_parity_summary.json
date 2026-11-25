@@ -1,0 +1,59 @@
+{
+  "stage": "DEV_ONLY_SPARK_REGISTERED_LOGISTIC_PARITY",
+  "fold": "1989Q1_1990Q4",
+  "n_train": 266127,
+  "n_valid": 125962,
+  "raw_features": 15,
+  "transformed_features": 30,
+  "nonconstant_features": 23,
+  "constant_feature_indices": [
+    15,
+    21,
+    23,
+    25,
+    26,
+    28,
+    29
+  ],
+  "registered_C": 0.1,
+  "class_weight": null,
+  "clipping": "TRAIN_1_99",
+  "imputation": "TRAIN_MEDIAN",
+  "scaler": "TRAIN_ROBUST",
+  "sklearn_refit_AP": 0.3350101008454883,
+  "registered_original_AP": 0.3350101008454883,
+  "registered_reproduction_max_abs_score_error": 2.8152480346932407e-12,
+  "tight_reduced_AP": 0.33317734442819064,
+  "tight_vs_registered_AP_delta": -0.0018327564172976873,
+  "tight_reference": {
+    "AP": 0.33317734442819064,
+    "ROC_AUC": 0.9058466478251888,
+    "Brier": 0.01902726219070703
+  },
+  "Spark": {
+    "AP": 0.3331878256356479,
+    "ROC_AUC": 0.9058454049836367,
+    "Brier": 0.019027270431246024
+  },
+  "differences": {
+    "Spark_vs_exact_sklearn_AP": 1.0481207457280206e-05,
+    "Spark_vs_exact_sklearn_AUC": 1.2428415520071567e-06,
+    "max_abs_probability_diff": 9.650206119671267e-05,
+    "mean_abs_probability_diff": 5.448799875653186e-07,
+    "Spark_vs_registered_AP": 0.0018222752098404071,
+    "Spark_vs_registered_max_abs_probability_diff": 0.027978472883997796
+  },
+  "Spark_regParam": 3.757604452009754e-05,
+  "Spark_elasticNetParam": 0.0,
+  "Spark_standardization": false,
+  "Spark_tol": 1e-08,
+  "Spark_maxIter": 2000,
+  "max_coef_diff": 0.0002729191621432467,
+  "intercept_Spark": -6.3487902277229455,
+  "intercept_sklearn": -6.3489283023316565,
+  "Spark_sklearn_AP_parity_within_0p001": true,
+  "Spark_sklearn_max_abs_probability_below_0p001": true,
+  "Spark_sklearn_AUC_parity_within_0p001": true,
+  "note": "Dev-only reimplementation parity diagnostic. Spark and sklearn saw identical train-only transformed numeric matrices; neither HGB nor test was refitted or rescored. Intercept magnitude alone is not a ranking metric. Non-negligible differences require caution and should not be hidden.",
+  "Spark_version": "4.3.0"
+}

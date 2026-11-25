@@ -1,0 +1,132 @@
+{
+  "dataset": "prepared_institutions",
+  "new_sha256": "fddf9332b515b030b0476b6bd17682415fa5494ea9bda2f0b8d5cb1ef62c545c",
+  "reference_sha256": "fddf9332b515b030b0476b6bd17682415fa5494ea9bda2f0b8d5cb1ef62c545c",
+  "byte_identical": true,
+  "schema_equal": true,
+  "new_schema": "ACTIVE: int64\nBKCLASS: large_string\nCHANGEC1: large_string\nSTNAME: large_string\nENDEFYMD: date32[day]\nCERT: int64\nESTYMD: date32[day]\nINSDATE: date32[day]\nNAME: large_string",
+  "reference_schema": "ACTIVE: int64\nBKCLASS: large_string\nCHANGEC1: large_string\nSTNAME: large_string\nENDEFYMD: date32[day]\nCERT: int64\nESTYMD: date32[day]\nINSDATE: date32[day]\nNAME: large_string",
+  "new_rows": 27835,
+  "reference_rows": 27835,
+  "keys": [
+    "CERT"
+  ],
+  "rtol": 0.0,
+  "atol": 0.0,
+  "columns": [
+    {
+      "dataset": "prepared_institutions",
+      "column": "ACTIVE",
+      "rows": 27835,
+      "null_mismatches": 0,
+      "nan_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_difference": 0.0,
+      "nonfinite_difference": false,
+      "rtol": 0.0,
+      "atol": 0.0,
+      "status": "PASS"
+    },
+    {
+      "dataset": "prepared_institutions",
+      "column": "BKCLASS",
+      "rows": 27835,
+      "null_mismatches": 0,
+      "nan_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_difference": 0.0,
+      "nonfinite_difference": false,
+      "rtol": 0.0,
+      "atol": 0.0,
+      "status": "PASS"
+    },
+    {
+      "dataset": "prepared_institutions",
+      "column": "CHANGEC1",
+      "rows": 27835,
+      "null_mismatches": 0,
+      "nan_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_difference": 0.0,
+      "nonfinite_difference": false,
+      "rtol": 0.0,
+      "atol": 0.0,
+      "status": "PASS"
+    },
+    {
+      "dataset": "prepared_institutions",
+      "column": "STNAME",
+      "rows": 27835,
+      "null_mismatches": 0,
+      "nan_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_difference": 0.0,
+      "nonfinite_difference": false,
+      "rtol": 0.0,
+      "atol": 0.0,
+      "status": "PASS"
+    },
+    {
+      "dataset": "prepared_institutions",
+      "column": "ENDEFYMD",
+      "rows": 27835,
+      "null_mismatches": 0,
+      "nan_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_difference": 0.0,
+      "nonfinite_difference": false,
+      "rtol": 0.0,
+      "atol": 0.0,
+      "status": "PASS"
+    },
+    {
+      "dataset": "prepared_institutions",
+      "column": "ESTYMD",
+      "rows": 27835,
+      "null_mismatches": 0,
+      "nan_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_difference": 0.0,
+      "nonfinite_difference": false,
+      "rtol": 0.0,
+      "atol": 0.0,
+      "status": "PASS"
+    },
+    {
+      "dataset": "prepared_institutions",
+      "column": "INSDATE",
+      "rows": 27835,
+      "null_mismatches": 0,
+      "nan_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_difference": 0.0,
+      "nonfinite_difference": false,
+      "rtol": 0.0,
+      "atol": 0.0,
+      "status": "PASS"
+    },
+    {
+      "dataset": "prepared_institutions",
+      "column": "NAME",
+      "rows": 27835,
+      "null_mismatches": 0,
+      "nan_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_difference": 0.0,
+      "nonfinite_difference": false,
+      "rtol": 0.0,
+      "atol": 0.0,
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS_NUMERICAL_SCHEMA_EQUIVALENCE",
+  "key_checks": {
+    "duplicate_new": 0,
+    "duplicate_reference": 0,
+    "null_new": 0,
+    "null_reference": 0,
+    "missing_in_new": 0,
+    "unexpected_in_new": 0
+  },
+  "scope": "All keys/null masks/non-key columns checked; Parquet byte identity recorded separately, not forced by tolerant numerical comparison."
+}

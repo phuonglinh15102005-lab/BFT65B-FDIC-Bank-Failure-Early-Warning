@@ -1,0 +1,39 @@
+# Data and confidential/fitted artifacts
+*.parquet
+*.arrow
+*.feather
+*.joblib
+*.pkl
+*.pickle
+*.npz
+*.npy
+*.gz
+*.zip
+*.sqlite
+*.db
+*.csv
+# Vetted aggregate outputs/catalogues may be committed.
+!outputs/**/*.csv
+!release_evidence/*.csv
+__pycache__/
+*.pyc
+.env
+.env.*
+data/
+private/
+BFT65B_outputs/
+
+# Aggregate full-model fold metrics needed by the archived ablation source.
+!completed_analyses/ablation/REF/hgb_candidate_fold_metrics.csv
+!completed_analyses/test_ci/evidence/007_NEW_POSTHOC_BOOTSTRAP_DRAWS.csv
+
+
+# Final vetted release matrices and returned aggregate execution evidence.
+!FINAL_RUBRIC_COMPLIANCE_MATRIX.csv
+!FILE_MANIFEST_SHA256.csv
+!EXECUTION_LOG_INDEX.csv
+!release_evidence/windows_return_20261119/*.csv
+!release_evidence/windows_independent_review_20261119/*.csv
+
+# Vetted aggregate closeout evidence only.
+!release_evidence/repro_closeout_20261119/**/*.csv

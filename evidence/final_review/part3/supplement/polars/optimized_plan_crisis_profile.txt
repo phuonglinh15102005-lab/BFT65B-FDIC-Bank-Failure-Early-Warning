@@ -1,0 +1,11 @@
+SORT BY [col("REPDTE")]
+  AGGREGATE[maintain_order: false]
+    [len().alias("REPORTS"), col("ASSET").mean().alias("MEAN_ASSET"), col("DEP").mean().alias("MEAN_DEP"), col("ROA").mean().alias("MEAN_ROA"), col("EQ_ASSET").mean().alias("MEAN_EQ_ASSET"), col("NCLNLS_LOANS").mean().alias("MEAN_NCLNLS_LOANS"), (col("LNLSGR").is_null() | (col("LNLSGR") <= 0.0)).sum().alias("INVALID_LOAN_DENOM")] BY [col("REPDTE")]
+    FROM
+    simple π 7/7 ["REPDTE", "ASSET", "DEP", ... 4 other columns]
+       WITH_COLUMNS:
+       [when(col("ASSET") > 0.0).then(col("EQ") / col("ASSET")).otherwise(null.cast(Float64)).alias("EQ_ASSET"), when(col("LNLSGR") > 0.0).then(col("NCLNLS") / col("LNLSGR")).otherwise(null.cast(Float64)).alias("NCLNLS_LOANS")] 
+        Parquet SCAN [<LOCAL_USER>/BFT65B_outputs/step2c_20261108_145539_477509/panel_clean.parquet]
+        PROJECT 7/33 COLUMNS
+        SELECTION: col("REPDTE").is_between([2008-03-31, 2014-12-31])
+        ESTIMATED ROWS: 1669802

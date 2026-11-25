@@ -1,0 +1,28 @@
+{
+  "stage": "features",
+  "status": "PASS_PRODUCER_EXECUTION_COMPARISON_REQUIRED",
+  "error": null,
+  "started_utc": "2026-11-19T12:29:23.360466+00:00",
+  "finished_utc": "2026-11-19T12:29:38.675995+00:00",
+  "source": "%USERPROFILE%\\Downloads\\BFT65B_REPRO_CLOSEOUT_20261119\\BFT65B_REPRO_CLOSEOUT_20261119\\04_PART4_FEATURE_PIPELINE\\code\\part4_v2_relabel_asof_gate.py",
+  "source_sha256": "7807ecebefca1a2d592d450c7c42930578e6d9b5086f39494cf83078c0ff13b3",
+  "recorded_producer_arguments": [
+    "--clean",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\clean\\artifacts\\panel_clean.parquet",
+    "--pit",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\clean\\artifacts\\panel_pit_base.parquet",
+    "--registry-zip",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\clean\\artifacts\\part2_clean_review_bundle.zip",
+    "--step01-source",
+    "%USERPROFILE%\\Downloads\\BFT65B_REPRO_CLOSEOUT_20261119\\BFT65B_REPRO_CLOSEOUT_20261119\\04_PART4_FEATURE_PIPELINE\\code\\part4_step01_reference_UNCHANGED.py",
+    "--out-dir",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\features\\artifacts",
+    "--production-only",
+    "--asof-quarters",
+    "0"
+  ],
+  "offline": false,
+  "new_model_fits": 0,
+  "final_test_inference": false,
+  "guard": "Python audit hooks, not native-library OS sandbox"
+}

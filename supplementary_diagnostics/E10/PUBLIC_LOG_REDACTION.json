@@ -1,0 +1,14 @@
+[
+  {
+    "file": "STATUS.json",
+    "original_sha256": "c2c600d3173136d39a61279ff7eb630644e0d9d984de8d92896e85ce94116ccf",
+    "public_sha256": "f3002549e8ba38020871cec61e4061889a8a6f3a311e732702f433f719dc758b",
+    "transformation": "replace absolute Windows user-profile prefix; numerical content unchanged"
+  },
+  {
+    "file": "WINDOWS_EXECUTION_LOG.txt",
+    "original_sha256": "62668b2d9aa12d93c006ef9243ab08ae5a1cbf801188ba841f42e5fe73c61e24",
+    "public_sha256": "dce964c33768592a5f5bac5cd547b8e2bf959866f6fe8d6750c1e183e3d48967",
+    "transformation": "replace absolute Windows user-profile prefix; numerical content unchanged"
+  }
+]

@@ -1,0 +1,48 @@
+{
+  "id": "C16_VERIFIED_RELEASE_METADATA_VALIDATION",
+  "status": "PASS",
+  "exit_code": 0,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "run.py",
+    "validate",
+    "--out",
+    "/workspace/work/BFT65B_VERIFIED_RELEASE_SOURCE_VALIDATION_20261119"
+  ],
+  "started_utc": "2026-11-19T01:31:28.942217+00:00",
+  "finished_utc": "2026-11-19T01:31:29.179498+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "polars": null,
+      "pyarrow": null,
+      "scikit-learn": "1.8.0",
+      "pyspark": null,
+      "joblib": "1.5.3",
+      "scipy": "1.17.0"
+    }
+  },
+  "input_sha256_before": {
+    "run.py": "83a2514046010be5f6ac51ea2b736e59d94252f8713e355f0597a1579b2b9b12",
+    "workflow/engine.py": "62ad2d20767db2b25c5ccbdf779036db167f0d4a069da4596ad366989de3758b",
+    "config/source_manifest.json": "d640463a250835b9504943ed912012c9ec5575dec4b76e6cf5d13b666c1ac84c",
+    "config/stages.json": "e524333831eb5c4db558cb74120fb55689248ddb6c6b08283da7bc35288f3b71"
+  },
+  "input_sha256_after": {
+    "run.py": "83a2514046010be5f6ac51ea2b736e59d94252f8713e355f0597a1579b2b9b12",
+    "workflow/engine.py": "62ad2d20767db2b25c5ccbdf779036db167f0d4a069da4596ad366989de3758b",
+    "config/source_manifest.json": "d640463a250835b9504943ed912012c9ec5575dec4b76e6cf5d13b666c1ac84c",
+    "config/stages.json": "e524333831eb5c4db558cb74120fb55689248ddb6c6b08283da7bc35288f3b71"
+  },
+  "output_sha256": {
+    "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "STDOUT.txt": "65d5fb33cf4a9d869bf450f5c2056e0e649c35016c3716b5f107a192fbbf3b2c",
+    "/workspace/work/BFT65B_VERIFIED_RELEASE_SOURCE_VALIDATION_20261119/VALIDATION_RESULT.json": "b565775e7d5f14e55b6038dd9da7f4de554ffd444f036c784ff04d0fac820ab9"
+  },
+  "scope": "Source/config/protocol validation after status-only metadata changes; no producer or model rerun",
+  "new_model_fits": 0
+}

@@ -1,0 +1,54 @@
+{
+  "dataset": "strict_float_roundoff_rejected",
+  "new_sha256": "36e16e96d8b640e51b295ec2152a924aff9eb30b8730f28083a716ae523e96ae",
+  "reference_sha256": "38866e832d5d70ac9a48156673dc0507b33553143e396a93c5426f86b3db509c",
+  "byte_identical": false,
+  "schema_equal": true,
+  "new_schema": "CERT: int64\nx: double\nlabel: int8",
+  "reference_schema": "CERT: int64\nx: double\nlabel: int8",
+  "new_rows": 4,
+  "reference_rows": 4,
+  "keys": [
+    "CERT"
+  ],
+  "rtol": 0.0,
+  "atol": 0.0,
+  "columns": [
+    {
+      "dataset": "strict_float_roundoff_rejected",
+      "column": "x",
+      "rows": 4,
+      "null_mismatches": 0,
+      "nan_mismatches": 0,
+      "value_mismatches": 1,
+      "max_abs_difference": 1.000088900582341e-12,
+      "nonfinite_difference": false,
+      "rtol": 0.0,
+      "atol": 0.0,
+      "status": "FAIL"
+    },
+    {
+      "dataset": "strict_float_roundoff_rejected",
+      "column": "label",
+      "rows": 4,
+      "null_mismatches": 0,
+      "nan_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_difference": 0.0,
+      "nonfinite_difference": false,
+      "rtol": 0.0,
+      "atol": 0.0,
+      "status": "PASS"
+    }
+  ],
+  "status": "FAIL",
+  "key_checks": {
+    "duplicate_new": 0,
+    "duplicate_reference": 0,
+    "null_new": 0,
+    "null_reference": 0,
+    "missing_in_new": 0,
+    "unexpected_in_new": 0
+  },
+  "scope": "All keys/null masks/non-key columns checked; Parquet byte identity recorded separately, not forced by tolerant numerical comparison."
+}

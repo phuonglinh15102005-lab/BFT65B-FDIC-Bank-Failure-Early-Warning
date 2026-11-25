@@ -1,0 +1,872 @@
+[
+  {
+    "relative_path": "prepared/financials/REPDTE=19840331.parquet",
+    "bytes": 1474449,
+    "sha256": "e09e87ba8e7db9a1531288d260d04a88557f9d8803a3af06c3ec0c11c345fd46"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19840630.parquet",
+    "bytes": 1500332,
+    "sha256": "d0d34ad28e27e957554f181bd6918c03de8c545589236e00d2823b5be273e577"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19840930.parquet",
+    "bytes": 1508446,
+    "sha256": "c78ca223aee672b9ca4de890fd80e214f50537f82264e52fb86ede0e8df51f5e"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19841231.parquet",
+    "bytes": 1525770,
+    "sha256": "ecc1e1064c48ee13ef969173269108fb80d63e5dde304eadb7797824d2fa9c93"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19850331.parquet",
+    "bytes": 1499224,
+    "sha256": "05f6efe103376c603b0acf71e8263172630040ec0296be3a201f822c630b7d62"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19850630.parquet",
+    "bytes": 1524812,
+    "sha256": "2aae657d0eeac71332d2fc0b8736f26f530ce24c8ccec5853f81c346555c31d6"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19850930.parquet",
+    "bytes": 1539458,
+    "sha256": "0f97a91c0cc73e385b79f2e350b9234ff83a9af4d4f543b2044738840f785074"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19851231.parquet",
+    "bytes": 1551014,
+    "sha256": "ffe0ab8252f5e97ebbfdd5d4053fe9b1dc71165c15562d3ae6c6762e046a935a"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19860331.parquet",
+    "bytes": 1526183,
+    "sha256": "ccc10091a2a142cd99238a564eadd0e0be3ae60a74ee0b46fecae8a069b05865"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19860630.parquet",
+    "bytes": 1541244,
+    "sha256": "b5261161744dbe9eaafa1ac375aab64ad789a7528c8078c6d5256e56cf904f99"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19860930.parquet",
+    "bytes": 1550416,
+    "sha256": "09d848b8361aa1a17e785aa971c7849e80615cf15653a979a0978ed0a27ebd8a"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19861231.parquet",
+    "bytes": 1550866,
+    "sha256": "258f80466175a18cca19ebc14270e42848a2bbc7e08c6b97237a69c08e3ea0e0"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19870331.parquet",
+    "bytes": 1507463,
+    "sha256": "4670b92186592e687b7aef2f1326474cfa7f76a285fb1caf68dddd1fa0c09db5"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19870630.parquet",
+    "bytes": 1516024,
+    "sha256": "80c4ac06f9691845f24d92bc9254b428d7ad606da1a671fcb2827281de485084"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19870930.parquet",
+    "bytes": 1518457,
+    "sha256": "59a10a7eb70a58122126467056048867d75eef2f06d5cdfa949095d8c14a4160"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19871231.parquet",
+    "bytes": 1512769,
+    "sha256": "561354d152bc4516bea79dcc18f32be304ca0a9915e8da3964f2f12ba0c824fe"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19880331.parquet",
+    "bytes": 1461237,
+    "sha256": "0304090897b18697b864a431ed909a6ae76d146ab577cf298d40ee6767ed6c1b"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19880630.parquet",
+    "bytes": 1466904,
+    "sha256": "e5ee0b463e8521fd560106385fba6369dd0fb4fb2e682dc26d9305bd67acd2b7"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19880930.parquet",
+    "bytes": 1458089,
+    "sha256": "bfd466e4fe6568c5674e82c79327baccce59713e56b84376c5829f0af9425104"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19881231.parquet",
+    "bytes": 1450620,
+    "sha256": "fa5cd5ac98a57f8ce2026c33b55b90f4fceaaede6c26cffa155c826ffd9302e1"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19890331.parquet",
+    "bytes": 1406154,
+    "sha256": "52efa24d7d5a1eec5d1b6889f54720a36d21f15ffb6458c0dda1bfe8f637300c"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19890630.parquet",
+    "bytes": 1420026,
+    "sha256": "c5c65ce879015a5cb305212d975f911a4838f85d52f4d163d5b3ff707242a952"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19890930.parquet",
+    "bytes": 1416475,
+    "sha256": "4eefdb3718010941d5e645a3bcf82dbe90194a2e94da37cca305e300e3b0f91b"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19891231.parquet",
+    "bytes": 1413780,
+    "sha256": "b54a0d421707ac7e40539defd9c8b923eadf71dfac682082deadb79dbbd8c235"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19900331.parquet",
+    "bytes": 1526304,
+    "sha256": "4d3058581936d6960e668c2728eae653ad21a095ee65a2fe37b51f8a10c1618f"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19900630.parquet",
+    "bytes": 1519544,
+    "sha256": "a8e8f6ea8b14533e4d37fe269ebc840656d73914a945408ef72be550bca467e1"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19900930.parquet",
+    "bytes": 1511631,
+    "sha256": "2d4805652c4667b94fc06029416b605d4b2e851fc71db7fb3cde656e37c5a404"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19901231.parquet",
+    "bytes": 1506061,
+    "sha256": "1697b1f75eb9cb690200d080f42674dc612f7a51b0f277e34519a8e0f0e0edca"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19910331.parquet",
+    "bytes": 1459396,
+    "sha256": "a8ebb7c5503faca598d7f5fe91c42690b1514e826f7ffc918ca60534d89859ff"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19910630.parquet",
+    "bytes": 1459995,
+    "sha256": "19939c5e42217e2fbbf216691aaadf9d0902d7f3d3fd517f2fe2696c3216304b"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19910930.parquet",
+    "bytes": 1442957,
+    "sha256": "6aea0b7a984ef5e15181e4b5b7a45a1f428f06fb56ffbc91a6648624cd0b8edd"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19911231.parquet",
+    "bytes": 1430889,
+    "sha256": "f82ff032b579428a343392caa1950500d1017f532e491b1d4efea0a6f46c084c"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19920331.parquet",
+    "bytes": 1380880,
+    "sha256": "263f32805769cdf3247fdaf7914d3256c7e6fa36f8df23e34e6172e8e6067c53"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19920630.parquet",
+    "bytes": 1380365,
+    "sha256": "6c66b1375d9920ca459b583e1b0aed9d215a6f4e4960850096ef4b13d27fd0ef"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19920930.parquet",
+    "bytes": 1376314,
+    "sha256": "6b239a28a0e4137137440f3a101ed9bb70b6715f1c7e9e188871f0df4c0d9a1e"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19921231.parquet",
+    "bytes": 1365429,
+    "sha256": "5c15260eb8102f15142e5ba6a3c3a463c0d343336140c78d0a06f246dd007d17"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19930331.parquet",
+    "bytes": 1318226,
+    "sha256": "8549de21f077b7dad32caee56aed3e0ed159c6ab7225b41075ff3992c5a6c37e"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19930630.parquet",
+    "bytes": 1315495,
+    "sha256": "b82dfeb2400fed144624858b2e6ad7feb978802c8df618cd521db1760b262392"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19930930.parquet",
+    "bytes": 1308128,
+    "sha256": "108cab4b6ab65b7044a7c28cbd891e18d0f9d0eed6c90de95c4ddda20b72baff"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19931231.parquet",
+    "bytes": 1298127,
+    "sha256": "7c42349e3947b5c30d2042f90e2944f5b2e20c619a5c7f3d217039f36095feea"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19940331.parquet",
+    "bytes": 1251989,
+    "sha256": "a795c19730ebe77fc2d5bd1566ff99953de1b538007de3c3dc3f2ddf85833d15"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19940630.parquet",
+    "bytes": 1247423,
+    "sha256": "75ecfb271238407e99617bdd6a3ed7b6cf1daefc6e2468efc8415069b6171b8a"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19940930.parquet",
+    "bytes": 1238900,
+    "sha256": "b9a2d96d6aa11b1a537ec53d13e4585c6268047405a90eb78d1567af5b545bae"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19941231.parquet",
+    "bytes": 1228731,
+    "sha256": "029208da171f29a03a269c543c4f5454d8421ed0d09c86850cb0ec699b15e06a"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19950331.parquet",
+    "bytes": 1178775,
+    "sha256": "7e58e348feb6ee67c0194738637fad50e5c6b3e39b8798f01aac9df938912886"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19950630.parquet",
+    "bytes": 1182789,
+    "sha256": "8f3f75deba3758f0d2ad009c209c97c655e2b017df61e5fe853d119cdc5c99a5"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19950930.parquet",
+    "bytes": 1178378,
+    "sha256": "51e62cf41554e88ac7f76a259cb62ca06e3e5ac698eda4a6cc72c51507244576"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19951231.parquet",
+    "bytes": 1171595,
+    "sha256": "560a914c7b6f60a0e5c4d26c90abd9471f77afef09aed419601db788733d5b58"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19960331.parquet",
+    "bytes": 1135935,
+    "sha256": "cabf49a1dd4a99d3c92bd170560a6a72ec45f82c0f4f71f7b5eacbd7793e7164"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19960630.parquet",
+    "bytes": 1130312,
+    "sha256": "f4f90b28656f96c38a9328fcd7ffbff481f97e7ceaf3b8f66e984e56a9ffb682"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19960930.parquet",
+    "bytes": 1127816,
+    "sha256": "54ae19ff2d12a348ec759bad4ceaf1bc03588abd5829c354c4e1ad4b5dd1a721"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19961231.parquet",
+    "bytes": 1124477,
+    "sha256": "dbf2dbc1bc01a1d864a38b888551ee925d0b8d2efeffe160ed84184787179d92"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19970331.parquet",
+    "bytes": 1091108,
+    "sha256": "16da7d1865f87c821ec0701229565f6e936f0a3d477024f74744b755f331fad1"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19970630.parquet",
+    "bytes": 1085566,
+    "sha256": "40cd351dcecedc3bc83886f493df7e371f9ba80a6eb37befd2cd237fe333602b"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19970930.parquet",
+    "bytes": 1079349,
+    "sha256": "9b23535179110fab8e65e8a648020b55d963d4c4efefe442a945ae3d8d335849"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19971231.parquet",
+    "bytes": 1074802,
+    "sha256": "e1a54bf870c11e858f8dfcce0d288f734ef501ea7bae58f0b715be3091a0f1eb"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19980331.parquet",
+    "bytes": 1040004,
+    "sha256": "3bacc91968c86132816871d2fabba23d21d97340bc405287314319b8dd53d339"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19980630.parquet",
+    "bytes": 1044353,
+    "sha256": "80d799f1eb1693d75c8f870f8f32a414485a1c4fa3a785dbe9970b06816b8732"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19980930.parquet",
+    "bytes": 1042366,
+    "sha256": "c8cb8625647ee7b78231ed2c5b03197d6a0c811b46ef691294f6a833578509af"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19981231.parquet",
+    "bytes": 1030973,
+    "sha256": "8d09537b11036f90ebb4f139a7aed875d764add81619136b037bc0a043340546"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19990331.parquet",
+    "bytes": 1003256,
+    "sha256": "4210024f6e95680147857aa1789d748bc7e56555637e566c8d1c5ad77a2c5890"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19990630.parquet",
+    "bytes": 1008055,
+    "sha256": "1a82dcbbbbe3b68e7e2a44df5f0f435536074a0b7cdcb4e24597dc1c9a0dbaf5"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19990930.parquet",
+    "bytes": 1009306,
+    "sha256": "170dc542796745e8fbfdb699feaf4546ed7dea3750f70098901e20460890887d"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=19991231.parquet",
+    "bytes": 1009095,
+    "sha256": "0de6606e160a3d033c2bbc5e1864aad8e938f10b56c4b2a90a24367f76167291"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20000331.parquet",
+    "bytes": 981399,
+    "sha256": "69eea20eeb1211b38cf950fde43cd4cb8178dd6440770564c13a60fa490ac546"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20000630.parquet",
+    "bytes": 988512,
+    "sha256": "c45a9b4d03d63458fcba5b632217ca6608dbebd2435ad25730bc680fa29a2eff"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20000930.parquet",
+    "bytes": 985236,
+    "sha256": "92956537172ae05804aeac390ce109af2ec370b3225c1c56362e66f83728465e"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20001231.parquet",
+    "bytes": 981459,
+    "sha256": "c96ffdccc1cfb294e08df046b79011ef795bff78a58af325763cc7352d353b1f"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20010331.parquet",
+    "bytes": 978188,
+    "sha256": "1b009fefe9153ad1890ee79985a93e24180bbd4fd30858a4b751d43312bf2bc9"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20010630.parquet",
+    "bytes": 982471,
+    "sha256": "375a50a907ba6a2e5e8e5da8f1549d56e97c75550274f39a559f37d32105f3c8"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20010930.parquet",
+    "bytes": 985021,
+    "sha256": "532dcb84951c18f0b1d7fe8dbec76004059712a7489f8427dfa3f80b47304eb8"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20011231.parquet",
+    "bytes": 982491,
+    "sha256": "b1593f3b42c900730afaf96c0fe71da2741de4082dbabc3bf57e734002cb0822"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20020331.parquet",
+    "bytes": 953272,
+    "sha256": "a809fdf9d7af1d15befa47920933effe3059bf9c0137dd8dbd1c409a20765eb8"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20020630.parquet",
+    "bytes": 958613,
+    "sha256": "ac8d0dd0da45536c51396e48e6c38e3b30dd1025d09cc67600132fcb4763e020"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20020930.parquet",
+    "bytes": 960572,
+    "sha256": "5c10c02b285ca11dc290994e28590adea6955db427756ee30e052fed3d50a5a6"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20021231.parquet",
+    "bytes": 959044,
+    "sha256": "3de2d53ac76a658e6a30d59bb30b1a34d98d3e93d793bcfc15b2674d4c856e84"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20030331.parquet",
+    "bytes": 936580,
+    "sha256": "d818b2b32ea48bfd2508bc6948239c90d9c8e93de09cb21d88bcbd174447ef91"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20030630.parquet",
+    "bytes": 942365,
+    "sha256": "92632f4d7abf632050e0852cc0b70b374e61489f807d53383aa6dde704f466bf"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20030930.parquet",
+    "bytes": 945188,
+    "sha256": "f3344a0d4711f5cb4ad5464a084d695cd40ccc38bf78c09b0e69e00a818489cc"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20031231.parquet",
+    "bytes": 942565,
+    "sha256": "57107df5119eae33cee83098260a348a615f31b4b838f69442634a18f85bd201"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20040331.parquet",
+    "bytes": 917500,
+    "sha256": "7e5124572728304233baa6fd6d49efa1b02a7688429de05286a758384eb35eec"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20040630.parquet",
+    "bytes": 921948,
+    "sha256": "be55b0b9b6779dbcd4c67f148f357438664e15d4f92102bcd69e62745603afb6"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20040930.parquet",
+    "bytes": 922467,
+    "sha256": "aa58cb299ae04944a9d7d1efb98d64d8f461091b529161d287385775172e8aac"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20041231.parquet",
+    "bytes": 921631,
+    "sha256": "1ccaf5ab8e662dd90ed24e72a514917d2e118ff2f8a0b3c447b382a6164aca9c"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20050331.parquet",
+    "bytes": 899542,
+    "sha256": "2aaac13a2ab6a7049494588147a9963dddebdbbacc63fecb284fdbcb858cd53b"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20050630.parquet",
+    "bytes": 902417,
+    "sha256": "bdc1653e09f01c97809c6deec77be493715de709df3a0f367fc1df2866438923"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20050930.parquet",
+    "bytes": 907612,
+    "sha256": "cbe995245ae4f9301885997b67eec6f8236fc84d769fbe28a65dc0159a7a7754"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20051231.parquet",
+    "bytes": 910490,
+    "sha256": "e4a00bfb99e9e834b7982426c147c2681e7c6165b2578518d2110434f0c91405"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20060331.parquet",
+    "bytes": 888980,
+    "sha256": "6172647594eb8d3ff7579f3ecb99370994acafc9359a7c6558e4fbeea43a2cba"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20060630.parquet",
+    "bytes": 897769,
+    "sha256": "9f48e69282b93d03e54bdbc7b9a7c04008915e90be12255085ef98e7ef19a91a"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20060930.parquet",
+    "bytes": 901329,
+    "sha256": "4e1a9ab5c2d03f70c238a6367ccc5a7cea0d569aa0260d442053cf964c98e9f4"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20061231.parquet",
+    "bytes": 899581,
+    "sha256": "32322860054430ddc6691601d7993ee1929abae9e0baeada7ef063c12f924b75"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20070331.parquet",
+    "bytes": 880041,
+    "sha256": "ea0e9b05c2f145dfe8c9cc4902be509c5fe9cf598682024a722a756f2edf8303"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20070630.parquet",
+    "bytes": 886689,
+    "sha256": "11fbe5c6ec050c076e628b24d6e36169c73c2b3f07dcd2f8498e97f7c16aab2c"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20070930.parquet",
+    "bytes": 888037,
+    "sha256": "e3b1b4f7ebe0fcaed8c2e03e33136d265334346e70bab98eacb37012ba71aa1e"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20071231.parquet",
+    "bytes": 893126,
+    "sha256": "c5fde2d08ac297239e783d5af957eb40cd053411fc947544c943e20bf35e1403"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20080331.parquet",
+    "bytes": 874265,
+    "sha256": "dba22e7e29c1bffed55125e8828b86c3c034a6a7851633cccef423c8673bbb8b"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20080630.parquet",
+    "bytes": 882099,
+    "sha256": "8921a24ce9213d2180e992e82133390f48743c94d71c7410857abce89f1aed05"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20080930.parquet",
+    "bytes": 884425,
+    "sha256": "4eb743f04ef4435ed83b68f66979b8c2428387b7a68f33942b63d9eb9eb3c3d3"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20081231.parquet",
+    "bytes": 885954,
+    "sha256": "e489a00a7c4d388c67ab42e52d85851b4e2c9fcb3f24d363a68f3e0bd9a59f8a"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20090331.parquet",
+    "bytes": 865849,
+    "sha256": "c1d462f39364fac527ed23fcde19e9a7ad00058c0c94d2676e4023443e1eb807"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20090630.parquet",
+    "bytes": 871703,
+    "sha256": "3908019941368a278c1d0b1ab233ebee0e00a62a1dc051b03f157d7a090ff805"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20090930.parquet",
+    "bytes": 867843,
+    "sha256": "e0ac231e44acff99e8cbcc4aa64a013d89197e97d6ca1066ed1f088a54962db3"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20091231.parquet",
+    "bytes": 862757,
+    "sha256": "3509e3463dfd27813686cd8938b9d995e76d57b4aca5e28ff37289fd02b2dbb0"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20100331.parquet",
+    "bytes": 836595,
+    "sha256": "c03596fb724cf349726cdb915cd29302485ef000b587b6951795978b289cdcad"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20100630.parquet",
+    "bytes": 834033,
+    "sha256": "3b4d004f72283a07eefb8d68dad0d7c66209b533be8a14a8b4933b5e20e40e86"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20100930.parquet",
+    "bytes": 831248,
+    "sha256": "e980a0b0c795eee6e382ed70b6b6be88302d69199ddd158b5fb3a63c899879a3"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20101231.parquet",
+    "bytes": 823979,
+    "sha256": "ffae23183d7c31c3b2cd3d0619972286f0aab2174dbd25a64ab8610545884d74"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20110331.parquet",
+    "bytes": 796916,
+    "sha256": "42727b38c713579a3fa8e3841208608115d6b0310585ea80ae0e404c373e1741"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20110630.parquet",
+    "bytes": 798074,
+    "sha256": "7e690d37721079087769f3b4514edada196ad9fde46baf3409a56fd00710275a"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20110930.parquet",
+    "bytes": 793906,
+    "sha256": "c40c17f5c2887b3619602a6bd3633065a574e7cd1e307aba6307ac6557ed51e1"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20111231.parquet",
+    "bytes": 789067,
+    "sha256": "15bb88dc353cdaceb34fd8fb4ee7251313da0c78f350d50e2b6faddb8fbcfb36"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20120331.parquet",
+    "bytes": 766054,
+    "sha256": "21910d5182b9b0d0e0ef523a5e0bb4f4bb323cc0c4662a18655027e046e17c11"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20120630.parquet",
+    "bytes": 766387,
+    "sha256": "6e5103ae93ed4390be1c1e460e87a5cdef477ce43fb799d489c8ead5ab77a51e"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20120930.parquet",
+    "bytes": 764480,
+    "sha256": "7230bf71695d54e7ae65d9e761eae1b9fa89becac24ed26da7c1e58989583be9"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20121231.parquet",
+    "bytes": 757319,
+    "sha256": "a828160a835a2b1fcb19614b2c10e8ffd022b451c927e6afc3072c21c4eb295e"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20130331.parquet",
+    "bytes": 733267,
+    "sha256": "36d4da1419308df516982e0bc9bab4372b4e7df87d94fd6015806c0de34f7914"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20130630.parquet",
+    "bytes": 731091,
+    "sha256": "b1e966f9fa78545ff540bf3650c051c3936652a996257b7a0c01f44bf34d3bad"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20130930.parquet",
+    "bytes": 730005,
+    "sha256": "bdb0c33ac9ca846867d0a55dff7f54315c8c62d76ebea9d4ee896fc503693925"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20131231.parquet",
+    "bytes": 724437,
+    "sha256": "8cd6c14ebe903f1f6a6ad97563294ea26ca9d96d4c6cdc865c3663f462dd367e"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20140331.parquet",
+    "bytes": 701335,
+    "sha256": "53f40b05f7a468c6ad3ccf6ed3bd2cfa3185ede221e82c06fe825a480057845d"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20140630.parquet",
+    "bytes": 699987,
+    "sha256": "a49392f793e83ef6a8251bcfbf7845845c31128e1e5b8399e0a0dedbfa6b80db"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20140930.parquet",
+    "bytes": 696938,
+    "sha256": "deb799619fa4ce4ac8e603e49546b69d1106ef677c96cb88005cbfbcfbae361f"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20141231.parquet",
+    "bytes": 692347,
+    "sha256": "7d6b1fd21b4d0658cb83acc1615b79fe1944c53fb2ee5ed3e908ae4a1980750e"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20150331.parquet",
+    "bytes": 668910,
+    "sha256": "ff95d606d37883634c5b31f7b829b134a681563246eb76d7cb4df20154085657"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20150630.parquet",
+    "bytes": 668065,
+    "sha256": "b7f07cc1c31680a07c3e1e88efa9c6641d4171ca39bc24c771a7e184a0188598"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20150930.parquet",
+    "bytes": 664399,
+    "sha256": "b11257c41b747bea7a429adde3c42757afcd752f57bc95e1e179b1392b3f978d"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20151231.parquet",
+    "bytes": 657871,
+    "sha256": "24bbf85c1fd54eba6be09fee3399e2f7a15ec6aa3c7a3c6cbb2f68a7c63c9f7b"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20160331.parquet",
+    "bytes": 639446,
+    "sha256": "0366d027235ec9ed6e46ec341d73df87bb701d0f1579ce308f09dd5fa0d54aa0"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20160630.parquet",
+    "bytes": 639122,
+    "sha256": "ef4d33eb48c2ceb83e3f65ba6f91e6549fe697ab4fee5f62c3339af6cf761a0a"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20160930.parquet",
+    "bytes": 634989,
+    "sha256": "911b56e7ff884912becd42762d96c9982bb7117197badba68ede8c802fa95c28"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20161231.parquet",
+    "bytes": 631118,
+    "sha256": "1de46eaf456c9f14f88ec604723842eff8af1ce879c9bcfbdb920f47ff105203"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20170331.parquet",
+    "bytes": 612649,
+    "sha256": "ae067d4b76eb52f47008f82f50b2c2d21d07c462acc4883b6aae4b641bd1b214"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20170630.parquet",
+    "bytes": 611911,
+    "sha256": "7b568b7d32faf5d8116bdc3f70c3a8723a563a5411de3146ad8ec640d33e8b62"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20170930.parquet",
+    "bytes": 611429,
+    "sha256": "567f4a5cef0b3bcc591d5854fe5d392b82de2b335adda1633702b9319530743d"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20171231.parquet",
+    "bytes": 607169,
+    "sha256": "b182af58548f2e9c53acf3bb15f72059c88b1995cd25e1ec92aae3a9c0509eb9"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20180331.parquet",
+    "bytes": 589110,
+    "sha256": "5c0a2e51240a980cf59d7e303935427b0a7681f5c9f999933e91769f311fead7"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20180630.parquet",
+    "bytes": 587359,
+    "sha256": "99a85872f726b4eb39563b28e40d61a1bba3dbe2f7db3c3524f2132472706a72"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20180930.parquet",
+    "bytes": 584708,
+    "sha256": "f785f7f54dd94d27bd88a03ae8c1de861738bc29a9b27f0e2738b4a4fcce9ac5"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20181231.parquet",
+    "bytes": 580258,
+    "sha256": "9b39c08f3193e9da14a626b06f321b855b48db619c8dc72825f4b679e33d6505"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20190331.parquet",
+    "bytes": 564635,
+    "sha256": "05b3cc8f9e7c984340f10db235797ad1f01cf4d070a40c9345ceb1b8e06a2bf6"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20190630.parquet",
+    "bytes": 564372,
+    "sha256": "f3ae79543e9d2f29b8c1396e92fd69a2a562b074b1cba9668fe7b7a36be50a70"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20190930.parquet",
+    "bytes": 563202,
+    "sha256": "df1f43a7ab68beeb424d97e75bb496737b6503f10a0c7b7c76529981e2e80a2b"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20191231.parquet",
+    "bytes": 557118,
+    "sha256": "0aa79ab9a59930977b4531a108d497712c8d45d5af25ac989c406204bc7422a2"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20200331.parquet",
+    "bytes": 530994,
+    "sha256": "dff377fe2df8bb164571819f7c9a2d11299cebd1ae21c24ca16340a26f8640c8"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20200630.parquet",
+    "bytes": 531397,
+    "sha256": "6cfce10886f0c03b2d937b9e23a209e33c9b1e320279d8ccb254fb0b5eb59bb3"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20200930.parquet",
+    "bytes": 529632,
+    "sha256": "95a214b2aa25865988817e5bd2023e92c93ae809d4846d9f6b6ad4d31a02d5f4"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20201231.parquet",
+    "bytes": 528399,
+    "sha256": "436679c029e43a0f915d4d9ad97f557609a39b323b90abf4e2c62b6d03bbde1c"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20210331.parquet",
+    "bytes": 514332,
+    "sha256": "d460edfb280abfd2b83c39fef71c90599a5e205429ef0318451a9d18ee79aefb"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20210630.parquet",
+    "bytes": 515426,
+    "sha256": "1d0115c74c1ee856f7b79d2591e5a078b760de7bc944fc522d5cd06ab7be58c1"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20210930.parquet",
+    "bytes": 514742,
+    "sha256": "ce47eb05282093dbb046e1efd2d1280b9224b17b66b3076c3745de64f277efa5"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20211231.parquet",
+    "bytes": 508544,
+    "sha256": "df168042c26cba6424cc777abbfc0e657faaefc3da401e2be52c8180b7ab89d4"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20220331.parquet",
+    "bytes": 492577,
+    "sha256": "5aded73eafe8b39e2a925d83418e7c56dabaffcea7a42d97c6068088436084ba"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20220630.parquet",
+    "bytes": 495035,
+    "sha256": "4cf67c0ad74e9c8d61015a8d97b7fc4f06fe95f90b710476057ec0bb6f52586b"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20220930.parquet",
+    "bytes": 496433,
+    "sha256": "02d9349b83fd023e62e5d38db53f9a374279e9a2e3b73efb6909f7bef1ff4c29"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20221231.parquet",
+    "bytes": 495366,
+    "sha256": "ecd12100152de18890d2fdf8c01da5816626aaafaec13d5f174330516997bb42"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20230331.parquet",
+    "bytes": 484614,
+    "sha256": "bfaf90b4f8196791449fb8c0826d137f05ee2e075f0d06ad3b1b5fd6a9fe68b5"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20230630.parquet",
+    "bytes": 487100,
+    "sha256": "f36f71a202cca7411a5fb96b6422b440fdcb048194e478fad5d9844edec9c0f0"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20230930.parquet",
+    "bytes": 488442,
+    "sha256": "4d3ceacd09b45bef4fbcf5d6a28968b92001f4f465ed64295dc8db6f6ad219ab"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20231231.parquet",
+    "bytes": 489385,
+    "sha256": "40e7ae85680989984542f95b44773498f67c01c51773c496100379a34362a593"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20240331.parquet",
+    "bytes": 478452,
+    "sha256": "e90af287a1fd5f41a6f46b13dfcfef633e7ff060371d95733ff3394d0748ae00"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20240630.parquet",
+    "bytes": 480407,
+    "sha256": "6003365a71cdc05ab668cde8910fb0486b9d4395bc10b484fb86eb4f584c31dd"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20240930.parquet",
+    "bytes": 482621,
+    "sha256": "0bd10bcbb1053083ea981626acfc7f5f4168f6b99fc2f5ccfa6048aa514e3476"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20241231.parquet",
+    "bytes": 482367,
+    "sha256": "919dbdf2553dbb43e611528715cb724fe1492025d4869e79c6ba6a4a83b57738"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20250331.parquet",
+    "bytes": 469757,
+    "sha256": "fbea9d02c079abf5b554664e0cb8354f321b2dfb484fb9bb8a166f6c5c8b2561"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20250630.parquet",
+    "bytes": 470914,
+    "sha256": "e11c6917c28910822923f5d070315df6f900751e41875f9f13c6b572eb508863"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20250930.parquet",
+    "bytes": 469746,
+    "sha256": "3fe579548654f3414b745edb69955e321c78b6b6320f7bd9940773716c09b7f2"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20251231.parquet",
+    "bytes": 468199,
+    "sha256": "3394113468f31dfd95acab9ff455e492fa38da4beed861f1eabefbcdb6ecd36d"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20260331.parquet",
+    "bytes": 452200,
+    "sha256": "221a76a19ae9a34af71f315812ecad5abc3c1f8f80022f7f26420556eef3e939"
+  },
+  {
+    "relative_path": "prepared/financials/REPDTE=20260630.parquet",
+    "bytes": 451972,
+    "sha256": "c4b3ce3b7ba5d1de2925e9cdb4eb043731800c94e51e4bfe69ee21c708156934"
+  },
+  {
+    "relative_path": "prepared/institutions.parquet",
+    "bytes": 502007,
+    "sha256": "fddf9332b515b030b0476b6bd17682415fa5494ea9bda2f0b8d5cb1ef62c545c"
+  },
+  {
+    "relative_path": "prepared/failures_all.parquet",
+    "bytes": 146011,
+    "sha256": "34e4d9d70b8b47bd595d29e97ce252d15f9a1dff2566c6ba2b49eeded7f05ef0"
+  },
+  {
+    "relative_path": "summary.json",
+    "bytes": 12508,
+    "sha256": "62a3de93c2b7d3a00f69634685a329aa630fb15693a6cf2e7b8c2c9c311f05e8"
+  },
+  {
+    "relative_path": "STANDARDIZATION_COMPLETE.json",
+    "bytes": 1809,
+    "sha256": "7bf2d24483b5a8d329436f9a69b02282ba0f3be53fd0474d56e31330a56c52d6"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "source": "PROJECT/03_PART3_SCALABLE_PROCESSING/code/01_polars_core.py",
+    "source_sha256": "b44ce5c4f36cd79f6d3761b1772cf2320a55221aecc35277980ab9c41e35b49a",
+    "mode": "data",
+    "arguments": [
+      "--data-dir",
+      "%USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509",
+      "--output-parent",
+      "%USERPROFILE%\\AppData\\Local\\BFT65B_REPRO_RUNS\\20261117_192759_a2f5a576\\CHECKS_RUN\\JOB_053"
+    ],
+    "command": "%USERPROFILE%\\miniconda3\\python.exe -B %USERPROFILE%\\Downloads\\BFT65B_REPRO_AFTER_R23_R24_20261117\\BFT65B_REPRO\\ENGINE\\guarded_entry.py --root %USERPROFILE%\\Downloads\\BFT65B_REPRO_AFTER_R23_R24_20261117\\BFT65B_REPRO --out %USERPROFILE%\\AppData\\Local\\BFT65B_REPRO_RUNS\\20261117_192759_a2f5a576\\CHECKS_RUN\\JOB_053 --source PROJECT/03_PART3_SCALABLE_PROCESSING/code/01_polars_core.py --mode data -- --data-dir %USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509 --output-parent %USERPROFILE%\\AppData\\Local\\BFT65B_REPRO_RUNS\\20261117_192759_a2f5a576\\CHECKS_RUN\\JOB_053",
+    "exit_code": 0,
+    "timed_out": false,
+    "output_directory": "%USERPROFILE%\\AppData\\Local\\BFT65B_REPRO_RUNS\\20261117_192759_a2f5a576\\CHECKS_RUN\\JOB_053",
+    "elapsed_seconds_diagnostic": 3.04298759996891
+  },
+  {
+    "source": "PROJECT/03_PART3_SCALABLE_PROCESSING/code/02_pandas_parity.py",
+    "source_sha256": "a253771553de1b754794f54549397c0f0c9cb5e4fcad8671b2ac1d0ce2e9e38f",
+    "mode": "data",
+    "arguments": [
+      "--data-dir",
+      "%USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509",
+      "--polars-zip",
+      "%USERPROFILE%\\AppData\\Local\\BFT65B_REPRO_RUNS\\20261117_192759_a2f5a576\\CHECKS_RUN\\JOB_053\\part3_step01_polars_20261117_124306_6063d3\\part3_step01_polars_evidence.zip",
+      "--output-parent",
+      "%USERPROFILE%\\AppData\\Local\\BFT65B_REPRO_RUNS\\20261117_192759_a2f5a576\\CHECKS_RUN\\JOB_054"
+    ],
+    "command": "%USERPROFILE%\\miniconda3\\python.exe -B %USERPROFILE%\\Downloads\\BFT65B_REPRO_AFTER_R23_R24_20261117\\BFT65B_REPRO\\ENGINE\\guarded_entry.py --root %USERPROFILE%\\Downloads\\BFT65B_REPRO_AFTER_R23_R24_20261117\\BFT65B_REPRO --out %USERPROFILE%\\AppData\\Local\\BFT65B_REPRO_RUNS\\20261117_192759_a2f5a576\\CHECKS_RUN\\JOB_054 --source PROJECT/03_PART3_SCALABLE_PROCESSING/code/02_pandas_parity.py --mode data -- --data-dir %USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509 --polars-zip %USERPROFILE%\\AppData\\Local\\BFT65B_REPRO_RUNS\\20261117_192759_a2f5a576\\CHECKS_RUN\\JOB_053\\part3_step01_polars_20261117_124306_6063d3\\part3_step01_polars_evidence.zip --output-parent %USERPROFILE%\\AppData\\Local\\BFT65B_REPRO_RUNS\\20261117_192759_a2f5a576\\CHECKS_RUN\\JOB_054",
+    "exit_code": 0,
+    "timed_out": false,
+    "output_directory": "%USERPROFILE%\\AppData\\Local\\BFT65B_REPRO_RUNS\\20261117_192759_a2f5a576\\CHECKS_RUN\\JOB_054",
+    "elapsed_seconds_diagnostic": 9.878042099997401
+  },
+  {
+    "source": "PROJECT/03_PART3_SCALABLE_PROCESSING/code/04_spark_parity_fixed.py",
+    "source_sha256": "e56f96c48c4f7f4adb3c3498cf141db635f71a74ebe1bb0d11810ad9a3385992",
+    "mode": "spark",
+    "arguments": [
+      "--data-dir",
+      "%USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509",
+      "--polars-zip",
+      "%USERPROFILE%\\AppData\\Local\\BFT65B_REPRO_RUNS\\20261117_192759_a2f5a576\\CHECKS_RUN\\JOB_053\\part3_step01_polars_20261117_124306_6063d3\\part3_step01_polars_evidence.zip",
+      "--output-parent",
+      "%USERPROFILE%\\AppData\\Local\\BFT65B_REPRO_RUNS\\20261117_192759_a2f5a576\\CHECKS_RUN\\JOB_055",
+      "--cores",
+      "2",
+      "--driver-memory",
+      "2g"
+    ],
+    "command": "%USERPROFILE%\\miniconda3\\python.exe -B %USERPROFILE%\\Downloads\\BFT65B_REPRO_AFTER_R23_R24_20261117\\BFT65B_REPRO\\ENGINE\\guarded_entry.py --root %USERPROFILE%\\Downloads\\BFT65B_REPRO_AFTER_R23_R24_20261117\\BFT65B_REPRO --out %USERPROFILE%\\AppData\\Local\\BFT65B_REPRO_RUNS\\20261117_192759_a2f5a576\\CHECKS_RUN\\JOB_055 --source PROJECT/03_PART3_SCALABLE_PROCESSING/code/04_spark_parity_fixed.py --mode spark -- --data-dir %USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509 --polars-zip %USERPROFILE%\\AppData\\Local\\BFT65B_REPRO_RUNS\\20261117_192759_a2f5a576\\CHECKS_RUN\\JOB_053\\part3_step01_polars_20261117_124306_6063d3\\part3_step01_polars_evidence.zip --output-parent %USERPROFILE%\\AppData\\Local\\BFT65B_REPRO_RUNS\\20261117_192759_a2f5a576\\CHECKS_RUN\\JOB_055 --cores 2 --driver-memory 2g",
+    "exit_code": 0,
+    "timed_out": false,
+    "output_directory": "%USERPROFILE%\\AppData\\Local\\BFT65B_REPRO_RUNS\\20261117_192759_a2f5a576\\CHECKS_RUN\\JOB_055",
+    "elapsed_seconds_diagnostic": 95.05288059997838
+  }
+]

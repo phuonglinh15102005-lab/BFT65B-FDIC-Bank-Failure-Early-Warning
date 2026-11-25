@@ -1,0 +1,242 @@
+"""The supported release workflow. Never dispatch training, scoring or closed audits."""
+from pathlib import Path
+import argparse,ast,csv,json,os,platform,shutil,subprocess,sys,traceback,uuid,zipfile
+from datetime import datetime
+from workflow.common import ROOT,Blocked,require,read_json,load_config,save_json,sha,utc,resolve_profile,inputs_for,validate_output,verify_source_manifest,input_digest,package_hashes
+from workflow.policy import ALLOWED,CLOSED,FORBIDDEN,permitted_stage
+
+def safe_hash(path):
+    try:return sha(path)
+    except OSError:return None
+
+def probe(python):
+    child=subprocess.run([str(python),'-B',str(ROOT/'workflow/environment_probe.py')],capture_output=True,text=True,
+                         timeout=45,env={**os.environ,'PYTHONDONTWRITEBYTECODE':'1','PYTHONUTF8':'1'})
+    if child.returncode:raise Blocked('Cannot inspect existing interpreter: '+str(python)+' '+child.stderr[:500])
+    return json.loads(child.stdout)
+
+def environment_matches(observed,expected):
+    return observed.get('python')==expected['python'] and all(observed.get('packages',{}).get(name.casefold())==version for name,version in expected['packages'].items())
+
+def choose_python(profile,override=None):
+    expected=read_json(ROOT/'config/environments.json')['engineering']
+    candidates=[Path(override)] if override else [profile/name for name in expected['candidate_profile_relative_executables']]
+    candidates.append(Path(sys.executable));seen=set();attempts=[]
+    for candidate in candidates:
+        if not candidate.is_file() or str(candidate.resolve()).casefold() in seen:continue
+        seen.add(str(candidate.resolve()).casefold())
+        try:
+            observed=probe(candidate);attempts.append(observed)
+            if environment_matches(observed,expected):return candidate.resolve(),observed,attempts
+        except Blocked as error:attempts.append(dict(executable=str(candidate),status='BLOCKED',reason=str(error)))
+    return None,None,attempts
+
+def reference(config,inputs,name):
+    item=config['reference_files'][name]
+    return inputs[item['input']]/item['file'] if item['file'] else inputs[item['input']]
+
+def inspect_stage_inputs(stage,config,inputs):
+    paths={};expected={}
+    def add(path,digest=None):
+        path=Path(path).resolve();paths[str(path)]=path
+        if digest:expected[str(path)]=digest
+    if stage=='p2-base':
+        for item in read_json(ROOT/'config/prepared_snapshot_manifest.json'):
+            add(inputs['prepared_audit']/item['relative_path'],item['sha256'])
+        add(reference(config,inputs,'base'),config['reference_files']['base']['sha256'])
+    elif stage=='p2-clean':
+        add(reference(config,inputs,'base'),config['reference_files']['base']['sha256'])
+        for p in (inputs['step2']/'review_AUDIT_ONLY').glob('*'):
+            if p.is_file():add(p)
+        add(inputs['step2']/'step2_summary.json')
+        for name,h in read_json(ROOT/'config/step2b_snapshot_hashes.json').items():add(inputs['step2b']/name,h)
+        for name in ['step2b_config.json','STEP2B_COMPLETE.json']:add(inputs['step2b']/name)
+        for p in (inputs['step2b']/'review_AUDIT_ONLY').glob('*'):
+            if p.is_file():add(p)
+        cache=inputs['step2c']/config['read_only_cache']
+        if not cache.is_dir():raise Blocked('Original offline cache missing: '+str(cache))
+        cache_files=[p for p in cache.iterdir() if p.is_file() and p.suffix in {'.body','.json'}]
+        if not cache_files:raise Blocked('Original offline cache is empty; no HTTP fallback')
+        for p in cache_files:add(p)
+        for item in read_json(ROOT/'config/frozen_scope_requests.json'):
+            key=__import__('hashlib').sha256(item['url'].encode()).hexdigest()
+            add(cache/(key+'.body'),item['sha256'])
+        for name in ['clean','pit']:add(reference(config,inputs,name),config['reference_files'][name]['sha256'])
+    elif stage=='development-features':
+        for name in ['clean','pit','development']:
+            add(reference(config,inputs,name),config['reference_files'][name]['sha256'])
+        # Original registry is only needed if no fresh verified Part2C bundle is supplied.
+    before={}
+    for key,path in paths.items():before[key]=input_digest(path,expected.get(key))
+    return before
+
+def producer_arguments(stage,config,inputs,job,parents):
+    artifacts=job/'artifacts'
+    if stage=='p2-base':
+        return ['--audit-dir',str(inputs['prepared_audit']),'--out',str(artifacts)], [dict(id='base',new=str(artifacts/'panel_base.parquet'),reference=str(reference(config,inputs,'base')),keys=['CERT','REPDTE'],rtol=0.,atol=0.)], 'Original prepared snapshot -> new native base; independent checkpoint replay'
+    if stage=='p2-clean':
+        args=['--step2-dir',str(inputs['step2']),'--step2b-dir',str(inputs['step2b']),'--out',str(artifacts),'--offline','--cache-dir',str(inputs['step2c']/config['read_only_cache'])]
+        datasets=[dict(id=name,new=str(artifacts/filename),reference=str(reference(config,inputs,name)),keys=keys,rtol=0.,atol=0.) for name,filename,keys in [('clean','panel_clean.parquet',['CERT','REPDTE']),('pit','panel_pit_base.parquet',['CERT','DECISION_DATE'])]]
+        return args,datasets,'Original immutable Step2A/2B checkpoints retained to preserve signed provenance; new base compared separately,not silently relinked'
+    parent=parents.get('p2-clean')
+    if parent and parent['status']=='FAIL':raise Blocked('Do not consume failed Part2C replay outputs')
+    if parent and parent['status']=='PASS':
+        folder=Path(parent['artifact_directory']);clean=folder/'panel_clean.parquet';pit=folder/'panel_pit_base.parquet';registry=folder/'part2_clean_review_bundle.zip'
+        lineage='NEW Part2C artifacts after complete schema/key/value comparison PASS'
+    else:
+        clean=reference(config,inputs,'clean');pit=reference(config,inputs,'pit');registry=reference(config,inputs,'registry')
+        input_digest(registry,config['reference_files']['registry']['sha256'])
+        lineage='Explicit frozen checkpoint fallback because Part2C was not requested or BLOCKED;not a fresh end-to-end DAG'
+    args=['--clean',str(clean),'--pit',str(pit),'--registry-zip',str(registry),'--step01-source',str(ROOT/'04_PART4_FEATURE_PIPELINE/code/part4_step01_reference_UNCHANGED.py'),
+          '--out-dir',str(artifacts),'--asof-quarters','0','--production-only']
+    dataset=dict(id='development',new=str(artifacts/'development_primary_binary_v2.parquet'),reference=str(reference(config,inputs,'development')),keys=['CERT','DECISION_DATE'],rtol=1e-9,atol=1e-10)
+    return args,[dataset],lineage
+
+def stream_command(command,out,environment):
+    save_json(out/'COMMAND.json',command)
+    with (out/'STDOUT.txt').open('w',encoding='utf-8') as stdout,(out/'STDERR.txt').open('w',encoding='utf-8') as stderr:
+        child=subprocess.Popen(command,stdout=subprocess.PIPE,stderr=stderr,text=True,encoding='utf-8',bufsize=1,env=environment)
+        for line in child.stdout:print(line,end='',flush=True);stdout.write(line);stdout.flush()
+        return child.wait()
+
+def run_stage(stage,config,inputs,python,env_observed,runroot,parents):
+    permitted_stage(stage);job=runroot/stage;job.mkdir(exist_ok=False);start=utc();before={}
+    record=dict(stage=stage,status='FAIL',started_utc=start,command=None,environment=env_observed,input_sha256_before={},input_sha256_after={},new_model_fits=0,final_test_inference=False)
+    try:
+        before=inspect_stage_inputs(stage,config,inputs)
+        arguments,datasets,lineage=producer_arguments(stage,config,inputs,job,parents)
+        # Include newly chained artifacts in preservation identities as well.
+        for flag in ['--clean','--pit','--registry-zip']:
+            if flag in arguments:
+                path=Path(arguments[arguments.index(flag)+1]);before.setdefault(str(path),input_digest(path))
+        record['lineage']=lineage;record['input_sha256_before']=before
+        argfile=job/'ARGUMENTS.json';save_json(argfile,arguments)
+        command=[str(python),'-B',str(ROOT/'workflow/worker.py'),'--stage',stage,'--job',str(job),'--arguments-file',str(argfile)]
+        record['command']=command
+        environment={**os.environ,'PYTHONDONTWRITEBYTECODE':'1','PYTHONUTF8':'1'}
+        code=stream_command(command,job,environment)
+        result=read_json(job/'WORKER_RESULT.json') if (job/'WORKER_RESULT.json').is_file() else {}
+        if code!=0:
+            logs=(job/'STDOUT.txt').read_text(encoding='utf-8')+(job/'STDERR.txt').read_text(encoding='utf-8')
+            if result.get('status')=='BLOCKED' or 'Offline test cache missing' in logs or 'FileNotFoundError' in logs:raise Blocked('Producer prerequisite missing;see captured logs')
+            raise ValueError('Producer did not complete;see captured logs and WORKER_RESULT')
+        specfile=job/'COMPARISON_SPEC.json';compare_dir=job/'comparison'
+        save_json(specfile,dict(out=str(compare_dir),datasets=datasets))
+        comparejob=job/'comparison_command';comparejob.mkdir()
+        compare_command=[str(python),'-B',str(ROOT/'workflow/compare_worker.py'),'--spec',str(specfile)]
+        compare_code=stream_command(compare_command,comparejob,environment)
+        comparisons=read_json(compare_dir/'COMPARISON_RESULT.json')
+        if compare_code==2:raise Blocked('Numerical comparator dependency missing; producer execution alone is not verification')
+        require(compare_code==0 and comparisons['status']=='PASS','New outputs differ from immutable references')
+        record.update(status='PASS',artifact_directory=str(job/'artifacts'),comparison_results=comparisons['results'],comparison_command=compare_command)
+    except Blocked as error:record.update(status='BLOCKED',reason=str(error))
+    except Exception as error:record.update(status='FAIL',reason=type(error).__name__+': '+str(error),traceback=traceback.format_exc())
+    finally:
+        after={name:sha(Path(name)) if Path(name).is_file() else None for name in before}
+        record['input_sha256_before']=before;record['input_sha256_after']=after
+        if after!=before:record.update(status='FAIL',reason='Original/new-parent input changed during replay')
+        record['finished_utc']=utc();record['output_sha256']=package_hashes(job)
+        save_json(job/'STAGE_RESULT.json',record)
+    return record
+
+def plan(config):
+    stages=read_json(ROOT/'config/stages.json')
+    return dict(release_id=config['release_id'],stages=stages,new_allowed_producer_replay=list(ALLOWED),
+                closed_no_rerun=sorted(CLOSED),disabled=sorted(FORBIDDEN),full_clean_room_E2E='NOT_EXECUTED',mode='isolated checkpoint replay,not fresh acquisition-to-scoring')
+
+def validate_release(out):
+    out=validate_output(out,{});out.mkdir(parents=True)
+    status='FAIL';errors=[]
+    try:
+        manifest=verify_source_manifest()
+        for name in manifest:
+            p=ROOT/name
+            if p.suffix=='.py':ast.parse(p.read_bytes())
+        no_data=[str(p.relative_to(ROOT)) for p in ROOT.rglob('*') if p.is_file() and '__pycache__' not in p.parts and p.suffix.lower() in {'.parquet','.joblib','.pkl','.pickle','.npz','.npy','.gz','.zip','.sqlite','.db'}]
+        require(not no_data,'Prohibited raw/row-level/model/archive payloads: '+str(no_data))
+        for name,item in ALLOWED.items():require((ROOT/item).is_file(),'Missing canonical producer '+name)
+        protocol='994f72de6e2446916db8c2fcd36847c45cc68eb6fef5ef67f07acc0476c6d911'
+        for p in ROOT.rglob('part5_protocol_freeze.json'):require(sha(p)==protocol,'Protocol copy changed')
+        side=ROOT/'04_PART4_FEATURE_PIPELINE/part5_protocol_freeze.sha256';require(side.read_text().split()[0]==protocol,'Protocol sidecar changed')
+        status='PASS_SOURCE_RELEASE_VALIDATION'
+    except Exception as error:errors.append(str(error))
+    result=dict(status=status,errors=errors,command=sys.argv,started_and_finished_utc=utc(),python=sys.version,
+                source_manifest_sha256=sha(ROOT/'config/source_manifest.json'),source_files_checked=len(read_json(ROOT/'config/source_manifest.json')),
+                no_scientific_replay=True,full_E2E='NOT_EXECUTED',public_repository_access='NOT_VERIFIED')
+    save_json(out/'VALIDATION_RESULT.json',result);print(json.dumps(result,indent=2));return 0 if status.startswith('PASS') else 1
+
+def replay(args):
+    config=load_config(args.config);profile=resolve_profile(config,args.profile);inputs=inputs_for(config,profile)
+    verify_source_manifest()
+    if args.stages=='unverified':stages=config['default_new_replay_stages']
+    else:
+        stages=args.stages.split(',')
+        for name in stages:permitted_stage(name)
+        require(len(set(stages))==len(stages),'Duplicate stage selection')
+    default=Path(os.environ.get('LOCALAPPDATA',os.environ.get('TEMP',str(Path.home()))))/'BFT65B_FINAL_CODE_REPLAY'/(datetime.now().strftime('%Y%m%d_%H%M%S')+'_'+uuid.uuid4().hex[:8])
+    out=validate_output(args.out or default,inputs);out.mkdir(parents=True,exist_ok=False)
+    source_before=verify_source_manifest();python,observed,probes=choose_python(profile,args.python_engineering)
+    save_json(out/'EXISTING_ENVIRONMENTS.json',probes);save_json(out/'CONFIG_USED.json',config)
+    results={};start=utc();comparator_control=None
+    if python is not None:
+        control_job=out/'comparator_controls';control_job.mkdir()
+        control_command=[str(python),'-B',str(ROOT/'workflow/comparison_selftest.py'),'--out',str(control_job/'synthetic')]
+        control_code=stream_command(control_command,control_job,{**os.environ,'PYTHONDONTWRITEBYTECODE':'1','PYTHONUTF8':'1'})
+        comparator_control=read_json(control_job/'synthetic/SELFTEST_RESULT.json')
+        if control_code!=0:print('Comparator selftest did not pass;no real producers will run.',flush=True)
+    for stage in stages:
+        print('\nSTAGE',stage,flush=True)
+        if comparator_control is not None and comparator_control['status']!='PASS':
+            results[stage]=dict(stage=stage,status=comparator_control['status'],reason='Synthetic numerical-comparator control failed or blocked;no real producer executed',new_model_fits=0)
+        elif python is None:
+            results[stage]=dict(stage=stage,status='BLOCKED',reason='Existing exact engineering profile not found;no install/version relaxation',new_model_fits=0)
+        else:results[stage]=run_stage(stage,config,inputs,python,observed,out,results)
+        print('STAGE_RESULT',stage,results[stage]['status'],flush=True)
+    source_integrity_error=None
+    try:
+        source_after=verify_source_manifest();require(source_before==source_after,'Repository source changed during replay')
+    except Exception as error:
+        source_integrity_error=type(error).__name__+': '+str(error)
+    status='FAIL' if any(r['status']=='FAIL' for r in results.values()) else 'BLOCKED' if any(r['status']=='BLOCKED' for r in results.values()) else 'PASS_PERMITTED_PRODUCER_REPLAY_REVIEW_REQUIRED'
+    if source_integrity_error:status='FAIL'
+    summary=dict(status=status,started_utc=start,finished_utc=utc(),command=[sys.executable,'-B',str(ROOT/'run.py'),*sys.argv[1:]],
+                 config_sha256=safe_hash(args.config),source_manifest_sha256=safe_hash(ROOT/'config/source_manifest.json'),environment=observed,
+                 stages=results,comparator_control=comparator_control,source_integrity_error=source_integrity_error,prior_closed_stages=plan(config)['closed_no_rerun'],new_model_fits=0,final_test_inference=False,
+                 full_clean_room_E2E='NOT_EXECUTED',interpretation='PASS applies only to new producer/key/schema/value replay;archived modelling/test evidence retained without recomputation')
+    save_json(out/'REPLAY_RESULT.json',summary)
+    status_rows=[dict(stage=name,status=value['status'],reason=value.get('reason',''),artifact_directory=value.get('artifact_directory','')) for name,value in results.items()]
+    status_rows.append(dict(stage='full-clean-room-E2E',status='NOT_EXECUTED',reason='Not an acquisition/grid/refit/final-scoring replay',artifact_directory=''))
+    with (out/'STAGE_STATUS.csv').open('w',encoding='utf-8-sig',newline='') as stream:
+        writer=csv.DictWriter(stream,fieldnames=['stage','status','reason','artifact_directory']);writer.writeheader();writer.writerows(status_rows)
+    columns=[]
+    for result in results.values():
+        for dataset in result.get('comparison_results',[]):columns+=dataset['columns']
+    if columns:
+        with (out/'NUMERICAL_COMPARISON.csv').open('w',encoding='utf-8-sig',newline='') as stream:
+            writer=csv.DictWriter(stream,fieldnames=list(columns[0]));writer.writeheader();writer.writerows(columns)
+    # Export aggregate evidence/logs only, never generated Parquet or bank-row quality tables.
+    keep=[]
+    for p in out.rglob('*'):
+        if not p.is_file():continue
+        rel=p.relative_to(out)
+        if 'artifacts' in rel.parts or 'scratch' in rel.parts:continue
+        if p.suffix.lower() in {'.json','.txt'} or p.name in {'NUMERICAL_COMPARISON.csv','STAGE_STATUS.csv'}:keep.append(p)
+    export=out.with_name(out.name+'_GUI_LAI_CHO_CODEX.zip')
+    with zipfile.ZipFile(export,'x',compression=zipfile.ZIP_DEFLATED) as archive:
+        for p in sorted(keep):archive.write(p,p.relative_to(out).as_posix())
+    print('SEND_THIS_ZIP',export,flush=True)
+    if args.reveal and os.name=='nt':subprocess.Popen(['explorer.exe','/select,'+str(export)])
+    return 0 if status.startswith('PASS') else 2 if status=='BLOCKED' else 1
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__);sub=parser.add_subparsers(dest='command',required=True)
+    p=sub.add_parser('plan');p.add_argument('--config',type=Path,default=ROOT/'config/default.json')
+    p=sub.add_parser('validate');p.add_argument('--out',type=Path,required=True)
+    p=sub.add_parser('replay');p.add_argument('--config',type=Path,default=ROOT/'config/default.json');p.add_argument('--profile',type=Path);p.add_argument('--out',type=Path)
+    p.add_argument('--python-engineering',type=Path);p.add_argument('--stages',default='unverified');p.add_argument('--reveal',action='store_true')
+    for name in sorted(FORBIDDEN):sub.add_parser(name,help='DISABLED under frozen scientific release restrictions')
+    args=parser.parse_args()
+    if args.command in FORBIDDEN:parser.error('DISABLED: no model/grid/refit/threshold/final-scoring/download execution in this release workflow')
+    if args.command=='plan':print(json.dumps(plan(load_config(args.config)),indent=2));return 0
+    if args.command=='validate':return validate_release(args.out)
+    return replay(args)

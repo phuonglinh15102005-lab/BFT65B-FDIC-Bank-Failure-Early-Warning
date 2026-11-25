@@ -1,0 +1,48 @@
+{
+  "variant": "csv_sentinel",
+  "query": "one_quarter_six_columns",
+  "seconds": 0.39677260001190007,
+  "baseline_rss_mib": 47.3515625,
+  "peak_rss_mib": 511.875,
+  "peak_rss_increase_mib": 464.5234375,
+  "memory_samples": 26,
+  "fingerprint": {
+    "rows": 4740,
+    "schema": [
+      [
+        "CERT",
+        "Int64"
+      ],
+      [
+        "REPDTE",
+        "Date"
+      ],
+      [
+        "ASSET",
+        "Float64"
+      ],
+      [
+        "DEP",
+        "Float64"
+      ],
+      [
+        "EQ",
+        "Float64"
+      ],
+      [
+        "ROA",
+        "Float64"
+      ]
+    ],
+    "null_counts": [
+      0,
+      0,
+      0,
+      0,
+      17,
+      0
+    ],
+    "row_hash_sum_seed0": "10298101023170649073",
+    "row_hash_sum_seed42": "2130656264242006598"
+  }
+}

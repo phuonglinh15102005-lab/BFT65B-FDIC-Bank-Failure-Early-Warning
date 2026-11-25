@@ -1,0 +1,41 @@
+{
+  "scope": "Read-only aggregation of archived locked test scores, first review ledger and event-COST join; no model inference/refit or reselection",
+  "inputs": {
+    "final_test_first_alert_per_cert_year.csv.gz": {
+      "archive": "BFT65B_WORK_REPORT_HANDOFF_V2_VERIFIED_20261118.zip",
+      "member": "BFT65B_WORK_REPORT_HANDOFF/05_SELECTED_EVIDENCE/final_test_first_alert_per_cert_year.csv.gz",
+      "sha256": "528cd8b4e6f89d12c61ebfa6640c16dbaa7c44c5dc9b60d31833da521add761d"
+    },
+    "final_test_scored_rows.csv.gz": {
+      "archive": "BFT65B_WORK_REPORT_HANDOFF_V2_VERIFIED_20261118.zip",
+      "member": "BFT65B_WORK_REPORT_HANDOFF/05_SELECTED_EVIDENCE/final_test_scored_rows.csv.gz",
+      "sha256": "6ca6913f2770f98382be9a491afb8c68559739e5bc5a65c43c5b8aedf5d3bf09"
+    },
+    "locked_test_event_COST_join.csv": {
+      "archive": "BFT65B_WORK_REPORT_HANDOFF_V2_VERIFIED_20261118.zip",
+      "member": "BFT65B_WORK_REPORT_HANDOFF/05_SELECTED_EVIDENCE/locked_test_event_COST_join.csv",
+      "sha256": "3372b47508ae2cacb0077c5acc707b879414014d85e0d164e78259b10a4b8a9a"
+    }
+  },
+  "test_rows": 364440,
+  "positive_rows": 1112,
+  "AP": 0.43492507379207207,
+  "ROC_AUC": 0.9816208777462353,
+  "Brier": 0.0021632929633093084,
+  "log_loss": 0.008750220557166895,
+  "development_constant_Brier": 0.0030618012602092386,
+  "2010_2013_rows": 117658,
+  "2010_2013_positives": 934,
+  "quarters": 62,
+  "total_first_reviews": 3178,
+  "positive_first_reviews": 334,
+  "false_first_reviews": 2844,
+  "median_first_reviews": 13.0,
+  "peak_quarter": "2010-03-31",
+  "peak_first_reviews": 765,
+  "peak_false_first_reviews": 628,
+  "events": 341,
+  "detected_events": 326,
+  "COST_weighted_recall": 0.40977775203118955,
+  "aggregate_sha256": "bf973ff6d44d593913e2458c1c3b0be954399764762f450f9e7865c9d44542a4"
+}

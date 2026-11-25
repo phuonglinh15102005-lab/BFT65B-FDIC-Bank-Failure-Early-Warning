@@ -1,0 +1,1 @@
+PASS Ten synthetic Arrow/Polars controls;expected mismatches correctly fail. No bank data or estimators.

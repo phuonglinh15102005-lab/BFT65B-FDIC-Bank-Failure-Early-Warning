@@ -1,0 +1,16 @@
+{
+  "out": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\features\\comparison",
+  "datasets": [
+    {
+      "id": "development",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\features\\artifacts\\development_primary_binary_v2.parquet",
+      "reference": "%USERPROFILE%\\BFT65B_outputs\\part4_v2_dev_only_outputs\\development_primary_binary_v2.parquet",
+      "keys": [
+        "CERT",
+        "DECISION_DATE"
+      ],
+      "rtol": 1e-09,
+      "atol": 1e-10
+    }
+  ]
+}

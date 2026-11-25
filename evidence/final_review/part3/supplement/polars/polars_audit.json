@@ -1,0 +1,89 @@
+{
+  "project": "BFT65B FDIC Part 3",
+  "stage": "01 Polars reference, not a cross-engine benchmark",
+  "status": "PASS",
+  "recorded_at_utc": "2026-11-11T02:07:12+00:00",
+  "python": "3.13.9",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "logical_cpus": 12,
+  "polars": "2.1.0",
+  "polars_max_threads": 12,
+  "sources": {
+    "clean": {
+      "name": "panel_clean.parquet",
+      "bytes": 148079236,
+      "sha256": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107",
+      "expected_rows": 1669802,
+      "required_columns_present": true
+    },
+    "pit": {
+      "name": "panel_pit_base.parquet",
+      "bytes": 144394972,
+      "sha256": "3fce669406ff1898ac85d9c41c6385b7f8c6b27e29ecd041bb0a3c59f6337421",
+      "expected_rows": 1629398,
+      "required_columns_present": true
+    }
+  },
+  "synthetic_tests": {
+    "status": "PASS",
+    "tests": 6,
+    "details": [
+      "Skipped calendar quarter does not use preceding observed quarter",
+      "Previous-quarter zero assets does not create infinite growth",
+      "True adjacent-quarter growth equals 0.20",
+      "Positive EQ/ASSET equals 0.20",
+      "Positive NCLNLS/LNLSGR equals 0.10",
+      "Zero and missing denominators yield nulls"
+    ]
+  },
+  "workloads": {
+    "crisis_profile": {
+      "status": "PASS",
+      "metrics": {
+        "quarters": 28,
+        "first_quarter": "2008-03-31",
+        "last_quarter": "2014-12-31",
+        "rows_scanned_in_window": 210467,
+        "invalid_loan_denominators": 1452
+      },
+      "diagnostic_single_run_seconds_not_benchmark": 0.10232,
+      "csv_sha256": "0f9532f45fb59667f7f5b6986e47477964d318c55fe1bb0efaef851c97a842d2",
+      "optimized_plan_sha256": "3c213c65bd07081ad44227ae4498eb79083694b0ecedd7834021cdc068f48888"
+    },
+    "calendar_lag": {
+      "status": "PASS",
+      "metrics": {
+        "quarters": 170,
+        "first_quarter": "1984-03-31",
+        "last_quarter": "2026-06-30",
+        "total_rows": 1669802,
+        "prior_quarter_matches": 1645928,
+        "valid_growth": 1645928,
+        "unmatched_prior_quarter": 23874
+      },
+      "diagnostic_single_run_seconds_not_benchmark": 0.11416,
+      "csv_sha256": "5c4c8134e60a3a2bb2ee433bd6498b8ecb72dfc1cbb6c7b7a6f5bf5191187a93",
+      "optimized_plan_sha256": "e3d2cd85d0f6c0605e7a817bf2179add4ca3e9d86bdd1592fc5a477064829723"
+    },
+    "decision_profile": {
+      "status": "PASS",
+      "metrics": {
+        "quarters": 165,
+        "first_quarter": "1984-06-30",
+        "last_quarter": "2025-06-30",
+        "total_rows": 1629398,
+        "p3asset_missing": 954592,
+        "invalid_asset_denominators": 0
+      },
+      "diagnostic_single_run_seconds_not_benchmark": 0.03031,
+      "csv_sha256": "d67aef3c6322806d3e2038d86ca4402a76fd7af4efdd2b527ac654d1b6293e52",
+      "optimized_plan_sha256": "43e193b0e293b119fa96726e989c6153f220fc20a220de5ed68274cc2e75f867"
+    }
+  },
+  "limitations": [
+    "Not a valid comparative benchmark: one non-controlled run per task",
+    "No pandas or PySpark parity attempted yet",
+    "Historical FDIC filing vintages are unverified; one-quarter PIT lag is assumed",
+    "Summaries have no failure labels or future outcomes"
+  ]
+}

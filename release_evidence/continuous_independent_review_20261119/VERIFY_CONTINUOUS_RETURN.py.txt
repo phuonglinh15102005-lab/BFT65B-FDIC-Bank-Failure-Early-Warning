@@ -1,0 +1,161 @@
+"""Independent review of returned continuous-run evidence, not raw-data replay."""
+from pathlib import Path,PureWindowsPath
+from datetime import datetime,timezone
+from collections import Counter
+import csv,hashlib,json,platform,re,sys,zipfile
+
+W=Path('/workspace/work');CODE=W/'BFT65B_REPRO_CLOSEOUT_20261119'
+RET=W/'BFT65B_CONTINUOUS_RETURN_20261119_192500'
+ARCHIVE=Path('/workspace/attachments/8b79fc89-42ca-4d12-9e8b-efffa7c50a36/20261119_192500_59bdf85e_GUI_LAI_CHO_CODEX.zip')
+OUT=W/'BFT65B_CONTINUOUS_INDEPENDENT_REVIEW_20261119'
+REGISTRY=W/'FINAL_VERIFICATION_AUDIT/NESTED_ARCHIVES/PART2_CLEAN_REVIEW_BUNDLE/review_AUDIT_ONLY/bank_event_registry_AUDIT_ONLY.csv'
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
+def norm(p):return str(PureWindowsPath(p)).replace('\\','/').casefold()
+def dump(p,v):p.write_text(json.dumps(v,indent=2,ensure_ascii=False),encoding='utf-8')
+
+def main():
+    OUT.mkdir(exist_ok=False);started=datetime.now(timezone.utc).isoformat()
+    source=read(CODE/'config/source_manifest.json')
+    before={str(p):sha(p) for p in RET.rglob('*') if p.is_file()}
+    for p in [ARCHIVE,Path(__file__),REGISTRY,CODE/'config/source_manifest.json',*[CODE/n for n in source]]:before[str(p)]=sha(p)
+    checks=[];datasets=[];cols=[];exported_hashes=[];parent_edges=[];stage_outputs={};original_inputs={};error=None
+    def check(name,ok,detail):
+        checks.append(dict(check=name,status='PASS' if ok else 'FAIL',detail=detail))
+        if not ok:raise AssertionError(name+': '+str(detail))
+    try:
+        with zipfile.ZipFile(ARCHIVE) as z:
+            check('archive_crc_unique_members',z.testzip() is None and len(z.namelist())==len(set(z.namelist()))==257,'257 unique members, all CRC checks passed')
+            check('extracted_members_identical',set(z.namelist())=={p.relative_to(RET).as_posix() for p in RET.rglob('*') if p.is_file()} and all(hashlib.sha256(z.read(n)).hexdigest()==sha(RET/n) for n in z.namelist()),'Extraction preserves uploaded bytes')
+        exported=read(RET/'EXPORTED_FILE_MANIFEST.json')
+        actual={p.relative_to(RET).as_posix() for p in RET.rglob('*') if p.is_file()}-{'EXPORTED_FILE_MANIFEST.json'}
+        check('export_manifest_exact_coverage',set(exported)==actual,len(exported))
+        for name,h in exported.items():
+            check('transport_sha_'+name,sha(RET/name)==h,name)
+            exported_hashes.append(dict(file=name,sha256=h,status='PASS'))
+        check('no_private_row_payloads',all(Path(n).suffix.lower() in {'.json','.txt','.csv'} for n in actual),'No raw Parquet, models, NPZ, cache bodies or nested ZIP')
+        top=read(RET/'CONTINUOUS_RESULT.json');pf=read(RET/'PREFLIGHT.json');cfg=read(CODE/'config/default.json')
+        check('actual_executed_source_manifest',top['source_manifest_sha256']==sha(CODE/'config/source_manifest.json') and all(sha(CODE/n)==h for n,h in source.items()),dict(digest=top['source_manifest_sha256'],entries=len(source)))
+        check('actual_executed_config',top['config_sha256']==sha(CODE/'config/default.json'),top['config_sha256'])
+        expected_env=read(CODE/'config/environments.json')['engineering'];env=top['environment']
+        check('exact_documented_engineering_environment',env['python']==expected_env['python'] and all(env['packages'].get(n)==h for n,h in expected_env['packages'].items()),dict(python=env['python'],packages={n:env['packages'].get(n) for n in expected_env['packages']}))
+        check('full_chain_scope_not_overclaimed',top['start']=='raw' and top['fresh_parent_required'] is True and top['frozen_checkpoint_fallback'] is False and top['full_clean_room_E2E']=='NOT_EXECUTED' and top['live_acquisition']=='NOT_EXECUTED' and top['model_selection_refit_scoring']=='NOT_EXECUTED','Continuous raw snapshot/cache-to-development only')
+        check('preflight_no_integrity_errors_or_missing_inputs',pf['status']=='PASS' and not pf['errors'] and not pf['missing'],len(pf['inputs']))
+        original_inputs={norm(p):x['sha256'] for p,x in pf['inputs'].items()}
+        check('all_original_input_preservation_records_agree',top['input_sha256_before']==top['input_sha256_after']=={p:v['sha256'] for p,v in pf['inputs'].items()},len(original_inputs))
+        for n in original_inputs.values():check('valid_digest_'+str(len(checks)),bool(re.fullmatch('[0-9a-f]{64}',n)),'SHA-256 format')
+        roots={};run=PureWindowsPath(top['command'][top['command'].index('--out')+1]);code=PureWindowsPath(top['command'][2]).parent
+        expected_sources={
+            'prepare':'01_PART1_ACQUISITION_STORAGE/code/audit_fdic.py','base':'02_PART2_DATA_QUALITY_PANEL/code/02_build_panel_base.py',
+            'exits':'02_PART2_DATA_QUALITY_PANEL/code/02b_collect_exit_evidence.py','clean':'02_PART2_DATA_QUALITY_PANEL/code/02c_finalize_panel.py',
+            'features':'04_PART4_FEATURE_PIPELINE/code/part4_v2_relabel_asof_gate.py'}
+        check('exact_five_stages',list(top['stages'])==list(expected_sources),list(top['stages']))
+        def art(stage):return run/stage/'artifacts'
+        for stage,relative in expected_sources.items():
+            record=read(RET/stage/'STAGE_RESULT.json');worker=read(RET/stage/'WORKER_RESULT.json');spec=read(RET/stage/'PRODUCER_SPEC.json')
+            check(stage+'_embedded_record_equals_file',record==top['stages'][stage],'No inconsistent summary copy')
+            check(stage+'_spec_run_and_start',norm(spec['run'])==norm(run) and spec['stage']==stage and spec['start']=='raw','Same isolated run')
+            if not roots:roots={k:PureWindowsPath(v) for k,v in spec['inputs'].items()}
+            check(stage+'_same_registered_external_roots',{k:norm(v) for k,v in spec['inputs'].items()}=={k:norm(v) for k,v in roots.items()},'No per-stage source switching')
+            expected={
+                'prepare':['--data-dir',str(roots['raw_fdic_dir']),'--out',str(art('prepare')),'--prepare','--start','1984-03-31','--end','2026-06-30','--expected-failures','4117','--expected-institutions','27835'],
+                'base':['--audit-dir',str(art('prepare')),'--out',str(art('base'))],
+                'exits':['--step2-dir',str(art('base')),'--out',str(art('exits')),'--offline','--cache-dir',str(roots['step2b']/'request_cache')],
+                'clean':['--step2-dir',str(art('base')),'--step2b-dir',str(art('exits')),'--out',str(art('clean')),'--offline','--cache-dir',str(roots['step2c']/'request_cache')],
+                'features':['--clean',str(art('clean')/'panel_clean.parquet'),'--pit',str(art('clean')/'panel_pit_base.parquet'),'--registry-zip',str(art('clean')/'part2_clean_review_bundle.zip'),'--step01-source',str(code/'04_PART4_FEATURE_PIPELINE/code/part4_step01_reference_UNCHANGED.py'),'--out-dir',str(art('features')),'--production-only','--asof-quarters','0']
+            }[stage]
+            check(stage+'_complete_fresh_parent_argument_vector',[norm(x) for x in spec['arguments']]==[norm(x) for x in expected] and record['producer_arguments']==spec['arguments']==worker['recorded_producer_arguments'],expected)
+            check(stage+'_worker_and_comparison_command_identity',read(RET/stage/'COMMAND.json')==record['command'] and read(RET/stage/'comparison_command/COMMAND.json')==record['comparison_command'] and norm(record['command'][0])==norm(env['executable']) and norm(record['command'][2])==norm(code/'workflow/continuous_worker.py') and norm(record['comparison_command'][2])==norm(code/'workflow/continuous_compare.py'),'Source-pinned data-only dispatch')
+            check(stage+'_native_source_identity',worker['source_sha256']==sha(CODE/relative) and norm(worker['source'])==norm(code/relative),worker['source_sha256'])
+            check(stage+'_no_model_or_final_scoring_in_recorded_stage',worker['new_model_fits']==record['new_model_fits']==0 and worker['final_test_inference'] is record['final_test_inference'] is False,'Cross-checked source and arguments, not OS-level attestation')
+            check(stage+'_fresh_parent_preservation',record['input_sha256_before']==record['input_sha256_after'],len(record['input_sha256_before']))
+            check(stage+'_empty_producer_comparator_stderr',all(not (RET/stage/n).read_text(encoding='utf-8').strip() for n in ['STDERR.txt','comparison_command/STDERR.txt']),'No unhandled errors/warnings in stderr')
+            for name,h in record['output_sha256'].items():
+                stage_outputs[norm(run/stage/name)]=h
+                p=RET/stage/name
+                if p.is_file():check(stage+'_exported_declared_output_'+name,sha(p)==h,name)
+            compare=read(RET/stage/'comparison/COMPARISON_RESULT.json')
+            check(stage+'_embedded_comparisons_equal',record['comparison_results']==compare['results'],'Individual results agree')
+            check(stage+'_comparison_spec_identity',compare['spec_sha256']==sha(RET/stage/'COMPARISON_SPEC.json'),'Comparison executed registered spec')
+            if stage!='prepare':
+                for p,h in record['input_sha256_before'].items():
+                    check(stage+'_parent_digest_'+str(len(checks)),norm(p) in stage_outputs and stage_outputs[norm(p)]==h,p)
+                permitted={'base':['prepare'],'exits':['base'],'clean':['base','exits'],'features':['clean']}[stage]
+                check(stage+'_all_parents_are_new_artifacts',all(any(norm(p).startswith(norm(art(s))+'/') for s in permitted) for p in record['input_sha256_before']),permitted)
+                parent_edges.append(dict(child=stage,fresh_parents=','.join(permitted),tracked_parent_files=len(record['input_sha256_before']),status='PASS_ARGUMENT_AND_HASH_CONTINUITY'))
+        unit=read(RET/'unit_tests/RESULT.json');unitcmd=read(RET/'unit_tests/COMMAND.json');unitstderr=(RET/'unit_tests/STDERR.txt').read_text()
+        check('windows_normal_startup_unit_suite_45_pass',unitcmd==unit['command']==top['unit_tests']['command'] and '-S' not in unitcmd and re.search(r'Ran 45 tests\b',unitstderr) is not None and unitstderr.rstrip().endswith('OK') and unit['status']=='PASS','Actual Windows Python 3.13.9, normal startup')
+        check('windows_unit_cwd_portability',norm(read(RET/'unit_tests/EXECUTION_CONTEXT.json')['working_directory'])==norm(code),str(code))
+        ad=read(RET/'exits/OFFLINE_ADAPTER.json');argv=read(RET/'exits/PRODUCER_SPEC.json')['arguments'];i=argv.index('--cache-dir')
+        check('byte_unchanged_native_part2b_with_transport_only_adapter',ad['native_sha256']==sha(CODE/expected_sources['exits']) and ad['adapter_sha256']==sha(CODE/'workflow/offline_part2b.py') and ad['native_arguments']==argv[:i]+argv[i+2:] and ad['fresh_part2b_generated'] and not ad['old_part2b_reports_copied'] and not ad['signatures_rewritten'],'Native source checks signatures itself; native metadata JSON files stay on Windows')
+        prepared=read(CODE/'config/prepared_snapshot_manifest.json');prep_by_id={}
+        for item in prepared:
+            rel=item['relative_path'];path=roots['prepared_audit']/rel
+            check('known_prepared_input_'+rel,original_inputs.get(norm(path))==item['sha256'],rel)
+            if rel.endswith('.parquet'):
+                name='prepared_'+Path(rel).stem.replace('=','_') if '/financials/' in rel else 'prepared_institutions' if Path(rel).name=='institutions.parquet' else 'prepared_failures_all'
+                prep_by_id[name]=item
+        raw_names=['financials/'+Path(x['relative_path']).name for x in prepared if '/financials/' in x['relative_path']]+['manifest_financials.json','institutions.parquet','failures.parquet']
+        expected_raw={norm(roots['raw_fdic_dir']/n) for n in raw_names}
+        observed_raw={norm(p) for p,v in pf['inputs'].items() if v['role']=='raw-source'}
+        check('complete_registered_raw_file_scope',expected_raw==observed_raw and len(observed_raw)==173,'170 quarters + manifest + two small tables')
+        check('raw_ledger_disclosure_kept',pf['raw_ledger_status']=='CHECKED_AGAINST_ARCHIVED_LEDGER_NOT_INDEPENDENTLY_PREPINNED','Ledger checked on Windows; not independently pre-pinned historically')
+        for name,h in read(CODE/'config/step2b_snapshot_hashes.json').items():check('original_part2b_reference_'+name,original_inputs.get(norm(roots['step2b']/name))==h,name)
+        for item in read(CODE/'config/frozen_scope_requests.json'):
+            key=hashlib.sha256(item['url'].encode()).hexdigest();check('original_scope_cache_'+key,original_inputs.get(norm(roots['step2c']/'request_cache'/(key+'.body')))==item['sha256'],item['url'])
+        for stage in expected_sources:
+            spec=read(RET/stage/'COMPARISON_SPEC.json');compare=read(RET/stage/'comparison/COMPARISON_RESULT.json')
+            check(stage+'_all_expected_comparisons_present',len(spec['datasets'])==len(compare['results']) and {x['id'] for x in spec['datasets']}=={x['dataset'] for x in compare['results']},len(spec['datasets']))
+            if stage=='prepare':check('all_172_prepared_parquets_compared',{x['id'] for x in spec['datasets']}==set(prep_by_id) and len(prep_by_id)==172,'No omitted quarter/small table')
+            for ds in spec['datasets']:
+                v=read(RET/stage/'comparison'/(ds['id']+'.json'))
+                check(v['dataset']+'_standalone_equals_aggregate',v==next(x for x in compare['results'] if x['dataset']==ds['id']),'No JSON summary disagreement')
+                check(v['dataset']+'_new_output_identity',stage_outputs.get(norm(ds['new']))==v['new_sha256'],v['new_sha256'])
+                check(v['dataset']+'_new_path_is_current_stage',norm(ds['new']).startswith(norm(art(stage))+'/'),ds['new'])
+                if stage=='prepare':expected_ref=prep_by_id[ds['id']]['sha256']
+                elif ds['id'] in cfg['reference_files']:expected_ref=cfg['reference_files'][ds['id']]['sha256']
+                elif ds['id']=='part2b_history_events_AUDIT_ONLY':expected_ref=read(CODE/'config/step2b_snapshot_hashes.json')['review_AUDIT_ONLY/history_events_AUDIT_ONLY.csv']
+                elif ds['id']=='part2b_bank_exit_evidence_AUDIT_ONLY':expected_ref=read(CODE/'config/step2b_snapshot_hashes.json')['review_AUDIT_ONLY/bank_exit_evidence_AUDIT_ONLY.csv']
+                else:expected_ref=sha(REGISTRY)
+                check(v['dataset']+'_independent_reference_anchor',expected_ref==v['reference_sha256'],expected_ref)
+                check(v['dataset']+'_schema_rows_agree',v['schema_equal'] and v['new_rows']==v['reference_rows'],'Equal schema and row count')
+                check(v['dataset']+'_byte_identity_field_correct',v['byte_identical']==(v['new_sha256']==v['reference_sha256']),v['byte_identical'])
+                if ds.get('kind')=='csv':
+                    check(v['dataset']+'_csv_multiset_equivalence',v['new_columns']==v['reference_columns'] and v['missing_rows']==v['extra_rows']==0 and v['new_canonical_sha256']==v['reference_canonical_sha256'],'Duplicate multiplicity and values checked by executed comparator; CSV bytes match known reference digest')
+                    check(v['dataset']+'_known_original_csv_bytes',v['byte_identical'],'Original source evidence reproduced')
+                    width=len(v['new_columns']);kind='csv'
+                else:
+                    check(v['dataset']+'_schema_detail_equal',v['new_schema']==v['reference_schema'],'Detailed Arrow types/order')
+                    fields=[x.split(':',1)[0] for x in v['new_schema'].splitlines()]
+                    check(v['dataset']+'_full_column_coverage',len(fields)==len(set(fields)) and len(v['columns'])==len(fields)-len(v['keys']) and {x['column'] for x in v['columns']}==set(fields)-set(v['keys']),len(v['columns']))
+                    check(v['dataset']+'_keys_complete_unique_nonnull',len(v['key_checks'])==6 and all(x==0 for x in v['key_checks'].values()),v['key_checks'])
+                    check(v['dataset']+'_all_masks_and_values_zero_difference',all(x['rows']==v['new_rows'] and x['null_mismatches']==x['nan_mismatches']==x['value_mismatches']==0 and x['max_abs_difference']==0 and x['nonfinite_difference'] is False for x in v['columns']),'No reported value/null/NaN differences, max absolute delta 0')
+                    if ds['id']!='development':check(v['dataset']+'_original_parquet_bytes',v['byte_identical'],'Pinned reference SHA reproduced')
+                    cols+=v['columns'];width=len(fields);kind='parquet'
+                datasets.append(dict(stage=stage,dataset=v['dataset'],kind=kind,rows=v['new_rows'],columns=width,byte_identical=v['byte_identical'],new_sha256=v['new_sha256'],reference_sha256=v['reference_sha256'],status='VERIFIED_RETURNED_EXECUTION_EVIDENCE'))
+        with (RET/'NUMERICAL_COMPARISON.csv').open(encoding='utf-8-sig',newline='') as f:table=list(csv.DictReader(f))
+        check('numerical_csv_exactly_matches_all_column_records',len(cols)==len(table)==5401 and all({k:str(v) for k,v in c.items()}==row for c,row in zip(cols,table)),5401)
+        with (RET/'DATASET_COMPARISON.csv').open(encoding='utf-8-sig',newline='') as f:table=list(csv.DictReader(f))
+        check('dataset_csv_exactly_matches_results',len(table)==len(datasets)==179 and all(t['dataset']==d['dataset'] and int(t['new_rows'])==d['rows'] and t['new_sha256']==d['new_sha256'] and t['reference_sha256']==d['reference_sha256'] for t,d in zip(table,datasets)),179)
+        check('quarter_scope_and_rows',len([x for x in datasets if x['dataset'].startswith('prepared_REPDTE_')])==170 and sum(x['rows'] for x in datasets if x['dataset'].startswith('prepared_REPDTE_'))==1682616,'170 quarters, 1,682,616 Financials rows')
+        expected_rows={'prepared_institutions':27835,'prepared_failures_all':4117,'base':1682616,'clean':1669802,'pit':1629398,'development':1231631,'part2b_history_events_AUDIT_ONLY':59901,'part2b_bank_exit_evidence_AUDIT_ONLY':24064,'event_registry':24064}
+        check('all_material_counts_match_expected',all(next(d['rows'] for d in datasets if d['dataset']==n)==value for n,value in expected_rows.items()),expected_rows)
+        check('summary_consistent_with_review',top['status']=='PASS_CONTINUOUS_RAW_TO_DEVELOPMENT_REPLAY_REVIEW_REQUIRED' and top['continuous_data_replay']=='COMPLETED' and top['error'] is None and all(x['status']=='PASS' for x in top['stages'].values()),'Five stages completed with comparisons')
+        check('no_new_fit_or_test_inference_reported',top['new_model_fits']==0 and top['final_test_inference'] is False,'Only source-pinned upstream/development producers dispatched')
+    except Exception as e:error=type(e).__name__+': '+str(e)
+    after={p:sha(Path(p)) for p in before}
+    if before!=after:error='Input bytes changed during independent review'
+    status='PASS_CONTINUOUS_RAW_TO_DEVELOPMENT_RETURN_REVIEW' if error is None else 'FAIL'
+    outputs={}
+    for name,rows in [('DATASET_VERIFICATION.csv',datasets),('PARENT_CONTINUITY.csv',parent_edges),('EXPORTED_HASH_VERIFICATION.csv',exported_hashes)]:
+        with (OUT/name).open('w',encoding='utf-8-sig',newline='') as f:
+            if rows:w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
+        outputs[name]=sha(OUT/name)
+    record=dict(status=status,error=error,command=[sys.executable,'-B',str(Path(__file__))],started_utc=started,finished_utc=datetime.now(timezone.utc).isoformat(),environment=dict(python=platform.python_version(),platform=platform.platform(),packages='stdlib only'),input_sha256_before=before,input_sha256_after=after,output_sha256=outputs,checks=checks,
+        returned_exported_files=len(exported_hashes),original_input_hash_records=len(original_inputs),dataset_count=len(datasets),parquet_count=sum(d['kind']=='parquet' for d in datasets),csv_count=sum(d['kind']=='csv' for d in datasets),byte_identical_count=sum(d['byte_identical'] for d in datasets),compared_nonkey_columns=len(cols),compared_row_column_cells=sum(x['rows'] for x in cols),windows_unit_tests=45,
+        verification_scope='Independent hash/config/command/parent-link/complete comparison-record review of actual Windows execution. Private raw Parquet/native metadata JSON remain on Windows; they were not reread or directly rehashed in cloud.',
+        native_signature_scope='Native signature checks executed by pinned source; not independently recalculated from unavailable native JSON/CSV metadata bytes in cloud.',full_clean_room_E2E='NOT_EXECUTED',new_fits_during_review=0,final_test_inference=False)
+    dump(OUT/'INDEPENDENT_VERIFICATION.json',record)
+    print(json.dumps({k:v for k,v in record.items() if k not in ['checks','input_sha256_before','input_sha256_after']},indent=2))
+    return 0 if error is None else 1
+if __name__=='__main__':sys.exit(main())

@@ -1,0 +1,58 @@
+== Physical Plan ==
+AdaptiveSparkPlan (9)
++- Sort (8)
+   +- Exchange (7)
+      +- HashAggregate (6)
+         +- Exchange (5)
+            +- HashAggregate (4)
+               +- Project (3)
+                  +- Filter (2)
+                     +- Scan parquet  (1)
+
+
+(1) Scan parquet 
+Output [7]: [REPDTE#16, NCLNLS#24, ROA#27, ASSET#30, LNLSGR#31, EQ#34, DEP#35]
+Batched: true
+Location: InMemoryFileIndex [file:/%USERPROFILE%/BFT65B_outputs/step2c_20261108_145539_477509/panel_clean.parquet]
+PushedFilters: [IsNotNull(REPDTE), GreaterThanOrEqual(REPDTE,2008-03-31), LessThanOrEqual(REPDTE,2014-12-31)]
+ReadSchema: struct<REPDTE:date,NCLNLS:double,ROA:double,ASSET:double,LNLSGR:double,EQ:double,DEP:double>
+
+(2) Filter
+Input [7]: [REPDTE#16, NCLNLS#24, ROA#27, ASSET#30, LNLSGR#31, EQ#34, DEP#35]
+Condition : ((isnotnull(REPDTE#16) AND (REPDTE#16 >= 2008-03-31)) AND (REPDTE#16 <= 2014-12-31))
+
+(3) Project
+Output [7]: [REPDTE#16, ASSET#30, DEP#35, ROA#27, LNLSGR#31, CASE WHEN (ASSET#30 > 0.0) THEN (EQ#34 / ASSET#30) END AS EQ_ASSET#46, CASE WHEN (LNLSGR#31 > 0.0) THEN (NCLNLS#24 / LNLSGR#31) END AS NCLNLS_LOANS#47]
+Input [7]: [REPDTE#16, NCLNLS#24, ROA#27, ASSET#30, LNLSGR#31, EQ#34, DEP#35]
+
+(4) HashAggregate
+Input [7]: [REPDTE#16, ASSET#30, DEP#35, ROA#27, LNLSGR#31, EQ_ASSET#46, NCLNLS_LOANS#47]
+Keys [1]: [REPDTE#16]
+Functions [7]: [partial_count(1), partial_avg(ASSET#30), partial_avg(DEP#35), partial_avg(ROA#27), partial_avg(EQ_ASSET#46), partial_avg(NCLNLS_LOANS#47), partial_sum(CASE WHEN (isnull(LNLSGR#31) OR (LNLSGR#31 <= 0.0)) THEN 1 ELSE 0 END)]
+Aggregate Attributes [12]: [count#72L, sum#73, count#74L, sum#75, count#76L, sum#77, count#78L, sum#79, count#80L, sum#81, count#82L, sum#83L]
+Results [13]: [REPDTE#16, count#84L, sum#85, count#86L, sum#87, count#88L, sum#89, count#90L, sum#91, count#92L, sum#93, count#94L, sum#95L]
+
+(5) Exchange
+Input [13]: [REPDTE#16, count#84L, sum#85, count#86L, sum#87, count#88L, sum#89, count#90L, sum#91, count#92L, sum#93, count#94L, sum#95L]
+Arguments: hashpartitioning(REPDTE#16, 8), ENSURE_REQUIREMENTS, [plan_id=134]
+
+(6) HashAggregate
+Input [13]: [REPDTE#16, count#84L, sum#85, count#86L, sum#87, count#88L, sum#89, count#90L, sum#91, count#92L, sum#93, count#94L, sum#95L]
+Keys [1]: [REPDTE#16]
+Functions [7]: [count(1), avg(ASSET#30), avg(DEP#35), avg(ROA#27), avg(EQ_ASSET#46), avg(NCLNLS_LOANS#47), sum(CASE WHEN (isnull(LNLSGR#31) OR (LNLSGR#31 <= 0.0)) THEN 1 ELSE 0 END)]
+Aggregate Attributes [7]: [count(1)#65L, avg(ASSET#30)#66, avg(DEP#35)#67, avg(ROA#27)#68, avg(EQ_ASSET#46)#69, avg(NCLNLS_LOANS#47)#70, sum(CASE WHEN (isnull(LNLSGR#31) OR (LNLSGR#31 <= 0.0)) THEN 1 ELSE 0 END)#71L]
+Results [8]: [REPDTE#16, count(1)#65L AS REPORTS#48L, avg(ASSET#30)#66 AS MEAN_ASSET#49, avg(DEP#35)#67 AS MEAN_DEP#50, avg(ROA#27)#68 AS MEAN_ROA#51, avg(EQ_ASSET#46)#69 AS MEAN_EQ_ASSET#52, avg(NCLNLS_LOANS#47)#70 AS MEAN_NCLNLS_LOANS#53, sum(CASE WHEN (isnull(LNLSGR#31) OR (LNLSGR#31 <= 0.0)) THEN 1 ELSE 0 END)#71L AS INVALID_LOAN_DENOM#54L]
+
+(7) Exchange
+Input [8]: [REPDTE#16, REPORTS#48L, MEAN_ASSET#49, MEAN_DEP#50, MEAN_ROA#51, MEAN_EQ_ASSET#52, MEAN_NCLNLS_LOANS#53, INVALID_LOAN_DENOM#54L]
+Arguments: rangepartitioning(REPDTE#16 ASC NULLS FIRST, 8), ENSURE_REQUIREMENTS, [plan_id=137]
+
+(8) Sort
+Input [8]: [REPDTE#16, REPORTS#48L, MEAN_ASSET#49, MEAN_DEP#50, MEAN_ROA#51, MEAN_EQ_ASSET#52, MEAN_NCLNLS_LOANS#53, INVALID_LOAN_DENOM#54L]
+Arguments: [REPDTE#16 ASC NULLS FIRST], true, 0
+
+(9) AdaptiveSparkPlan
+Output [8]: [REPDTE#16, REPORTS#48L, MEAN_ASSET#49, MEAN_DEP#50, MEAN_ROA#51, MEAN_EQ_ASSET#52, MEAN_NCLNLS_LOANS#53, INVALID_LOAN_DENOM#54L]
+Arguments: isFinalPlan=false
+
+

@@ -1,0 +1,28 @@
+{
+  "stage": "prepare",
+  "status": "PASS_PRODUCER_EXECUTION_COMPARISON_REQUIRED",
+  "error": null,
+  "started_utc": "2026-11-19T12:25:34.354164+00:00",
+  "finished_utc": "2026-11-19T12:26:09.183547+00:00",
+  "source": "%USERPROFILE%\\Downloads\\BFT65B_REPRO_CLOSEOUT_20261119\\BFT65B_REPRO_CLOSEOUT_20261119\\01_PART1_ACQUISITION_STORAGE\\code\\audit_fdic.py",
+  "source_sha256": "26066adeb80152732dc9c75fb0ff84ce51a811d01f6727113b1e6701afbe9b5f",
+  "recorded_producer_arguments": [
+    "--data-dir",
+    "%USERPROFILE%\\data_raw\\fdic",
+    "--out",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts",
+    "--prepare",
+    "--start",
+    "1984-03-31",
+    "--end",
+    "2026-06-30",
+    "--expected-failures",
+    "4117",
+    "--expected-institutions",
+    "27835"
+  ],
+  "offline": false,
+  "new_model_fits": 0,
+  "final_test_inference": false,
+  "guard": "Python audit hooks, not native-library OS sandbox"
+}

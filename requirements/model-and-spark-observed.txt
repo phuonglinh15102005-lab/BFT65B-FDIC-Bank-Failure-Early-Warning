@@ -1,0 +1,3 @@
+# Candidate install recipe from observed model runtime plus recorded MLlib version; clean install NOT yet verified. Python 3.13.7; Java 17 required.
+-r model-runtime-observed.txt
+pyspark==4.3.0

@@ -1,0 +1,21 @@
+{
+  "status": "PASS_SYNTAX_AND_CORE_PRESERVATION_ONLY",
+  "files": [
+    {
+      "path": "02_PART2_DATA_QUALITY_PANEL/code/02c_finalize_panel.py",
+      "archived_sha256": "f37faa1484e083ca1d900905c5977ac0353dee1c326671ad9ee2bbc1b1326a3c",
+      "release_sha256": "8db73a30252bb2bf61f3569d16f6f335e29fbf55d0d7a6efa9cbd69ec8b4067f",
+      "syntax_ast_parse": "PASS"
+    },
+    {
+      "path": "04_PART4_FEATURE_PIPELINE/code/part4_v2_relabel_asof_gate.py",
+      "archived_sha256": "d557d0440ffa79edbe95f59c96b08a0bda6849502b610aa309d80288c61eda6a",
+      "release_sha256": "7807ecebefca1a2d592d450c7c42930578e6d9b5086f39494cf83078c0ff13b3",
+      "syntax_ast_parse": "PASS"
+    }
+  ],
+  "scientific_data_execution": "NOT_EXECUTED",
+  "archived_sources_unchanged": true,
+  "part4_primary_label_block_byte_identical": true,
+  "part4_existing_public_functions_ast_identical": true
+}

@@ -1,0 +1,22 @@
+{
+  "scope": "DEVELOPMENT_ONLY_POST_LOCK_NONSELECTIVE_DIAGNOSTICS",
+  "development_sha256": "d365ce25204a3dcace715db4cea259c94b1b1abba4822c7bcf2b050a1c7f6a73",
+  "clean_sha256": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107",
+  "frozen_protocol_sha256": "994f72de6e2446916db8c2fcd36847c45cc68eb6fef5ef67f07acc0476c6d911",
+  "hgb_configuration": {
+    "config_id": "HGB_L15_LR0p05_I150_L21_CLnone",
+    "max_leaf_nodes": 15,
+    "learning_rate": 0.05,
+    "max_iter": 150,
+    "l2_regularization": 1.0,
+    "clipping": "none"
+  },
+  "fit_count": 3,
+  "test_scoring": "NEVER_EXECUTED",
+  "changes_to_registered_model_or_threshold": false,
+  "caveats": [
+    "In-sample AP is optimistically biased and cannot itself rule out overfitting",
+    "Group medians are outcome-stratified descriptions and cannot claim causal directions",
+    "RBCRWAJ zeros do not prove CBLR election without individual election status"
+  ]
+}

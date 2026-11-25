@@ -1,0 +1,26 @@
+{
+  "status": "PASS_PRODUCER_EXECUTION_COMPARISON_REQUIRED",
+  "error": null,
+  "stage": "p2-clean",
+  "started_utc": "2026-11-19T01:21:30.971239+00:00",
+  "finished_utc": "2026-11-19T01:22:03.585947+00:00",
+  "source_sha256": "8db73a30252bb2bf61f3569d16f6f335e29fbf55d0d7a6efa9cbd69ec8b4067f",
+  "command": [
+    "%USERPROFILE%\\miniconda3\\python.exe",
+    "-B",
+    "%USERPROFILE%\\Downloads\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\02_PART2_DATA_QUALITY_PANEL\\code\\02c_finalize_panel.py",
+    "--step2-dir",
+    "%USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509",
+    "--step2b-dir",
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509",
+    "--out",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts",
+    "--offline",
+    "--cache-dir",
+    "%USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\request_cache"
+  ],
+  "guard": "Python write/network/frozen-model guard,not an OS/native-Arrow sandbox",
+  "closed_checks_reexecuted": false,
+  "new_model_fits": 0,
+  "final_test_inference": false
+}

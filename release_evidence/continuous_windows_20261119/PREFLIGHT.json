@@ -1,0 +1,2033 @@
+{
+  "status": "PASS",
+  "inputs": {
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19840331.parquet": {
+      "sha256": "e09e87ba8e7db9a1531288d260d04a88557f9d8803a3af06c3ec0c11c345fd46",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19840630.parquet": {
+      "sha256": "d0d34ad28e27e957554f181bd6918c03de8c545589236e00d2823b5be273e577",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19840930.parquet": {
+      "sha256": "c78ca223aee672b9ca4de890fd80e214f50537f82264e52fb86ede0e8df51f5e",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19841231.parquet": {
+      "sha256": "ecc1e1064c48ee13ef969173269108fb80d63e5dde304eadb7797824d2fa9c93",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19850331.parquet": {
+      "sha256": "05f6efe103376c603b0acf71e8263172630040ec0296be3a201f822c630b7d62",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19850630.parquet": {
+      "sha256": "2aae657d0eeac71332d2fc0b8736f26f530ce24c8ccec5853f81c346555c31d6",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19850930.parquet": {
+      "sha256": "0f97a91c0cc73e385b79f2e350b9234ff83a9af4d4f543b2044738840f785074",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19851231.parquet": {
+      "sha256": "ffe0ab8252f5e97ebbfdd5d4053fe9b1dc71165c15562d3ae6c6762e046a935a",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19860331.parquet": {
+      "sha256": "ccc10091a2a142cd99238a564eadd0e0be3ae60a74ee0b46fecae8a069b05865",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19860630.parquet": {
+      "sha256": "b5261161744dbe9eaafa1ac375aab64ad789a7528c8078c6d5256e56cf904f99",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19860930.parquet": {
+      "sha256": "09d848b8361aa1a17e785aa971c7849e80615cf15653a979a0978ed0a27ebd8a",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19861231.parquet": {
+      "sha256": "258f80466175a18cca19ebc14270e42848a2bbc7e08c6b97237a69c08e3ea0e0",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19870331.parquet": {
+      "sha256": "4670b92186592e687b7aef2f1326474cfa7f76a285fb1caf68dddd1fa0c09db5",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19870630.parquet": {
+      "sha256": "80c4ac06f9691845f24d92bc9254b428d7ad606da1a671fcb2827281de485084",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19870930.parquet": {
+      "sha256": "59a10a7eb70a58122126467056048867d75eef2f06d5cdfa949095d8c14a4160",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19871231.parquet": {
+      "sha256": "561354d152bc4516bea79dcc18f32be304ca0a9915e8da3964f2f12ba0c824fe",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19880331.parquet": {
+      "sha256": "0304090897b18697b864a431ed909a6ae76d146ab577cf298d40ee6767ed6c1b",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19880630.parquet": {
+      "sha256": "e5ee0b463e8521fd560106385fba6369dd0fb4fb2e682dc26d9305bd67acd2b7",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19880930.parquet": {
+      "sha256": "bfd466e4fe6568c5674e82c79327baccce59713e56b84376c5829f0af9425104",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19881231.parquet": {
+      "sha256": "fa5cd5ac98a57f8ce2026c33b55b90f4fceaaede6c26cffa155c826ffd9302e1",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19890331.parquet": {
+      "sha256": "52efa24d7d5a1eec5d1b6889f54720a36d21f15ffb6458c0dda1bfe8f637300c",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19890630.parquet": {
+      "sha256": "c5c65ce879015a5cb305212d975f911a4838f85d52f4d163d5b3ff707242a952",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19890930.parquet": {
+      "sha256": "4eefdb3718010941d5e645a3bcf82dbe90194a2e94da37cca305e300e3b0f91b",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19891231.parquet": {
+      "sha256": "b54a0d421707ac7e40539defd9c8b923eadf71dfac682082deadb79dbbd8c235",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19900331.parquet": {
+      "sha256": "4d3058581936d6960e668c2728eae653ad21a095ee65a2fe37b51f8a10c1618f",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19900630.parquet": {
+      "sha256": "a8e8f6ea8b14533e4d37fe269ebc840656d73914a945408ef72be550bca467e1",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19900930.parquet": {
+      "sha256": "2d4805652c4667b94fc06029416b605d4b2e851fc71db7fb3cde656e37c5a404",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19901231.parquet": {
+      "sha256": "1697b1f75eb9cb690200d080f42674dc612f7a51b0f277e34519a8e0f0e0edca",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19910331.parquet": {
+      "sha256": "a8ebb7c5503faca598d7f5fe91c42690b1514e826f7ffc918ca60534d89859ff",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19910630.parquet": {
+      "sha256": "19939c5e42217e2fbbf216691aaadf9d0902d7f3d3fd517f2fe2696c3216304b",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19910930.parquet": {
+      "sha256": "6aea0b7a984ef5e15181e4b5b7a45a1f428f06fb56ffbc91a6648624cd0b8edd",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19911231.parquet": {
+      "sha256": "f82ff032b579428a343392caa1950500d1017f532e491b1d4efea0a6f46c084c",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19920331.parquet": {
+      "sha256": "263f32805769cdf3247fdaf7914d3256c7e6fa36f8df23e34e6172e8e6067c53",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19920630.parquet": {
+      "sha256": "6c66b1375d9920ca459b583e1b0aed9d215a6f4e4960850096ef4b13d27fd0ef",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19920930.parquet": {
+      "sha256": "6b239a28a0e4137137440f3a101ed9bb70b6715f1c7e9e188871f0df4c0d9a1e",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19921231.parquet": {
+      "sha256": "5c15260eb8102f15142e5ba6a3c3a463c0d343336140c78d0a06f246dd007d17",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19930331.parquet": {
+      "sha256": "8549de21f077b7dad32caee56aed3e0ed159c6ab7225b41075ff3992c5a6c37e",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19930630.parquet": {
+      "sha256": "b82dfeb2400fed144624858b2e6ad7feb978802c8df618cd521db1760b262392",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19930930.parquet": {
+      "sha256": "108cab4b6ab65b7044a7c28cbd891e18d0f9d0eed6c90de95c4ddda20b72baff",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19931231.parquet": {
+      "sha256": "7c42349e3947b5c30d2042f90e2944f5b2e20c619a5c7f3d217039f36095feea",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19940331.parquet": {
+      "sha256": "a795c19730ebe77fc2d5bd1566ff99953de1b538007de3c3dc3f2ddf85833d15",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19940630.parquet": {
+      "sha256": "75ecfb271238407e99617bdd6a3ed7b6cf1daefc6e2468efc8415069b6171b8a",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19940930.parquet": {
+      "sha256": "b9a2d96d6aa11b1a537ec53d13e4585c6268047405a90eb78d1567af5b545bae",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19941231.parquet": {
+      "sha256": "029208da171f29a03a269c543c4f5454d8421ed0d09c86850cb0ec699b15e06a",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19950331.parquet": {
+      "sha256": "7e58e348feb6ee67c0194738637fad50e5c6b3e39b8798f01aac9df938912886",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19950630.parquet": {
+      "sha256": "8f3f75deba3758f0d2ad009c209c97c655e2b017df61e5fe853d119cdc5c99a5",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19950930.parquet": {
+      "sha256": "51e62cf41554e88ac7f76a259cb62ca06e3e5ac698eda4a6cc72c51507244576",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19951231.parquet": {
+      "sha256": "560a914c7b6f60a0e5c4d26c90abd9471f77afef09aed419601db788733d5b58",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19960331.parquet": {
+      "sha256": "cabf49a1dd4a99d3c92bd170560a6a72ec45f82c0f4f71f7b5eacbd7793e7164",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19960630.parquet": {
+      "sha256": "f4f90b28656f96c38a9328fcd7ffbff481f97e7ceaf3b8f66e984e56a9ffb682",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19960930.parquet": {
+      "sha256": "54ae19ff2d12a348ec759bad4ceaf1bc03588abd5829c354c4e1ad4b5dd1a721",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19961231.parquet": {
+      "sha256": "dbf2dbc1bc01a1d864a38b888551ee925d0b8d2efeffe160ed84184787179d92",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19970331.parquet": {
+      "sha256": "16da7d1865f87c821ec0701229565f6e936f0a3d477024f74744b755f331fad1",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19970630.parquet": {
+      "sha256": "40cd351dcecedc3bc83886f493df7e371f9ba80a6eb37befd2cd237fe333602b",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19970930.parquet": {
+      "sha256": "9b23535179110fab8e65e8a648020b55d963d4c4efefe442a945ae3d8d335849",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19971231.parquet": {
+      "sha256": "e1a54bf870c11e858f8dfcce0d288f734ef501ea7bae58f0b715be3091a0f1eb",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19980331.parquet": {
+      "sha256": "3bacc91968c86132816871d2fabba23d21d97340bc405287314319b8dd53d339",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19980630.parquet": {
+      "sha256": "80d799f1eb1693d75c8f870f8f32a414485a1c4fa3a785dbe9970b06816b8732",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19980930.parquet": {
+      "sha256": "c8cb8625647ee7b78231ed2c5b03197d6a0c811b46ef691294f6a833578509af",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19981231.parquet": {
+      "sha256": "8d09537b11036f90ebb4f139a7aed875d764add81619136b037bc0a043340546",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19990331.parquet": {
+      "sha256": "4210024f6e95680147857aa1789d748bc7e56555637e566c8d1c5ad77a2c5890",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19990630.parquet": {
+      "sha256": "1a82dcbbbbe3b68e7e2a44df5f0f435536074a0b7cdcb4e24597dc1c9a0dbaf5",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19990930.parquet": {
+      "sha256": "170dc542796745e8fbfdb699feaf4546ed7dea3750f70098901e20460890887d",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19991231.parquet": {
+      "sha256": "0de6606e160a3d033c2bbc5e1864aad8e938f10b56c4b2a90a24367f76167291",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20000331.parquet": {
+      "sha256": "69eea20eeb1211b38cf950fde43cd4cb8178dd6440770564c13a60fa490ac546",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20000630.parquet": {
+      "sha256": "c45a9b4d03d63458fcba5b632217ca6608dbebd2435ad25730bc680fa29a2eff",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20000930.parquet": {
+      "sha256": "92956537172ae05804aeac390ce109af2ec370b3225c1c56362e66f83728465e",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20001231.parquet": {
+      "sha256": "c96ffdccc1cfb294e08df046b79011ef795bff78a58af325763cc7352d353b1f",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20010331.parquet": {
+      "sha256": "1b009fefe9153ad1890ee79985a93e24180bbd4fd30858a4b751d43312bf2bc9",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20010630.parquet": {
+      "sha256": "375a50a907ba6a2e5e8e5da8f1549d56e97c75550274f39a559f37d32105f3c8",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20010930.parquet": {
+      "sha256": "532dcb84951c18f0b1d7fe8dbec76004059712a7489f8427dfa3f80b47304eb8",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20011231.parquet": {
+      "sha256": "b1593f3b42c900730afaf96c0fe71da2741de4082dbabc3bf57e734002cb0822",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20020331.parquet": {
+      "sha256": "a809fdf9d7af1d15befa47920933effe3059bf9c0137dd8dbd1c409a20765eb8",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20020630.parquet": {
+      "sha256": "ac8d0dd0da45536c51396e48e6c38e3b30dd1025d09cc67600132fcb4763e020",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20020930.parquet": {
+      "sha256": "5c10c02b285ca11dc290994e28590adea6955db427756ee30e052fed3d50a5a6",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20021231.parquet": {
+      "sha256": "3de2d53ac76a658e6a30d59bb30b1a34d98d3e93d793bcfc15b2674d4c856e84",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20030331.parquet": {
+      "sha256": "d818b2b32ea48bfd2508bc6948239c90d9c8e93de09cb21d88bcbd174447ef91",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20030630.parquet": {
+      "sha256": "92632f4d7abf632050e0852cc0b70b374e61489f807d53383aa6dde704f466bf",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20030930.parquet": {
+      "sha256": "f3344a0d4711f5cb4ad5464a084d695cd40ccc38bf78c09b0e69e00a818489cc",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20031231.parquet": {
+      "sha256": "57107df5119eae33cee83098260a348a615f31b4b838f69442634a18f85bd201",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20040331.parquet": {
+      "sha256": "7e5124572728304233baa6fd6d49efa1b02a7688429de05286a758384eb35eec",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20040630.parquet": {
+      "sha256": "be55b0b9b6779dbcd4c67f148f357438664e15d4f92102bcd69e62745603afb6",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20040930.parquet": {
+      "sha256": "aa58cb299ae04944a9d7d1efb98d64d8f461091b529161d287385775172e8aac",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20041231.parquet": {
+      "sha256": "1ccaf5ab8e662dd90ed24e72a514917d2e118ff2f8a0b3c447b382a6164aca9c",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20050331.parquet": {
+      "sha256": "2aaac13a2ab6a7049494588147a9963dddebdbbacc63fecb284fdbcb858cd53b",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20050630.parquet": {
+      "sha256": "bdc1653e09f01c97809c6deec77be493715de709df3a0f367fc1df2866438923",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20050930.parquet": {
+      "sha256": "cbe995245ae4f9301885997b67eec6f8236fc84d769fbe28a65dc0159a7a7754",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20051231.parquet": {
+      "sha256": "e4a00bfb99e9e834b7982426c147c2681e7c6165b2578518d2110434f0c91405",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20060331.parquet": {
+      "sha256": "6172647594eb8d3ff7579f3ecb99370994acafc9359a7c6558e4fbeea43a2cba",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20060630.parquet": {
+      "sha256": "9f48e69282b93d03e54bdbc7b9a7c04008915e90be12255085ef98e7ef19a91a",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20060930.parquet": {
+      "sha256": "4e1a9ab5c2d03f70c238a6367ccc5a7cea0d569aa0260d442053cf964c98e9f4",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20061231.parquet": {
+      "sha256": "32322860054430ddc6691601d7993ee1929abae9e0baeada7ef063c12f924b75",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20070331.parquet": {
+      "sha256": "ea0e9b05c2f145dfe8c9cc4902be509c5fe9cf598682024a722a756f2edf8303",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20070630.parquet": {
+      "sha256": "11fbe5c6ec050c076e628b24d6e36169c73c2b3f07dcd2f8498e97f7c16aab2c",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20070930.parquet": {
+      "sha256": "e3b1b4f7ebe0fcaed8c2e03e33136d265334346e70bab98eacb37012ba71aa1e",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20071231.parquet": {
+      "sha256": "c5fde2d08ac297239e783d5af957eb40cd053411fc947544c943e20bf35e1403",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20080331.parquet": {
+      "sha256": "dba22e7e29c1bffed55125e8828b86c3c034a6a7851633cccef423c8673bbb8b",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20080630.parquet": {
+      "sha256": "8921a24ce9213d2180e992e82133390f48743c94d71c7410857abce89f1aed05",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20080930.parquet": {
+      "sha256": "4eb743f04ef4435ed83b68f66979b8c2428387b7a68f33942b63d9eb9eb3c3d3",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20081231.parquet": {
+      "sha256": "e489a00a7c4d388c67ab42e52d85851b4e2c9fcb3f24d363a68f3e0bd9a59f8a",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20090331.parquet": {
+      "sha256": "c1d462f39364fac527ed23fcde19e9a7ad00058c0c94d2676e4023443e1eb807",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20090630.parquet": {
+      "sha256": "3908019941368a278c1d0b1ab233ebee0e00a62a1dc051b03f157d7a090ff805",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20090930.parquet": {
+      "sha256": "e0ac231e44acff99e8cbcc4aa64a013d89197e97d6ca1066ed1f088a54962db3",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20091231.parquet": {
+      "sha256": "3509e3463dfd27813686cd8938b9d995e76d57b4aca5e28ff37289fd02b2dbb0",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20100331.parquet": {
+      "sha256": "c03596fb724cf349726cdb915cd29302485ef000b587b6951795978b289cdcad",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20100630.parquet": {
+      "sha256": "3b4d004f72283a07eefb8d68dad0d7c66209b533be8a14a8b4933b5e20e40e86",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20100930.parquet": {
+      "sha256": "e980a0b0c795eee6e382ed70b6b6be88302d69199ddd158b5fb3a63c899879a3",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20101231.parquet": {
+      "sha256": "ffae23183d7c31c3b2cd3d0619972286f0aab2174dbd25a64ab8610545884d74",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20110331.parquet": {
+      "sha256": "42727b38c713579a3fa8e3841208608115d6b0310585ea80ae0e404c373e1741",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20110630.parquet": {
+      "sha256": "7e690d37721079087769f3b4514edada196ad9fde46baf3409a56fd00710275a",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20110930.parquet": {
+      "sha256": "c40c17f5c2887b3619602a6bd3633065a574e7cd1e307aba6307ac6557ed51e1",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20111231.parquet": {
+      "sha256": "15bb88dc353cdaceb34fd8fb4ee7251313da0c78f350d50e2b6faddb8fbcfb36",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20120331.parquet": {
+      "sha256": "21910d5182b9b0d0e0ef523a5e0bb4f4bb323cc0c4662a18655027e046e17c11",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20120630.parquet": {
+      "sha256": "6e5103ae93ed4390be1c1e460e87a5cdef477ce43fb799d489c8ead5ab77a51e",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20120930.parquet": {
+      "sha256": "7230bf71695d54e7ae65d9e761eae1b9fa89becac24ed26da7c1e58989583be9",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20121231.parquet": {
+      "sha256": "a828160a835a2b1fcb19614b2c10e8ffd022b451c927e6afc3072c21c4eb295e",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20130331.parquet": {
+      "sha256": "36d4da1419308df516982e0bc9bab4372b4e7df87d94fd6015806c0de34f7914",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20130630.parquet": {
+      "sha256": "b1e966f9fa78545ff540bf3650c051c3936652a996257b7a0c01f44bf34d3bad",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20130930.parquet": {
+      "sha256": "bdb0c33ac9ca846867d0a55dff7f54315c8c62d76ebea9d4ee896fc503693925",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20131231.parquet": {
+      "sha256": "8cd6c14ebe903f1f6a6ad97563294ea26ca9d96d4c6cdc865c3663f462dd367e",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20140331.parquet": {
+      "sha256": "53f40b05f7a468c6ad3ccf6ed3bd2cfa3185ede221e82c06fe825a480057845d",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20140630.parquet": {
+      "sha256": "a49392f793e83ef6a8251bcfbf7845845c31128e1e5b8399e0a0dedbfa6b80db",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20140930.parquet": {
+      "sha256": "deb799619fa4ce4ac8e603e49546b69d1106ef677c96cb88005cbfbcfbae361f",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20141231.parquet": {
+      "sha256": "7d6b1fd21b4d0658cb83acc1615b79fe1944c53fb2ee5ed3e908ae4a1980750e",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20150331.parquet": {
+      "sha256": "ff95d606d37883634c5b31f7b829b134a681563246eb76d7cb4df20154085657",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20150630.parquet": {
+      "sha256": "b7f07cc1c31680a07c3e1e88efa9c6641d4171ca39bc24c771a7e184a0188598",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20150930.parquet": {
+      "sha256": "b11257c41b747bea7a429adde3c42757afcd752f57bc95e1e179b1392b3f978d",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20151231.parquet": {
+      "sha256": "24bbf85c1fd54eba6be09fee3399e2f7a15ec6aa3c7a3c6cbb2f68a7c63c9f7b",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20160331.parquet": {
+      "sha256": "0366d027235ec9ed6e46ec341d73df87bb701d0f1579ce308f09dd5fa0d54aa0",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20160630.parquet": {
+      "sha256": "ef4d33eb48c2ceb83e3f65ba6f91e6549fe697ab4fee5f62c3339af6cf761a0a",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20160930.parquet": {
+      "sha256": "911b56e7ff884912becd42762d96c9982bb7117197badba68ede8c802fa95c28",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20161231.parquet": {
+      "sha256": "1de46eaf456c9f14f88ec604723842eff8af1ce879c9bcfbdb920f47ff105203",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20170331.parquet": {
+      "sha256": "ae067d4b76eb52f47008f82f50b2c2d21d07c462acc4883b6aae4b641bd1b214",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20170630.parquet": {
+      "sha256": "7b568b7d32faf5d8116bdc3f70c3a8723a563a5411de3146ad8ec640d33e8b62",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20170930.parquet": {
+      "sha256": "567f4a5cef0b3bcc591d5854fe5d392b82de2b335adda1633702b9319530743d",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20171231.parquet": {
+      "sha256": "b182af58548f2e9c53acf3bb15f72059c88b1995cd25e1ec92aae3a9c0509eb9",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20180331.parquet": {
+      "sha256": "5c0a2e51240a980cf59d7e303935427b0a7681f5c9f999933e91769f311fead7",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20180630.parquet": {
+      "sha256": "99a85872f726b4eb39563b28e40d61a1bba3dbe2f7db3c3524f2132472706a72",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20180930.parquet": {
+      "sha256": "f785f7f54dd94d27bd88a03ae8c1de861738bc29a9b27f0e2738b4a4fcce9ac5",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20181231.parquet": {
+      "sha256": "9b39c08f3193e9da14a626b06f321b855b48db619c8dc72825f4b679e33d6505",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20190331.parquet": {
+      "sha256": "05b3cc8f9e7c984340f10db235797ad1f01cf4d070a40c9345ceb1b8e06a2bf6",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20190630.parquet": {
+      "sha256": "f3ae79543e9d2f29b8c1396e92fd69a2a562b074b1cba9668fe7b7a36be50a70",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20190930.parquet": {
+      "sha256": "df1f43a7ab68beeb424d97e75bb496737b6503f10a0c7b7c76529981e2e80a2b",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20191231.parquet": {
+      "sha256": "0aa79ab9a59930977b4531a108d497712c8d45d5af25ac989c406204bc7422a2",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20200331.parquet": {
+      "sha256": "dff377fe2df8bb164571819f7c9a2d11299cebd1ae21c24ca16340a26f8640c8",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20200630.parquet": {
+      "sha256": "6cfce10886f0c03b2d937b9e23a209e33c9b1e320279d8ccb254fb0b5eb59bb3",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20200930.parquet": {
+      "sha256": "95a214b2aa25865988817e5bd2023e92c93ae809d4846d9f6b6ad4d31a02d5f4",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20201231.parquet": {
+      "sha256": "436679c029e43a0f915d4d9ad97f557609a39b323b90abf4e2c62b6d03bbde1c",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20210331.parquet": {
+      "sha256": "d460edfb280abfd2b83c39fef71c90599a5e205429ef0318451a9d18ee79aefb",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20210630.parquet": {
+      "sha256": "1d0115c74c1ee856f7b79d2591e5a078b760de7bc944fc522d5cd06ab7be58c1",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20210930.parquet": {
+      "sha256": "ce47eb05282093dbb046e1efd2d1280b9224b17b66b3076c3745de64f277efa5",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20211231.parquet": {
+      "sha256": "df168042c26cba6424cc777abbfc0e657faaefc3da401e2be52c8180b7ab89d4",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20220331.parquet": {
+      "sha256": "5aded73eafe8b39e2a925d83418e7c56dabaffcea7a42d97c6068088436084ba",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20220630.parquet": {
+      "sha256": "4cf67c0ad74e9c8d61015a8d97b7fc4f06fe95f90b710476057ec0bb6f52586b",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20220930.parquet": {
+      "sha256": "02d9349b83fd023e62e5d38db53f9a374279e9a2e3b73efb6909f7bef1ff4c29",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20221231.parquet": {
+      "sha256": "ecd12100152de18890d2fdf8c01da5816626aaafaec13d5f174330516997bb42",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20230331.parquet": {
+      "sha256": "bfaf90b4f8196791449fb8c0826d137f05ee2e075f0d06ad3b1b5fd6a9fe68b5",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20230630.parquet": {
+      "sha256": "f36f71a202cca7411a5fb96b6422b440fdcb048194e478fad5d9844edec9c0f0",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20230930.parquet": {
+      "sha256": "4d3ceacd09b45bef4fbcf5d6a28968b92001f4f465ed64295dc8db6f6ad219ab",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20231231.parquet": {
+      "sha256": "40e7ae85680989984542f95b44773498f67c01c51773c496100379a34362a593",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20240331.parquet": {
+      "sha256": "e90af287a1fd5f41a6f46b13dfcfef633e7ff060371d95733ff3394d0748ae00",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20240630.parquet": {
+      "sha256": "6003365a71cdc05ab668cde8910fb0486b9d4395bc10b484fb86eb4f584c31dd",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20240930.parquet": {
+      "sha256": "0bd10bcbb1053083ea981626acfc7f5f4168f6b99fc2f5ccfa6048aa514e3476",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20241231.parquet": {
+      "sha256": "919dbdf2553dbb43e611528715cb724fe1492025d4869e79c6ba6a4a83b57738",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20250331.parquet": {
+      "sha256": "fbea9d02c079abf5b554664e0cb8354f321b2dfb484fb9bb8a166f6c5c8b2561",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20250630.parquet": {
+      "sha256": "e11c6917c28910822923f5d070315df6f900751e41875f9f13c6b572eb508863",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20250930.parquet": {
+      "sha256": "3fe579548654f3414b745edb69955e321c78b6b6320f7bd9940773716c09b7f2",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20251231.parquet": {
+      "sha256": "3394113468f31dfd95acab9ff455e492fa38da4beed861f1eabefbcdb6ecd36d",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20260331.parquet": {
+      "sha256": "221a76a19ae9a34af71f315812ecad5abc3c1f8f80022f7f26420556eef3e939",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20260630.parquet": {
+      "sha256": "c4b3ce3b7ba5d1de2925e9cdb4eb043731800c94e51e4bfe69ee21c708156934",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\institutions.parquet": {
+      "sha256": "fddf9332b515b030b0476b6bd17682415fa5494ea9bda2f0b8d5cb1ef62c545c",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\failures_all.parquet": {
+      "sha256": "34e4d9d70b8b47bd595d29e97ce252d15f9a1dff2566c6ba2b49eeded7f05ef0",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\summary.json": {
+      "sha256": "62a3de93c2b7d3a00f69634685a329aa630fb15693a6cf2e7b8c2c9c311f05e8",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\STANDARDIZATION_COMPLETE.json": {
+      "sha256": "7bf2d24483b5a8d329436f9a69b02282ba0f3be53fd0474d56e31330a56c52d6",
+      "role": "prepared-reference"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\panel_base.parquet": {
+      "sha256": "a72a9d24077c0c44149d93c5384d880282c832c576034e42223f299dd0f4778e",
+      "role": "frozen-output-comparison-only"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\panel_clean.parquet": {
+      "sha256": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107",
+      "role": "frozen-output-comparison-only"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\panel_pit_base.parquet": {
+      "sha256": "3fce669406ff1898ac85d9c41c6385b7f8c6b27e29ecd041bb0a3c59f6337421",
+      "role": "frozen-output-comparison-only"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\part2_clean_review_bundle.zip": {
+      "sha256": "09efb2de4574f3abc278aa83ec66d8369d26330258518a7e1963cf810471c395",
+      "role": "frozen-output-comparison-only"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\part4_v2_dev_only_outputs\\development_primary_binary_v2.parquet": {
+      "sha256": "d365ce25204a3dcace715db4cea259c94b1b1abba4822c7bcf2b050a1c7f6a73",
+      "role": "frozen-output-comparison-only"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\step2b_summary.json": {
+      "sha256": "1ae8d9cda47db6c45551e3d3dbbd81230f456f79b5ab47a4ad9223fdfe52622d",
+      "role": "frozen-Part2B-reference-only"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\sources_manifest.json": {
+      "sha256": "f9bd23c60216700cc14cba0f23cd16edf3b0f64b87dcbbda73cc9d6f825341d6",
+      "role": "frozen-Part2B-reference-only"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\review_AUDIT_ONLY\\history_events_AUDIT_ONLY.csv": {
+      "sha256": "e60d85130d63b8f8ceb0b851ca9bf6fa1a336a1948628369a8a6cdcc37818389",
+      "role": "frozen-Part2B-reference-only"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\review_AUDIT_ONLY\\bank_exit_evidence_AUDIT_ONLY.csv": {
+      "sha256": "fcaedd89dce7b0af3365631110f68c211d1e7f139e93b3d960d88b8025e0ad4b",
+      "role": "frozen-Part2B-reference-only"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\part2_review_bundle.zip": {
+      "sha256": "e732115381dc14c82997ac70c573c45f2ee3c3b15d27b4cc01d157cc2f99d357",
+      "role": "frozen-Part2B-reference-only"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\10c4ff8f14db218bfdb7734fd282efed5bdcee5d029dcd0bd5d6d94a91a8a530.body": {
+      "sha256": "b257457e4e821d6a0d9f88ffc4e6e0da80e4ccf67fa394cadb21587b50b23d59",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\10c4ff8f14db218bfdb7734fd282efed5bdcee5d029dcd0bd5d6d94a91a8a530.json": {
+      "sha256": "792e44d048b66095fcfb390ebf351f69b3dbae9b60ae3161a5f041bef10363db",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\074a32d0c8d44862ee68f2607fa704c186b5c5ad27ade5f23fb531d513f162a0.body": {
+      "sha256": "6ed1763c66a9e240904a45712b23d825c0f31beaadb6cd0213fc1bf00b2af1b9",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\074a32d0c8d44862ee68f2607fa704c186b5c5ad27ade5f23fb531d513f162a0.json": {
+      "sha256": "ec61e27ace2546d787d8c1ef1bbfdf9efc27758a368b51f50a91a4a882e5d618",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\6b8414241cf9521f72c2a3b8494e5b0e56ce4f754b3a9bc1e4ca045c06a9ddb6.body": {
+      "sha256": "7e3137fb6fc93dd49371b4d032f48fad403efd3d9a7f5cc8ca5480c00807364c",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\6b8414241cf9521f72c2a3b8494e5b0e56ce4f754b3a9bc1e4ca045c06a9ddb6.json": {
+      "sha256": "e81766dcb2122e0b762c9cee2cb628707a56e1db10797d19544b3a72e85a43d8",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\c837637663d3d6d4b04eaeddad02fa81248986a7b976d9d2d288bf0896bdc582.body": {
+      "sha256": "71c01823ef906c768aceb9da7c9cdd0d0b78edd5d68e0d55e1585ea976922af3",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\c837637663d3d6d4b04eaeddad02fa81248986a7b976d9d2d288bf0896bdc582.json": {
+      "sha256": "510e418049aa372326cc6c3fc5aaae2776bcd94feb680174fda0b141c28e640d",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\d2e2fffa9db5c865051ae8a484e8676d91e681bc9a3cd86e05c9cd5b6ac363e0.body": {
+      "sha256": "a3de61784a91cf93d4d8d3996be0158ad2192ddb1a9ecbd0ff1570ac17365044",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\d2e2fffa9db5c865051ae8a484e8676d91e681bc9a3cd86e05c9cd5b6ac363e0.json": {
+      "sha256": "a4f874b91792bea4c248a9e8ae5ce020bc4a8034013307e1b86afaee28fc79ce",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\e7768345e35f1743cd8acb52206659f46db226d77485f7ac607ff0ff9ab8aefa.body": {
+      "sha256": "836aa872da7087a551da124ac3e0bd1907eec8ce45d80145e8d16ca8eba4db87",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\e7768345e35f1743cd8acb52206659f46db226d77485f7ac607ff0ff9ab8aefa.json": {
+      "sha256": "d8ce8b083b0765764a5a434564a422249e4c895933029124ddebed784e33fc04",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\a5a95a683bf09de50ee70633ea47c7dd83a65e6d8fa20365856a28cee345e475.body": {
+      "sha256": "dbff36aa7b268036c353a5fb46c0365057b355936a431dd4d11e663c6e527808",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\a5a95a683bf09de50ee70633ea47c7dd83a65e6d8fa20365856a28cee345e475.json": {
+      "sha256": "2dd300578cb2da8d754e8cfb36f155f38303ada851939f91428d37c6b58c9103",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\be49c352d9ac9103a75276fcc67cfd9ca369f841b2597ebedbf58ff707bf0778.body": {
+      "sha256": "131c2fa174f84c2a1a412266dae5e311e41ed41448cf430d9a850da9af122084",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\be49c352d9ac9103a75276fcc67cfd9ca369f841b2597ebedbf58ff707bf0778.json": {
+      "sha256": "614df17d30fc9079c087f826f160ce0abf0be9528f7586564c54f3d23c9564d0",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\a313ec718349f720c425101ecb79c04a9972da2e08c05bf3438469fb46057998.body": {
+      "sha256": "90130021f4a92337a021f84bed5ab1bc30147bc3d76e645c907686b1e1142d3f",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\a313ec718349f720c425101ecb79c04a9972da2e08c05bf3438469fb46057998.json": {
+      "sha256": "faf3fc24303a8312c535d0166a5b55d4f9c1b9404a976cb932334b3ae16e4a82",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\618dfa4a9a3b36d8ec4b0f99d6ba194524ee4bc1bfa9b675dbcae8d7f826aa5a.body": {
+      "sha256": "c2a8073ba7aab59404f7488142733edecb44826b2714dea99db2af03dfe97f32",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\618dfa4a9a3b36d8ec4b0f99d6ba194524ee4bc1bfa9b675dbcae8d7f826aa5a.json": {
+      "sha256": "8e9eb1022a462c13c801fa4b0e548c7225116d4fc30cda414d71de39911f5b8b",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\761c5ca2cb117cefdc32f88da7c5bd0cfb49fc2d21a552edf0603e377503954a.body": {
+      "sha256": "cc8454fcd1ff8253493833dd12eec14e3b016cd0834ff1abac227ef10cb9feba",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\761c5ca2cb117cefdc32f88da7c5bd0cfb49fc2d21a552edf0603e377503954a.json": {
+      "sha256": "6a09f1e896574e30b05cc4ff7b6408763e49039cc1b56c3bc2c6468768d6049d",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\c340e658e85c6e5c95e6425177000281909f5e76a9f8ab41ab1660a7f1f7de53.body": {
+      "sha256": "3fd82e618a35d8f6da020f74454664f10a75668bf07432cd05b8fe97e3fe683a",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\c340e658e85c6e5c95e6425177000281909f5e76a9f8ab41ab1660a7f1f7de53.json": {
+      "sha256": "67e4da541b4374dfd2ece47ddddeef8bf8a3cf02fb19642b88331714659eebe8",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\13a5b1409a65f3750e5a206df18132f8743be9b0016496dbe3f393304dfbb0f4.body": {
+      "sha256": "cf9adfe20f4cbaf7ad4d29236b5ce4fc13f82d9dcdd70ab1cf445571536a8b59",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\13a5b1409a65f3750e5a206df18132f8743be9b0016496dbe3f393304dfbb0f4.json": {
+      "sha256": "562dc711731385aefc8d5f908742667ec914681ad092827682bf93f92e76dab1",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\2901c08e7aa2f4785814d3ec9b6bf4ad8a9adc4aa441bdc0e36436974ca22ded.body": {
+      "sha256": "676c5c642d5fb71539bd6b1a8ba367f1cda087f32241974cc75903ae20f1dacc",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\2901c08e7aa2f4785814d3ec9b6bf4ad8a9adc4aa441bdc0e36436974ca22ded.json": {
+      "sha256": "2efbdde50fa23abfd238e31d8d92edd7137d62b25a0020f8a9b82b8bdc036235",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\4234fc70609e44ed588f4558414da2af3fd4fe87cbda60e14298ea1001dfd98a.body": {
+      "sha256": "ec74e19f6d5f60a17fc3de46c0fdff9f96f51213c1f69ea1d6d04d9eb88b049b",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\4234fc70609e44ed588f4558414da2af3fd4fe87cbda60e14298ea1001dfd98a.json": {
+      "sha256": "e17bf7dd739fdcd28a04be8c882ae19b97a149a780ed676999e4bd7d9d5ae590",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\13895222e5b440cb18085262dbef029e96d254d3f94779570412231cac07d133.body": {
+      "sha256": "a0ac86ad469cc01df032d9b933cf0095c95283d4ead5cd8751358336ba130233",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\13895222e5b440cb18085262dbef029e96d254d3f94779570412231cac07d133.json": {
+      "sha256": "6a47a042f3f91d25f86bc97055f488bf3d1ad28c7e241511f6e5e02ae6153913",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\c545abfed11d941feda1dc14e247be2c396ec4a1692abd1a116d6543d00407c2.body": {
+      "sha256": "dde210a45c452d8a227cd3cd415603be7e7fc6e59727595858dd5e846299d5d2",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\c545abfed11d941feda1dc14e247be2c396ec4a1692abd1a116d6543d00407c2.json": {
+      "sha256": "e15c912ffa5389e0019cff5b457a6482d9c313a2371389525e1c35bcce7cc2c3",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\cac06d8f493f30941e7e8174eb694eb570d1141c67f79aaec9e171591fcd9915.body": {
+      "sha256": "4e1beaefda0a897ede36de183b33c055e78b525cca7e499515c8f6ce3c06c381",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\cac06d8f493f30941e7e8174eb694eb570d1141c67f79aaec9e171591fcd9915.json": {
+      "sha256": "baa9800380d4f84beda9a90fe67b95ac3bbc54f66f083f3251bea8a721ac1eb7",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\6f281091e30d4fbf7850bd445fbb152d85d3f71719fe5672dbb0c7f3dc192b30.body": {
+      "sha256": "8237e6cf394c5d6261f428a772c6c0f22c59239e258493105ff49971b8695db8",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\6f281091e30d4fbf7850bd445fbb152d85d3f71719fe5672dbb0c7f3dc192b30.json": {
+      "sha256": "5eadb103a14beff759d55f39edd169796f99773769beb6abc30e79daaf769577",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\34e7d91a0b58cd989b84b8770badbb2cd530b8794b6e8874e98374b2e36059ea.body": {
+      "sha256": "00c8a421e5080164947abafcf22c7d44c5e5613d4f2f857ba4b32ad91f3ba1d8",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\34e7d91a0b58cd989b84b8770badbb2cd530b8794b6e8874e98374b2e36059ea.json": {
+      "sha256": "f09c29f4518b6b96c7a87b0b6613bffaa055583b5818ed35853a8bd2566d8dcc",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\9f82efc336c6c276342e0ff8f17d3c516d029c1d9c14da0ac0288f02da09dcae.body": {
+      "sha256": "6e40e8a5a16e2d65c14ba381aef5e2eae1e73124008f7c1e6bcff455919ec123",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\9f82efc336c6c276342e0ff8f17d3c516d029c1d9c14da0ac0288f02da09dcae.json": {
+      "sha256": "f82b5f8dbdc85faa134272f8f63823ec0ce2a02a0900d65c39ac4703bd7849db",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\d931a3d584757a89f1950f1afa12e6c9563c34b83f8b5ecdebf62a72ced7c610.body": {
+      "sha256": "d683acd4ffc691fffc64739a7366fd6c3d69108168a2fd33c7882fbbfd7575e2",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\d931a3d584757a89f1950f1afa12e6c9563c34b83f8b5ecdebf62a72ced7c610.json": {
+      "sha256": "bce6fa5f42dd10266e0cb9834375e404d05e498af12425056a7295006460b234",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\f206264595ad729a90ca653311f669ec28cf0b54d07f5dde384410fce2c3fb72.body": {
+      "sha256": "3a8c3f3234344996b12a13fa947730836e1fade693cee004d484da3f0ecceb32",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\f206264595ad729a90ca653311f669ec28cf0b54d07f5dde384410fce2c3fb72.json": {
+      "sha256": "e478bb55cacc49c52334728f80ff685368c5107c16fbc44027be3f6a47344a38",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\1f282b6a7546edd3bd884bb6c2e2871dce58eb18b135c478050c7386aef4fb80.body": {
+      "sha256": "f60f91ee90b51944a87321024fa74495f56cce5c939bc9004af7dbe23e36a0bc",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\1f282b6a7546edd3bd884bb6c2e2871dce58eb18b135c478050c7386aef4fb80.json": {
+      "sha256": "c52f3ba98b7626e2bb2e5317cbbc8b68873aad0e9539e784092d0d235ccb11ae",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\bdd4adb3c4119850b80cd4014084d072b8db589135272c413ca7396352707e57.body": {
+      "sha256": "2628123ed1ff92dce4127398c7b4e5c85fec60ae98e12904ca92992f8db843f0",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\bdd4adb3c4119850b80cd4014084d072b8db589135272c413ca7396352707e57.json": {
+      "sha256": "972c163d8e6e9b25029c0cdb3080a8f53fd5ca2dea07a78a4624074c080b8eb6",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\bb4c5bf1a6326296abac04e945d6d848d23f1165f86710dd8b5ecfdd3c8c4caf.body": {
+      "sha256": "fe4c1b934f92e8086c250d358115394263fb65d7fb30c069d1e245a7efcac3af",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\bb4c5bf1a6326296abac04e945d6d848d23f1165f86710dd8b5ecfdd3c8c4caf.json": {
+      "sha256": "cdf033a46f4cb589295291e20a2027c6058c8e0ad277b50a1cff0f41f2d0c10c",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\3674a355490ca281fa8b4f7318a42008035c9b6a9c0cda1bf6b954bc79b6b677.body": {
+      "sha256": "1fe86bea2ac8eaa205cbaae6cc4f7441dda0db686eb8cb42d084285925e53179",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\3674a355490ca281fa8b4f7318a42008035c9b6a9c0cda1bf6b954bc79b6b677.json": {
+      "sha256": "9dae7ab5b50e12f28a55e45cc1af650b6aad8bb1f2ef4f8ac143ec17d5e5cae0",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\bb5b17432e7249fd64dca36cbc8adfb71315a7a9d52d354728bb957cf080c920.body": {
+      "sha256": "e9907f84ee23f5b4aafaad0985adeb1c318104557a28fc0f043aa55744f668d9",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\bb5b17432e7249fd64dca36cbc8adfb71315a7a9d52d354728bb957cf080c920.json": {
+      "sha256": "b2300f979f55d9839af5bb2318db5cec04919fa76d51974c9bb127b0cfbcf30c",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\b2f47e9e5e8d28176ceca06f92f4ccee301fb642d3d0a3129c59704e8944627b.body": {
+      "sha256": "9a4821e773651c925f5c47f99e10f2ab8582ac3d10fed14af350bb1ff4a5b254",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\b2f47e9e5e8d28176ceca06f92f4ccee301fb642d3d0a3129c59704e8944627b.json": {
+      "sha256": "1f1a1123220dce1678a9ca1403b038ac57cdcfe2c396d4b2ed5226262e85cf92",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\9959cfa25d36e54be725ef174605e1c6c6e927b244b4fee400c3553a2865f4bc.body": {
+      "sha256": "87d96774b9ff156b4197978875ee96637a398d584dc33f1d68550b2ca3a55a00",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\9959cfa25d36e54be725ef174605e1c6c6e927b244b4fee400c3553a2865f4bc.json": {
+      "sha256": "4bb75cf951961c8e42513611acf805b3be0bd1a4214b3eb742348b835732ab99",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\94e18c5fb735b6542e1fb1ab73e8b2088b798f70929f60521b8ab30db81e8d4c.body": {
+      "sha256": "37e16613161e8faedf565a4f1e4cd208d9b5c1c216a5e7ad8bc18fbc7b53f940",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\94e18c5fb735b6542e1fb1ab73e8b2088b798f70929f60521b8ab30db81e8d4c.json": {
+      "sha256": "7cb7d5adba2338da544f9ffeacd6496d30f0f514887a184b57d7c1356afd4b02",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\8288c9eefb6ded0aa64f43f24b5711cd5233a6d6f7be2315d48b1d1e9cde617e.body": {
+      "sha256": "29e00fb6eb7d506af827b66e5d245f26f4974345f162a4718d8ff133008e3a89",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\8288c9eefb6ded0aa64f43f24b5711cd5233a6d6f7be2315d48b1d1e9cde617e.json": {
+      "sha256": "237197d97ba8dd5a253c4092bf445a61ce8115739750e577ebb1edb7bf92ec9d",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\d1cb399e3afdfae8879e91c02d40dbae68c33574093bffedd0ae4891054fa3b7.body": {
+      "sha256": "bd8917e79a9b2711c331a505ab4a355f99f238f754c8b61e73c9d432e0b2d8ab",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\d1cb399e3afdfae8879e91c02d40dbae68c33574093bffedd0ae4891054fa3b7.json": {
+      "sha256": "2a01694689f39ee2cb45eb3920aa189ed296f1b35405926b20477557a51c631b",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\69a5d2305bee274d1598dc61e89cb6592322c7bf863c1c2ced602f558e98b078.body": {
+      "sha256": "0a7ae7a2f0a9b7c067c28f0c27476bb578b1db6c04fd706fbc756e2cbbdb75a3",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\69a5d2305bee274d1598dc61e89cb6592322c7bf863c1c2ced602f558e98b078.json": {
+      "sha256": "7aebcacefe1c556d2ca624360006838c779c76e9af510af138a280cf424c2818",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\28fad80624557f999abc13f1655f973081d146fb3244b2582191821b31c1b74d.body": {
+      "sha256": "5e0153a8f15cdb605b34803cbd962fed5e25c0117ced94b435e6270959ff3ca2",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\28fad80624557f999abc13f1655f973081d146fb3244b2582191821b31c1b74d.json": {
+      "sha256": "d479b7e6a9a705bf632ba894664bb0106125ed0f59e68ee164daa3719c547662",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\b92acec822db3a3895d6d8dd59bec097a7f50756134ec1bd0f0a00d794a3f466.body": {
+      "sha256": "30a3354158139b80b3ead9fa22043ba0661386f052cd1761a871a34fb00c9118",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\b92acec822db3a3895d6d8dd59bec097a7f50756134ec1bd0f0a00d794a3f466.json": {
+      "sha256": "9dfff2f686424ff2096b851efa7bf3e75ff404b11ea97c5e2cac310a1d828888",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\0d971fcfdc22d69c88d7f8cd525ed171ff34dab6f3c8dce3289dcd664c7e7e1b.body": {
+      "sha256": "eac03412da2941d67e65530d3f75285fe432cc2e7116149ae3c054f65aebd086",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\0d971fcfdc22d69c88d7f8cd525ed171ff34dab6f3c8dce3289dcd664c7e7e1b.json": {
+      "sha256": "7adbf64ed07b4ef0762b43b267b905e9fcded081c3952d1f7f34b69584a6f01e",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\e4337587be7719ebc5a95405316117a0b30c7a5fe21fc3b1de3bb217d9772ec7.body": {
+      "sha256": "0bfc07836907c95ff3e1cac55807898580965c32f4689ec9505b32bb37d4d5ff",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\e4337587be7719ebc5a95405316117a0b30c7a5fe21fc3b1de3bb217d9772ec7.json": {
+      "sha256": "8861b7f15b7127274a68e6ce64b65210619ff89e2d28d2c53a1261e0442d623d",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\365cad18216fb8ecc5f091f2b1b21a79929b43b0ce6301eef06f9359380c776d.body": {
+      "sha256": "d5fdab77dd8e92dbc84c5c4251503561105b2d7df02736df6dd3267979ed5ff5",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\365cad18216fb8ecc5f091f2b1b21a79929b43b0ce6301eef06f9359380c776d.json": {
+      "sha256": "eaeba0ce207911ffcc346fab3a05b3a5d4b87ded57557bf86b2694da4dc538fe",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\b35bdaa46254e11729c7fd198846cc6a942e9b33e143262d05c0c4eb9284a917.body": {
+      "sha256": "97521aa7950544a337b42bb11db8cf034edb942306de75a8ab35eb088d430221",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\b35bdaa46254e11729c7fd198846cc6a942e9b33e143262d05c0c4eb9284a917.json": {
+      "sha256": "1d67c8380b2b2c6b01b8854c74b387253b46089aac9277ce7e8585f53031c6f9",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\11dd36e1c6bf19c0d76b3a021d2a25bea02e5fb99e831af7936cc9a04cada42f.body": {
+      "sha256": "2dd80c2ff0045bdc6f60c13cf4ad97776cea2c49037c3d364846778a9d63be5f",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\11dd36e1c6bf19c0d76b3a021d2a25bea02e5fb99e831af7936cc9a04cada42f.json": {
+      "sha256": "5518c9b9f8843de8bd4242a91c9e2a3815e346d233ebb7e966440e02f13dd2fd",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\a916eeb220f9dd9a429d18622a19c01a07f04f8e9af8dbb1c0b0631b76ff8b1b.body": {
+      "sha256": "a102ee362e51a3af7a8a8f7951848ce35076c63c513742393860dbdb92efcbdd",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\a916eeb220f9dd9a429d18622a19c01a07f04f8e9af8dbb1c0b0631b76ff8b1b.json": {
+      "sha256": "a1ad525c74a170a02bd93ef1e139feb9b3453a170cdf7cccd608d6030c89fd3b",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\c36314c9454ca0d5dd7c38da0d589d69bff84328b50ebe43cbe0545ab98b179a.body": {
+      "sha256": "49d9a9eb33c24cc2eddb82c7bb114dc8d546de8bca43cae86a04a46f4c1982f0",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\c36314c9454ca0d5dd7c38da0d589d69bff84328b50ebe43cbe0545ab98b179a.json": {
+      "sha256": "82511c0d0eb3d902e38d8f3999f22b19ff71aa85bf0c88dbf29e143e1b55465a",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\57f63e147a2d8a5b8bee10a09bf14f4d42cc765238009e2bcd83acc5b895cab8.body": {
+      "sha256": "83e31709762dc41f5807fb25ab3a4ee82a097f6561c62b2b5573736ec52991f2",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\57f63e147a2d8a5b8bee10a09bf14f4d42cc765238009e2bcd83acc5b895cab8.json": {
+      "sha256": "00334b3d8ab7bdf121d74143f335f31779a88fdc949da282327d5f6a8e005c55",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\0e843fdd37083bf922d6cedbfda9da147bff19c30c128f4e1db614c91c21b3f4.body": {
+      "sha256": "976b3f91556f18ad9b7db146124d7bf6015adfbeeea9f87368a3e85a2b51fb0c",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\0e843fdd37083bf922d6cedbfda9da147bff19c30c128f4e1db614c91c21b3f4.json": {
+      "sha256": "27ef69a77f275c6d15d00e16d1da8e070bb6ffc32de6e877066d67e539d7e9eb",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\49ad554adb5623baf714dcf2684c18e9535621aecc554c1205b5b388e3edcdcf.body": {
+      "sha256": "fc7646509477d361d7b876f2784ca6ed8ac014e9e92f386eeedb71d9f6b32ef9",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\49ad554adb5623baf714dcf2684c18e9535621aecc554c1205b5b388e3edcdcf.json": {
+      "sha256": "edc5f722ada07078f6c9c5d95eafa8de169d4189391e569e48e8ae90e90730f6",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\f140bc9c01f7f5eb38406f044cb7484edad3e08829c546e4389dc4bba6e67bbe.body": {
+      "sha256": "9941d461a7b20eafa4345a49ad59b14703f335e3b93e2c391920042de38b4a3b",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\f140bc9c01f7f5eb38406f044cb7484edad3e08829c546e4389dc4bba6e67bbe.json": {
+      "sha256": "dc61f2cd26a59a85db12db3c1f0402e52d34534baa5ec63dd1d6ce859af5914d",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\b82f245a7540702076e922312d0a0d562adc5f1dd66a7a7b759d03fc5ad26042.body": {
+      "sha256": "00d864bb7697423bae1cbc0e3944eb3db61fc8aeea6d066644a3f3b49c74222f",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\b82f245a7540702076e922312d0a0d562adc5f1dd66a7a7b759d03fc5ad26042.json": {
+      "sha256": "07f52046ea4c1e659ee7cff0ea102795117cc4944988183e78bbaef1b5571600",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\6f53add14f04c8bca960335aae3cc0eff7940a83e4aaeabac46b773da617bbb1.body": {
+      "sha256": "52d4a823b14132186321ccec3ddef309eb6cf4c3f7333162930fa95561141f66",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\6f53add14f04c8bca960335aae3cc0eff7940a83e4aaeabac46b773da617bbb1.json": {
+      "sha256": "1c56ce600d773260a9eb0b2fdb0911f178b3c3da7dd2b24fa0ed455059198176",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\7a6ae1234192fd3d99a86cc881d23e5a3f29b31f995b6e96065e75f64c50ce9d.body": {
+      "sha256": "e5a59a17d288d26fc2f14632db54f523df52c177477e2792d71f21e259b6ed27",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\7a6ae1234192fd3d99a86cc881d23e5a3f29b31f995b6e96065e75f64c50ce9d.json": {
+      "sha256": "3ddc6e1c5f80795bbed82a4cbb4e724ff22e97e102c9261ff074c1ae71be4a9f",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\5dad0cb8e489823160623b8f4c0168be8edf228abb1a8269ff7a6dfa3453fa2b.body": {
+      "sha256": "3ccd37c4efc1eec76a569674bca0a0f655e18e784c6fb6029b0f4c91dc79896c",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\5dad0cb8e489823160623b8f4c0168be8edf228abb1a8269ff7a6dfa3453fa2b.json": {
+      "sha256": "f1999def19f4aa1f1ce4c48761f58d036e0406b9d2115432b307516892e4a8f5",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\2f5d1ebf1784a771c4de14b7df56361fa219a5a3248e1c3382ac3be85ba46150.body": {
+      "sha256": "14c97278f5579424270e0b988bc812236f8b14230d81867c0234c4b857c2568a",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\2f5d1ebf1784a771c4de14b7df56361fa219a5a3248e1c3382ac3be85ba46150.json": {
+      "sha256": "9060030902b78e27fc798b5438146a64f8aa2988bb26cca5fb9c0b460dba85c5",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\1a73b88f3f8dba43caae5977029be839ee906a70fce5aed48c37828048a03b22.body": {
+      "sha256": "8fff08a1908a58a2e94e5ff5eeb1cb02aae893547b9c6768c78521a2c6da9ea2",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\1a73b88f3f8dba43caae5977029be839ee906a70fce5aed48c37828048a03b22.json": {
+      "sha256": "2821cc6b5157e459dc752f18fc75768ebb5a91f2731d3eb93cbfd870002b03e5",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\d8bff5290ac3de9216243bd4fbeb59654f462f2787f450df42a46c7384875577.body": {
+      "sha256": "3fc1e501c0924209c33c044cf13e499f515d8b7dbab3408cc05150845186c67f",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\d8bff5290ac3de9216243bd4fbeb59654f462f2787f450df42a46c7384875577.json": {
+      "sha256": "5cd3217e86caa7d18797b64150fca93d7da05f6a055151e0bbf96e0235502419",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\bd5664bd8cb451ba08704396e83b97dbe6a34f7b365667f3f2d2d9a6d218aeb7.body": {
+      "sha256": "9a2956985d25de618832ac7a4d61fc13e05cb2c046d9e827e11b1dee79eb186c",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\bd5664bd8cb451ba08704396e83b97dbe6a34f7b365667f3f2d2d9a6d218aeb7.json": {
+      "sha256": "2a53337732a9b83191badc5fabdfc97270b91cc115614bb4da89f4768a0ae72a",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\a11894e7d92bb77cf29ed8853b349c5c87863ebda46bb3ce1e640af55e38fde5.body": {
+      "sha256": "c526e9f045aa73008cde90495044a2c24a9769d573adc847e08ef93ed85274fe",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\a11894e7d92bb77cf29ed8853b349c5c87863ebda46bb3ce1e640af55e38fde5.json": {
+      "sha256": "b10ceb9d585014248643bd3412580db19397a9f5cfb5093267a3f6af4f45bf20",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\f599ff876619cd431daabf658795099628e8d557d26cdbcd78ce707c506be64c.body": {
+      "sha256": "daf0d6fda0cc0d11b1f40d2fbfb79c05c72117a58a163e6d2dae501bc56a7c41",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\f599ff876619cd431daabf658795099628e8d557d26cdbcd78ce707c506be64c.json": {
+      "sha256": "55efb5dee10299bf65779a6c87a329e539974835a5e7bbf10ab9448848f99281",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\2cb56d845c2d83fefafccdb5cc4fbeac7985bcc811f08f336f5c94d0262af69e.body": {
+      "sha256": "f57988ad9d0a3a43589522a1b833b96f642119c115ef9196d0c4d26e524b1420",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\2cb56d845c2d83fefafccdb5cc4fbeac7985bcc811f08f336f5c94d0262af69e.json": {
+      "sha256": "39febd1537ed7ee953a792f5d6cc00726c9c5b19dfa469adaea4881dd94fddfd",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\82667721fe229d827c4b849f9d42730a8f0517c3fb8ef4f92d1b0fd9e3d3464b.body": {
+      "sha256": "e62f7db94ab40088c5d25aea1f80e752bdbe23f37597677099cd8471ac12e904",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\82667721fe229d827c4b849f9d42730a8f0517c3fb8ef4f92d1b0fd9e3d3464b.json": {
+      "sha256": "4019a1f2f105f761dae94c8e93262f1fd24cbb445396b850c930c013ac98aed2",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\901353b7f139bde6872876f080e9a476a789682c04f49c9740ae5cfccc2edcbd.body": {
+      "sha256": "9a0a7ab796dd37e686e953721824f91b242ee423762b3be4f4cddde0f7c316f6",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\901353b7f139bde6872876f080e9a476a789682c04f49c9740ae5cfccc2edcbd.json": {
+      "sha256": "2a2570369e74fef48eea7ba330634362b1efeda8ea7c1dda7a5a47b045ac5c8a",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\b531ab468227442ebac5abb292d7c8206fffff303a6dd48e2b37790c07ed5271.body": {
+      "sha256": "aa7882a149a1a4100211964a77ccb478be566c32fd48fc066dd195d9504ad6ce",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\b531ab468227442ebac5abb292d7c8206fffff303a6dd48e2b37790c07ed5271.json": {
+      "sha256": "9c32e5dc71405b9399cde2587a4bc892cd50e638adc020d2f3ad231f220d330f",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\c1eb919fc019db7c74bb156ef5bf3c452ec42889aaa91c1c9cce713473731000.body": {
+      "sha256": "bd6753f0cc0457ae99c45fe93ee52d4702e00347c942d2ca4ce59647c17b7597",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\c1eb919fc019db7c74bb156ef5bf3c452ec42889aaa91c1c9cce713473731000.json": {
+      "sha256": "c45e2325220d8a7dbdf9c7b743a053b7626ec268371efec5d0aa9218815fefde",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\1a74469f9b876c3ba81117e0398252c74e911e4f40822ed4360e35eab70f6512.body": {
+      "sha256": "7f4a1c03c6ee62e64f9d9c6db9d3aa417a7dcd33f80ac1c8eac0c8a472f69949",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\1a74469f9b876c3ba81117e0398252c74e911e4f40822ed4360e35eab70f6512.json": {
+      "sha256": "8088e00e44f300961e16c343b3c3884980d31ff9a1306af40c765d7d440571ff",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\30eb92657491c6d6d2f541e22c14a975398622549cf0bb093df0fa07c7175434.body": {
+      "sha256": "37583f1f2737636a718d32f4b517fc5b00f56f71e8a069478849ca46fa065a7d",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\30eb92657491c6d6d2f541e22c14a975398622549cf0bb093df0fa07c7175434.json": {
+      "sha256": "e6c109feb7edc23169282f65d1c4ade10c186b583baffdb46d4c24a837957ca3",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\4dabafbd46c10fc4270d0929b082fed3e1d5e04c4fb87269dafd1f1833df9797.body": {
+      "sha256": "d3b62ddaba6c1cfbc2e905d392b7790393290843f081c6f1a705e0b3054a76aa",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\4dabafbd46c10fc4270d0929b082fed3e1d5e04c4fb87269dafd1f1833df9797.json": {
+      "sha256": "0cb2aa49690dfcbfd6969be357542296fb3281eac84d8dfd8c668b705af21b69",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\61456083366b3f0a1bf7754404bf9aae8ca4d9a943c6ce9071b95267f5195dd9.body": {
+      "sha256": "418f3b04d7bdb931323be4bfa775dc88473ccc7be21dbdd1a76934f316698a85",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\61456083366b3f0a1bf7754404bf9aae8ca4d9a943c6ce9071b95267f5195dd9.json": {
+      "sha256": "60739083f6eaa35444cc670d2293cf35e8adc798ccdd9ff92668d7c55b59a70c",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\8565cdbe4d7daf1116ad585a62be5e0a80c389b25fc3c1477d678547e90ca27c.body": {
+      "sha256": "176a3477a43b42d5d4e889f85e872c0a1111219a09943552f83143b0382b9e21",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\8565cdbe4d7daf1116ad585a62be5e0a80c389b25fc3c1477d678547e90ca27c.json": {
+      "sha256": "b5fa60344d369e3aa2192d20be393d8b3b9ac7f35dd6d089f926c2adc42ab281",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\60ec97b86db39cef7e89ea819182013d1c526e2334542a1cb4d004f1550052a3.body": {
+      "sha256": "c6e7af0fdab95cda9ced433fbdeebfcb80d716cf8d55c42f8aec6292bbec47f8",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\60ec97b86db39cef7e89ea819182013d1c526e2334542a1cb4d004f1550052a3.json": {
+      "sha256": "2306a2df9246c639ec4a77740b9643ebbc8d3eb471090e7e0a73b5d56ff0a8bb",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\056a9b954e5f429b0a3f1e107dcc412bab3ecc74cf333c9534fa20027fc8b8aa.body": {
+      "sha256": "82960f4745eb89cb53d6cdd9a2037741c1a771f9b80dcfbea9e9d4eae1b8cd13",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\056a9b954e5f429b0a3f1e107dcc412bab3ecc74cf333c9534fa20027fc8b8aa.json": {
+      "sha256": "797b9d2fd5413024f8d8c74555c405ff6ea62144c2e46807de60ac923cfcd212",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\196b4617fa7cf9c5edec85e8a7a2522a7c071e0c10b9bb412db1c84bda79b6e7.body": {
+      "sha256": "bfaaf1427960eb7c31992d7207ed30d0f1d216792b0cf9ba5396a98ae8d01741",
+      "role": "Part2B-cached-source-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache\\196b4617fa7cf9c5edec85e8a7a2522a7c071e0c10b9bb412db1c84bda79b6e7.json": {
+      "sha256": "4b2b18a0520d6446826690a9633201167f9e14f00287c23b5d822a612a5068b2",
+      "role": "Part2B-cached-source-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\request_cache\\0d9e5b4f0985de1f5214407c05d6e328a7e17bf26b8c2c725c4e661ca317e3e8.body": {
+      "sha256": "45e2e98ee48d4b5d01127b726c3f3a3e1d3605bf25ddf4f5ff7f5c4af1aba943",
+      "role": "Part2C-cached-scope-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\request_cache\\0d9e5b4f0985de1f5214407c05d6e328a7e17bf26b8c2c725c4e661ca317e3e8.json": {
+      "sha256": "95fbb1d38bfba6cb6d5bab087da86e5d7959927fc90d0ba4261088a30db956b2",
+      "role": "Part2C-cached-scope-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\request_cache\\dde761e5f8b32124b363b7908cce0b3a616b187c1f1ec31b3bc85ced9c23fa22.body": {
+      "sha256": "dc55ed8b1e674c58a06a746b22f39db4216362909e21d7536506291e1c215edf",
+      "role": "Part2C-cached-scope-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\request_cache\\dde761e5f8b32124b363b7908cce0b3a616b187c1f1ec31b3bc85ced9c23fa22.json": {
+      "sha256": "4818f897b8483c4ba3d638ebe282cacfc701382adc107e55e91050fa81cece0a",
+      "role": "Part2C-cached-scope-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\request_cache\\aaa0e0bc7442ce244b59763aa3ea0572aec482707ec9ef2fbb91d0bb23dc1169.body": {
+      "sha256": "8b367fb5f48b05c9b216b484e648dcef1769f2ee909bc168957cf351d127b9c6",
+      "role": "Part2C-cached-scope-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\request_cache\\aaa0e0bc7442ce244b59763aa3ea0572aec482707ec9ef2fbb91d0bb23dc1169.json": {
+      "sha256": "a1f46de624530518656e761f136ef6c25d2180faa13c85382c119c48b2ce6b89",
+      "role": "Part2C-cached-scope-metadata"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\request_cache\\5ee3a784bcc4325f76388cf238afe9e2cb080e375c45d8d604fe109331d9fcfb.body": {
+      "sha256": "b1721f6b9062e8fe5ecdac848a28370bb0aaf22939c3f13c27d45edfc944c9c9",
+      "role": "Part2C-cached-scope-body"
+    },
+    "%USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\request_cache\\5ee3a784bcc4325f76388cf238afe9e2cb080e375c45d8d604fe109331d9fcfb.json": {
+      "sha256": "d03df397bd688c4d853c998d03b82f29d363c7958f114eeff66567a8f5d42250",
+      "role": "Part2C-cached-scope-metadata"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\file_checksums.csv": {
+      "sha256": "11ae327c9a6e4796b0a6dc95b8f90d48a60d823db3a95d6524a9d24ce651a6a8",
+      "role": "original-raw-checksum-ledger"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\manifest_financials.json": {
+      "sha256": "d0e3b531bd3ca0802b943cb94a073444be52d619dc625efe8448bb8c140d76d5",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\institutions.parquet": {
+      "sha256": "9778bbc1db63becd02fc322117c72f630b2c7b386fcb60a3fc17781406ff4266",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\failures.parquet": {
+      "sha256": "a3e18c370f53c029e83708944bb91daf08ae5f664175f0fdd1bc389698c05ab3",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19840331.parquet": {
+      "sha256": "78e01ff224d59f615afba44d2935e70d977666f1ec9492bdbf507d41d61d5758",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19840630.parquet": {
+      "sha256": "749cb7e1310130081939fe5c4c83d9b5ff6f8a41f08d225758eb84ce033c100d",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19840930.parquet": {
+      "sha256": "dc32d2928ce7fecdd6bf90d739551970ec9481cf2550896b0c41449fd47ca4f2",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19841231.parquet": {
+      "sha256": "39f9e562b4163c1efec527698ddf6d609009a4c95410358ef32a1f09a58bacec",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19850331.parquet": {
+      "sha256": "118d7dedec13dee909afdfacb58069afdc23f7d567d7ad906e55f27ec4a3f193",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19850630.parquet": {
+      "sha256": "1da0e2fa1c2ab11a1e3ec10a02e8911805e62b2c8b750a0600eb98e38c443164",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19850930.parquet": {
+      "sha256": "dd29b5cda67024b3ccd46d55061e344d3db6c3c515c38d14257ba3eca339230e",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19851231.parquet": {
+      "sha256": "928fac0064dff2ed7750681e841d40f395c043a1e55bb17f3e97efb4dbc1b124",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19860331.parquet": {
+      "sha256": "742ed148d2dd94c1f0d158396af8a4d46f78c2e8229753e7d97905ea107890eb",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19860630.parquet": {
+      "sha256": "1add8e577d394d23b4a7ab91dd1898a7157eb60277079abf74c0cf0906fbc944",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19860930.parquet": {
+      "sha256": "8a8e8e86fb254fb4abcdddb2481062a907ce92a49bb28e059c8fd9ee052201a2",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19861231.parquet": {
+      "sha256": "e48ea64a04359200507b27f084ecac4422d6c3f98bc57f90b8be971ef80effa2",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19870331.parquet": {
+      "sha256": "892668c31d5a08c09a93795e443e8900965981e5825d63c5cb7a18e9d025b096",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19870630.parquet": {
+      "sha256": "49e0b8893c5c5b49403750b3e55d8a82f06e5fe6c9f1de38a9b95bcd2a8c5dd1",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19870930.parquet": {
+      "sha256": "e4a19c45714c8016d43f8c2fd009ba93895779ba8ec84f2a4bf64c7e7e99a37e",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19871231.parquet": {
+      "sha256": "b781f637c4b4d0a370692f5ff5e827cde7a146a418a09d2a3f2f78be4af8f1c2",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19880331.parquet": {
+      "sha256": "24bb4ccc0f97839333a3d498f111dcffb9a7000fa6e559edf2d335489b9fe3e5",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19880630.parquet": {
+      "sha256": "074fcd4a63b9745e495cb1d262a7ea0fb440912f83f9865a5f71e00bf36dd6de",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19880930.parquet": {
+      "sha256": "0555c6db50df78ee2deedb792e8163bd82cc70d19c72ff45ed1bd8cddb65932a",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19881231.parquet": {
+      "sha256": "ba1a16095f3a8459fcf6e61acdb2699a20ce0628c23fbb8f48aa59cf468cf8ef",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19890331.parquet": {
+      "sha256": "9d444cc37b155fe96aa726931e466a66739eb4266614cd4ef0b5cd8ac2e6cacc",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19890630.parquet": {
+      "sha256": "e072a294b5b33b00a8da81ca5a93cb7aa9239f96a17f861ab81fec76de005834",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19890930.parquet": {
+      "sha256": "f5754abc1ac80b303c97032a3e85796dfda956169285c226ff6bd00a8b9b59ee",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19891231.parquet": {
+      "sha256": "fb360852013bbc9f3d74e2cf789a7296490cbe94205eba32f717b105695e9c47",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19900331.parquet": {
+      "sha256": "a131e78b23ef2889744435d7efd409fb1200ce11db65294043cceb7ac4ae9b7f",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19900630.parquet": {
+      "sha256": "56bad21bde3f8755dca5b9a136362298fcd847886b21e94045f28047bdf5f26d",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19900930.parquet": {
+      "sha256": "7d2043db69a629e8f3a18c88ae67a048de92110b70f1c59e1a7d3d5892d9dfc5",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19901231.parquet": {
+      "sha256": "9f2826ebaa64147a55721395f96b35b10ed21e24ec2976a1bcd725cb3b8777f4",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19910331.parquet": {
+      "sha256": "af92e64a9ebd8c10c1c8675c1d5de8ef054f76a626bebee66a9802022cc85150",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19910630.parquet": {
+      "sha256": "581bd78a53a7f5323b620145af9fbc1cbd28d3c541b9ea51bae5819ac1dd14ce",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19910930.parquet": {
+      "sha256": "c7aac9f7908b28dff2982be6664c6d198473ce027c1e3bc3f59c1ea08241e405",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19911231.parquet": {
+      "sha256": "7f197b50ae706e530a2bacc2799d55c8f379dbfb511681868127d9142bc611f6",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19920331.parquet": {
+      "sha256": "2bef61dc5cfa243d4ea4aff5273af80cd42ea5aed0c1ece239680f8a03969397",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19920630.parquet": {
+      "sha256": "9328498358abd975e2ce887564c0fd4ef4ce398f2a373fea0b56f4a44ab93d11",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19920930.parquet": {
+      "sha256": "650310b8e9f59c16244d95c36f944114814f1e123b0aa2e84f561fafd60afffc",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19921231.parquet": {
+      "sha256": "2f90ce760622aa76b16d5ef740c390a040484fc8dda0a307d81e1d7e7c92fd56",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19930331.parquet": {
+      "sha256": "fd616698ec781a521184bfa012b182a4f0d4c5aca5547768e84a8acdec87c2c1",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19930630.parquet": {
+      "sha256": "48f35e4d863ce74f918257e8f38330e63c9b87cefeec5ed479f39b157152e432",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19930930.parquet": {
+      "sha256": "109568f87d1978119a5bb914d8e19d02d18a1323b2a2475bf15c72ee08e41fd9",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19931231.parquet": {
+      "sha256": "6c52a6d27e42e6b8d257ea074de09edd8ed99c184eda8a8e60733c6297b30ded",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19940331.parquet": {
+      "sha256": "60b45a72f589ada0d1acb80da252c088c6fc06f37c0d6696cdbfbbf5ed99c3ac",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19940630.parquet": {
+      "sha256": "42bd68f7abd6ab9a87edabab8923294c620267e5726e84d8f6e68420c51b0f16",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19940930.parquet": {
+      "sha256": "60ba1199c835f80e15905cb759af78468c7dcb316a18a3e798c8de4b1fa3b6e3",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19941231.parquet": {
+      "sha256": "ca07a1c51ff1a997a67e9f2260d8e3833eaaf877ba6899cd6b24ea2dd3d96367",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19950331.parquet": {
+      "sha256": "ca49f2722cd70fccd3e7c439bd98b4aa288db4d969690b489512d22b48affdbe",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19950630.parquet": {
+      "sha256": "f73997a80729d0622c899ed399a031a8e85a43159c5a5683aa55cb2796aa79e0",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19950930.parquet": {
+      "sha256": "3fb2f7321fd79aa25adbebc564dce6d56ac00fd98c53dff87079236a6128689c",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19951231.parquet": {
+      "sha256": "290520d1b8d7ea2886a60fd1a026d8e241a4db76c0af730b8ad0bb2d603fb580",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19960331.parquet": {
+      "sha256": "a054a1f4947ab0e9854a3976a0e2adaf6d3fbd854f9a78328f9439e61fc89627",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19960630.parquet": {
+      "sha256": "40c08756e9a645d7d534a08cb2ca9bdd172643bf27b208fd6362ffbe228aece7",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19960930.parquet": {
+      "sha256": "3e1aec600b29f51f8d91a50052cb1be28e86ca4129f60cf5bc3412af81a7529a",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19961231.parquet": {
+      "sha256": "e16a757bc6285f5d777805fc5132749b9aeb1c81766170b00141522051d7db9c",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19970331.parquet": {
+      "sha256": "d334c6e1c4b9d9095825eecc31e43f27537e43223294c88c805b8d573284c249",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19970630.parquet": {
+      "sha256": "b46a8802e3c715109c4e86864372c84f54315c55ca29bf25b807c55eb65e3f16",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19970930.parquet": {
+      "sha256": "d20c894e2987a9bf32989128a7d59717866cdb22df2f4007faabc0c6be331197",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19971231.parquet": {
+      "sha256": "e5bb43b320855a1146bed9cd2067e1018acc29bacae90957b87fcfdd48ee5260",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19980331.parquet": {
+      "sha256": "8043ba740c28f43445e8b71338d24640b0d83713e7def6a155ba1bae732a9202",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19980630.parquet": {
+      "sha256": "7234938a7ea80304f314c7a961a98affb8d8890597eaf7b349fb25ca2e88bf3e",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19980930.parquet": {
+      "sha256": "b8b07583b59915a2ecd92a33b18a1b8667a5490485722d2c8835671d67c5ec89",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19981231.parquet": {
+      "sha256": "693335c98264164694aa373f02c0ca61b9bd349e793f04d091435d91da4ac2a6",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19990331.parquet": {
+      "sha256": "6bc572767db7c5a18edf86ddb876db19574c6527e7e5b90c781e0937ddaaa7ca",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19990630.parquet": {
+      "sha256": "2785e917022adc0095795977719077405ccd8d1d20b7dff93851506e83440877",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19990930.parquet": {
+      "sha256": "b2e0292154de432bb05fa9c11280bdb5cc6c512b60460cdf83fa6bf1f6b11047",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=19991231.parquet": {
+      "sha256": "50d53a81af337d89393d5d4bdf57683f9aa25fc0562971ca88bca92d65456ba5",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20000331.parquet": {
+      "sha256": "43c26c2a6fe39e90db1977ee6849ce3d4300d3263d94eecf33814ab61d0f0580",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20000630.parquet": {
+      "sha256": "82eed385f48c4ec7e6e4aca4fcaed1a3cc4f640acbfb64f7249106f5aa25072b",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20000930.parquet": {
+      "sha256": "9bdaceef52aaf211ae90336ada991deeb31ab519f3fb4f43078b8e3a8f6db935",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20001231.parquet": {
+      "sha256": "951232b2dcea29b9d7059e21c44a9520a74c4e6e0957f9261cfcc20de969e91f",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20010331.parquet": {
+      "sha256": "4b785ab957bb312f872133ac46b3277ec8830c9eabc9903730735c87cc22da94",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20010630.parquet": {
+      "sha256": "fde46a19f23592beb04f99265cd7625b6267f021738507118977a00eae86b2b1",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20010930.parquet": {
+      "sha256": "8d0066d5cba4d0aee5ced841e20f89700fb90a3815d2fc3ccb2e1ef4ef15bbae",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20011231.parquet": {
+      "sha256": "b8475bff0a6386c314dd58cff64dcf1c93cc12c3d61be90def0f5feb34a63360",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20020331.parquet": {
+      "sha256": "a3884e4a5eb99ab048d9833868648304c8723736d8e08c972c6b51f4bc00945a",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20020630.parquet": {
+      "sha256": "7e23f49bc5beb742ff7f0b0e939f364ec2679f5ec704c65835c18f60456a48af",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20020930.parquet": {
+      "sha256": "dae210fb1e8f133b98ccba8a3362ff6c58db0780ea9fc2cb6562f03e55cfc0ba",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20021231.parquet": {
+      "sha256": "9e74a20e7f479f135ee23a170b27ce2cafe6dbf6a465c3ab67c86fadcd28bd82",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20030331.parquet": {
+      "sha256": "155dc9e743fa91ff075c060306018a4c08bc4cb8d5db347f57bb9f8000ff0eaa",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20030630.parquet": {
+      "sha256": "3eae5c1eb5b76e16d3238c0b77b09acfd18705ddea1166e45aff77244ddf8cbf",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20030930.parquet": {
+      "sha256": "84a425cf05b020741e5a1674dc079e4374099a3b1f71b83855cdadadb8755773",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20031231.parquet": {
+      "sha256": "69215e16e502ce861fc5e1f24aef3812601a3d52ee4aa53eab95c75124d660a6",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20040331.parquet": {
+      "sha256": "ffbf8e1b0e3cc251234d2d8287ebe86f870a3f09a5bc82a397658a93f7783219",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20040630.parquet": {
+      "sha256": "3fc4651e22c5c0d792336f7963203986a705dfb61046f369a4c78849b265ded1",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20040930.parquet": {
+      "sha256": "18aef9f30e2b15adf1743a71af442c2aeedc3e5502b091beaf82020b15afe6fc",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20041231.parquet": {
+      "sha256": "740339871cee1826c7c61469ab1b4a4177f9b31cc48095d30b190159a759b4f2",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20050331.parquet": {
+      "sha256": "452b61c5a778a92a6f16705b3ad54a61d982a23287951b0e4c384749bef8f6f4",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20050630.parquet": {
+      "sha256": "14c9aba7e92cae672cff753dfd67d93173837f23e5361d0a7898eaf5b0b0c00f",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20050930.parquet": {
+      "sha256": "2674052b17ade6eb86e3f7f0a9801c7c3e9595a2e3a6849c2473666ca4f0c0c8",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20051231.parquet": {
+      "sha256": "38178f9c91f7c8b77fc40e417ace680edac3e4884af021ba3061b0872a30abce",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20060331.parquet": {
+      "sha256": "3bca3632139500cf96a58f4e37e56e39b8ad4253af15f735100f2863d42e5b60",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20060630.parquet": {
+      "sha256": "474e8d23fe1285cb319cc9875e8c711fc3ddec56f5515f2772cbe6037cb85b28",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20060930.parquet": {
+      "sha256": "7f467f1e0f5744939da8ca69b1423cfdc76e4b41767750a46c4cf446d030225b",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20061231.parquet": {
+      "sha256": "267a7942988b62f6a7547d3fb98c819ea17b18bb9fc0af1f25ff53d6e0cc9912",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20070331.parquet": {
+      "sha256": "b53727095c1feae9feeaf0bff5979c2c4c6ea0ba197a66d55b70c1972b23bc36",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20070630.parquet": {
+      "sha256": "8fe10a7092f3265188107d0b98160e72eb72264aa811ce548a8ffb594d5e60d7",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20070930.parquet": {
+      "sha256": "1f21bc8db80cc101fd6d1992bd459324192dd142f338c038bee35bc9f539fce8",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20071231.parquet": {
+      "sha256": "66c380573eb723a402645ea941dbb395c856210d9550e23ac78fc094421243eb",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20080331.parquet": {
+      "sha256": "bd9f3d31ba23f99487fc63e9733e7bf76831e36c66e2e7f33dd0b93b0b2f22dc",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20080630.parquet": {
+      "sha256": "ed719a9d22362096c410ed64f189fcdc6ff964f889a83a0eb91da608240058c9",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20080930.parquet": {
+      "sha256": "a11ba1912be06b0b7a419ee92ca1ac43ecc72b79ece3c242863590678773d1c7",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20081231.parquet": {
+      "sha256": "40bc71e6bed771913752bafd407d57ab0fbfbb991f3decab74b3199a8b8e638c",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20090331.parquet": {
+      "sha256": "2ee0929b4bb03a3d4b32f15f3844a519f3d6fed3a6240a7ab591f839ca76ff41",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20090630.parquet": {
+      "sha256": "2df53e06ce3cee1926a8a7394b17725b9e235daeb5d1c6202f92d93bf5c25b07",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20090930.parquet": {
+      "sha256": "3a1d132fe2951df05a3fd9745f6e4ac07ab2c79dc4378bd9201242af6cdec7a3",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20091231.parquet": {
+      "sha256": "84a8ae5bf09399dcafd7a60ffeccc6a54e6b0ff4587901114d95ee3acc42f002",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20100331.parquet": {
+      "sha256": "bab78dd8bd54a6084f360b65408d4e9e2811e8a9d19618ec609fdb40a3ba43f4",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20100630.parquet": {
+      "sha256": "30d52f502da186deab19a243b37870f2cd75e6d9f9c16a0add5cb2f4485d7abd",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20100930.parquet": {
+      "sha256": "31157ceb40bc397aa9fee7cb2d22a7f2e3d2e6d864231ffcca21abccfca84ce0",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20101231.parquet": {
+      "sha256": "f8512602d5414581b7838932c544c28304d4a4de944fa75d3a713d154e7b1ea1",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20110331.parquet": {
+      "sha256": "a2945fd0b77cd56e4b3ef31c14df19b1aa0a744a438d4b9a12bf6952d0b972d4",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20110630.parquet": {
+      "sha256": "a9670b53c9d748ff542225101d032a863727038e98622482831ff872d1965134",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20110930.parquet": {
+      "sha256": "cc7cb8b7c824a25d8b4cb11cca0e2829e02fc11c9452bd1eb5b12cbeb91c5f75",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20111231.parquet": {
+      "sha256": "717c31bbf539ec7377bcf5fd5ad4ebdfa15a3c8a711207fc284503bfae82d72a",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20120331.parquet": {
+      "sha256": "77d0fbc1e55b2c9dc82e1140b12ce6d8e7cc441b2f8fdf08e33960c53e0538b7",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20120630.parquet": {
+      "sha256": "fbdc5454d513f65a5ca5a0fa4e77793c0b535f3b1c662369ea5c5661e35e3343",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20120930.parquet": {
+      "sha256": "5fbb445b780d3a7d9e413beb2e6f6c46d5d2c4c5f9ea99d802792cfd260c5c5e",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20121231.parquet": {
+      "sha256": "0803cb592d8a83964ec6c939a3a4aa7259e25aae659819eff684a46a43c85ddd",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20130331.parquet": {
+      "sha256": "89a76640b94e91afd656212966508b8a1daf03f7356d811667208cce866303fd",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20130630.parquet": {
+      "sha256": "ff6b89ee966183757d484165f89e13b861279176945751a8b0a1c964bae1c01b",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20130930.parquet": {
+      "sha256": "1fa7d77eb6593cfd51a4241a00a4b08dfae88422cc2e4ef041b39c507cef0bcf",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20131231.parquet": {
+      "sha256": "4ded37712f569ed835d5513e383286d618bcc354eaa10089e93b5f7a71fc7465",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20140331.parquet": {
+      "sha256": "d6219235e51b358a725c0cd13f3f7daa3699ea8d14a203bb14dd7d1cdc2b2b95",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20140630.parquet": {
+      "sha256": "5fc4872d26c7136d968681222b4146a08dd50de61cd0ee390a07da40fd5ba05d",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20140930.parquet": {
+      "sha256": "39f330126820fb6eeaaf6b2aa95b11898e262550079591e0a88663d9eee595e8",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20141231.parquet": {
+      "sha256": "31547c7e63493f05445c36bc2cb769a9f1ad7c315cf4fc0e154f5f6d261f82cf",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20150331.parquet": {
+      "sha256": "31f35372808fdf6b415dede4a6676dbddadf06eb0a9255c06d5a79632471fba9",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20150630.parquet": {
+      "sha256": "2fa22b31d5956218abc8f1231124092bb67936ac65381397036e3a4d2c7a00c9",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20150930.parquet": {
+      "sha256": "87f8fd3e85311bf629805b3454f8aefdee542a661cb39f264abadbf3d562f7c7",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20151231.parquet": {
+      "sha256": "474574b3ae781a24caa1daea19b7d77396474f3d9a98ebab8d0eca638febc49a",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20160331.parquet": {
+      "sha256": "13580bbc16d5a112e45c4bf6c547954ee22fef8aaa15024d4a2fc3d5a2108435",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20160630.parquet": {
+      "sha256": "15873de9094d5f9c9a0059b8d00e0442ce9f1f82b66eb52709aaff11875f4dc6",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20160930.parquet": {
+      "sha256": "cefcccf5d9a04cbb1114ec8250b39181304d448382c62509f5226da4759f5094",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20161231.parquet": {
+      "sha256": "3a525c47571750417979f5a6f944bf8dc17fc02c5514468ec985e8e9eee4ac87",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20170331.parquet": {
+      "sha256": "52d217bc83094bea2a649f2319c5490cb30f7dff73747ca8d1a1cc9a2468286b",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20170630.parquet": {
+      "sha256": "6352c72ee07a8bea8b75a27b723d2e0c562bcbc29ab9f9fb837cf023e8cf0a57",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20170930.parquet": {
+      "sha256": "669a5c7802c35ba6828817dd3988c6172c776a0a98e3dfb961d54c503f1e7a75",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20171231.parquet": {
+      "sha256": "493a072b5fe4e4dfe0351369625deffa84bd6598d5021e76bda33a09a70fc36b",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20180331.parquet": {
+      "sha256": "e818b90c905eb2c2c93865009fa3b7c4365558d8b51dbb0a87604753065902ff",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20180630.parquet": {
+      "sha256": "41ce302022df9e079e1fcd1436cbe457d0ef1bb79e29a91fbcc086f7d8034440",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20180930.parquet": {
+      "sha256": "e9cc3c7838fa2af988cc0226d2bf7508a8ec42e5f0a37dcf67a188ea59455eb4",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20181231.parquet": {
+      "sha256": "1e825a14b6d77e03d1c039f99b4ef24a4438a58db4c9cb984fc076602da8050f",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20190331.parquet": {
+      "sha256": "f679f328f5947b9f1bae63b1cf1a3bb8afde73a004192ca810d3498a90d9d55a",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20190630.parquet": {
+      "sha256": "9a1fc3bce51c24d214bd2e9b86828b60e26cbe0c138cc06b1d0f149959ce6bac",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20190930.parquet": {
+      "sha256": "28d0ccdd22457622b5b35f4c3dcf59c46b6c1163ff508c9d26a3f13bc8048127",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20191231.parquet": {
+      "sha256": "662b8993379d62ba33fc1693ae05e87ea069597f16676c4f69926da8d18e4227",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20200331.parquet": {
+      "sha256": "5b066e85d371934436f1394b6cd9bc99209b85e5a16512491461e31b3be0b0bd",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20200630.parquet": {
+      "sha256": "bfab5cb1ca1d762a99effb04e49682dc15770bf481053bb54b9d9827dab4cdf8",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20200930.parquet": {
+      "sha256": "15d0423c6d388a5c1d0a12f9e522c2304178deca02ca539df2eae44128514436",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20201231.parquet": {
+      "sha256": "41c1a0b8401e14d8d1edaad87adb7fb758d51edfe9817b8b93ed6563dd28a2b5",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20210331.parquet": {
+      "sha256": "d6bd563f0b0415b3c366f1fa931292a51e78a7085739edcb23f6754f55a14322",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20210630.parquet": {
+      "sha256": "9957b58bcc6fe9570ec48ec36c53945a64670462cf77595c03e73645cf088edc",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20210930.parquet": {
+      "sha256": "40e7dbc25986e9dc24a3fb83814f8383677d0574b9c816787dcd91e921aec293",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20211231.parquet": {
+      "sha256": "ef59cdf01c1d244318c411b56b7a8f5247a07d0a947ff37299745113a2ddfc26",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20220331.parquet": {
+      "sha256": "04bbe1f2ead1da6170a3df7e59a55affdf4938baae1fd372189a28d48fe905f0",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20220630.parquet": {
+      "sha256": "7b3ac90f66b6f26955d42b8411e8386465d93612b568f8dbb3372e1f53fa440a",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20220930.parquet": {
+      "sha256": "d77a38e9f11c20a5d4d442d7b8ecdbc6e0d4cca321363496fbfd64c0b431e9c6",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20221231.parquet": {
+      "sha256": "07190ed4641854b49b4052625a1b877135b0357051ee209e354c735c49bd016d",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20230331.parquet": {
+      "sha256": "ac3c6b2d303196d499dd7c4ce6798270ea447430d1d2d4581901e0a0696acb68",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20230630.parquet": {
+      "sha256": "def61aecc9010cfb88cb8d62c7de19379300b3e713da8e853e4c4e839b748b26",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20230930.parquet": {
+      "sha256": "715d02ab0d397b0fbc5cac983c5e3b7fc99dee1088b17a27a27229713427a9b1",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20231231.parquet": {
+      "sha256": "46534f8e75b2184e984295f5c3c7cb4521f4b246a714acd724366afac52e2976",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20240331.parquet": {
+      "sha256": "14ad90a08032ce3c6bbe6f6971f211ea4f52479eed153321efe09c4d03153247",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20240630.parquet": {
+      "sha256": "1ab11c4cdb128192a8b3d6cbf658822328e2fc20df0973496ddbd213750076bd",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20240930.parquet": {
+      "sha256": "7914842890c6799ec9ba46b4804e19659e28c796c2e963f681daf92e38b9b686",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20241231.parquet": {
+      "sha256": "2fa7018dbf78fe41d55a94d128550c67b4549022d33f449bfd1a08e29ba9b9f4",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20250331.parquet": {
+      "sha256": "d058e9db4ab7126759400629b2967ff5b896dcdf25320f864bc47f47a273637c",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20250630.parquet": {
+      "sha256": "62300a94d948c103dcc5929b5c54c3a654ba622ce8606c1ca17ebd66fb2423df",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20250930.parquet": {
+      "sha256": "93b28602136ab1c37c297ddb8b67761de69da4586a9b6435b7648ec2b7edbd31",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20251231.parquet": {
+      "sha256": "46e6703136070f00477a8cc9d09caa7e7c0f15dbff8aff0b88228df81715a331",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20260331.parquet": {
+      "sha256": "11b2a50fabd45aba182ea707de55f5a2f1957f0958e6bf47c8f91799eee3b155",
+      "role": "raw-source"
+    },
+    "%USERPROFILE%\\data_raw\\fdic\\financials\\REPDTE=20260630.parquet": {
+      "sha256": "66af638ebccc49f084d1cafb2bcf0efae6e81d8b80dd529ca30d5e9984e9d919",
+      "role": "raw-source"
+    }
+  },
+  "missing": [],
+  "errors": [],
+  "raw_ledger_status": "CHECKED_AGAINST_ARCHIVED_LEDGER_NOT_INDEPENDENTLY_PREPINNED",
+  "note": "Ledger hash recorded now; matching 172 prepared Parquet references independently anchors downstream numerical reproduction"
+}

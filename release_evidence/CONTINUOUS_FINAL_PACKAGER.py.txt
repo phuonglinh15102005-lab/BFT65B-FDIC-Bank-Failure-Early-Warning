@@ -1,0 +1,89 @@
+from pathlib import Path
+from datetime import datetime,timezone
+import csv,hashlib,json,os,platform,shutil,subprocess,sys,tempfile,zipfile
+W=Path('/workspace/work');R=W/'BFT65B_CONTINUOUS_VERIFIED_RELEASE_20261119';OLD=W/'BFT65B_REPRO_CLOSEOUT_20261119';RET=W/'BFT65B_CONTINUOUS_RETURN_20261119_192500'
+QA=W/'BFT65B_CONTINUOUS_VERIFIED_METADATA_QA_20261119';QA.mkdir(exist_ok=False)
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
+def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,indent=2,ensure_ascii=False),encoding='utf-8')
+source=read(R/'config/source_manifest.json');before={n:sha(R/n) for n in source};assert before==source
+records=[]
+for case,command in [('plan',[sys.executable,'-B',str(R/'run.py'),'plan']),('validate',[sys.executable,'-B',str(R/'run.py'),'validate','--out',str(QA/'validation')])]:
+    started=datetime.now(timezone.utc).isoformat();out=QA/case;out.mkdir()
+    with (out/'STDOUT.txt').open('w',encoding='utf-8') as stdout,(out/'STDERR.txt').open('w',encoding='utf-8') as stderr:
+        p=subprocess.run(command,cwd='/tmp',env={**os.environ,'PYTHONDONTWRITEBYTECODE':'1','PYTHONUTF8':'1'},stdout=stdout,stderr=stderr)
+    assert p.returncode==0,(case,(out/'STDERR.txt').read_text())
+    if case=='plan':
+        value=json.loads((out/'STDOUT.txt').read_text());assert value['continuous_data_workflow']['real_data_execution']=='NOT_EXECUTED_BY_PLAN_COMMAND'
+        assert value['continuous_data_workflow']['historical_execution_evidence']['status']=='VERIFIED_WINDOWS_RAW_TO_DEVELOPMENT_WITH_INDEPENDENT_RETURN_REVIEW'
+    else:assert read(QA/'validation/VALIDATION_RESULT.json')['status']=='PASS_SOURCE_RELEASE_VALIDATION'
+    rec=dict(case=case,status='PASS',command=command,working_directory='/tmp',started_utc=started,finished_utc=datetime.now(timezone.utc).isoformat(),environment=dict(python=platform.python_version(),platform=platform.platform()),input_sha256_before=before,input_sha256_after={n:sha(R/n) for n in source},output_sha256={p.name:sha(p) for p in out.iterdir() if p.is_file()},scope='Status-only plan/source metadata check; no data/model/test rerun')
+    if case=='validate':rec['output_sha256'][str(QA/'validation/VALIDATION_RESULT.json')]=sha(QA/'validation/VALIDATION_RESULT.json')
+    save(out/'EXECUTION_RECORD.json',rec);records.append(rec)
+assert all(sha(R/n)==h for n,h in source.items())
+shutil.copytree(QA,R/'release_evidence/continuous_release_metadata_qa_20261119')
+executed=read(OLD/'config/source_manifest.json');science=[n for n in executed if n.startswith(('01_PART','02_PART','03_PART','04_PART','05_PART')) and n.endswith('.py')]
+assert len(science)==61 and all(sha(R/n)==executed[n] for n in science)
+# The only Python code update after the actual Windows run is plan-status reporting.
+py_changes=[n for n in executed if n.endswith('.py') and sha(R/n)!=executed[n]]
+assert py_changes==['workflow/continuous.py'],py_changes
+assert sha(R/'release_evidence/continuous_independent_review_20261119/EXECUTED_CONTINUOUS_CONTROLLER.py.txt')==executed['workflow/continuous.py']
+for p in RET.rglob('*'):
+    if p.is_file():assert sha(p)==sha(R/'release_evidence/continuous_windows_20261119'/p.relative_to(RET))
+with (OLD/'FILE_MANIFEST_SHA256.csv').open(encoding='utf-8-sig',newline='') as f:
+    rows=list(csv.DictReader(f))
+assert all(sha(OLD/x['relative_path'])==x['sha256'] for x in rows)
+with (R/'EXECUTION_LOG_INDEX.csv').open('w',encoding='utf-8-sig',newline='') as f:
+    w=csv.writer(f);w.writerow(['case','status','scope','command','evidence'])
+    top=read(RET/'CONTINUOUS_RESULT.json')
+    w.writerow(['actual_windows_continuous_replay','PASS','raw snapshot/cache to development; full model E2E NOT EXECUTED',json.dumps(top['command']),'release_evidence/continuous_windows_20261119/CONTINUOUS_RESULT.json'])
+    w.writerow(['windows_normal_unit_suite_45','PASS','actual documented Windows engineering environment',json.dumps(top['unit_tests']['command']),'release_evidence/continuous_windows_20261119/unit_tests/'])
+    independent=read(R/'release_evidence/continuous_independent_review_20261119/INDEPENDENT_VERIFICATION.json')
+    w.writerow(['independent_return_review','PASS',independent['verification_scope'],json.dumps(independent['command']),'release_evidence/continuous_independent_review_20261119/INDEPENDENT_VERIFICATION.json'])
+    for rec in records:w.writerow([rec['case'],'PASS',rec['scope'],json.dumps(rec['command']),'release_evidence/continuous_release_metadata_qa_20261119/'+rec['case']+'/EXECUTION_RECORD.json'])
+
+# Publication guard: no raw/fitted payload, real ignore behavior and Windows EOL preservation.
+prohibited={'.parquet','.arrow','.feather','.npz','.npy','.joblib','.pickle','.pkl','.zip','.gz','.sqlite','.db','.pyc'}
+assert not [str(p) for p in R.rglob('*') if p.is_file() and p.suffix.lower() in prohibited]
+csv_inventory=[]
+for p in sorted(R.rglob('*.csv')):
+    with p.open(encoding='utf-8-sig',newline='') as f:rd=csv.reader(f);header=next(rd,[]);count=sum(1 for _ in rd)
+    assert not {'CERT','REPDTE','DECISION_DATE','FAILDATE'}.intersection(header),str(p)
+    csv_inventory.append(dict(path=p.relative_to(R).as_posix(),rows=count,columns=header))
+save(R/'release_evidence/CONTINUOUS_FINAL_CSV_AUDIT.json',csv_inventory)
+gitcases=[];filters=[]
+with tempfile.TemporaryDirectory(prefix='bft_cont_final_git_') as t:
+    gitdir=Path(t)/'empty.git';init=['git','init','--bare','--quiet',str(gitdir)];subprocess.run(init,check=True,capture_output=True)
+    common=['git','--git-dir='+str(gitdir),'--work-tree='+str(R),'-c','core.excludesfile=/dev/null']
+    visible=[p.relative_to(R).as_posix() for p in R.rglob('*') if p.is_file()]+['FILE_MANIFEST_SHA256.csv']
+    for name,ignored in [(n,False) for n in visible]+[(n,True) for n in ['raw.parquet','score.npz','fitted.joblib','raw_bank_rows.csv','archive.zip']]:
+        cmd=common+['check-ignore','--no-index','-q','--',name];p=subprocess.run(cmd,cwd=R,capture_output=True)
+        ok=p.returncode in [0,1] and (p.returncode==0)==ignored
+        gitcases.append(dict(path=name,expected_ignored=ignored,exit_code=p.returncode,status='PASS' if ok else 'FAIL'))
+    for name in ['02_PART2_DATA_QUALITY_PANEL/code/02b_collect_exit_evidence.py','BAM_CHAY_REPRO_CODE_CUOI.cmd','config/continuous_verification.json','release_evidence/continuous_windows_20261119/CONTINUOUS_RESULT.json','outputs/verification/CONTINUOUS_DATASET_VERIFICATION.csv']:
+        data=(R/name).read_bytes();wanted=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest();cmd=common+['-c','core.autocrlf=true','hash-object','--path='+name,'--stdin'];p=subprocess.run(cmd,cwd=R,input=data,capture_output=True)
+        filters.append(dict(path=name,status='PASS' if p.returncode==0 and p.stdout.decode().strip()==wanted else 'FAIL',command=cmd,input_sha256=sha(R/name)))
+assert all(x['status']=='PASS' for x in gitcases+filters),[x for x in gitcases+filters if x['status']=='FAIL']
+save(R/'release_evidence/CONTINUOUS_FINAL_PUBLICATION_QA.json',dict(status='PASS_LOCAL_ASSEMBLY_NOT_GITHUB_PUBLISHED',command=[sys.executable,'-B',str(Path(__file__))],environment=dict(python=platform.python_version(),platform=platform.platform(),git=subprocess.check_output(['git','--version'],text=True).strip()),input_sha256=dict(gitignore=sha(R/'.gitignore'),gitattributes=sha(R/'.gitattributes')),temporary_git_context=init,ignore_cases=gitcases,eol_cases=filters,scope='Source read-only; temporary empty local Git metadata; no commits/remotes/push/network'))
+report=R/'REPRODUCTION_VERIFICATION_REPORT.md';report.write_text(report.read_text()+'''\nFinal metadata checks ran from /tmp using absolute entrypoints: plan and source validation PASS, 131 protected entries checked. The plan now separates its own non-executing invocation from protected historical Windows evidence. No data/model/unit suite was rerun for this status-only update. Exact executed pre-update controller bytes and source manifest are retained. Local publication inclusion and Git autocrlf byte-preservation checks also PASS; they do not prove GitHub publication.\n''',encoding='utf-8')
+shutil.copyfile(Path(__file__),R/'release_evidence/CONTINUOUS_FINAL_PACKAGER.py.txt')
+save(R/'release_evidence/CONTINUOUS_PACKAGE_PRECHECK.json',dict(status='PASS',command=[sys.executable,'-B',str(Path(__file__))],environment=dict(python=platform.python_version(),platform=platform.platform()),input_sha256=dict(packager=sha(Path(__file__)),source_manifest=sha(R/'config/source_manifest.json'),executed_manifest=sha(OLD/'config/source_manifest.json'),independent_review=sha(R/'release_evidence/continuous_independent_review_20261119/INDEPENDENT_VERIFICATION.json')),output_sha256=dict(report=sha(report),checklist=sha(R/'REMAINING_ISSUES_CHECKLIST.md'),publication_qa=sha(R/'release_evidence/CONTINUOUS_FINAL_PUBLICATION_QA.json')),science_sources_unchanged=61,new_fits=0,final_test_inference=False))
+mf=R/'FILE_MANIFEST_SHA256.csv';assert not mf.exists()
+with mf.open('w',encoding='utf-8-sig',newline='') as f:
+    w=csv.writer(f);w.writerow(['relative_path','bytes','sha256'])
+    for p in sorted(R.rglob('*')):
+        if p.is_file() and p!=mf:w.writerow([p.relative_to(R).as_posix(),p.stat().st_size,sha(p)])
+target=W/'BFT65B_CONTINUOUS_VERIFIED_RELEASE_20261119.zip';assert not target.exists()
+with zipfile.ZipFile(target,'x',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+    for p in sorted(R.rglob('*')):
+        if p.is_file():z.write(p,R.name+'/'+p.relative_to(R).as_posix())
+with zipfile.ZipFile(target) as z:
+    assert z.testzip() is None and len(z.namelist())==len(set(z.namelist()))
+    for p in R.rglob('*'):
+        if p.is_file():assert hashlib.sha256(z.read(R.name+'/'+p.relative_to(R).as_posix())).hexdigest()==sha(p)
+    members=len(z.namelist())
+db=hashlib.sha256()
+with target.open('rb') as f:
+    for chunk in iter(lambda:f.read(4*1024*1024),b''):db.update(hashlib.sha256(chunk).digest())
+done=dict(status='PASS_FINAL_CODE_AND_CONTINUOUS_EVIDENCE_ARCHIVE',command=[sys.executable,'-B',str(Path(__file__))],environment=dict(python=platform.python_version(),platform=platform.platform()),zip=str(target),bytes=target.stat().st_size,sha256=sha(target),dropbox_content_hash=db.hexdigest(),members=members,protected_entries=len(source),datasets_verified=179,byte_identical_datasets=178,nonkey_columns_verified=5401,windows_tests_pass=45,full_clean_room_E2E='NOT_EXECUTED',finished_utc=datetime.now(timezone.utc).isoformat())
+save(W/'BFT65B_CONTINUOUS_VERIFIED_RELEASE_20261119_PACKAGING_RESULT.json',done);print(json.dumps(done,indent=2))

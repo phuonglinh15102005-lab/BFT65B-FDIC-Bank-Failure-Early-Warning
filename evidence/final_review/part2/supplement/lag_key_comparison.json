@@ -1,0 +1,203 @@
+{
+  "scope": "Reconstructed keys from archived coverage, targeted gap metadata, exclusion ledger and reconciled event registry. No financial values, model fitting, test scores or final labels read. Positive-window counts are registry-based pre-adjudication opportunities, not the model cohort labels.",
+  "counts": {
+    "source": 1682616,
+    "clean": 1669802,
+    "lag1": 1629398,
+    "positive_lag1": 11101,
+    "lag2": 1605882,
+    "positive_lag2": 11005,
+    "shared": 1605722,
+    "lag1_only": 23676,
+    "lag2_only": 160
+  },
+  "distinct_CERTs": {
+    "1": 23651,
+    "2": 23394
+  },
+  "positive_window_CERTs": {
+    "1": 2811,
+    "2": 2791
+  },
+  "positive_window_CERTs_overlap": {
+    "shared": 2791,
+    "lag1_only": 20,
+    "lag2_only": 0
+  },
+  "positive_key_overlap": {
+    "shared": 10995,
+    "lag1_only": 106,
+    "lag2_only": 10
+  },
+  "lost_decision_keys_by_lag2_source_absence": {
+    "pre-first-source-report": 23641,
+    "internal missing report": 26,
+    "excluded source report": 9
+  },
+  "gained_decision_keys_by_lag1_source_absence": {
+    "internal missing report": 27,
+    "after-last-source-report": 94,
+    "excluded source report": 39
+  },
+  "source_row_flow": {
+    "1": {
+      "retained": 1629398,
+      "at/after risk stop": 18673,
+      "beyond cutoff": 21700,
+      "beyond eligibility end": 31
+    },
+    "2": {
+      "retained": 1605882,
+      "at/after risk stop": 37687,
+      "beyond cutoff": 26171,
+      "beyond eligibility end": 62
+    }
+  },
+  "era_counts": {
+    "development": {
+      "lag1": 1232375,
+      "lag2": 1208974,
+      "lag1_only": 23542,
+      "positive_lag1": 9319,
+      "positive_lag2": 9223,
+      "lag2_only": 141,
+      "positive_window_CERTs_lag1": 2429,
+      "positive_window_CERTs_lag2": 2409
+    },
+    "embargo": {
+      "lag1": 32558,
+      "lag2": 32514,
+      "positive_lag1": 670,
+      "positive_lag2": 670,
+      "lag1_only": 44,
+      "positive_window_CERTs_lag1": 276,
+      "positive_window_CERTs_lag2": 276
+    },
+    "test-era candidate": {
+      "lag1": 364465,
+      "lag2": 364394,
+      "positive_lag1": 1112,
+      "positive_lag2": 1112,
+      "lag2_only": 19,
+      "lag1_only": 90,
+      "positive_window_CERTs_lag1": 341,
+      "positive_window_CERTs_lag2": 341
+    }
+  },
+  "exit_class_candidate_counts": [
+    {
+      "era": "development",
+      "class": "ADVERSE_EXIT_WITHOUT_MATCHED_FAILURE",
+      "lag1_candidate_decisions": 500,
+      "lag2_candidate_decisions": 391
+    },
+    {
+      "era": "development",
+      "class": "ASSISTED_OR_RESOLUTION_EXIT",
+      "lag1_candidate_decisions": 5009,
+      "lag2_candidate_decisions": 4310
+    },
+    {
+      "era": "development",
+      "class": "FIRST_REGISTER_FAILURE",
+      "lag1_candidate_decisions": 81022,
+      "lag2_candidate_decisions": 78220
+    },
+    {
+      "era": "development",
+      "class": "MERGER_OR_REORGANIZATION_NONFAILURE",
+      "lag1_candidate_decisions": 755449,
+      "lag2_candidate_decisions": 740247
+    },
+    {
+      "era": "development",
+      "class": "NO_REGISTERED_EXIT_AT_SNAPSHOT",
+      "lag1_candidate_decisions": 365080,
+      "lag2_candidate_decisions": 360967
+    },
+    {
+      "era": "development",
+      "class": "UNRESOLVED_OR_UNOBSERVED_EXIT",
+      "lag1_candidate_decisions": 1585,
+      "lag2_candidate_decisions": 1552
+    },
+    {
+      "era": "development",
+      "class": "VOLUNTARY_CLOSURE_NONFAILURE",
+      "lag1_candidate_decisions": 23730,
+      "lag2_candidate_decisions": 23287
+    },
+    {
+      "era": "embargo",
+      "class": "ADVERSE_EXIT_WITHOUT_MATCHED_FAILURE",
+      "lag1_candidate_decisions": 8,
+      "lag2_candidate_decisions": 8
+    },
+    {
+      "era": "embargo",
+      "class": "FIRST_REGISTER_FAILURE",
+      "lag1_candidate_decisions": 1791,
+      "lag2_candidate_decisions": 1791
+    },
+    {
+      "era": "embargo",
+      "class": "MERGER_OR_REORGANIZATION_NONFAILURE",
+      "lag1_candidate_decisions": 13380,
+      "lag2_candidate_decisions": 13352
+    },
+    {
+      "era": "embargo",
+      "class": "NO_REGISTERED_EXIT_AT_SNAPSHOT",
+      "lag1_candidate_decisions": 16490,
+      "lag2_candidate_decisions": 16476
+    },
+    {
+      "era": "embargo",
+      "class": "UNRESOLVED_OR_UNOBSERVED_EXIT",
+      "lag1_candidate_decisions": 36,
+      "lag2_candidate_decisions": 36
+    },
+    {
+      "era": "embargo",
+      "class": "VOLUNTARY_CLOSURE_NONFAILURE",
+      "lag1_candidate_decisions": 853,
+      "lag2_candidate_decisions": 851
+    },
+    {
+      "era": "test-era candidate",
+      "class": "ADVERSE_EXIT_WITHOUT_MATCHED_FAILURE",
+      "lag1_candidate_decisions": 124,
+      "lag2_candidate_decisions": 124
+    },
+    {
+      "era": "test-era candidate",
+      "class": "FIRST_REGISTER_FAILURE",
+      "lag1_candidate_decisions": 3410,
+      "lag2_candidate_decisions": 3409
+    },
+    {
+      "era": "test-era candidate",
+      "class": "MERGER_OR_REORGANIZATION_NONFAILURE",
+      "lag1_candidate_decisions": 96456,
+      "lag2_candidate_decisions": 96438
+    },
+    {
+      "era": "test-era candidate",
+      "class": "NO_REGISTERED_EXIT_AT_SNAPSHOT",
+      "lag1_candidate_decisions": 257150,
+      "lag2_candidate_decisions": 257081
+    },
+    {
+      "era": "test-era candidate",
+      "class": "UNRESOLVED_OR_UNOBSERVED_EXIT",
+      "lag1_candidate_decisions": 152,
+      "lag2_candidate_decisions": 153
+    },
+    {
+      "era": "test-era candidate",
+      "class": "VOLUNTARY_CLOSURE_NONFAILURE",
+      "lag1_candidate_decisions": 7173,
+      "lag2_candidate_decisions": 7189
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+"""Package inspected evidence and unchanged science code; stdlib checks only."""
+from pathlib import Path
+from datetime import datetime,timezone
+import csv,hashlib,json,platform,shutil,sys,zipfile
+
+W=Path('/workspace/work');R=W/'BFT65B_SUBMISSION_CODE_VERIFIED_20261119';OLD=W/'BFT65B_SUBMISSION_CODE_RELEASE_20261118'
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
+def write(p,x):p.write_text(x,encoding='utf-8')
+records=[];relocations=[]
+for p in sorted((R/'release_evidence').glob('C*/EXECUTION_RECORD.json')):
+    v=read(p);records.append(v)
+    for name,h in v['input_sha256_before'].items():
+        snap=p.parent/'INPUT_SNAPSHOTS'/(h+'.txt');assert snap.is_file() and sha(snap)==h
+    assert v['input_sha256_before']==v['input_sha256_after']
+    for name,h in v['output_sha256'].items():
+        if h is None:continue
+        path=Path(name)
+        if not path.is_absolute():assert sha(p.parent/name)==h;continue
+        assert path.is_file() and sha(path)==h, name
+        dest=R/'release_evidence/EXECUTED_OUTPUTS'/v['id']/path.name
+        dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(path,dest)
+        relocations.append([v['id'],name,dest.relative_to(R).as_posix(),h])
+assert len(records)==19
+counts={s:sum(v['status']==s for v in records) for s in ['PASS','BLOCKED','FAIL']}
+assert counts=={'PASS':16,'BLOCKED':2,'FAIL':1},counts
+assert next(x for x in records if x['status']=='FAIL')['id']=='C17_PUBLICATION_IGNORE_RULES'
+for cid in ['C16_VERIFIED_RELEASE_METADATA_VALIDATION','C18_PUBLICATION_IGNORE_VALID_GIT_CONTEXT','C19_FINAL_METADATA_AFTER_QA_CORRECTION']:
+    assert next(x for x in records if x['id']==cid)['status']=='PASS'
+ignore=read(R/'release_evidence/PUBLICATION_IGNORE_RESULT_FINAL.json')
+assert ignore['status']=='PASS' and len(ignore['results'])==15
+assert ignore['ignore_sha256']==sha(R/'.gitignore')
+
+with (R/'EXECUTION_LOG_INDEX.csv').open('w',encoding='utf-8-sig',newline='') as f:
+    writer=csv.writer(f);writer.writerow(['test_id','historical_status','exit_code','command','python','execution_record','scope'])
+    for v in records:writer.writerow([v['id'],v['status'],v['exit_code'],json.dumps(v['command']),v['environment']['python'],f"release_evidence/{v['id']}/EXECUTION_RECORD.json",v['scope']])
+with (R/'release_evidence/EVIDENCE_RELOCATION_MAP.csv').open('w',encoding='utf-8-sig',newline='') as f:
+    writer=csv.writer(f);writer.writerow(['test_id','actual_output_path','packaged_copy','sha256']);writer.writerows(relocations)
+
+# Clarify the one corrected QA harness failure without rewriting any actual record.
+for name in ['TEST_RESULTS.md','REPRODUCIBILITY_FINAL_AUDIT.md','CHANGELOG.md']:
+    p=R/name;s=p.read_text()
+    s=s.replace('dùng log cuối C11–C15 cho source cuối','dùng C19 cho metadata cuối và C11–C15 cho source code không đổi')
+    s=s.replace('Xem `TEST_RESULTS.md` và `EXECUTION_LOG_INDEX.csv`: 13 PASS, 2 BLOCKED, 0 FAIL trong 15 command records.', '15 command records cloud ban đầu có 13 PASS, 2 BLOCKED, 0 FAIL; xem bản tổng hợp mới và correction note trong TEST_RESULTS.md.')
+    s+='''
+\n### Release-QA correction record
+
+After Windows verification, C16 source/config validation PASS. C17 actual Git-ignore checking failed because `/workspace/.git` was not a usable Git context; this was a test-harness prerequisite error, not a failed bank-data comparison. The original FAIL record and output remain intact. C18 used an empty temporary local bare Git context to read the source worktree ignore rules: all 15 visible/ignored cases PASS. No commit, remote, push or network operation occurred; temporary scaffolding was removed. C19 final metadata/source validation PASS after registering the corrected command.
+
+There are 19 historical release-QA command records: 16 PASS, 2 cloud BLOCKED, and 1 corrected historical harness FAIL. These counts are separate from the three actual Windows producers, ten comparator controls and independent returned-evidence review. The final relevant QA checks PASS; there is no request to repeat bank-data/model checks. No historical status is rewritten to force a perfect history.
+'''
+    p.write_text(s,encoding='utf-8')
+
+baseline=read(OLD/'config/source_manifest.json');manifest=read(R/'config/source_manifest.json')
+for name,h in baseline.items():
+    if Path(name).suffix=='.py':assert sha(R/name)==h
+for name,h in manifest.items():assert sha(R/name)==h
+assert sha(OLD/'config/source_manifest.json')=='161f2df8be6175e71cfc020ba1291d35f2ac857b54befd0773d485189edba88b'
+original=Path('/workspace/attachments/f3b9a194-bc4d-4f85-afb8-59e61949c9c2/20261119_082051_38aac2a6_GUI_LAI_CHO_CODEX.zip')
+with zipfile.ZipFile(original) as z:
+    assert z.testzip() is None
+    for name in z.namelist():assert hashlib.sha256(z.read(name)).hexdigest()==sha(R/'release_evidence/windows_return_20261119'/name)
+
+# Public CSVs contain aggregates/metadata only; bank-row arrays/models stay external.
+csv_catalog=[]
+for p in sorted(R.rglob('*.csv')):
+    with p.open(encoding='utf-8-sig',newline='') as f:
+        reader=csv.reader(f);header=next(reader,[]);rows=sum(1 for _ in reader)
+    assert not {'CERT','DECISION_DATE','REPDTE','FAILDATE'}.intersection(header),str(p)
+    csv_catalog.append(dict(file=p.relative_to(R).as_posix(),rows=rows,columns=header,classification='VETTED_AGGREGATE_OR_PROVENANCE_METADATA'))
+blocked={'.parquet','.arrow','.feather','.joblib','.pkl','.pickle','.npz','.npy','.gz','.zip','.sqlite','.db','.pyc'}
+assert not [str(p) for p in R.rglob('*') if p.is_file() and p.suffix.lower() in blocked]
+assert not [str(p) for p in R.rglob('.git')]
+readme=(R/'README.md').read_text();assert 'NOT EXECUTED' in readme and 'No further user rerun is requested' in readme
+
+review=read(R/'release_evidence/windows_independent_review_20261119/INDEPENDENT_REVIEW.json')
+result=dict(status='VERIFIED_CHECKPOINT_REPLAY_READY_FOR_INDEPENDENT_REVIEW',windows_execution_date='2026-11-19',uploaded_return_sha256=sha(original),verified_producers=['p2-base','p2-clean','development-features'],verified_dataset_rows={d['dataset']:d['rows'] for d in review['datasets']},compared_nonkey_columns=112,all_reported_null_nan_value_mismatches=0,all_reported_max_abs_differences=0,synthetic_windows_controls=10,development_lineage='NEW verified Part2C outputs; no fallback',science_and_workflow_python='BYTE_UNCHANGED_FROM_EXECUTED_RELEASE',release_qa_historical_counts=counts,corrected_historical_qa_failure='C17 invalid Git context corrected by C18; original FAIL retained',final_source_validation='C19 PASS',publication_ignore_validation='C18 PASS',full_clean_room_E2E='NOT_EXECUTED',clean_environment_install='NOT_EXECUTED',public_repository_access='NOT_VERIFIED',scientific_disclosures=['historical filing/revision vintages','assumed operating costs/avoidability/conditional optimality','historical bootstrap provenance versus verified posthoc CI','late ablation execution date','event recall versus COST-weighted recall'],new_model_fits=0,final_test_inference=False,report_or_part6_edited=False)
+write(R/'FINAL_EVIDENCE_STATUS.json',json.dumps(result,indent=2))
+write(R/'release_evidence/FINAL_PUBLIC_CSV_CONTENT_AUDIT.json',json.dumps(csv_catalog,indent=2))
+shutil.copyfile(Path(__file__),R/'release_evidence/VERIFIED_RELEASE_PACKAGER.py.txt')
+precheck=dict(status='PASS_SOURCE_EVIDENCE_PAYLOAD_PRECHECK',command=[sys.executable,'-B',str(Path(__file__))],environment=dict(python=platform.python_version(),platform=platform.platform()),input_sha256=dict(packager=sha(Path(__file__)),old_executed_manifest=sha(OLD/'config/source_manifest.json'),current_source_manifest=sha(R/'config/source_manifest.json'),uploaded_return_archive=sha(original),independent_review=sha(R/'release_evidence/windows_independent_review_20261119/INDEPENDENT_REVIEW.json')),output_sha256=dict(final_evidence_status=sha(R/'FINAL_EVIDENCE_STATUS.json'),execution_log_index=sha(R/'EXECUTION_LOG_INDEX.csv'),csv_content_audit=sha(R/'release_evidence/FINAL_PUBLIC_CSV_CONTENT_AUDIT.json')),scope='No science execution; all original code and returned archived bytes preserved; archive hash recorded externally after creation',timestamp_utc=datetime.now(timezone.utc).isoformat())
+write(R/'release_evidence/VERIFIED_PACKAGE_PRECHECK.json',json.dumps(precheck,indent=2))
+
+mf=R/'FILE_MANIFEST_SHA256.csv';assert not mf.exists()
+files=sorted(p for p in R.rglob('*') if p.is_file())
+with mf.open('w',encoding='utf-8-sig',newline='') as f:
+    writer=csv.writer(f);writer.writerow(['relative_path','bytes','sha256'])
+    for p in files:writer.writerow([p.relative_to(R).as_posix(),p.stat().st_size,sha(p)])
+zipfile_path=W/'BFT65B_SUBMISSION_CODE_VERIFIED_20261119.zip';assert not zipfile_path.exists()
+with zipfile.ZipFile(zipfile_path,'x',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+    for p in sorted(R.rglob('*')):
+        if p.is_file():z.write(p,R.name+'/'+p.relative_to(R).as_posix())
+with zipfile.ZipFile(zipfile_path) as z:
+    assert z.testzip() is None
+    assert len(z.namelist())==len(set(z.namelist()))
+    for p in R.rglob('*'):
+        if p.is_file():assert hashlib.sha256(z.read(R.name+'/'+p.relative_to(R).as_posix())).hexdigest()==sha(p)
+    members=len(z.namelist())
+dropbox_hash=hashlib.sha256()
+with zipfile_path.open('rb') as f:
+    for b in iter(lambda:f.read(4*1024*1024),b''):dropbox_hash.update(hashlib.sha256(b).digest())
+done=dict(status='PASS_VERIFIED_ARCHIVE_CRC_ALL_MEMBER_HASHES',command=[sys.executable,'-B',str(Path(__file__))],environment=dict(python=platform.python_version(),platform=platform.platform()),input_sha256=precheck['input_sha256'],output_zip=str(zipfile_path),bytes=zipfile_path.stat().st_size,sha256=sha(zipfile_path),dropbox_content_hash=dropbox_hash.hexdigest(),members=members,all_file_manifest_sha256=sha(mf),source_manifest_entries=len(manifest),new_fits=0,full_clean_room_E2E='NOT_EXECUTED',finished_utc=datetime.now(timezone.utc).isoformat())
+write(W/'BFT65B_SUBMISSION_CODE_VERIFIED_20261119_PACKAGING_RESULT.json',json.dumps(done,indent=2))
+print(json.dumps(done,indent=2))

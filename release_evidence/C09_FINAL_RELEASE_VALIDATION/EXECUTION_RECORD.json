@@ -1,0 +1,46 @@
+{
+  "id": "C09_FINAL_RELEASE_VALIDATION",
+  "status": "PASS",
+  "exit_code": 0,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "run.py",
+    "validate",
+    "--out",
+    "/workspace/work/BFT65B_RELEASE_CODE_VALIDATION_FINAL_20261118"
+  ],
+  "started_utc": "2026-11-18T16:14:25.913776+00:00",
+  "finished_utc": "2026-11-18T16:14:26.106334+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "polars": null,
+      "pyarrow": null,
+      "scikit-learn": "1.8.0",
+      "pyspark": null,
+      "joblib": "1.5.3",
+      "scipy": "1.17.0"
+    }
+  },
+  "input_sha256_before": {
+    "run.py": "83a2514046010be5f6ac51ea2b736e59d94252f8713e355f0597a1579b2b9b12",
+    "workflow/engine.py": "6d8c96824c579e3446cf5fda5c5e9c436bc00b074b0842b1292c1478e599118b",
+    "config/source_manifest.json": "97d58bf7bd55a96a4596029acbb81e3b8c67d70179b2f0659f0d531cc02d10bc"
+  },
+  "input_sha256_after": {
+    "run.py": "83a2514046010be5f6ac51ea2b736e59d94252f8713e355f0597a1579b2b9b12",
+    "workflow/engine.py": "6d8c96824c579e3446cf5fda5c5e9c436bc00b074b0842b1292c1478e599118b",
+    "config/source_manifest.json": "97d58bf7bd55a96a4596029acbb81e3b8c67d70179b2f0659f0d531cc02d10bc"
+  },
+  "output_sha256": {
+    "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "STDOUT.txt": "42dc22b7c439922923c12e5c3641710fbd3868121de9a1f4826ca97ca65371cc",
+    "/workspace/work/BFT65B_RELEASE_CODE_VALIDATION_FINAL_20261118/VALIDATION_RESULT.json": "ac8d70fb0f858473ae5be2fc88ce9490a3dbcb672bafbe1175e2e102ce41be59"
+  },
+  "scope": "Finalallsource/resources/nodata/protocol validationaftercodefreeze",
+  "new_model_fits": 0
+}

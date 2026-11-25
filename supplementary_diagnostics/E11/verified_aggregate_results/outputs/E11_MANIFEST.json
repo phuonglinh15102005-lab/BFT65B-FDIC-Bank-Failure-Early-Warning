@@ -1,0 +1,25 @@
+{
+  "scope": "POST_LOCK_DEV_REFITS_PLUS_UNLABELED_FULL_CLEAN_PANEL_AUDIT",
+  "code_protocol_SHA256": "994f72de6e2446916db8c2fcd36847c45cc68eb6fef5ef67f07acc0476c6d911",
+  "dev_SHA256": "d365ce25204a3dcace715db4cea259c94b1b1abba4822c7bcf2b050a1c7f6a73",
+  "clean_SHA256": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107",
+  "frozen_model_id": "HGB_L15_LR0p05_I150_L21_CLnone",
+  "train_refit_count": 3,
+  "diagnostic_fold_count": 3,
+  "final_test_labels_or_scores_read": false,
+  "final_test_scored": false,
+  "model_or_threshold_modified": false,
+  "provenance": "Post-lock exploratory evidence only; not part of frozen model selection",
+  "limitations": [
+    "AP lift is not a prevalence-invariant discrimination metric",
+    "AUC is class-prevalence invariant under fixed conditional score distributions, but not immune to temporal regime shifts",
+    "CBLR election is unverified; zeros may reflect encoding/missingness",
+    "Report-level clean financials include 2020-2021 but contain no test labels/scores"
+  ],
+  "outputs_sha256": {
+    "development_binary_flag_rates.csv": "dc2a8668a7bdeca14f3b76f178b3a9b8ae0a3dcae98fe9339f7f23d956d673cf",
+    "development_fold_AP_AUC_lift.csv": "46f42f23d8ebacd7c810bddb71b4cc22e1f44c74c0dd4e5b68cafd92622963a1",
+    "development_validation_era_feature_medians.csv": "887a3aa426806d9f5e144465dcb946e7de3ed46ae227fed7cccb21b67befaf20",
+    "RBCRWAJ_2019Q4_to_2020Q1_matched_CERT_transition.csv": "9fa59c9bbd4074eba01403612cbb1eaee2faf40d5aaab0f7fe70f72990851ad6"
+  }
+}

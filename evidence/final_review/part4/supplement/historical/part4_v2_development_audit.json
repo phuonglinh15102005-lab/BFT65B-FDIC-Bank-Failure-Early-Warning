@@ -1,0 +1,82 @@
+{
+  "stage": "PART4_V2_DEV_LABEL_AND_INPUT_PIT_AUDIT",
+  "status": "PASS",
+  "scope": "DEVELOPMENT_ONLY_NO_TEST_FEATURE_FILE_OPENED",
+  "counts": {
+    "all_development_rows": 1232375,
+    "legacy_labelled_rows": 1181659,
+    "legacy_positive_rows": 9246,
+    "primary_labelled_rows": 1231631,
+    "primary_positive_rows": 9246,
+    "primary_negative_rows": 1222385,
+    "confirmed_nonfailure_exit_rows_relabelled_zero": 49972,
+    "still_unknown_or_conflicted_rows": 744
+  },
+  "full_pit_source_parity": {
+    "status": "PASS",
+    "source_value_rows_checked": 1232375,
+    "source_fields_checked": 11,
+    "field_mismatch_counts": {
+      "ASSET": 0,
+      "EQ": 0,
+      "NCLNLS": 0,
+      "LNLSGR": 0,
+      "LNATRES": 0,
+      "CHBAL": 0,
+      "SC": 0,
+      "DEP": 0,
+      "LNLSNET": 0,
+      "ROA": 0,
+      "NIMY": 0
+    }
+  },
+  "independent_pandas_primary_label_policy_mismatches": 0,
+  "independent_formula_oracle": {
+    "status": "PASS",
+    "rows": 1232375,
+    "compared_feature_cells": 18485625,
+    "feature_mismatches": {
+      "log_assets": 0,
+      "equity_to_assets": 0,
+      "negative_equity_flag": 0,
+      "asset_log_growth_1q": 0,
+      "asset_log_growth_4q": 0,
+      "nclnls_to_loans": 0,
+      "loan_allowance_to_loans": 0,
+      "cash_to_assets": 0,
+      "cash_and_securities_to_assets": 0,
+      "deposits_to_assets": 0,
+      "net_loans_to_assets": 0,
+      "roa_reported_percent": 0,
+      "nimy_reported_percent": 0,
+      "loss_flag_roa_negative": 0,
+      "loan_denominator_invalid_flag": 0
+    },
+    "pandas_oracle_code_sha256": "3dad2f82a3daf5795426c2705c29cf35a49e23c429cf9ac2a54668ac1e213227"
+  },
+  "asof_future_poison": {
+    "status": "PASS",
+    "quarters_checked": 15,
+    "comparisons": 134550,
+    "positive_samples_total": 1485,
+    "future_rows_poisoned": 186210
+  },
+  "assistance_sensitivity": {
+    "status": "NOT_RUN_NO_VERIFIED_ASSISTANCE_DATES"
+  },
+  "strictly_training_only_preprocessing_required_for_all_part5_folds": true,
+  "code_and_source_sha256": {
+    "original_step01": "a651be686ca57dc65f9e59e444cab99088ce010247fed56d8986a0b7939cc763",
+    "clean": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107",
+    "pit": "3fce669406ff1898ac85d9c41c6385b7f8c6b27e29ecd041bb0a3c59f6337421",
+    "registry": "09efb2de4574f3abc278aa83ec66d8369d26330258518a7e1963cf810471c395",
+    "this_script": "d557d0440ffa79edbe95f59c96b08a0bda6849502b610aa309d80288c61eda6a"
+  },
+  "limitations": [
+    "Primary-v2 policy treats confirmed nonfailure exits as binary negatives, but unresolved adverse exits, insufficient follow-up and inconsistent dates remain unknown.",
+    "Future failure/exit information is used for outcome ascertainment only; it is never appended to the predictor allowlist.",
+    "Financial as-of poison tests assess code-level time gating, not retrospective FDIC historical-vintage revisions.",
+    "All previously recorded Step02-04 labels, fold counts and imputation statistics refer to the OLD censored policy and must NOT be reused as measurements for primary-v2.",
+    "No final test feature file or final test labels are opened, modelled or compared in this program."
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "scope": "FROZEN_DEVELOPMENT_FOLD_PARAMETERS_READONLY_LOW_MEMORY",
+  "rows_compared": 72,
+  "statistics_compared": 504,
+  "mismatches": 0,
+  "transformed_columns_in_exact_order": [
+    "log_assets",
+    "equity_to_assets",
+    "asset_log_growth_1q",
+    "asset_log_growth_4q",
+    "nclnls_to_loans",
+    "loan_allowance_to_loans",
+    "cash_to_assets",
+    "cash_and_securities_to_assets",
+    "deposits_to_assets",
+    "net_loans_to_assets",
+    "roa_reported_percent",
+    "nimy_reported_percent",
+    "negative_equity_flag",
+    "loss_flag_roa_negative",
+    "loan_denominator_invalid_flag",
+    "missing__log_assets",
+    "missing__equity_to_assets",
+    "missing__asset_log_growth_1q",
+    "missing__asset_log_growth_4q",
+    "missing__nclnls_to_loans",
+    "missing__loan_allowance_to_loans",
+    "missing__cash_to_assets",
+    "missing__cash_and_securities_to_assets",
+    "missing__deposits_to_assets",
+    "missing__net_loans_to_assets",
+    "missing__roa_reported_percent",
+    "missing__nimy_reported_percent",
+    "missing__negative_equity_flag",
+    "missing__loss_flag_roa_negative",
+    "missing__loan_denominator_invalid_flag"
+  ],
+  "independent_feature_scans": 15,
+  "batch_size": 32768,
+  "validation_transform_sample_rows_per_fold": {
+    "early_bank_stress": 128,
+    "post_stress_transition": 128,
+    "global_financial_crisis": 128
+  },
+  "read_only": true,
+  "training_or_inference_performed": false,
+  "limitations": [
+    "Archived preprocessing parameter identity only; not a full sklearn estimator fit.",
+    "No final-test dataset or model artifact opened.",
+    "Historical filing/revision vintage not established."
+  ]
+}

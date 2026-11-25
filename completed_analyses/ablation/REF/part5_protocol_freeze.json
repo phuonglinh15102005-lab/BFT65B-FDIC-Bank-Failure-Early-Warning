@@ -1,0 +1,228 @@
+{
+  "protocol_id": "BFT65B_PART5_PRESELECTION_2026-11-14_V1",
+  "stage": "FROZEN_PRESELECTION_RULES_BEFORE_ANY_MODEL_COMPARISON",
+  "note": "Not the final fitted-model lock. Selected hyperparameters and numerical threshold are appended to a separate final lock after development CV and before single final test.",
+  "data_contract": {
+    "primary_outcome": "FIRST_FDIC_RESTYPE_FAILURE_IN_NEXT_FOUR_CALENDAR_QUARTERS",
+    "merger_nonfailure": true,
+    "assistance_nonfailure_in_primary": true,
+    "unresolved_adverse_exit": "excluded_from_primary",
+    "incomplete_followup": "excluded_from_primary",
+    "event_date_conflict": "excluded_from_primary",
+    "development_end": "2008-12-31",
+    "global_embargo": "2009-03-31_to_2009-12-31",
+    "test_range": "2010-03-31_to_2025-06-30",
+    "input_shas": {
+      "clean_panel": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107",
+      "pit_panel": "3fce669406ff1898ac85d9c41c6385b7f8c6b27e29ecd041bb0a3c59f6337421",
+      "failures_parquet": "a3e18c370f53c029e83708944bb91daf08ae5f664175f0fdd1bc389698c05ab3",
+      "registry_zip": "09efb2de4574f3abc278aa83ec66d8369d26330258518a7e1963cf810471c395",
+      "development_primary_v2": "d365ce25204a3dcace715db4cea259c94b1b1abba4822c7bcf2b050a1c7f6a73"
+    },
+    "not_used_in_predictors": [
+      "CERT",
+      "DECISION_DATE",
+      "SOURCE_REPDTE",
+      "Y_4Q",
+      "LABEL_STATUS",
+      "EXIT_CLASS",
+      "FIRST_FAILURE_DATE",
+      "RISK_STOP_DATE",
+      "FAILDATE",
+      "RESTYPE",
+      "COST"
+    ]
+  },
+  "validation": {
+    "folds": [
+      {
+        "id": "early_bank_stress",
+        "train_end": "1987-12-31",
+        "embargo_start": "1988-03-31",
+        "embargo_end": "1988-12-31",
+        "validation_start": "1989-03-31",
+        "validation_end": "1990-12-31",
+        "known_validation_failure_certs": 932
+      },
+      {
+        "id": "post_stress_transition",
+        "train_end": "1990-12-31",
+        "embargo_start": "1991-03-31",
+        "embargo_end": "1991-12-31",
+        "validation_start": "1992-03-31",
+        "validation_end": "1993-12-31",
+        "known_validation_failure_certs": 191
+      },
+      {
+        "id": "global_financial_crisis",
+        "train_end": "2005-12-31",
+        "embargo_start": "2006-03-31",
+        "embargo_end": "2006-12-31",
+        "validation_start": "2007-03-31",
+        "validation_end": "2008-12-31",
+        "known_validation_failure_certs": 167
+      }
+    ],
+    "embargo_calendar_quarters": 4,
+    "extra_quiet_period_fold": false,
+    "reason_for_no_extra_fold": "Maintain the three predeclared, audited windows before seeing model results; the post-stress 1992–1993 window is the lower-prevalence validation regime. A new fold would require a new preselection protocol version.",
+    "time_ordered": true,
+    "repeated_bank_rows_handling": "No random rowsplit; grouped-CERT bootstrap for uncertainty, report positive CERTs separately from bank-quarter positives."
+  },
+  "feature_policy": {
+    "main_feature_set": "audited_15_Tier1",
+    "tier1_features": [
+      "log_assets",
+      "equity_to_assets",
+      "negative_equity_flag",
+      "asset_log_growth_1q",
+      "asset_log_growth_4q",
+      "nclnls_to_loans",
+      "loan_allowance_to_loans",
+      "cash_to_assets",
+      "cash_and_securities_to_assets",
+      "deposits_to_assets",
+      "net_loans_to_assets",
+      "roa_reported_percent",
+      "nimy_reported_percent",
+      "loss_flag_roa_negative",
+      "loan_denominator_invalid_flag"
+    ],
+    "tier2_candidates": "not included in the primary comparison; source coverage may be descriptive only until a versioned amended protocol and independent as-of audit",
+    "fixed_missingness_indicators": 15,
+    "growth_missingness_ablation": "predeclared secondary robustness model excluding the two growth missing indicators; no test-driven choice",
+    "must_fit_within_each_training_fold": [
+      "median imputation",
+      "RobustScaler",
+      "optional per-feature 1st-99th quantile clipping",
+      "estimator",
+      "calibration if used"
+    ],
+    "clipping_candidates": [
+      {
+        "name": "none",
+        "lower": null,
+        "upper": null
+      },
+      {
+        "name": "quantile_1_99",
+        "lower": 0.01,
+        "upper": 0.99
+      }
+    ],
+    "clipping_decision_rule": "Within each classifier family select clipping jointly with other hyperparameters by highest unweighted mean validation Average Precision over the three registered folds. Scores within absolute AP 0.0002 are treated as a tie; choose quantile_1_99 to limit outlier influence. All transforms fitted inside training folds only."
+  },
+  "model_selection": {
+    "seed": 20261114,
+    "models": [
+      {
+        "name": "equity_ratio_logistic_baseline",
+        "features": [
+          "equity_to_assets"
+        ],
+        "hyperparameters": {
+          "C": [
+            1.0
+          ],
+          "class_weight": [
+            null
+          ]
+        }
+      },
+      {
+        "name": "logistic_L2",
+        "features": "Tier1",
+        "hyperparameters": {
+          "C": [
+            0.01,
+            0.1,
+            1.0
+          ],
+          "class_weight": [
+            null,
+            "balanced"
+          ],
+          "solver": [
+            "lbfgs"
+          ],
+          "max_iter": [
+            1000
+          ]
+        }
+      },
+      {
+        "name": "hist_gradient_boosting",
+        "features": "Tier1",
+        "hyperparameters": {
+          "max_leaf_nodes": [
+            15,
+            31
+          ],
+          "learning_rate": [
+            0.05,
+            0.1
+          ],
+          "max_iter": [
+            150
+          ],
+          "l2_regularization": [
+            1.0
+          ]
+        }
+      }
+    ],
+    "primary_model_selection_metric": "mean_Average_Precision_across_three_forward_folds_unweighted",
+    "model_selection_tie_break": "If absolute AP difference <=0.0002, select less complex family (equity baseline, logistic_L2, then HistGradientBoosting); within a family prefer smaller capacity and precommitted clipping rule.",
+    "secondary_metrics": [
+      "ROC_AUC",
+      "Brier_score",
+      "recall_at_1pct_alert_rate",
+      "precision_at_1pct_alert_rate",
+      "false_alarms_per_1000_bank_quarters",
+      "event_level_detection_rate",
+      "lead_time_quarters"
+    ],
+    "uncertainty": "cluster bootstrap sampling CERT not bank-quarters; report fold results independently; seed fixed"
+  },
+  "threshold_selection": {
+    "data_source": "positive development FAILURE transaction COST (thousands USD) as a proxy for resolution loss; not a direct observable cost of missed warning",
+    "miss_cost_proxy_rule": "median of strictly positive finite COST among qualifying development failures, computed without test outcomes; explain exclusions and sensitivity",
+    "false_alarm_cost": "unobserved; set as 0.05 times miss-cost proxy for primary scenario",
+    "cost_ratio_sensitivity_CFN_over_CFP": [
+      5,
+      10,
+      20,
+      50
+    ],
+    "primary_CFN_over_CFP": 20,
+    "unit_of_alarm_cost": "per alerted CERT and calendar year, to avoid counting each consecutive flagged quarter as an independent alert",
+    "unit_of_missed_failure": "each unique qualifying CERT failure event not alerted in a preceding four-quarter risk window",
+    "threshold_grid": "all unique development out-of-fold predicted probabilities with deterministic tie break; choose threshold minimizing observed development cost proxy subject to timing and calendar grouping; no test labels",
+    "threshold_tie_break": "higher threshold (fewer false alerts) among equal development cost values",
+    "cost_assumption_limit": "resolution COST != causal benefit of an early warning; false-positive cost is a scenario assumption"
+  },
+  "development_only_sensitivities": {
+    "assistance_positive": "FAILURE plus independently dated RESTYPE=ASSISTANCE within forward horizon; never replace primary label",
+    "adverse_exit_lower_bound": "317 uncertain adverse-exit bank-quarter rows => 0",
+    "adverse_exit_upper_bound": "same 317 observations => 1, a bound not bank failure adjudication",
+    "legacy_censor": "censor-on-nonfailure-exit V1 for selection sensitivity; no choice based on test outcome",
+    "execution": "Use exclusively development for feature/model/threshold decisions"
+  },
+  "spark_demo": {
+    "required": true,
+    "scope": "one development fold only; parity of sklearn/Spark summaries; no test"
+  },
+  "test_policy": {
+    "model_selection_on_test": false,
+    "model_threshold_selected_before_test": true,
+    "test_evaluated_exactly_once": true,
+    "final_test_has_not_been_opened_for_modelling": true,
+    "after_development_cv": "Write separate FINAL_MODEL_LOCK.json with selected feature set, clipping, model hyperparameters, fitted preprocessing rules, numeric threshold, seed and SHA-256 of this protocol; then run a single final test evaluation and record immutable execution log.",
+    "observed_test_results_present_in_protocol": false
+  },
+  "limitations": [
+    "Contemporary FDIC snapshot does not reconstruct every historical release vintage.",
+    "Preselection freeze does not claim any model has been trained, threshold selected or test evaluated.",
+    "CI coverage is descriptive given three validation windows and clustered failures."
+  ]
+}

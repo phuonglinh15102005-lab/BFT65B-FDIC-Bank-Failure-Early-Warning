@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "check_count": 20,
+  "checks": [
+    "ZIP CRC",
+    "Producer identity 02_build_panel_base.py",
+    "Producer identity 02b_collect_exit_evidence.py",
+    "Producer identity 02c_finalize_panel.py",
+    "Registry one row per source bank",
+    "Registry recomputed without producer imports",
+    "Scope rule supported for all exception rows",
+    "Source key count and insurance coverage",
+    "Every excluded key and reason",
+    "Exclusive row accounting",
+    "Every reporting quarter",
+    "Clean bank count",
+    "Lag one and two counts",
+    "Decision bank count",
+    "Every decision quarter",
+    "Internal gaps",
+    "Every first-failure positive window count",
+    "Reviewer exception counts",
+    "Reviewer failure-window explanation",
+    "Negative stock cell total"
+  ],
+  "implementation": "standard library; no imports from producer scripts",
+  "independent_source": false,
+  "full_financial_values_read": false,
+  "metrics": {
+    "history_date_exceptions": 19,
+    "fallback_breakdown": {
+      "MERGER_OR_REORGANIZATION_NONFAILURE": 204,
+      "ASSISTED_OR_RESOLUTION_EXIT": 140,
+      "ADVERSE_EXIT_WITHOUT_MATCHED_FAILURE": 10
+    },
+    "positive_window_exclusions": {
+      "Failure before first eligible 1984Q2 decision": 25,
+      "Failure after maximum label horizon 2026Q2": 2,
+      "Registered failure before acquisition period": 2,
+      "No lagged decision before failure (CERT 32630)": 1
+    },
+    "negative_stock_cells": 822,
+    "decision_flow": {
+      "Retained": 1629398,
+      "At/after risk stop": 18673,
+      "Beyond 2025Q2": 21700,
+      "Beyond unresolved follow-up": 31
+    }
+  },
+  "limits": [
+    "Shares supplied review evidence; not independent source validation.",
+    "No complete output Parquet bytes available in this review.",
+    "Economic validity of every retained value and original-vintage availability not established."
+  ]
+}

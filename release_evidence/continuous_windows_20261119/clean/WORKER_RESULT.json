@@ -1,0 +1,24 @@
+{
+  "stage": "clean",
+  "status": "PASS_PRODUCER_EXECUTION_COMPARISON_REQUIRED",
+  "error": null,
+  "started_utc": "2026-11-19T12:28:14.539839+00:00",
+  "finished_utc": "2026-11-19T12:28:54.297775+00:00",
+  "source": "%USERPROFILE%\\Downloads\\BFT65B_REPRO_CLOSEOUT_20261119\\BFT65B_REPRO_CLOSEOUT_20261119\\02_PART2_DATA_QUALITY_PANEL\\code\\02c_finalize_panel.py",
+  "source_sha256": "8db73a30252bb2bf61f3569d16f6f335e29fbf55d0d7a6efa9cbd69ec8b4067f",
+  "recorded_producer_arguments": [
+    "--step2-dir",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\base\\artifacts",
+    "--step2b-dir",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\exits\\artifacts",
+    "--out",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\clean\\artifacts",
+    "--offline",
+    "--cache-dir",
+    "%USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\request_cache"
+  ],
+  "offline": true,
+  "new_model_fits": 0,
+  "final_test_inference": false,
+  "guard": "Python audit hooks, not native-library OS sandbox"
+}

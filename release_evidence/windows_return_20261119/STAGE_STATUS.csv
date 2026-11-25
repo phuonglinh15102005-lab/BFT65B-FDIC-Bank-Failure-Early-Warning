@@ -1,0 +1,5 @@
+﻿stage,status,reason,artifact_directory
+p2-base,PASS,,%USERPROFILE%\AppData\Local\BFT65B_FINAL_CODE_REPLAY\20261119_082051_38aac2a6\p2-base\artifacts
+p2-clean,PASS,,%USERPROFILE%\AppData\Local\BFT65B_FINAL_CODE_REPLAY\20261119_082051_38aac2a6\p2-clean\artifacts
+development-features,PASS,,%USERPROFILE%\AppData\Local\BFT65B_FINAL_CODE_REPLAY\20261119_082051_38aac2a6\development-features\artifacts
+full-clean-room-E2E,NOT_EXECUTED,Not an acquisition/grid/refit/final-scoring replay,

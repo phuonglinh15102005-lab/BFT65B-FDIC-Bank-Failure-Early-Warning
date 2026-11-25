@@ -1,0 +1,6 @@
+test_source_drift_after_preflight_still_exports_fail_zip (test_failure_export.FailureExport.test_source_drift_after_preflight_still_exports_fail_zip) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.004s
+
+OK

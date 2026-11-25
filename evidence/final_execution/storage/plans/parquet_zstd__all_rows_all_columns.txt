@@ -1,0 +1,3 @@
+Parquet SCAN [D:/BFT_OUT/storage_20362_790/benchmark_data/parquet_zstd.parquet]
+PROJECT */33 COLUMNS
+ESTIMATED ROWS: 1682616

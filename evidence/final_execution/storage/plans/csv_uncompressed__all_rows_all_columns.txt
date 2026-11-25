@@ -1,0 +1,4 @@
+ WITH_COLUMNS:
+ [when(col("STNAME") == "~BFT_EMPTY~").then("").otherwise(col("STNAME")).alias("STNAME")] 
+  Csv SCAN [D:/BFT_OUT/storage_20362_790/benchmark_data/csv_uncompressed.csv]
+  PROJECT */33 COLUMNS

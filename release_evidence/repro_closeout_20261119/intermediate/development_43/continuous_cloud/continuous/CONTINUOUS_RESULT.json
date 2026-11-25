@@ -1,0 +1,70 @@
+{
+  "status": "BLOCKED",
+  "start": "raw",
+  "started_utc": "2026-11-19T04:14:17.660278+00:00",
+  "finished_utc": "2026-11-19T04:14:18.106469+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/work/BFT65B_REPRO_CLOSEOUT_20261119/run.py",
+    "continuous",
+    "--start",
+    "raw",
+    "--profile",
+    "/workspace/NO_WINDOWS_DATA",
+    "--out",
+    "/workspace/work/BFT65B_CLOSEOUT_QA_20261119/continuous_cloud/continuous"
+  ],
+  "environment": null,
+  "unit_tests": null,
+  "error": {
+    "status": "BLOCKED",
+    "reason": "Required original inputs/cache are unavailable; see PREFLIGHT missing list"
+  },
+  "config_sha256": "3d53cbe14f8c3ef3c6197ea4ab48a7f58c3414fba2514bb3f03cf819ccc1a695",
+  "source_manifest_sha256": "11e1faeabed25ad364feeba1f27942e52729e2ee74a306758b9a1f3f0ff02c7d",
+  "stages": {
+    "prepare": {
+      "stage": "prepare",
+      "status": "NOT_EXECUTED",
+      "reason": "Preflight or earlier stage did not pass; no frozen checkpoint fallback",
+      "new_model_fits": 0
+    },
+    "base": {
+      "stage": "base",
+      "status": "NOT_EXECUTED",
+      "reason": "Preflight or earlier stage did not pass; no frozen checkpoint fallback",
+      "new_model_fits": 0
+    },
+    "exits": {
+      "stage": "exits",
+      "status": "NOT_EXECUTED",
+      "reason": "Preflight or earlier stage did not pass; no frozen checkpoint fallback",
+      "new_model_fits": 0
+    },
+    "clean": {
+      "stage": "clean",
+      "status": "NOT_EXECUTED",
+      "reason": "Preflight or earlier stage did not pass; no frozen checkpoint fallback",
+      "new_model_fits": 0
+    },
+    "features": {
+      "stage": "features",
+      "status": "NOT_EXECUTED",
+      "reason": "Preflight or earlier stage did not pass; no frozen checkpoint fallback",
+      "new_model_fits": 0
+    }
+  },
+  "preflight_status": "BLOCKED",
+  "input_sha256_before": {},
+  "input_sha256_after": {},
+  "continuous_data_replay": "NOT_EXECUTED",
+  "fresh_parent_required": true,
+  "frozen_checkpoint_fallback": false,
+  "new_model_fits": 0,
+  "final_test_inference": false,
+  "full_clean_room_E2E": "NOT_EXECUTED",
+  "live_acquisition": "NOT_EXECUTED",
+  "model_selection_refit_scoring": "NOT_EXECUTED",
+  "claim_boundary": "PASS only for the declared raw/prepared-to-development chain, not full Parts1–5/model E2E"
+}

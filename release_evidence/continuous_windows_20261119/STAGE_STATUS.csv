@@ -1,0 +1,7 @@
+﻿stage,status,reason
+prepare,PASS,
+base,PASS,
+exits,PASS,
+clean,PASS,
+features,PASS,
+full-clean-room-E2E,NOT_EXECUTED,Live acquisition/models/final-test inference excluded

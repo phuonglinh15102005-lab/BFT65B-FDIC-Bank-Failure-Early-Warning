@@ -1,0 +1,391 @@
+[
+  {
+    "id": "C01_PLAN",
+    "command": [
+      "{python}",
+      "-B",
+      "run.py",
+      "plan"
+    ],
+    "inputs": [
+      "run.py",
+      "workflow/engine.py",
+      "config/default.json",
+      "config/stages.json"
+    ],
+    "outputs": [],
+    "scope": "Actual executableworkflowplan,no scienceexecution"
+  },
+  {
+    "id": "C02_CODE_VALIDATION",
+    "command": [
+      "{python}",
+      "-B",
+      "run.py",
+      "validate",
+      "--out",
+      "/workspace/work/BFT65B_RELEASE_CODE_VALIDATION_20261118"
+    ],
+    "inputs": [
+      "run.py",
+      "workflow/engine.py",
+      "config/source_manifest.json"
+    ],
+    "outputs": [
+      "/workspace/work/BFT65B_RELEASE_CODE_VALIDATION_20261118/VALIDATION_RESULT.json"
+    ],
+    "scope": "Source/resources/no-data/immutableprotocolreleasevalidation;notbank-datareplay"
+  },
+  {
+    "id": "C03_UNIT_CONTRACTS",
+    "command": [
+      "{python}",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_release_contracts.py",
+      "-v"
+    ],
+    "inputs": [
+      "tests/test_release_contracts.py",
+      "workflow/common.py",
+      "workflow/engine.py",
+      "workflow/policy.py",
+      "workflow/compare.py",
+      "config/default.json"
+    ],
+    "outputs": [],
+    "scope": "New20stdlibsafety/config/serializationcontracttests,no scienceimports"
+  },
+  {
+    "id": "C04_SOURCE_RESOURCE_AUDIT",
+    "command": [
+      "{python}",
+      "-B",
+      "workflow/release_audit.py",
+      "--out",
+      "/workspace/work/BFT65B_RELEASE_SOURCE_AUDIT_20261118"
+    ],
+    "inputs": [
+      "workflow/release_audit.py",
+      "config/source_manifest.json"
+    ],
+    "outputs": [
+      "/workspace/work/BFT65B_RELEASE_SOURCE_AUDIT_20261118/FINAL_SOURCE_RESOURCE_AUDIT.json"
+    ],
+    "scope": "ActualsourceASTIO/fit/readwrite/resourcegraph,not--help-only"
+  },
+  {
+    "id": "C05_PARQUET_COMPARISON_CONTROLS",
+    "command": [
+      "{python}",
+      "-B",
+      "workflow/comparison_selftest.py",
+      "--out",
+      "/workspace/work/BFT65B_RELEASE_COMPARISON_CONTROLS_20261118"
+    ],
+    "inputs": [
+      "workflow/comparison_selftest.py",
+      "workflow/compare.py",
+      "workflow/common.py"
+    ],
+    "outputs": [
+      "/workspace/work/BFT65B_RELEASE_COMPARISON_CONTROLS_20261118/SELFTEST_RESULT.json"
+    ],
+    "scope": "TensyntheticArrow/Polarscontrols only;BLOCKEDifdependenciesabsent,noinstall",
+    "exit2_is_blocked": true
+  },
+  {
+    "id": "C06_ACTUAL_REPLAY_CLOUD_PREFLIGHT",
+    "command": [
+      "{python}",
+      "-B",
+      "run.py",
+      "replay",
+      "--profile",
+      "/workspace/NO_WINDOWS_INPUT_PROFILE",
+      "--out",
+      "/workspace/work/BFT65B_RELEASE_REAL_REPLAY_PREFLIGHT_20261118"
+    ],
+    "inputs": [
+      "run.py",
+      "workflow/engine.py",
+      "workflow/worker.py",
+      "workflow/compare.py",
+      "config/default.json",
+      "config/environments.json",
+      "config/source_manifest.json"
+    ],
+    "outputs": [
+      "/workspace/work/BFT65B_RELEASE_REAL_REPLAY_PREFLIGHT_20261118/REPLAY_RESULT.json",
+      "/workspace/work/BFT65B_RELEASE_REAL_REPLAY_PREFLIGHT_20261118/STAGE_STATUS.csv"
+    ],
+    "scope": "Actualrestrictedworkflow invocation;expectedBLOCKEDoncloud,notproducerreplayPASS",
+    "exit2_is_blocked": true
+  },
+  {
+    "id": "C07_FAILURE_EXPORT_NEGATIVE_CONTROL",
+    "command": [
+      "{python}",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_failure_export.py",
+      "-v"
+    ],
+    "inputs": [
+      "tests/test_failure_export.py",
+      "workflow/engine.py",
+      "workflow/common.py",
+      "config/source_manifest.json"
+    ],
+    "outputs": [],
+    "scope": "Puremockedsource-drift/no-environmentcase mustexportFAILZIP,not realproducerfailure"
+  },
+  {
+    "id": "C08_CONTROLLER_SMOKE",
+    "command": [
+      "{python}",
+      "-B",
+      "workflow/controller_smoke_test.py"
+    ],
+    "inputs": [
+      "workflow/controller_smoke_test.py",
+      "workflow/windows_start.py",
+      "workflow/engine.py",
+      "config/source_manifest.json"
+    ],
+    "outputs": [
+      "/workspace/work/BFT65B_FINAL_CODE_CONTROLLER_SMOKE_20261118/CONTROLLER_SMOKE_RESULT.json"
+    ],
+    "scope": "Linuxcontrollerexportflowwithmissingprofile;no nativeWindows/realdataPASS"
+  },
+  {
+    "id": "C09_FINAL_RELEASE_VALIDATION",
+    "command": [
+      "{python}",
+      "-B",
+      "run.py",
+      "validate",
+      "--out",
+      "/workspace/work/BFT65B_RELEASE_CODE_VALIDATION_FINAL_20261118"
+    ],
+    "inputs": [
+      "run.py",
+      "workflow/engine.py",
+      "config/source_manifest.json"
+    ],
+    "outputs": [
+      "/workspace/work/BFT65B_RELEASE_CODE_VALIDATION_FINAL_20261118/VALIDATION_RESULT.json"
+    ],
+    "scope": "Finalallsource/resources/nodata/protocol validationaftercodefreeze"
+  },
+  {
+    "id": "C10_FINAL_RESOURCE_AUDIT",
+    "command": [
+      "{python}",
+      "-B",
+      "workflow/release_audit.py",
+      "--out",
+      "/workspace/work/BFT65B_RELEASE_SOURCE_AUDIT_FINAL_20261118"
+    ],
+    "inputs": [
+      "workflow/release_audit.py",
+      "config/source_manifest.json"
+    ],
+    "outputs": [
+      "/workspace/work/BFT65B_RELEASE_SOURCE_AUDIT_FINAL_20261118/FINAL_SOURCE_RESOURCE_AUDIT.json"
+    ],
+    "scope": "Finalsource/dataflow/resourcecatalogueafterallcodefixes"
+  },
+  {
+    "id": "C11_FINAL_FAILURE_EXPORT_CONTROLS",
+    "command": [
+      "{python}",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_failure_export.py",
+      "-v"
+    ],
+    "inputs": [
+      "tests/test_failure_export.py",
+      "workflow/engine.py",
+      "workflow/common.py",
+      "config/source_manifest.json"
+    ],
+    "outputs": [],
+    "scope": "Two mocked source-integrity failures must preserve FAIL diagnostic export; no bank data or fitting"
+  },
+  {
+    "id": "C12_FINAL_FROZEN_SOURCE_VALIDATION",
+    "command": [
+      "{python}",
+      "-B",
+      "run.py",
+      "validate",
+      "--out",
+      "/workspace/work/BFT65B_RELEASE_CODE_VALIDATION_20261119"
+    ],
+    "inputs": [
+      "run.py",
+      "workflow/engine.py",
+      "config/source_manifest.json"
+    ],
+    "outputs": [
+      "/workspace/work/BFT65B_RELEASE_CODE_VALIDATION_20261119/VALIDATION_RESULT.json"
+    ],
+    "scope": "Final source, syntax, protocol and no-data validation after completed-analysis source inclusion"
+  },
+  {
+    "id": "C13_FINAL_FROZEN_RESOURCE_AUDIT",
+    "command": [
+      "{python}",
+      "-B",
+      "workflow/release_audit.py",
+      "--out",
+      "/workspace/work/BFT65B_RELEASE_SOURCE_AUDIT_20261119"
+    ],
+    "inputs": [
+      "workflow/release_audit.py",
+      "config/source_manifest.json"
+    ],
+    "outputs": [
+      "/workspace/work/BFT65B_RELEASE_SOURCE_AUDIT_20261119/FINAL_SOURCE_RESOURCE_AUDIT.json"
+    ],
+    "scope": "Final AST imports, data IO, resource catalogue and prohibited-payload scan; no science execution"
+  },
+  {
+    "id": "C14_FINAL_WORKFLOW_CONTRACTS",
+    "command": [
+      "{python}",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_release_contracts.py",
+      "-v"
+    ],
+    "inputs": [
+      "tests/test_release_contracts.py",
+      "workflow/engine.py",
+      "workflow/common.py",
+      "workflow/policy.py",
+      "workflow/compare.py",
+      "config/default.json"
+    ],
+    "outputs": [],
+    "scope": "Final 20 stdlib workflow safety/configuration/comparison contracts after dispatcher error-handling change"
+  },
+  {
+    "id": "C15_FINAL_WORKFLOW_PLAN",
+    "command": [
+      "{python}",
+      "-B",
+      "run.py",
+      "plan"
+    ],
+    "inputs": [
+      "run.py",
+      "workflow/engine.py",
+      "config/default.json",
+      "config/stages.json"
+    ],
+    "outputs": [],
+    "scope": "Final executable plan validates completed-analysis source registration without executing stages"
+  },
+  {
+    "id": "C16_VERIFIED_RELEASE_METADATA_VALIDATION",
+    "command": [
+      "{python}",
+      "-B",
+      "run.py",
+      "validate",
+      "--out",
+      "/workspace/work/BFT65B_VERIFIED_RELEASE_SOURCE_VALIDATION_20261119"
+    ],
+    "inputs": [
+      "run.py",
+      "workflow/engine.py",
+      "config/source_manifest.json",
+      "config/stages.json"
+    ],
+    "outputs": [
+      "/workspace/work/BFT65B_VERIFIED_RELEASE_SOURCE_VALIDATION_20261119/VALIDATION_RESULT.json"
+    ],
+    "scope": "Source/config/protocol validation after status-only metadata changes; no producer or model rerun"
+  },
+  {
+    "id": "C17_PUBLICATION_IGNORE_RULES",
+    "command": [
+      "{python}",
+      "-B",
+      "{root}/release_evidence/PUBLICATION_IGNORE_CHECK.py.txt",
+      "--root",
+      "{root}"
+    ],
+    "inputs": [
+      ".gitignore",
+      "release_evidence/PUBLICATION_IGNORE_CHECK.py.txt"
+    ],
+    "outputs": [
+      "{root}/release_evidence/PUBLICATION_IGNORE_RESULT.json"
+    ],
+    "scope": "Actual read-only Git check-ignore: vetted root/nested aggregate CSVs visible, raw/model/archive sentinels ignored; no GitHub action"
+  },
+  {
+    "id": "C18_PUBLICATION_IGNORE_VALID_GIT_CONTEXT",
+    "command": [
+      "{python}",
+      "-B",
+      "{root}/release_evidence/PUBLICATION_IGNORE_CHECK.py.txt",
+      "--root",
+      "{root}"
+    ],
+    "inputs": [
+      ".gitignore",
+      "release_evidence/PUBLICATION_IGNORE_CHECK.py.txt"
+    ],
+    "outputs": [
+      "{root}/release_evidence/PUBLICATION_IGNORE_RESULT_FINAL.json"
+    ],
+    "scope": "Correct C17 harness prerequisite: ephemeral empty local Git context; read source ignore rules only; no commit/remote/push/network"
+  },
+  {
+    "id": "C19_FINAL_METADATA_AFTER_QA_CORRECTION",
+    "command": [
+      "{python}",
+      "-B",
+      "run.py",
+      "validate",
+      "--out",
+      "/workspace/work/BFT65B_VERIFIED_RELEASE_FINAL_SOURCE_VALIDATION_20261119"
+    ],
+    "inputs": [
+      "run.py",
+      "workflow/engine.py",
+      "config/source_manifest.json",
+      "config/stages.json",
+      "config/release_tests.json"
+    ],
+    "outputs": [
+      "/workspace/work/BFT65B_VERIFIED_RELEASE_FINAL_SOURCE_VALIDATION_20261119/VALIDATION_RESULT.json"
+    ],
+    "scope": "Final frozen source/config validation after adding corrected release-QA command record; no bank data/model execution"
+  }
+]

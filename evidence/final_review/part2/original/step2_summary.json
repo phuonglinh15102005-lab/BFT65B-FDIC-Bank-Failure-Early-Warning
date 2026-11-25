@@ -1,0 +1,72 @@
+{
+  "status": "BASE_PANEL_READY_FOR_REVIEW",
+  "step": "2A",
+  "version": "1.0",
+  "run_time_utc": "2026-11-08T07:55:43.666225+00:00",
+  "audit_dir": "REDACTED_HOME/data_raw\\fdic\\audit_results\\20261108T032158_540721Z",
+  "output_dir": "REDACTED_HOME/BFT65B_outputs\\step2_20261108_145539_477509",
+  "quarters": 170,
+  "rows_input": 1682616,
+  "rows_output": 1682616,
+  "banks": 24064,
+  "first_quarter": "1984-03-31",
+  "last_quarter": "2026-06-30",
+  "rows_dropped": 0,
+  "labels_created": false,
+  "model_ready": false,
+  "panel_bytes": 159737860,
+  "panel_sha256": "a72a9d24077c0c44149d93c5384d880282c832c576034e42223f299dd0f4778e",
+  "script_sha256": "bbfe7ba51b165aabfc6d0a027d4058ead4321e5973273fdf6ec971c99fef89d0",
+  "review_counts": {
+    "banks_without_institution_metadata": 235,
+    "rows_without_institution_metadata": 10996,
+    "failure_events_in_scope_without_financials": 6,
+    "CERTs_with_multiple_failure_events": 3,
+    "unlinked_event_rows_preserved": 488,
+    "duplicate_event_rows_for_review": 0,
+    "unknown_event_type_rows": 0,
+    "banks_with_internal_quarter_gaps": 32,
+    "failure_events_with_reports_on_or_after_event": 273,
+    "banks_with_reports_after_inactive_date": 5,
+    "financial_blank_strings_to_null": 191
+  },
+  "review_groups": [
+    {
+      "REVIEW_GROUP": "ACTIVE_SNAPSHOT_VERIFY_COVERAGE",
+      "len": 4207
+    },
+    {
+      "REVIEW_GROUP": "FAILURE_HISTORY_REVIEW_TIMING",
+      "len": 2838
+    },
+    {
+      "REVIEW_GROUP": "INACTIVE_NO_FAILURE_VERIFY_REASON",
+      "len": 16781
+    },
+    {
+      "REVIEW_GROUP": "MISSING_INSTITUTION_METADATA",
+      "len": 235
+    },
+    {
+      "REVIEW_GROUP": "MULTIPLE_FAILURE_EVENTS_REVIEW",
+      "len": 3
+    }
+  ],
+  "python": "3.13.9",
+  "polars": "2.1.0",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "elapsed_seconds_not_a_benchmark": 4.525,
+  "rules": [
+    "Trim strings; blank strings become null.",
+    "NaN/infinity become null with counts; finite numeric values retained.",
+    "Keep all bank-quarter rows, zeros and finite negative values.",
+    "No imputation, winsorization, labels or final exit decisions.",
+    "Current institution status, failure events and audit flags are excluded from panel_base."
+  ],
+  "limitations": [
+    "Base panel is not model-ready or verified point-in-time data.",
+    "Exit reasons, repeated events, observation eligibility and availability lag still require decisions.",
+    "Review summaries use future events and current metadata; never use review tables as predictors.",
+    "Storage layout is provisional; no CSV/pandas/Spark benchmark was performed in this step."
+  ]
+}

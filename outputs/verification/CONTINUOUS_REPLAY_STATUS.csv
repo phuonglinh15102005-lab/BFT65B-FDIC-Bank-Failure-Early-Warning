@@ -1,0 +1,7 @@
+﻿stage,status,reason
+prepare,VERIFIED_WINDOWS_CONTINUOUS_REPLAY,Actual 19 November raw-to-development execution and independent returned-evidence review
+base,VERIFIED_WINDOWS_CONTINUOUS_REPLAY,Actual 19 November raw-to-development execution and independent returned-evidence review
+exits,VERIFIED_WINDOWS_CONTINUOUS_REPLAY,Actual 19 November raw-to-development execution and independent returned-evidence review
+clean,VERIFIED_WINDOWS_CONTINUOUS_REPLAY,Actual 19 November raw-to-development execution and independent returned-evidence review
+features,VERIFIED_WINDOWS_CONTINUOUS_REPLAY,Actual 19 November raw-to-development execution and independent returned-evidence review
+full-clean-room-E2E,NOT_EXECUTED,Live acquisition and model selection/refit/final scoring excluded

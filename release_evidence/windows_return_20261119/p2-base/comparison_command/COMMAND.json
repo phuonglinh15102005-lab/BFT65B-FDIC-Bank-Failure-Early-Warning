@@ -1,0 +1,7 @@
+[
+  "%USERPROFILE%\\miniconda3\\python.exe",
+  "-B",
+  "%USERPROFILE%\\Downloads\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\workflow\\compare_worker.py",
+  "--spec",
+  "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-base\\COMPARISON_SPEC.json"
+]

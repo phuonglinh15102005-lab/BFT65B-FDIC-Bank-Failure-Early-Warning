@@ -1,0 +1,7 @@
+# Known exact pins from frozen scorer; Python 3.13.7. NOT a full installation lock.
+# Historical SciPy/PyArrow and transitive versions must be recovered from original environment.
+# Do not substitute the audit environment for serialized-model execution.
+scikit-learn==1.9.0
+numpy==2.3.3
+pandas==2.3.3
+joblib==1.5.2

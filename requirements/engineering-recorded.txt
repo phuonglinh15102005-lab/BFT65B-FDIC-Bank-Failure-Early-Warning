@@ -1,0 +1,11 @@
+# Archived engineering environment; not installed/resolved by this repair.
+# Recorded Windows project environment; Python interpreter 3.13.9 and Java 17 are external prerequisites.
+polars==2.1.0
+pandas==3.1.1
+pyarrow==26.0.1
+numpy==2.5.4
+psutil==7.2.2
+pyspark==4.3.0
+matplotlib==3.11.2
+requests==2.34.2
+pyyaml==6.0.3

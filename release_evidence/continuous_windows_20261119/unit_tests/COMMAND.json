@@ -1,0 +1,10 @@
+[
+  "%USERPROFILE%\\miniconda3\\python.exe",
+  "-B",
+  "-m",
+  "unittest",
+  "discover",
+  "-s",
+  "%USERPROFILE%\\Downloads\\BFT65B_REPRO_CLOSEOUT_20261119\\BFT65B_REPRO_CLOSEOUT_20261119\\tests",
+  "-v"
+]

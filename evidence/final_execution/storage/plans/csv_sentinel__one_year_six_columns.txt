@@ -1,0 +1,4 @@
+simple π 6/6 ["CERT", "REPDTE", "ASSET", ... 3 other columns]
+  Csv SCAN [D:/BFT_OUT/storage_20362_790/benchmark_data/csv_sentinel.csv]
+  PROJECT 6/33 COLUMNS
+  SELECTION: col("REPDTE").is_between([2023-01-01, 2023-12-31])

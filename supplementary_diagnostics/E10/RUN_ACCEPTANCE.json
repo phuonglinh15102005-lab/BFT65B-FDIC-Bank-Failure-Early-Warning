@@ -1,0 +1,34 @@
+{
+  "feature_rows": 15,
+  "test_scoring": "NEVER_EXECUTED",
+  "reference_validation_ap_tolerance": 5e-05,
+  "fold_checks": [
+    {
+      "fold": "early_bank_stress",
+      "observed_AP": 0.36044019935122096,
+      "archived_AP_6dp": 0.36044,
+      "pass": true,
+      "in_sample_train_AP": 0.3910790471070567
+    },
+    {
+      "fold": "post_stress_transition",
+      "observed_AP": 0.24694556511510515,
+      "archived_AP_6dp": 0.246946,
+      "pass": true,
+      "in_sample_train_AP": 0.4545893270365942
+    },
+    {
+      "fold": "global_financial_crisis",
+      "observed_AP": 0.27991311344211933,
+      "archived_AP_6dp": 0.279913,
+      "pass": true,
+      "in_sample_train_AP": 0.4284499679165678
+    }
+  ],
+  "result_hashes": {
+    "development_15_feature_group_medians.csv": "16eedc10b71933be2c9a04cb2a29efaa975e6231ed52cd1dd6e12a174081f1cb",
+    "hgb_train_vs_validation_ap_dev_only.csv": "c17e499846a2fc1c93569487eba893df6fa1634a572ef04078f84a0f2b416b89",
+    "rbcrwaj_2020q1_zero_cohort_persistence.csv": "efceb2054b0ea7b250700ba89186a0e1bde9e42b5be36f7426af02fcddc9214f",
+    "RUN_MANIFEST.json": "f2acb9fa53bcd527e29d1ac3c233bc94fc3f9b84aeed8d16d141b2ee6928d68c"
+  }
+}

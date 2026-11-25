@@ -1,0 +1,46 @@
+{
+  "id": "C12_FINAL_FROZEN_SOURCE_VALIDATION",
+  "status": "PASS",
+  "exit_code": 0,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "run.py",
+    "validate",
+    "--out",
+    "/workspace/work/BFT65B_RELEASE_CODE_VALIDATION_20261119"
+  ],
+  "started_utc": "2026-11-19T01:15:31.252450+00:00",
+  "finished_utc": "2026-11-19T01:15:31.594118+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "polars": null,
+      "pyarrow": null,
+      "scikit-learn": "1.8.0",
+      "pyspark": null,
+      "joblib": "1.5.3",
+      "scipy": "1.17.0"
+    }
+  },
+  "input_sha256_before": {
+    "run.py": "83a2514046010be5f6ac51ea2b736e59d94252f8713e355f0597a1579b2b9b12",
+    "workflow/engine.py": "62ad2d20767db2b25c5ccbdf779036db167f0d4a069da4596ad366989de3758b",
+    "config/source_manifest.json": "161f2df8be6175e71cfc020ba1291d35f2ac857b54befd0773d485189edba88b"
+  },
+  "input_sha256_after": {
+    "run.py": "83a2514046010be5f6ac51ea2b736e59d94252f8713e355f0597a1579b2b9b12",
+    "workflow/engine.py": "62ad2d20767db2b25c5ccbdf779036db167f0d4a069da4596ad366989de3758b",
+    "config/source_manifest.json": "161f2df8be6175e71cfc020ba1291d35f2ac857b54befd0773d485189edba88b"
+  },
+  "output_sha256": {
+    "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "STDOUT.txt": "e72938a4866ef17e3d6220e7fe80a631d11dfc04df2880c1ee7dc098bf6298b9",
+    "/workspace/work/BFT65B_RELEASE_CODE_VALIDATION_20261119/VALIDATION_RESULT.json": "7bdbf376ee59af219246607aab7aa2cb21fd25119e900a6bb49b6b2351cd17b8"
+  },
+  "scope": "Final source, syntax, protocol and no-data validation after completed-analysis source inclusion",
+  "new_model_fits": 0
+}

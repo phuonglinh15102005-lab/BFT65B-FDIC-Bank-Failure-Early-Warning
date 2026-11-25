@@ -1,0 +1,218 @@
+from pathlib import Path
+import csv,hashlib,json,shutil
+W=Path('/workspace/work');OLD=W/'BFT65B_REPRO_CLOSEOUT_20261119';NEW=W/'BFT65B_CONTINUOUS_VERIFIED_RELEASE_20261119'
+RET=W/'BFT65B_CONTINUOUS_RETURN_20261119_192500';AUD=W/'BFT65B_CONTINUOUS_INDEPENDENT_REVIEW_20261119'
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
+def write(name,s):p=NEW/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(s.strip()+'\n',encoding='utf-8')
+review=read(AUD/'INDEPENDENT_VERIFICATION.json');assert review['status']=='PASS_CONTINUOUS_RAW_TO_DEVELOPMENT_RETURN_REVIEW'
+assert not NEW.exists();shutil.copytree(OLD,NEW)
+(NEW/'FILE_MANIFEST_SHA256.csv').rename(NEW/'release_evidence/PRE_CONTINUOUS_VERIFICATION_ALL_FILE_MANIFEST.csv')
+shutil.copytree(RET,NEW/'release_evidence/continuous_windows_20261119')
+shutil.copytree(AUD,NEW/'release_evidence/continuous_independent_review_20261119')
+for source,name in [(W/'verify_bft65b_continuous_return_20261119.py','VERIFY_CONTINUOUS_RETURN.py.txt'),(OLD/'config/source_manifest.json','EXECUTED_SOURCE_MANIFEST.json'),(OLD/'config/stages.json','EXECUTED_STAGE_REGISTRY.json'),(OLD/'workflow/continuous.py','EXECUTED_CONTINUOUS_CONTROLLER.py.txt')]:
+ shutil.copyfile(source,NEW/'release_evidence/continuous_independent_review_20261119'/name)
+shutil.copyfile(Path(__file__),NEW/'release_evidence/ASSEMBLE_CONTINUOUS_VERIFIED_RELEASE.py.txt')
+stages=read(NEW/'config/stages.json')
+for s in stages:
+ if s['id'].startswith('continuous-'):
+  s['status']='VERIFIED_ACTUAL_WINDOWS_CONTINUOUS_REPLAY_20261119'
+  s['execution']='Executed from raw snapshot + frozen HTTP caches; all fresh-parent stages completed and returned evidence independently reviewed. No further rerun requested.'
+  s['verification_evidence']='release_evidence/continuous_independent_review_20261119/INDEPENDENT_VERIFICATION.json'
+write('config/stages.json',json.dumps(stages,indent=2))
+verification=dict(status='VERIFIED_WINDOWS_RAW_TO_DEVELOPMENT_WITH_INDEPENDENT_RETURN_REVIEW',execution_date='2026-11-19',execution_id='20261119_192500_59bdf85e',source_archive_sha256=review['input_sha256_before'][str(Path('/workspace/attachments/8b79fc89-42ca-4d12-9e8b-efffa7c50a36/20261119_192500_59bdf85e_GUI_LAI_CHO_CODEX.zip'))],executed_source_manifest_sha256=sha(OLD/'config/source_manifest.json'),windows_unit_tests=45,datasets=179,byte_identical_datasets=178,compared_nonkey_columns=5401,full_clean_room_E2E='NOT_EXECUTED',live_acquisition='NOT_EXECUTED',model_selection_refit_scoring='NOT_EXECUTED',evidence='release_evidence/continuous_independent_review_20261119/INDEPENDENT_VERIFICATION.json',boundary='Returned logs/hashes/commands/complete comparisons independently checked. Raw Parquet and native producer metadata remain on Windows.')
+write('config/continuous_verification.json',json.dumps(verification,indent=2))
+with (NEW/'outputs/verification/CONTINUOUS_REPLAY_STATUS.csv').open('w',encoding='utf-8-sig',newline='') as f:
+ w=csv.writer(f);w.writerow(['stage','status','reason'])
+ for s in ['prepare','base','exits','clean','features']:w.writerow([s,'VERIFIED_WINDOWS_CONTINUOUS_REPLAY','Actual 19 November raw-to-development execution and independent returned-evidence review'])
+ w.writerow(['full-clean-room-E2E','NOT_EXECUTED','Live acquisition and model selection/refit/final scoring excluded'])
+shutil.copyfile(AUD/'DATASET_VERIFICATION.csv',NEW/'outputs/verification/CONTINUOUS_DATASET_VERIFICATION.csv')
+shutil.copyfile(RET/'NUMERICAL_COMPARISON.csv',NEW/'outputs/verification/CONTINUOUS_COLUMN_COMPARISON.csv')
+p=NEW/'.gitignore';p.write_text(p.read_text()+'\n# Verified continuous-run aggregate evidence.\n!release_evidence/continuous_windows_20261119/*.csv\n!release_evidence/continuous_independent_review_20261119/*.csv\n',encoding='utf-8')
+with (NEW/'FINAL_RUBRIC_COMPLIANCE_MATRIX.csv').open(encoding='utf-8-sig',newline='') as f:rd=csv.DictReader(f);fields=rd.fieldnames;rows=list(rd)
+for r in rows:
+ if r['id'] in ['P1.1','P1.3','P2.1','P2.2','P4.1','R.4','R.5']:
+  r['status']='VERIFIED_RAW_SNAPSHOT_TO_DEVELOPMENT_WINDOWS_REPLAY'
+  r['evidence']+='; release_evidence/continuous_independent_review_20261119/INDEPENDENT_VERIFICATION.json'
+  r['remaining_gap']='No producer rerun needed; raw/cache sources remain external and original scientific limitations apply'
+ if r['id']=='R.1':
+  r['status']='CONTINUOUS_UPSTREAM_TO_DEV_VERIFIED_FULL_MODEL_E2E_NOT_EXECUTED'
+  r['remaining_gap']='Raw snapshot/cache-to-development reproduced; live acquisition/search/refit/final scoring excluded, full clean-room E2E NOT EXECUTED'
+ if r['id']=='R.3':r['remaining_gap']='Exact existing engineering environment and normal-startup 45-test suite executed on Windows; clean installation/historical full native lock not executed'
+with (NEW/'FINAL_RUBRIC_COMPLIANCE_MATRIX.csv').open('w',encoding='utf-8-sig',newline='') as f:w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(rows)
+
+write('README.md','''
+# BFT65B — continuous upstream-to-development verified release
+
+**The continuous raw-snapshot-to-development replay completed on Windows on 19 November 2026, and its returned evidence has been independently reviewed. No further user rerun is requested. Full clean-room Parts1–5/model E2E remains NOT EXECUTED.**
+
+The executed chain was:
+
+`frozen raw snapshot → NEW preparation → NEW Part2A → NEW Part2B → NEW Part2C/PIT → NEW development features`.
+
+Part2B consumed the newly generated Part2A reports and frozen cached HTTP evidence; Part2C consumed that new base/Part2B, and Part4 consumed the new clean/PIT/registry. No frozen intermediate-output fallback was used. This closes the independent QA's checkpoint-lineage gap for the permitted data pipeline.
+
+## Actual execution evidence
+
+| Check | Inspected Windows result |
+|---|---|
+| Documented runtime | Python 3.13.9, NumPy 2.5.4, pandas 3.1.1, Polars 2.1.0, PyArrow 26.0.1 |
+| Normal-startup unit tests | 45/45 PASS; no required `-S` workaround |
+| Preparation | 170 quarter files plus Institutions and Failures-all: all 172 Parquet SHAs match frozen prepared references |
+| New native Part2B | 59,901 history rows and 24,064 bank-exit evidence rows match frozen CSV bytes |
+| Base / clean / PIT | 1,682,616 / 1,669,802 / 1,629,398 rows; original Parquet SHAs reproduced |
+| Registry | 24,064 rows; original CSV SHA reproduced |
+| Development | 1,231,631 rows; schema/keys/values match, byte SHA differs |
+
+There are 179 compared datasets: 176 Parquet and 3 CSV. 178 reproduce the original bytes; development has logical equivalence with zero observed numerical deltas. All 5,401 compared non-key column summaries report zero null/NaN/value mismatches. 506 original-input hash records agree before/after the run. The reviewer rehashed 256 exported files, checked pinned reference identities, actual commands, fresh-parent hash continuity and complete comparison records. Private Parquet/native producer JSON remain on Windows: this is independent review of the actual Windows execution evidence, not a separate cloud reread of every original data file or recalculation of native signature JSON.
+
+See `REPRODUCTION_VERIFICATION_REPORT.md`, `REMAINING_ISSUES_CHECKLIST.md`, `config/continuous_verification.json` and `release_evidence/continuous_independent_review_20261119/INDEPENDENT_VERIFICATION.json`. Historical cloud BLOCKED/packaging failure records remain preserved and clearly scoped; they are not overwritten with PASS.
+
+## Supported commands and reproduction boundaries
+
+Run these stdlib metadata commands from the extracted root, with a fresh external output directory:
+
+```text
+python -B run.py plan
+python -B run.py validate --out ../BFT65B_SOURCE_CHECK_NEW
+```
+
+For a separately needed reviewer replay using the verified input layout:
+
+```text
+python -B -m unittest discover -s tests -v
+python -B run.py continuous --start raw --out ../BFT65B_CONTINUOUS_NEW
+python -B run.py continuous --start raw --profile "%USERPROFILE%" --python-engineering "%USERPROFILE%/miniconda3/python.exe" --out "C:/BFT65B_CONTINUOUS_NEW"
+```
+
+`BAM_CHAY_REPRO_CODE_CUOI.cmd` is retained as the Windows one-click entrypoint for that same workflow. The completed user run does not need repeating. The controller uses an existing exact engineering interpreter and runs the unit suite before producers. No package installation, HTTP download, model fitting or scoring occurs. All outputs/tempfiles go to `%LOCALAPPDATA%/BFT65B_CONTINUOUS_REPRO/<timestamp_uuid>`; a new directory is required and original sources/references are read-only. A stage passes only after native execution, lineage, complete comparison and preservation checks. Missing prerequisites are BLOCKED; altered pinned identities/schema/keys/values are FAIL; unrun descendants are NOT EXECUTED. No parent fallback exists in continuous mode.
+
+Relative input paths in `config/default.json` resolve under `--profile`/USERPROFILE, never cwd. An external copy may override only input paths:
+
+```text
+python -B run.py continuous --start raw --config "C:/BFT65B_CONFIG/input_paths.json" --out "C:/BFT65B_CONTINUOUS_NEW"
+```
+
+Raw inputs comprise 170 Financials quarter files, Institutions, Failures and the acquisition manifest; the original audit supplies `file_checksums.csv`. Prepared/output references and full original Step2B/Step2C request caches are also required. The raw ledger is checked and hashed at execution; it was not independently pre-pinned in the compact release. Known prepared/output digests provide separate downstream anchors.
+
+`--start prepared` is an explicit narrower alternative, never automatic fallback. Historical `run.py replay` remains a checkpoint workflow and should not be confused with the verified continuous mode. The current CLI retains blocked train/grid/refit/model/threshold/scoring/download commands. A `plan` invocation executes no data stage; its historical evidence status is read from the protected verification metadata.
+
+## Source layout, comparisons and environments
+
+Canonical Parts1–5 source remains under `01_PART1_ACQUISITION_STORAGE/` through `05_PART5_MODELLING_VALIDATION/`. The full stage registry is `config/stages.json`; workflow adapters and guards are under `workflow/`. `completed_analyses/` preserves already-closed ablation/posthoc-CI source/config, not authorization to rerun them. All 61 canonical science sources remain byte-unchanged from the executed release.
+
+The original Part2B source is unchanged. `workflow/offline_part2b.py` redirects only Collector.cache and calls the original main to generate new signatures/reports/bundle. It does not copy old Part2B outputs or edit provenance. Native Part2C retains its original source-SHA/signature checks. Actual argv and parent before/after hashes independently corroborate the fresh chain; native signature validations were executed by those pinned producers, while their native metadata bytes were not exported for a separate cloud recalculation.
+
+Parquet comparison covers schema, row count, unique nonnull keys, key sets, null/NaN masks and all non-key columns. Preparation/base/clean/PIT values use exact comparison. Development floats permit rtol=1e-9, atol=1e-10, but observed deltas were zero; integer/date/string values are exact. CSV row multisets preserve duplicate multiplicity and compare complete rows. Byte SHA is reported separately; a different development SHA is not labelled byte identity or explained by an unverified serialization hypothesis.
+
+Root requirements retains the pinned engineering profile; `requirements/continuous-data-minimal.txt` records the data-only core. Model-core Python/NumPy/pandas pins stay in separate profiles. The existing environment ran successfully; clean dependency resolution/installation and full historical native-binary recovery were not executed. `.gitattributes` preserves exact bytes under Git/Windows autocrlf so pinned source/evidence hashes remain valid.
+
+## Frozen science, publication and acknowledgments
+
+The unchanged primary direction is maximum unweighted mean chronological validation AP, followed by a separate development-only cost-sensitive alarm policy. Selected HGB, hyperparameters, threshold 0.023971438944668057, cohort and original final-test outputs stay frozen. No new training/search, repeated ablation, threshold change, CI/model-metric recalculation or final-test inference occurred. Prior R23/R24 and Parts1–3/MLlib/model-validation evidence remains closed.
+
+The public payload excludes raw/new Parquet, cache bodies, private bank-row scores/OOF arrays, fitted models and nested evidence ZIPs. Vetted aggregate evidence and fixed seeds/protocol/source manifests are included. Public GitHub URL/visibility/deadline and final report/page/identity requirements remain NOT VERIFIED; no commit/push or academic report/Part6 writing occurred.
+
+FDIC data/definitions: <https://api.fdic.gov/banks/docs/> and <https://banks.data.fdic.gov/bankfind-suite/bulkData>. Retain the National Economics University BFT65B assignment/starter attribution and original code headers. Original assignment digest/rubric scope are in config/docs. **OpenAI Codex assisted with audit, repair, evidence reconciliation and independent review of the 19 November Windows replay.** Preserve earlier AI disclosures and cite sources/AI in the later academic report. See `docs/CITATIONS_AND_AI.md`.
+
+Historical filing/revision vintages, assumed review costs/r=20/avoidability, incomplete historical bootstrap provenance versus verified posthoc intervals, the late ablation date, and event-vs-COST recall distinctions remain disclosed limitations. A successful continuous data replay does not establish full live-acquisition/model clean-room E2E or eliminate those limitations.
+''')
+
+write('README_BAT_DAU_TAI_DAY_VI.md','''
+# BFT65B — đã xác minh chuỗi liên tục Windows
+
+**Không cần chạy lại BAT.** ZIP kết quả `20261119_192500_59bdf85e_GUI_LAI_CHO_CODEX.zip` đã được kiểm tra độc lập. Chuỗi raw → preparation mới → Part2A mới → Part2B mới → Part2C/PIT mới → development features mới đã hoàn tất, không fallback.
+
+- 45/45 unit tests PASS trên đúng Windows engineering Python 3.13.9.
+- 172 prepared Parquet trùng SHA references. Base/clean/PIT và ba bảng CSV Part2B/registry cũng trùng SHA.
+- Development 1.231.631 dòng khớp schema/keys/giá trị; SHA byte khác.
+- 179 datasets, 5.401 cột ngoài khóa, không có null/NaN/value mismatch trong comparisons đã đối chiếu.
+
+Bộ này chứa code, raw-free execution evidence, báo cáo verification, checklist và manifest. Mở `REPRODUCTION_VERIFICATION_REPORT.md` và `REMAINING_ISSUES_CHECKLIST.md` để xem phạm vi chính xác. Raw Parquet/native metadata vẫn ở Windows; cloud kiểm logs/hashes/command lineage, không trực tiếp đọc lại raw files.
+
+BAT và `run.py continuous` chỉ được giữ cho reviewer khi thật sự cần reproduction mới; không phải yêu cầu bạn lặp lại. Full clean-room Parts1–5/model E2E vẫn NOT EXECUTED. Không retrain HGB, đổi threshold, lặp ablation hoặc final-test inference. Public repository và report submission còn kiểm riêng; chưa viết report/Part 6.
+''')
+
+write('REPRODUCTION_VERIFICATION_REPORT.md','''
+# BFT65B — continuous reproduction verification đã đóng ngày 19/11/2026
+
+## Kết luận
+
+**VERIFIED trong phạm vi raw snapshot + cached HTTP sources → development features trên Windows.** Cả năm producer đã chạy trong cùng thư mục output mới và mọi parent trung gian đều mới. Independent returned-evidence review PASS. Không cần thêm lượt chạy Windows cho gate này. Full clean-room Parts1–5/model E2E, live acquisition, search/refit/final scoring vẫn NOT EXECUTED.
+
+Windows run: `20261119_192500_59bdf85e`, bắt đầu 19:25 và kết thúc 19:29 ngày 19/11/2026 (Asia/Saigon). Uploaded ZIP SHA-256: `5dcd3b3c1faf9e520b2e8f5db7419d32717172147ba980d61bda8129fe2f31f4`. Executed source manifest: `e9fc39a0cc14cebda64c359cad8dd7cab3eaa251ff8f64fe988d9ef77f9d091e`.
+
+## Bằng chứng thực thi và kiểm tra độc lập
+
+Actual commands, cwd, versions, worker source hashes, parent input hashes trước/sau, output hashes và full comparisons nằm trong `release_evidence/continuous_windows_20261119/`. Toàn bộ 257 archived files được giữ nguyên bytes. `EXPORTED_FILE_MANIFEST.json` bao phủ đúng 256 files còn lại; reviewer đã tính lại đủ 256 SHA. Native Parquet và producer metadata JSON nằm ngoài ZIP theo chính sách giữ raw/private outputs trên Windows.
+
+`INDEPENDENT_VERIFICATION.json` và code kiểm tra đi kèm trong `continuous_independent_review_20261119/` ghi actual audit command/environment/input-output hashes. Reviewer không chỉ đọc nhãn PASS: đã đối chiếu source/config identity, exact engineering runtime, argv đầy đủ, fresh-parent paths/hashes, embedded-vs-standalone results, detailed schema/key/null/NaN/value records, CSV-vs-JSON aggregates và pinned reference SHAs.
+
+## Unit portability và environment
+
+Python 3.13.9, NumPy 2.5.4, pandas 3.1.1, Polars 2.1.0, PyArrow 26.0.1 trùng profile đã ghi. 45/45 tests PASS trên Windows với normal startup, cwd đúng repo, không dùng -S. Lỗi unit test phụ thuộc sys.modules do QA nêu đã được xử lý và có bằng chứng trên môi trường mục tiêu. Các normal/-S/preload tests cloud trước đó được giữ nguyên scope, không đổi status lịch sử.
+
+## Chuỗi parent mới
+
+1. Raw FDIC snapshot và manifest → new preparation. Original raw ledger kiểm đúng scope 173 acquisition files; 170 quarter Financials + Institutions + Failures được chuẩn hóa.
+2. New Part2A đọc new preparation. 193 prepared/report parent files có preservation records khớp outputs của stage trước; trong đó 172 prepared Parquet được so sánh với frozen references.
+3. New Part2B đọc new Part2A. 28 parent identities khớp stage base; original native source SHA không đổi. Adapter chỉ đổi cache directory, không copy old outputs hoặc rewrite signatures.
+4. New Part2C đọc new base + new Part2B. 59 tracked parent identities khớp outputs mới; native code tự kiểm fresh signatures/version/copies trước xử lý.
+5. Part4 đọc new clean/PIT/registry sau PASS; ba input hashes trùng outputs của clean stage. Không fallback.
+
+Fresh binding được reviewer tái đối chiếu từ exact argv và parent hash maps. Native input-signature checks được **thực thi bởi pinned producer source**, nhưng native summary/config JSON không được trả về nên reviewer **không tính lại riêng nội dung chữ ký native từ những JSON đó trên cloud**. Đây là ranh giới bằng chứng, không được mô tả thành một raw-data recomputation thứ hai.
+
+## Kết quả số
+
+| Dataset/scope | Số dòng hoặc số file | Kết quả |
+|---|---:|---|
+| Prepared quarterly Financials | 170 file; tổng 1.682.616 dòng | Từng file schema/keys/values và SHA trùng reference. |
+| Prepared Institutions | 27.835 dòng | SHA và keyed comparison khớp. |
+| Prepared Failures-all | 4.117 dòng | SHA khớp; SOURCE_ROW giữ legacy/unlinkable và event multiplicity. |
+| Base | 1.682.616 dòng | SHA gốc tái tạo; keyed comparison khớp. |
+| Part2B history | 59.901 dòng | Row-multiset và SHA CSV khớp. |
+| Part2B exit evidence | 24.064 dòng | Row-multiset và SHA CSV khớp. |
+| Clean | 1.669.802 dòng | SHA gốc tái tạo. |
+| PIT | 1.629.398 dòng | SHA gốc tái tạo. |
+| Event registry | 24.064 dòng | SHA CSV gốc tái tạo. |
+| Development | 1.231.631 dòng | Schema/keys/values khớp; SHA byte khác. |
+
+Tổng 179 datasets: 176 Parquet và 3 CSV. 178 trùng bytes với references. Cả 5.401 non-key column records có 0 null/NaN/value mismatch và max absolute delta 0, với đủ schema/key coverage. 170 financial-quarter rows cộng lại đúng 1.682.616; counts/column comparison CSVs được đối chiếu nguyên nội dung với JSON. Development được phép tolerance float 1e-9/1e-10 nhưng observed delta bằng 0. Không suy đoán nguyên nhân byte SHA khác và không gọi development byte-identical.
+
+506 original-input identities khớp trước/sau: 173 raw files, 174 prepared-reference files, frozen output/Part2B references, cached bodies/metadata và raw ledger. Đây là hash records do Windows ghi, đã cross-check với các pinned anchors và archived outputs; raw files không được trực tiếp hash lại trên cloud. Raw ledger không có historical independent pre-pin; known prepared/output SHAs là anchor bổ sung.
+
+## Những gì không được suy ra
+
+Không có live acquisition, new hyperparameter search, HGB refit, threshold change, ablation repeat, model/CI/test metric recomputation hoặc final-test inference. Primary direction mean chronological AP rồi development-only cost policy giữ nguyên. R23/R24, model selection, prior Parts1–3/MLlib, ablation và posthoc CI không mở lại.
+
+Không tuyên bố full E2E PASS hoặc hoàn tất submission. Clean dependency installation/historical native lock chưa thử; public GitHub URL/visibility/deadline, report identity/citations/AI acknowledgment và giới hạn 20+10 trang vẫn cần kiểm riêng. Historical filing vintages, assumptions về phí/r=20/avoidability, historical bootstrap provenance và ngày ablation muộn phải công bố. Không viết academic report/Part 6 ở đây.
+
+## Bản release sau đóng gate
+
+Source thực thi Windows được lưu bằng manifest/metadata/source snapshot riêng, không backdate. Bản mới chỉ cập nhật documentation, stage verification metadata và chức năng plan để phân biệt historical execution với việc plan tự nó không chạy dữ liệu. Các science producers và code chạy data không thay đổi. Metadata/package checks của bản mới có actual commands và hashes riêng.
+''')
+
+write('REMAINING_ISSUES_CHECKLIST.md','''
+# Checklist còn lại sau continuous verification
+
+- [x] Unit test portability: 45/45 PASS trên Windows engineering normal startup; không cần -S workaround.
+- [x] Fresh lineage từ raw/preparation → Part2A → Part2B → Part2C/PIT → development, không fallback.
+- [x] Actual continuous Windows execution và independent returned-evidence review; 179 datasets/5.401 non-key comparisons.
+- [x] Original references và parent input preservation; source/config/environment identities khớp. Không cần chạy lại BAT cho gate này.
+- [ ] Full clean-room Parts1–5/model E2E, live acquisition và selected-model retraining/final scoring: NOT EXECUTED; không chạy để ép PASS khi đang có safeguard.
+- [ ] Clean dependency installation/full historical transitive-native lock: NOT EXECUTED. Existing named environment đã chạy thành công.
+- [ ] Public GitHub URL/visibility/deadline: NOT VERIFIED; chưa commit/push/publish.
+- [ ] Academic report identity/first-page metadata/citations/AI disclosure/appendix page limit và Part6: chưa thực hiện trong code task này.
+
+Giới hạn bắt buộc giữ: historical filing/revision vintages; observed FDIC COST khác assumed review fees/r=20/avoidability; historical bootstrap provenance khác posthoc CI đã kiểm; ablation hoàn tất muộn 18/11/2026; event recall khác COST-weighted recall.
+
+Ranh giới review: raw Parquet/native producer metadata vẫn ở Windows. Independent review đã đối chiếu exported hashes/commands/fresh-parent maps/full comparison records; chưa trực tiếp reread raw files hay tính lại native signature JSON trên cloud. Giữ nguyên local outputs để bổ sung metadata nếu reviewer yêu cầu; không cần rerun producer/model.
+''')
+
+# Preserve superseded check history, with current status clearly signposted.
+for name in ['STILL_UNRESOLVED.md','REPRODUCIBILITY_FINAL_AUDIT.md','FINAL_TECHNICAL_HANDOFF_VI.md','TEST_RESULTS.md','docs/REPRODUCIBILITY_LIMITATIONS.md']:
+ p=NEW/name;s=p.read_text();p.write_text('> Current status: the 19 November continuous Windows run has now been reviewed. No further user rerun is requested. See REPRODUCTION_VERIFICATION_REPORT.md and REMAINING_ISSUES_CHECKLIST.md; the text below preserves earlier history.\n\n'+s,encoding='utf-8')
+p=NEW/'docs/EXECUTION_GUIDE.md';p.write_text('> The raw-to-development workflow below completed on Windows on 19 November 2026 and returned evidence was independently reviewed. Commands remain for reviewer reproduction; no repeat user run is requested. Full model E2E remains NOT EXECUTED.\n\n'+p.read_text(),encoding='utf-8')
+p=NEW/'CHANGELOG.md';p.write_text(p.read_text()+'''\n## Continuous Windows verification closeout — 19 November 2026\n\nPreserved all 257 return files unchanged; independently rehashed 256 exported files and checked 506 original input records, all fresh parent bindings and 179 comparison datasets. Closed the continuous-data and target-environment unit gates. Updated README/report/checklist/rubric/status metadata. Plan reports historical execution evidence separately from its own non-executing invocation. Exact executed source manifest/controller snapshot retained; no science producer, frozen model, threshold, cohort or score changed. No new data/model execution performed in cloud.\n''',encoding='utf-8')
+write('FINAL_EVIDENCE_STATUS.json',json.dumps(verification,indent=2))
+print(json.dumps(dict(new_release=str(NEW),datasets=review['dataset_count'],nonkey_columns=review['compared_nonkey_columns'],windows_units=review['windows_unit_tests']),indent=2))

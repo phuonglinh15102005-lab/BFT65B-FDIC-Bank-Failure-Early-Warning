@@ -1,0 +1,7 @@
+fold,train_through,embargo_quarters,validation_from,validation_to,clipping_fit_on_train,train_rows,validation_rows,train_positive_rows,validation_positive_rows,train_positive_certs,validation_positive_certs,training_only_fit_rows,transformed_width
+early_bank_stress,1987-12-31,4,1989-03-31,1990-12-31,False,266127,125962,2627,2796,775,932,266127,30
+early_bank_stress,1987-12-31,4,1989-03-31,1990-12-31,True,266127,125962,2627,2796,775,932,266127,30
+post_stress_transition,1990-12-31,4,1992-03-31,1993-12-31,False,459321,110844,7305,481,1948,191,459321,30
+post_stress_transition,1990-12-31,4,1992-03-31,1993-12-31,True,459321,110844,7305,481,1948,191,459321,30
+global_financial_crisis,2005-12-31,4,2007-03-31,2008-12-31,False,1129000,67792,8833,406,2242,167,1129000,30
+global_financial_crisis,2005-12-31,4,2007-03-31,2008-12-31,True,1129000,67792,8833,406,2242,167,1129000,30

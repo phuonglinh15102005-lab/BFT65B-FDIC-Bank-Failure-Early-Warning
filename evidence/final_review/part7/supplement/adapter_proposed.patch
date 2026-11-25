@@ -1,0 +1,54 @@
+--- a/tools/reproduce_development.py
++++ b/tools/reproduce_development.py
+@@ -1,6 +1,6 @@
+ #!/usr/bin/env python3
+ """Private-data reviewer reproduction of frozen DEVELOPMENT stages only. Never test inference."""
+-import argparse,hashlib,json,platform,subprocess,sys,os,importlib.metadata as md,csv,math
++import argparse,hashlib,json,platform,subprocess,sys,os,importlib.metadata as md,csv,math,tempfile,copy
+ from pathlib import Path
+ ROOT=Path(__file__).resolve().parents[1]; SRC=ROOT/'05_PART5_MODELLING_VALIDATION/code/frozen_pipeline'
+ PROTOCOL=SRC/'part5_protocol_freeze.json'
+@@ -15,17 +15,40 @@
+ def rows(p):
+  with p.open(encoding='utf-8-sig',newline='') as f:return list(csv.DictReader(f))
+ def compare_policy(actual,reference):
+- a={int(x['ratio']):x for x in rows(actual)};r={int(x['ratio']):x for x in rows(reference)}
+- require(a.keys()==r.keys()=={5,10,20,50},'Scenario set changed')
++ def indexed(path):
++  rs=rows(path); keys=[int(x['ratio']) for x in rs]
++  require(len(keys)==len(set(keys)),'Duplicate scenario ratio')
++  require(set(keys)=={5,10,20,50},'Scenario set changed')
++  return dict(zip(keys,rs))
++ a=indexed(actual);r=indexed(reference)
+  for k in r:
+   for c in ('fp_cert_years','missed_failure_certs','detected_failure_certs','cert_year_alerts','bank_quarter_alerts','cost_units'):
+    require(float(a[k][c])==float(r[k][c]),f'Policy mismatch {k}/{c}')
+   for c in ('threshold','COST_median_thousand_USD'):
+    require(math.isclose(float(a[k][c]),float(r[k][c]),rel_tol=1e-10,abs_tol=1e-12),f'Policy numeric mismatch {k}/{c}')
++def self_test(reference):
++ original=rows(reference)
++ cases=[('equal_reordered',list(reversed(original)),True)]
++ for field in ('fp_cert_years','missed_failure_certs','detected_failure_certs','cert_year_alerts','bank_quarter_alerts','cost_units','threshold','COST_median_thousand_USD'):
++  changed=copy.deepcopy(original); changed[0][field]=str(float(changed[0][field])+1.0)
++  cases.append(('changed_'+field,changed,False))
++ cases.extend([('missing_ratio',original[1:],False),('duplicate_ratio',original+[original[0]],False)])
++ result=[]
++ with tempfile.TemporaryDirectory() as d:
++  p=Path(d)/'candidate.csv'
++  for name,fixture,expected in cases:
++   with p.open('w',encoding='utf-8',newline='') as f:
++    writer=csv.DictWriter(f,fieldnames=list(original[0]));writer.writeheader();writer.writerows(fixture)
++   try:compare_policy(p,reference);accepted=True
++   except ValueError:accepted=False
++   require(accepted==expected,'Self-test failed: '+name)
++   result.append({'case':name,'accepted':accepted,'status':'PASS'})
++ print(json.dumps({'status':'PASS','scope':'synthetic comparison controls against archived aggregate; no model or test executed','cases':result},indent=2))
++ return 0
+ def main():
+  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--mode',choices=['policy','grid'],default='policy');p.add_argument('--dev',type=Path);p.add_argument('--failures',type=Path);p.add_argument('--baseline',type=Path);p.add_argument('--logistic',type=Path);p.add_argument('--hgb',type=Path);p.add_argument('--out',type=Path);p.add_argument('--execute',action='store_true');p.add_argument('--self-test',action='store_true');a=p.parse_args()
+  reference=ROOT/'evidence/verified_archive_aggregates/threshold_cost_scenarios_4.csv'
+- if a.self_test:compare_policy(reference,reference);print('PASS comparison contract on archived aggregate; no model executed');return 0
++ if a.self_test:return self_test(reference)
+  if not a.execute:
+   print(json.dumps({'status':'PLAN_ONLY','mode':a.mode,'input_sha256':EXPECTED,'stages':(['baseline','logistic','hgb'] if a.mode=='grid' else ['use original private OOF ZIPs'])+['development policy','compare to archive'],'note':'No test read/scoring. --execute requires original inputs, exact recorded runtime, fresh external directory.'},indent=2));return 0
+  if not a.out:p.error('--out required')

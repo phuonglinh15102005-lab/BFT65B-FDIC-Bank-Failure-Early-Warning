@@ -1,0 +1,28 @@
+{
+  "status": "PASS_PRE_ARCHIVE_CONTENT_AND_EVIDENCE_CHECKS",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/work/package_bft65b_release.py"
+  ],
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41"
+  },
+  "input_sha256": {
+    "packager": "6077459b765fdce4d532a48cd10201d5237e9d5317df4b889c0b5f395efcf992",
+    "source_manifest": "161f2df8be6175e71cfc020ba1291d35f2ac857b54befd0773d485189edba88b"
+  },
+  "output_sha256": {
+    "source_resource_audit": "8f0a711d6e4bdc61ad4de8f0851d64b3fa553b84d72d0916faaace51926299c3",
+    "execution_index": "eaa405c38beb3816d2c41a84cec7d7f399eb0d34ebf7b8253c68866f21d64d78"
+  },
+  "checks": [
+    "All declared historical execution outputs match their recorded SHA",
+    "All input snapshots match their recorded SHA",
+    "Final source manifest entries unchanged",
+    "No prohibited data/model/archive extensions"
+  ],
+  "scope": "Pre-archive checks only; archive CRC/member-hash check is recorded outside the archive to avoid a self-referential hash",
+  "timestamp_utc": "2026-11-19T01:18:22.588903+00:00"
+}

@@ -1,0 +1,84 @@
+{
+  "review_date": "2026-11-13",
+  "input_zips": {
+    "SHARE_THIS_01_EVIDENCE.zip": {
+      "bytes": 1038,
+      "sha256": "25f229310cb190cec605e8d720420a34fece45073653229843aaa32d9881178c"
+    },
+    "SHARE_THIS_02_EVIDENCE.zip": {
+      "bytes": 2054,
+      "sha256": "200d0faf387e342a6990c22e8fee60467b25840843040952de244aea50dd2f2c"
+    },
+    "SHARE_THIS_06_EVIDENCE.zip": {
+      "bytes": 3463,
+      "sha256": "b0fb356a841a3c619b39a0a8178fb5f3729bed2702ded0f75c68f5c2134df18d"
+    },
+    "SHARE_THIS_07_EVIDENCE.zip": {
+      "bytes": 6625,
+      "sha256": "808e3cfc705a0f36ccdf236ee428285adc161258971c09a357c281e2343655f6"
+    },
+    "SHARE_THIS_08_EVIDENCE.zip": {
+      "bytes": 3013,
+      "sha256": "115fc45d5918a0d662617934556e467de5419ab0c50605e2606aa5282d862457"
+    },
+    "SHARE_THIS_09_EVIDENCE.zip": {
+      "bytes": 61578,
+      "sha256": "c76fc2ba554eb03785380370f617f75bddad624f85484a8f9c323670f60e6b57"
+    }
+  },
+  "step01": "FAIL_null_empty_conflict_no_measurement",
+  "step02": "PASS_archived_CSV_reconciliation_not_source_rerun",
+  "step06": {
+    "original_prunable": 0,
+    "sorted_prunable": 14,
+    "rowgroups": 17,
+    "original_median_sec": 0.0426403500005108,
+    "sorted_median_sec": 0.015134649999708899,
+    "paired_ratio_median": 2.786335437469474,
+    "measured_pairs": 12
+  },
+  "step07": {
+    "measured_trials": 108,
+    "paired_rounds": 12,
+    "max_parity_abs_diff": 2.4424906541753444e-15,
+    "paired_optimized_speedups": {
+      "crisis_profile": {
+        "median": 2.690860355914922,
+        "CI95": [
+          1.7577214403424326,
+          3.569442805847514
+        ]
+      },
+      "calendar_lag": {
+        "median": 4.408536353969857,
+        "CI95": [
+          3.1395620386775223,
+          7.642896488799629
+        ]
+      },
+      "decision_profile": {
+        "median": 5.021778150314974,
+        "CI95": [
+          3.4725598116610863,
+          7.326547678038789
+        ]
+      }
+    }
+  },
+  "step08": {
+    "measured_trials": 0,
+    "warmup_trials": 12,
+    "pandas_crisis_failures": 3,
+    "no_valid_cluster_threshold": true
+  },
+  "step09": {
+    "warmup_trials": 6,
+    "measured_trials": 21,
+    "median_collect_seconds": {
+      "crisis_profile": 1.5271522000002733,
+      "calendar_lag": 3.864114800000607,
+      "decision_profile": 1.3161496000002444
+    },
+    "aqe_final_observed": true
+  }
+}

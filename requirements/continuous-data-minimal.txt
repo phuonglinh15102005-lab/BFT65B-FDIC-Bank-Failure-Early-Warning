@@ -1,0 +1,6 @@
+# Optional minimum data-only profile; existing observed Python 3.13.9 required.
+# Version record, not a tested clean installation/resolver lock. Nothing installed here.
+numpy==2.5.4
+pandas==3.1.1
+polars==2.1.0
+pyarrow==26.0.1

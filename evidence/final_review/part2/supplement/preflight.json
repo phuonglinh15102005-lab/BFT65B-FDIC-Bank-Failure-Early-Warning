@@ -1,0 +1,193 @@
+{
+  "status": "RETURNED_EVIDENCE_RECONCILED",
+  "scope": "Reconciles returned evidence; the 24 full-Parquet checks ran on the user machine, not here.",
+  "check_count": 18,
+  "checks": [
+    {
+      "check": "All three review ZIPs pass CRC checks",
+      "status": "PASS"
+    },
+    {
+      "check": "Part 2D contains the five expected unique files",
+      "status": "PASS"
+    },
+    {
+      "check": "Exactly 24 distinct returned checks pass",
+      "status": "PASS"
+    },
+    {
+      "check": "Full-value scope and stated limitations are explicit",
+      "status": "PASS"
+    },
+    {
+      "check": "Executed preflight matches the supplied script SHA-256",
+      "status": "PASS"
+    },
+    {
+      "check": "Base hash agrees across 2A, 2C configuration and 2D",
+      "status": "PASS"
+    },
+    {
+      "check": "Clean and decision hashes agree with saved 2C output identities",
+      "status": "PASS"
+    },
+    {
+      "check": "Runtime matches the successful 2C run",
+      "status": "PASS"
+    },
+    {
+      "check": "Complete 33-field financial schemas agree",
+      "status": "PASS"
+    },
+    {
+      "check": "Decision schema is exactly the financial schema plus calendar mapping",
+      "status": "PASS"
+    },
+    {
+      "check": "Exactly 170 ordered quarterly diagnostic records cover 1984Q1 to 2026Q2",
+      "status": "PASS"
+    },
+    {
+      "check": "All quarterly row counts agree with 2C and sum to the clean panel",
+      "status": "PASS"
+    },
+    {
+      "check": "All 680 quarterly null counts agree with 2C",
+      "status": "PASS"
+    },
+    {
+      "check": "All eight ratio null and zero totals agree with the prior profile",
+      "status": "PASS"
+    },
+    {
+      "check": "Ratio counts obey nonnegative and mutually exclusive count bounds",
+      "status": "PASS"
+    },
+    {
+      "check": "All six financial diagnostics are present exactly once",
+      "status": "PASS"
+    },
+    {
+      "check": "Four nonpositive counts and eligible populations agree with prior profile",
+      "status": "PASS"
+    },
+    {
+      "check": "Pairwise diagnostic counts are bounded and null eligibility is feasible",
+      "status": "PASS"
+    }
+  ],
+  "input_sha256": {
+    "review_bundle.zip": "e1db4e28456b8154048f6b67d1d5048ee4f836ea60d31817cdbf1d786d0d57ab",
+    "part2_clean_review_bundle.zip": "09efb2de4574f3abc278aa83ec66d8369d26330258518a7e1963cf810471c395",
+    "part2_preflight_review_bundle.zip": "f57ac844e9b979426c08e22383e0e79d0829440b55d052ff2af52b13b93f9d24",
+    "02d_preflight_part2.py": "6ac70c53d7dbe05249c5445788702e6ed99ffe57794c2cc21b425c92ce1819e3"
+  },
+  "preflight_checks": 24,
+  "clean_rows": 1669802,
+  "ratio_totals": {
+    "ROA": {
+      "null": 0,
+      "zero": 5264,
+      "abs_gt_100_pct": 207
+    },
+    "ROE": {
+      "null": 16618,
+      "zero": 1626,
+      "abs_gt_100_pct": 11553
+    },
+    "RBC1AAJ": {
+      "null": 0,
+      "zero": 77550,
+      "abs_gt_100_pct": 1706
+    },
+    "RBCRWAJ": {
+      "null": 0,
+      "zero": 465482,
+      "abs_gt_100_pct": 10395
+    }
+  },
+  "rbcrwaj_zero_pattern": {
+    "all_zero_quarters": [
+      "1984-03-31",
+      "1984-06-30",
+      "1984-09-30",
+      "1984-12-31",
+      "1985-03-31",
+      "1985-06-30",
+      "1985-09-30",
+      "1985-12-31",
+      "1986-03-31",
+      "1986-06-30",
+      "1986-09-30",
+      "1986-12-31",
+      "1987-03-31",
+      "1987-06-30",
+      "1987-09-30",
+      "1987-12-31",
+      "1988-03-31",
+      "1988-06-30",
+      "1988-09-30",
+      "1988-12-31",
+      "1989-03-31",
+      "1989-06-30",
+      "1989-09-30",
+      "1989-12-31"
+    ],
+    "pre_1990_quarters": 24,
+    "pre_1990_rows": 417921,
+    "first_quarter_with_nonzero_value": "1990-03-31",
+    "latest_quarter": "2026-06-30",
+    "latest_zero_count": 1807,
+    "latest_rows": 4247,
+    "latest_zero_share_pct": 42.54768071579939,
+    "interpretation": "Observed pattern only; zero convention and any regulatory cause are not established."
+  },
+  "financial_soft_checks": [
+    {
+      "check": "DEPDOM exceeds DEP",
+      "eligible_rows": "1669801",
+      "flagged_rows": "0",
+      "treatment": "Review only; no automatic correction",
+      "tolerance": "1e-6 + 1e-9 * max(abs(a),abs(b)); USD thousands"
+    },
+    {
+      "check": "LNLSNET exceeds LNLSGR",
+      "eligible_rows": "1669801",
+      "flagged_rows": "15",
+      "treatment": "Review only; no automatic correction",
+      "tolerance": "1e-6 + 1e-9 * max(abs(a),abs(b)); USD thousands"
+    },
+    {
+      "check": "ASSET <= 0 (candidate denominator)",
+      "eligible_rows": "1669802",
+      "flagged_rows": "0",
+      "treatment": "Do not divide by a nonpositive denominator; EQ sign itself is retained",
+      "tolerance": "0"
+    },
+    {
+      "check": "DEP <= 0 (candidate denominator)",
+      "eligible_rows": "1669801",
+      "flagged_rows": "1777",
+      "treatment": "Do not divide by a nonpositive denominator; EQ sign itself is retained",
+      "tolerance": "0"
+    },
+    {
+      "check": "LNLSGR <= 0 (candidate denominator)",
+      "eligible_rows": "1669801",
+      "flagged_rows": "8691",
+      "treatment": "Do not divide by a nonpositive denominator; EQ sign itself is retained",
+      "tolerance": "0"
+    },
+    {
+      "check": "EQ <= 0 (candidate denominator)",
+      "eligible_rows": "1666705",
+      "flagged_rows": "14592",
+      "treatment": "Do not divide by a nonpositive denominator; EQ sign itself is retained",
+      "tolerance": "0"
+    }
+  ],
+  "pairwise_counts_independently_recomputed_from_full_parquets": false,
+  "financial_flag_row_overlap_known": false,
+  "final_labels_created": false,
+  "original_vintage_PIT_verified": false
+}

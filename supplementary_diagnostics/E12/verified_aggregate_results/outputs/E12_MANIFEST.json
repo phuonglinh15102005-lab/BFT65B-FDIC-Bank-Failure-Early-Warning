@@ -1,0 +1,23 @@
+{
+  "scope": "FROZEN_SELECTED_HGB_POST_LOCK_DEVELOPMENT_ONLY_EXPLORATORY",
+  "development_sha256": "d365ce25204a3dcace715db4cea259c94b1b1abba4822c7bcf2b050a1c7f6a73",
+  "protocol_sha256": "994f72de6e2446916db8c2fcd36847c45cc68eb6fef5ef67f07acc0476c6d911",
+  "frozen_model_id": "HGB_L15_LR0p05_I150_L21_CLnone",
+  "refits": 3,
+  "invalid_random_kfold_models_fitted": 0,
+  "locked_test_opened": false,
+  "locked_test_scored": false,
+  "threshold_modified": false,
+  "important_limits": [
+    "Positive equity means EQ/ASSET>0 at lagged source report, not a regulatory solvency certification",
+    "Conditional AP comparisons are affected by selection and subgroup prevalence",
+    "Development policy threshold and event-detection summaries are exploratory, not external validation",
+    "Random K-fold diagnostic identifies shared positive label-horizon structure but DOES NOT measure AP inflation",
+    "Neither overfitting nor temporal drift is identified causally by these diagnostics"
+  ],
+  "output_sha256": {
+    "invalid_random_kfold_label_overlap_demo.csv": "39c8b57e886ec65b19c900d4e7a0d48b181f56eae590e29cfc46cdc1c21ed759",
+    "positive_equity_eligible_event_detection.csv": "990c77403f0872b6da6deabae219ba04ffd78af7328ccda2106cb586b4757198",
+    "positive_equity_subgroup_fold_metrics.csv": "0c21097b5324569108d906f1488e605c4630f37e70108dd1af45193930c3e842"
+  }
+}

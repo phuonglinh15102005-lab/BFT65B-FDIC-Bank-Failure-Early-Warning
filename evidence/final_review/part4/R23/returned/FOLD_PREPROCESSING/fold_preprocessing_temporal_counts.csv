@@ -1,0 +1,7 @@
+﻿fold,clip,train_rows,validation_rows,train_positive_rows,validation_positive_rows,train_positive_certs,validation_positive_certs,embargo_quarters,transformed_width,validation_transform_does_not_mutate_parameters
+early_bank_stress,False,266127,125962,2627,2796,775,932,4,30,True
+early_bank_stress,True,266127,125962,2627,2796,775,932,4,30,True
+post_stress_transition,False,459321,110844,7305,481,1948,191,4,30,True
+post_stress_transition,True,459321,110844,7305,481,1948,191,4,30,True
+global_financial_crisis,False,1129000,67792,8833,406,2242,167,4,30,True
+global_financial_crisis,True,1129000,67792,8833,406,2242,167,4,30,True

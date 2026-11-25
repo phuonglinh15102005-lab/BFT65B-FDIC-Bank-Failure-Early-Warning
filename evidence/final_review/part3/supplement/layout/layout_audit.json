@@ -1,0 +1,204 @@
+{
+  "status": "MEASURED_NO_CLUSTER",
+  "input_sha256": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107",
+  "alternate_sha256": "c98c31802383643a1301c5efeb6b704555099712a04592c892a8688c78a03136",
+  "content_fingerprint": {
+    "rows": 1669802,
+    "schema": [
+      [
+        "EINTEXP",
+        "Float64"
+      ],
+      [
+        "NIMY",
+        "Float64"
+      ],
+      [
+        "ORE",
+        "Float64"
+      ],
+      [
+        "LNATRES",
+        "Float64"
+      ],
+      [
+        "REPDTE",
+        "Date"
+      ],
+      [
+        "ELNATR",
+        "Float64"
+      ],
+      [
+        "STNAME",
+        "String"
+      ],
+      [
+        "RBC1AAJ",
+        "Float64"
+      ],
+      [
+        "INTINC",
+        "Float64"
+      ],
+      [
+        "LNCI",
+        "Float64"
+      ],
+      [
+        "SC",
+        "Float64"
+      ],
+      [
+        "NTLNLS",
+        "Float64"
+      ],
+      [
+        "NCLNLS",
+        "Float64"
+      ],
+      [
+        "LNRE",
+        "Float64"
+      ],
+      [
+        "LNLSNET",
+        "Float64"
+      ],
+      [
+        "ROA",
+        "Float64"
+      ],
+      [
+        "DEPDOM",
+        "Float64"
+      ],
+      [
+        "ROE",
+        "Float64"
+      ],
+      [
+        "ASSET",
+        "Float64"
+      ],
+      [
+        "LNLSGR",
+        "Float64"
+      ],
+      [
+        "NONIX",
+        "Float64"
+      ],
+      [
+        "NETINC",
+        "Float64"
+      ],
+      [
+        "EQ",
+        "Float64"
+      ],
+      [
+        "DEP",
+        "Float64"
+      ],
+      [
+        "NAASSET",
+        "Float64"
+      ],
+      [
+        "LNCON",
+        "Float64"
+      ],
+      [
+        "RBCRWAJ",
+        "Float64"
+      ],
+      [
+        "P9ASSET",
+        "Float64"
+      ],
+      [
+        "CHBAL",
+        "Float64"
+      ],
+      [
+        "P3ASSET",
+        "Float64"
+      ],
+      [
+        "CERT",
+        "Int64"
+      ],
+      [
+        "NONII",
+        "Float64"
+      ],
+      [
+        "BRO",
+        "Float64"
+      ]
+    ],
+    "nulls": [
+      5386,
+      0,
+      3098,
+      3098,
+      0,
+      42025,
+      0,
+      0,
+      3641,
+      1,
+      1,
+      78010,
+      2491,
+      1,
+      1,
+      0,
+      1,
+      16618,
+      0,
+      1,
+      3641,
+      3641,
+      3097,
+      1,
+      76865,
+      2897,
+      0,
+      76866,
+      1,
+      966750,
+      0,
+      3641,
+      15702
+    ],
+    "hash0": 16061087807707650900,
+    "hash42": 17457980569333299881
+  },
+  "codec": "zstd",
+  "row_groups": {
+    "original": {
+      "total": 17,
+      "prunable": 0
+    },
+    "date_sorted": {
+      "total": 17,
+      "prunable": 14
+    }
+  },
+  "median_seconds": {
+    "original": 0.04264035000051081,
+    "date_sorted": 0.015134649999708927
+  },
+  "paired_speedup_median": 2.786335437469474,
+  "max_mean_asset_abs_diff_between_layouts": 0.0,
+  "warmups": 3,
+  "paired_repetitions": 12,
+  "limitations": [
+    "Warm OS cache",
+    "Same laptop only",
+    "Codec matched, row-group size may change",
+    "Paired timing randomizes order but cannot remove systemic OS effects"
+  ]
+}

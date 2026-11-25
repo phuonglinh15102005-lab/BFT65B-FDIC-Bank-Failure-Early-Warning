@@ -1,0 +1,67 @@
+{
+  "status": "CLEAN_PANEL_READY_FOR_REVIEW",
+  "version": "1.0",
+  "run_time_utc": "2026-11-09T03:48:47.682882+00:00",
+  "python": "3.13.9",
+  "polars": "2.1.0",
+  "source_rows": 1682616,
+  "clean_rows": 1669802,
+  "excluded_rows": 12814,
+  "source_banks": 24064,
+  "clean_banks": 23849,
+  "clean_quarters": 170,
+  "row_accounting": [
+    {
+      "ROW_ACTION": "AT_OR_AFTER_FAILURE_RISK_STOP",
+      "rows": 1211
+    },
+    {
+      "ROW_ACTION": "AT_OR_AFTER_OTHER_EXIT",
+      "rows": 5
+    },
+    {
+      "ROW_ACTION": "CONFIRMED_UNINSURED_NC",
+      "rows": 11598
+    },
+    {
+      "ROW_ACTION": "RETAIN",
+      "rows": 1669802
+    }
+  ],
+  "scope_exception_rows": 11598,
+  "confirmed_uninsured_rows": 11598,
+  "scope_exceptions_needing_review": 0,
+  "overlapping_uninsured_and_post_exit_rows": 0,
+  "registry_banks": 24064,
+  "exit_classes": {
+    "MERGER_OR_REORGANIZATION_NONFAILURE": 15501,
+    "NO_REGISTERED_EXIT_AT_SNAPSHOT": 4207,
+    "FIRST_REGISTER_FAILURE": 2841,
+    "VOLUNTARY_CLOSURE_NONFAILURE": 538,
+    "UNRESOLVED_OR_UNOBSERVED_EXIT": 109,
+    "ASSISTED_OR_RESOLUTION_EXIT": 753,
+    "ADVERSE_EXIT_WITHOUT_MATCHED_FAILURE": 115
+  },
+  "registry_fallback_banks": 354,
+  "registry_unknown_exit_banks": 109,
+  "step2b_multiple_code_review_banks": 15612,
+  "decision_rows_lag1": 1629398,
+  "decision_banks_lag1": 23651,
+  "decision_start": "1984-06-30",
+  "decision_end": "2025-06-30",
+  "decision_rows_lag2": 1605882,
+  "first_failure_events_with_eligible_positive_window": 2811,
+  "financial_values_imputed": 0,
+  "financial_values_clipped": 0,
+  "finite_values_changed": 0,
+  "input_checksums_unchanged": true,
+  "output_sha256": {
+    "panel_clean.parquet": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107",
+    "panel_pit_base.parquet": "3fce669406ff1898ac85d9c41c6385b7f8c6b27e29ecd041bb0a3c59f6337421"
+  },
+  "final_labels_created": false,
+  "model_ready": false,
+  "availability_lag_is_assumption": true,
+  "original_vintage_PIT_verified": false,
+  "elapsed_seconds": 43.57019549992401
+}

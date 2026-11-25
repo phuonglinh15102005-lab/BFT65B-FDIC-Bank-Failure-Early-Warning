@@ -1,0 +1,26 @@
+[
+  {
+    "public_file": "scale_audit_original.json",
+    "source_archive": "BFT65B_FINAL_Parts1-5_Curated.zip",
+    "source_member": "BFT65B_FINAL/03_PART3_SCALABLE_PROCESSING/evidence_step08/source_evidence/scale_audit.json",
+    "source_sha256": "baa21b37c64e10185d8e46481ef299e3afd05ae0a34bde326ded8a6ad71bd1c9",
+    "public_sha256": "baa21b37c64e10185d8e46481ef299e3afd05ae0a34bde326ded8a6ad71bd1c9",
+    "scope": "original aggregate metadata"
+  },
+  {
+    "public_file": "development_source_cost_audit_original.json",
+    "source_archive": "BFT65B_FINAL_Parts1-5_Curated.zip",
+    "source_member": "BFT65B_FINAL/05_PART5_MODELLING_VALIDATION/evidence/extended_source_audits/A_source_cost/development_source_cost_audit.json",
+    "source_sha256": "15d4c9ec1361d6d02d7c21871b96abe9e642cfa92375a2a8dcd3457c1ddd1452",
+    "public_sha256": "15d4c9ec1361d6d02d7c21871b96abe9e642cfa92375a2a8dcd3457c1ddd1452",
+    "scope": "original aggregate metadata"
+  },
+  {
+    "public_file": "storage_configuration_extract.json",
+    "source_archive": "BFT65B_FINAL_Parts1-5_Curated.zip",
+    "source_member": "BFT65B_FINAL/01_PART1_ACQUISITION_STORAGE/source_evidence/benchmark_reports/storage_summary.json",
+    "source_sha256": "03c603b9b9246384c570f593c9e059f001ef279338bcdf205e096cd807c229bb",
+    "public_sha256": "5d5704823f10056658bc2dc05e0f02c4d30fdec0d3305a444e70a434a73b8182",
+    "scope": "selected non-path configuration and measurement metadata; not byte-identical"
+  }
+]

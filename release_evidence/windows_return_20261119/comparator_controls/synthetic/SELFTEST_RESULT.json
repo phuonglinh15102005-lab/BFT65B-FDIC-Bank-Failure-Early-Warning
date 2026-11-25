@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "detail": "Ten synthetic Arrow/Polars controls;expected mismatches correctly fail. No bank data or estimators.",
+  "started_utc": "2026-11-19T01:20:55.889271+00:00",
+  "finished_utc": "2026-11-19T01:21:02.810646+00:00",
+  "command": [
+    "%USERPROFILE%\\miniconda3\\python.exe",
+    "-B",
+    "%USERPROFILE%\\Downloads\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\workflow\\comparison_selftest.py",
+    "--out",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\comparator_controls\\synthetic"
+  ],
+  "cases": [
+    {
+      "case": "identical",
+      "status": "PASS_CONTROL",
+      "expected_numerical_equivalence": true,
+      "actual_comparison_status": "PASS_NUMERICAL_SCHEMA_EQUIVALENCE",
+      "new_sha256": "38866e832d5d70ac9a48156673dc0507b33553143e396a93c5426f86b3db509c",
+      "reference_sha256": "38866e832d5d70ac9a48156673dc0507b33553143e396a93c5426f86b3db509c"
+    },
+    {
+      "case": "reordered",
+      "status": "PASS_CONTROL",
+      "expected_numerical_equivalence": true,
+      "actual_comparison_status": "PASS_NUMERICAL_SCHEMA_EQUIVALENCE",
+      "new_sha256": "2135ce7b3fe5f330021a422ec4394d7db5e25f2bd52b619e824227e311520a93",
+      "reference_sha256": "38866e832d5d70ac9a48156673dc0507b33553143e396a93c5426f86b3db509c"
+    },
+    {
+      "case": "finite_vs_infinite",
+      "status": "PASS_CONTROL",
+      "expected_numerical_equivalence": false,
+      "actual_comparison_status": "FAIL",
+      "new_sha256": "b57829efb0f631200efc779fcbdb212720292405d913d40cb2403ce61f2ec671",
+      "reference_sha256": "38866e832d5d70ac9a48156673dc0507b33553143e396a93c5426f86b3db509c"
+    },
+    {
+      "case": "opposite_infinities",
+      "status": "PASS_CONTROL",
+      "expected_numerical_equivalence": false,
+      "actual_comparison_status": "FAIL",
+      "new_sha256": "8157fa0eff4ff5b90352a492e5e02bb28669000aebdcc5e68f7ba00815a198b1",
+      "reference_sha256": "38866e832d5d70ac9a48156673dc0507b33553143e396a93c5426f86b3db509c"
+    },
+    {
+      "case": "null_to_nan",
+      "status": "PASS_CONTROL",
+      "expected_numerical_equivalence": false,
+      "actual_comparison_status": "FAIL",
+      "new_sha256": "e0920a8d51af98bf77c0b3f8749ff153da1931a947c6497a60b354cfc93f4ef9",
+      "reference_sha256": "38866e832d5d70ac9a48156673dc0507b33553143e396a93c5426f86b3db509c"
+    },
+    {
+      "case": "duplicate_keys",
+      "status": "PASS_CONTROL",
+      "expected_numerical_equivalence": false,
+      "actual_comparison_status": "FAIL",
+      "new_sha256": "15bb947f833bb3c2151e691f2958f99827e90b1c2da540c3966bb07af89f5740",
+      "reference_sha256": "38866e832d5d70ac9a48156673dc0507b33553143e396a93c5426f86b3db509c"
+    },
+    {
+      "case": "label_mutation",
+      "status": "PASS_CONTROL",
+      "expected_numerical_equivalence": false,
+      "actual_comparison_status": "FAIL",
+      "new_sha256": "365af4a80cfbcc287d939145e9b5d9b12d4ab73f5bfb4ed2b033f9cdb786b4b1",
+      "reference_sha256": "38866e832d5d70ac9a48156673dc0507b33553143e396a93c5426f86b3db509c"
+    },
+    {
+      "case": "tolerated_float_roundoff",
+      "status": "PASS_CONTROL",
+      "expected_numerical_equivalence": true,
+      "actual_comparison_status": "PASS_NUMERICAL_SCHEMA_EQUIVALENCE",
+      "new_sha256": "36e16e96d8b640e51b295ec2152a924aff9eb30b8730f28083a716ae523e96ae",
+      "reference_sha256": "38866e832d5d70ac9a48156673dc0507b33553143e396a93c5426f86b3db509c"
+    },
+    {
+      "case": "strict_float_roundoff_rejected",
+      "status": "PASS_CONTROL",
+      "expected_numerical_equivalence": false,
+      "actual_comparison_status": "FAIL",
+      "new_sha256": "36e16e96d8b640e51b295ec2152a924aff9eb30b8730f28083a716ae523e96ae",
+      "reference_sha256": "38866e832d5d70ac9a48156673dc0507b33553143e396a93c5426f86b3db509c"
+    },
+    {
+      "case": "wrong_schema",
+      "status": "PASS_CONTROL",
+      "expected_numerical_equivalence": false,
+      "actual_comparison_status": "FAIL",
+      "new_sha256": "d392e4b891bcb4922f730c27c8c7bebfa7dd2583a457f38f214a08aa289cc28b",
+      "reference_sha256": "38866e832d5d70ac9a48156673dc0507b33553143e396a93c5426f86b3db509c"
+    }
+  ]
+}

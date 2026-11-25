@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "scope": "reconciled original expected and returned Windows R23 parameter CSVs; no raw Parquet opened in this check",
+  "rows": 72,
+  "finite_matches": 432,
+  "nonapplicable_matches": 72,
+  "total_matches": 504,
+  "max_finite_difference": 0,
+  "reference_sha256": "df26410b18c7f6900993bb5ee873ce00b8c6102949b351eff19da3c8f4af4651",
+  "returned_sha256": "ca97911e22cf6660febf07531a1a68007367ffca636bfb57fc6bbe18348afdd0"
+}

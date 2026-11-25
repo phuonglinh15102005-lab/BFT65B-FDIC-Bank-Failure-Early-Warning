@@ -1,0 +1,27 @@
+HOST_PRELOADED numpy,pandas
+Continuous preflight: checking original snapshot/cache/reference identities...
+SEND_THIS_ZIP /tmp/tmpk82oe7sd/new_GUI_LAI_CHO_CODEX.zip
+Continuous preflight: checking original snapshot/cache/reference identities...
+CONTINUOUS_STAGE base
+CONTINUOUS_STAGE_RESULT base FAIL
+SEND_THIS_ZIP /tmp/tmppzo4nztg/new_GUI_LAI_CHO_CODEX.zip
+
+STAGE p2-base
+STAGE_RESULT p2-base BLOCKED
+
+STAGE p2-clean
+STAGE_RESULT p2-clean BLOCKED
+
+STAGE development-features
+STAGE_RESULT development-features BLOCKED
+SEND_THIS_ZIP /tmp/tmp_2zru6t6/new_output_GUI_LAI_CHO_CODEX.zip
+
+STAGE p2-base
+STAGE_RESULT p2-base BLOCKED
+
+STAGE p2-clean
+STAGE_RESULT p2-clean BLOCKED
+
+STAGE development-features
+STAGE_RESULT development-features BLOCKED
+SEND_THIS_ZIP /tmp/tmps7vlso9j/new_output_GUI_LAI_CHO_CODEX.zip

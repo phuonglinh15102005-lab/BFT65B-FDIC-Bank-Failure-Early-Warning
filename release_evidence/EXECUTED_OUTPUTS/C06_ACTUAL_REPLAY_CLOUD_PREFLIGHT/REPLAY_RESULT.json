@@ -1,0 +1,55 @@
+{
+  "status": "BLOCKED",
+  "started_utc": "2026-11-18T16:11:19.151546+00:00",
+  "finished_utc": "2026-11-18T16:11:19.157489+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/run.py",
+    "replay",
+    "--profile",
+    "/workspace/NO_WINDOWS_INPUT_PROFILE",
+    "--out",
+    "/workspace/work/BFT65B_RELEASE_REAL_REPLAY_PREFLIGHT_20261118"
+  ],
+  "config_sha256": "3d53cbe14f8c3ef3c6197ea4ab48a7f58c3414fba2514bb3f03cf819ccc1a695",
+  "source_manifest_sha256": "ab963c7987b95abbb082898eb3c5f0888abf67a47bd5ec62b80345b969471aba",
+  "environment": null,
+  "stages": {
+    "p2-base": {
+      "stage": "p2-base",
+      "status": "BLOCKED",
+      "reason": "Existing exact engineering profile not found;no install/version relaxation",
+      "new_model_fits": 0
+    },
+    "p2-clean": {
+      "stage": "p2-clean",
+      "status": "BLOCKED",
+      "reason": "Existing exact engineering profile not found;no install/version relaxation",
+      "new_model_fits": 0
+    },
+    "development-features": {
+      "stage": "development-features",
+      "status": "BLOCKED",
+      "reason": "Existing exact engineering profile not found;no install/version relaxation",
+      "new_model_fits": 0
+    }
+  },
+  "comparator_control": null,
+  "source_integrity_error": null,
+  "prior_closed_stages": [
+    "R23",
+    "R24",
+    "ablation",
+    "model-selection",
+    "part3-pandas",
+    "part3-polars",
+    "part3-spark",
+    "posthoc-ci",
+    "test-metrics"
+  ],
+  "new_model_fits": 0,
+  "final_test_inference": false,
+  "full_clean_room_E2E": "NOT_EXECUTED",
+  "interpretation": "PASS applies only to new producer/key/schema/value replay;archived modelling/test evidence retained without recomputation"
+}

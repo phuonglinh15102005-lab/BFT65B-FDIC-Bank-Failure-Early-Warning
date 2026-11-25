@@ -1,0 +1,51 @@
+{
+  "status": "PASS_SAVED_SCORES_ONLY_NOT_HISTORICAL_BOOTSTRAP",
+  "methods": "Post hoc CERT-cluster pairs bootstrap applied to frozen saved scores and archived event detection flags, with same CERT resampling multiplicities for AP and event recall",
+  "independence_limit": "CERT resampling does not account for common calendar shocks or model selection uncertainty.",
+  "not_performed": [
+    "model loading",
+    "training",
+    "prediction",
+    "final test scoring",
+    "threshold tuning",
+    "feature selection"
+  ],
+  "source_hashes_sha256": {
+    "final_test_scored_rows.csv.gz": "6ca6913f2770f98382be9a491afb8c68559739e5bc5a65c43c5b8aedf5d3bf09",
+    "final_test_event_detection_by_cert.csv": "b94d483423ba5f9637aecd818b85865bd5a9e39cdef953ad66a9719151d2ad04"
+  },
+  "seed": 20261117,
+  "num_replicates": 1500,
+  "numpy_bit_generator": "PCG64 via numpy.random.default_rng",
+  "point": {
+    "n_rows": 364440,
+    "n_positive_rows": 1112,
+    "n_unique_cert": 8027,
+    "n_unique_failure_events": 341,
+    "n_detected_events": 326,
+    "average_precision": 0.43492507379207207,
+    "roc_auc": 0.9816208777462353,
+    "brier": 0.0021632929633093084,
+    "log_loss": 0.008750220557166895,
+    "event_recall": 0.9560117302052786
+  },
+  "ap_ci_95_percentile": [
+    0.39262309329798084,
+    0.4812039507706416
+  ],
+  "event_recall_ci_95_percentile": [
+    0.9321484620213434,
+    0.9767525585876426
+  ],
+  "ap_draw_summary": {
+    "min": 0.362503639043715,
+    "median": 0.4364186105004255,
+    "max": 0.5208084644140737
+  },
+  "event_draw_summary": {
+    "min": 0.9195710455764075,
+    "median": 0.9564032697547684,
+    "max": 0.9881305637982196
+  },
+  "warning": "NEW reproducible post hoc check, NOT reproduction or validation of archived original 1500-replicate CI."
+}

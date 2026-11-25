@@ -1,0 +1,47 @@
+{
+  "status": "PASS_INDEPENDENT_FULL_DEVELOPMENT",
+  "development_rows": 1181659,
+  "positive_bank_quarters": 9246,
+  "distinct_failing_certs": 2410,
+  "source_lag_exact_one_quarter": true,
+  "full_rows_feature_compared": 1181659,
+  "features_checked": 15,
+  "feature_mismatch_counts": {
+    "log_assets": 0,
+    "equity_to_assets": 0,
+    "negative_equity_flag": 0,
+    "asset_log_growth_1q": 0,
+    "asset_log_growth_4q": 0,
+    "nclnls_to_loans": 0,
+    "loan_allowance_to_loans": 0,
+    "cash_to_assets": 0,
+    "cash_and_securities_to_assets": 0,
+    "deposits_to_assets": 0,
+    "net_loans_to_assets": 0,
+    "roa_reported_percent": 0,
+    "nimy_reported_percent": 0,
+    "loss_flag_roa_negative": 0,
+    "loan_denominator_invalid_flag": 0
+  },
+  "all_development_labels_audited": 1181659,
+  "label_mismatch_count": 0,
+  "future_failure_perturbation_changed_label_rows": 80685,
+  "financial_feature_oracle_uses_event_registry": false,
+  "final_test_feature_file_opened": false,
+  "test_predictions_generated": false,
+  "training_folds_checked": 3,
+  "preprocessing_statistics_checked": 180,
+  "source_hashes": {
+    "development": "62d0e41f7d66211cff958c8b199936325b9269aefa4c2b5e0e60bdf99e8f8911",
+    "clean": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107",
+    "pit": "3fce669406ff1898ac85d9c41c6385b7f8c6b27e29ecd041bb0a3c59f6337421",
+    "registry": "09efb2de4574f3abc278aa83ec66d8369d26330258518a7e1963cf810471c395",
+    "step01_summary": "a5a5451224163faf5b107acc5ab7a3c1a56a626dca8b2cdcd21326458ac611e2"
+  },
+  "limitations": [
+    "An independent source-only oracle tests formula correctness but does not establish exact historical FDIC release vintages.",
+    "Event dates from present-day historical registry are used only to construct labels and censoring.",
+    "The experiment does not test model accuracy, test-set metrics or threshold selection.",
+    "Source Parquet scanning can physically read mixed-year row groups; only development rows participate in this audit."
+  ]
+}

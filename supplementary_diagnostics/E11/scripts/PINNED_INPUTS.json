@@ -1,0 +1,12 @@
+{
+  "source_code_sha256": {
+    "part5_protocol_freeze.json": "994f72de6e2446916db8c2fcd36847c45cc68eb6fef5ef67f07acc0476c6d911",
+    "part5_step01_baseline_dev_only.py": "7aa0d432ce85d72ea3af7e16f6085f3622f218db27ece3330c9961217ba84253",
+    "part5_step02_hgb_grid_dev.py": "79d2d6d2f1c8505c444db5dd419a5f90175058e91dc13187c299ab94f097581c",
+    "part4_v2_train_only_pipeline.py": "168a08f0e3ffb0de3fa9e12e00c6671172a4ecb952fd8f67fc4254469f31b9a3"
+  },
+  "pinned_data_sha256": {
+    "dev": "d365ce25204a3dcace715db4cea259c94b1b1abba4822c7bcf2b050a1c7f6a73",
+    "clean": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107"
+  }
+}

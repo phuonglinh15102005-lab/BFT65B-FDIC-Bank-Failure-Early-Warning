@@ -1,0 +1,4 @@
+task,repeats,threads,polars_median_s,pandas_median_s,pandas_over_polars_speedup,polars_p25_s,polars_p75_s,pandas_p25_s,pandas_p75_s,polars_time_cv,pandas_time_cv,polars_peak_observed_rss_mib,pandas_peak_observed_rss_mib,polars_incremental_rss_mib,pandas_incremental_rss_mib
+crisis_profile,7,4,0.056767,0.265185,4.6715,0.055095,0.059249,0.238833,0.439664,0.06077,0.34274,143.938,460.602,96.035,373.148
+calendar_lag,7,4,0.102578,0.454767,4.4334,0.09907,0.109023,0.451086,0.457028,0.08117,0.01049,362.918,351.438,315.176,264.289
+decision_profile,7,4,0.040671,0.317009,7.7944,0.039391,0.042108,0.309839,0.324096,0.06355,0.04214,176.43,503.586,127.852,416.16

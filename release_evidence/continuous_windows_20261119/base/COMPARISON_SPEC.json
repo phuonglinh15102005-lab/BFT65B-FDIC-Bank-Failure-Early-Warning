@@ -1,0 +1,16 @@
+{
+  "out": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\base\\comparison",
+  "datasets": [
+    {
+      "id": "base",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\base\\artifacts\\panel_base.parquet",
+      "reference": "%USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\panel_base.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    }
+  ]
+}

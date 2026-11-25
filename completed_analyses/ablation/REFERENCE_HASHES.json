@@ -1,0 +1,15 @@
+{
+  "original/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "original/part4_v2_train_only_pipeline.py": "168a08f0e3ffb0de3fa9e12e00c6671172a4ecb952fd8f67fc4254469f31b9a3",
+  "original/part5_step01_baseline_dev_only.py": "7aa0d432ce85d72ea3af7e16f6085f3622f218db27ece3330c9961217ba84253",
+  "original/part5_step02_hgb_grid_dev.py": "79d2d6d2f1c8505c444db5dd419a5f90175058e91dc13187c299ab94f097581c",
+  "REF/fold_keys/early_bank_stress.npz": "71655c894d31eaa64413ec49be1a20b7c44fced38a3512bb91e4f3faeb798280",
+  "REF/fold_keys/global_financial_crisis.npz": "ec51b124acfb89a0ba83e8ecab05dd1870411b7f3a8ccfb78c5c52d79e0d0a33",
+  "REF/fold_keys/post_stress_transition.npz": "44bb994b010c07b487005b0504251dca58e3a1a2a2f29967b1d494cf9d6372cf",
+  "REF/hgb_candidate_fold_metrics.csv": "c1c1571173f3aa72e27fc840c99c705c9226c64e3ff01eec8edbcd1b59764385",
+  "REF/part5_protocol_freeze.json": "994f72de6e2446916db8c2fcd36847c45cc68eb6fef5ef67f07acc0476c6d911",
+  "REF/part5_step02b_audit.json": "9ded251be492ccac2d4f6bf9d506fe099b6d1b9cddbb4f8045ee1d74cbf3851d",
+  "REF/predictions/HGB_L15_LR0p05_I150_L21_CLnone__early_bank_stress.npz": "89cc0284952ead2b5004b08c8d7a151a0d5b5f3c2a2d7cbc931de88c3cd89678",
+  "REF/predictions/HGB_L15_LR0p05_I150_L21_CLnone__global_financial_crisis.npz": "82e6d4713cab95eb332567a2df89eeb5c452e99c0f3483ef65ca3e46d38dcea8",
+  "REF/predictions/HGB_L15_LR0p05_I150_L21_CLnone__post_stress_transition.npz": "b7ba325c1559284913543ce70857e58874e9b3ec93d88ebd88113347efb238c9"
+}

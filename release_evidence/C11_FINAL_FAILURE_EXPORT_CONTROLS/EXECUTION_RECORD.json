@@ -1,0 +1,51 @@
+{
+  "id": "C11_FINAL_FAILURE_EXPORT_CONTROLS",
+  "status": "PASS",
+  "exit_code": 0,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_failure_export.py",
+    "-v"
+  ],
+  "started_utc": "2026-11-19T01:15:21.907442+00:00",
+  "finished_utc": "2026-11-19T01:15:22.074714+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "polars": null,
+      "pyarrow": null,
+      "scikit-learn": "1.8.0",
+      "pyspark": null,
+      "joblib": "1.5.3",
+      "scipy": "1.17.0"
+    }
+  },
+  "input_sha256_before": {
+    "tests/test_failure_export.py": "af96cb2728a52833e3bab88d140192579f3e553b18bf69d8a0b03780153d7bc7",
+    "workflow/engine.py": "62ad2d20767db2b25c5ccbdf779036db167f0d4a069da4596ad366989de3758b",
+    "workflow/common.py": "3309843f03ff70e05b295e76a8716845be88a3684b28fffd707db94c911b32f1",
+    "config/source_manifest.json": "161f2df8be6175e71cfc020ba1291d35f2ac857b54befd0773d485189edba88b"
+  },
+  "input_sha256_after": {
+    "tests/test_failure_export.py": "af96cb2728a52833e3bab88d140192579f3e553b18bf69d8a0b03780153d7bc7",
+    "workflow/engine.py": "62ad2d20767db2b25c5ccbdf779036db167f0d4a069da4596ad366989de3758b",
+    "workflow/common.py": "3309843f03ff70e05b295e76a8716845be88a3684b28fffd707db94c911b32f1",
+    "config/source_manifest.json": "161f2df8be6175e71cfc020ba1291d35f2ac857b54befd0773d485189edba88b"
+  },
+  "output_sha256": {
+    "STDERR.txt": "527d0077e7aa2ad75ec4bd76ba429fb596ea671e2db94fcf1f59b484a6d7f522",
+    "STDOUT.txt": "1138b072fbc8d0b034dbe7041ff013f6e8e9ad536c96f6045015d208fd5a0b1c"
+  },
+  "scope": "Two mocked source-integrity failures must preserve FAIL diagnostic export; no bank data or fitting",
+  "new_model_fits": 0
+}

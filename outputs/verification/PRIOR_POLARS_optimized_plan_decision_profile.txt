@@ -1,0 +1,11 @@
+SORT BY [col("DECISION_DATE")]
+  AGGREGATE[maintain_order: false]
+    [len().alias("DECISIONS"), col("ASSET").mean().alias("MEAN_ASSET"), col("EQ_ASSET").mean().alias("MEAN_EQ_ASSET"), col("ROA").mean().alias("MEAN_ROA"), col("P3ASSET").null_count().alias("MISSING_P3ASSET"), (col("ASSET").is_null() | (col("ASSET") <= 0.0)).sum().alias("INVALID_ASSET_DENOM")] BY [col("DECISION_DATE")]
+    FROM
+    simple π 5/5 ["DECISION_DATE", "ASSET", ... 3 other columns]
+       WITH_COLUMNS:
+       [when(col("ASSET") > 0.0).then(col("EQ") / col("ASSET")).otherwise(null.cast(Float64)).alias("EQ_ASSET")] 
+        Parquet SCAN [%USERPROFILE%/BFT65B_outputs/step2c_20261108_145539_477509/panel_pit_base.parquet]
+        PROJECT 5/34 COLUMNS
+        SELECTION: col("DECISION_DATE") <= 2025-06-30
+        ESTIMATED ROWS: 1629398

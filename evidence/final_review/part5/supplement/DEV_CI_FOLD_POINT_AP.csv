@@ -1,0 +1,10 @@
+fold,family,rows,positives,AP
+early_bank_stress,HGB,125962,2796,0.360440199351221
+early_bank_stress,LR,125962,2796,0.3350101008454884
+early_bank_stress,equity,125962,2796,0.36880661335815845
+post_stress_transition,HGB,110844,481,0.2469455651151051
+post_stress_transition,LR,110844,481,0.15678225482966437
+post_stress_transition,equity,110844,481,0.10299634586596866
+global_financial_crisis,HGB,67792,406,0.27991311344211933
+global_financial_crisis,LR,67792,406,0.25749178223844177
+global_financial_crisis,equity,67792,406,0.07260003735094374

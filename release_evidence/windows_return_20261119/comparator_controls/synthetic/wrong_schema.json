@@ -1,0 +1,19 @@
+{
+  "dataset": "wrong_schema",
+  "new_sha256": "d392e4b891bcb4922f730c27c8c7bebfa7dd2583a457f38f214a08aa289cc28b",
+  "reference_sha256": "38866e832d5d70ac9a48156673dc0507b33553143e396a93c5426f86b3db509c",
+  "byte_identical": false,
+  "schema_equal": false,
+  "new_schema": "CERT: int64\nx: double\nlabel: int64",
+  "reference_schema": "CERT: int64\nx: double\nlabel: int8",
+  "new_rows": 4,
+  "reference_rows": 4,
+  "keys": [
+    "CERT"
+  ],
+  "rtol": 1e-09,
+  "atol": 1e-10,
+  "columns": [],
+  "status": "FAIL",
+  "reason": "Schema/row-count mismatch"
+}

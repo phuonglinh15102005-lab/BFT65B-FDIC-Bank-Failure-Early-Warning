@@ -1,0 +1,210 @@
+from pathlib import Path
+from datetime import datetime,timezone
+import csv,hashlib,json,os,platform,re,shutil,subprocess,sys,tempfile,zipfile
+
+W=Path('/workspace/work');R=W/'BFT65B_REPRO_CLOSEOUT_20261119';OLD=W/'BFT65B_SUBMISSION_CODE_VERIFIED_20261119'
+Q=W/'BFT65B_CLOSEOUT_FINAL_EVIDENCE_20261119';E=R/'release_evidence/repro_closeout_20261119'
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
+def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,indent=2,ensure_ascii=False),encoding='utf-8')
+def write(p,s):p.write_text(s.strip()+'\n',encoding='utf-8')
+assert not E.exists();E.mkdir()
+source=read(R/'config/source_manifest.json');source_before={n:sha(R/n) for n in source};assert source_before==source
+original_manifest=read(OLD/'config/source_manifest.json')
+science=[n for n in original_manifest if n.endswith('.py') and re.match(r'0[1-5]_PART',n)]
+assert len(science)==61 and all(sha(R/n)==original_manifest[n] for n in science)
+with (OLD/'FILE_MANIFEST_SHA256.csv').open(encoding='utf-8-sig',newline='') as f:
+    original_files=list(csv.DictReader(f))
+assert all((OLD/x['relative_path']).stat().st_size==int(x['bytes']) and sha(OLD/x['relative_path'])==x['sha256'] for x in original_files)
+
+records=[];relocations=[]
+for p in sorted(Q.rglob('*')):
+    if not p.is_file() or p.suffix.lower()=='.zip':continue
+    rel=p.relative_to(Q);dest=E/'final'/rel
+    if p.suffix=='.py':dest=dest.with_suffix('.py.txt')
+    dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,dest)
+    relocations.append(dict(actual_path=str(p),packaged_path=dest.relative_to(R).as_posix(),sha256=sha(p)))
+for p in sorted(Q.glob('*/EXECUTION_RECORD.json')):
+    v=read(p);records.append(v)
+    assert v['input_sha256_before']==v['input_sha256_after']
+    for name,h in v['input_sha256_before'].items():assert sha(Path(name))==h
+    for name,h in v['output_sha256'].items():assert sha(p.parent/name)==h
+assert len(records)==8 and sum(x['status']=='PASS' for x in records)==7 and sum(x['status']=='BLOCKED' for x in records)==1
+for case in ['unit_normal','unit_no_site','unit_preloaded']:
+    text=(Q/case/'STDERR.txt').read_text();assert re.search(r'Ran 45 tests\b',text) and text.rstrip().endswith('OK')
+assert 'HOST_PRELOADED numpy,pandas' in (Q/'unit_preloaded/STDOUT.txt').read_text()
+
+# Keep intermediate actual command records as history, not as final-source proof.
+for label,root in [('development_43',W/'BFT65B_CLOSEOUT_QA_20261119'),('development_44',W/'BFT65B_CLOSEOUT_QA_FINAL_20261119')]:
+    for p in sorted(root.rglob('*')):
+        if not p.is_file() or p.suffix=='.zip':continue
+        dest=E/'intermediate'/label/p.relative_to(root)
+        if p.suffix=='.py':dest=dest.with_suffix('.py.txt')
+        dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,dest)
+
+# Actual current-host feasibility, distinct from the deliberately missing-profile control.
+host=W/'BFT65B_CLOSEOUT_CURRENT_HOST_FEASIBILITY_20261119';host.mkdir(exist_ok=False)
+command=[sys.executable,'-B',str(R/'run.py'),'continuous','--start','raw','--out',str(host/'continuous')]
+started=datetime.now(timezone.utc).isoformat()
+with (host/'STDOUT.txt').open('w',encoding='utf-8') as stdout,(host/'STDERR.txt').open('w',encoding='utf-8') as stderr:
+    child=subprocess.run(command,cwd=R,env={**os.environ,'PYTHONDONTWRITEBYTECODE':'1','PYTHONUTF8':'1'},stdout=stdout,stderr=stderr)
+result=read(host/'continuous/CONTINUOUS_RESULT.json');preflight=read(host/'continuous/PREFLIGHT.json')
+assert child.returncode==2 and result['status']=='BLOCKED' and result['continuous_data_replay']=='NOT_EXECUTED'
+assert all(v['status']=='NOT_EXECUTED' for v in result['stages'].values())
+availability=dict(configured_profile=str(Path(os.environ.get('USERPROFILE') or Path.home()).resolve()),workspace_raw_parquet_file_count=sum(1 for p in W.rglob('*.parquet') if p.is_file()),engineering_profile_available=result['environment'] is not None,missing_paths_in_this_host=len(preflight['missing']),not_a_claim_about_files_absent_on_windows=True)
+host_record=dict(case='actual-current-host-continuous-feasibility',status='BLOCKED',command=command,exit_code=child.returncode,working_directory=str(R),started_utc=started,finished_utc=datetime.now(timezone.utc).isoformat(),environment=dict(python=platform.python_version(),platform=platform.platform()),input_sha256_before=source_before,input_sha256_after={n:sha(R/n) for n in source},output_sha256={p.relative_to(host).as_posix():sha(p) for p in host.rglob('*') if p.is_file() and p.suffix in {'.json','.txt','.csv'}},availability=availability,new_model_fits=0,final_test_inference=False)
+save(host/'EXECUTION_RECORD.json',host_record)
+for p in host.rglob('*'):
+    if p.is_file() and p.suffix!='.zip':
+        dest=E/'current_host'/p.relative_to(host);dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,dest)
+
+# Historical documents remain preserved but the new root status is authoritative.
+for name in ['docs/REPRODUCIBILITY_LIMITATIONS.md','docs/CITATIONS_AND_AI.md']:
+    p=R/name;write(p, '> Current closeout: see the root README and REPRODUCTION_VERIFICATION_REPORT.md. The earlier checkpoint history below does not establish continuous real-data execution.\n\n'+p.read_text())
+changes=[]
+for p in sorted(R.rglob('*.py')):
+    rel=p.relative_to(R).as_posix();old=OLD/rel
+    if not old.exists() or sha(old)!=sha(p):changes.append(dict(file=rel,original=str(old) if old.exists() else '',old_sha256=sha(old) if old.exists() else '',new_sha256=sha(p)))
+save(E/'SOURCE_CHANGES.json',changes)
+save(E/'ORIGINAL_PRESERVATION.json',dict(status='PASS',original_release_manifest_entries_checked=len(original_files),native_science_sources_byte_unchanged=len(science),frozen_protocol_sha256=sha(R/'00_ASSIGNMENT/part5_protocol_freeze.json'),new_fits=0,final_test_inference=False))
+with (E/'EVIDENCE_RELOCATION.csv').open('w',encoding='utf-8-sig',newline='') as f:
+    w=csv.DictWriter(f,fieldnames=['actual_path','packaged_path','sha256']);w.writeheader();w.writerows(relocations)
+
+audit=read(Q/'source_audit/source_audit/FINAL_SOURCE_RESOURCE_AUDIT.json')
+assert audit['errors']==[]
+rows=['| Lệnh kiểm tra thực tế | Kết quả |','|---|---|']
+for v in records:rows.append('| `'+v['case']+'` | '+v['status']+' |')
+rows.append('| Continuous trên current host, không fake profile | BLOCKED; 0 producer chạy |')
+write(R/'REPRODUCTION_VERIFICATION_REPORT.md',f'''
+# BFT65B — báo cáo verification cho reproducibility closeout
+
+Ngày: 19/11/2026. Phạm vi: xử lý independent QA của code release, không viết báo cáo học thuật hoặc Part 6.
+
+## Kết luận và ranh giới bằng chứng
+
+**Lỗi unit test đã sửa và xác minh; continuous DAG đã triển khai và qua tests cấu trúc/offline/lineage. Chưa có continuous real-data PASS.** Cloud không có raw FDIC Parquet/cache Windows và thiếu exact engineering runtime/Polars/PyArrow; cả năm producer trong lần gọi thực tế đều NOT EXECUTED. Phải chạy bộ Windows mới và đọc độc lập ZIP trả về để đóng empirical lineage gate. Full clean-room Parts1–5/model E2E vẫn NOT EXECUTED.
+
+Independent QA được đọc như bằng chứng, không làm theo đề nghị viết report trong tài liệu vì user hiện yêu cầu chưa viết. Báo cáo gốc giữ nguyên tại `release_evidence/INDEPENDENT_QA_RECEIVED_20261119.md`.
+
+## 1. Unit-test portability: RESOLVED trong môi trường đã chạy
+
+Test cũ kiểm NumPy/pandas không nằm trong sys.modules nên sai khi host sitecustomize nạp sẵn. Test mới chạy child Python bình thường, ghi baseline modules sau startup, chặn scientific import do workflow thực hiện (kể cả import đã cache) và kiểm module delta. Không cần dùng -S để né lỗi. Đã chạy **45/45 tests PASS** trong từng chế độ: normal startup; -S; và normal startup với sitecustomize thực sự import NumPy/pandas trước discovery. Đây là 45 tests chạy dưới ba cấu hình, không phải 135 tests độc lập.
+
+Suite gồm 22 tests gốc đã sửa một contract, cộng 23 tests mới cho fresh parents, chữ ký/copies, cache hit/miss/corruption, cấm online, CSV duplicate multiplicity/header/date changes, dừng descendants, xuất FAIL khi mất manifest và explicit cwd. Các stdout SYNTHETIC_PARENT_FAILURE/FAIL là negative controls thành công, không phải lỗi dữ liệu thật. Windows sẽ chạy suite dưới đúng engineering interpreter trước producers; chưa khẳng định Windows suite mới đã chạy.
+
+## 2. Lineage gap: IMPLEMENTED; real-data verification OPEN
+
+Luồng cũ dùng original Step2A/B cho Part2C nên chỉ là checkpoint replay. Luồng `run.py continuous` mới:
+
+`raw → new preparation → new Part2A → new Part2B → new Part2C/PIT → new development features`.
+
+`--start prepared` là phạm vi hẹp hơn, explicit; không tự fallback. Mọi child binding phải trùng vector parent mới trong cùng run. Part2B gốc giữ nguyên SHA; wrapper chỉ override Collector.cache, luôn offline, gọi native main để sinh config/signature/copies/bundle mới. Không copy Part2B cũ, không rewrite chữ ký hoặc thay yêu cầu version/SHA của Part2C. Native Part2C kiểm signature do Part2B mới sinh và fresh base. Frozen outputs chỉ phục vụ comparison, cached HTTP bodies là exogenous source evidence. Test metadata và source bytes không chứng minh dữ liệu thật đã đi hết chuỗi.
+
+## 3. So sánh được đăng ký cho actual Windows execution
+
+- Preparation: 170 quarter Parquet + institutions + failures_all (172 Parquet); exact schemas/rows/keys/null/NaN/nonkey values; failures dùng SOURCE_ROW để giữ legacy/unlinkable và duplicate events.
+- Base/clean/PIT/development: complete keyed comparisons như checkpoint contract; SHA byte ghi riêng. Prepared/base/clean/PIT exact; development float rtol=1e-9, atol=1e-10; integer/date/string exact.
+- Part2B: fresh native source signature và copied-report digests, history/exit report CSV multiset parity. Registry CSV so với member của frozen registry ZIP. Duplicate multiplicity được giữ; không coi row count đơn lẻ là parity.
+- Tất cả raw/reference/cache hashes trước/sau; fresh-parent hashes trước/sau child; source integrity và actual argv/cwd/environment. Parent BLOCKED/FAIL khiến descendants NOT EXECUTED, không lấy checkpoint cũ thay vào.
+
+Raw ledger phải có đúng 173 acquisition files. Ledger hash ghi lúc chạy mới, không được nói đã independently pre-pinned từ compact package. Frozen prepared/reference digests đã được khóa trước tạo anchor riêng cho logical parity. Timestamp/path/ZIP serialization có thể khác; byte SHA khác không tự động là lỗi số học, nhưng phải được công bố.
+
+## 4. Các lệnh thật và kết quả
+
+{chr(10).join(rows)}
+
+Mỗi record trong `release_evidence/repro_closeout_20261119/final/<case>/EXECUTION_RECORD.json` chứa actual command, cwd, Python/package environment, input hashes trước/sau, output hashes, exit code và phạm vi. Source cuối có {len(source)} protected entries, {audit['python_sources']} Python files parse được, trong đó 61 canonical science sources byte-unchanged so với bản đã chạy trước. Intermediate logs được giữ riêng, không trình bày như final-source evidence.
+
+Lệnh feasible hiện tại: `{' '.join(command)}`. Kết quả BLOCKED; profile thực tế của cloud là `{availability['configured_profile']}`. Có {availability['missing_paths_in_this_host']} required paths không truy cập được tại profile này; workspace có {availability['workspace_raw_parquet_file_count']} tệp .parquet. Đây không phải kết luận files không tồn tại trên Windows. Existing-engineering probe cũng không tìm thấy runtime phù hợp. PREFLIGHT và EXISTING_ENVIRONMENTS ghi paths/versions cụ thể. Không cài dependency hoặc tải raw data để ép PASS.
+
+## 5. Những việc đã đóng được giữ nguyên
+
+R23/R24, model selection, saved final-test metrics, late ablation, posthoc CI và Part3 parity không được tính/chạy lại. Hai checkpoint Windows returns cũ vẫn là bằng chứng hợp lệ về scope cũ; không dùng nhãn PASS của chúng để đóng continuous gate mới. 61 science producers và toàn bộ original code-release manifest đã được hash-check, không sửa nguyên bản. Model, threshold, cohort, predictions và protocol không thay đổi.
+
+## 6. Submission readiness và giới hạn
+
+README có lệnh normal unit tests, continuous mode, nguyên liệu/outputs, dependency order và version profiles. Bổ sung explicit cwd cho child unit tests từ Windows System32; .gitattributes giữ nguyên bytes để Git autocrlf không phá pinned hashes. Public payload/ignore/EOL checks được ghi riêng khi đóng gói. Không GitHub commit/push, không kiểm public access. Full clean install/resolver/historical native lock chưa chạy.
+
+Giữ nguyên primary direction: maximize mean chronological AP, sau đó development-only cost-sensitive policy. Historical PIT/revision vintages, phí vận hành/avoidability/r=20 giả định, historical bootstrap provenance khác verified posthoc CI, ngày ablation muộn và event-vs-COST recall vẫn là disclosures, không phải lỗi code có thể ép thành PASS. Checklist ngắn trong `REMAINING_ISSUES_CHECKLIST.md`.
+''')
+write(R/'REPAIR_CHANGELOG.md','''
+# Reproducibility QA closeout changelog — 19 November 2026
+
+All edits occur in BFT65B_REPRO_CLOSEOUT_20261119. Original archives and prior releases are preserved. No scientific refit/scoring/report work occurs.
+
+| File | Exact change and rationale |
+|---|---|
+| tests/test_release_contracts.py | Replace global absence assertion with normally-started child import guard and post-startup module delta; accept host preload without allowing workflow scientific imports. |
+| tests/test_continuous_contracts.py | Add 23 stdlib tests for actual argument DAG, native signature/copy checks, offline cache behavior, comparison semantics, cwd and fail-stop/export behavior. |
+| workflow/continuous.py | Add complete raw/prepared-to-development controller, pinned/preflight input checks, exact fresh DAG, per-stage lineage/comparisons, no fallback, aggregate evidence export and truthful statuses. |
+| workflow/continuous_contract.py | Define exact producer vectors and validate genuine native fresh-parent metadata/signatures without editing metadata. |
+| workflow/offline_part2b.py | Redirect original Collector cache only; invoke unchanged native Part2B.main offline. No old outputs copied or source-SHA checks relaxed. |
+| workflow/continuous_worker.py | Source-pinned producer execution with isolated writes/tempfiles and network/model/test guards. |
+| workflow/continuous_compare.py | Reuse Parquet comparator and add exact CSV multiset comparison preserving duplicate multiplicity, with aggregate hashes/results only. |
+| workflow/engine.py | Expose continuous CLI/plan and optional explicit cwd plus recorded cwd for subprocesses. Historical checkpoint command retained. |
+| workflow/windows_start.py | One-click default changed to continuous --start raw and separate continuous output root. |
+| workflow/closeout_checks.py | Record actual normal/no-site/preload/unit/CLI/source/preflight commands and hashes. |
+| requirements/continuous-data-minimal.txt | Document exact existing engineering core; no install/resolver claim. |
+| .gitattributes; .gitignore | Preserve pinned byte identities under Windows autocrlf; include vetted aggregate QA evidence only. |
+| README/config stage metadata/manifests/rubric | Separate previous checkpoint PASS from continuous mode still unexecuted; specify actual order, inputs, outputs, blockers and immutable model boundaries. |
+
+Byte hashes for each modified/new Python source are in release_evidence/repro_closeout_20261119/SOURCE_CHANGES.json. Canonical Parts1–5 science producers remain byte-identical; no frozen output is rewritten. Actual logs are retained, including BLOCKED and synthetic expected-failure tests.
+''')
+write(R/'FINAL_EVIDENCE_STATUS.json',json.dumps(dict(status='CODE_QA_PASS_CONTINUOUS_REAL_DATA_NOT_EXECUTED',unit_tests=45,unit_modes=['normal','no-site','numpy-pandas-preloaded'],unit_result='PASS',prior_checkpoint_replay='VERIFIED_PREVIOUSLY_NOT_REPEATED',continuous_implementation='TESTED_CONTRACTS_ONLY',continuous_real_data='NOT_EXECUTED',current_host_feasibility='BLOCKED',full_clean_room_E2E='NOT_EXECUTED',new_model_fits=0,final_test_inference=False),indent=2))
+with (R/'EXECUTION_LOG_INDEX.csv').open('w',encoding='utf-8-sig',newline='') as f:
+    w=csv.writer(f);w.writerow(['case','status','actual_command','environment_python','evidence'])
+    for v in records:w.writerow([v['case'],v['status'],json.dumps(v['command']),v['environment']['python'],'release_evidence/repro_closeout_20261119/final/'+v['case'].replace('-','_')+'/EXECUTION_RECORD.json'])
+    w.writerow([host_record['case'],'BLOCKED',json.dumps(command),platform.python_version(),'release_evidence/repro_closeout_20261119/current_host/EXECUTION_RECORD.json'])
+
+# Read-only publication checks in an empty temporary local Git context.
+# No git add/commit/remote/push and no mutation of the source worktree.
+files=sorted(p for p in R.rglob('*') if p.is_file());sentinels=['raw.parquet','private/observations.csv','model.joblib','scores.npz','data_archive.zip']
+git_results=[];git_inputs={'.gitignore':sha(R/'.gitignore'),'.gitattributes':sha(R/'.gitattributes')}
+with tempfile.TemporaryDirectory(prefix='bft65b_closeout_git_') as t:
+    gitdir=Path(t)/'empty.git';init=['git','init','--bare','--quiet',str(gitdir)];subprocess.run(init,check=True,capture_output=True)
+    common=['git','--git-dir='+str(gitdir),'--work-tree='+str(R),'-c','core.excludesfile=/dev/null']
+    for rel,ignored in [(p.relative_to(R).as_posix(),False) for p in files]+[('FILE_MANIFEST_SHA256.csv',False)]+[(n,True) for n in sentinels]:
+        cmd=common+['check-ignore','--no-index','-q','--',rel];p=subprocess.run(cmd,cwd=R,capture_output=True,text=True)
+        ok=p.returncode in [0,1] and (p.returncode==0)==ignored
+        git_results.append(dict(path=rel,expected_ignored=ignored,exit_code=p.returncode,status='PASS' if ok else 'FAIL'))
+    filter_results=[]
+    for rel in ['02_PART2_DATA_QUALITY_PANEL/code/02b_collect_exit_evidence.py','BAM_CHAY_REPRO_CODE_CUOI.cmd','config/default.json','release_evidence/windows_return_20261119/REPLAY_RESULT.json','FINAL_RUBRIC_COMPLIANCE_MATRIX.csv']:
+        payload=(R/rel).read_bytes();expected=hashlib.sha1(b'blob '+str(len(payload)).encode()+b'\0'+payload).hexdigest()
+        cmd=common+['-c','core.autocrlf=true','hash-object','--path='+rel,'--stdin'];p=subprocess.run(cmd,cwd=R,input=payload,capture_output=True)
+        actual=p.stdout.decode().strip();filter_results.append(dict(file=rel,status='PASS' if p.returncode==0 and actual==expected else 'FAIL',command=cmd,sha256=sha(R/rel),git_raw_object_sha1=expected,git_filtered_object_sha1=actual));git_inputs[rel]=sha(R/rel)
+assert all(x['status']=='PASS' for x in git_results),[x for x in git_results if x['status']=='FAIL']
+assert all(x['status']=='PASS' for x in filter_results),filter_results
+git_record=dict(status='PASS',command=[sys.executable,'-B',str(Path(__file__))],git_context_setup=init,environment=dict(python=platform.python_version(),platform=platform.platform(),git=subprocess.check_output(['git','--version'],text=True).strip()),input_sha256=git_inputs,ignore_cases=git_results,eol_byte_preservation_cases=filter_results,scope='Empty temporary local Git metadata only, source worktree read-only; no commits/remotes/push/network')
+save(E/'PUBLICATION_AND_EOL_QA.json',git_record)
+for n,h in source.items():assert sha(R/n)==h
+assert all(sha(R/n)==original_manifest[n] for n in science)
+prohibited={'.parquet','.arrow','.feather','.npz','.npy','.pkl','.pickle','.joblib','.zip','.gz','.sqlite','.db','.pyc'}
+assert not [p for p in R.rglob('*') if p.is_file() and p.suffix.lower() in prohibited]
+csv_files=[]
+for p in R.rglob('*.csv'):
+    with p.open(encoding='utf-8-sig',newline='') as f:
+        rd=csv.reader(f);header=next(rd,[]);count=sum(1 for _ in rd)
+    assert not {'CERT','DECISION_DATE','REPDTE','FAILDATE'}.intersection(header),str(p)
+    csv_files.append(dict(file=p.relative_to(R).as_posix(),rows=count,fields=header))
+save(E/'PUBLIC_CSV_INVENTORY.json',csv_files)
+shutil.copyfile(Path(__file__),E/'CLOSEOUT_PACKAGER.py.txt')
+save(E/'PACKAGE_PRECHECK.json',dict(status='PASS',command=[sys.executable,'-B',str(Path(__file__))],environment=dict(python=platform.python_version(),platform=platform.platform()),input_sha256=dict(script=sha(Path(__file__)),source_manifest=sha(R/'config/source_manifest.json'),old_release_manifest=sha(OLD/'FILE_MANIFEST_SHA256.csv')),output_sha256=dict(report=sha(R/'REPRODUCTION_VERIFICATION_REPORT.md'),checklist=sha(R/'REMAINING_ISSUES_CHECKLIST.md'),source_changes=sha(E/'SOURCE_CHANGES.json'),publication_eol_qa=sha(E/'PUBLICATION_AND_EOL_QA.json')),science_sources_unchanged=61))
+manifest=R/'FILE_MANIFEST_SHA256.csv';assert not manifest.exists()
+files=sorted(p for p in R.rglob('*') if p.is_file())
+with manifest.open('w',encoding='utf-8-sig',newline='') as f:
+    w=csv.writer(f);w.writerow(['relative_path','bytes','sha256'])
+    for p in files:w.writerow([p.relative_to(R).as_posix(),p.stat().st_size,sha(p)])
+target=W/'BFT65B_REPRO_CLOSEOUT_20261119.zip';assert not target.exists()
+with zipfile.ZipFile(target,'x',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+    for p in sorted(R.rglob('*')):
+        if p.is_file():z.write(p,R.name+'/'+p.relative_to(R).as_posix())
+with zipfile.ZipFile(target) as z:
+    assert z.testzip() is None
+    for p in R.rglob('*'):
+        if p.is_file():assert hashlib.sha256(z.read(R.name+'/'+p.relative_to(R).as_posix())).hexdigest()==sha(p)
+    count=len(z.namelist())
+dropbox=hashlib.sha256()
+with target.open('rb') as f:
+    for chunk in iter(lambda:f.read(4*1024*1024),b''):dropbox.update(hashlib.sha256(chunk).digest())
+done=dict(status='PASS_ARCHIVE_CRC_MEMBER_HASHES_AND_SOURCE_CONTENT',command=[sys.executable,'-B',str(Path(__file__))],environment=dict(python=platform.python_version(),platform=platform.platform()),zip=str(target),bytes=target.stat().st_size,sha256=sha(target),dropbox_content_hash=dropbox.hexdigest(),members=count,source_entries=len(source),unit_tests=45,unit_modes_pass=3,continuous_real_data='NOT_EXECUTED',current_host_feasibility='BLOCKED',full_clean_room_E2E='NOT_EXECUTED',report_sha256=sha(R/'REPRODUCTION_VERIFICATION_REPORT.md'),file_manifest_sha256=sha(manifest),finished_utc=datetime.now(timezone.utc).isoformat())
+save(W/'BFT65B_REPRO_CLOSEOUT_20261119_PACKAGING_RESULT.json',done);print(json.dumps(done,indent=2))

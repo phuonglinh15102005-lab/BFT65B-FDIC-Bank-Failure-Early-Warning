@@ -1,0 +1,13 @@
+quarter_from,quarter_to,prior_state,current_state,count,population
+2019Q4,2020Q1,zero,zero,9,2020Q1 clean-panel CERTs; 2019Q4 matched where available
+2019Q4,2020Q1,zero,nonzero,0,2020Q1 clean-panel CERTs; 2019Q4 matched where available
+2019Q4,2020Q1,zero,missing_value,0,2020Q1 clean-panel CERTs; 2019Q4 matched where available
+2019Q4,2020Q1,nonzero,zero,1704,2020Q1 clean-panel CERTs; 2019Q4 matched where available
+2019Q4,2020Q1,nonzero,nonzero,3410,2020Q1 clean-panel CERTs; 2019Q4 matched where available
+2019Q4,2020Q1,nonzero,missing_value,0,2020Q1 clean-panel CERTs; 2019Q4 matched where available
+2019Q4,2020Q1,missing_value,zero,0,2020Q1 clean-panel CERTs; 2019Q4 matched where available
+2019Q4,2020Q1,missing_value,nonzero,0,2020Q1 clean-panel CERTs; 2019Q4 matched where available
+2019Q4,2020Q1,missing_value,missing_value,0,2020Q1 clean-panel CERTs; 2019Q4 matched where available
+2019Q4,2020Q1,not_observed,zero,1,2020Q1 clean-panel CERTs; 2019Q4 matched where available
+2019Q4,2020Q1,not_observed,nonzero,1,2020Q1 clean-panel CERTs; 2019Q4 matched where available
+2019Q4,2020Q1,not_observed,missing_value,0,2020Q1 clean-panel CERTs; 2019Q4 matched where available

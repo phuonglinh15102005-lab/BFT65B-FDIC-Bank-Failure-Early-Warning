@@ -1,0 +1,118 @@
+{
+  "status": "PREFLIGHT_PASS",
+  "checks": [
+    {
+      "check": "Base identity agrees with Part 2A",
+      "status": "PASS"
+    },
+    {
+      "check": "SHA-256 panel_base.parquet",
+      "status": "PASS"
+    },
+    {
+      "check": "SHA-256 panel_clean.parquet",
+      "status": "PASS"
+    },
+    {
+      "check": "SHA-256 panel_pit_base.parquet",
+      "status": "PASS"
+    },
+    {
+      "check": "Financial schema matches base",
+      "status": "PASS"
+    },
+    {
+      "check": "Financial field allowlist",
+      "status": "PASS"
+    },
+    {
+      "check": "Typed financial keys",
+      "status": "PASS"
+    },
+    {
+      "check": "Numeric financial fields",
+      "status": "PASS"
+    },
+    {
+      "check": "Decision field allowlist and schema",
+      "status": "PASS"
+    },
+    {
+      "check": "Registry has unique bank keys",
+      "status": "PASS"
+    },
+    {
+      "check": "Base dimensions and unique keys",
+      "status": "PASS"
+    },
+    {
+      "check": "Base valid quarter-end keys",
+      "status": "PASS"
+    },
+    {
+      "check": "Clean dimensions and unique keys",
+      "status": "PASS"
+    },
+    {
+      "check": "Clean valid quarter-end keys",
+      "status": "PASS"
+    },
+    {
+      "check": "Clean quarter coverage",
+      "status": "PASS"
+    },
+    {
+      "check": "Exclusion keys unique and present",
+      "status": "PASS"
+    },
+    {
+      "check": "Clean keys and every financial value match base minus logged exclusions",
+      "status": "PASS"
+    },
+    {
+      "check": "Clean keys all have registry evidence",
+      "status": "PASS"
+    },
+    {
+      "check": "No retained report at/after risk stop",
+      "status": "PASS"
+    },
+    {
+      "check": "All numeric cells finite or null",
+      "status": "PASS"
+    },
+    {
+      "check": "Full-file null counts match saved profile",
+      "status": "PASS"
+    },
+    {
+      "check": "Decision dimensions and unique keys",
+      "status": "PASS"
+    },
+    {
+      "check": "Decision dates exactly one quarter after source",
+      "status": "PASS"
+    },
+    {
+      "check": "Every decision key and financial value match clean calendar mapping",
+      "status": "PASS"
+    }
+  ],
+  "check_count": 24,
+  "full_output_parquet_bytes_read": true,
+  "retained_value_equality_checked": true,
+  "output_hashes": {
+    "panel_base.parquet": "a72a9d24077c0c44149d93c5384d880282c832c576034e42223f299dd0f4778e",
+    "panel_clean.parquet": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107",
+    "panel_pit_base.parquet": "3fce669406ff1898ac85d9c41c6385b7f8c6b27e29ecd041bb0a3c59f6337421"
+  },
+  "soft_flags_are_not_errors": true,
+  "original_vintage_PIT_verified": false,
+  "final_labels_created": false,
+  "python": "3.13.9",
+  "polars": "2.1.0",
+  "run_time_utc": "2026-11-09T14:27:27.797132+00:00",
+  "step2c_dir": "REDACTED_HOME/BFT65B_outputs\\step2c_20261108_145539_477509",
+  "step2_dir": "REDACTED_HOME/BFT65B_outputs\\step2_20261108_145539_477509",
+  "script_sha256": "6ac70c53d7dbe05249c5445788702e6ed99ffe57794c2cc21b425c92ce1819e3"
+}

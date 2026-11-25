@@ -1,0 +1,49 @@
+{
+  "overall": "SCOPED_CHECKS_COMPLETED_REVIEW_REQUIRED",
+  "checks": [
+    {
+      "check": "ENVIRONMENT",
+      "status": "PASS",
+      "detail": "Python 3.13.9 NumPy 2.5.4 pandas 3.1.1 pyarrow 26.0.1"
+    },
+    {
+      "check": "FROZEN_DEVELOPMENT",
+      "status": "PASS",
+      "detail": "SHA256 d365ce25204a3dcace715db4cea259c94b1b1abba4822c7bcf2b050a1c7f6a73"
+    },
+    {
+      "check": "FROZEN_PROTOCOL",
+      "status": "PASS",
+      "detail": "SHA256 994f72de6e2446916db8c2fcd36847c45cc68eb6fef5ef67f07acc0476c6d911"
+    },
+    {
+      "check": "PARAMETER_REFERENCE",
+      "status": "PASS",
+      "detail": "SHA256 df26410b18c7f6900993bb5ee873ce00b8c6102949b351eff19da3c8f4af4651"
+    },
+    {
+      "check": "R23_504_PARAMETER_STATISTICS",
+      "status": "PASS",
+      "detail": "Rows 72, statistics 504, mismatches 0"
+    },
+    {
+      "check": "FROZEN_SOURCE_UNCHANGED",
+      "status": "PASS",
+      "detail": "Before: d365ce25204a3dcace715db4cea259c94b1b1abba4822c7bcf2b050a1c7f6a73 After: d365ce25204a3dcace715db4cea259c94b1b1abba4822c7bcf2b050a1c7f6a73"
+    }
+  ],
+  "source": "REDACTED_HOME/BFT65B_outputs\\part4_v2_dev_only_outputs\\development_primary_binary_v2.parquet",
+  "created_local": "20261117_155007_8ea63f54",
+  "R23_scope": "72 fold × clipping × continuous-feature rows; 7 metrics each = 504 comparisons",
+  "not_performed": [
+    "train",
+    "fit",
+    "refit",
+    "test cohort reads",
+    "test predictions",
+    "model loading",
+    "network",
+    "software installation"
+  ],
+  "scope_limitation": "Not a full end-to-end pipeline reproduction or historical filing-vintage validation"
+}

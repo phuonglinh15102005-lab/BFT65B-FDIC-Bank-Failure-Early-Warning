@@ -1,0 +1,46 @@
+{
+  "status": "MEASURED",
+  "input_sha256": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107",
+  "base_rows": 1669802,
+  "cert_offset_stride": 91386,
+  "factors": [
+    1,
+    3,
+    5
+  ],
+  "engines": [
+    "polars",
+    "pandas"
+  ],
+  "tasks": [
+    "crisis_profile",
+    "calendar_lag"
+  ],
+  "memory_limit_mib": 6144,
+  "timeout_seconds": 240,
+  "sample_interval_sec": 0.05,
+  "threads": 4,
+  "warmups": 1,
+  "repeats": 3,
+  "important_limits": [
+    "Synthetic copies preserve financial values, not realistic bank diversity",
+    "Observed process-tree RSS at 50ms cadence; may miss instantaneous peaks",
+    "Resource cap/timeout may terminate a paging run before OS failure",
+    "Local process scaling does NOT establish a remote cluster crossover"
+  ],
+  "measured_results_per_combination": {
+    "1x/crisis_profile/polars": 3,
+    "1x/crisis_profile/pandas": 3,
+    "1x/calendar_lag/polars": 3,
+    "1x/calendar_lag/pandas": 3,
+    "3x/crisis_profile/polars": 3,
+    "3x/crisis_profile/pandas": 3,
+    "3x/calendar_lag/polars": 3,
+    "3x/calendar_lag/pandas": 3,
+    "5x/crisis_profile/polars": 3,
+    "5x/crisis_profile/pandas": 3,
+    "5x/calendar_lag/polars": 3,
+    "5x/calendar_lag/pandas": 3
+  },
+  "complete_measured_experiment": true
+}

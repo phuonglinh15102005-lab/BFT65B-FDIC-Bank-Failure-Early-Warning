@@ -1,0 +1,7 @@
+﻿stage,status,reason
+prepare,NOT_EXECUTED,Preflight or earlier stage did not pass; no frozen checkpoint fallback
+base,NOT_EXECUTED,Preflight or earlier stage did not pass; no frozen checkpoint fallback
+exits,NOT_EXECUTED,Preflight or earlier stage did not pass; no frozen checkpoint fallback
+clean,NOT_EXECUTED,Preflight or earlier stage did not pass; no frozen checkpoint fallback
+features,NOT_EXECUTED,Preflight or earlier stage did not pass; no frozen checkpoint fallback
+full-clean-room-E2E,NOT_EXECUTED,Live acquisition/models/final-test inference excluded

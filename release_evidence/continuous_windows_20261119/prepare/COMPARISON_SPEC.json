@@ -1,0 +1,1895 @@
+{
+  "out": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\comparison",
+  "datasets": [
+    {
+      "id": "prepared_REPDTE_19840331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19840331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19840331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19840630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19840630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19840630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19840930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19840930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19840930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19841231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19841231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19841231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19850331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19850331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19850331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19850630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19850630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19850630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19850930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19850930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19850930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19851231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19851231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19851231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19860331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19860331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19860331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19860630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19860630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19860630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19860930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19860930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19860930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19861231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19861231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19861231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19870331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19870331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19870331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19870630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19870630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19870630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19870930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19870930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19870930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19871231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19871231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19871231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19880331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19880331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19880331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19880630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19880630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19880630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19880930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19880930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19880930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19881231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19881231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19881231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19890331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19890331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19890331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19890630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19890630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19890630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19890930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19890930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19890930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19891231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19891231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19891231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19900331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19900331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19900331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19900630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19900630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19900630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19900930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19900930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19900930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19901231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19901231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19901231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19910331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19910331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19910331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19910630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19910630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19910630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19910930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19910930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19910930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19911231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19911231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19911231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19920331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19920331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19920331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19920630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19920630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19920630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19920930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19920930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19920930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19921231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19921231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19921231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19930331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19930331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19930331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19930630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19930630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19930630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19930930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19930930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19930930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19931231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19931231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19931231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19940331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19940331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19940331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19940630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19940630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19940630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19940930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19940930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19940930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19941231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19941231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19941231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19950331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19950331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19950331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19950630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19950630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19950630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19950930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19950930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19950930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19951231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19951231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19951231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19960331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19960331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19960331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19960630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19960630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19960630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19960930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19960930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19960930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19961231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19961231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19961231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19970331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19970331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19970331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19970630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19970630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19970630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19970930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19970930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19970930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19971231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19971231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19971231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19980331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19980331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19980331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19980630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19980630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19980630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19980930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19980930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19980930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19981231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19981231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19981231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19990331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19990331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19990331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19990630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19990630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19990630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19990930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19990930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19990930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_19991231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=19991231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19991231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20000331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20000331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20000331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20000630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20000630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20000630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20000930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20000930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20000930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20001231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20001231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20001231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20010331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20010331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20010331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20010630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20010630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20010630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20010930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20010930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20010930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20011231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20011231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20011231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20020331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20020331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20020331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20020630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20020630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20020630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20020930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20020930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20020930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20021231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20021231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20021231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20030331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20030331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20030331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20030630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20030630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20030630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20030930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20030930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20030930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20031231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20031231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20031231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20040331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20040331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20040331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20040630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20040630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20040630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20040930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20040930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20040930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20041231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20041231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20041231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20050331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20050331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20050331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20050630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20050630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20050630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20050930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20050930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20050930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20051231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20051231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20051231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20060331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20060331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20060331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20060630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20060630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20060630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20060930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20060930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20060930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20061231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20061231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20061231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20070331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20070331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20070331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20070630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20070630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20070630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20070930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20070930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20070930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20071231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20071231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20071231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20080331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20080331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20080331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20080630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20080630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20080630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20080930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20080930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20080930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20081231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20081231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20081231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20090331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20090331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20090331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20090630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20090630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20090630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20090930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20090930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20090930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20091231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20091231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20091231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20100331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20100331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20100331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20100630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20100630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20100630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20100930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20100930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20100930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20101231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20101231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20101231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20110331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20110331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20110331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20110630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20110630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20110630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20110930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20110930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20110930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20111231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20111231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20111231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20120331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20120331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20120331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20120630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20120630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20120630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20120930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20120930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20120930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20121231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20121231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20121231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20130331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20130331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20130331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20130630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20130630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20130630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20130930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20130930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20130930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20131231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20131231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20131231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20140331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20140331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20140331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20140630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20140630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20140630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20140930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20140930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20140930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20141231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20141231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20141231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20150331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20150331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20150331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20150630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20150630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20150630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20150930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20150930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20150930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20151231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20151231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20151231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20160331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20160331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20160331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20160630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20160630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20160630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20160930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20160930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20160930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20161231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20161231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20161231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20170331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20170331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20170331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20170630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20170630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20170630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20170930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20170930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20170930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20171231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20171231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20171231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20180331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20180331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20180331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20180630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20180630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20180630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20180930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20180930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20180930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20181231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20181231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20181231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20190331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20190331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20190331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20190630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20190630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20190630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20190930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20190930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20190930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20191231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20191231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20191231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20200331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20200331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20200331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20200630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20200630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20200630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20200930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20200930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20200930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20201231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20201231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20201231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20210331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20210331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20210331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20210630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20210630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20210630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20210930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20210930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20210930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20211231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20211231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20211231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20220331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20220331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20220331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20220630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20220630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20220630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20220930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20220930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20220930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20221231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20221231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20221231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20230331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20230331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20230331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20230630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20230630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20230630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20230930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20230930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20230930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20231231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20231231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20231231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20240331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20240331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20240331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20240630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20240630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20240630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20240930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20240930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20240930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20241231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20241231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20241231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20250331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20250331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20250331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20250630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20250630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20250630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20250930",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20250930.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20250930.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20251231",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20251231.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20251231.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20260331",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20260331.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20260331.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_REPDTE_20260630",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\financials\\REPDTE=20260630.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20260630.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_institutions",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\institutions.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\institutions.parquet",
+      "keys": [
+        "CERT"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "prepared_failures_all",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts\\prepared\\failures_all.parquet",
+      "reference": "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\failures_all.parquet",
+      "keys": [
+        "SOURCE_ROW"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    }
+  ]
+}

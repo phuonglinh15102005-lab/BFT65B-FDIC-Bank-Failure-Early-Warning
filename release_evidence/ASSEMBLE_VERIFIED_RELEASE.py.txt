@@ -1,0 +1,296 @@
+"""Assemble a new release from inspected evidence; do not execute scientific code."""
+from pathlib import Path
+import csv,hashlib,json,shutil
+
+W=Path('/workspace/work')
+OLD=W/'BFT65B_SUBMISSION_CODE_RELEASE_20261118'
+NEW=W/'BFT65B_SUBMISSION_CODE_VERIFIED_20261119'
+RET=W/'BFT65B_RELEASE_RETURN_20261119_082051'
+AUD=W/'BFT65B_WINDOWS_RETURN_INDEPENDENT_REVIEW_20261119'
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
+def write(name,s):
+    p=NEW/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(s.strip()+'\n',encoding='utf-8')
+assert not NEW.exists()
+review=read(AUD/'INDEPENDENT_REVIEW.json');assert review['status']=='PASS_INDEPENDENT_RETURN_EVIDENCE_REVIEW'
+shutil.copytree(OLD,NEW)
+# Old archive remains immutable; new audit copies retain every returned evidence byte.
+shutil.copytree(RET,NEW/'release_evidence/windows_return_20261119')
+shutil.copytree(AUD,NEW/'release_evidence/windows_independent_review_20261119')
+shutil.copyfile(W/'verify_bft65b_windows_return_20261119.py',NEW/'release_evidence/windows_independent_review_20261119/VERIFY_RETURN_SOURCE.py.txt')
+shutil.copyfile(OLD/'config/source_manifest.json',NEW/'release_evidence/windows_independent_review_20261119/EXECUTED_SOURCE_MANIFEST.json')
+shutil.copyfile(OLD/'config/stages.json',NEW/'release_evidence/windows_independent_review_20261119/EXECUTED_STAGE_REGISTRY.json')
+shutil.copyfile(Path(__file__),NEW/'release_evidence/ASSEMBLE_VERIFIED_RELEASE.py.txt')
+# Keep old code-test records intact but distinguish them from current packaging checks.
+(NEW/'release_evidence/PACKAGING_PRECHECK.json').rename(NEW/'release_evidence/PRIOR_PACKAGE_PRECHECK.json')
+(NEW/'release_evidence/RELEASE_PACKAGER.py.txt').rename(NEW/'release_evidence/PRIOR_RELEASE_PACKAGER.py.txt')
+(NEW/'FILE_MANIFEST_SHA256.csv').rename(NEW/'release_evidence/PRIOR_RELEASE_ALL_FILE_MANIFEST.csv')
+
+stages=read(NEW/'config/stages.json')
+for x in stages:
+    if x['id'] in ['p2-base','p2-clean','development-features']:
+        x['status']='VERIFIED_WINDOWS_REPLAY_AND_INDEPENDENT_RETURN_REVIEW_20261119'
+        x['verification_evidence']='release_evidence/windows_return_20261119/; release_evidence/windows_independent_review_20261119/'
+        x['execution']='Completed on Windows 19 November 2026; no further rerun requested. Original replay command retained for reviewer portability.'
+write('config/stages.json',json.dumps(stages,indent=2))
+with (NEW/'outputs/verification/NEW_PRODUCER_REPLAY_STATUS.csv').open('w',encoding='utf-8-sig',newline='') as f:
+    w=csv.DictWriter(f,fieldnames=['dataset','status','expected_rows','observed_rows','new_sha256','reference_sha256','reason']);w.writeheader()
+    for d in review['datasets']:
+        w.writerow(dict(dataset=d['dataset'],status='VERIFIED_WINDOWS_REPLAY_INDEPENDENTLY_INSPECTED',expected_rows=d['rows'],observed_rows=d['rows'],new_sha256=d['new_sha256'],reference_sha256=d['reference_sha256'],reason='All keys/schema/null/NaN/values match; byte identity is reported separately'))
+shutil.copyfile(AUD/'DATASET_COMPARISON.csv',NEW/'outputs/verification/WINDOWS_REPLAY_DATASET_COMPARISON.csv')
+shutil.copyfile(RET/'NUMERICAL_COMPARISON.csv',NEW/'outputs/verification/WINDOWS_REPLAY_COLUMN_COMPARISON.csv')
+
+# Actual whitelist defect found during public-source handoff: root CSV artefacts
+# and nested Windows aggregate evidence must survive the global *.csv exclusion.
+p=NEW/'.gitignore';s=p.read_text();s+='''
+\n# Final vetted release matrices and returned aggregate execution evidence.
+!FINAL_RUBRIC_COMPLIANCE_MATRIX.csv
+!FILE_MANIFEST_SHA256.csv
+!EXECUTION_LOG_INDEX.csv
+!release_evidence/windows_return_20261119/*.csv
+!release_evidence/windows_independent_review_20261119/*.csv
+''';p.write_text(s,encoding='utf-8')
+
+with (NEW/'FINAL_RUBRIC_COMPLIANCE_MATRIX.csv').open(encoding='utf-8-sig',newline='') as f:
+    reader=csv.DictReader(f);fields=reader.fieldnames;rows=list(reader)
+updates={
+ 'P2.1':('VERIFIED_PRIOR_PLUS_NATIVE_WINDOWS_REPLAY','Base panel replay verified: 1,682,616 rows; no mismatches'),
+ 'P2.2':('VERIFIED_PRIOR_PLUS_NATIVE_WINDOWS_REPLAY','Clean 1,669,802 and PIT 1,629,398 rows; original SHA reproduced'),
+ 'P4.1':('VERIFIED_PRIOR_PLUS_DEVELOPMENT_PRODUCER_REPLAY','Development 1,231,631 rows and 20-column schema match; byte SHA differs, value deltas zero'),
+ 'R.4':('SOURCE_VALIDATED_WINDOWS_CHECKPOINT_REPLAY_VERIFIED','Runtime/version/path/output contracts passed in returned Windows evidence; full clean-room E2E remains unexecuted'),
+ 'R.5':('PRIOR_AGGREGATES_AND_WINDOWS_REPLAY_LOGS_INCLUDED','Returned commands, environment, hashes and all-column comparison independently inspected'),
+}
+for x in rows:
+    if x['id'] in updates:
+        x['status'],x['remaining_gap']=updates[x['id']]
+        x['evidence']+='; release_evidence/windows_independent_review_20261119/INDEPENDENT_REVIEW.json'
+with (NEW/'FINAL_RUBRIC_COMPLIANCE_MATRIX.csv').open('w',encoding='utf-8-sig',newline='') as f:
+    writer=csv.DictWriter(f,fieldnames=fields);writer.writeheader();writer.writerows(rows)
+
+write('FINAL_TECHNICAL_HANDOFF_VI.md','''
+# BFT65B — đóng gate replay Windows ngày 19/11/2026
+
+Đã kiểm tra độc lập ZIP `20261119_082051_38aac2a6_GUI_LAI_CHO_CODEX.zip` (SHA-256 `30e4f95b91392916076e48bfa25795582af64bc95ff09ae870ceeefa751ac2a2`). Ba producer còn thiếu replay đã hoàn tất trong đúng engineering environment. Không cần chạy lại bộ BAT hoặc các kiểm định khoa học đã đóng.
+
+| Dataset mới | Số dòng | So với reference |
+|---|---:|---|
+| Base panel | 1.682.616 | SHA byte trùng; schema/keys/values khớp. |
+| Clean panel | 1.669.802 | SHA byte trùng; schema/keys/values khớp. |
+| PIT panel | 1.629.398 | SHA byte trùng; schema/keys/values khớp. |
+| Development features/cohort | 1.231.631 | Schema 20 cột và giá trị theo keys khớp; SHA byte khác. |
+
+Có 112 cột ngoài khóa được so sánh; tất cả báo 0 mismatch null/NaN/giá trị và max absolute delta 0. Tolerance tài chính của development là rtol=1e-9, atol=1e-10, nhưng sai khác quan sát thực tế bằng 0. Không suy đoán nguyên nhân SHA khác chỉ từ logs; không gọi hai tệp development byte-identical.
+
+10 synthetic comparator controls cũng được thực thi thành công trên Windows: các trường hợp sai dữ liệu có chủ ý bị comparator từ chối đúng. 240 hash observations của 237 input identities nhất quán trước/sau; đã tính lại SHA cho 34 exported output files có digest trong stage manifests. 174 prepared snapshot identities, các Step2B và cache-body digests khớp cấu hình đã giao. Phần raw Parquet ở máy Windows không được gửi lên cloud hoặc hash lại trực tiếp tại đây.
+
+Commands và source hashes khớp bản release đã giao. Không có source drift được báo. Development dùng clean/PIT/registry mới của Part2C sau parity PASS, không dùng fallback. Logs/commands phù hợp với 0 new model fits, không final-test inference và không lặp R23/R24/ablation/model metrics. Đây là kiểm tra log và code provenance, không phải OS-level attestation cho mọi hoạt động trên máy.
+
+**Đã đóng ba checkpoint-replay gates. Full clean-room E2E vẫn NOT EXECUTED.** Part2C tiếp tục dựa vào original Step2A/B signatures; chưa tái chạy acquisition, toàn bộ search/refit hay one-time test trong clean environment. Bộ này có thể giao independent final technical review, không thể gọi là toàn bộ project đã clean-room reproduced.
+
+Các giới hạn phải giữ: historical filing/revision vintages; assumptions về review fees/r=20/avoidability; historical bootstrap provenance khác posthoc CI đã kiểm; ngày ablation muộn 18/11/2026; event recall khác COST-weighted recall. Public GitHub URL/visibility/deadline, report citations/identity và appendix page limit vẫn thuộc bước nộp bài riêng. Không sửa report hoặc viết Part 6 trong đợt này.
+''')
+
+write('README_BAT_DAU_TAI_DAY_VI.md','''
+# BFT65B — bộ code và bằng chứng đã đóng replay Windows
+
+**Không cần chạy lại.** Kết quả của bạn ngày 19/11/2026 đã được kiểm tra độc lập: cả ba producer base, clean/PIT và development features đã khớp references. Mở `FINAL_TECHNICAL_HANDOFF_VI.md` để xem kết luận; bảng số ở `outputs/verification/WINDOWS_REPLAY_DATASET_COMPARISON.csv`.
+
+Bộ ZIP chứa source Parts 1–5, configuration, requirements profiles, README tiếng Anh, logs/bảng so sánh Windows nguyên trạng, code kiểm tra độc lập và rubric matrix. Không chứa raw Parquet, private row-level predictions/OOF arrays, fitted models hoặc ZIP bằng chứng lồng nhau.
+
+`BAM_CHAY_REPRO_CODE_CUOI.cmd` và `run.py replay` được giữ để reviewer có thể chạy quy trình giới hạn trên môi trường/input phù hợp; không phải yêu cầu bạn lặp lại lần đã PASS. Không chạy R23, R24, ablation, grids, selected HGB, threshold search, CI hoặc final-test inference.
+
+Khi reviewer cần replay đã được phép, giải nén toàn bộ ZIP vào thư mục mới rồi dùng BAT. Output mới luôn tách riêng dưới `%LOCALAPPDATA%\\BFT65B_FINAL_CODE_REPLAY\\<timestamp_uuid>`, không overwrite originals, không cài/tải dữ liệu. ZIP return chứa aggregate evidence; raw generated outputs ở lại Windows. Chi tiết đầy đủ trong README và `docs/EXECUTION_GUIDE.md`.
+
+Full clean-room E2E vẫn NOT EXECUTED, dù các checkpoint producers đã verified. `STILL_UNRESOLVED.md` phân biệt giới hạn khoa học và các bước nộp bài chưa xác minh. Bộ này chưa viết report hoặc Part 6.
+''')
+
+write('README.md','''
+# BFT65B — Parts 1–5 verified source release
+
+This repository assembles acquisition, data-quality/panel, Polars/pandas/Spark, feature engineering, development modelling and archived-verification source, with pinned environment records and aggregate execution evidence. **The three remaining data-producer checkpoint replays were completed on Windows and their returned evidence independently inspected on 19 November 2026. Full clean-room end-to-end reproduction remains NOT EXECUTED.** No further user rerun is requested.
+
+The primary optimization direction remains maximum unweighted mean Average Precision over the three registered chronological validation folds, followed by a separate development-only cost-sensitive alarm policy. The selected HGB, its hyperparameters, threshold 0.023971438944668057 and original final-test results remain frozen. No new search, repeated ablation, selected-model refit, threshold optimization, CI or final-test inference was performed for this release.
+
+## Verified new replay evidence
+
+| Producer/dataset | Windows result | Comparison with original reference |
+|---|---:|---|
+| `p2-base` | 1,682,616 rows | Exact schema/key/value parity and original byte SHA. |
+| `p2-clean`: clean | 1,669,802 rows | Exact schema/key/value parity and original byte SHA. |
+| `p2-clean`: PIT | 1,629,398 rows | Exact schema/key/value parity and original byte SHA. |
+| `development-features` | 1,231,631 rows, 20 columns | Schema/key/value parity; different byte SHA, zero observed numerical deltas. |
+
+All 112 non-key columns report zero null, NaN and value mismatches. Ten synthetic Arrow/Polars controls passed before the real producers. Input identities were preserved before/after execution; development consumed the newly verified Part2C clean/PIT/registry artifacts. Read `FINAL_TECHNICAL_HANDOFF_VI.md`, `TEST_RESULTS.md`, and `release_evidence/windows_independent_review_20261119/INDEPENDENT_REVIEW.json`. The cloud review checked returned records/hashes, not the inaccessible raw Parquet files directly.
+
+## Supported execution workflow
+
+The supported entry point is `run.py`; no scientific execution occurs on import. These code/metadata commands require only the standard library:
+
+```text
+python -B run.py plan
+python -B run.py validate --out ../BFT65B_SOURCE_CHECK_NEW
+```
+
+For a separately needed reviewer checkpoint replay using the same verified Windows layout, extract the whole ZIP and double-click `BAM_CHAY_REPRO_CODE_CUOI.cmd`, or run:
+
+```text
+python -B run.py replay --out ../BFT65B_CHECKPOINT_REPLAY_NEW
+python -B run.py replay --profile "%USERPROFILE%" --python-engineering "%USERPROFILE%/miniconda3/python.exe" --out "C:/BFT65B_REPLAY_NEW"
+```
+
+These example paths must refer to the reviewer's existing verified inputs/interpreter. Relative input paths in `config/default.json` resolve under `--profile`/USERPROFILE, never the current working directory. An external copy of the config may override input paths only:
+
+```text
+python -B run.py replay --config "C:/BFT65B_CONFIG/input_paths.json" --out "C:/BFT65B_REPLAY_NEW"
+```
+
+Every output directory must be new, outside source/input roots. The controller selects the exact existing engineering environment, runs comparator controls, then only `p2-base`, `p2-clean` and `development-features`. No installation/download occurs. Missing input/cache/environment is BLOCKED; source/hash/schema/key/value discrepancy is FAIL. `train`, `fit`, `refit`, `grid`, model, threshold, scoring and download commands are disabled. Historical source must not be run manually to bypass these restrictions.
+
+The BAT retains all generated datasets locally under `%LOCALAPPDATA%/BFT65B_FINAL_CODE_REPLAY/<timestamp_uuid>` and exports only aggregate logs, hashes and comparison outputs as `_GUI_LAI_CHO_CODEX.zip`. An individual producer PASS requires completed schema/key/null/NaN/value comparisons and preserved input hashes, not merely exit code zero.
+
+## Stage order, source and closed evidence
+
+| Scope | Canonical source | Evidence/execution policy |
+|---|---|---|
+| Acquisition, storage and typed preparation | `01_PART1_ACQUISITION_STORAGE/` | Source and prior snapshot/storage evidence retained; no fresh HTTP acquisition. |
+| Base panel | `02_PART2_DATA_QUALITY_PANEL/code/02_build_panel_base.py` | New native Windows replay verified. |
+| Exit/insurance evidence | `02b_collect_exit_evidence.py` in the same directory | Original verified Step2B checkpoint is retained; no repeat. |
+| Clean/PIT producer | `02c_finalize_panel.py` in the same directory | New offline native Windows replay verified using read-only original cache. |
+| Polars, pandas, Spark SQL and fair benchmarks | `03_PART3_SCALABLE_PROCESSING/code/` | Previously verified native Windows scope/aggregate comparisons/plans retained; not repeated. |
+| Development feature/cohort producer | `04_PART4_FEATURE_PIPELINE/code/part4_v2_relabel_asof_gate.py` | New production-only Windows replay verified. Closed oracle/canary checks were skipped. |
+| Baseline, LR/HGB, selection, policy, MLlib, refit/lock and original one-time scorer | `05_PART5_MODELLING_VALIDATION/code/` | Complete source and protocol retained for inspection; no new fitting/scoring. |
+| Completed late ablation and posthoc CI | `completed_analyses/` | Executed source/config and aggregate evidence preserved; private row-level inputs remain external. No repeat. |
+
+`config/stages.json` is the complete registry; exact historical CLI interfaces and dependency order are in `docs/EXECUTION_GUIDE.md`. Intentional same-folder factory/protocol copies are included for module discovery. Original code provenance and minimal earlier release patches are recorded in `release_evidence/`.
+
+## Checkpoint lineage is not clean-room E2E
+
+New Part2A is compared with its original reference separately. Part2C preserves original Step2A/B signed metadata, because fresh paths/timestamps cannot impersonate those historical parents. Only verified Part2C outputs are consumed by development in the returned run; no fallback was used. Full acquisition → original search/refit → final scoring was not executed. Do not label this isolated checkpoint workflow E2E PASS.
+
+Raw clean/PIT input files span later periods even though the producer emits development-only rows; no claim is made that no later raw row group was physically scanned. Final-test cohort/score/model files were not dispatched to these source-pinned producers. Python guards supplement explicit paths and hashes; they are not an OS sandbox for every native library.
+
+## Environments, files and public submission
+
+Root `requirements.txt` selects `requirements/engineering-recorded.txt`. Existing engineering execution used Python 3.13.9, NumPy 2.5.4, pandas 3.1.1, Polars 2.1.0 and PyArrow 26.0.1. Original model-core Python 3.13.7 pins are separate; do not merge incompatible NumPy/pandas profiles. Actual observed metadata is included, but clean installation/resolution and a complete historical transitive/native-library lock remain unexecuted. See `requirements/README.md` and `config/environments.json`.
+
+`outputs/verification/` contains vetted aggregate outputs; `release_evidence/` contains actual commands, environments, input/output hashes and source snapshots. `config/source_manifest.json` protects execution source/config; `FILE_MANIFEST_SHA256.csv` covers all packaged files except itself. Returned Windows evidence refers to its exact original executed manifest, retained separately; updated stage-status metadata does not rewrite execution history.
+
+The public repository must exclude raw Parquet, private row-level predictions/OOF arrays, fitted models, cache bodies and duplicate evidence ZIPs. `.gitignore` explicitly permits the vetted root matrices and aggregate evidence. Local source assembly is verified; public URL/visibility/deadline are NOT VERIFIED and no commit/push was performed. Do not invent identity or a URL.
+
+## Sources and AI acknowledgment
+
+Data and definitions: FDIC BankFind Suite API (<https://api.fdic.gov/banks/docs/>) and bulk data (<https://banks.data.fdic.gov/bankfind-suite/bulkData>). The National Economics University BFT65B assignment and supplied starter code define the original task; retain original source headers and attribution. The original assignment digest is in `config/assignment_provenance.json`, with rubric scope in `docs/ASSIGNMENT_RUBRIC_SCOPE.md`. Library and method citation requirements are in `docs/CITATIONS_AND_AI.md`.
+
+OpenAI Codex assisted with technical audit, import/path repairs, evidence reconciliation, verification of the late development ablation, release workflow and independent review of returned Windows logs. Release work occurred on 18–19 November 2026. Preserve earlier AI disclosures; the student must review the work and cite sources/AI in the academic report as well. AI assistance is not a correctness or grade guarantee.
+
+Read `REPRODUCIBILITY_FINAL_AUDIT.md`, `STILL_UNRESOLVED.md`, `docs/SCIENTIFIC_LIMITATIONS.md` and `FINAL_RUBRIC_COMPLIANCE_MATRIX.csv`. Historical filing vintages, assumed operating costs and historical bootstrap provenance remain disclosed scientific limitations. The report and Part 6 have not been written or modified by this task.
+''')
+
+write('STILL_UNRESOLVED.md','''
+# Remaining limitations after verified Windows checkpoint replay
+
+## No further Windows rerun requested
+
+The returned 19 November 2026 run closes the three native producer gates: base, clean/PIT and development features. The ten comparator controls also ran successfully on Windows. Commands, environments, input/output hashes, all-column comparisons and parent lineage were independently inspected. No checkpoint fallback was used. Do not rerun R23, R24, ablation, selection, threshold, Part3 parity, CI or model/test metrics.
+
+The original cloud controls/preflight logs remain historically BLOCKED; they are not rewritten. Their missing-environment blocker was addressed by the successful actual Windows run. Raw Parquet remains on Windows and was not directly read or independently rehashed in the cloud review.
+
+## Reproduction/submission claims still limited
+
+- **Full clean-room E2E — NOT EXECUTED.** The permitted work is checkpoint replay; fresh acquisition, original grids/refit and one-time final scoring were not replayed. Current restrictions prohibit selected-model training and final-test inference. A scoped replay PASS cannot become full E2E PASS.
+- **Clean install/full historical environment — NOT EXECUTED.** Named pins and current observed distribution exports do not recover every historical native binary/transitive dependency or prove dependency resolution.
+- **Public repository — NOT VERIFIED.** Local source/ignore rules/content can be checked, but no public URL, visibility or deadline continuity was tested. No GitHub commit/push occurred.
+- **Academic report/Part 6 — outside this release.** Identity, first-page metadata, final report citations/AI acknowledgment and the previously oversized appendix must be handled separately. No report was edited.
+
+## Scientific disclosures remain necessary
+
+1. Historical publication/revision vintages are unavailable: retain the historical PIT limitation.
+2. The independently verified intervals are posthoc. Historical bootstrap producer/seed/draw provenance is still not recovered.
+3. FDIC COST is observed ex post; review fees, ratio r=20 and avoidability are assumptions. Threshold optimality is conditional on the specified development proxy/units; resolution cost is not causal preventable loss.
+4. Detected events 326/341 and approximately 40.98% COST-weighted recall have different denominators and meanings.
+5. The registered ablation was newly completed on 18 November 2026 after the original final-test lock. Preserve its late date and mixed fold outcomes; it cannot revise the frozen model or threshold.
+
+These are data/provenance limitations, assumptions or unexecuted submission checks, not newly identified model errors. No implementation defect was found in the returned producer/comparator evidence. The new release also fixes the root/nested aggregate CSV `.gitignore` whitelist, with a separate real ignore-rule check.
+''')
+
+# Retain original cloud outcomes explicitly while closing new Windows gates.
+p=NEW/'TEST_RESULTS.md';s=p.read_text();s=s.replace('# Kết quả kiểm tra code release — chốt ngày 19/11/2026','# Kết quả kiểm tra code release và Windows return — 19/11/2026')
+s=s.replace('**15 lần gọi kiểm tra được ghi log: 13 PASS, 2 BLOCKED, 0 FAIL.**','**15 command records cloud ban đầu: 13 PASS, 2 BLOCKED, 0 FAIL; giữ nguyên lịch sử.**')
+marker='## So sánh số đã có và còn thiếu'
+s=s[:s.index(marker)]+'''## Kết quả Windows mới đã kiểm độc lập
+
+Ngày 19/11/2026, ba producer thực sự chạy trong engineering Python 3.13.9 và đúng pins. Base 1.682.616, clean 1.669.802, PIT 1.629.398, development 1.231.631 dòng. 112 cột ngoài khóa có 0 null/NaN/value mismatch, max delta 0. Base/clean/PIT SHA trùng gốc; development SHA khác nhưng schema/key/value parity khớp. Development tiêu thụ đúng parent Part2C mới sau PASS, không fallback.
+
+10 Arrow/Polars synthetic controls đã thực thi trên Windows và kiểm tra độc lập các expected-positive/expected-negative outcomes. Vì vậy C05/C06 vẫn BLOCKED với môi trường cloud tại thời điểm cũ, còn các gates tương ứng đã có actual Windows execution mới. Không đổi status lịch sử.
+
+`release_evidence/windows_return_20261119/` giữ nguyên 56 files trong ZIP trả về. `windows_independent_review_20261119/INDEPENDENT_REVIEW.json` ghi actual audit command, environment, hashes trước/sau và các consistency checks. Đã kiểm 240 input-hash observations (237 unique identities), rehash 34 exported files có digests, kiểm prepared174/Step2B/cache frozen hashes và CSV so với toàn bộ JSON từng cột. Không đọc lại raw Parquet ở cloud. Các expected synthetic FAIL là controls được từ chối đúng, không phải FAIL của bank datasets.
+
+## So sánh prior và hiện tại
+
+`PRIOR_NUMERICAL_COMPARISON.csv` giữ 9 so sánh Part3/1.089 aggregate rows đã đóng, không tính lại. `NEW_PRODUCER_REPLAY_STATUS.csv`, `WINDOWS_REPLAY_DATASET_COMPARISON.csv` và `WINDOWS_REPLAY_COLUMN_COMPARISON.csv` đã cập nhật bằng kết quả Windows thật. Không còn gate yêu cầu bạn chạy lại ba producers. Full clean-room E2E vẫn NOT EXECUTED.
+
+Các metadata-validation/publication-ignore checks của bản đóng gói cập nhật được ghi riêng trong `EXECUTION_LOG_INDEX.csv`; không phải rerun khoa học.
+'''
+p.write_text(s,encoding='utf-8')
+
+p=NEW/'REPRODUCIBILITY_FINAL_AUDIT.md';s=p.read_text()
+s=s.replace('**Chưa có bằng chứng chạy thành công ba producer mới trên Windows; chưa đạt full clean-room E2E PASS.**','**Ba producer mới đã chạy trên Windows và returned evidence đã qua đối chiếu độc lập; full clean-room E2E vẫn NOT EXECUTED.**')
+s=s.replace('Native Windows replay', 'Native Windows replay')
+s=s.replace('Source release đủ để giao review và chạy bộ replay giới hạn. Chỉ sau khi nhận và đọc độc lập ZIP Windows mới được đóng các producer gates; không gọi bộ này đã tái tạo toàn bộ dự án end to end.', 'Source release đã có actual Windows checkpoint replay và independent returned-evidence review. Ba producer gates được đóng ngày 19/11/2026. Không yêu cầu rerun; không gọi bộ này đã clean-room tái tạo toàn bộ dự án end to end. Chi tiết mới và hashes trong FINAL_TECHNICAL_HANDOFF_VI.md và release_evidence/windows_independent_review_20261119/.')
+s+='''
+\n## Bổ sung sau nhận actual Windows return
+
+56 files của ZIP return được giữ nguyên bytes. Source manifest thực thi trùng SHA 161f2df8be6175e71cfc020ba1291d35f2ac857b54befd0773d485189edba88b và actual config trùng bản đã giao. 174 prepared identities, Step2B và cache-body hashes khớp. Toàn bộ 112 non-key column comparisons báo delta/mismatch 0; key checks không duplicate/null/missing/unexpected. Ba panel SHA trùng nguyên bản; development chỉ có byte SHA khác. Đã rehash 34 exported outputs; 240 input-hash observations trước/sau nhất quán. Development dùng parent mới đã verified; không fallback.
+
+Returned evidence được đọc và cross-check độc lập, không coi nhãn PASS tự nó là bằng chứng. Raw Parquet không được gửi hoặc trực tiếp đọc lại tại cloud. Không phát hiện code/runtime discrepancy trong scope đã kiểm; không có cơ sở yêu cầu chạy lại closed checks. Current stage metadata được cập nhật ở bản copy mới; original executed manifest/registry được lưu riêng, không backdate.
+
+Sửa thêm một packaging defect: global *.csv ignore từng che các root matrices và nested aggregate evidence. Bản này whitelist rõ các CSV đã vetted; kiểm tra actual Git ignore rules chỉ đọc, không commit/push hoặc remote access.
+'''
+p.write_text(s,encoding='utf-8')
+
+p=NEW/'docs/REPRODUCIBILITY_LIMITATIONS.md';s=p.read_text();s=s.replace('**The three new producer replays are PENDING actual Windows execution and independent inspection. Full clean-room end-to-end reproduction is NOT EXECUTED.**','**All three new producer replays were completed on Windows and independently reviewed on 19 November 2026. Full clean-room end-to-end reproduction is NOT EXECUTED.**')
+s=s.replace('| PENDING Windows |','| VERIFIED Windows return |')
+s+='\nThe final returned run used fresh verified Part2C outputs for development, without fallback. Detailed hashes and all-column comparisons are preserved in `release_evidence/windows_return_20261119/`; independent inspection is in the adjacent review directory. No additional user rerun is required.\n'
+p.write_text(s,encoding='utf-8')
+
+p=NEW/'CHANGELOG.md';s=p.read_text();s=s.replace('The new native producer comparison is still pending actual Windows execution and independent inspection. Full clean-room E2E is NOT EXECUTED.', 'The new native producer comparison was completed on Windows and independently inspected on 19 November 2026. Full clean-room E2E is NOT EXECUTED.')
+s+='''
+\n## Verified return update — 19 November 2026
+
+- Preserved the uploaded return as 56 individual unmodified evidence files; independently checked config/source identity, actual runtime/commands, frozen input hashes, before/after preservation, controls, all-column parity and new-parent lineage.
+- Closed p2-base, p2-clean and development-features checkpoint replay gates. Updated status tables, README/rubric/remaining-limitations documentation. Kept all historical cloud BLOCKED records intact.
+- Kept scientific and workflow Python source bytes unchanged from the executed release. Updated status metadata and source/package manifests in a new directory; retained the exact executed manifest separately.
+- Fixed `.gitignore` to permit vetted root CSV matrices and nested aggregate return/review CSVs. Raw-data/model ignore rules remain active; verify with actual read-only Git ignore checks.
+- No R23/R24/ablation/model/CI/test metrics were rerun. No new selected-model fit, threshold change, final scoring, GitHub commit/push, report edit or Part 6 work occurred.
+'''
+p.write_text(s,encoding='utf-8')
+
+write('release_evidence/PUBLICATION_IGNORE_CHECK.py.txt','''
+"""Read-only real Git ignore checks. Never initializes/commits/pushes a repo."""
+from pathlib import Path
+import argparse,hashlib,json,platform,subprocess,sys
+ap=argparse.ArgumentParser();ap.add_argument('--root',type=Path,required=True);args=ap.parse_args();root=args.root.resolve()
+visible=['FINAL_RUBRIC_COMPLIANCE_MATRIX.csv','FILE_MANIFEST_SHA256.csv','EXECUTION_LOG_INDEX.csv','release_evidence/windows_return_20261119/NUMERICAL_COMPARISON.csv','release_evidence/windows_return_20261119/STAGE_STATUS.csv','release_evidence/windows_independent_review_20261119/DATASET_COMPARISON.csv','release_evidence/windows_independent_review_20261119/WINDOWS_INPUT_IDENTITIES.csv','run.py','requirements.txt']
+ignored=['private/a.parquet','a.parquet','a.joblib','a.npz','unvetted_raw_rows.csv','evidence_dump.zip']
+results=[]
+for name,want in [(n,False) for n in visible]+[(n,True) for n in ignored]:
+ command=['git','--git-dir=/workspace/.git','--work-tree='+str(root),'check-ignore','--no-index','-q','--',name]
+ p=subprocess.run(command,cwd=root,capture_output=True,text=True)
+ ok=p.returncode in [0,1] and (p.returncode==0)==want
+ results.append(dict(path=name,expected_ignored=want,exit_code=p.returncode,status='PASS' if ok else 'FAIL',command=command,stderr=p.stderr))
+result=dict(status='PASS' if all(x['status']=='PASS' for x in results) else 'FAIL',results=results,git_version=subprocess.check_output(['git','--version'],text=True).strip(),python=platform.python_version(),ignore_sha256=hashlib.sha256((root/'.gitignore').read_bytes()).hexdigest(),scope='Read-only local check-ignore, no init/commit/push/network; non-existent sentinel filenames do not create data')
+(root/'release_evidence/PUBLICATION_IGNORE_RESULT.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
+print(json.dumps(result,indent=2));sys.exit(0 if result['status']=='PASS' else 1)
+''')
+cases=read(NEW/'config/release_tests.json')
+cases.append(dict(id='C16_VERIFIED_RELEASE_METADATA_VALIDATION',command=['{python}','-B','run.py','validate','--out','/workspace/work/BFT65B_VERIFIED_RELEASE_SOURCE_VALIDATION_20261119'],inputs=['run.py','workflow/engine.py','config/source_manifest.json','config/stages.json'],outputs=['/workspace/work/BFT65B_VERIFIED_RELEASE_SOURCE_VALIDATION_20261119/VALIDATION_RESULT.json'],scope='Source/config/protocol validation after status-only metadata changes; no producer or model rerun'))
+cases.append(dict(id='C17_PUBLICATION_IGNORE_RULES',command=['{python}','-B','{root}/release_evidence/PUBLICATION_IGNORE_CHECK.py.txt','--root','{root}'],inputs=['.gitignore','release_evidence/PUBLICATION_IGNORE_CHECK.py.txt'],outputs=['{root}/release_evidence/PUBLICATION_IGNORE_RESULT.json'],scope='Actual read-only Git check-ignore: vetted root/nested aggregate CSVs visible, raw/model/archive sentinels ignored; no GitHub action'))
+write('config/release_tests.json',json.dumps(cases,indent=2))
+
+# Preserve original code and reference identities exactly, refreshing status/test metadata only.
+manifest=read(OLD/'config/source_manifest.json')
+for name,oldh in manifest.items():
+    if Path(name).suffix=='.py':assert sha(NEW/name)==oldh, 'Scientific/workflow source changed: '+name
+manifest={name:sha(NEW/name) for name in manifest}
+write('config/source_manifest.json',json.dumps(manifest,indent=2))
+print(json.dumps(dict(new_directory=str(NEW),science_and_workflow_python='UNCHANGED',source_manifest_entries=len(manifest),windows_evidence_files=len(list(RET.rglob('*')))),indent=2))

@@ -1,0 +1,16 @@
+{
+  "status": "VERIFIED_WINDOWS_RAW_TO_DEVELOPMENT_WITH_INDEPENDENT_RETURN_REVIEW",
+  "execution_date": "2026-11-19",
+  "execution_id": "20261119_192500_59bdf85e",
+  "source_archive_sha256": "5dcd3b3c1faf9e520b2e8f5db7419d32717172147ba980d61bda8129fe2f31f4",
+  "executed_source_manifest_sha256": "e9fc39a0cc14cebda64c359cad8dd7cab3eaa251ff8f64fe988d9ef77f9d091e",
+  "windows_unit_tests": 45,
+  "datasets": 179,
+  "byte_identical_datasets": 178,
+  "compared_nonkey_columns": 5401,
+  "full_clean_room_E2E": "NOT_EXECUTED",
+  "live_acquisition": "NOT_EXECUTED",
+  "model_selection_refit_scoring": "NOT_EXECUTED",
+  "evidence": "release_evidence/continuous_independent_review_20261119/INDEPENDENT_VERIFICATION.json",
+  "boundary": "Returned logs/hashes/commands/complete comparisons independently checked. Raw Parquet and native producer metadata remain on Windows."
+}

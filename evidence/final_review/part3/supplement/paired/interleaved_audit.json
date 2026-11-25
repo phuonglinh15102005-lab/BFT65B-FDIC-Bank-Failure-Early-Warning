@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "warmups": 3,
+  "measured_rounds": 12,
+  "schedule": "random order of 9 engine/task combinations inside each round",
+  "parity": "outside timed block on each run; original Step 01 reference and fixed source hashes",
+  "caveats": [
+    "OS caches remain warm",
+    "Individual process startup is not included in timing",
+    "Separate subprocesses may cause system-level interference",
+    "No cold-cache randomization",
+    "Bootstrap resamples paired rounds; not independent OS state trials",
+    "Cold-process but warm OS cache: not Step05 steady-state timings",
+    "The pandas sensitivity baseline is moderately optimized; it still performs full-date conversion/copy for calendar joins"
+  ],
+  "outputs": [
+    "interleaved_trials.csv",
+    "interleaved_summary.csv",
+    "randomized_schedule.csv",
+    "paired_speedup_bootstrap.csv"
+  ]
+}

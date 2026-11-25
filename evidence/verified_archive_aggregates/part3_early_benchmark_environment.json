@@ -1,0 +1,83 @@
+{
+  "project": "BFT65B FDIC Part 3",
+  "stage": "03 controlled local Polars/pandas benchmark",
+  "recorded_at_utc": "2026-11-11T03:07:03+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.13.9",
+  "logical_cpus": 12,
+  "physical_cpus": 10,
+  "total_ram_gib": 15.57,
+  "configured_compute_threads": 4,
+  "warmups_per_timing_worker": 1,
+  "timed_iterations_per_worker": 7,
+  "memory_measurement_runs": 2,
+  "measurement_method": "Separate fresh child per engine/task/mode. Timings: whole task including Parquet read, transformations, final materialization; exclude imports, CSV conversion, verification, output writing, process startup. Each query re-reads Parquet; one or more warmups precede timing. Memory: separate fresh child per engine/task, 10-ms sampled Python RSS over warmup plus one execution, including retained allocator memory. Host OS filesystem cache is NOT flushed.",
+  "libraries": {
+    "polars": "2.1.0",
+    "pandas": "3.1.1",
+    "numpy": "2.5.4",
+    "pyarrow": "26.0.1",
+    "psutil": "7.2.2"
+  },
+  "dependency_scripts_sha256": {
+    "01_polars_core.py": "b44ce5c4f36cd79f6d3761b1772cf2320a55221aecc35277980ab9c41e35b49a",
+    "02_pandas_parity.py": "a253771553de1b754794f54549397c0f0c9cb5e4fcad8671b2ac1d0ce2e9e38f",
+    "03_benchmark_local.py": "dca0168526bdf75c1551f99dd70afda79acb3c82e6349ecbbb408b13bfb88ec2"
+  },
+  "input_files": {
+    "clean": {
+      "name": "panel_clean.parquet",
+      "bytes": 148079236,
+      "sha256": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107"
+    },
+    "pit": {
+      "name": "panel_pit_base.parquet",
+      "bytes": 144394972,
+      "sha256": "3fce669406ff1898ac85d9c41c6385b7f8c6b27e29ecd041bb0a3c59f6337421"
+    }
+  },
+  "approved_evidence": {
+    "polars_zip": {
+      "name": "part3_step01_polars_evidence.zip",
+      "sha256": "bd6282e261486bfa69c7f71cd2d95bce2b7622f8a491340cb7e92b7415ea8f97"
+    },
+    "pandas_zip": {
+      "name": "part3_step02_pandas_parity_evidence.zip",
+      "sha256": "3851b0b30feeb00722120d2874a893a582c6e0cfed803895e2c973694ac78b3d"
+    }
+  },
+  "limitations": [
+    "Benchmarks run on one laptop and on a warm OS file cache, not cold disk",
+    "pandas groupby and Polars lazy query have different execution models",
+    "PyArrow Parquet read may use multiple threads; pandas groupby is a baseline",
+    "CPU affinity, thermal throttling and background Windows load are not controlled",
+    "RSS samples can miss short spikes and include retained memory; not heap allocation",
+    "No Spark result or cluster extrapolation is warranted from this step alone"
+  ],
+  "schedule": [
+    {
+      "engine": "polars",
+      "task": "crisis_profile"
+    },
+    {
+      "engine": "pandas",
+      "task": "crisis_profile"
+    },
+    {
+      "engine": "polars",
+      "task": "calendar_lag"
+    },
+    {
+      "engine": "pandas",
+      "task": "calendar_lag"
+    },
+    {
+      "engine": "polars",
+      "task": "decision_profile"
+    },
+    {
+      "engine": "pandas",
+      "task": "decision_profile"
+    }
+  ]
+}

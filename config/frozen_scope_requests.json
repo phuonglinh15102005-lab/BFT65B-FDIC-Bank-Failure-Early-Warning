@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://api.fdic.gov/banks/financials?filters=REPDTE%3A%5B19840331+TO+20260630%5D&fields=CERT%2CREPDTE&limit=10000&offset=0&sort_by=REPDTE&sort_order=ASC&format=json",
+    "sha256": "45e2e98ee48d4b5d01127b726c3f3a3e1d3605bf25ddf4f5ff7f5c4af1aba943"
+  },
+  {
+    "url": "https://api.fdic.gov/banks/financials?filters=REPDTE%3A%5B19840331+TO+20260630%5D+AND+NOT+INSFDIC%3A1&fields=CERT%2CREPDTE%2CINSFDIC%2CBKCLASS%2CINSAGNT1&limit=10000&offset=0&sort_by=REPDTE&sort_order=ASC&format=json",
+    "sha256": "dc55ed8b1e674c58a06a746b22f39db4216362909e21d7536506291e1c215edf"
+  },
+  {
+    "url": "https://api.fdic.gov/banks/financials?filters=%28REPDTE%3A%5B19840331+TO+20260630%5D+AND+NOT+INSFDIC%3A1%29+AND+%28REPDTE%3A%5B%2A+TO+20001231%5D%29&fields=CERT%2CREPDTE%2CINSFDIC%2CBKCLASS%2CINSAGNT1&limit=10000&offset=0&sort_by=REPDTE&sort_order=ASC&format=json",
+    "sha256": "8b367fb5f48b05c9b216b484e648dcef1769f2ee909bc168957cf351d127b9c6"
+  },
+  {
+    "url": "https://api.fdic.gov/banks/financials?filters=%28REPDTE%3A%5B19840331+TO+20260630%5D+AND+NOT+INSFDIC%3A1%29+AND+NOT+%28REPDTE%3A%5B%2A+TO+20001231%5D%29&fields=CERT%2CREPDTE%2CINSFDIC%2CBKCLASS%2CINSAGNT1&limit=10000&offset=0&sort_by=REPDTE&sort_order=ASC&format=json",
+    "sha256": "b1721f6b9062e8fe5ecdac848a28370bb0aaf22939c3f13c27d45edfc944c9c9"
+  }
+]

@@ -1,0 +1,100 @@
+{
+  "status": "PASS_POSTHOC_NUMERICAL_CHECK_ONLY",
+  "method": {
+    "analysis": "NEW_POSTHOC_DEVELOPMENT_PAIRED_CERT_BOOTSTRAP",
+    "seed": 20261117,
+    "draws": 1500,
+    "aggregate": "unweighted mean AP of the three registered folds",
+    "sampling": "One CERT-universe multinomial draw shared across all families and all folds; all observations of one CERT receive same multiplicity",
+    "interval": "marginal unadjusted percentile 2.5/97.5; exclude entire replicate if any fold has zero weighted positives",
+    "comparisons": [
+      "HGB minus LR",
+      "HGB minus equity"
+    ],
+    "scope": "Conditional on selected archived candidates and fixed OOF predictions; not selection-adjusted, not historical CI recovery, no temporal block bootstrap or training/test inference"
+  },
+  "universe_CERTs": 19136,
+  "rows": 304598,
+  "valid_draws": 1500,
+  "invalid_draws": 0,
+  "point_mean_AP": {
+    "HGB": 0.29576629263614845,
+    "LR": 0.24976137930453154,
+    "equity": 0.1814676655250236
+  },
+  "point_difference": {
+    "HGB_minus_LR": 0.04600491333161691,
+    "HGB_minus_equity": 0.11429862711112485
+  },
+  "percentile95_CI": {
+    "HGB_minus_LR": [
+      0.03254216973311228,
+      0.06115754117484855
+    ],
+    "HGB_minus_equity": [
+      0.09127865455344318,
+      0.13828697445032348
+    ]
+  },
+  "input_sha256_before": {
+    "01_baseline/baseline_development_oof.csv": "1d7c9bc3d56618ddc541a57f5d7dcccd0173c47d7467314e338d8916b1c75860",
+    "01_baseline/baseline_fold_metrics.csv": "1fc6495abd33bfa8f4f926389c7b5557537b3a51f00ef98fc13fa527d1917deb",
+    "01_baseline/part5_step01_audit.json": "2807e1345780bffcbc739a3f0269518e92ca5f70851b10c0dc47a179b1999430",
+    "02A_logistic/fold_keys/early_bank_stress.npz": "71655c894d31eaa64413ec49be1a20b7c44fced38a3512bb91e4f3faeb798280",
+    "02A_logistic/fold_keys/global_financial_crisis.npz": "ec51b124acfb89a0ba83e8ecab05dd1870411b7f3a8ccfb78c5c52d79e0d0a33",
+    "02A_logistic/fold_keys/post_stress_transition.npz": "44bb994b010c07b487005b0504251dca58e3a1a2a2f29967b1d494cf9d6372cf",
+    "02A_logistic/logistic_candidate_fold_metrics.csv": "e36378195ca396616ef0900089cf05a6c5bbdf98996b0101f24b3ef718f8eaf9",
+    "02A_logistic/logistic_candidate_summary.csv": "fa0ba2d588f3903a47aba5d648b3a633b0e3ed1b7a1d603ed97258d4e1a2e851",
+    "02A_logistic/part5_step02a_audit.json": "1e5ffc4f1491280d7dfb0228a6735d06e57d75ad1fa7fe32eae5f60e58a1fabb",
+    "02A_logistic/predictions/LR_C0p1_Wnone_CLq01_99__early_bank_stress.npz": "63bb69075488faba7b8da74cd7d03480a587b20104703b99f860e150e2deedc3",
+    "02A_logistic/predictions/LR_C0p1_Wnone_CLq01_99__global_financial_crisis.npz": "13c33770fcd3f19a5e1cf135a3757c81db5dc716af7466d54aa1d04d75a78f4a",
+    "02A_logistic/predictions/LR_C0p1_Wnone_CLq01_99__post_stress_transition.npz": "3720e35bd1f20af79302f73f4a0726d044268177bddd35dacfb8fcf87c6c4975",
+    "02B_hgb/fold_keys/early_bank_stress.npz": "71655c894d31eaa64413ec49be1a20b7c44fced38a3512bb91e4f3faeb798280",
+    "02B_hgb/fold_keys/global_financial_crisis.npz": "ec51b124acfb89a0ba83e8ecab05dd1870411b7f3a8ccfb78c5c52d79e0d0a33",
+    "02B_hgb/fold_keys/post_stress_transition.npz": "44bb994b010c07b487005b0504251dca58e3a1a2a2f29967b1d494cf9d6372cf",
+    "02B_hgb/hgb_candidate_fold_metrics.csv": "c1c1571173f3aa72e27fc840c99c705c9226c64e3ff01eec8edbcd1b59764385",
+    "02B_hgb/hgb_candidate_summary.csv": "8f0dc2879cb152be3021bbb1238a7747bbf4673554dd44e6b7561ea1ba35a68d",
+    "02B_hgb/part5_step02b_audit.json": "9ded251be492ccac2d4f6bf9d506fe099b6d1b9cddbb4f8045ee1d74cbf3851d",
+    "02B_hgb/predictions/HGB_L15_LR0p05_I150_L21_CLnone__early_bank_stress.npz": "89cc0284952ead2b5004b08c8d7a151a0d5b5f3c2a2d7cbc931de88c3cd89678",
+    "02B_hgb/predictions/HGB_L15_LR0p05_I150_L21_CLnone__global_financial_crisis.npz": "82e6d4713cab95eb332567a2df89eeb5c452e99c0f3483ef65ca3e46d38dcea8",
+    "02B_hgb/predictions/HGB_L15_LR0p05_I150_L21_CLnone__post_stress_transition.npz": "b7ba325c1559284913543ce70857e58874e9b3ec93d88ebd88113347efb238c9"
+  },
+  "input_sha256_after": {
+    "01_baseline/baseline_development_oof.csv": "1d7c9bc3d56618ddc541a57f5d7dcccd0173c47d7467314e338d8916b1c75860",
+    "01_baseline/baseline_fold_metrics.csv": "1fc6495abd33bfa8f4f926389c7b5557537b3a51f00ef98fc13fa527d1917deb",
+    "01_baseline/part5_step01_audit.json": "2807e1345780bffcbc739a3f0269518e92ca5f70851b10c0dc47a179b1999430",
+    "02A_logistic/fold_keys/early_bank_stress.npz": "71655c894d31eaa64413ec49be1a20b7c44fced38a3512bb91e4f3faeb798280",
+    "02A_logistic/fold_keys/global_financial_crisis.npz": "ec51b124acfb89a0ba83e8ecab05dd1870411b7f3a8ccfb78c5c52d79e0d0a33",
+    "02A_logistic/fold_keys/post_stress_transition.npz": "44bb994b010c07b487005b0504251dca58e3a1a2a2f29967b1d494cf9d6372cf",
+    "02A_logistic/logistic_candidate_fold_metrics.csv": "e36378195ca396616ef0900089cf05a6c5bbdf98996b0101f24b3ef718f8eaf9",
+    "02A_logistic/logistic_candidate_summary.csv": "fa0ba2d588f3903a47aba5d648b3a633b0e3ed1b7a1d603ed97258d4e1a2e851",
+    "02A_logistic/part5_step02a_audit.json": "1e5ffc4f1491280d7dfb0228a6735d06e57d75ad1fa7fe32eae5f60e58a1fabb",
+    "02A_logistic/predictions/LR_C0p1_Wnone_CLq01_99__early_bank_stress.npz": "63bb69075488faba7b8da74cd7d03480a587b20104703b99f860e150e2deedc3",
+    "02A_logistic/predictions/LR_C0p1_Wnone_CLq01_99__global_financial_crisis.npz": "13c33770fcd3f19a5e1cf135a3757c81db5dc716af7466d54aa1d04d75a78f4a",
+    "02A_logistic/predictions/LR_C0p1_Wnone_CLq01_99__post_stress_transition.npz": "3720e35bd1f20af79302f73f4a0726d044268177bddd35dacfb8fcf87c6c4975",
+    "02B_hgb/fold_keys/early_bank_stress.npz": "71655c894d31eaa64413ec49be1a20b7c44fced38a3512bb91e4f3faeb798280",
+    "02B_hgb/fold_keys/global_financial_crisis.npz": "ec51b124acfb89a0ba83e8ecab05dd1870411b7f3a8ccfb78c5c52d79e0d0a33",
+    "02B_hgb/fold_keys/post_stress_transition.npz": "44bb994b010c07b487005b0504251dca58e3a1a2a2f29967b1d494cf9d6372cf",
+    "02B_hgb/hgb_candidate_fold_metrics.csv": "c1c1571173f3aa72e27fc840c99c705c9226c64e3ff01eec8edbcd1b59764385",
+    "02B_hgb/hgb_candidate_summary.csv": "8f0dc2879cb152be3021bbb1238a7747bbf4673554dd44e6b7561ea1ba35a68d",
+    "02B_hgb/part5_step02b_audit.json": "9ded251be492ccac2d4f6bf9d506fe099b6d1b9cddbb4f8045ee1d74cbf3851d",
+    "02B_hgb/predictions/HGB_L15_LR0p05_I150_L21_CLnone__early_bank_stress.npz": "89cc0284952ead2b5004b08c8d7a151a0d5b5f3c2a2d7cbc931de88c3cd89678",
+    "02B_hgb/predictions/HGB_L15_LR0p05_I150_L21_CLnone__global_financial_crisis.npz": "82e6d4713cab95eb332567a2df89eeb5c452e99c0f3483ef65ca3e46d38dcea8",
+    "02B_hgb/predictions/HGB_L15_LR0p05_I150_L21_CLnone__post_stress_transition.npz": "b7ba325c1559284913543ce70857e58874e9b3ec93d88ebd88113347efb238c9"
+  },
+  "code_sha256": "9006463c19f50ab34558625dc908fd178b7a441f9221762662d9b0c5c23e2211",
+  "elapsed_seconds": 19.224559193999994,
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  },
+  "not_established": [
+    "original historical bootstrap reproduction",
+    "selection-adjusted confidence",
+    "registered ablation execution",
+    "historical filing vintage",
+    "full E2E"
+  ],
+  "no_model_training_or_test_access": true
+}

@@ -1,0 +1,15 @@
+"""Read-only real Git ignore checks. Never initializes/commits/pushes a repo."""
+from pathlib import Path
+import argparse,hashlib,json,platform,subprocess,sys
+ap=argparse.ArgumentParser();ap.add_argument('--root',type=Path,required=True);args=ap.parse_args();root=args.root.resolve()
+visible=['FINAL_RUBRIC_COMPLIANCE_MATRIX.csv','FILE_MANIFEST_SHA256.csv','EXECUTION_LOG_INDEX.csv','release_evidence/windows_return_20261119/NUMERICAL_COMPARISON.csv','release_evidence/windows_return_20261119/STAGE_STATUS.csv','release_evidence/windows_independent_review_20261119/DATASET_COMPARISON.csv','release_evidence/windows_independent_review_20261119/WINDOWS_INPUT_IDENTITIES.csv','run.py','requirements.txt']
+ignored=['private/a.parquet','a.parquet','a.joblib','a.npz','unvetted_raw_rows.csv','evidence_dump.zip']
+results=[]
+for name,want in [(n,False) for n in visible]+[(n,True) for n in ignored]:
+ command=['git','--git-dir=/workspace/.git','--work-tree='+str(root),'check-ignore','--no-index','-q','--',name]
+ p=subprocess.run(command,cwd=root,capture_output=True,text=True)
+ ok=p.returncode in [0,1] and (p.returncode==0)==want
+ results.append(dict(path=name,expected_ignored=want,exit_code=p.returncode,status='PASS' if ok else 'FAIL',command=command,stderr=p.stderr))
+result=dict(status='PASS' if all(x['status']=='PASS' for x in results) else 'FAIL',results=results,git_version=subprocess.check_output(['git','--version'],text=True).strip(),python=platform.python_version(),ignore_sha256=hashlib.sha256((root/'.gitignore').read_bytes()).hexdigest(),scope='Read-only local check-ignore, no init/commit/push/network; non-existent sentinel filenames do not create data')
+(root/'release_evidence/PUBLICATION_IGNORE_RESULT.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
+print(json.dumps(result,indent=2));sys.exit(0 if result['status']=='PASS' else 1)

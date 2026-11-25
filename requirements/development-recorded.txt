@@ -1,0 +1,8 @@
+# Historical model/development record; no model execution by release workflow.
+# Python==3.13.7; NOT a complete historical transitive lock.
+numpy==2.3.3
+pandas==2.3.3
+scikit-learn==1.9.0
+joblib==1.5.2
+polars==2.1.0
+pyarrow==26.0.1

@@ -1,0 +1,21 @@
+{
+  "type": "digest-only certificate transcribed and rehashed from archived JSONs; original model/score/cohort bytes are not included",
+  "archive_name": "BFT65B_CODEX_EVIDENCE_SUPPLEMENT.zip",
+  "lock_json_sha256": "919c84d44f4fcdf9a98bc83fd1d9fcd0315fe8c841ed579dc17f74314c3cdc6e",
+  "test_claim_json_sha256": "c49980b94729356a8036bd3ad9c37d77fc475ecaf3fcc6e56f36b51a01ffb0ea",
+  "test_audit_json_sha256": "2cf5c8d331426914fbba75229fe9759b8a7df123800ac5b306275ca1eede13ff",
+  "hash_chain_verified": {
+    "claim_references_lock_sha256": true,
+    "audit_references_lock_sha256": true,
+    "audit_references_claim_sha256": true
+  },
+  "claim_utc": "2026-11-15T02:20:39.220108+00:00",
+  "audit_utc": "2026-11-15T02:21:10.247182+00:00",
+  "model_artifact_sha256_reference": "0dac159b4400fa16f06de0918c012dc62fa80d4f7c0a117357b2251d82615b03",
+  "test_cohort_sha256_reference": "15ee908a4faf197dba8787821b8fd83bf2c7de5da2a325939b5b5e078a348298",
+  "protocol_sha256_reference": "994f72de6e2446916db8c2fcd36847c45cc68eb6fef5ef67f07acc0476c6d911",
+  "frozen_threshold": 0.023971438944668057,
+  "audit_predict_proba_calls": 1,
+  "audit_hyperparameters_or_threshold_changed": false,
+  "scope": "retrospective saved-file verification; no live source or model test re-run; exclusive guard scoped to specific output path"
+}

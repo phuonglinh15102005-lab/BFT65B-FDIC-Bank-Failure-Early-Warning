@@ -1,0 +1,34 @@
+Continuous preflight: checking original snapshot/cache/reference identities...
+SEND_THIS_ZIP /tmp/tmpvbezv7eo/new_GUI_LAI_CHO_CODEX.zip
+Continuous preflight: checking original snapshot/cache/reference identities...
+CONTINUOUS_STAGE base
+CONTINUOUS_STAGE_RESULT base FAIL
+SEND_THIS_ZIP /tmp/tmp1_73raei/new_GUI_LAI_CHO_CODEX.zip
+/tmp/tmp8c1_pr1o/working
+/tmp/p7audit/clone/tests/test_continuous_contracts.py:26: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='utf-8'>
+  code=stream_command([sys.executable,'-B','-c','import os; print(os.getcwd())'],logs,{**os.environ,'PYTHONDONTWRITEBYTECODE':'1'},cwd=cwd)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+
+STAGE p2-base
+STAGE_RESULT p2-base BLOCKED
+
+STAGE p2-clean
+STAGE_RESULT p2-clean BLOCKED
+
+STAGE development-features
+STAGE_RESULT development-features BLOCKED
+SEND_THIS_ZIP /tmp/tmpnrddr9wj/new_output_GUI_LAI_CHO_CODEX.zip
+
+STAGE p2-base
+STAGE_RESULT p2-base BLOCKED
+
+STAGE p2-clean
+STAGE_RESULT p2-clean BLOCKED
+
+STAGE development-features
+STAGE_RESULT development-features BLOCKED
+SEND_THIS_ZIP /tmp/tmpkftmwbtr/new_output_GUI_LAI_CHO_CODEX.zip
+----------------------------------------------------------------------
+Ran 45 tests in 0.142s
+
+OK

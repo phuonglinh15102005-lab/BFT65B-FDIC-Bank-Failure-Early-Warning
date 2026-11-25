@@ -1,0 +1,43 @@
+{
+  "engineering": {
+    "python": "3.13.9",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "3.1.1",
+      "polars": "2.1.0",
+      "pyarrow": "26.0.1"
+    },
+    "candidate_profile_relative_executables": [
+      "miniconda3/python.exe",
+      "anaconda3/python.exe"
+    ],
+    "scope": "Existing observed engineering environment for data-only producers,not model fitting"
+  },
+  "model-recorded": {
+    "python": "3.13.7",
+    "packages": {
+      "numpy": "2.3.3",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.9.0",
+      "joblib": "1.5.2",
+      "polars": "2.1.0",
+      "pyarrow": "26.0.1"
+    },
+    "candidate_profile_relative_executables": [
+      "AppData/Local/Programs/Python/Python313/python.exe"
+    ],
+    "scope": "Recorded core plus observed data IO; all model execution disabled in this release"
+  },
+  "audit": {
+    "python": "3.12.14",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.8.0",
+      "joblib": "1.5.3",
+      "scipy": "1.17.0"
+    },
+    "candidate_profile_relative_executables": [],
+    "scope": "Cloud source/unit checks,not Windows producer evidence"
+  }
+}

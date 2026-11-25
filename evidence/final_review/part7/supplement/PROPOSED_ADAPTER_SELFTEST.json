@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "scope": "synthetic comparison controls against archived aggregate; no model or test executed",
+  "cases": [
+    {
+      "case": "equal_reordered",
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "case": "changed_fp_cert_years",
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "case": "changed_missed_failure_certs",
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "case": "changed_detected_failure_certs",
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "case": "changed_cert_year_alerts",
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "case": "changed_bank_quarter_alerts",
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "case": "changed_cost_units",
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "case": "changed_threshold",
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "case": "changed_COST_median_thousand_USD",
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "case": "missing_ratio",
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "case": "duplicate_ratio",
+      "accepted": false,
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+Continuous preflight: checking original snapshot/cache/reference identities...
+SEND_THIS_ZIP /tmp/tmp7g7aicfv/new_GUI_LAI_CHO_CODEX.zip
+Continuous preflight: checking original snapshot/cache/reference identities...
+CONTINUOUS_STAGE base
+CONTINUOUS_STAGE_RESULT base FAIL
+SEND_THIS_ZIP /tmp/tmpmejqawi6/new_GUI_LAI_CHO_CODEX.zip
+
+STAGE p2-base
+STAGE_RESULT p2-base BLOCKED
+
+STAGE p2-clean
+STAGE_RESULT p2-clean BLOCKED
+
+STAGE development-features
+STAGE_RESULT development-features BLOCKED
+SEND_THIS_ZIP /tmp/tmpzi1w_dg2/new_output_GUI_LAI_CHO_CODEX.zip
+
+STAGE p2-base
+STAGE_RESULT p2-base BLOCKED
+
+STAGE p2-clean
+STAGE_RESULT p2-clean BLOCKED
+
+STAGE development-features
+STAGE_RESULT development-features BLOCKED
+SEND_THIS_ZIP /tmp/tmp5pifghar/new_output_GUI_LAI_CHO_CODEX.zip

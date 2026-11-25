@@ -1,0 +1,43 @@
+{
+  "id": "C18_PUBLICATION_IGNORE_VALID_GIT_CONTEXT",
+  "status": "PASS",
+  "exit_code": 0,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119/release_evidence/PUBLICATION_IGNORE_CHECK.py.txt",
+    "--root",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119"
+  ],
+  "started_utc": "2026-11-19T01:32:19.776293+00:00",
+  "finished_utc": "2026-11-19T01:32:19.849528+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "polars": null,
+      "pyarrow": null,
+      "scikit-learn": "1.8.0",
+      "pyspark": null,
+      "joblib": "1.5.3",
+      "scipy": "1.17.0"
+    }
+  },
+  "input_sha256_before": {
+    ".gitignore": "9b1c2fa6cd9d7e569cea565b59f64539b40c0fc0a2839464bbb044590ef34701",
+    "release_evidence/PUBLICATION_IGNORE_CHECK.py.txt": "339aa350161761c2bb1fa79891337a0f5499a849d13386d38c7cc912752989a5"
+  },
+  "input_sha256_after": {
+    ".gitignore": "9b1c2fa6cd9d7e569cea565b59f64539b40c0fc0a2839464bbb044590ef34701",
+    "release_evidence/PUBLICATION_IGNORE_CHECK.py.txt": "339aa350161761c2bb1fa79891337a0f5499a849d13386d38c7cc912752989a5"
+  },
+  "output_sha256": {
+    "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "STDOUT.txt": "25194d586981a1ce1e5072de5a67785df5522099546a73c616bbaa0d29b13483",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119/release_evidence/PUBLICATION_IGNORE_RESULT_FINAL.json": "fc04906f0e20517bbeb0b3e2f60927b66e9542e1b53ffb5da655ff7c7a30b67b"
+  },
+  "scope": "Correct C17 harness prerequisite: ephemeral empty local Git context; read source ignore rules only; no commit/remote/push/network",
+  "new_model_fits": 0
+}

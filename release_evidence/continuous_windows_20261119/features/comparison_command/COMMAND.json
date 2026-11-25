@@ -1,0 +1,7 @@
+[
+  "%USERPROFILE%\\miniconda3\\python.exe",
+  "-B",
+  "%USERPROFILE%\\Downloads\\BFT65B_REPRO_CLOSEOUT_20261119\\BFT65B_REPRO_CLOSEOUT_20261119\\workflow\\continuous_compare.py",
+  "--spec",
+  "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\features\\COMPARISON_SPEC.json"
+]

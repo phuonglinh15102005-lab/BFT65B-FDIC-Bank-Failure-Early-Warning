@@ -1,0 +1,14 @@
+{
+  "status": "BLOCKED",
+  "detail": "Synthetic Parquet comparator check needs existing Polars/PyArrow: No module named 'pyarrow'",
+  "started_utc": "2026-11-18T16:11:18.864316+00:00",
+  "finished_utc": "2026-11-18T16:11:18.864401+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/workflow/comparison_selftest.py",
+    "--out",
+    "/workspace/work/BFT65B_RELEASE_COMPARISON_CONTROLS_20261118"
+  ],
+  "cases": []
+}

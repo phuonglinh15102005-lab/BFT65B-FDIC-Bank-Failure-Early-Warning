@@ -1,0 +1,3249 @@
+{
+  "status": "PASS",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/work/finalize_bft65b_repro_closeout_20261119.py"
+  ],
+  "git_context_setup": [
+    "git",
+    "init",
+    "--bare",
+    "--quiet",
+    "/tmp/bft65b_closeout_git_ozyf5rvx/empty.git"
+  ],
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "git": "git version 2.52.0"
+  },
+  "input_sha256": {
+    ".gitignore": "410fd11ceb10143e5cf96410c46e3573667fff78665768749f7208a91a553428",
+    ".gitattributes": "97aa56187c8538bc4f1c3cfc18d971090e988ba25f6a478776de529dc971a7d5",
+    "02_PART2_DATA_QUALITY_PANEL/code/02b_collect_exit_evidence.py": "9935d369667b4b5ff17dc5853bc81ccc7ee0af9f87792d2fb62f30c9f021f3ec",
+    "BAM_CHAY_REPRO_CODE_CUOI.cmd": "d75d77a90a35406b1a416bf0726c313bc9e1e0dce6c5f7fb9bc8a917d428d7ba",
+    "config/default.json": "3d53cbe14f8c3ef3c6197ea4ab48a7f58c3414fba2514bb3f03cf819ccc1a695",
+    "release_evidence/windows_return_20261119/REPLAY_RESULT.json": "0afcd823d5cce1b5dc34b8a702f070f679fa6d05e6a0503e2bcdb7f33dc030b8",
+    "FINAL_RUBRIC_COMPLIANCE_MATRIX.csv": "aeca5ea137e493932b2ba8290051a88e2bc2ee2aebc24304f3d0167d31c091fb"
+  },
+  "ignore_cases": [
+    {
+      "path": ".gitattributes",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": ".gitignore",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "00_ASSIGNMENT/part5_protocol_freeze.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "01_PART1_ACQUISITION_STORAGE/code/00_check_acquisition.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "01_PART1_ACQUISITION_STORAGE/code/01b_benchmark_storage.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "01_PART1_ACQUISITION_STORAGE/code/acquisition_validation.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "01_PART1_ACQUISITION_STORAGE/code/audit_fdic.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "01_PART1_ACQUISITION_STORAGE/code/fdic_download_starter.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "01_PART1_ACQUISITION_STORAGE/code/inspect_rowgroups.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "01_PART1_ACQUISITION_STORAGE/code/plot_part1_latency.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "01_PART1_ACQUISITION_STORAGE/verify_part1_evidence.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "02_PART2_DATA_QUALITY_PANEL/code/02_build_panel_base.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "02_PART2_DATA_QUALITY_PANEL/code/02b_collect_exit_evidence.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "02_PART2_DATA_QUALITY_PANEL/code/02c_finalize_panel.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "02_PART2_DATA_QUALITY_PANEL/code/02d_preflight_part2.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "02_PART2_DATA_QUALITY_PANEL/code/independent_part2_review.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "02_PART2_DATA_QUALITY_PANEL/code/review_preflight_evidence.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "02_PART2_DATA_QUALITY_PANEL/code/test_preflight_synthetic.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "02_PART2_DATA_QUALITY_PANEL/code/verify_part2_outputs.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "03_PART3_SCALABLE_PROCESSING/code/00_preflight_user.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "03_PART3_SCALABLE_PROCESSING/code/01_polars_core.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "03_PART3_SCALABLE_PROCESSING/code/02_pandas_parity.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "03_PART3_SCALABLE_PROCESSING/code/03_benchmark_local.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "03_PART3_SCALABLE_PROCESSING/code/04_spark_parity_fixed.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "03_PART3_SCALABLE_PROCESSING/code/05_fair_baseline_sensitivity.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "03_PART3_SCALABLE_PROCESSING/code/06_layout_ablation.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "03_PART3_SCALABLE_PROCESSING/code/07_interleaved_benchmark.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "03_PART3_SCALABLE_PROCESSING/code/08_synthetic_scaling.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "03_PART3_SCALABLE_PROCESSING/code/09_spark_action_benchmark.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "03_PART3_SCALABLE_PROCESSING/code/final_checks/01b_storage_empty_null.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "03_PART3_SCALABLE_PROCESSING/code/final_checks/02_reconcile_part2_evidence.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "03_PART3_SCALABLE_PROCESSING/code/final_checks/04_spark_parity_frozen.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "03_PART3_SCALABLE_PROCESSING/code/final_checks/06_layout_ablation_paired.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "03_PART3_SCALABLE_PROCESSING/code/final_checks/07_interleaved_paired.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "03_PART3_SCALABLE_PROCESSING/code/final_checks/08_scaling_subprocess_peak.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "03_PART3_SCALABLE_PROCESSING/code/final_checks/09_spark_action_rebuild.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "04_PART4_FEATURE_PIPELINE/code/part4_step01_reference_UNCHANGED.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "04_PART4_FEATURE_PIPELINE/code/part4_step03_pandas_oracle_UNCHANGED.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "04_PART4_FEATURE_PIPELINE/code/part4_v2_relabel_asof_gate.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "04_PART4_FEATURE_PIPELINE/code/part4_v2_train_only_pipeline.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "04_PART4_FEATURE_PIPELINE/code/reproduce_development_sensitivities.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "04_PART4_FEATURE_PIPELINE/code/verify_protocol_freeze.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "04_PART4_FEATURE_PIPELINE/part5_protocol_freeze.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "04_PART4_FEATURE_PIPELINE/part5_protocol_freeze.sha256",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part4_v2_train_only_pipeline.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_protocol_freeze.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step01_baseline_dev_only.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step02_hgb_grid_dev.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step02_logistic_grid_dev.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step03_development_policy.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step04_spark_mllib.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step05_refit_and_lock.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step06b2_one_time_final_evaluation.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/step04_independent_audit.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/test_part5_step03.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/postscore_audits/part4_step03_pandas_oracle_UNCHANGED.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/postscore_audits/part4_v2_train_only_pipeline.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/postscore_audits/part5_dev_permutation.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/postscore_audits/part5_test_oracle_postscore.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/postscore_audits/test_cost_weighted_postscore.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/postscore_audits/test_feature_formula_oracle.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/recovered_cohort_producer/part4_step01_reference_UNCHANGED.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/recovered_cohort_producer/part4_v2_train_only_pipeline.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/recovered_cohort_producer/part5_protocol_freeze.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/recovered_cohort_producer/part5_step06b1_test_v2_cohort_audit.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/registered_lr_parity/part4_v2_train_only_pipeline.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/registered_lr_parity/run_registered_spark_recheck.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/registered_lr_parity/spark_registered_logistic_parity.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "BAM_CHAY_REPRO_CODE_CUOI.cmd",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "EXECUTION_LOG_INDEX.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "FINAL_EVIDENCE_STATUS.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "FINAL_RUBRIC_COMPLIANCE_MATRIX.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "FINAL_TECHNICAL_HANDOFF_VI.md",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "README.md",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "README_BAT_DAU_TAI_DAY_VI.md",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "REMAINING_ISSUES_CHECKLIST.md",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "REPAIR_CHANGELOG.md",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "REPRODUCIBILITY_FINAL_AUDIT.md",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "REPRODUCTION_VERIFICATION_REPORT.md",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "STILL_UNRESOLVED.md",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "TEST_RESULTS.md",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/README.md",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/ablation/CONFIG.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/ablation/REF/hgb_candidate_fold_metrics.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/ablation/REF/part5_protocol_freeze.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/ablation/REF/part5_step02b_audit.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/ablation/REFERENCE_HASHES.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/ablation/RUNTIME_HASHES.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/ablation/ablation_runner.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/ablation/original/__init__.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/ablation/original/part4_v2_train_only_pipeline.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/ablation/original/part5_step01_baseline_dev_only.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/ablation/original/part5_step02_hgb_grid_dev.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/ablation/requirements-windows-current-pinned.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/ablation/safety.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/ablation/start_windows.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/ablation/tests_no_model_fit.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/development_ci/CODE/paired_ci.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/development_ci/INPUT_HASHES.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/development_ci/METHOD_FIXED_BEFORE_RUN.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/test_ci/bootstrap_locked_scores.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/test_ci/evidence/005_bootstrap_locked_scores.py.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/test_ci/evidence/007_NEW_POSTHOC_BOOTSTRAP_DRAWS.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/test_ci/evidence/008_NEW_POSTHOC_BOOTSTRAP_RESULTS.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/test_ci/evidence/009_README_METHOD.md",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "completed_analyses/test_ci/reproduce_saved_posthoc.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "config/assignment_provenance.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "config/default.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "config/environments.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "config/frozen_scope_requests.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "config/prepared_snapshot_manifest.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "config/release_tests.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "config/source_manifest.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "config/stages.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "config/step2b_snapshot_hashes.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "docs/ASSIGNMENT_RUBRIC_SCOPE.md",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "docs/CITATIONS_AND_AI.md",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "docs/EXECUTION_GUIDE.md",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "docs/REPRODUCIBILITY_LIMITATIONS.md",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "docs/SCIENTIFIC_LIMITATIONS.md",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "outputs/verification/CONTINUOUS_REPLAY_STATUS.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "outputs/verification/NEW_PRODUCER_REPLAY_STATUS.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "outputs/verification/PRIOR_ABLATION_FOLD_METRICS.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "outputs/verification/PRIOR_ABLATION_VERIFICATION.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "outputs/verification/PRIOR_AGGREGATE_RECOMPUTATION.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "outputs/verification/PRIOR_INDEPENDENT_RETURN_CHECKS.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "outputs/verification/PRIOR_NATIVE_COMMANDS.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "outputs/verification/PRIOR_NUMERICAL_COMPARISON.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "outputs/verification/PRIOR_POLARS_optimized_plan_calendar_lag.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "outputs/verification/PRIOR_POLARS_optimized_plan_decision_profile.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "outputs/verification/PRIOR_SPARK_plan_calendar_lag.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "outputs/verification/PRIOR_SPARK_plan_crisis_profile.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "outputs/verification/PRIOR_SPARK_plan_decision_profile.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "outputs/verification/PRIOR_SPARK_plan_final_calendar_lag.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "outputs/verification/PRIOR_SPARK_plan_final_crisis_profile.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "outputs/verification/PRIOR_SPARK_plan_final_decision_profile.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "outputs/verification/WINDOWS_REPLAY_COLUMN_COMPARISON.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "outputs/verification/WINDOWS_REPLAY_DATASET_COMPARISON.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/ASSEMBLE_VERIFIED_RELEASE.py.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/AUXILIARY_CLI_FIXES.diff",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/AUXILIARY_CLI_FIXES.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/AUXILIARY_CLI_FIXES.md",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C01_PLAN/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C01_PLAN/INPUT_SNAPSHOTS/3d53cbe14f8c3ef3c6197ea4ab48a7f58c3414fba2514bb3f03cf819ccc1a695.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C01_PLAN/INPUT_SNAPSHOTS/6d8c96824c579e3446cf5fda5c5e9c436bc00b074b0842b1292c1478e599118b.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C01_PLAN/INPUT_SNAPSHOTS/83a2514046010be5f6ac51ea2b736e59d94252f8713e355f0597a1579b2b9b12.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C01_PLAN/INPUT_SNAPSHOTS/b234f8511e0e2297cf7182bb83195f80c25abfd14f64f91c52b3e41c4b51f2ed.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C01_PLAN/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C01_PLAN/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C02_CODE_VALIDATION/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C02_CODE_VALIDATION/INPUT_SNAPSHOTS/6d8c96824c579e3446cf5fda5c5e9c436bc00b074b0842b1292c1478e599118b.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C02_CODE_VALIDATION/INPUT_SNAPSHOTS/83a2514046010be5f6ac51ea2b736e59d94252f8713e355f0597a1579b2b9b12.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C02_CODE_VALIDATION/INPUT_SNAPSHOTS/ab963c7987b95abbb082898eb3c5f0888abf67a47bd5ec62b80345b969471aba.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C02_CODE_VALIDATION/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C02_CODE_VALIDATION/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C03_UNIT_CONTRACTS/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C03_UNIT_CONTRACTS/INPUT_SNAPSHOTS/0baea04b8040bfb91db4cc6a0b36d19a7cde65b8ce6410361fc25ab759c55f89.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C03_UNIT_CONTRACTS/INPUT_SNAPSHOTS/0c76a33428ec0fce772ff8a4b50374fb0fcb53fea35f7bcd06d8d5512431599e.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C03_UNIT_CONTRACTS/INPUT_SNAPSHOTS/3309843f03ff70e05b295e76a8716845be88a3684b28fffd707db94c911b32f1.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C03_UNIT_CONTRACTS/INPUT_SNAPSHOTS/3d53cbe14f8c3ef3c6197ea4ab48a7f58c3414fba2514bb3f03cf819ccc1a695.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C03_UNIT_CONTRACTS/INPUT_SNAPSHOTS/6d8c96824c579e3446cf5fda5c5e9c436bc00b074b0842b1292c1478e599118b.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C03_UNIT_CONTRACTS/INPUT_SNAPSHOTS/d84edbb35a43b8e38f2d0c306179db5db641fa794f98909fe55c2b346b83aef7.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C03_UNIT_CONTRACTS/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C03_UNIT_CONTRACTS/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C04_SOURCE_RESOURCE_AUDIT/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C04_SOURCE_RESOURCE_AUDIT/INPUT_SNAPSHOTS/8ea540ca5a8db2b6ac428bf28943ca5f4b4d99374d64de9a30b49579e646cfe3.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C04_SOURCE_RESOURCE_AUDIT/INPUT_SNAPSHOTS/ab963c7987b95abbb082898eb3c5f0888abf67a47bd5ec62b80345b969471aba.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C04_SOURCE_RESOURCE_AUDIT/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C04_SOURCE_RESOURCE_AUDIT/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C05_PARQUET_COMPARISON_CONTROLS/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C05_PARQUET_COMPARISON_CONTROLS/INPUT_SNAPSHOTS/0c76a33428ec0fce772ff8a4b50374fb0fcb53fea35f7bcd06d8d5512431599e.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C05_PARQUET_COMPARISON_CONTROLS/INPUT_SNAPSHOTS/3309843f03ff70e05b295e76a8716845be88a3684b28fffd707db94c911b32f1.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C05_PARQUET_COMPARISON_CONTROLS/INPUT_SNAPSHOTS/739af85bea2263db5892f924528f9c53992b38e5652fbf292eba6b49f47632a2.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C05_PARQUET_COMPARISON_CONTROLS/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C05_PARQUET_COMPARISON_CONTROLS/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C06_ACTUAL_REPLAY_CLOUD_PREFLIGHT/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C06_ACTUAL_REPLAY_CLOUD_PREFLIGHT/INPUT_SNAPSHOTS/0c76a33428ec0fce772ff8a4b50374fb0fcb53fea35f7bcd06d8d5512431599e.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C06_ACTUAL_REPLAY_CLOUD_PREFLIGHT/INPUT_SNAPSHOTS/3d53cbe14f8c3ef3c6197ea4ab48a7f58c3414fba2514bb3f03cf819ccc1a695.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C06_ACTUAL_REPLAY_CLOUD_PREFLIGHT/INPUT_SNAPSHOTS/6a1248e225c55ec0d6fd9fe89e10104f7a2aecff7a5a9e8c9c06e49a53b59151.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C06_ACTUAL_REPLAY_CLOUD_PREFLIGHT/INPUT_SNAPSHOTS/6d8c96824c579e3446cf5fda5c5e9c436bc00b074b0842b1292c1478e599118b.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C06_ACTUAL_REPLAY_CLOUD_PREFLIGHT/INPUT_SNAPSHOTS/83a2514046010be5f6ac51ea2b736e59d94252f8713e355f0597a1579b2b9b12.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C06_ACTUAL_REPLAY_CLOUD_PREFLIGHT/INPUT_SNAPSHOTS/94e82c8de557fa4de2127bd956a8dbca293b3005de20ee4a81a5af13c121df29.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C06_ACTUAL_REPLAY_CLOUD_PREFLIGHT/INPUT_SNAPSHOTS/ab963c7987b95abbb082898eb3c5f0888abf67a47bd5ec62b80345b969471aba.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C06_ACTUAL_REPLAY_CLOUD_PREFLIGHT/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C06_ACTUAL_REPLAY_CLOUD_PREFLIGHT/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C07_FAILURE_EXPORT_NEGATIVE_CONTROL/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C07_FAILURE_EXPORT_NEGATIVE_CONTROL/INPUT_SNAPSHOTS/3309843f03ff70e05b295e76a8716845be88a3684b28fffd707db94c911b32f1.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C07_FAILURE_EXPORT_NEGATIVE_CONTROL/INPUT_SNAPSHOTS/6d8c96824c579e3446cf5fda5c5e9c436bc00b074b0842b1292c1478e599118b.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C07_FAILURE_EXPORT_NEGATIVE_CONTROL/INPUT_SNAPSHOTS/78bc0afd8c0b5a41f8dee2c5839f58dbe3ee57965b810f194799d6a1420920b9.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C07_FAILURE_EXPORT_NEGATIVE_CONTROL/INPUT_SNAPSHOTS/97d58bf7bd55a96a4596029acbb81e3b8c67d70179b2f0659f0d531cc02d10bc.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C07_FAILURE_EXPORT_NEGATIVE_CONTROL/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C07_FAILURE_EXPORT_NEGATIVE_CONTROL/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C08_CONTROLLER_SMOKE/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C08_CONTROLLER_SMOKE/INPUT_SNAPSHOTS/3627f5206f49f88a82221b28bd136e6b2f413267857ee4aeb1c392837d61bf73.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C08_CONTROLLER_SMOKE/INPUT_SNAPSHOTS/6d8c96824c579e3446cf5fda5c5e9c436bc00b074b0842b1292c1478e599118b.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C08_CONTROLLER_SMOKE/INPUT_SNAPSHOTS/8e6f88960c6e6bf19ba08c807d51f8d8d1611825867c6f3a33139b43e427a49a.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C08_CONTROLLER_SMOKE/INPUT_SNAPSHOTS/97d58bf7bd55a96a4596029acbb81e3b8c67d70179b2f0659f0d531cc02d10bc.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C08_CONTROLLER_SMOKE/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C08_CONTROLLER_SMOKE/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C09_FINAL_RELEASE_VALIDATION/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C09_FINAL_RELEASE_VALIDATION/INPUT_SNAPSHOTS/6d8c96824c579e3446cf5fda5c5e9c436bc00b074b0842b1292c1478e599118b.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C09_FINAL_RELEASE_VALIDATION/INPUT_SNAPSHOTS/83a2514046010be5f6ac51ea2b736e59d94252f8713e355f0597a1579b2b9b12.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C09_FINAL_RELEASE_VALIDATION/INPUT_SNAPSHOTS/97d58bf7bd55a96a4596029acbb81e3b8c67d70179b2f0659f0d531cc02d10bc.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C09_FINAL_RELEASE_VALIDATION/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C09_FINAL_RELEASE_VALIDATION/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C10_FINAL_RESOURCE_AUDIT/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C10_FINAL_RESOURCE_AUDIT/INPUT_SNAPSHOTS/8ea540ca5a8db2b6ac428bf28943ca5f4b4d99374d64de9a30b49579e646cfe3.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C10_FINAL_RESOURCE_AUDIT/INPUT_SNAPSHOTS/97d58bf7bd55a96a4596029acbb81e3b8c67d70179b2f0659f0d531cc02d10bc.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C10_FINAL_RESOURCE_AUDIT/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C10_FINAL_RESOURCE_AUDIT/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C11_FINAL_FAILURE_EXPORT_CONTROLS/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C11_FINAL_FAILURE_EXPORT_CONTROLS/INPUT_SNAPSHOTS/161f2df8be6175e71cfc020ba1291d35f2ac857b54befd0773d485189edba88b.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C11_FINAL_FAILURE_EXPORT_CONTROLS/INPUT_SNAPSHOTS/3309843f03ff70e05b295e76a8716845be88a3684b28fffd707db94c911b32f1.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C11_FINAL_FAILURE_EXPORT_CONTROLS/INPUT_SNAPSHOTS/62ad2d20767db2b25c5ccbdf779036db167f0d4a069da4596ad366989de3758b.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C11_FINAL_FAILURE_EXPORT_CONTROLS/INPUT_SNAPSHOTS/af96cb2728a52833e3bab88d140192579f3e553b18bf69d8a0b03780153d7bc7.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C11_FINAL_FAILURE_EXPORT_CONTROLS/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C11_FINAL_FAILURE_EXPORT_CONTROLS/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C12_FINAL_FROZEN_SOURCE_VALIDATION/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C12_FINAL_FROZEN_SOURCE_VALIDATION/INPUT_SNAPSHOTS/161f2df8be6175e71cfc020ba1291d35f2ac857b54befd0773d485189edba88b.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C12_FINAL_FROZEN_SOURCE_VALIDATION/INPUT_SNAPSHOTS/62ad2d20767db2b25c5ccbdf779036db167f0d4a069da4596ad366989de3758b.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C12_FINAL_FROZEN_SOURCE_VALIDATION/INPUT_SNAPSHOTS/83a2514046010be5f6ac51ea2b736e59d94252f8713e355f0597a1579b2b9b12.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C12_FINAL_FROZEN_SOURCE_VALIDATION/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C12_FINAL_FROZEN_SOURCE_VALIDATION/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C13_FINAL_FROZEN_RESOURCE_AUDIT/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C13_FINAL_FROZEN_RESOURCE_AUDIT/INPUT_SNAPSHOTS/161f2df8be6175e71cfc020ba1291d35f2ac857b54befd0773d485189edba88b.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C13_FINAL_FROZEN_RESOURCE_AUDIT/INPUT_SNAPSHOTS/8ea540ca5a8db2b6ac428bf28943ca5f4b4d99374d64de9a30b49579e646cfe3.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C13_FINAL_FROZEN_RESOURCE_AUDIT/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C13_FINAL_FROZEN_RESOURCE_AUDIT/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C14_FINAL_WORKFLOW_CONTRACTS/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C14_FINAL_WORKFLOW_CONTRACTS/INPUT_SNAPSHOTS/0baea04b8040bfb91db4cc6a0b36d19a7cde65b8ce6410361fc25ab759c55f89.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C14_FINAL_WORKFLOW_CONTRACTS/INPUT_SNAPSHOTS/0c76a33428ec0fce772ff8a4b50374fb0fcb53fea35f7bcd06d8d5512431599e.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C14_FINAL_WORKFLOW_CONTRACTS/INPUT_SNAPSHOTS/3309843f03ff70e05b295e76a8716845be88a3684b28fffd707db94c911b32f1.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C14_FINAL_WORKFLOW_CONTRACTS/INPUT_SNAPSHOTS/3d53cbe14f8c3ef3c6197ea4ab48a7f58c3414fba2514bb3f03cf819ccc1a695.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C14_FINAL_WORKFLOW_CONTRACTS/INPUT_SNAPSHOTS/62ad2d20767db2b25c5ccbdf779036db167f0d4a069da4596ad366989de3758b.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C14_FINAL_WORKFLOW_CONTRACTS/INPUT_SNAPSHOTS/d84edbb35a43b8e38f2d0c306179db5db641fa794f98909fe55c2b346b83aef7.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C14_FINAL_WORKFLOW_CONTRACTS/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C14_FINAL_WORKFLOW_CONTRACTS/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C15_FINAL_WORKFLOW_PLAN/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C15_FINAL_WORKFLOW_PLAN/INPUT_SNAPSHOTS/3d53cbe14f8c3ef3c6197ea4ab48a7f58c3414fba2514bb3f03cf819ccc1a695.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C15_FINAL_WORKFLOW_PLAN/INPUT_SNAPSHOTS/62ad2d20767db2b25c5ccbdf779036db167f0d4a069da4596ad366989de3758b.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C15_FINAL_WORKFLOW_PLAN/INPUT_SNAPSHOTS/67900d491d8167b0c1609906a659e3e29a9de0f2f2f57870e23168c574a0a8b4.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C15_FINAL_WORKFLOW_PLAN/INPUT_SNAPSHOTS/83a2514046010be5f6ac51ea2b736e59d94252f8713e355f0597a1579b2b9b12.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C15_FINAL_WORKFLOW_PLAN/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C15_FINAL_WORKFLOW_PLAN/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C16_VERIFIED_RELEASE_METADATA_VALIDATION/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C16_VERIFIED_RELEASE_METADATA_VALIDATION/INPUT_SNAPSHOTS/62ad2d20767db2b25c5ccbdf779036db167f0d4a069da4596ad366989de3758b.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C16_VERIFIED_RELEASE_METADATA_VALIDATION/INPUT_SNAPSHOTS/83a2514046010be5f6ac51ea2b736e59d94252f8713e355f0597a1579b2b9b12.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C16_VERIFIED_RELEASE_METADATA_VALIDATION/INPUT_SNAPSHOTS/d640463a250835b9504943ed912012c9ec5575dec4b76e6cf5d13b666c1ac84c.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C16_VERIFIED_RELEASE_METADATA_VALIDATION/INPUT_SNAPSHOTS/e524333831eb5c4db558cb74120fb55689248ddb6c6b08283da7bc35288f3b71.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C16_VERIFIED_RELEASE_METADATA_VALIDATION/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C16_VERIFIED_RELEASE_METADATA_VALIDATION/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C17_PUBLICATION_IGNORE_RULES/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C17_PUBLICATION_IGNORE_RULES/INPUT_SNAPSHOTS/9b1c2fa6cd9d7e569cea565b59f64539b40c0fc0a2839464bbb044590ef34701.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C17_PUBLICATION_IGNORE_RULES/INPUT_SNAPSHOTS/d47d1684ce676b7c50c12800d86433e7565d9cebc0b22ca6384e47d27e5adf58.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C17_PUBLICATION_IGNORE_RULES/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C17_PUBLICATION_IGNORE_RULES/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C18_PUBLICATION_IGNORE_VALID_GIT_CONTEXT/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C18_PUBLICATION_IGNORE_VALID_GIT_CONTEXT/INPUT_SNAPSHOTS/339aa350161761c2bb1fa79891337a0f5499a849d13386d38c7cc912752989a5.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C18_PUBLICATION_IGNORE_VALID_GIT_CONTEXT/INPUT_SNAPSHOTS/9b1c2fa6cd9d7e569cea565b59f64539b40c0fc0a2839464bbb044590ef34701.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C18_PUBLICATION_IGNORE_VALID_GIT_CONTEXT/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C18_PUBLICATION_IGNORE_VALID_GIT_CONTEXT/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C19_FINAL_METADATA_AFTER_QA_CORRECTION/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C19_FINAL_METADATA_AFTER_QA_CORRECTION/INPUT_SNAPSHOTS/1785120f18b20685340dbffb427eb8f768fb91b7b573ce525a2e0808367f0862.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C19_FINAL_METADATA_AFTER_QA_CORRECTION/INPUT_SNAPSHOTS/40baeec061fc243b46ab9c4e5734c586fb56dd4bc75727257714e55fd737d79d.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C19_FINAL_METADATA_AFTER_QA_CORRECTION/INPUT_SNAPSHOTS/62ad2d20767db2b25c5ccbdf779036db167f0d4a069da4596ad366989de3758b.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C19_FINAL_METADATA_AFTER_QA_CORRECTION/INPUT_SNAPSHOTS/83a2514046010be5f6ac51ea2b736e59d94252f8713e355f0597a1579b2b9b12.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C19_FINAL_METADATA_AFTER_QA_CORRECTION/INPUT_SNAPSHOTS/e524333831eb5c4db558cb74120fb55689248ddb6c6b08283da7bc35288f3b71.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C19_FINAL_METADATA_AFTER_QA_CORRECTION/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/C19_FINAL_METADATA_AFTER_QA_CORRECTION/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/CONTRACT_UNIT_TESTS.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/CONTRACT_UNIT_TESTS_STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/CONTRACT_UNIT_TESTS_STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/DEPENDENCY_RESOURCE_AUDIT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/DEPENDENCY_RESOURCE_FILES.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/DEPENDENCY_RESOURCE_IMPORTS.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/EVIDENCE_RELOCATION_MAP.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/EXECUTED_OUTPUTS/C02_CODE_VALIDATION/VALIDATION_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/EXECUTED_OUTPUTS/C04_SOURCE_RESOURCE_AUDIT/FINAL_SOURCE_RESOURCE_AUDIT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/EXECUTED_OUTPUTS/C05_PARQUET_COMPARISON_CONTROLS/SELFTEST_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/EXECUTED_OUTPUTS/C06_ACTUAL_REPLAY_CLOUD_PREFLIGHT/REPLAY_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/EXECUTED_OUTPUTS/C06_ACTUAL_REPLAY_CLOUD_PREFLIGHT/STAGE_STATUS.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/EXECUTED_OUTPUTS/C08_CONTROLLER_SMOKE/CONTROLLER_SMOKE_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/EXECUTED_OUTPUTS/C09_FINAL_RELEASE_VALIDATION/VALIDATION_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/EXECUTED_OUTPUTS/C10_FINAL_RESOURCE_AUDIT/FINAL_SOURCE_RESOURCE_AUDIT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/EXECUTED_OUTPUTS/C12_FINAL_FROZEN_SOURCE_VALIDATION/VALIDATION_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/EXECUTED_OUTPUTS/C13_FINAL_FROZEN_RESOURCE_AUDIT/FINAL_SOURCE_RESOURCE_AUDIT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/EXECUTED_OUTPUTS/C16_VERIFIED_RELEASE_METADATA_VALIDATION/VALIDATION_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/EXECUTED_OUTPUTS/C17_PUBLICATION_IGNORE_RULES/PUBLICATION_IGNORE_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/EXECUTED_OUTPUTS/C18_PUBLICATION_IGNORE_VALID_GIT_CONTEXT/PUBLICATION_IGNORE_RESULT_FINAL.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/EXECUTED_OUTPUTS/C19_FINAL_METADATA_AFTER_QA_CORRECTION/VALIDATION_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/FINAL_PUBLIC_CSV_CONTENT_AUDIT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/INDEPENDENT_QA_RECEIVED_20261119.md",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/PRE_CLOSEOUT_FILE_MANIFEST_SHA256.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/PRE_CLOSEOUT_FINAL_EVIDENCE_STATUS.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/PRIOR_PACKAGE_PRECHECK.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/PRIOR_RELEASE_ALL_FILE_MANIFEST.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/PRIOR_RELEASE_PACKAGER.py.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/PUBLICATION_IGNORE_CHECK.py.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/PUBLICATION_IGNORE_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/PUBLICATION_IGNORE_RESULT_FINAL.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/SCIENCE_SOURCE_ORIGIN.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/VERIFIED_PACKAGE_PRECHECK.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/VERIFIED_RELEASE_PACKAGER.py.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/WORKFLOW_PRODUCER_PATCHES.diff",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/WORKFLOW_PRODUCER_PATCHES.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/WORKFLOW_PRODUCER_PATCHES.md",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/EVIDENCE_RELOCATION.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/GITIGNORE_BEFORE_NESTED_CSV_FIX.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/ORIGINAL_PRESERVATION.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/PACKAGER_ATTEMPT_01.py.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/PACKAGING_ATTEMPT_01_FAILURE.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/SOURCE_CHANGES.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/current_host/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/current_host/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/current_host/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/current_host/continuous/CONTINUOUS_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/current_host/continuous/EXISTING_ENVIRONMENTS.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/current_host/continuous/EXPORTED_FILE_MANIFEST.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/current_host/continuous/PREFLIGHT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/current_host/continuous/STAGE_STATUS.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/continuous_cloud/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/continuous_cloud/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/continuous_cloud/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/continuous_cloud/continuous/CONTINUOUS_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/continuous_cloud/continuous/EXISTING_ENVIRONMENTS.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/continuous_cloud/continuous/EXPORTED_FILE_MANIFEST.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/continuous_cloud/continuous/PREFLIGHT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/continuous_cloud/continuous/STAGE_STATUS.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/continuous_help/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/continuous_help/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/continuous_help/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/plan/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/plan/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/plan/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/source_audit/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/source_audit/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/source_audit/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/source_audit/source_audit/FINAL_SOURCE_RESOURCE_AUDIT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/unit_no_site/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/unit_no_site/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/unit_no_site/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/unit_normal/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/unit_normal/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/unit_normal/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/unit_preloaded/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/unit_preloaded/HOST_FIXTURE/sitecustomize.py.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/unit_preloaded/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/unit_preloaded/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/validate/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/validate/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/validate/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/final/validate/validation/VALIDATION_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/continuous_cloud/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/continuous_cloud/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/continuous_cloud/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/continuous_cloud/continuous/CONTINUOUS_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/continuous_cloud/continuous/EXISTING_ENVIRONMENTS.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/continuous_cloud/continuous/EXPORTED_FILE_MANIFEST.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/continuous_cloud/continuous/PREFLIGHT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/continuous_cloud/continuous/STAGE_STATUS.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/continuous_help/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/continuous_help/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/continuous_help/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/plan/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/plan/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/plan/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/source_audit/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/source_audit/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/source_audit/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/source_audit/source_audit/FINAL_SOURCE_RESOURCE_AUDIT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/unit_no_site/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/unit_no_site/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/unit_no_site/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/unit_normal/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/unit_normal/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/unit_normal/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/unit_preloaded/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/unit_preloaded/HOST_FIXTURE/sitecustomize.py.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/unit_preloaded/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/unit_preloaded/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/validate/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/validate/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/validate/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/validate/validation/VALIDATION_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/continuous_cloud/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/continuous_cloud/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/continuous_cloud/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/continuous_cloud/continuous/CONTINUOUS_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/continuous_cloud/continuous/EXISTING_ENVIRONMENTS.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/continuous_cloud/continuous/EXPORTED_FILE_MANIFEST.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/continuous_cloud/continuous/PREFLIGHT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/continuous_cloud/continuous/STAGE_STATUS.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/continuous_help/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/continuous_help/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/continuous_help/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/plan/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/plan/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/plan/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/source_audit/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/source_audit/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/source_audit/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/source_audit/source_audit/FINAL_SOURCE_RESOURCE_AUDIT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/unit_no_site/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/unit_no_site/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/unit_no_site/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/unit_normal/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/unit_normal/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/unit_normal/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/unit_preloaded/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/unit_preloaded/HOST_FIXTURE/sitecustomize.py.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/unit_preloaded/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/unit_preloaded/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/validate/EXECUTION_RECORD.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/validate/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/validate/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/validate/validation/VALIDATION_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_independent_review_20261119/DATASET_COMPARISON.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_independent_review_20261119/EXECUTED_SOURCE_MANIFEST.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_independent_review_20261119/EXECUTED_STAGE_REGISTRY.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_independent_review_20261119/EXPORTED_OUTPUT_HASH_CHECKS.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_independent_review_20261119/INDEPENDENT_REVIEW.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_independent_review_20261119/VERIFY_RETURN_SOURCE.py.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_independent_review_20261119/WINDOWS_INPUT_IDENTITIES.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/CONFIG_USED.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/EXISTING_ENVIRONMENTS.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/NUMERICAL_COMPARISON.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/REPLAY_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/STAGE_STATUS.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/comparator_controls/COMMAND.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/comparator_controls/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/comparator_controls/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/comparator_controls/synthetic/SELFTEST_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/comparator_controls/synthetic/duplicate_keys.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/comparator_controls/synthetic/finite_vs_infinite.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/comparator_controls/synthetic/identical.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/comparator_controls/synthetic/label_mutation.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/comparator_controls/synthetic/null_to_nan.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/comparator_controls/synthetic/opposite_infinities.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/comparator_controls/synthetic/reordered.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/comparator_controls/synthetic/strict_float_roundoff_rejected.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/comparator_controls/synthetic/tolerated_float_roundoff.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/comparator_controls/synthetic/wrong_schema.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/development-features/ARGUMENTS.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/development-features/COMMAND.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/development-features/COMPARISON_SPEC.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/development-features/STAGE_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/development-features/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/development-features/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/development-features/WORKER_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/development-features/comparison/COMPARISON_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/development-features/comparison/development.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/development-features/comparison_command/COMMAND.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/development-features/comparison_command/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/development-features/comparison_command/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-base/ARGUMENTS.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-base/COMMAND.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-base/COMPARISON_SPEC.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-base/STAGE_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-base/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-base/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-base/WORKER_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-base/comparison/COMPARISON_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-base/comparison/base.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-base/comparison_command/COMMAND.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-base/comparison_command/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-base/comparison_command/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-clean/ARGUMENTS.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-clean/COMMAND.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-clean/COMPARISON_SPEC.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-clean/STAGE_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-clean/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-clean/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-clean/WORKER_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-clean/comparison/COMPARISON_RESULT.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-clean/comparison/clean.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-clean/comparison/pit.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-clean/comparison_command/COMMAND.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-clean/comparison_command/STDERR.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/p2-clean/comparison_command/STDOUT.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "requirements/ENVIRONMENTS.md",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "requirements/README.md",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "requirements/audit-tested.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "requirements/continuous-data-minimal.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "requirements/development-recorded.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "requirements/engineering-recorded.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "requirements/model-recorded-partial.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "requirements/model-runtime-observed.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "requirements/windows-engineering-observed.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "requirements/windows-model-observed.json",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "requirements.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "run.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "tests/test_continuous_contracts.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "tests/test_failure_export.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "tests/test_release_contracts.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "workflow/__init__.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "workflow/closeout_checks.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "workflow/common.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "workflow/compare.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "workflow/compare_worker.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "workflow/comparison_selftest.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "workflow/continuous.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "workflow/continuous_compare.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "workflow/continuous_contract.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "workflow/continuous_worker.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "workflow/controller_smoke_test.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "workflow/engine.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "workflow/environment_probe.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "workflow/offline_part2b.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "workflow/policy.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "workflow/release_audit.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "workflow/test_recorder.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "workflow/windows_start.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "workflow/worker.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "FILE_MANIFEST_SHA256.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS"
+    },
+    {
+      "path": "raw.parquet",
+      "expected_ignored": true,
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "path": "private/observations.csv",
+      "expected_ignored": true,
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "path": "model.joblib",
+      "expected_ignored": true,
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "path": "scores.npz",
+      "expected_ignored": true,
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "path": "data_archive.zip",
+      "expected_ignored": true,
+      "exit_code": 0,
+      "status": "PASS"
+    }
+  ],
+  "eol_byte_preservation_cases": [
+    {
+      "file": "02_PART2_DATA_QUALITY_PANEL/code/02b_collect_exit_evidence.py",
+      "status": "PASS",
+      "command": [
+        "git",
+        "--git-dir=/tmp/bft65b_closeout_git_ozyf5rvx/empty.git",
+        "--work-tree=/workspace/work/BFT65B_REPRO_CLOSEOUT_20261119",
+        "-c",
+        "core.excludesfile=/dev/null",
+        "-c",
+        "core.autocrlf=true",
+        "hash-object",
+        "--path=02_PART2_DATA_QUALITY_PANEL/code/02b_collect_exit_evidence.py",
+        "--stdin"
+      ],
+      "sha256": "9935d369667b4b5ff17dc5853bc81ccc7ee0af9f87792d2fb62f30c9f021f3ec",
+      "git_raw_object_sha1": "a0d81b19cbb8864a536025bfd6acc9370a9ee251",
+      "git_filtered_object_sha1": "a0d81b19cbb8864a536025bfd6acc9370a9ee251"
+    },
+    {
+      "file": "BAM_CHAY_REPRO_CODE_CUOI.cmd",
+      "status": "PASS",
+      "command": [
+        "git",
+        "--git-dir=/tmp/bft65b_closeout_git_ozyf5rvx/empty.git",
+        "--work-tree=/workspace/work/BFT65B_REPRO_CLOSEOUT_20261119",
+        "-c",
+        "core.excludesfile=/dev/null",
+        "-c",
+        "core.autocrlf=true",
+        "hash-object",
+        "--path=BAM_CHAY_REPRO_CODE_CUOI.cmd",
+        "--stdin"
+      ],
+      "sha256": "d75d77a90a35406b1a416bf0726c313bc9e1e0dce6c5f7fb9bc8a917d428d7ba",
+      "git_raw_object_sha1": "1d5b170ae847b75ebd7da4ea9bddf0864a3844fc",
+      "git_filtered_object_sha1": "1d5b170ae847b75ebd7da4ea9bddf0864a3844fc"
+    },
+    {
+      "file": "config/default.json",
+      "status": "PASS",
+      "command": [
+        "git",
+        "--git-dir=/tmp/bft65b_closeout_git_ozyf5rvx/empty.git",
+        "--work-tree=/workspace/work/BFT65B_REPRO_CLOSEOUT_20261119",
+        "-c",
+        "core.excludesfile=/dev/null",
+        "-c",
+        "core.autocrlf=true",
+        "hash-object",
+        "--path=config/default.json",
+        "--stdin"
+      ],
+      "sha256": "3d53cbe14f8c3ef3c6197ea4ab48a7f58c3414fba2514bb3f03cf819ccc1a695",
+      "git_raw_object_sha1": "9570936180a8e65d158ebab88de838493f2f0c03",
+      "git_filtered_object_sha1": "9570936180a8e65d158ebab88de838493f2f0c03"
+    },
+    {
+      "file": "release_evidence/windows_return_20261119/REPLAY_RESULT.json",
+      "status": "PASS",
+      "command": [
+        "git",
+        "--git-dir=/tmp/bft65b_closeout_git_ozyf5rvx/empty.git",
+        "--work-tree=/workspace/work/BFT65B_REPRO_CLOSEOUT_20261119",
+        "-c",
+        "core.excludesfile=/dev/null",
+        "-c",
+        "core.autocrlf=true",
+        "hash-object",
+        "--path=release_evidence/windows_return_20261119/REPLAY_RESULT.json",
+        "--stdin"
+      ],
+      "sha256": "0afcd823d5cce1b5dc34b8a702f070f679fa6d05e6a0503e2bcdb7f33dc030b8",
+      "git_raw_object_sha1": "7523caa82b91c098306c6cc2470f78a871f4b165",
+      "git_filtered_object_sha1": "7523caa82b91c098306c6cc2470f78a871f4b165"
+    },
+    {
+      "file": "FINAL_RUBRIC_COMPLIANCE_MATRIX.csv",
+      "status": "PASS",
+      "command": [
+        "git",
+        "--git-dir=/tmp/bft65b_closeout_git_ozyf5rvx/empty.git",
+        "--work-tree=/workspace/work/BFT65B_REPRO_CLOSEOUT_20261119",
+        "-c",
+        "core.excludesfile=/dev/null",
+        "-c",
+        "core.autocrlf=true",
+        "hash-object",
+        "--path=FINAL_RUBRIC_COMPLIANCE_MATRIX.csv",
+        "--stdin"
+      ],
+      "sha256": "aeca5ea137e493932b2ba8290051a88e2bc2ee2aebc24304f3d0167d31c091fb",
+      "git_raw_object_sha1": "34dd2e780212a454b213b2c66d4c0724cf6ec4f9",
+      "git_filtered_object_sha1": "34dd2e780212a454b213b2c66d4c0724cf6ec4f9"
+    }
+  ],
+  "scope": "Empty temporary local Git metadata only, source worktree read-only; no commits/remotes/push/network"
+}

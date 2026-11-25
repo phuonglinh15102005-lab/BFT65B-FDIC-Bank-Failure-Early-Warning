@@ -1,0 +1,43 @@
+{
+  "id": "C13_FINAL_FROZEN_RESOURCE_AUDIT",
+  "status": "PASS",
+  "exit_code": 0,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "workflow/release_audit.py",
+    "--out",
+    "/workspace/work/BFT65B_RELEASE_SOURCE_AUDIT_20261119"
+  ],
+  "started_utc": "2026-11-19T01:15:31.375257+00:00",
+  "finished_utc": "2026-11-19T01:15:31.873425+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "polars": null,
+      "pyarrow": null,
+      "scikit-learn": "1.8.0",
+      "pyspark": null,
+      "joblib": "1.5.3",
+      "scipy": "1.17.0"
+    }
+  },
+  "input_sha256_before": {
+    "workflow/release_audit.py": "8ea540ca5a8db2b6ac428bf28943ca5f4b4d99374d64de9a30b49579e646cfe3",
+    "config/source_manifest.json": "161f2df8be6175e71cfc020ba1291d35f2ac857b54befd0773d485189edba88b"
+  },
+  "input_sha256_after": {
+    "workflow/release_audit.py": "8ea540ca5a8db2b6ac428bf28943ca5f4b4d99374d64de9a30b49579e646cfe3",
+    "config/source_manifest.json": "161f2df8be6175e71cfc020ba1291d35f2ac857b54befd0773d485189edba88b"
+  },
+  "output_sha256": {
+    "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "STDOUT.txt": "7ce95a94caa09c8ed843accb4b53698db734deeb585aa3e1908f3d0b6f2cf20b",
+    "/workspace/work/BFT65B_RELEASE_SOURCE_AUDIT_20261119/FINAL_SOURCE_RESOURCE_AUDIT.json": "8f0a711d6e4bdc61ad4de8f0851d64b3fa553b84d72d0916faaace51926299c3"
+  },
+  "scope": "Final AST imports, data IO, resource catalogue and prohibited-payload scan; no science execution",
+  "new_model_fits": 0
+}

@@ -1,0 +1,15 @@
+[
+  "--clean",
+  "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts\\panel_clean.parquet",
+  "--pit",
+  "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts\\panel_pit_base.parquet",
+  "--registry-zip",
+  "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts\\part2_clean_review_bundle.zip",
+  "--step01-source",
+  "%USERPROFILE%\\Downloads\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\04_PART4_FEATURE_PIPELINE\\code\\part4_step01_reference_UNCHANGED.py",
+  "--out-dir",
+  "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\development-features\\artifacts",
+  "--asof-quarters",
+  "0",
+  "--production-only"
+]

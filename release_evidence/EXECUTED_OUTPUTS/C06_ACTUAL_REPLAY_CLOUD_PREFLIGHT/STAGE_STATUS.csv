@@ -1,0 +1,5 @@
+﻿stage,status,reason,artifact_directory
+p2-base,BLOCKED,Existing exact engineering profile not found;no install/version relaxation,
+p2-clean,BLOCKED,Existing exact engineering profile not found;no install/version relaxation,
+development-features,BLOCKED,Existing exact engineering profile not found;no install/version relaxation,
+full-clean-room-E2E,NOT_EXECUTED,Not an acquisition/grid/refit/final-scoring replay,

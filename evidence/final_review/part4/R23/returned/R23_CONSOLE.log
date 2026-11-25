@@ -1,0 +1,21 @@
+[PASS] ENVIRONMENT: Python 3.13.9 NumPy 2.5.4 pandas 3.1.1 pyarrow 26.0.1
+[PASS] FROZEN_DEVELOPMENT: SHA256 d365ce25204a3dcace715db4cea259c94b1b1abba4822c7bcf2b050a1c7f6a73
+[PASS] FROZEN_PROTOCOL: SHA256 994f72de6e2446916db8c2fcd36847c45cc68eb6fef5ef67f07acc0476c6d911
+[PASS] PARAMETER_REFERENCE: SHA256 df26410b18c7f6900993bb5ee873ce00b8c6102949b351eff19da3c8f4af4651
+R23 column 1 / 15 log_assets
+R23 column 2 / 15 equity_to_assets
+R23 column 3 / 15 asset_log_growth_1q
+R23 column 4 / 15 asset_log_growth_4q
+R23 column 5 / 15 nclnls_to_loans
+R23 column 6 / 15 loan_allowance_to_loans
+R23 column 7 / 15 cash_to_assets
+R23 column 8 / 15 cash_and_securities_to_assets
+R23 column 9 / 15 deposits_to_assets
+R23 column 10 / 15 net_loans_to_assets
+R23 column 11 / 15 roa_reported_percent
+R23 column 12 / 15 nimy_reported_percent
+R23 column 13 / 15 negative_equity_flag
+R23 column 14 / 15 loss_flag_roa_negative
+R23 column 15 / 15 loan_denominator_invalid_flag
+[PASS] R23_504_PARAMETER_STATISTICS: Rows 72, statistics 504, mismatches 0
+[PASS] FROZEN_SOURCE_UNCHANGED: Before: d365ce25204a3dcace715db4cea259c94b1b1abba4822c7bcf2b050a1c7f6a73 After: d365ce25204a3dcace715db4cea259c94b1b1abba4822c7bcf2b050a1c7f6a73

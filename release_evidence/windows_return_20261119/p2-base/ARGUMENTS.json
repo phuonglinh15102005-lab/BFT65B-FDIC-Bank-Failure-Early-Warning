@@ -1,0 +1,6 @@
+[
+  "--audit-dir",
+  "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z",
+  "--out",
+  "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-base\\artifacts"
+]

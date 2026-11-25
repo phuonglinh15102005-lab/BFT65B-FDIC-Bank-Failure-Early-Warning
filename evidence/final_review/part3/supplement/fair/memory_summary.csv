@@ -1,0 +1,10 @@
+task,engine,baseline_rss_mib,peak_rss_mib,incremental_rss_mib
+calendar_lag,pandas_optimized,86.816,351.359,264.543
+crisis_profile,polars,48.516,164.238,115.722
+decision_profile,pandas_optimized,86.559,510.242,423.683
+decision_profile,polars,48.645,212.656,164.011
+calendar_lag,polars,48.586,433.387,384.801
+crisis_profile,pandas_original,86.617,484.16,397.543
+crisis_profile,pandas_optimized,86.723,403.863,317.14
+calendar_lag,pandas_original,86.504,356.461,269.957
+decision_profile,pandas_original,86.691,540.504,453.813

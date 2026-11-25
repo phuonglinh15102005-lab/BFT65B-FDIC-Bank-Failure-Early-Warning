@@ -1,0 +1,12 @@
+usage: run.py continuous [-h] [--config CONFIG] [--profile PROFILE]
+                         [--out OUT] [--python-engineering PYTHON_ENGINEERING]
+                         [--start {raw,prepared}] [--reveal]
+
+options:
+  -h, --help            show this help message and exit
+  --config CONFIG
+  --profile PROFILE
+  --out OUT
+  --python-engineering PYTHON_ENGINEERING
+  --start {raw,prepared}
+  --reveal

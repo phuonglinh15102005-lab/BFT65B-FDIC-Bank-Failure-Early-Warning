@@ -1,0 +1,11 @@
+[
+  "--step2-dir",
+  "%USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509",
+  "--step2b-dir",
+  "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509",
+  "--out",
+  "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts",
+  "--offline",
+  "--cache-dir",
+  "%USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\request_cache"
+]

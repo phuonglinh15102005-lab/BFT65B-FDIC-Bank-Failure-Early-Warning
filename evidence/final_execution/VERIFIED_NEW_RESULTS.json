@@ -1,0 +1,61 @@
+{
+  "scope": "Recalculation from returned evidence, not new raw-data execution",
+  "storage": {
+    "rows": 1682616,
+    "quarters": 170,
+    "script_sha256": "9ee23b27e000d5b68472f4c6a25c58bab574981b527f6f202df1095ccfe8ba9a",
+    "variants": 4,
+    "timed": 112,
+    "warmups": 32,
+    "fingerprints": 144,
+    "source_digests": 170,
+    "summary_cells": 16,
+    "sizes": {
+      "csv_uncompressed": 446406692,
+      "csv_sentinel": 478326701,
+      "parquet_zstd": 159736091,
+      "csv_empty_gzip": 182815148
+    }
+  },
+  "policy": {
+    "mode": "policy",
+    "input_digests": 6,
+    "ranking_rows": 21,
+    "scenario_rows": 4
+  },
+  "replay": {
+    "stages": 5,
+    "datasets": 179,
+    "byte_identical": 178,
+    "compared_columns": 5401,
+    "compared_cells": 230664115,
+    "input_digests": 506,
+    "exported_manifest": 256,
+    "source_manifest_sha256": "7c9da966a7554d8cd34b84b9edeceec3795571bbfcd8db266426625dd71599dd",
+    "development": {
+      "dataset": "development",
+      "status": "PASS_NUMERICAL_SCHEMA_EQUIVALENCE",
+      "new_rows": "1231631",
+      "reference_rows": "1231631",
+      "schema_equal": "True",
+      "byte_identical": "False",
+      "new_sha256": "a7295637cc68f91bc02aa8c78e8d952b12abffda30fbb420e3c8a0d0d2662b61",
+      "reference_sha256": "d365ce25204a3dcace715db4cea259c94b1b1abba4822c7bcf2b050a1c7f6a73"
+    }
+  },
+  "clean_install": {
+    "engineering": {
+      "python": "3.13.9",
+      "pins": 9,
+      "freeze_packages": 24,
+      "status": "PASS_CLEAN_INSTALL_IMPORTS_ONLY"
+    },
+    "model": {
+      "python": "3.13.7",
+      "pins": 13,
+      "freeze_packages": 16,
+      "status": "PASS_CLEAN_INSTALL_IMPORTS_ONLY"
+    }
+  },
+  "new_test_inference": false
+}

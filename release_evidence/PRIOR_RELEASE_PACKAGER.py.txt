@@ -1,0 +1,202 @@
+from pathlib import Path
+import csv, hashlib, json, shutil, sys, zipfile
+from datetime import datetime, timezone
+import platform
+
+R=Path('/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118')
+W=R.parent
+def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+def write(name,text): (R/name).write_text(text.strip()+'\n',encoding='utf-8')
+
+records=[]; relocated=[]
+for p in sorted((R/'release_evidence').glob('C*/EXECUTION_RECORD.json')):
+    value=json.loads(p.read_text()); records.append(value)
+    for name,expected in value['output_sha256'].items():
+        src=Path(name)
+        if not src.is_absolute() or expected is None: continue
+        assert src.is_file() and sha(src)==expected, ('external test output changed',name)
+        assert src.suffix in {'.json','.csv','.txt'}
+        dst=R/'release_evidence'/'EXECUTED_OUTPUTS'/value['id']/src.name
+        dst.parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(src,dst)
+        relocated.append([value['id'],name,dst.relative_to(R).as_posix(),expected])
+    for name,digest in value['input_sha256_before'].items():
+        snapshot=p.parent/'INPUT_SNAPSHOTS'/(digest+'.txt')
+        assert snapshot.is_file() and sha(snapshot)==digest
+    for name,digest in value['output_sha256'].items():
+        if not Path(name).is_absolute(): assert sha(p.parent/name)==digest
+    assert value['input_sha256_before']==value['input_sha256_after']
+
+with (R/'release_evidence/EVIDENCE_RELOCATION_MAP.csv').open('w',encoding='utf-8-sig',newline='') as f:
+    w=csv.writer(f);w.writerow(['test_id','original_executed_output_path','packaged_copy','sha256']);w.writerows(relocated)
+with (R/'EXECUTION_LOG_INDEX.csv').open('w',encoding='utf-8-sig',newline='') as f:
+    fields=['test_id','status','exit_code','command','python','execution_record','scope']
+    w=csv.DictWriter(f,fieldnames=fields);w.writeheader()
+    for v in records:
+        w.writerow(dict(test_id=v['id'],status=v['status'],exit_code=v['exit_code'],command=json.dumps(v['command']),python=v['environment']['python'],execution_record=f"release_evidence/{v['id']}/EXECUTION_RECORD.json",scope=v['scope']))
+
+assert len(records)==15
+passes=sum(v['status']=='PASS' for v in records); blocked=sum(v['status']=='BLOCKED' for v in records)
+assert passes==13 and blocked==2
+audit=json.loads((W/'BFT65B_RELEASE_SOURCE_AUDIT_20261119/FINAL_SOURCE_RESOURCE_AUDIT.json').read_text())
+assert audit['errors']==[]
+validation=json.loads((W/'BFT65B_RELEASE_CODE_VALIDATION_20261119/VALIDATION_RESULT.json').read_text())
+manifest=json.loads((R/'config/source_manifest.json').read_text())
+for name,expected in manifest.items(): assert sha(R/name)==expected
+old=json.loads((R/'outputs/verification/PRIOR_AGGREGATE_RECOMPUTATION.json').read_text())
+oldrows=sum(x['rows'] for x in old); maxdelta=max(x['max_abs_delta'] for x in old)
+
+rows=['| Test thực sự đã chạy | Kết quả | Phạm vi |','|---|---|---|']
+for v in records: rows.append(f"| {v['id']} | {v['status']} | {v['scope']} |")
+write('TEST_RESULTS.md',f'''
+# Kết quả kiểm tra code release — chốt ngày 19/11/2026
+
+**15 lần gọi kiểm tra được ghi log: {passes} PASS, {blocked} BLOCKED, 0 FAIL.** Đây là các lần gọi kiểm tra code/controller; không phải 15 lần tái tạo pipeline khoa học. Không fit model, tìm tham số, chọn threshold, lặp ablation, tính lại CI hoặc final-test inference.
+
+Mỗi lệnh thực tế, interpreter/package versions, giờ chạy, input SHA trước/sau và output SHA nằm trong `release_evidence/<test_id>/EXECUTION_RECORD.json`. Bản source đầu vào đúng tại thời điểm chạy được giữ dưới `INPUT_SNAPSHOTS/<sha>.txt`. Vì code đã có sửa tiếp trong quá trình release, dùng log cuối C11–C15 cho source cuối; không trình bày log trước đó như thể đã chạy trên source cuối.
+
+`EXECUTION_LOG_INDEX.csv` liệt kê nguyên lệnh thực tế. Output từng lệnh vốn ở thư mục mới bên ngoài repo được sao chép nguyên bytes vào `release_evidence/EXECUTED_OUTPUTS/`; `EVIDENCE_RELOCATION_MAP.csv` nối đường dẫn thực tế với bản đóng gói và SHA. Không sao chép lại raw datasets hay ZIP chẩn đoán phụ.
+
+{chr(10).join(rows)}
+
+## Kết quả cuối trên cloud
+
+- C12: {validation['source_files_checked']} source/config/resource entries khớp SHA; syntax và frozen protocol hợp lệ; không có payload dữ liệu/model bị cấm.
+- C13: {audit['python_sources']} tệp Python được đọc AST, trong đó {audit['science_python_sources']} tệp science source thuộc Parts 1–5. Các source còn lại là workflow, tests và completed-analysis traceability. Không thiếu literal sibling `.py`/`.sha256` bắt buộc được kiểm tra; không có lỗi được phát hiện trong phạm vi static audit.
+- C14: 20 contract tests PASS, gồm stage allowlist, config bất biến, output overlap, guard network/write/model reads và scalar null/NaN/infinity comparisons. Không import scientific stack hoặc tính metric ngân hàng.
+- C11: 2 fault-injection tests PASS. Mô phỏng source drift/mất manifest phải xuất FAIL diagnostic ZIP; đây là kiểm tra hành vi thất bại, không phải FAIL của dữ liệu thật.
+- C08: controller smoke trên Linux xuất đúng ZIP với trạng thái BLOCKED khi thiếu input/môi trường. Đây không phải bằng chứng Windows UI/BAT hoặc native producers đã chạy thành công.
+- C05: bộ 10 synthetic Arrow/Polars comparison controls BLOCKED do cloud thiếu PyArrow/Polars; không cài bổ sung. Bộ này sẽ tự chạy dưới đúng engineering interpreter trên Windows trước khi chạm producer dữ liệu.
+- C06: gọi replay thực tế trên cloud dừng BLOCKED do không có engineering interpreter Windows/verified inputs; **0 producer được chạy**, không được tính là real-data replay PASS.
+
+## So sánh số đã có và còn thiếu
+
+`outputs/verification/PRIOR_NUMERICAL_COMPARISON.csv` giữ nguyên kết quả đã kiểm trước đây: {len(old)} so sánh Polars/pandas/Spark, tổng {oldrows} dòng aggregate, max absolute delta {maxdelta:.17g}. Release hiện tại chỉ đóng gói lại bằng chứng, không chạy lại các phép so sánh này.
+
+`outputs/verification/NEW_PRODUCER_REPLAY_STATUS.csv` ghi bốn dataset base/clean/PIT/development còn NOT EXECUTED. Không điền số output hay hashes chưa tạo. Kết quả mới chỉ được tạo khi chạy Windows, gồm `STAGE_STATUS.csv`, `NUMERICAL_COMPARISON.csv`, từng column/key/schema check và before/after hashes. Full clean-room E2E vẫn NOT EXECUTED dù ba producer mới PASS.
+''')
+
+write('REPRODUCIBILITY_FINAL_AUDIT.md',f'''
+# Kiểm toán reproducibility cuối của code release
+
+Ngày chốt: 19/11/2026. Mục tiêu là hoàn thiện source và quy trình nộp Parts 1–5; không mở lại mô hình hoặc viết báo cáo học thuật.
+
+## Kết luận trong phạm vi bằng chứng
+
+Source release đã qua kiểm tra cú pháp, resources, protocol/hash, policies và các contract tests cuối. **Chưa có bằng chứng chạy thành công ba producer mới trên Windows; chưa đạt full clean-room E2E PASS.** Không còn lỗi nào được phát hiện trong các kiểm tra code đã chạy không đồng nghĩa đã loại trừ mọi lỗi runtime.
+
+Giữ nguyên các mục đã đóng: R23 504/504, R24 development COST, Parts 1–3 trong scope Windows/archived đã kiểm, panel reconciliation, selection/model/test metrics, late ablation và posthoc CI. Các output tổng hợp được đóng gói lại, không tính lại.
+
+## Entry points, đường dẫn và dependency
+
+Entry point hỗ trợ là `run.py plan|validate|replay`; BAT gốc gọi controller bằng đường dẫn tuyệt đối theo vị trí giải nén. Child workers chạy ba source được allowlist và hash-pinned, với temp/output riêng và cấm network/subprocess trong producer. Lệnh model/grid/refit/threshold/score/download không được dispatch. Source lịch sử được giữ để reviewer xem thuật toán.
+
+`config/default.json` chứa input paths dưới USERPROFILE và SHA của checkpoint gốc. Chỉ được override đường dẫn input qua external config; không đổi hashes/cohort/cache policy/stage set. 174 prepared-file identities, Step2B checkpoint identities và bốn frozen insurance cache-body digests được giữ ở config. Không tự chọn “latest” dataset để thay input thiếu.
+
+`config/environments.json` yêu cầu engineering Python 3.13.9 cùng các version thực tế đã ghi nhận. Model Python 3.13.7/core pins được tách riêng; model execution bị chặn. Hai observed Windows distribution exports là metadata của môi trường được quan sát, không phải historical full lock hay bằng chứng clean installation. Cloud Python {sys.version.split()[0]} dùng cho code tests và thiếu PyArrow/Polars. Không chạy dependency resolver hoặc cài package trong release.
+
+## Execution order và provenance
+
+1. Preflight source/config và existing interpreter; chạy synthetic comparator controls.
+2. `p2-base`: original prepared snapshot → base mới; đối chiếu toàn bộ schema/keys/values với base gốc.
+3. `p2-clean`: original Step2A/B checkpoint set + cache offline cũ → clean/PIT/registry mới; đối chiếu panels với references.
+4. `development-features`: dùng Part2C mới chỉ sau parity PASS; nếu Part2C không được yêu cầu hoặc BLOCKED, việc dùng frozen checkpoint phải ghi rõ. Không dùng output của Part2C FAIL. Producer Part4 giữ primary calculations và chỉ bỏ các kiểm định đã đóng.
+
+Điểm cắt provenance là có chủ ý: summary mới của Part2A có đường dẫn/thời gian mới, không thể giả mạo chữ ký parent của Step2B gốc. Vì vậy đây là checkpoint replay có so sánh định lượng, không phải một DAG mới liền mạch từ HTTP. Development output bị giới hạn theo thời gian; raw clean/PIT đầu vào vẫn phủ nhiều thời kỳ, nên không tuyên bố không có later raw row-group scan. Không đọc model/final-test score/cohort files để chạy producer.
+
+Mỗi stage PASS cần producer hoàn tất, schema/row count/key uniqueness/key set/null/NaN/value comparison PASS và input trước/sau không đổi. Raw base/clean/PIT comparisons là exact; development float tolerance rtol=1e-9, atol=1e-10, integer/date/string vẫn exact. SHA byte khác vì serialization/order được báo riêng; không trình bày numerical parity thành byte identity.
+
+## Bằng chứng kiểm tra thực tế
+
+Xem `TEST_RESULTS.md` và `EXECUTION_LOG_INDEX.csv`: {passes} PASS, {blocked} BLOCKED, 0 FAIL trong 15 command records. Source cuối có {len(manifest)} manifest entries và {audit['python_sources']} Python sources. Command, environment, input/output hashes và bản source đầu vào được giữ, không chỉ một nhãn PASS. Kiểm tra cloud không thay cho native Windows replay. Python audit guards cũng không phải sandbox OS cho mọi native library.
+
+## Repository và rubric
+
+Có canonical source Parts 1–5, completed-analysis source đã đóng, README Anh/Việt, requirements profiles, seeds/protocol, source manifests, logs và outputs tổng hợp. Không đưa raw Parquet, private bank-row predictions/OOF arrays, fitted models/cache bodies hoặc các ZIP bằng chứng lồng nhau vào repository. `.gitignore` chỉ là lớp phụ; actual payload được kiểm trước đóng gói.
+
+`FINAL_RUBRIC_COMPLIANCE_MATRIX.csv` có 33 gates/subcriteria và trích vị trí rubric; điểm parent được lặp để chỉ trọng số, không cộng theo từng dòng và không tự chấm điểm. README ghi trực tiếp FDIC, course/starter provenance và AI assistance. Citations chi tiết phải giữ cùng report sau này. Public URL/visibility/deadline, report identity và giới hạn trang chưa được kiểm trong release này. Part 6 chưa viết.
+
+## Phân loại giới hạn
+
+Historical filing/revision vintages là thiếu dữ liệu lịch sử. Review fees, r=20/avoidability là giả định khoa học. CI đã xác minh là posthoc; provenance bootstrap lịch sử chưa phục hồi. Late ablation phải ghi ngày 18/11/2026 sau test lock. Các mục này không được chuyển thành code defect hoặc PASS bằng một kiểm tra khác. Event recall và COST-weighted recall phải trình bày riêng.
+
+Source release đủ để giao review và chạy bộ replay giới hạn. Chỉ sau khi nhận và đọc độc lập ZIP Windows mới được đóng các producer gates; không gọi bộ này đã tái tạo toàn bộ dự án end to end.
+''')
+
+write('STILL_UNRESOLVED.md','''
+# Việc còn lại và giới hạn phải giữ
+
+## Cần kết quả thực tế từ Windows
+
+| Mục | Trạng thái | Cách đóng gate |
+|---|---|---|
+| Native Part2A replay từ prepared snapshot | NOT EXECUTED — Windows pending | Chạy BAT cuối; yêu cầu base schema/keys/null/values, input preservation và hashes PASS. |
+| Native Part2C offline replay | NOT EXECUTED — Windows pending | Yêu cầu đúng original Step2A/B metadata/cache; clean/PIT comparison PASS. Thiếu cache → BLOCKED, không tải thay. |
+| Part4 development producer-only replay | NOT EXECUTED — Windows pending | Development cohort/20-column output comparison PASS; ghi parent mới đã verified hoặc fallback checkpoint rõ ràng. |
+| Arrow/Polars comparator controls | BLOCKED trong cloud | Tự chạy 10 synthetic cases trên engineering Windows interpreter trước producers. Không tính đây là bank-data validation. |
+| Kiểm tra độc lập return ZIP mới | PENDING | Gửi tệp _GUI_LAI_CHO_CODEX.zip do runner tạo; cần xem command/version/input-output hashes và comparison, không chỉ đọc PASS. |
+
+Không cần gửi lại hoặc chạy lại R23, R24, ablation, Part3 đã đóng, selected HGB, threshold, CI hoặc saved final-test metrics. Nếu BAT báo BLOCKED/FAIL, gửi đúng ZIP/log hiện có; không chạy lặp để tìm PASS.
+
+## Chưa thể gọi full reproduction
+
+Full clean-room HTTP → preprocessing/selection/refit → one-time final scoring là NOT EXECUTED. Hiện không được phép tái chạy grids, selected-model training hoặc final-test inference. Checkpoint replay mới thành công cũng không chứng minh toàn chuỗi đó. Clean environment installation/resolution, toàn bộ historical transitive/native-library lock và public repository accessibility cũng chưa demonstrated.
+
+## Giới hạn khoa học phải công bố
+
+- Không có bộ historical publication/revision vintages đầy đủ: giữ giới hạn historical PIT.
+- CI đã kiểm độc lập là posthoc; historical bootstrap producer/seed/draw provenance chưa phục hồi.
+- FDIC resolution COST là observed ex post. Review fee, avoidability và ratio r=20 là giả định; optimality chỉ có điều kiện theo development proxy. Không gọi COST là causally preventable loss.
+- Event detection 326/341 và khoảng 40.98% COST-weighted recall khác đơn vị/denominator.
+- Ablation được hoàn tất muộn ngày 18/11/2026, sau original test lock; không sửa frozen selection/threshold/results.
+
+## Việc nộp bài còn tách riêng
+
+Chưa tạo/kiểm public GitHub URL hoặc push/commit. Report/Part 6 chưa viết hay sửa. Cần xử lý appendix vượt giới hạn đã ghi nhận, first-page metadata, nguồn/citations và AI acknowledgment trong report. Không thể cam kết điểm tuyệt đối từ technical source validation.
+''')
+
+# Preserve the origin of the canonical science sources against the supplied repaired snapshot.
+base=Path('/workspace/work/BFT65B_TECHNICAL_CLOSEOUT_20261117/PROJECT')
+origin=[]
+for item in audit['sources']:
+    if not item['science_source']:continue
+    rel=item['file'];p=base/rel
+    origin.append([rel,str(p) if p.is_file() else '',sha(p) if p.is_file() else '',sha(R/rel),'UNCHANGED_FROM_PRIOR_REPAIRED_SNAPSHOT' if p.is_file() and sha(p)==sha(R/rel) else 'CONTROLLED_RELEASE_PATCH_SEE_DIFF' if p.is_file() else 'ORIGIN_RECORDED_IN_PRIOR_RESOURCE_AUDIT'])
+with (R/'release_evidence/SCIENCE_SOURCE_ORIGIN.csv').open('w',encoding='utf-8-sig',newline='') as f:
+    w=csv.writer(f);w.writerow(['release_relative_path','prior_repaired_snapshot_path','prior_sha256','release_sha256','classification']);w.writerows(origin)
+
+# Check latest execution logs and reference identity after generating documentation.
+for name,expected in manifest.items():assert sha(R/name)==expected, name
+prohibited={'.parquet','.joblib','.pkl','.pickle','.npz','.npy','.gz','.zip','.sqlite','.db','.pyc'}
+files=sorted(p for p in R.rglob('*') if p.is_file())
+assert not [str(p) for p in files if p.suffix.casefold() in prohibited]
+
+packager_copy=R/'release_evidence/RELEASE_PACKAGER.py.txt'
+shutil.copyfile(Path(__file__),packager_copy)
+write('release_evidence/PACKAGING_PRECHECK.json',json.dumps(dict(status='PASS_PRE_ARCHIVE_CONTENT_AND_EVIDENCE_CHECKS',command=[sys.executable,'-B',str(Path(__file__))],environment=dict(python=platform.python_version(),platform=platform.platform()),input_sha256=dict(packager=sha(Path(__file__)),source_manifest=sha(R/'config/source_manifest.json')),output_sha256=dict(source_resource_audit=sha(W/'BFT65B_RELEASE_SOURCE_AUDIT_20261119/FINAL_SOURCE_RESOURCE_AUDIT.json'),execution_index=sha(R/'EXECUTION_LOG_INDEX.csv')),checks=['All declared historical execution outputs match their recorded SHA','All input snapshots match their recorded SHA','Final source manifest entries unchanged','No prohibited data/model/archive extensions'],scope='Pre-archive checks only; archive CRC/member-hash check is recorded outside the archive to avoid a self-referential hash',timestamp_utc=datetime.now(timezone.utc).isoformat()),indent=2))
+files=sorted(p for p in R.rglob('*') if p.is_file())
+
+mf=R/'FILE_MANIFEST_SHA256.csv'
+with mf.open('w',encoding='utf-8-sig',newline='') as f:
+    w=csv.writer(f);w.writerow(['relative_path','bytes','sha256'])
+    for p in files:
+        if p==mf:continue
+        w.writerow([p.relative_to(R).as_posix(),p.stat().st_size,sha(p)])
+
+zipname=W/'BFT65B_SUBMISSION_CODE_RELEASE_20261119.zip'
+assert not zipname.exists(), 'Do not overwrite an existing release archive'
+prefix='BFT65B_SUBMISSION_CODE_RELEASE_20261119'
+with zipfile.ZipFile(zipname,'x',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+    for p in sorted(R.rglob('*')):
+        if p.is_file():z.write(p,prefix+'/'+p.relative_to(R).as_posix())
+with zipfile.ZipFile(zipname) as z:
+    assert z.testzip() is None
+    assert len(z.namelist())==len(set(z.namelist()))
+    for p in sorted(R.rglob('*')):
+        if p.is_file():assert hashlib.sha256(z.read(prefix+'/'+p.relative_to(R).as_posix())).hexdigest()==sha(p)
+chunkhash=hashlib.sha256()
+with zipname.open('rb') as f:
+    for chunk in iter(lambda:f.read(4*1024*1024),b''):chunkhash.update(hashlib.sha256(chunk).digest())
+result=dict(status='PASS_ARCHIVE_CRC_MEMBER_HASH_AND_SOURCE_MANIFEST',zip=str(zipname),bytes=zipname.stat().st_size,sha256=sha(zipname),dropbox_content_hash=chunkhash.hexdigest(),archive_members=len(files)+1,source_manifest_entries=len(manifest),python_sources=audit['python_sources'],actual_command_records=len(records),code_test_pass=passes,code_test_blocked=blocked,new_native_producer_replay='NOT_EXECUTED_WINDOWS_PENDING',full_clean_room_E2E='NOT_EXECUTED',finished_utc=datetime.now(timezone.utc).isoformat(),command=[sys.executable,'-B',str(Path(__file__))],environment=dict(python=platform.python_version(),platform=platform.platform()),input_sha256=dict(packager=sha(Path(__file__)),source_manifest=sha(R/'config/source_manifest.json'),all_file_manifest=sha(mf)),output_sha256=dict(zip=sha(zipname)))
+(W/'BFT65B_SUBMISSION_CODE_RELEASE_20261119_PACKAGING_RESULT.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
+print(json.dumps(result,indent=2))

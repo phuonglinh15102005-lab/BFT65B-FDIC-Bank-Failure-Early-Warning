@@ -1,0 +1,20 @@
+{
+  "status": "PASS_FROZEN_DEVELOPMENT_REPRODUCTION_ONLY",
+  "mode": "policy",
+  "scope": "private development-only replication; never final test",
+  "input_hashes": {
+    "protocol": "994f72de6e2446916db8c2fcd36847c45cc68eb6fef5ef67f07acc0476c6d911",
+    "development": "d365ce25204a3dcace715db4cea259c94b1b1abba4822c7bcf2b050a1c7f6a73",
+    "failures": "a3e18c370f53c029e83708944bb91daf08ae5f664175f0fdd1bc389698c05ab3",
+    "baseline": "27d7ab92912ede60429bcdc1b02660bf4d4d9175a8cdb62e99653d1d6cace009",
+    "logistic": "dee50122196ead42983b80f9668a769d105cf3a2e8268472dba3b80149c63a56",
+    "hgb": "8c0f41775316da61aab8f3aaa74f2e723f3adeb0d4e2069bb94c652e6b1f066d"
+  },
+  "stages": [
+    {
+      "stage": "policy",
+      "exit_code": 0
+    }
+  ],
+  "python": "3.13.7"
+}

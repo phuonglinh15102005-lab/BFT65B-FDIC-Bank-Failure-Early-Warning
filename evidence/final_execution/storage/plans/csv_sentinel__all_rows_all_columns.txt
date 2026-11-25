@@ -1,0 +1,2 @@
+Csv SCAN [D:/BFT_OUT/storage_20362_790/benchmark_data/csv_sentinel.csv]
+PROJECT */33 COLUMNS

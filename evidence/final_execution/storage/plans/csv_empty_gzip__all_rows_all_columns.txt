@@ -1,0 +1,4 @@
+ WITH_COLUMNS:
+ [when(col("STNAME") == "~BFT_EMPTY~").then("").otherwise(col("STNAME")).alias("STNAME")] 
+  Csv SCAN [446406692 in-mem bytes]
+  PROJECT */33 COLUMNS

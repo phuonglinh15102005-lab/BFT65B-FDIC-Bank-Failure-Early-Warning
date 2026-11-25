@@ -1,0 +1,237 @@
+== Physical Plan ==
+AdaptiveSparkPlan (42)
++- == Final Plan ==
+   ResultQueryStage (27)
+   +- * Sort (26)
+      +- AQEShuffleRead (25), coalesced
+         +- ShuffleQueryStage (24), Statistics(sizeInBytes=9.3 KiB, rowCount=170)
+            +- Exchange (23)
+               +- * HashAggregate (22)
+                  +- AQEShuffleRead (21), coalesced
+                     +- ShuffleQueryStage (20), Statistics(sizeInBytes=83.7 KiB, rowCount=1.19E+3)
+                        +- Exchange (19)
+                           +- * HashAggregate (18)
+                              +- * Project (17)
+                                 +- * SortMergeJoin LeftOuter (16)
+                                    :- * Sort (7)
+                                    :  +- AQEShuffleRead (6), coalesced
+                                    :     +- ShuffleQueryStage (5), Statistics(sizeInBytes=63.7 MiB, rowCount=1.67E+6)
+                                    :        +- Exchange (4)
+                                    :           +- * Project (3)
+                                    :              +- * ColumnarToRow (2)
+                                    :                 +- Scan parquet  (1)
+                                    +- * Sort (15)
+                                       +- AQEShuffleRead (14), coalesced
+                                          +- ShuffleQueryStage (13), Statistics(sizeInBytes=63.7 MiB, rowCount=1.67E+6)
+                                             +- Exchange (12)
+                                                +- * Project (11)
+                                                   +- * Filter (10)
+                                                      +- * ColumnarToRow (9)
+                                                         +- Scan parquet  (8)
++- == Initial Plan ==
+   Sort (41)
+   +- Exchange (40)
+      +- HashAggregate (39)
+         +- Exchange (38)
+            +- HashAggregate (37)
+               +- Project (36)
+                  +- SortMergeJoin LeftOuter (35)
+                     :- Sort (30)
+                     :  +- Exchange (29)
+                     :     +- Project (28)
+                     :        +- Scan parquet  (1)
+                     +- Sort (34)
+                        +- Exchange (33)
+                           +- Project (32)
+                              +- Filter (31)
+                                 +- Scan parquet  (8)
+
+
+(1) Scan parquet 
+Output [3]: [REPDTE#144, ASSET#158, CERT#170L]
+Batched: true
+Location: InMemoryFileIndex [file:/<LOCAL_USER>/BFT65B_outputs/step2c_20261108_145539_477509/panel_clean.parquet]
+ReadSchema: struct<REPDTE:date,ASSET:double,CERT:bigint>
+
+(2) ColumnarToRow [codegen id : 1]
+Input [3]: [REPDTE#144, ASSET#158, CERT#170L]
+
+(3) Project [codegen id : 1]
+Output [4]: [CERT#170L, REPDTE#144, ASSET#158, (((year(REPDTE#144) * 4) + quarter(REPDTE#144)) - 1) AS QID#174]
+Input [3]: [REPDTE#144, ASSET#158, CERT#170L]
+
+(4) Exchange
+Input [4]: [CERT#170L, REPDTE#144, ASSET#158, QID#174]
+Arguments: hashpartitioning(CERT#170L, QID#174, 8), ENSURE_REQUIREMENTS, [plan_id=302]
+
+(5) ShuffleQueryStage
+Output [4]: [CERT#170L, REPDTE#144, ASSET#158, QID#174]
+Arguments: 0
+
+(6) AQEShuffleRead
+Input [4]: [CERT#170L, REPDTE#144, ASSET#158, QID#174]
+Arguments: coalesced
+
+(7) Sort [codegen id : 3]
+Input [4]: [CERT#170L, REPDTE#144, ASSET#158, QID#174]
+Arguments: [CERT#170L ASC NULLS FIRST, QID#174 ASC NULLS FIRST], false, 0
+
+(8) Scan parquet 
+Output [3]: [REPDTE#182, ASSET#196, CERT#208L]
+Batched: true
+Location: InMemoryFileIndex [file:/<LOCAL_USER>/BFT65B_outputs/step2c_20261108_145539_477509/panel_clean.parquet]
+PushedFilters: [IsNotNull(CERT)]
+ReadSchema: struct<REPDTE:date,ASSET:double,CERT:bigint>
+
+(9) ColumnarToRow [codegen id : 2]
+Input [3]: [REPDTE#182, ASSET#196, CERT#208L]
+
+(10) Filter [codegen id : 2]
+Input [3]: [REPDTE#182, ASSET#196, CERT#208L]
+Condition : (isnotnull(CERT#208L) AND isnotnull(((((year(REPDTE#182) * 4) + quarter(REPDTE#182)) - 1) + 1)))
+
+(11) Project [codegen id : 2]
+Output [4]: [CERT#208L, ((((year(REPDTE#182) * 4) + quarter(REPDTE#182)) - 1) + 1) AS QID#175, ASSET#196 AS PREV_ASSET#176, 1 AS PREV_PRESENT#177]
+Input [3]: [REPDTE#182, ASSET#196, CERT#208L]
+
+(12) Exchange
+Input [4]: [CERT#208L, QID#175, PREV_ASSET#176, PREV_PRESENT#177]
+Arguments: hashpartitioning(CERT#208L, QID#175, 8), ENSURE_REQUIREMENTS, [plan_id=321]
+
+(13) ShuffleQueryStage
+Output [4]: [CERT#208L, QID#175, PREV_ASSET#176, PREV_PRESENT#177]
+Arguments: 1
+
+(14) AQEShuffleRead
+Input [4]: [CERT#208L, QID#175, PREV_ASSET#176, PREV_PRESENT#177]
+Arguments: coalesced
+
+(15) Sort [codegen id : 4]
+Input [4]: [CERT#208L, QID#175, PREV_ASSET#176, PREV_PRESENT#177]
+Arguments: [CERT#208L ASC NULLS FIRST, QID#175 ASC NULLS FIRST], false, 0
+
+(16) SortMergeJoin [codegen id : 5]
+Left keys [2]: [CERT#170L, QID#174]
+Right keys [2]: [CERT#208L, QID#175]
+Join type: LeftOuter
+Join condition: None
+
+(17) Project [codegen id : 5]
+Output [4]: [REPDTE#144, ASSET#158, PREV_PRESENT#177, CASE WHEN (PREV_ASSET#176 > 0.0) THEN ((ASSET#158 / PREV_ASSET#176) - 1.0) END AS ASSET_GROWTH#213]
+Input [8]: [CERT#170L, REPDTE#144, ASSET#158, QID#174, CERT#208L, QID#175, PREV_ASSET#176, PREV_PRESENT#177]
+
+(18) HashAggregate [codegen id : 5]
+Input [4]: [REPDTE#144, ASSET#158, PREV_PRESENT#177, ASSET_GROWTH#213]
+Keys [1]: [REPDTE#144]
+Functions [5]: [partial_count(1), partial_sum(CASE WHEN isnotnull(PREV_PRESENT#177) THEN 1 ELSE 0 END), partial_sum(CASE WHEN isnotnull(ASSET_GROWTH#213) THEN 1 ELSE 0 END), partial_avg(ASSET_GROWTH#213), partial_avg(ASSET#158)]
+Aggregate Attributes [7]: [count#231L, sum#232L, sum#233L, sum#234, count#235L, sum#236, count#237L]
+Results [8]: [REPDTE#144, count#238L, sum#239L, sum#240L, sum#241, count#242L, sum#243, count#244L]
+
+(19) Exchange
+Input [8]: [REPDTE#144, count#238L, sum#239L, sum#240L, sum#241, count#242L, sum#243, count#244L]
+Arguments: hashpartitioning(REPDTE#144, 8), ENSURE_REQUIREMENTS, [plan_id=438]
+
+(20) ShuffleQueryStage
+Output [8]: [REPDTE#144, count#238L, sum#239L, sum#240L, sum#241, count#242L, sum#243, count#244L]
+Arguments: 2
+
+(21) AQEShuffleRead
+Input [8]: [REPDTE#144, count#238L, sum#239L, sum#240L, sum#241, count#242L, sum#243, count#244L]
+Arguments: coalesced
+
+(22) HashAggregate [codegen id : 6]
+Input [8]: [REPDTE#144, count#238L, sum#239L, sum#240L, sum#241, count#242L, sum#243, count#244L]
+Keys [1]: [REPDTE#144]
+Functions [5]: [count(1), sum(CASE WHEN isnotnull(PREV_PRESENT#177) THEN 1 ELSE 0 END), sum(CASE WHEN isnotnull(ASSET_GROWTH#213) THEN 1 ELSE 0 END), avg(ASSET_GROWTH#213), avg(ASSET#158)]
+Aggregate Attributes [5]: [count(1)#226L, sum(CASE WHEN isnotnull(PREV_PRESENT#177) THEN 1 ELSE 0 END)#227L, sum(CASE WHEN isnotnull(ASSET_GROWTH#213) THEN 1 ELSE 0 END)#228L, avg(ASSET_GROWTH#213)#229, avg(ASSET#158)#230]
+Results [6]: [REPDTE#144, count(1)#226L AS REPORTS#214L, sum(CASE WHEN isnotnull(PREV_PRESENT#177) THEN 1 ELSE 0 END)#227L AS MATCHED_PRIOR_QUARTER#215L, sum(CASE WHEN isnotnull(ASSET_GROWTH#213) THEN 1 ELSE 0 END)#228L AS VALID_ASSET_GROWTH#216L, avg(ASSET_GROWTH#213)#229 AS MEAN_ASSET_GROWTH#217, avg(ASSET#158)#230 AS MEAN_ASSET#218]
+
+(23) Exchange
+Input [6]: [REPDTE#144, REPORTS#214L, MATCHED_PRIOR_QUARTER#215L, VALID_ASSET_GROWTH#216L, MEAN_ASSET_GROWTH#217, MEAN_ASSET#218]
+Arguments: rangepartitioning(REPDTE#144 ASC NULLS FIRST, 8), ENSURE_REQUIREMENTS, [plan_id=481]
+
+(24) ShuffleQueryStage
+Output [6]: [REPDTE#144, REPORTS#214L, MATCHED_PRIOR_QUARTER#215L, VALID_ASSET_GROWTH#216L, MEAN_ASSET_GROWTH#217, MEAN_ASSET#218]
+Arguments: 3
+
+(25) AQEShuffleRead
+Input [6]: [REPDTE#144, REPORTS#214L, MATCHED_PRIOR_QUARTER#215L, VALID_ASSET_GROWTH#216L, MEAN_ASSET_GROWTH#217, MEAN_ASSET#218]
+Arguments: coalesced
+
+(26) Sort [codegen id : 7]
+Input [6]: [REPDTE#144, REPORTS#214L, MATCHED_PRIOR_QUARTER#215L, VALID_ASSET_GROWTH#216L, MEAN_ASSET_GROWTH#217, MEAN_ASSET#218]
+Arguments: [REPDTE#144 ASC NULLS FIRST], true, 0
+
+(27) ResultQueryStage
+Output [6]: [REPDTE#144, REPORTS#214L, MATCHED_PRIOR_QUARTER#215L, VALID_ASSET_GROWTH#216L, MEAN_ASSET_GROWTH#217, MEAN_ASSET#218]
+Arguments: 4
+
+(28) Project
+Output [4]: [CERT#170L, REPDTE#144, ASSET#158, (((year(REPDTE#144) * 4) + quarter(REPDTE#144)) - 1) AS QID#174]
+Input [3]: [REPDTE#144, ASSET#158, CERT#170L]
+
+(29) Exchange
+Input [4]: [CERT#170L, REPDTE#144, ASSET#158, QID#174]
+Arguments: hashpartitioning(CERT#170L, QID#174, 8), ENSURE_REQUIREMENTS, [plan_id=252]
+
+(30) Sort
+Input [4]: [CERT#170L, REPDTE#144, ASSET#158, QID#174]
+Arguments: [CERT#170L ASC NULLS FIRST, QID#174 ASC NULLS FIRST], false, 0
+
+(31) Filter
+Input [3]: [REPDTE#182, ASSET#196, CERT#208L]
+Condition : (isnotnull(CERT#208L) AND isnotnull(((((year(REPDTE#182) * 4) + quarter(REPDTE#182)) - 1) + 1)))
+
+(32) Project
+Output [4]: [CERT#208L, ((((year(REPDTE#182) * 4) + quarter(REPDTE#182)) - 1) + 1) AS QID#175, ASSET#196 AS PREV_ASSET#176, 1 AS PREV_PRESENT#177]
+Input [3]: [REPDTE#182, ASSET#196, CERT#208L]
+
+(33) Exchange
+Input [4]: [CERT#208L, QID#175, PREV_ASSET#176, PREV_PRESENT#177]
+Arguments: hashpartitioning(CERT#208L, QID#175, 8), ENSURE_REQUIREMENTS, [plan_id=253]
+
+(34) Sort
+Input [4]: [CERT#208L, QID#175, PREV_ASSET#176, PREV_PRESENT#177]
+Arguments: [CERT#208L ASC NULLS FIRST, QID#175 ASC NULLS FIRST], false, 0
+
+(35) SortMergeJoin
+Left keys [2]: [CERT#170L, QID#174]
+Right keys [2]: [CERT#208L, QID#175]
+Join type: LeftOuter
+Join condition: None
+
+(36) Project
+Output [4]: [REPDTE#144, ASSET#158, PREV_PRESENT#177, CASE WHEN (PREV_ASSET#176 > 0.0) THEN ((ASSET#158 / PREV_ASSET#176) - 1.0) END AS ASSET_GROWTH#213]
+Input [8]: [CERT#170L, REPDTE#144, ASSET#158, QID#174, CERT#208L, QID#175, PREV_ASSET#176, PREV_PRESENT#177]
+
+(37) HashAggregate
+Input [4]: [REPDTE#144, ASSET#158, PREV_PRESENT#177, ASSET_GROWTH#213]
+Keys [1]: [REPDTE#144]
+Functions [5]: [partial_count(1), partial_sum(CASE WHEN isnotnull(PREV_PRESENT#177) THEN 1 ELSE 0 END), partial_sum(CASE WHEN isnotnull(ASSET_GROWTH#213) THEN 1 ELSE 0 END), partial_avg(ASSET_GROWTH#213), partial_avg(ASSET#158)]
+Aggregate Attributes [7]: [count#231L, sum#232L, sum#233L, sum#234, count#235L, sum#236, count#237L]
+Results [8]: [REPDTE#144, count#238L, sum#239L, sum#240L, sum#241, count#242L, sum#243, count#244L]
+
+(38) Exchange
+Input [8]: [REPDTE#144, count#238L, sum#239L, sum#240L, sum#241, count#242L, sum#243, count#244L]
+Arguments: hashpartitioning(REPDTE#144, 8), ENSURE_REQUIREMENTS, [plan_id=260]
+
+(39) HashAggregate
+Input [8]: [REPDTE#144, count#238L, sum#239L, sum#240L, sum#241, count#242L, sum#243, count#244L]
+Keys [1]: [REPDTE#144]
+Functions [5]: [count(1), sum(CASE WHEN isnotnull(PREV_PRESENT#177) THEN 1 ELSE 0 END), sum(CASE WHEN isnotnull(ASSET_GROWTH#213) THEN 1 ELSE 0 END), avg(ASSET_GROWTH#213), avg(ASSET#158)]
+Aggregate Attributes [5]: [count(1)#226L, sum(CASE WHEN isnotnull(PREV_PRESENT#177) THEN 1 ELSE 0 END)#227L, sum(CASE WHEN isnotnull(ASSET_GROWTH#213) THEN 1 ELSE 0 END)#228L, avg(ASSET_GROWTH#213)#229, avg(ASSET#158)#230]
+Results [6]: [REPDTE#144, count(1)#226L AS REPORTS#214L, sum(CASE WHEN isnotnull(PREV_PRESENT#177) THEN 1 ELSE 0 END)#227L AS MATCHED_PRIOR_QUARTER#215L, sum(CASE WHEN isnotnull(ASSET_GROWTH#213) THEN 1 ELSE 0 END)#228L AS VALID_ASSET_GROWTH#216L, avg(ASSET_GROWTH#213)#229 AS MEAN_ASSET_GROWTH#217, avg(ASSET#158)#230 AS MEAN_ASSET#218]
+
+(40) Exchange
+Input [6]: [REPDTE#144, REPORTS#214L, MATCHED_PRIOR_QUARTER#215L, VALID_ASSET_GROWTH#216L, MEAN_ASSET_GROWTH#217, MEAN_ASSET#218]
+Arguments: rangepartitioning(REPDTE#144 ASC NULLS FIRST, 8), ENSURE_REQUIREMENTS, [plan_id=263]
+
+(41) Sort
+Input [6]: [REPDTE#144, REPORTS#214L, MATCHED_PRIOR_QUARTER#215L, VALID_ASSET_GROWTH#216L, MEAN_ASSET_GROWTH#217, MEAN_ASSET#218]
+Arguments: [REPDTE#144 ASC NULLS FIRST], true, 0
+
+(42) AdaptiveSparkPlan
+Output [6]: [REPDTE#144, REPORTS#214L, MATCHED_PRIOR_QUARTER#215L, VALID_ASSET_GROWTH#216L, MEAN_ASSET_GROWTH#217, MEAN_ASSET#218]
+Arguments: isFinalPlan=true
+
+

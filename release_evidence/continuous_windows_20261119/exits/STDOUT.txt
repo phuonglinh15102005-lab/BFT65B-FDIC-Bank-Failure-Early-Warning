@@ -1,0 +1,79 @@
+BFT65B - Part 2B starts. Existing inputs remain unchanged.
+Step 2A: %USERPROFILE%\AppData\Local\BFT65B_CONTINUOUS_REPRO\20261119_192500_59bdf85e\base\artifacts
+Output/cache: %USERPROFILE%\AppData\Local\BFT65B_CONTINUOUS_REPRO\20261119_192500_59bdf85e\exits\artifacts
+Targeted follow-up: 538 banks flagged by step 2A.
+[1/5] Saving official field definitions...
+[2/5] Collecting institution exit/structural events from FDIC History...
+  Exit history: 57,829 records; splitting the request...
+  Exit history L: 38,802 records; splitting the request...
+  Exit history L L: 1 records (checked)
+  Exit history L R: 38,801 records; splitting the request...
+  Exit history L R L: 135 records (checked)
+  Exit history L R R: 38,666 records; splitting the request...
+  Exit history L R R L: 1,893 records (checked)
+  Exit history L R R R: 36,773 records; splitting the request...
+  Exit history L R R R L: 16,242 records; splitting the request...
+  Exit history L R R R L L: 5,665 records (checked)
+  Exit history L R R R L R: 10,577 records; splitting the request...
+  Exit history L R R R L R L: 6,338 records (checked)
+  Exit history L R R R L R R: 4,239 records (checked)
+  Exit history L R R R R: 20,531 records; splitting the request...
+  Exit history L R R R R L: 12,248 records; splitting the request...
+  Exit history L R R R R L L: 8,416 records (checked)
+  Exit history L R R R R L R: 3,832 records (checked)
+  Exit history L R R R R R: 8,283 records (checked)
+  Exit history R: 19,027 records; splitting the request...
+  Exit history R L: 19,027 records; splitting the request...
+  Exit history R L L: 19,027 records; splitting the request...
+  Exit history R L L L: 19,027 records; splitting the request...
+  Exit history R L L L L: 12,577 records; splitting the request...
+  Exit history R L L L L L: 7,403 records (checked)
+  Exit history R L L L L R: 5,174 records (checked)
+  Exit history R L L L R: 6,450 records (checked)
+  Exit history R L L R: 0 records (checked)
+  Exit history R L R: 0 records (checked)
+  Exit history R R: 0 records (checked)
+  Target history 1/18: 312 records (checked)
+  Target history 2/18: 178 records (checked)
+  Target history 3/18: 227 records (checked)
+  Target history 4/18: 282 records (checked)
+  Target history 5/18: 195 records (checked)
+  Target history 6/18: 200 records (checked)
+  Target history 7/18: 181 records (checked)
+  Target history 8/18: 176 records (checked)
+  Target history 9/18: 176 records (checked)
+  Target history 10/18: 162 records (checked)
+  Target history 11/18: 152 records (checked)
+  Target history 12/18: 201 records (checked)
+  Target history 13/18: 200 records (checked)
+  Target history 14/18: 157 records (checked)
+  Target history 15/18: 160 records (checked)
+  Target history 16/18: 134 records (checked)
+  Target history 17/18: 107 records (checked)
+  Target history 18/18: 171 records (checked)
+[3/5] Collecting only supplemental metadata for flagged banks...
+  Financial metadata 1/18: 1,542 records (checked)
+  Financial metadata 2/18: 1,581 records (checked)
+  Financial metadata 3/18: 975 records (checked)
+  Financial metadata 4/18: 1,370 records (checked)
+  Financial metadata 5/18: 935 records (checked)
+  Financial metadata 6/18: 1,069 records (checked)
+  Financial metadata 7/18: 968 records (checked)
+  Financial metadata 8/18: 811 records (checked)
+  Financial metadata 9/18: 655 records (checked)
+  Financial metadata 10/18: 656 records (checked)
+  Financial metadata 11/18: 665 records (checked)
+  Financial metadata 12/18: 1,098 records (checked)
+  Financial metadata 13/18: 1,297 records (checked)
+  Financial metadata 14/18: 1,318 records (checked)
+  Financial metadata 15/18: 1,372 records (checked)
+  Financial metadata 16/18: 1,470 records (checked)
+  Financial metadata 17/18: 1,172 records (checked)
+  Financial metadata 18/18: 1,089 records (checked)
+[4/5] Building audit-only exit evidence and quality action tables...
+[5/5] Packaging the review results...
+DONE - EXIT_EVIDENCE_READY_FOR_REVIEW
+Target banks: 538; history records: 59,901; metadata rows: 20,043
+Supplemental coverage items requiring review: 0
+SEND THIS FILE: %USERPROFILE%\AppData\Local\BFT65B_CONTINUOUS_REPRO\20261119_192500_59bdf85e\exits\artifacts\part2_review_bundle.zip
+Existing data were preserved. Next: review evidence, then finalize Part 2 panel rules.

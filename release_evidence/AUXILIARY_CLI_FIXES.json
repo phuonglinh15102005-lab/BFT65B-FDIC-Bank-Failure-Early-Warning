@@ -1,0 +1,64 @@
+{
+  "status": "PASS_AST_AND_SAFE_HELP_ONLY",
+  "files": [
+    {
+      "path": "01_PART1_ACQUISITION_STORAGE/code/plot_part1_latency.py",
+      "archived_sha256": "0b7cdfbb32e186a97e2f029b2d0cd887c2f7c25d4652da30219babff03c97637",
+      "release_sha256": "89f9839183353df9528a82095b5789302049521117afd48cd15bd0ee5ebd542a",
+      "AST": "PASS"
+    },
+    {
+      "path": "05_PART5_MODELLING_VALIDATION/code/registered_lr_parity/run_registered_spark_recheck.py",
+      "archived_sha256": "9ad0b38bc26e9243d3231df03682d68a7a0ed4857e17edf45d0f424d3484ed4b",
+      "release_sha256": "4eff4e261da863efef728933fea4ef6f95e41cfb64b1c0dd00d31fc8b5139f5d",
+      "AST": "PASS"
+    }
+  ],
+  "actual_help_commands": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/01_PART1_ACQUISITION_STORAGE/code/plot_part1_latency.py",
+        "--help"
+      ],
+      "started_utc": "2026-11-18T15:56:44.936419+00:00",
+      "finished_utc": "2026-11-18T15:56:44.968716+00:00",
+      "environment": {
+        "python": "3.12.14",
+        "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python"
+      },
+      "input_source_sha256": "89f9839183353df9528a82095b5789302049521117afd48cd15bd0ee5ebd542a",
+      "stdout": "usage: plot_part1_latency.py [-h] --summary SUMMARY --out OUT\n\nDraw Part1 latency from an explicitly supplied archived summary CSV. Whiskers\nare observed min/max, not confidence intervals. No benchmark is run.\nMatplotlib is loaded only after CLI and output-isolation checks. Sources:\noriginal recorded plotting script; AI assistance: ChatGPT8November2026,\nCLI/output isolation repair with OpenAI Codex18November2026.\n\noptions:\n  -h, --help         show this help message and exit\n  --summary SUMMARY  Explicit archived benchmark_summary.csv; no new\n                     measurements are generated.\n  --out OUT          NEW output directory outside the repository and source\n                     CSV directory.\n",
+      "stderr": "",
+      "stdout_sha256": "e2651ff8b6c4783522f998c4f7d52e93a485dabd59c109a994a2aec636873d51",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "status": "PASS_CLI_HELP_ONLY_NO_DATA_OR_SCIENCE"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/05_PART5_MODELLING_VALIDATION/code/registered_lr_parity/run_registered_spark_recheck.py",
+        "--help"
+      ],
+      "started_utc": "2026-11-18T15:56:44.969029+00:00",
+      "finished_utc": "2026-11-18T15:56:45.013192+00:00",
+      "environment": {
+        "python": "3.12.14",
+        "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python"
+      },
+      "input_source_sha256": "4eff4e261da863efef728933fea4ef6f95e41cfb64b1c0dd00d31fc8b5139f5d",
+      "stdout": "usage: run_registered_spark_recheck.py [-h] --dev DEV --reference-dir\n                                       REFERENCE_DIR [--out OUT]\n\nControlled replacement wrapper: explicit inputs and preflight ONLY. The\nhistorical wrapper auto-discovered home folders, fitted classifiers and\nreplaced a result ZIP. This repaired wrapper never dispatches that operation.\nThe diagnostic source is retained next to it; no classifier is fitted here.\n\noptions:\n  -h, --help            show this help message and exit\n  --dev DEV\n  --reference-dir REFERENCE_DIR\n                        Explicit directory containing archived\n                        registered_fold1_keys.npz and\n                        registered_fold1_LR_scores.npz; no private default.\n  --out OUT             Optional NEW external preflight JSON; never a fit\n                        output\n",
+      "stderr": "",
+      "stdout_sha256": "6ce4c7f469671cbb25369e3d8ba859660c0c868e783d92a40060d6e7103a8001",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "status": "PASS_CLI_HELP_ONLY_NO_DATA_OR_SCIENCE"
+    }
+  ],
+  "plotting_math_byte_identical_after_dedenting": true,
+  "no_data_or_scientific_execution": true,
+  "original_archives_unchanged": true
+}

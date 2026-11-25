@@ -1,0 +1,9 @@
+COMMAND: ['%USERPROFILE%\\miniconda3\\python.exe', '%USERPROFILE%\\Downloads\\BFT65B_DEV_DIAGNOSTICS_ONE_CLICK_20261122\\BFT65B_DEV_DIAGNOSTICS_ONE_CLICK_20261122\\dev_only_targeted_diagnostics.py', '--dev', '%USERPROFILE%\\BFT65B_outputs\\part4_v2_dev_only_outputs\\development_primary_binary_v2.parquet', '--clean', '%USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\panel_clean.parquet', '--source', '%USERPROFILE%\\Downloads\\BFT65B_DEV_DIAGNOSTICS_ONE_CLICK_20261122\\BFT65B_DEV_DIAGNOSTICS_ONE_CLICK_20261122\\frozen_pipeline', '--out', '%USERPROFILE%\\AppData\\Local\\BFT65B_DEV_DIAGNOSTICS_RESULTS\\RUN_20261122_090608_26928\\DIAGNOSTICS']
+Python: 3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]
+Reading strictly hash-checked DEV only; no test file can be passed
+Saved development-only feature medians: 15 predictors
+Fold early_bank_stress: train AP 0.391079; val AP 0.360440; historical 0.360440
+Fold post_stress_transition: train AP 0.454589; val AP 0.246946; historical 0.246946
+Fold global_financial_crisis: train AP 0.428450; val AP 0.279913; historical 0.279913
+Saved RBCRWAJ persistence; interpretation: compatible with CBLR hypothesis, not confirmed opt-in
+DIAGNOSTICS COMPLETE. Manually inspect outputs before citing them.

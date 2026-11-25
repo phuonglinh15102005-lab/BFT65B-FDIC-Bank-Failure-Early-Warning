@@ -1,0 +1,3117 @@
+{
+  "status": "PASS_INDEPENDENT_RETURN_EVIDENCE_REVIEW",
+  "started_utc": "2026-11-19T01:26:54.027486+00:00",
+  "finished_utc": "2026-11-19T01:26:54.063481+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/work/verify_bft65b_windows_return_20261119.py"
+  ],
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "libraries": "stdlib only; no science imports"
+  },
+  "archive_sha256": "30e4f95b91392916076e48bfa25795582af64bc95ff09ae870ceeefa751ac2a2",
+  "input_sha256_before": {
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/CONFIG_USED.json": "f3b1f27b4ce0903d5b9e2cad96982af7d2a5f61685b45f77a7f34787cfe318f1",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/EXISTING_ENVIRONMENTS.json": "d2f2ebd88bff6eb9427e41a7ff68be7d4658bd0f7fd2e0b2fc52e36a2fa00ba9",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/NUMERICAL_COMPARISON.csv": "83557a07cadda87de7d618340acaa8844c8eff83b111a863c819b72c13de02db",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/REPLAY_RESULT.json": "0afcd823d5cce1b5dc34b8a702f070f679fa6d05e6a0503e2bcdb7f33dc030b8",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/STAGE_STATUS.csv": "3240ddd04249c9e22318b8b2c73b45304c94be7122461b44a5176e75b18d46b6",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/COMMAND.json": "38782379d4a1656db219eb7ef4236db6b7eff57f70de033bb5e5b0d1f18b0ba5",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/STDOUT.txt": "b5bb432981d0ad31b360df9e724f582b068383b257e5fd1ac7b073d20bf39e7e",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/synthetic/SELFTEST_RESULT.json": "0d1216fa8a7cc81d2e202078aca7a4626a0477c54ee72add185b3a4a8d8e21b1",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/synthetic/duplicate_keys.json": "b71721beb28f3a6ddd4ac69f56c8de02d2871e8c05b91197f2513d75e6b51293",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/synthetic/finite_vs_infinite.json": "f680a464c4adf1356f30dcf4dba64ab2218b689446aa13a655a5b769edd9e42d",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/synthetic/identical.json": "86cce11db647349215becc9673b22d9c7e5b89f696a7a204660aa07414648819",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/synthetic/label_mutation.json": "d88f956064eef541fba82dea2ef202058b5bc2ca4d955c32e3f08793020fe5d9",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/synthetic/null_to_nan.json": "92c370b9031fb21d5eccd1442d8586ffbbcc50ec39dc7abd3ed3c0d2e950c74b",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/synthetic/opposite_infinities.json": "232e759ac8ae22caaa4091c2c6a2363359e231a6e88078d90e9ee0901c70d74d",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/synthetic/reordered.json": "98eff88d68ade50fc57994d8ba426648b926eaeb405312513617e1a548ba5e21",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/synthetic/strict_float_roundoff_rejected.json": "8a64e04b8267cb775dd4313bc8a75677527125e78d0814d6c1a1c7275bc1aebe",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/synthetic/tolerated_float_roundoff.json": "62f246cc679ce7105abe72dad741ab5ae39748b371a2f9e5ab4d9b36f78cda34",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/synthetic/wrong_schema.json": "b3cfe167312a873db6e6c608a305bc409013d0b8b7a2e8630ce78eb51c07dc7e",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/ARGUMENTS.json": "d2061d30fa2bf6eb8bf196491e35cf874589dc6306cb01c7be0af55f22cdd580",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/COMMAND.json": "7e881f3b7b29a4c4ee1d241d3592080c75f41e524cb4c3e32d8e3803b4bad879",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/COMPARISON_SPEC.json": "81772900da65fc4bddd98ac13ab2393ceca04f111992b64edb694fc16ea1e8ae",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/STAGE_RESULT.json": "1b5d81f092b32aff60ccc620499c39404924634d79d2ba9632d329d835ad041b",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/STDOUT.txt": "a8e15a1168d1ef0422efcfec1b6b41eb7dbf13eacbc7f2549c4bcfd54be772a2",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/WORKER_RESULT.json": "7eb7bad2c41a5f4b43b1b5c908f438a664e4547d705f2439d70bb3358f7ca9c8",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/comparison/COMPARISON_RESULT.json": "be72c3f5e956ff69f06d4bca0a0c2749d054086b706c5a998b9e820e1ede2c52",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/comparison/development.json": "888c3ca9e5c05d0a3c090a71eef50a76ce7a122d0693eae1ede9631870e863e0",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/comparison_command/COMMAND.json": "3d0b1c82830cdf27b5c7b811a668164200454818b8f339a009c53cd73a922a2e",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/comparison_command/STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/comparison_command/STDOUT.txt": "d938fa189912f8776c3deb31a6bec42f403f57b9c8e3ed936bdb076caf6bd61c",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/ARGUMENTS.json": "80fb550d4ffb5bdfe1ee8667c4f8dd9dfcb1ca8dc39d3520c1f9524d8dd6c71f",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/COMMAND.json": "caa4e4a79cb06266c363db2cce59964b1457f26332a558bf44d5a32c0df1d585",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/COMPARISON_SPEC.json": "197f3f39480529d93f47536c9cd46d2ce6744f05a7fe8f040386840305f766b0",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/STAGE_RESULT.json": "22c7eca853ff2eed898bbc683b3f922696c77aa8d244e40e86e3391a23ee02e0",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/STDOUT.txt": "5707da98b0ffe18c962ce909d2a4d66d5d187edb5a574015ef6a795f41e548a2",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/WORKER_RESULT.json": "a16d0c873ebc54401e3a0d24b5980717015dd638ac6fa5dad67bedcf92b3d986",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/comparison/COMPARISON_RESULT.json": "827a5688fd7f030daff76a11a0132ba766dcf9c45f5de40b29f6b2f3eaeec70b",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/comparison/base.json": "1dbc63ad8aebb9760f73807320ef1a80f7643a5ebc671dfdbd25033dc688a86a",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/comparison_command/COMMAND.json": "2916e9fb8b3e782c2dbf48b1f7de982851d83db3afcb9080f310a88a793ecdb5",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/comparison_command/STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/comparison_command/STDOUT.txt": "d938fa189912f8776c3deb31a6bec42f403f57b9c8e3ed936bdb076caf6bd61c",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/ARGUMENTS.json": "83960f06961616da89c2d9c86e7eca19984ae1813513373bc559a63aa4be9201",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/COMMAND.json": "b71abf345976378f62b75711d5cdbeb6bd7bd8675bae65eb918c47327f1164c2",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/COMPARISON_SPEC.json": "32e968bebc4f6a71ec200a33683c3e5e0368716ad24721ce335037bc714d7e63",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/STAGE_RESULT.json": "d4e2683476d9fa835fe805f50e035d8922f699609bd4d6f86d548668c65e9a51",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/STDOUT.txt": "8c35f3113d39db63d77aa0fd8df306d503ccf339e1e3f48ffe9e84502b944fa8",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/WORKER_RESULT.json": "e39644b5bee1a04230bd6da9ec998b6ff0802da75891dd20cc666418dee773db",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/comparison/COMPARISON_RESULT.json": "1e0fc2f93d9d4ef3d9b2cd8e72815805319c51509ddfeb34013d16f8abdf55f9",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/comparison/clean.json": "2f47a46da9dad02cf0ad8703f42282a9d4933b3628d8b211d4749358fe70f35b",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/comparison/pit.json": "0f20fdc53c284a8c90a80eb8a683a8f65b6be28230464095033ecef122a438a4",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/comparison_command/COMMAND.json": "1c043a098587d5f159d519108abd0f60d549d77d065e2c588f8ee6b58d59ca98",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/comparison_command/STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/comparison_command/STDOUT.txt": "d938fa189912f8776c3deb31a6bec42f403f57b9c8e3ed936bdb076caf6bd61c",
+    "/workspace/attachments/f3b9a194-bc4d-4f85-afb8-59e61949c9c2/20261119_082051_38aac2a6_GUI_LAI_CHO_CODEX.zip": "30e4f95b91392916076e48bfa25795582af64bc95ff09ae870ceeefa751ac2a2",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/config/assignment_provenance.json": "3c47d51a1118fe5d80c6885c7a8db8b3c60187b44c2c657a4b6e0fcdd07774f5",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/config/default.json": "3d53cbe14f8c3ef3c6197ea4ab48a7f58c3414fba2514bb3f03cf819ccc1a695",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/config/environments.json": "6a1248e225c55ec0d6fd9fe89e10104f7a2aecff7a5a9e8c9c06e49a53b59151",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/config/frozen_scope_requests.json": "df86255f15d0be6041685c8dc221d4a48a1d8e241403d67d8063da22f9f773f2",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/config/prepared_snapshot_manifest.json": "1e956ea7bf95dcb50d50076cc8ea77e4eaa0c57b03dc391ed7eba3765f39b8fd",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/config/release_tests.json": "88402485b44561a0f3ea173b0993f7bc4e84993b622110b5d038a986802c8c77",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/config/source_manifest.json": "161f2df8be6175e71cfc020ba1291d35f2ac857b54befd0773d485189edba88b",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/config/stages.json": "67900d491d8167b0c1609906a659e3e29a9de0f2f2f57870e23168c574a0a8b4",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/config/step2b_snapshot_hashes.json": "82d3c951dded87a673f0c898f16575719f239d56245a1c3e7c2c4eacd9e53b69",
+    "/workspace/work/verify_bft65b_windows_return_20261119.py": "936099c754f295fcd99acf62c1d7e9df6b51aeaef545ecc743ed00e700a168bf"
+  },
+  "input_sha256_after": {
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/CONFIG_USED.json": "f3b1f27b4ce0903d5b9e2cad96982af7d2a5f61685b45f77a7f34787cfe318f1",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/EXISTING_ENVIRONMENTS.json": "d2f2ebd88bff6eb9427e41a7ff68be7d4658bd0f7fd2e0b2fc52e36a2fa00ba9",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/NUMERICAL_COMPARISON.csv": "83557a07cadda87de7d618340acaa8844c8eff83b111a863c819b72c13de02db",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/REPLAY_RESULT.json": "0afcd823d5cce1b5dc34b8a702f070f679fa6d05e6a0503e2bcdb7f33dc030b8",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/STAGE_STATUS.csv": "3240ddd04249c9e22318b8b2c73b45304c94be7122461b44a5176e75b18d46b6",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/COMMAND.json": "38782379d4a1656db219eb7ef4236db6b7eff57f70de033bb5e5b0d1f18b0ba5",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/STDOUT.txt": "b5bb432981d0ad31b360df9e724f582b068383b257e5fd1ac7b073d20bf39e7e",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/synthetic/SELFTEST_RESULT.json": "0d1216fa8a7cc81d2e202078aca7a4626a0477c54ee72add185b3a4a8d8e21b1",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/synthetic/duplicate_keys.json": "b71721beb28f3a6ddd4ac69f56c8de02d2871e8c05b91197f2513d75e6b51293",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/synthetic/finite_vs_infinite.json": "f680a464c4adf1356f30dcf4dba64ab2218b689446aa13a655a5b769edd9e42d",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/synthetic/identical.json": "86cce11db647349215becc9673b22d9c7e5b89f696a7a204660aa07414648819",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/synthetic/label_mutation.json": "d88f956064eef541fba82dea2ef202058b5bc2ca4d955c32e3f08793020fe5d9",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/synthetic/null_to_nan.json": "92c370b9031fb21d5eccd1442d8586ffbbcc50ec39dc7abd3ed3c0d2e950c74b",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/synthetic/opposite_infinities.json": "232e759ac8ae22caaa4091c2c6a2363359e231a6e88078d90e9ee0901c70d74d",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/synthetic/reordered.json": "98eff88d68ade50fc57994d8ba426648b926eaeb405312513617e1a548ba5e21",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/synthetic/strict_float_roundoff_rejected.json": "8a64e04b8267cb775dd4313bc8a75677527125e78d0814d6c1a1c7275bc1aebe",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/synthetic/tolerated_float_roundoff.json": "62f246cc679ce7105abe72dad741ab5ae39748b371a2f9e5ab4d9b36f78cda34",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/comparator_controls/synthetic/wrong_schema.json": "b3cfe167312a873db6e6c608a305bc409013d0b8b7a2e8630ce78eb51c07dc7e",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/ARGUMENTS.json": "d2061d30fa2bf6eb8bf196491e35cf874589dc6306cb01c7be0af55f22cdd580",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/COMMAND.json": "7e881f3b7b29a4c4ee1d241d3592080c75f41e524cb4c3e32d8e3803b4bad879",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/COMPARISON_SPEC.json": "81772900da65fc4bddd98ac13ab2393ceca04f111992b64edb694fc16ea1e8ae",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/STAGE_RESULT.json": "1b5d81f092b32aff60ccc620499c39404924634d79d2ba9632d329d835ad041b",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/STDOUT.txt": "a8e15a1168d1ef0422efcfec1b6b41eb7dbf13eacbc7f2549c4bcfd54be772a2",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/WORKER_RESULT.json": "7eb7bad2c41a5f4b43b1b5c908f438a664e4547d705f2439d70bb3358f7ca9c8",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/comparison/COMPARISON_RESULT.json": "be72c3f5e956ff69f06d4bca0a0c2749d054086b706c5a998b9e820e1ede2c52",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/comparison/development.json": "888c3ca9e5c05d0a3c090a71eef50a76ce7a122d0693eae1ede9631870e863e0",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/comparison_command/COMMAND.json": "3d0b1c82830cdf27b5c7b811a668164200454818b8f339a009c53cd73a922a2e",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/comparison_command/STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/development-features/comparison_command/STDOUT.txt": "d938fa189912f8776c3deb31a6bec42f403f57b9c8e3ed936bdb076caf6bd61c",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/ARGUMENTS.json": "80fb550d4ffb5bdfe1ee8667c4f8dd9dfcb1ca8dc39d3520c1f9524d8dd6c71f",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/COMMAND.json": "caa4e4a79cb06266c363db2cce59964b1457f26332a558bf44d5a32c0df1d585",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/COMPARISON_SPEC.json": "197f3f39480529d93f47536c9cd46d2ce6744f05a7fe8f040386840305f766b0",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/STAGE_RESULT.json": "22c7eca853ff2eed898bbc683b3f922696c77aa8d244e40e86e3391a23ee02e0",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/STDOUT.txt": "5707da98b0ffe18c962ce909d2a4d66d5d187edb5a574015ef6a795f41e548a2",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/WORKER_RESULT.json": "a16d0c873ebc54401e3a0d24b5980717015dd638ac6fa5dad67bedcf92b3d986",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/comparison/COMPARISON_RESULT.json": "827a5688fd7f030daff76a11a0132ba766dcf9c45f5de40b29f6b2f3eaeec70b",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/comparison/base.json": "1dbc63ad8aebb9760f73807320ef1a80f7643a5ebc671dfdbd25033dc688a86a",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/comparison_command/COMMAND.json": "2916e9fb8b3e782c2dbf48b1f7de982851d83db3afcb9080f310a88a793ecdb5",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/comparison_command/STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-base/comparison_command/STDOUT.txt": "d938fa189912f8776c3deb31a6bec42f403f57b9c8e3ed936bdb076caf6bd61c",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/ARGUMENTS.json": "83960f06961616da89c2d9c86e7eca19984ae1813513373bc559a63aa4be9201",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/COMMAND.json": "b71abf345976378f62b75711d5cdbeb6bd7bd8675bae65eb918c47327f1164c2",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/COMPARISON_SPEC.json": "32e968bebc4f6a71ec200a33683c3e5e0368716ad24721ce335037bc714d7e63",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/STAGE_RESULT.json": "d4e2683476d9fa835fe805f50e035d8922f699609bd4d6f86d548668c65e9a51",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/STDOUT.txt": "8c35f3113d39db63d77aa0fd8df306d503ccf339e1e3f48ffe9e84502b944fa8",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/WORKER_RESULT.json": "e39644b5bee1a04230bd6da9ec998b6ff0802da75891dd20cc666418dee773db",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/comparison/COMPARISON_RESULT.json": "1e0fc2f93d9d4ef3d9b2cd8e72815805319c51509ddfeb34013d16f8abdf55f9",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/comparison/clean.json": "2f47a46da9dad02cf0ad8703f42282a9d4933b3628d8b211d4749358fe70f35b",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/comparison/pit.json": "0f20fdc53c284a8c90a80eb8a683a8f65b6be28230464095033ecef122a438a4",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/comparison_command/COMMAND.json": "1c043a098587d5f159d519108abd0f60d549d77d065e2c588f8ee6b58d59ca98",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/comparison_command/STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/workspace/work/BFT65B_RELEASE_RETURN_20261119_082051/p2-clean/comparison_command/STDOUT.txt": "d938fa189912f8776c3deb31a6bec42f403f57b9c8e3ed936bdb076caf6bd61c",
+    "/workspace/attachments/f3b9a194-bc4d-4f85-afb8-59e61949c9c2/20261119_082051_38aac2a6_GUI_LAI_CHO_CODEX.zip": "30e4f95b91392916076e48bfa25795582af64bc95ff09ae870ceeefa751ac2a2",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/config/assignment_provenance.json": "3c47d51a1118fe5d80c6885c7a8db8b3c60187b44c2c657a4b6e0fcdd07774f5",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/config/default.json": "3d53cbe14f8c3ef3c6197ea4ab48a7f58c3414fba2514bb3f03cf819ccc1a695",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/config/environments.json": "6a1248e225c55ec0d6fd9fe89e10104f7a2aecff7a5a9e8c9c06e49a53b59151",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/config/frozen_scope_requests.json": "df86255f15d0be6041685c8dc221d4a48a1d8e241403d67d8063da22f9f773f2",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/config/prepared_snapshot_manifest.json": "1e956ea7bf95dcb50d50076cc8ea77e4eaa0c57b03dc391ed7eba3765f39b8fd",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/config/release_tests.json": "88402485b44561a0f3ea173b0993f7bc4e84993b622110b5d038a986802c8c77",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/config/source_manifest.json": "161f2df8be6175e71cfc020ba1291d35f2ac857b54befd0773d485189edba88b",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/config/stages.json": "67900d491d8167b0c1609906a659e3e29a9de0f2f2f57870e23168c574a0a8b4",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/config/step2b_snapshot_hashes.json": "82d3c951dded87a673f0c898f16575719f239d56245a1c3e7c2c4eacd9e53b69",
+    "/workspace/work/verify_bft65b_windows_return_20261119.py": "936099c754f295fcd99acf62c1d7e9df6b51aeaef545ecc743ed00e700a168bf"
+  },
+  "checks": [
+    {
+      "check": "archive_crc",
+      "status": "PASS",
+      "detail": "All 56 archived entries read without CRC errors"
+    },
+    {
+      "check": "archive_unique_and_exact_export",
+      "status": "PASS",
+      "detail": 56
+    },
+    {
+      "check": "extraction_byte_identity",
+      "status": "PASS",
+      "detail": "Extraction did not transform archived bytes"
+    },
+    {
+      "check": "no_exported_bank_row_payload",
+      "status": "PASS",
+      "detail": "No Parquet, model, NPZ or nested ZIP"
+    },
+    {
+      "check": "released_source_manifest_unchanged",
+      "status": "PASS",
+      "detail": 122
+    },
+    {
+      "check": "executed_manifest_matches_delivered_release",
+      "status": "PASS",
+      "detail": "161f2df8be6175e71cfc020ba1291d35f2ac857b54befd0773d485189edba88b"
+    },
+    {
+      "check": "executed_config_matches_delivered_config",
+      "status": "PASS",
+      "detail": "Actual input/config contracts are the delivered contracts"
+    },
+    {
+      "check": "exact_engineering_runtime",
+      "status": "PASS",
+      "detail": {
+        "python": "3.13.9",
+        "packages": {
+          "numpy": "2.5.4",
+          "pandas": "3.1.1",
+          "polars": "2.1.0",
+          "pyarrow": "26.0.1"
+        }
+      }
+    },
+    {
+      "check": "no_reported_source_drift",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "no_fits_or_test_inference_requested",
+      "status": "PASS",
+      "detail": "Flags cross-checked against actual source-pinned commands below; not OS attestation"
+    },
+    {
+      "check": "full_e2e_not_overclaimed",
+      "status": "PASS",
+      "detail": "Checkpoint replay retains original Step2A/B provenance"
+    },
+    {
+      "check": "exact_three_requested_stages",
+      "status": "PASS",
+      "detail": [
+        "p2-base",
+        "p2-clean",
+        "development-features"
+      ]
+    },
+    {
+      "check": "p2-base_summary_matches_stage_file",
+      "status": "PASS",
+      "detail": "Embedded and standalone stage evidence agree"
+    },
+    {
+      "check": "p2-base_worker_source_hash",
+      "status": "PASS",
+      "detail": "bbfe7ba51b165aabfc6d0a027d4058ead4321e5973273fdf6ec971c99fef89d0"
+    },
+    {
+      "check": "p2-base_producer_cli_matches_recorded_arguments",
+      "status": "PASS",
+      "detail": [
+        "%USERPROFILE%\\miniconda3\\python.exe",
+        "-B",
+        "%USERPROFILE%\\Downloads\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\02_PART2_DATA_QUALITY_PANEL\\code\\02_build_panel_base.py",
+        "--audit-dir",
+        "%USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z",
+        "--out",
+        "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-base\\artifacts"
+      ]
+    },
+    {
+      "check": "p2-base_controller_worker_cli",
+      "status": "PASS",
+      "detail": [
+        "%USERPROFILE%\\miniconda3\\python.exe",
+        "-B",
+        "%USERPROFILE%\\Downloads\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\workflow\\worker.py",
+        "--stage",
+        "p2-base",
+        "--job",
+        "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-base",
+        "--arguments-file",
+        "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-base\\ARGUMENTS.json"
+      ]
+    },
+    {
+      "check": "p2-base_exact_interpreter",
+      "status": "PASS",
+      "detail": "Exact selected engineering interpreter"
+    },
+    {
+      "check": "p2-base_new_output_isolated",
+      "status": "PASS",
+      "detail": "Original inputs/checkpoints outside new output; regenerated parent is allowed"
+    },
+    {
+      "check": "p2-base_no_closed_work_dispatched",
+      "status": "PASS",
+      "detail": "Only recorded data-only native producer was dispatched"
+    },
+    {
+      "check": "p2-base_input_preservation",
+      "status": "PASS",
+      "detail": 175
+    },
+    {
+      "check": "p2-base_cross_stage_input_1",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19840331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_2",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19840630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_3",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19840930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_4",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19841231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_5",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19850331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_6",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19850630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_7",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19850930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_8",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19851231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_9",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19860331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_10",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19860630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_11",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19860930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_12",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19861231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_13",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19870331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_14",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19870630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_15",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19870930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_16",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19871231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_17",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19880331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_18",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19880630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_19",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19880930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_20",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19881231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_21",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19890331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_22",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19890630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_23",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19890930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_24",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19891231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_25",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19900331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_26",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19900630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_27",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19900930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_28",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19901231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_29",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19910331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_30",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19910630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_31",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19910930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_32",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19911231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_33",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19920331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_34",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19920630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_35",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19920930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_36",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19921231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_37",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19930331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_38",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19930630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_39",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19930930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_40",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19931231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_41",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19940331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_42",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19940630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_43",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19940930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_44",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19941231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_45",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19950331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_46",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19950630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_47",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19950930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_48",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19951231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_49",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19960331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_50",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19960630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_51",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19960930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_52",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19961231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_53",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19970331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_54",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19970630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_55",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19970930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_56",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19971231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_57",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19980331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_58",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19980630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_59",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19980930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_60",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19981231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_61",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19990331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_62",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19990630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_63",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19990930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_64",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=19991231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_65",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20000331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_66",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20000630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_67",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20000930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_68",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20001231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_69",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20010331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_70",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20010630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_71",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20010930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_72",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20011231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_73",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20020331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_74",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20020630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_75",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20020930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_76",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20021231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_77",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20030331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_78",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20030630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_79",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20030930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_80",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20031231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_81",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20040331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_82",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20040630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_83",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20040930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_84",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20041231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_85",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20050331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_86",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20050630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_87",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20050930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_88",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20051231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_89",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20060331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_90",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20060630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_91",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20060930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_92",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20061231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_93",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20070331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_94",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20070630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_95",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20070930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_96",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20071231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_97",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20080331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_98",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20080630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_99",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20080930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_100",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20081231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_101",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20090331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_102",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20090630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_103",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20090930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_104",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20091231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_105",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20100331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_106",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20100630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_107",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20100930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_108",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20101231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_109",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20110331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_110",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20110630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_111",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20110930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_112",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20111231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_113",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20120331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_114",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20120630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_115",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20120930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_116",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20121231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_117",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20130331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_118",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20130630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_119",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20130930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_120",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20131231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_121",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20140331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_122",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20140630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_123",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20140930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_124",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20141231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_125",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20150331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_126",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20150630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_127",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20150930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_128",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20151231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_129",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20160331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_130",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20160630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_131",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20160930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_132",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20161231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_133",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20170331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_134",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20170630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_135",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20170930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_136",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20171231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_137",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20180331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_138",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20180630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_139",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20180930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_140",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20181231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_141",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20190331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_142",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20190630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_143",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20190930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_144",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20191231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_145",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20200331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_146",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20200630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_147",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20200930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_148",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20201231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_149",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20210331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_150",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20210630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_151",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20210930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_152",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20211231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_153",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20220331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_154",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20220630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_155",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20220930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_156",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20221231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_157",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20230331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_158",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20230630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_159",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20230930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_160",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20231231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_161",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20240331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_162",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20240630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_163",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20240930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_164",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20241231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_165",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20250331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_166",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20250630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_167",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20250930.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_168",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20251231.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_169",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20260331.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_170",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\financials\\REPDTE=20260630.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_171",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\institutions.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_172",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\prepared\\failures_all.parquet"
+    },
+    {
+      "check": "p2-base_cross_stage_input_173",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\summary.json"
+    },
+    {
+      "check": "p2-base_cross_stage_input_174",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\data_raw\\fdic\\audit_results\\20261108T032158_540721Z\\STANDARDIZATION_COMPLETE.json"
+    },
+    {
+      "check": "p2-base_cross_stage_input_175",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\panel_base.parquet"
+    },
+    {
+      "check": "p2-base_export_hash_ARGUMENTS.json",
+      "status": "PASS",
+      "detail": "ARGUMENTS.json"
+    },
+    {
+      "check": "p2-base_export_hash_COMMAND.json",
+      "status": "PASS",
+      "detail": "COMMAND.json"
+    },
+    {
+      "check": "p2-base_export_hash_comparison/base.json",
+      "status": "PASS",
+      "detail": "comparison/base.json"
+    },
+    {
+      "check": "p2-base_export_hash_comparison/COMPARISON_RESULT.json",
+      "status": "PASS",
+      "detail": "comparison/COMPARISON_RESULT.json"
+    },
+    {
+      "check": "p2-base_export_hash_comparison_command/COMMAND.json",
+      "status": "PASS",
+      "detail": "comparison_command/COMMAND.json"
+    },
+    {
+      "check": "p2-base_export_hash_comparison_command/STDERR.txt",
+      "status": "PASS",
+      "detail": "comparison_command/STDERR.txt"
+    },
+    {
+      "check": "p2-base_export_hash_comparison_command/STDOUT.txt",
+      "status": "PASS",
+      "detail": "comparison_command/STDOUT.txt"
+    },
+    {
+      "check": "p2-base_export_hash_COMPARISON_SPEC.json",
+      "status": "PASS",
+      "detail": "COMPARISON_SPEC.json"
+    },
+    {
+      "check": "p2-base_export_hash_STDERR.txt",
+      "status": "PASS",
+      "detail": "STDERR.txt"
+    },
+    {
+      "check": "p2-base_export_hash_STDOUT.txt",
+      "status": "PASS",
+      "detail": "STDOUT.txt"
+    },
+    {
+      "check": "p2-base_export_hash_WORKER_RESULT.json",
+      "status": "PASS",
+      "detail": "WORKER_RESULT.json"
+    },
+    {
+      "check": "p2-base_stderr_empty",
+      "status": "PASS",
+      "detail": "No producer/comparison stderr"
+    },
+    {
+      "check": "p2-base_complete_comparison_consistency",
+      "status": "PASS",
+      "detail": "Embedded comparison records agree"
+    },
+    {
+      "check": "p2-clean_summary_matches_stage_file",
+      "status": "PASS",
+      "detail": "Embedded and standalone stage evidence agree"
+    },
+    {
+      "check": "p2-clean_worker_source_hash",
+      "status": "PASS",
+      "detail": "8db73a30252bb2bf61f3569d16f6f335e29fbf55d0d7a6efa9cbd69ec8b4067f"
+    },
+    {
+      "check": "p2-clean_producer_cli_matches_recorded_arguments",
+      "status": "PASS",
+      "detail": [
+        "%USERPROFILE%\\miniconda3\\python.exe",
+        "-B",
+        "%USERPROFILE%\\Downloads\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\02_PART2_DATA_QUALITY_PANEL\\code\\02c_finalize_panel.py",
+        "--step2-dir",
+        "%USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509",
+        "--step2b-dir",
+        "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509",
+        "--out",
+        "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts",
+        "--offline",
+        "--cache-dir",
+        "%USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\request_cache"
+      ]
+    },
+    {
+      "check": "p2-clean_controller_worker_cli",
+      "status": "PASS",
+      "detail": [
+        "%USERPROFILE%\\miniconda3\\python.exe",
+        "-B",
+        "%USERPROFILE%\\Downloads\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\workflow\\worker.py",
+        "--stage",
+        "p2-clean",
+        "--job",
+        "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean",
+        "--arguments-file",
+        "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\ARGUMENTS.json"
+      ]
+    },
+    {
+      "check": "p2-clean_exact_interpreter",
+      "status": "PASS",
+      "detail": "Exact selected engineering interpreter"
+    },
+    {
+      "check": "p2-clean_new_output_isolated",
+      "status": "PASS",
+      "detail": "Original inputs/checkpoints outside new output; regenerated parent is allowed"
+    },
+    {
+      "check": "p2-clean_no_closed_work_dispatched",
+      "status": "PASS",
+      "detail": "Only recorded data-only native producer was dispatched"
+    },
+    {
+      "check": "p2-clean_input_preservation",
+      "status": "PASS",
+      "detail": 59
+    },
+    {
+      "check": "p2-clean_cross_stage_input_176",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\panel_base.parquet"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_177",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\banks_with_internal_gaps.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_178",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\bank_coverage_AUDIT_ONLY.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_179",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\column_availability.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_180",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\duplicate_event_keys.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_181",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\events_AUDIT_ONLY.parquet"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_182",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\event_type_counts.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_183",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\failures_by_year.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_184",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\failures_without_financials.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_185",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\failure_event_coverage.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_186",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\financials_for_multiple_failure_CERTs.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_187",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\inactive_change_codes.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_188",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\input_checksums.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_189",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\institutions_AUDIT_ONLY.parquet"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_190",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\missingness_by_quarter.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_191",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\multiple_failure_events.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_192",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\numeric_profile.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_193",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\polars_panel_plan.txt"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_194",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\reports_after_inactive_date_REVIEW.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_195",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\rows_by_quarter.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_196",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\text_cleanup.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_197",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\unknown_event_types.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_198",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\unlinked_events.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_199",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\review_AUDIT_ONLY\\unmatched_institutions.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_200",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2_20261108_145539_477509\\step2_summary.json"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_201",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\step2b_summary.json"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_202",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\sources_manifest.json"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_203",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\review_AUDIT_ONLY\\history_events_AUDIT_ONLY.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_204",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\review_AUDIT_ONLY\\bank_exit_evidence_AUDIT_ONLY.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_205",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\part2_review_bundle.zip"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_206",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\step2b_config.json"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_207",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\STEP2B_COMPLETE.json"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_208",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\review_AUDIT_ONLY\\event_codes_observed.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_209",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\review_AUDIT_ONLY\\exit_review_counts.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_210",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\review_AUDIT_ONLY\\field_dictionary_sources.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_211",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\review_AUDIT_ONLY\\financial_metadata_AUDIT_ONLY.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_212",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\review_AUDIT_ONLY\\quality_actions.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_213",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\review_AUDIT_ONLY\\step2A_banks_with_internal_gaps.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_214",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\review_AUDIT_ONLY\\step2A_bank_coverage_AUDIT_ONLY.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_215",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\review_AUDIT_ONLY\\step2A_column_availability.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_216",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\review_AUDIT_ONLY\\step2A_failure_event_coverage.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_217",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\review_AUDIT_ONLY\\step2A_missingness_by_quarter.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_218",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\review_AUDIT_ONLY\\step2A_multiple_failure_events.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_219",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\review_AUDIT_ONLY\\step2A_numeric_profile.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_220",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\review_AUDIT_ONLY\\step2A_reports_after_inactive_date_REVIEW.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_221",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\review_AUDIT_ONLY\\step2A_rows_by_quarter.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_222",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\review_AUDIT_ONLY\\step2A_text_cleanup.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_223",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\review_AUDIT_ONLY\\step2A_unmatched_institutions.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_224",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\review_AUDIT_ONLY\\supplemental_metadata_coverage.csv"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_225",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\request_cache\\0d9e5b4f0985de1f5214407c05d6e328a7e17bf26b8c2c725c4e661ca317e3e8.body"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_226",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\request_cache\\0d9e5b4f0985de1f5214407c05d6e328a7e17bf26b8c2c725c4e661ca317e3e8.json"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_227",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\request_cache\\5ee3a784bcc4325f76388cf238afe9e2cb080e375c45d8d604fe109331d9fcfb.body"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_228",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\request_cache\\5ee3a784bcc4325f76388cf238afe9e2cb080e375c45d8d604fe109331d9fcfb.json"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_229",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\request_cache\\aaa0e0bc7442ce244b59763aa3ea0572aec482707ec9ef2fbb91d0bb23dc1169.body"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_230",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\request_cache\\aaa0e0bc7442ce244b59763aa3ea0572aec482707ec9ef2fbb91d0bb23dc1169.json"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_231",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\request_cache\\dde761e5f8b32124b363b7908cce0b3a616b187c1f1ec31b3bc85ced9c23fa22.body"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_232",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\request_cache\\dde761e5f8b32124b363b7908cce0b3a616b187c1f1ec31b3bc85ced9c23fa22.json"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_233",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\panel_clean.parquet"
+    },
+    {
+      "check": "p2-clean_cross_stage_input_234",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\panel_pit_base.parquet"
+    },
+    {
+      "check": "p2-clean_export_hash_ARGUMENTS.json",
+      "status": "PASS",
+      "detail": "ARGUMENTS.json"
+    },
+    {
+      "check": "p2-clean_export_hash_COMMAND.json",
+      "status": "PASS",
+      "detail": "COMMAND.json"
+    },
+    {
+      "check": "p2-clean_export_hash_comparison/clean.json",
+      "status": "PASS",
+      "detail": "comparison/clean.json"
+    },
+    {
+      "check": "p2-clean_export_hash_comparison/COMPARISON_RESULT.json",
+      "status": "PASS",
+      "detail": "comparison/COMPARISON_RESULT.json"
+    },
+    {
+      "check": "p2-clean_export_hash_comparison/pit.json",
+      "status": "PASS",
+      "detail": "comparison/pit.json"
+    },
+    {
+      "check": "p2-clean_export_hash_comparison_command/COMMAND.json",
+      "status": "PASS",
+      "detail": "comparison_command/COMMAND.json"
+    },
+    {
+      "check": "p2-clean_export_hash_comparison_command/STDERR.txt",
+      "status": "PASS",
+      "detail": "comparison_command/STDERR.txt"
+    },
+    {
+      "check": "p2-clean_export_hash_comparison_command/STDOUT.txt",
+      "status": "PASS",
+      "detail": "comparison_command/STDOUT.txt"
+    },
+    {
+      "check": "p2-clean_export_hash_COMPARISON_SPEC.json",
+      "status": "PASS",
+      "detail": "COMPARISON_SPEC.json"
+    },
+    {
+      "check": "p2-clean_export_hash_STDERR.txt",
+      "status": "PASS",
+      "detail": "STDERR.txt"
+    },
+    {
+      "check": "p2-clean_export_hash_STDOUT.txt",
+      "status": "PASS",
+      "detail": "STDOUT.txt"
+    },
+    {
+      "check": "p2-clean_export_hash_WORKER_RESULT.json",
+      "status": "PASS",
+      "detail": "WORKER_RESULT.json"
+    },
+    {
+      "check": "p2-clean_stderr_empty",
+      "status": "PASS",
+      "detail": "No producer/comparison stderr"
+    },
+    {
+      "check": "p2-clean_complete_comparison_consistency",
+      "status": "PASS",
+      "detail": "Embedded comparison records agree"
+    },
+    {
+      "check": "development-features_summary_matches_stage_file",
+      "status": "PASS",
+      "detail": "Embedded and standalone stage evidence agree"
+    },
+    {
+      "check": "development-features_worker_source_hash",
+      "status": "PASS",
+      "detail": "7807ecebefca1a2d592d450c7c42930578e6d9b5086f39494cf83078c0ff13b3"
+    },
+    {
+      "check": "development-features_producer_cli_matches_recorded_arguments",
+      "status": "PASS",
+      "detail": [
+        "%USERPROFILE%\\miniconda3\\python.exe",
+        "-B",
+        "%USERPROFILE%\\Downloads\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\04_PART4_FEATURE_PIPELINE\\code\\part4_v2_relabel_asof_gate.py",
+        "--clean",
+        "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts\\panel_clean.parquet",
+        "--pit",
+        "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts\\panel_pit_base.parquet",
+        "--registry-zip",
+        "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts\\part2_clean_review_bundle.zip",
+        "--step01-source",
+        "%USERPROFILE%\\Downloads\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\04_PART4_FEATURE_PIPELINE\\code\\part4_step01_reference_UNCHANGED.py",
+        "--out-dir",
+        "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\development-features\\artifacts",
+        "--asof-quarters",
+        "0",
+        "--production-only"
+      ]
+    },
+    {
+      "check": "development-features_controller_worker_cli",
+      "status": "PASS",
+      "detail": [
+        "%USERPROFILE%\\miniconda3\\python.exe",
+        "-B",
+        "%USERPROFILE%\\Downloads\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\workflow\\worker.py",
+        "--stage",
+        "development-features",
+        "--job",
+        "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\development-features",
+        "--arguments-file",
+        "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\development-features\\ARGUMENTS.json"
+      ]
+    },
+    {
+      "check": "development-features_exact_interpreter",
+      "status": "PASS",
+      "detail": "Exact selected engineering interpreter"
+    },
+    {
+      "check": "development-features_new_output_isolated",
+      "status": "PASS",
+      "detail": "Original inputs/checkpoints outside new output; regenerated parent is allowed"
+    },
+    {
+      "check": "development-features_no_closed_work_dispatched",
+      "status": "PASS",
+      "detail": "Only recorded data-only native producer was dispatched"
+    },
+    {
+      "check": "development-features_input_preservation",
+      "status": "PASS",
+      "detail": 6
+    },
+    {
+      "check": "development-features_cross_stage_input_235",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\panel_clean.parquet"
+    },
+    {
+      "check": "development-features_cross_stage_input_236",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\panel_pit_base.parquet"
+    },
+    {
+      "check": "development-features_cross_stage_input_237",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\BFT65B_outputs\\part4_v2_dev_only_outputs\\development_primary_binary_v2.parquet"
+    },
+    {
+      "check": "development-features_cross_stage_input_238",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts\\panel_clean.parquet"
+    },
+    {
+      "check": "development-features_cross_stage_input_239",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts\\panel_pit_base.parquet"
+    },
+    {
+      "check": "development-features_cross_stage_input_240",
+      "status": "PASS",
+      "detail": "Same input identity consistent across stages: %USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts\\part2_clean_review_bundle.zip"
+    },
+    {
+      "check": "development-features_export_hash_ARGUMENTS.json",
+      "status": "PASS",
+      "detail": "ARGUMENTS.json"
+    },
+    {
+      "check": "development-features_export_hash_COMMAND.json",
+      "status": "PASS",
+      "detail": "COMMAND.json"
+    },
+    {
+      "check": "development-features_export_hash_comparison/COMPARISON_RESULT.json",
+      "status": "PASS",
+      "detail": "comparison/COMPARISON_RESULT.json"
+    },
+    {
+      "check": "development-features_export_hash_comparison/development.json",
+      "status": "PASS",
+      "detail": "comparison/development.json"
+    },
+    {
+      "check": "development-features_export_hash_comparison_command/COMMAND.json",
+      "status": "PASS",
+      "detail": "comparison_command/COMMAND.json"
+    },
+    {
+      "check": "development-features_export_hash_comparison_command/STDERR.txt",
+      "status": "PASS",
+      "detail": "comparison_command/STDERR.txt"
+    },
+    {
+      "check": "development-features_export_hash_comparison_command/STDOUT.txt",
+      "status": "PASS",
+      "detail": "comparison_command/STDOUT.txt"
+    },
+    {
+      "check": "development-features_export_hash_COMPARISON_SPEC.json",
+      "status": "PASS",
+      "detail": "COMPARISON_SPEC.json"
+    },
+    {
+      "check": "development-features_export_hash_STDERR.txt",
+      "status": "PASS",
+      "detail": "STDERR.txt"
+    },
+    {
+      "check": "development-features_export_hash_STDOUT.txt",
+      "status": "PASS",
+      "detail": "STDOUT.txt"
+    },
+    {
+      "check": "development-features_export_hash_WORKER_RESULT.json",
+      "status": "PASS",
+      "detail": "WORKER_RESULT.json"
+    },
+    {
+      "check": "development-features_stderr_empty",
+      "status": "PASS",
+      "detail": "No producer/comparison stderr"
+    },
+    {
+      "check": "development-features_complete_comparison_consistency",
+      "status": "PASS",
+      "detail": "Embedded comparison records agree"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19840331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19840331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19840630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19840630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19840930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19840930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19841231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19841231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19850331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19850331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19850630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19850630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19850930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19850930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19851231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19851231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19860331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19860331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19860630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19860630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19860930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19860930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19861231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19861231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19870331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19870331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19870630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19870630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19870930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19870930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19871231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19871231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19880331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19880331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19880630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19880630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19880930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19880930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19881231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19881231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19890331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19890331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19890630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19890630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19890930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19890930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19891231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19891231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19900331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19900331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19900630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19900630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19900930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19900930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19901231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19901231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19910331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19910331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19910630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19910630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19910930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19910930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19911231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19911231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19920331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19920331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19920630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19920630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19920930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19920930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19921231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19921231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19930331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19930331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19930630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19930630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19930930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19930930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19931231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19931231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19940331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19940331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19940630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19940630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19940930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19940930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19941231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19941231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19950331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19950331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19950630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19950630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19950930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19950930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19951231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19951231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19960331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19960331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19960630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19960630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19960930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19960930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19961231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19961231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19970331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19970331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19970630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19970630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19970930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19970930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19971231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19971231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19980331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19980331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19980630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19980630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19980930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19980930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19981231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19981231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19990331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19990331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19990630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19990630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19990930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19990930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=19991231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=19991231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20000331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20000331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20000630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20000630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20000930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20000930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20001231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20001231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20010331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20010331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20010630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20010630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20010930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20010930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20011231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20011231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20020331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20020331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20020630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20020630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20020930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20020930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20021231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20021231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20030331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20030331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20030630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20030630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20030930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20030930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20031231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20031231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20040331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20040331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20040630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20040630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20040930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20040930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20041231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20041231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20050331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20050331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20050630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20050630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20050930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20050930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20051231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20051231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20060331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20060331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20060630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20060630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20060930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20060930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20061231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20061231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20070331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20070331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20070630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20070630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20070930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20070930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20071231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20071231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20080331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20080331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20080630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20080630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20080930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20080930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20081231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20081231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20090331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20090331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20090630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20090630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20090930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20090930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20091231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20091231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20100331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20100331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20100630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20100630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20100930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20100930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20101231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20101231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20110331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20110331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20110630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20110630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20110930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20110930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20111231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20111231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20120331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20120331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20120630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20120630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20120930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20120930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20121231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20121231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20130331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20130331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20130630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20130630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20130930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20130930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20131231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20131231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20140331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20140331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20140630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20140630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20140930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20140930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20141231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20141231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20150331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20150331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20150630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20150630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20150930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20150930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20151231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20151231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20160331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20160331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20160630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20160630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20160930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20160930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20161231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20161231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20170331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20170331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20170630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20170630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20170930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20170930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20171231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20171231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20180331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20180331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20180630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20180630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20180930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20180930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20181231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20181231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20190331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20190331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20190630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20190630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20190930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20190930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20191231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20191231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20200331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20200331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20200630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20200630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20200930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20200930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20201231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20201231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20210331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20210331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20210630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20210630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20210930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20210930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20211231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20211231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20220331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20220331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20220630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20220630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20220930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20220930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20221231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20221231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20230331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20230331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20230630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20230630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20230930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20230930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20231231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20231231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20240331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20240331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20240630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20240630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20240930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20240930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20241231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20241231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20250331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20250331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20250630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20250630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20250930.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20250930.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20251231.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20251231.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20260331.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20260331.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/financials/REPDTE=20260630.parquet",
+      "status": "PASS",
+      "detail": "prepared/financials/REPDTE=20260630.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/institutions.parquet",
+      "status": "PASS",
+      "detail": "prepared/institutions.parquet"
+    },
+    {
+      "check": "prepared_snapshot_prepared/failures_all.parquet",
+      "status": "PASS",
+      "detail": "prepared/failures_all.parquet"
+    },
+    {
+      "check": "prepared_snapshot_summary.json",
+      "status": "PASS",
+      "detail": "summary.json"
+    },
+    {
+      "check": "prepared_snapshot_STANDARDIZATION_COMPLETE.json",
+      "status": "PASS",
+      "detail": "STANDARDIZATION_COMPLETE.json"
+    },
+    {
+      "check": "step2b_step2b_summary.json",
+      "status": "PASS",
+      "detail": "step2b_summary.json"
+    },
+    {
+      "check": "step2b_sources_manifest.json",
+      "status": "PASS",
+      "detail": "sources_manifest.json"
+    },
+    {
+      "check": "step2b_review_AUDIT_ONLY/history_events_AUDIT_ONLY.csv",
+      "status": "PASS",
+      "detail": "review_AUDIT_ONLY/history_events_AUDIT_ONLY.csv"
+    },
+    {
+      "check": "step2b_review_AUDIT_ONLY/bank_exit_evidence_AUDIT_ONLY.csv",
+      "status": "PASS",
+      "detail": "review_AUDIT_ONLY/bank_exit_evidence_AUDIT_ONLY.csv"
+    },
+    {
+      "check": "step2b_part2_review_bundle.zip",
+      "status": "PASS",
+      "detail": "part2_review_bundle.zip"
+    },
+    {
+      "check": "frozen_cache_0d9e5b4f0985de1f5214407c05d6e328a7e17bf26b8c2c725c4e661ca317e3e8.body",
+      "status": "PASS",
+      "detail": "0d9e5b4f0985de1f5214407c05d6e328a7e17bf26b8c2c725c4e661ca317e3e8.body"
+    },
+    {
+      "check": "frozen_cache_dde761e5f8b32124b363b7908cce0b3a616b187c1f1ec31b3bc85ced9c23fa22.body",
+      "status": "PASS",
+      "detail": "dde761e5f8b32124b363b7908cce0b3a616b187c1f1ec31b3bc85ced9c23fa22.body"
+    },
+    {
+      "check": "frozen_cache_aaa0e0bc7442ce244b59763aa3ea0572aec482707ec9ef2fbb91d0bb23dc1169.body",
+      "status": "PASS",
+      "detail": "aaa0e0bc7442ce244b59763aa3ea0572aec482707ec9ef2fbb91d0bb23dc1169.body"
+    },
+    {
+      "check": "frozen_cache_5ee3a784bcc4325f76388cf238afe9e2cb080e375c45d8d604fe109331d9fcfb.body",
+      "status": "PASS",
+      "detail": "5ee3a784bcc4325f76388cf238afe9e2cb080e375c45d8d604fe109331d9fcfb.body"
+    },
+    {
+      "check": "offline_read_only_cache_arguments",
+      "status": "PASS",
+      "detail": "No HTTP fallback requested"
+    },
+    {
+      "check": "producer_only_development_arguments",
+      "status": "PASS",
+      "detail": [
+        "--clean",
+        "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts\\panel_clean.parquet",
+        "--pit",
+        "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts\\panel_pit_base.parquet",
+        "--registry-zip",
+        "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts\\part2_clean_review_bundle.zip",
+        "--step01-source",
+        "%USERPROFILE%\\Downloads\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\04_PART4_FEATURE_PIPELINE\\code\\part4_step01_reference_UNCHANGED.py",
+        "--out-dir",
+        "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\development-features\\artifacts",
+        "--asof-quarters",
+        "0",
+        "--production-only"
+      ]
+    },
+    {
+      "check": "new_parent_lineage_panel_clean.parquet",
+      "status": "PASS",
+      "detail": {
+        "path": "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts\\panel_clean.parquet",
+        "sha256": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107"
+      }
+    },
+    {
+      "check": "new_parent_lineage_panel_pit_base.parquet",
+      "status": "PASS",
+      "detail": {
+        "path": "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts\\panel_pit_base.parquet",
+        "sha256": "3fce669406ff1898ac85d9c41c6385b7f8c6b27e29ecd041bb0a3c59f6337421"
+      }
+    },
+    {
+      "check": "new_parent_lineage_part2_clean_review_bundle.zip",
+      "status": "PASS",
+      "detail": {
+        "path": "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts\\part2_clean_review_bundle.zip",
+        "sha256": "8f1e62eaf17398f8d0719cb9d11e871eae807103dbdde69935288a325f77b09f"
+      }
+    },
+    {
+      "check": "no_checkpoint_fallback_used",
+      "status": "PASS",
+      "detail": "Development consumed the verified fresh clean/PIT/registry outputs"
+    },
+    {
+      "check": "base_reference_identity",
+      "status": "PASS",
+      "detail": "a72a9d24077c0c44149d93c5384d880282c832c576034e42223f299dd0f4778e"
+    },
+    {
+      "check": "base_new_output_identity",
+      "status": "PASS",
+      "detail": "a72a9d24077c0c44149d93c5384d880282c832c576034e42223f299dd0f4778e"
+    },
+    {
+      "check": "base_rows_schema",
+      "status": "PASS",
+      "detail": 1682616
+    },
+    {
+      "check": "base_all_nonkey_columns_present",
+      "status": "PASS",
+      "detail": 31
+    },
+    {
+      "check": "base_exact_keys",
+      "status": "PASS",
+      "detail": {
+        "duplicate_new": 0,
+        "duplicate_reference": 0,
+        "null_new": 0,
+        "null_reference": 0,
+        "missing_in_new": 0,
+        "unexpected_in_new": 0
+      }
+    },
+    {
+      "check": "base_all_values_masks_equal",
+      "status": "PASS",
+      "detail": "Every compared column reports zero delta/mismatch, not merely within tolerance"
+    },
+    {
+      "check": "base_byte_identity_consistent",
+      "status": "PASS",
+      "detail": true
+    },
+    {
+      "check": "base_original_bytes_reproduced",
+      "status": "PASS",
+      "detail": "Known frozen reference digest reproduced"
+    },
+    {
+      "check": "clean_reference_identity",
+      "status": "PASS",
+      "detail": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107"
+    },
+    {
+      "check": "clean_new_output_identity",
+      "status": "PASS",
+      "detail": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107"
+    },
+    {
+      "check": "clean_rows_schema",
+      "status": "PASS",
+      "detail": 1669802
+    },
+    {
+      "check": "clean_all_nonkey_columns_present",
+      "status": "PASS",
+      "detail": 31
+    },
+    {
+      "check": "clean_exact_keys",
+      "status": "PASS",
+      "detail": {
+        "duplicate_new": 0,
+        "duplicate_reference": 0,
+        "null_new": 0,
+        "null_reference": 0,
+        "missing_in_new": 0,
+        "unexpected_in_new": 0
+      }
+    },
+    {
+      "check": "clean_all_values_masks_equal",
+      "status": "PASS",
+      "detail": "Every compared column reports zero delta/mismatch, not merely within tolerance"
+    },
+    {
+      "check": "clean_byte_identity_consistent",
+      "status": "PASS",
+      "detail": true
+    },
+    {
+      "check": "clean_original_bytes_reproduced",
+      "status": "PASS",
+      "detail": "Known frozen reference digest reproduced"
+    },
+    {
+      "check": "pit_reference_identity",
+      "status": "PASS",
+      "detail": "3fce669406ff1898ac85d9c41c6385b7f8c6b27e29ecd041bb0a3c59f6337421"
+    },
+    {
+      "check": "pit_new_output_identity",
+      "status": "PASS",
+      "detail": "3fce669406ff1898ac85d9c41c6385b7f8c6b27e29ecd041bb0a3c59f6337421"
+    },
+    {
+      "check": "pit_rows_schema",
+      "status": "PASS",
+      "detail": 1629398
+    },
+    {
+      "check": "pit_all_nonkey_columns_present",
+      "status": "PASS",
+      "detail": 32
+    },
+    {
+      "check": "pit_exact_keys",
+      "status": "PASS",
+      "detail": {
+        "duplicate_new": 0,
+        "duplicate_reference": 0,
+        "null_new": 0,
+        "null_reference": 0,
+        "missing_in_new": 0,
+        "unexpected_in_new": 0
+      }
+    },
+    {
+      "check": "pit_all_values_masks_equal",
+      "status": "PASS",
+      "detail": "Every compared column reports zero delta/mismatch, not merely within tolerance"
+    },
+    {
+      "check": "pit_byte_identity_consistent",
+      "status": "PASS",
+      "detail": true
+    },
+    {
+      "check": "pit_original_bytes_reproduced",
+      "status": "PASS",
+      "detail": "Known frozen reference digest reproduced"
+    },
+    {
+      "check": "development_reference_identity",
+      "status": "PASS",
+      "detail": "d365ce25204a3dcace715db4cea259c94b1b1abba4822c7bcf2b050a1c7f6a73"
+    },
+    {
+      "check": "development_new_output_identity",
+      "status": "PASS",
+      "detail": "475cccaa45396b391934d75dada3a2339f42e56143cf11767f5cd5f99d7ce1d9"
+    },
+    {
+      "check": "development_rows_schema",
+      "status": "PASS",
+      "detail": 1231631
+    },
+    {
+      "check": "development_all_nonkey_columns_present",
+      "status": "PASS",
+      "detail": 18
+    },
+    {
+      "check": "development_exact_keys",
+      "status": "PASS",
+      "detail": {
+        "duplicate_new": 0,
+        "duplicate_reference": 0,
+        "null_new": 0,
+        "null_reference": 0,
+        "missing_in_new": 0,
+        "unexpected_in_new": 0
+      }
+    },
+    {
+      "check": "development_all_values_masks_equal",
+      "status": "PASS",
+      "detail": "Every compared column reports zero delta/mismatch, not merely within tolerance"
+    },
+    {
+      "check": "development_byte_identity_consistent",
+      "status": "PASS",
+      "detail": false
+    },
+    {
+      "check": "aggregate_csv_matches_full_column_json",
+      "status": "PASS",
+      "detail": 112
+    },
+    {
+      "check": "ten_controls_all_present",
+      "status": "PASS",
+      "detail": "No omitted/duplicate synthetic case"
+    },
+    {
+      "check": "synthetic_identical",
+      "status": "PASS",
+      "detail": "Expected equivalence accepted"
+    },
+    {
+      "check": "synthetic_reordered",
+      "status": "PASS",
+      "detail": "Expected equivalence accepted"
+    },
+    {
+      "check": "synthetic_finite_vs_infinite",
+      "status": "PASS",
+      "detail": "Intentional mismatches correctly rejected"
+    },
+    {
+      "check": "synthetic_opposite_infinities",
+      "status": "PASS",
+      "detail": "Intentional mismatches correctly rejected"
+    },
+    {
+      "check": "synthetic_null_to_nan",
+      "status": "PASS",
+      "detail": "Intentional mismatches correctly rejected"
+    },
+    {
+      "check": "synthetic_duplicate_keys",
+      "status": "PASS",
+      "detail": "Intentional mismatches correctly rejected"
+    },
+    {
+      "check": "synthetic_label_mutation",
+      "status": "PASS",
+      "detail": "Intentional mismatches correctly rejected"
+    },
+    {
+      "check": "synthetic_tolerated_float_roundoff",
+      "status": "PASS",
+      "detail": "Expected equivalence accepted"
+    },
+    {
+      "check": "synthetic_strict_float_roundoff_rejected",
+      "status": "PASS",
+      "detail": "Intentional mismatches correctly rejected"
+    },
+    {
+      "check": "synthetic_wrong_schema",
+      "status": "PASS",
+      "detail": "Intentional mismatches correctly rejected"
+    },
+    {
+      "check": "control_before_real_producers",
+      "status": "PASS",
+      "detail": "Controls completed before first real stage"
+    },
+    {
+      "check": "top_level_status_consistent",
+      "status": "PASS",
+      "detail": "PASS status agrees with independently inspected evidence"
+    }
+  ],
+  "datasets": [
+    {
+      "dataset": "base",
+      "rows": 1682616,
+      "columns": 33,
+      "compared_nonkey_columns": 31,
+      "schema_equal": true,
+      "key_mismatches": 0,
+      "null_mismatches": 0,
+      "nan_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_difference": 0.0,
+      "new_sha256": "a72a9d24077c0c44149d93c5384d880282c832c576034e42223f299dd0f4778e",
+      "reference_sha256": "a72a9d24077c0c44149d93c5384d880282c832c576034e42223f299dd0f4778e",
+      "byte_identical": true,
+      "status": "VERIFIED_WINDOWS_REPLAY_EVIDENCE"
+    },
+    {
+      "dataset": "clean",
+      "rows": 1669802,
+      "columns": 33,
+      "compared_nonkey_columns": 31,
+      "schema_equal": true,
+      "key_mismatches": 0,
+      "null_mismatches": 0,
+      "nan_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_difference": 0.0,
+      "new_sha256": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107",
+      "reference_sha256": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107",
+      "byte_identical": true,
+      "status": "VERIFIED_WINDOWS_REPLAY_EVIDENCE"
+    },
+    {
+      "dataset": "pit",
+      "rows": 1629398,
+      "columns": 34,
+      "compared_nonkey_columns": 32,
+      "schema_equal": true,
+      "key_mismatches": 0,
+      "null_mismatches": 0,
+      "nan_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_difference": 0.0,
+      "new_sha256": "3fce669406ff1898ac85d9c41c6385b7f8c6b27e29ecd041bb0a3c59f6337421",
+      "reference_sha256": "3fce669406ff1898ac85d9c41c6385b7f8c6b27e29ecd041bb0a3c59f6337421",
+      "byte_identical": true,
+      "status": "VERIFIED_WINDOWS_REPLAY_EVIDENCE"
+    },
+    {
+      "dataset": "development",
+      "rows": 1231631,
+      "columns": 20,
+      "compared_nonkey_columns": 18,
+      "schema_equal": true,
+      "key_mismatches": 0,
+      "null_mismatches": 0,
+      "nan_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_difference": 0.0,
+      "new_sha256": "475cccaa45396b391934d75dada3a2339f42e56143cf11767f5cd5f99d7ce1d9",
+      "reference_sha256": "d365ce25204a3dcace715db4cea259c94b1b1abba4822c7bcf2b050a1c7f6a73",
+      "byte_identical": false,
+      "status": "VERIFIED_WINDOWS_REPLAY_EVIDENCE"
+    }
+  ],
+  "input_observations": 240,
+  "unique_input_files": 237,
+  "exported_output_files_rehashed": 34,
+  "compared_nonkey_columns": 112,
+  "comparison_row_column_cells": 178235052,
+  "full_clean_room_E2E": "NOT_EXECUTED",
+  "new_model_fits_during_this_review": 0,
+  "final_test_inference_during_this_review": false,
+  "scope": "Independent consistency/hash review of returned Windows logs and comparison outputs. Raw Parquet stays on Windows; no cloud re-execution or independent direct raw-file rehash.",
+  "output_sha256": {
+    "DATASET_COMPARISON.csv": "9c30b8782e49638da57b87f08698e67e5ebb9673c99d50df4d657545239ac40e",
+    "EXPORTED_OUTPUT_HASH_CHECKS.csv": "c9c341ffcd910c73e276aacb1dbdd2c6ded923ced2a4118506b9ed69f4a36335",
+    "WINDOWS_INPUT_IDENTITIES.csv": "f5df93cf063a965f66ac114a9a9bfc9c580cf247cec800a36d8151cacccaeb48"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "analysis": "NEW_POSTHOC_DEVELOPMENT_PAIRED_CERT_BOOTSTRAP",
+  "seed": 20261117,
+  "draws": 1500,
+  "aggregate": "unweighted mean AP of the three registered folds",
+  "sampling": "One CERT-universe multinomial draw shared across all families and all folds; all observations of one CERT receive same multiplicity",
+  "interval": "marginal unadjusted percentile 2.5/97.5; exclude entire replicate if any fold has zero weighted positives",
+  "comparisons": [
+    "HGB minus LR",
+    "HGB minus equity"
+  ],
+  "scope": "Conditional on selected archived candidates and fixed OOF predictions; not selection-adjusted, not historical CI recovery, no temporal block bootstrap or training/test inference"
+}

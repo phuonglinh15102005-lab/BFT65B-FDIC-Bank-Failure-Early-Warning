@@ -1,0 +1,5 @@
+E12 input and frozen source hashes verified. No test data loaded.
+early_bank_stress: archived AP 0.360440, positive-equity AP 0.29292111114262515
+post_stress_transition: archived AP 0.246946, positive-equity AP 0.3034517442793543
+global_financial_crisis: archived AP 0.279913, positive-equity AP 0.28535826581349777
+PASS: no final test files accessed; no model/threshold changes; 3 chronological refits.

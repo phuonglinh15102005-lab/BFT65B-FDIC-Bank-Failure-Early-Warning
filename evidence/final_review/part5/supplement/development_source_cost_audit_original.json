@@ -1,0 +1,35 @@
+{
+  "original_source_sha256": "a3e18c370f53c029e83708944bb91daf08ae5f664175f0fdd1bc389698c05ab3",
+  "dev_unique_failure_events": 2410,
+  "source_pre2010_failure_CERTs_broader": 2652,
+  "valid_positive_cost_events": 2330,
+  "cost_kUSD_summary": {
+    "n": 2330,
+    "mean": 73036.25379945019,
+    "p10": 1410.7712000000001,
+    "p25": 3380.3630574999997,
+    "p50": 10466.26235,
+    "p75": 38154.4485525,
+    "p90": 123266.8851549999
+  },
+  "loss_over_assets_summary": {
+    "n": 2330,
+    "mean": 0.26833276789592336,
+    "p10": 0.04911978481403438,
+    "p25": 0.11561270146520711,
+    "p50": 0.2169179301460073,
+    "p75": 0.33080184065980167,
+    "p90": 0.48848061764706063
+  },
+  "oof_events": 1290,
+  "oof_detected": 854,
+  "oof_missed": 436,
+  "oof_false_first_cert_year_alerts": 4124,
+  "oof_valid_cost_events": 1247,
+  "oof_valid_cost_missed_events": 408,
+  "known_cost_total_kUSD": 102575804.09421575,
+  "known_cost_missed_kUSD": 38240146.95088679,
+  "share_of_known_resolution_cost_in_missed": 0.37279890017496975,
+  "missing_cost_oof_events": 43,
+  "interpretation": "Cost is historical ex-post resolution loss; model flags do not establish the fraction of loss preventable. Conditional scenarios are not observed monetary savings; false-positive review cost is unobserved."
+}

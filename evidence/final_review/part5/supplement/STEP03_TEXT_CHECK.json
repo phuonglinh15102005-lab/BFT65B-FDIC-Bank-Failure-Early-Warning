@@ -1,0 +1,17 @@
+{
+  "source_sha256": "63388bff8cfdd1d41dc459a98df6d68a8bea40c72f43fdc735decce4336df433",
+  "source_list_entries": 9,
+  "audit_list_entries": 9,
+  "exact_match": true,
+  "list": [
+    "Threshold is selected on the same development OOF windows used to choose the model family; threshold performance is selection-in-sample and must not be called unbiased generalization.",
+    "First alert within each CERT-year is operationally the only billable alert. A bank failure may contribute at most one missed event.",
+    "False alarms are outcome-defined using the four-quarter-forward outcome label, not observed customer service costs.",
+    "Threshold is on raw HGB OOF risk scores; no Platt map is applied to operational threshold.",
+    "Forward Platt results are diagnostic only: calibration is fitted on earlier validation-fold scores, tested only on later folds, and is not included in the frozen deployment policy.",
+    "Different fold model training histories cause potential score distribution drift; single fixed threshold may transfer poorly.",
+    "Final test and future-year feature outcomes are never opened or evaluated.",
+    "FDIC COST represents loss to the insurer/resolution, not causal benefit of a missed warning; false-positive cost is assumed.",
+    "The development OOF observations cover disjoint historical eras and are not a continuous production monitoring sequence."
+  ]
+}

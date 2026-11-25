@@ -1,0 +1,57 @@
+{
+  "id": "C06_ACTUAL_REPLAY_CLOUD_PREFLIGHT",
+  "status": "BLOCKED",
+  "exit_code": 2,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "run.py",
+    "replay",
+    "--profile",
+    "/workspace/NO_WINDOWS_INPUT_PROFILE",
+    "--out",
+    "/workspace/work/BFT65B_RELEASE_REAL_REPLAY_PREFLIGHT_20261118"
+  ],
+  "started_utc": "2026-11-18T16:11:18.963542+00:00",
+  "finished_utc": "2026-11-18T16:11:19.167195+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "polars": null,
+      "pyarrow": null,
+      "scikit-learn": "1.8.0",
+      "pyspark": null,
+      "joblib": "1.5.3",
+      "scipy": "1.17.0"
+    }
+  },
+  "input_sha256_before": {
+    "run.py": "83a2514046010be5f6ac51ea2b736e59d94252f8713e355f0597a1579b2b9b12",
+    "workflow/engine.py": "6d8c96824c579e3446cf5fda5c5e9c436bc00b074b0842b1292c1478e599118b",
+    "workflow/worker.py": "94e82c8de557fa4de2127bd956a8dbca293b3005de20ee4a81a5af13c121df29",
+    "workflow/compare.py": "0c76a33428ec0fce772ff8a4b50374fb0fcb53fea35f7bcd06d8d5512431599e",
+    "config/default.json": "3d53cbe14f8c3ef3c6197ea4ab48a7f58c3414fba2514bb3f03cf819ccc1a695",
+    "config/environments.json": "6a1248e225c55ec0d6fd9fe89e10104f7a2aecff7a5a9e8c9c06e49a53b59151",
+    "config/source_manifest.json": "ab963c7987b95abbb082898eb3c5f0888abf67a47bd5ec62b80345b969471aba"
+  },
+  "input_sha256_after": {
+    "run.py": "83a2514046010be5f6ac51ea2b736e59d94252f8713e355f0597a1579b2b9b12",
+    "workflow/engine.py": "6d8c96824c579e3446cf5fda5c5e9c436bc00b074b0842b1292c1478e599118b",
+    "workflow/worker.py": "94e82c8de557fa4de2127bd956a8dbca293b3005de20ee4a81a5af13c121df29",
+    "workflow/compare.py": "0c76a33428ec0fce772ff8a4b50374fb0fcb53fea35f7bcd06d8d5512431599e",
+    "config/default.json": "3d53cbe14f8c3ef3c6197ea4ab48a7f58c3414fba2514bb3f03cf819ccc1a695",
+    "config/environments.json": "6a1248e225c55ec0d6fd9fe89e10104f7a2aecff7a5a9e8c9c06e49a53b59151",
+    "config/source_manifest.json": "ab963c7987b95abbb082898eb3c5f0888abf67a47bd5ec62b80345b969471aba"
+  },
+  "output_sha256": {
+    "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "STDOUT.txt": "189f9288f27f9613cac47a804e77fcdd54ecb2ed842f8309961985043fe753aa",
+    "/workspace/work/BFT65B_RELEASE_REAL_REPLAY_PREFLIGHT_20261118/REPLAY_RESULT.json": "ae24e6f2d005355c8146e8d801bc200f0dae27f2c187d6852651f0b0c5b52613",
+    "/workspace/work/BFT65B_RELEASE_REAL_REPLAY_PREFLIGHT_20261118/STAGE_STATUS.csv": "9792833a7c34af4ce7d485eacd41da4f59840aef439f0ccc62f9229938de9532"
+  },
+  "scope": "Actualrestrictedworkflow invocation;expectedBLOCKEDoncloud,notproducerreplayPASS",
+  "new_model_fits": 0
+}

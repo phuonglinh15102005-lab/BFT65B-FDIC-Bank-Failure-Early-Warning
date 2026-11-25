@@ -1,0 +1,16 @@
+{
+  "native_source": "%USERPROFILE%\\Downloads\\BFT65B_REPRO_CLOSEOUT_20261119\\BFT65B_REPRO_CLOSEOUT_20261119\\02_PART2_DATA_QUALITY_PANEL\\code\\02b_collect_exit_evidence.py",
+  "native_sha256": "9935d369667b4b5ff17dc5853bc81ccc7ee0af9f87792d2fb62f30c9f021f3ec",
+  "adapter_sha256": "16fef8134f4ae3cc98b985306f521579524c5158dfe1fdbecae643feffed2fe6",
+  "native_arguments": [
+    "--step2-dir",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\base\\artifacts",
+    "--out",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\exits\\artifacts",
+    "--offline"
+  ],
+  "read_only_cache": "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache",
+  "fresh_part2b_generated": true,
+  "old_part2b_reports_copied": false,
+  "signatures_rewritten": false
+}

@@ -1,0 +1,19 @@
+{
+  "stage": "base",
+  "status": "PASS_PRODUCER_EXECUTION_COMPARISON_REQUIRED",
+  "error": null,
+  "started_utc": "2026-11-19T12:26:58.951645+00:00",
+  "finished_utc": "2026-11-19T12:27:18.521949+00:00",
+  "source": "%USERPROFILE%\\Downloads\\BFT65B_REPRO_CLOSEOUT_20261119\\BFT65B_REPRO_CLOSEOUT_20261119\\02_PART2_DATA_QUALITY_PANEL\\code\\02_build_panel_base.py",
+  "source_sha256": "bbfe7ba51b165aabfc6d0a027d4058ead4321e5973273fdf6ec971c99fef89d0",
+  "recorded_producer_arguments": [
+    "--audit-dir",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\prepare\\artifacts",
+    "--out",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\base\\artifacts"
+  ],
+  "offline": false,
+  "new_model_fits": 0,
+  "final_test_inference": false,
+  "guard": "Python audit hooks, not native-library OS sandbox"
+}

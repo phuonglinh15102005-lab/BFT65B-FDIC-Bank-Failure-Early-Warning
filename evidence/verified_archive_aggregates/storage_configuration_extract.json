@@ -1,0 +1,37 @@
+{
+  "rows": 1682616,
+  "quarters": 170,
+  "first_quarter": "1984-03-31",
+  "last_quarter": "2026-06-30",
+  "variants": 5,
+  "queries": [
+    "all_rows_all_columns",
+    "all_rows_six_columns",
+    "one_year_six_columns",
+    "one_quarter_six_columns"
+  ],
+  "filter_year": 2023,
+  "filter_quarter": 1,
+  "warmups_per_pair": 1,
+  "timed_repeats_per_pair": 3,
+  "seed": 20261108,
+  "all_equivalence_checks_passed": true,
+  "row_group_size": 100000,
+  "zstd_level": 3,
+  "source_financial_bytes": 162366694,
+  "script_sha256": "fab4ab46d7fd4e7e65d576644880453456cd366eafba5d92e18b26d1cedca842",
+  "scope_note": "Financials storage experiment only; small tables remain separate prepared Parquet inputs.",
+  "cache_note": "No OS-cache flush. Warm-up and repeated access; cache residency is not guaranteed. Not cold disk I/O.",
+  "timing_note": "Includes query construction and collection; excludes interpreter/imports, writes, validation hashes and plan generation.",
+  "memory_note": "Native RSS sampled every 10ms plus endpoints; observed peak can miss short spikes. Baseline and incremental RSS reported.",
+  "baseline_note": "Uncompressed CSV reconstructed from the same typed snapshot. Explicit schema supplied; not FDIC original CSV bytes.",
+  "partition_note": "Year/quarter folder keys support explicit partition filters equivalent to REPDTE filters. All layouts project identical source columns.",
+  "equivalence_note": "Row counts, schema, null counts and two order-independent row-hash sums checked; hashes are diagnostics, not a proof.",
+  "limitations": [
+    "No pandas comparison or Spark parity in this Part 1 experiment.",
+    "Build times are single observed conversions including source reads, not repeated write benchmarks.",
+    "Sequential partitions can have different row-group boundaries; this is an end-to-end layout comparison, not isolated metadata-only effect.",
+    "Hardware and cache affect measurements. Record disk type manually for the final report.",
+    "Choose final layout from measured workload tradeoffs; no assumption that every Parquet variant beats CSV in every query."
+  ]
+}

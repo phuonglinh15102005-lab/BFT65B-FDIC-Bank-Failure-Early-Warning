@@ -1,0 +1,15 @@
+{
+  "source_archive": "BFT65B_GITHUB_SOURCE_ONLY_READY_20261122.zip",
+  "history_notice": "Original evidence contents and hashes are archived privately. Public path-redacted logs must NOT be claimed byte-identical to originals.",
+  "records_redacted": 108,
+  "path_tokens_redacted": 5839,
+  "modified_pinned_source_files": [
+    {
+      "file": "03_PART3_SCALABLE_PROCESSING/code/00_preflight_user.py",
+      "original_sha256": "b084abe87e06d6e21cab4ea0e8c40399d7d53b9c258e780e973ec87e91be2e0e",
+      "public_sha256": "c76a2f3d27bdfa9aac5de5105f8c3ff7396a192bcda06dcd2c4fde60091e5c1c"
+    }
+  ],
+  "added": "E11/E12 diagnostics/scripts and aggregate outputs, final E12 pre-publication report, reviewer/publication docs",
+  "scientific_model_protocol_test": "unchanged (report and public release do not authorize retuning or rescore)"
+}

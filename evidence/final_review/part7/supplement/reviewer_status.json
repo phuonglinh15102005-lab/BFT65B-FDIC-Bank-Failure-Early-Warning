@@ -1,0 +1,63 @@
+{
+  "scope": "data-free source and archived aggregate audit, not E2E",
+  "python": "3.13.5",
+  "commands": [
+    {
+      "script": "-m",
+      "exit_code": 0,
+      "log": "01.log"
+    },
+    {
+      "script": "run.py",
+      "exit_code": 0,
+      "log": "02.log"
+    },
+    {
+      "script": "run.py",
+      "exit_code": 0,
+      "log": "03.log"
+    },
+    {
+      "script": "tools/verify_released_aggregates.py",
+      "exit_code": 0,
+      "log": "04.log"
+    },
+    {
+      "script": "tools/verify_e11_e12_aggregate.py",
+      "exit_code": 0,
+      "log": "05.log"
+    },
+    {
+      "script": "tools/verify_e10_workload_aggregate.py",
+      "exit_code": 0,
+      "log": "06.log"
+    },
+    {
+      "script": "evidence/examiner_supplement/verify_evidence.py",
+      "exit_code": 0,
+      "log": "07.log"
+    },
+    {
+      "script": "tools/pilot_contract.py",
+      "exit_code": 0,
+      "log": "08.log"
+    },
+    {
+      "script": "tools/reproduce_development.py",
+      "exit_code": 0,
+      "log": "09.log"
+    },
+    {
+      "script": "tools/reproduce_policy_windows.py",
+      "exit_code": 0,
+      "log": "10.log"
+    },
+    {
+      "script": "tools/BFT65B_PUBLICATION_PRECHECK.py",
+      "exit_code": 0,
+      "log": "11.log"
+    }
+  ],
+  "status": "PASS_PUBLIC_SOURCE_AND_ARCHIVED_AGGREGATES",
+  "manifest_entries": 929
+}

@@ -1,0 +1,5 @@
+scenario,positive,negative,unresolved,labelled,positive_pct
+Primary FAILURE only,9246,1222385,744,1231631,0.75071186
+FAILURE + ASSISTANCE,10815,1220880,680,1231695,0.87805829
+Adverse exits assigned 0,9246,1222702,427,1231948,0.75051869
+Adverse exits assigned 1,9563,1222385,427,1231948,0.7762503

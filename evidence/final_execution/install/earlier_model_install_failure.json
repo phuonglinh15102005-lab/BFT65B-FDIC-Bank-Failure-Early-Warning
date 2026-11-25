@@ -1,0 +1,14 @@
+{
+  "status": "FAIL",
+  "profile": "model",
+  "python": "3.13.7",
+  "recipe": "model-and-spark-observed.txt",
+  "steps": [
+    {
+      "name": "install",
+      "exit_code": 1
+    }
+  ],
+  "scope": "clean install and synthetic imports, not scientific pipeline",
+  "error": "Install failed"
+}

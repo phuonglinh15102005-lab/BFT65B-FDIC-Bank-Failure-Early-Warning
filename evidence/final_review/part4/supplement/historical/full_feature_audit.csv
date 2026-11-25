@@ -1,0 +1,16 @@
+feature,full_development_mismatches,development_missing
+log_assets,0,0
+equity_to_assets,0,2368
+negative_equity_flag,0,2368
+asset_log_growth_1q,0,22638
+asset_log_growth_4q,0,89150
+nclnls_to_loans,0,7515
+loan_allowance_to_loans,0,7446
+cash_to_assets,0,3
+cash_and_securities_to_assets,0,68
+deposits_to_assets,0,1
+net_loans_to_assets,0,49
+roa_reported_percent,0,0
+nimy_reported_percent,0,0
+loss_flag_roa_negative,0,0
+loan_denominator_invalid_flag,0,0

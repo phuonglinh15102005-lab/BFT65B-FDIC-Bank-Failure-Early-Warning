@@ -1,0 +1,43 @@
+{
+  "id": "C17_PUBLICATION_IGNORE_RULES",
+  "status": "FAIL",
+  "exit_code": 1,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119/release_evidence/PUBLICATION_IGNORE_CHECK.py.txt",
+    "--root",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119"
+  ],
+  "started_utc": "2026-11-19T01:31:28.925015+00:00",
+  "finished_utc": "2026-11-19T01:31:29.008380+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "polars": null,
+      "pyarrow": null,
+      "scikit-learn": "1.8.0",
+      "pyspark": null,
+      "joblib": "1.5.3",
+      "scipy": "1.17.0"
+    }
+  },
+  "input_sha256_before": {
+    ".gitignore": "9b1c2fa6cd9d7e569cea565b59f64539b40c0fc0a2839464bbb044590ef34701",
+    "release_evidence/PUBLICATION_IGNORE_CHECK.py.txt": "d47d1684ce676b7c50c12800d86433e7565d9cebc0b22ca6384e47d27e5adf58"
+  },
+  "input_sha256_after": {
+    ".gitignore": "9b1c2fa6cd9d7e569cea565b59f64539b40c0fc0a2839464bbb044590ef34701",
+    "release_evidence/PUBLICATION_IGNORE_CHECK.py.txt": "d47d1684ce676b7c50c12800d86433e7565d9cebc0b22ca6384e47d27e5adf58"
+  },
+  "output_sha256": {
+    "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "STDOUT.txt": "3b4fc61fad3d2f65dbb27a152a21b1175f346fc806bd9cc3c80b7e5b69ac4258",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119/release_evidence/PUBLICATION_IGNORE_RESULT.json": "6409434c17db68ef96765c7fe534f6bbe3c02fa8d918fc6e998d0b01402828b6"
+  },
+  "scope": "Actual read-only Git check-ignore: vetted root/nested aggregate CSVs visible, raw/model/archive sentinels ignored; no GitHub action",
+  "new_model_fits": 0
+}

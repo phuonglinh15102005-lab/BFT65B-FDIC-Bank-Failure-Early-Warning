@@ -1,0 +1,77 @@
+[
+  {
+    "source": "P1 benchmark_reports/storage_sizes.csv",
+    "sha256": "bed67b7a37b180e982c5dad8920574a6a718c946ad77a873753ae91fc27e6ed0",
+    "file": "inputs/storage_sizes.csv"
+  },
+  {
+    "source": "P1 benchmark_reports/reference_fingerprints.json",
+    "sha256": "945407d65a781a57a7af04acc45f729673fe4eaa64989e9160aaf623fe4dd2ac",
+    "file": "(source for a derived input)"
+  },
+  {
+    "source": "P2 raw_missingness_by_quarter.csv, 170 \u00d7 33",
+    "sha256": "c04006e7a445b987c5bb1353e2c2f8163bea790dbdd5ad87b772be50fabe37d3",
+    "file": "(source for a derived input)"
+  },
+  {
+    "source": "P1 producer 01b_benchmark_storage.py",
+    "sha256": "fab4ab46d7fd4e7e65d576644880453456cd366eafba5d92e18b26d1cedca842",
+    "file": "(source for a derived input)"
+  },
+  {
+    "source": "Part 2 clean review bundle / review_AUDIT_ONLY/availability_lag_sensitivity_counts.csv",
+    "sha256": "a3942b0fd2bf2fe78236a4fb3feaf1a5dceda3bb1b8c3e9795da9481bb7955e2",
+    "file": "inputs/lag_coverage.csv"
+  },
+  {
+    "source": "Step07 / paired07/interleaved_trials.csv",
+    "sha256": "5f00f4a316174fd1cc8744ab2f7590a29143ee7a6fc46255be7fee1e05e43e60",
+    "file": "inputs/paired_trials.csv"
+  },
+  {
+    "source": "Step07 / paired07/paired_speedup_bootstrap.csv",
+    "sha256": "5f482b63c4f3895666a1ebf7e61a3259ef521f657a30ccaddd74250c43063b84",
+    "file": "inputs/paired_reference.csv"
+  },
+  {
+    "source": "P4 outcome_sensitivity_development.csv",
+    "sha256": "5c33f1560ed8edec354cffeb5fa9bccbda88d7f87342f5b6e0faae463346886d",
+    "file": "inputs/outcome_dev.csv"
+  },
+  {
+    "source": "P5 threshold_cost_scenarios_4.csv",
+    "sha256": "1fa674e44e9278a219edea2a230ba3cf357b83226517ab2e3c0de308f48d0366",
+    "file": "inputs/policy_dev.csv"
+  },
+  {
+    "source": "Windows E10 return / development_15_feature_group_medians.csv",
+    "sha256": "16eedc10b71933be2c9a04cb2a29efaa975e6231ed52cd1dd6e12a174081f1cb",
+    "file": "repository_addition/supplementary_diagnostics/E10/development_15_feature_group_medians.csv"
+  },
+  {
+    "source": "Windows E10 return / hgb_train_vs_validation_ap_dev_only.csv",
+    "sha256": "c17e499846a2fc1c93569487eba893df6fa1634a572ef04078f84a0f2b416b89",
+    "file": "repository_addition/supplementary_diagnostics/E10/hgb_train_vs_validation_ap_dev_only.csv"
+  },
+  {
+    "source": "Windows E10 return / rbcrwaj_2020q1_zero_cohort_persistence.csv",
+    "sha256": "efceb2054b0ea7b250700ba89186a0e1bde9e42b5be36f7426af02fcddc9214f",
+    "file": "repository_addition/supplementary_diagnostics/E10/rbcrwaj_2020q1_zero_cohort_persistence.csv"
+  },
+  {
+    "source": "Windows E10 return / RUN_ACCEPTANCE.json",
+    "sha256": "8f366ef15eae797edfd610b7d2f8692d5d0f8229aba1fdb4333e3086831ad628",
+    "file": "repository_addition/supplementary_diagnostics/E10/RUN_ACCEPTANCE.json"
+  },
+  {
+    "source": "Windows E10 return / RUN_MANIFEST.json",
+    "sha256": "f2acb9fa53bcd527e29d1ac3c233bc94fc3f9b84aeed8d16d141b2ee6928d68c",
+    "file": "repository_addition/supplementary_diagnostics/E10/RUN_MANIFEST.json"
+  },
+  {
+    "source": "Part 2 clean review bundle / review_AUDIT_ONLY/negative_stock_values_REVIEW.csv",
+    "sha256": "ea83f4bb95c954a24f6610ff8d73c2358eb4fb819e74fe3ce05b1bae33a54fc0",
+    "file": "inputs/negative_stock_summary.json (aggregate only)"
+  }
+]

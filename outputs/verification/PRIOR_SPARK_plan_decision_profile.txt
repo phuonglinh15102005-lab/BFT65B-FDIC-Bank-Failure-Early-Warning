@@ -1,0 +1,58 @@
+== Physical Plan ==
+AdaptiveSparkPlan (9)
++- Sort (8)
+   +- Exchange (7)
+      +- HashAggregate (6)
+         +- Exchange (5)
+            +- HashAggregate (4)
+               +- Project (3)
+                  +- Filter (2)
+                     +- Scan parquet  (1)
+
+
+(1) Scan parquet 
+Output [5]: [ROA#290, ASSET#293, EQ#297, P3ASSET#304, DECISION_DATE#308]
+Batched: true
+Location: InMemoryFileIndex [file:/%USERPROFILE%/BFT65B_outputs/step2c_20261108_145539_477509/panel_pit_base.parquet]
+PushedFilters: [IsNotNull(DECISION_DATE), LessThanOrEqual(DECISION_DATE,2025-06-30)]
+ReadSchema: struct<ROA:double,ASSET:double,EQ:double,P3ASSET:double,DECISION_DATE:date>
+
+(2) Filter
+Input [5]: [ROA#290, ASSET#293, EQ#297, P3ASSET#304, DECISION_DATE#308]
+Condition : (isnotnull(DECISION_DATE#308) AND (DECISION_DATE#308 <= 2025-06-30))
+
+(3) Project
+Output [5]: [DECISION_DATE#308, ASSET#293, ROA#290, P3ASSET#304, CASE WHEN (ASSET#293 > 0.0) THEN (EQ#297 / ASSET#293) END AS EQ_ASSET#310]
+Input [5]: [ROA#290, ASSET#293, EQ#297, P3ASSET#304, DECISION_DATE#308]
+
+(4) HashAggregate
+Input [5]: [DECISION_DATE#308, ASSET#293, ROA#290, P3ASSET#304, EQ_ASSET#310]
+Keys [1]: [DECISION_DATE#308]
+Functions [6]: [partial_count(1), partial_avg(ASSET#293), partial_avg(EQ_ASSET#310), partial_avg(ROA#290), partial_sum(CASE WHEN isnull(P3ASSET#304) THEN 1 ELSE 0 END), partial_sum(CASE WHEN (isnull(ASSET#293) OR (ASSET#293 <= 0.0)) THEN 1 ELSE 0 END)]
+Aggregate Attributes [9]: [count#331L, sum#332, count#333L, sum#334, count#335L, sum#336, count#337L, sum#338L, sum#339L]
+Results [10]: [DECISION_DATE#308, count#340L, sum#341, count#342L, sum#343, count#344L, sum#345, count#346L, sum#347L, sum#348L]
+
+(5) Exchange
+Input [10]: [DECISION_DATE#308, count#340L, sum#341, count#342L, sum#343, count#344L, sum#345, count#346L, sum#347L, sum#348L]
+Arguments: hashpartitioning(DECISION_DATE#308, 8), ENSURE_REQUIREMENTS, [plan_id=520]
+
+(6) HashAggregate
+Input [10]: [DECISION_DATE#308, count#340L, sum#341, count#342L, sum#343, count#344L, sum#345, count#346L, sum#347L, sum#348L]
+Keys [1]: [DECISION_DATE#308]
+Functions [6]: [count(1), avg(ASSET#293), avg(EQ_ASSET#310), avg(ROA#290), sum(CASE WHEN isnull(P3ASSET#304) THEN 1 ELSE 0 END), sum(CASE WHEN (isnull(ASSET#293) OR (ASSET#293 <= 0.0)) THEN 1 ELSE 0 END)]
+Aggregate Attributes [6]: [count(1)#325L, avg(ASSET#293)#326, avg(EQ_ASSET#310)#327, avg(ROA#290)#328, sum(CASE WHEN isnull(P3ASSET#304) THEN 1 ELSE 0 END)#329L, sum(CASE WHEN (isnull(ASSET#293) OR (ASSET#293 <= 0.0)) THEN 1 ELSE 0 END)#330L]
+Results [7]: [DECISION_DATE#308, count(1)#325L AS DECISIONS#311L, avg(ASSET#293)#326 AS MEAN_ASSET#312, avg(EQ_ASSET#310)#327 AS MEAN_EQ_ASSET#313, avg(ROA#290)#328 AS MEAN_ROA#314, sum(CASE WHEN isnull(P3ASSET#304) THEN 1 ELSE 0 END)#329L AS MISSING_P3ASSET#315L, sum(CASE WHEN (isnull(ASSET#293) OR (ASSET#293 <= 0.0)) THEN 1 ELSE 0 END)#330L AS INVALID_ASSET_DENOM#316L]
+
+(7) Exchange
+Input [7]: [DECISION_DATE#308, DECISIONS#311L, MEAN_ASSET#312, MEAN_EQ_ASSET#313, MEAN_ROA#314, MISSING_P3ASSET#315L, INVALID_ASSET_DENOM#316L]
+Arguments: rangepartitioning(DECISION_DATE#308 ASC NULLS FIRST, 8), ENSURE_REQUIREMENTS, [plan_id=523]
+
+(8) Sort
+Input [7]: [DECISION_DATE#308, DECISIONS#311L, MEAN_ASSET#312, MEAN_EQ_ASSET#313, MEAN_ROA#314, MISSING_P3ASSET#315L, INVALID_ASSET_DENOM#316L]
+Arguments: [DECISION_DATE#308 ASC NULLS FIRST], true, 0
+
+(9) AdaptiveSparkPlan
+Output [7]: [DECISION_DATE#308, DECISIONS#311L, MEAN_ASSET#312, MEAN_EQ_ASSET#313, MEAN_ROA#314, MISSING_P3ASSET#315L, INVALID_ASSET_DENOM#316L]
+Arguments: isFinalPlan=false
+
+

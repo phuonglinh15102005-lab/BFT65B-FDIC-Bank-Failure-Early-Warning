@@ -1,0 +1,21 @@
+SORT BY [col("REPDTE")]
+  AGGREGATE[maintain_order: false]
+    [len().alias("REPORTS"), (col("PREV_PRESENT").len() - col("PREV_PRESENT").null_count()).alias("MATCHED_PRIOR_QUARTER"), (col("ASSET_GROWTH").len() - col("ASSET_GROWTH").null_count()).alias("VALID_ASSET_GROWTH"), col("ASSET_GROWTH").mean().alias("MEAN_ASSET_GROWTH"), col("ASSET").mean().alias("MEAN_ASSET")] BY [col("REPDTE")]
+    FROM
+    simple π 4/4 ["REPDTE", "PREV_PRESENT", ... 2 other columns]
+       WITH_COLUMNS:
+       [when(col("PREV_ASSET") > 0.0).then((col("ASSET") / col("PREV_ASSET")) - 1.0).otherwise(null.cast(Float64)).alias("ASSET_GROWTH")] 
+        simple π 4/4 ["REPDTE", "ASSET", ... 2 other columns]
+          LEFT JOIN:
+          LEFT PLAN ON: [col("CERT"), col("QID")]
+            CACHE[id: ba47cfed-7c55-40bd-b866-8fd5e9bac286]
+               WITH_COLUMNS:
+               [((col("REPDTE").dt.year() * 4) + ((col("REPDTE").dt.month() - 1) // 3).cast(Int32)).alias("QID")] 
+                Parquet SCAN [%USERPROFILE%/BFT65B_outputs/step2c_20261108_145539_477509/panel_clean.parquet]
+                PROJECT 3/33 COLUMNS
+                ESTIMATED ROWS: 1669802
+          RIGHT PLAN ON: [col("CERT"), col("QID")]
+            SELECT [col("CERT"), (col("QID") + 1), col("ASSET").alias("PREV_ASSET"), dyn int: 1.alias("PREV_PRESENT")]
+              simple π 3/3 ["CERT", "QID", "ASSET"]
+                CACHE[id: ba47cfed-7c55-40bd-b866-8fd5e9bac286]
+          END LEFT JOIN

@@ -1,0 +1,45 @@
+{
+  "id": "C15_FINAL_WORKFLOW_PLAN",
+  "status": "PASS",
+  "exit_code": 0,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "run.py",
+    "plan"
+  ],
+  "started_utc": "2026-11-19T01:15:31.288588+00:00",
+  "finished_utc": "2026-11-19T01:15:31.385897+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "polars": null,
+      "pyarrow": null,
+      "scikit-learn": "1.8.0",
+      "pyspark": null,
+      "joblib": "1.5.3",
+      "scipy": "1.17.0"
+    }
+  },
+  "input_sha256_before": {
+    "run.py": "83a2514046010be5f6ac51ea2b736e59d94252f8713e355f0597a1579b2b9b12",
+    "workflow/engine.py": "62ad2d20767db2b25c5ccbdf779036db167f0d4a069da4596ad366989de3758b",
+    "config/default.json": "3d53cbe14f8c3ef3c6197ea4ab48a7f58c3414fba2514bb3f03cf819ccc1a695",
+    "config/stages.json": "67900d491d8167b0c1609906a659e3e29a9de0f2f2f57870e23168c574a0a8b4"
+  },
+  "input_sha256_after": {
+    "run.py": "83a2514046010be5f6ac51ea2b736e59d94252f8713e355f0597a1579b2b9b12",
+    "workflow/engine.py": "62ad2d20767db2b25c5ccbdf779036db167f0d4a069da4596ad366989de3758b",
+    "config/default.json": "3d53cbe14f8c3ef3c6197ea4ab48a7f58c3414fba2514bb3f03cf819ccc1a695",
+    "config/stages.json": "67900d491d8167b0c1609906a659e3e29a9de0f2f2f57870e23168c574a0a8b4"
+  },
+  "output_sha256": {
+    "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "STDOUT.txt": "08b8ab43c72f33927556ae5e1428eaa00235c6c1f1c8c3eb81cfe25b65d60e64"
+  },
+  "scope": "Final executable plan validates completed-analysis source registration without executing stages",
+  "new_model_fits": 0
+}

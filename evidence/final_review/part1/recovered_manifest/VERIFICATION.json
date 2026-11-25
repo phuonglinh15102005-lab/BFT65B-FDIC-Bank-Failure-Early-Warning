@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "quarters": 170,
+  "financial_rows": 1682616,
+  "complete_quarters": 170,
+  "quarter_count_matches": 170,
+  "prepared_digest_ledger_matches": 170,
+  "institutions_rows": 27835,
+  "failures_assistance_rows": 4117,
+  "manifest_sha256": "d0e3b531bd3ca0802b943cb94a073444be52d619dc625efe8448bb8c140d76d5",
+  "scope": "Recovered original manifest counts and archived replay ledger; no HTTP body or raw data verification here."
+}

@@ -1,0 +1,38 @@
+{
+  "status": "EXECUTED_LOCAL_ACTION_ONLY",
+  "environment": {
+    "spark_version": "4.3.0",
+    "java_version": "17.0.21",
+    "app_id": "local-1794542233447",
+    "master": "local[4]",
+    "default_parallelism": 4,
+    "driver_memory_requested": "3g",
+    "driver_memory_effective": "3g",
+    "sql": {
+      "spark.sql.adaptive.enabled": "true",
+      "spark.sql.shuffle.partitions": "8",
+      "spark.sql.autoBroadcastJoinThreshold": null,
+      "spark.sql.files.maxPartitionBytes": null,
+      "spark.sql.exchange.reuse": null
+    }
+  },
+  "medians_seconds": {
+    "crisis_profile": 1.5271522000002733,
+    "calendar_lag": 3.864114800000607,
+    "decision_profile": 1.3161496000002444
+  },
+  "aqe_final_plan_observed": {
+    "calendar_lag": true,
+    "decision_profile": true,
+    "crisis_profile": true
+  },
+  "warmups": 2,
+  "repeats": 7,
+  "rebuilds_query_each_trial": true,
+  "limitations": [
+    "Spark runs local only; no distributed cluster comparison",
+    "Query build and plan materialization excluded from stopwatch",
+    "OS file caching, JVM JIT and exchange-stage reuse may still affect timings",
+    "Check Spark UI/event logs for skipped stages before attributing speedups"
+  ]
+}

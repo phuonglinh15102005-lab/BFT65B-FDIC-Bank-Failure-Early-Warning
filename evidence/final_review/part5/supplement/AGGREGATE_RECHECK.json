@@ -1,0 +1,138 @@
+{
+  "scope": "Development-only saved OOF numerical recomputation; test information read only from existing aggregate and archived missed-event diagnostic, no test cohort or predictions opened, no model inference/refit or selection",
+  "input_hashes": {
+    "01_baseline/baseline_development_oof.csv": "1d7c9bc3d56618ddc541a57f5d7dcccd0173c47d7467314e338d8916b1c75860",
+    "01_baseline/baseline_fold_metrics.csv": "1fc6495abd33bfa8f4f926389c7b5557537b3a51f00ef98fc13fa527d1917deb",
+    "01_baseline/part5_step01_audit.json": "2807e1345780bffcbc739a3f0269518e92ca5f70851b10c0dc47a179b1999430",
+    "02A_logistic/fold_keys/early_bank_stress.npz": "71655c894d31eaa64413ec49be1a20b7c44fced38a3512bb91e4f3faeb798280",
+    "02A_logistic/fold_keys/global_financial_crisis.npz": "ec51b124acfb89a0ba83e8ecab05dd1870411b7f3a8ccfb78c5c52d79e0d0a33",
+    "02A_logistic/fold_keys/post_stress_transition.npz": "44bb994b010c07b487005b0504251dca58e3a1a2a2f29967b1d494cf9d6372cf",
+    "02A_logistic/logistic_candidate_fold_metrics.csv": "e36378195ca396616ef0900089cf05a6c5bbdf98996b0101f24b3ef718f8eaf9",
+    "02A_logistic/logistic_candidate_summary.csv": "fa0ba2d588f3903a47aba5d648b3a633b0e3ed1b7a1d603ed97258d4e1a2e851",
+    "02A_logistic/part5_step02a_audit.json": "1e5ffc4f1491280d7dfb0228a6735d06e57d75ad1fa7fe32eae5f60e58a1fabb",
+    "02A_logistic/predictions/LR_C0p1_Wnone_CLq01_99__early_bank_stress.npz": "63bb69075488faba7b8da74cd7d03480a587b20104703b99f860e150e2deedc3",
+    "02A_logistic/predictions/LR_C0p1_Wnone_CLq01_99__global_financial_crisis.npz": "13c33770fcd3f19a5e1cf135a3757c81db5dc716af7466d54aa1d04d75a78f4a",
+    "02A_logistic/predictions/LR_C0p1_Wnone_CLq01_99__post_stress_transition.npz": "3720e35bd1f20af79302f73f4a0726d044268177bddd35dacfb8fcf87c6c4975",
+    "02B_hgb/fold_keys/early_bank_stress.npz": "71655c894d31eaa64413ec49be1a20b7c44fced38a3512bb91e4f3faeb798280",
+    "02B_hgb/fold_keys/global_financial_crisis.npz": "ec51b124acfb89a0ba83e8ecab05dd1870411b7f3a8ccfb78c5c52d79e0d0a33",
+    "02B_hgb/fold_keys/post_stress_transition.npz": "44bb994b010c07b487005b0504251dca58e3a1a2a2f29967b1d494cf9d6372cf",
+    "02B_hgb/hgb_candidate_fold_metrics.csv": "c1c1571173f3aa72e27fc840c99c705c9226c64e3ff01eec8edbcd1b59764385",
+    "02B_hgb/hgb_candidate_summary.csv": "8f0dc2879cb152be3021bbb1238a7747bbf4673554dd44e6b7561ea1ba35a68d",
+    "02B_hgb/part5_step02b_audit.json": "9ded251be492ccac2d4f6bf9d506fe099b6d1b9cddbb4f8045ee1d74cbf3851d",
+    "02B_hgb/predictions/HGB_L15_LR0p05_I150_L21_CLnone__early_bank_stress.npz": "89cc0284952ead2b5004b08c8d7a151a0d5b5f3c2a2d7cbc931de88c3cd89678",
+    "02B_hgb/predictions/HGB_L15_LR0p05_I150_L21_CLnone__global_financial_crisis.npz": "82e6d4713cab95eb332567a2df89eeb5c452e99c0f3483ef65ca3e46d38dcea8",
+    "02B_hgb/predictions/HGB_L15_LR0p05_I150_L21_CLnone__post_stress_transition.npz": "b7ba325c1559284913543ce70857e58874e9b3ec93d88ebd88113347efb238c9"
+  },
+  "archive_sha256": "81276c603b3139e5d952e03a2c2806208cd3972d313876995ac6eb4553cf649c",
+  "pooled_AP": 0.2846112211973563,
+  "registered_LR_first_fold": {
+    "AP": 0.3350101008454883,
+    "AUC": 0.9080002686396207,
+    "Brier": 0.01902531536727905
+  },
+  "validation_fraction": 0.2473127097320545,
+  "validation_positive_fraction": 0.3983344148821112,
+  "known_cost_events": 1247,
+  "total_known_COST_kUSD": 102575804.09421575,
+  "policy_cost": [
+    {
+      "ratio": 5,
+      "threshold": 0.1473273598702847,
+      "total_reviews": 1575,
+      "false_reviews": 963,
+      "detected_events": 568,
+      "known_cost_events_detected": 558,
+      "unknown_cost_events_detected": 10,
+      "known_cost_detected_kUSD": 28814268.014608793,
+      "known_cost_missed_kUSD": 73761536.07960695,
+      "known_cost_coverage": 0.2809070644783142,
+      "break_even_avoidable_share_false_fee": 0.01748961770942777,
+      "break_even_avoidable_share_all_fee": 0.02860451494532579
+    },
+    {
+      "ratio": 10,
+      "threshold": 0.0595509810089343,
+      "total_reviews": 2935,
+      "false_reviews": 2166,
+      "detected_events": 717,
+      "known_cost_events_detected": 706,
+      "unknown_cost_events_detected": 11,
+      "known_cost_detected_kUSD": 41353180.60052387,
+      "known_cost_missed_kUSD": 61222623.493691884,
+      "known_cost_coverage": 0.40314751578784624,
+      "break_even_avoidable_share_false_fee": 0.027410133780390304,
+      "break_even_avoidable_share_all_fee": 0.037141617103160454
+    },
+    {
+      "ratio": 20,
+      "threshold": 0.023971438944668,
+      "total_reviews": 5034,
+      "false_reviews": 4124,
+      "detected_events": 854,
+      "known_cost_events_detected": 839,
+      "unknown_cost_events_detected": 15,
+      "known_cost_detected_kUSD": 64335657.14332895,
+      "known_cost_missed_kUSD": 38240146.9508868,
+      "known_cost_coverage": 0.6272010998250301,
+      "break_even_avoidable_share_false_fee": 0.03354505716421024,
+      "break_even_avoidable_share_all_fee": 0.040947094511308034
+    },
+    {
+      "ratio": 50,
+      "threshold": 0.0168148310513033,
+      "total_reviews": 6092,
+      "false_reviews": 5147,
+      "detected_events": 894,
+      "known_cost_events_detected": 875,
+      "unknown_cost_events_detected": 19,
+      "known_cost_detected_kUSD": 66204215.47650939,
+      "known_cost_missed_kUSD": 36371588.61770636,
+      "known_cost_coverage": 0.6454174652698886,
+      "break_even_avoidable_share_false_fee": 0.04068460892385632,
+      "break_even_avoidable_share_all_fee": 0.048154388491185675
+    }
+  ],
+  "workload": [
+    {
+      "group": "Q1",
+      "quarters": 16,
+      "reviews": 2442,
+      "false_reviews": 2122,
+      "median": 42.5,
+      "mean": 152.625,
+      "max": 765,
+      "share_of_all": 0.7684078036500944,
+      "share_of_all_false": 0.7461322081575246
+    },
+    {
+      "group": "Q2_Q4",
+      "quarters": 46,
+      "reviews": 736,
+      "false_reviews": 722,
+      "median": 7.5,
+      "mean": 16.0,
+      "max": 99,
+      "share_of_all": 0.2315921963499056,
+      "share_of_all_false": 0.2538677918424754
+    },
+    {
+      "group": "Q1_excluding_2010Q1",
+      "quarters": 15,
+      "reviews": 1677,
+      "false_reviews": 1494,
+      "median": 42.0,
+      "mean": 111.8,
+      "max": 594,
+      "share_of_all": 0.5276903713027061,
+      "share_of_all_false": 0.5253164556962026
+    }
+  ],
+  "lead": {
+    "median_lead_quarters": 2.0,
+    "p25_lead_quarters": 1.0,
+    "p75_lead_quarters": 3.0
+  },
+  "missed_events_no_crossing": 14,
+  "missed_events_crossing_but_not_detected": 1,
+  "notes": "One positive-window crossing without a timely annual-first detection; exact earlier false review mechanism separately recorded in existing audit/report. COST weighting evaluates four fixed development policies, not a new threshold search."
+}

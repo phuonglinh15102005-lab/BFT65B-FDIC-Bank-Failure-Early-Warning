@@ -1,0 +1,9 @@
+{
+  "status": "FAIL",
+  "preflight_status": "PASS",
+  "started_utc": "2026-11-25T03:55:52.665364+00:00",
+  "finished_utc": "2026-11-25T03:56:51.086024+00:00",
+  "input_digests": 506,
+  "input_digests_same_as_success": true,
+  "scope": "Earlier C-drive output attempt failed at preparation. Successful D-drive retry; storage pressure plausible but not established by failure diagnostics."
+}

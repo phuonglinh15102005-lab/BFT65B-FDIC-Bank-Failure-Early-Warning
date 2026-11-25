@@ -1,0 +1,14 @@
+{
+  "by_field": {
+    "CHBAL": 2,
+    "SC": 87,
+    "LNLSGR": 31,
+    "LNLSNET": 49,
+    "LNATRES": 9,
+    "NCLNLS": 2,
+    "NAASSET": 1,
+    "ORE": 641
+  },
+  "affected_reports": 790,
+  "distinct_banks": 290
+}

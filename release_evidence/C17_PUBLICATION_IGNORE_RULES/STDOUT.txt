@@ -1,0 +1,264 @@
+{
+  "status": "FAIL",
+  "results": [
+    {
+      "path": "FINAL_RUBRIC_COMPLIANCE_MATRIX.csv",
+      "expected_ignored": false,
+      "exit_code": 128,
+      "status": "FAIL",
+      "command": [
+        "git",
+        "--git-dir=/workspace/.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "FINAL_RUBRIC_COMPLIANCE_MATRIX.csv"
+      ],
+      "stderr": "fatal: not a git repository: '/workspace/.git'\n"
+    },
+    {
+      "path": "FILE_MANIFEST_SHA256.csv",
+      "expected_ignored": false,
+      "exit_code": 128,
+      "status": "FAIL",
+      "command": [
+        "git",
+        "--git-dir=/workspace/.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "FILE_MANIFEST_SHA256.csv"
+      ],
+      "stderr": "fatal: not a git repository: '/workspace/.git'\n"
+    },
+    {
+      "path": "EXECUTION_LOG_INDEX.csv",
+      "expected_ignored": false,
+      "exit_code": 128,
+      "status": "FAIL",
+      "command": [
+        "git",
+        "--git-dir=/workspace/.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "EXECUTION_LOG_INDEX.csv"
+      ],
+      "stderr": "fatal: not a git repository: '/workspace/.git'\n"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/NUMERICAL_COMPARISON.csv",
+      "expected_ignored": false,
+      "exit_code": 128,
+      "status": "FAIL",
+      "command": [
+        "git",
+        "--git-dir=/workspace/.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "release_evidence/windows_return_20261119/NUMERICAL_COMPARISON.csv"
+      ],
+      "stderr": "fatal: not a git repository: '/workspace/.git'\n"
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/STAGE_STATUS.csv",
+      "expected_ignored": false,
+      "exit_code": 128,
+      "status": "FAIL",
+      "command": [
+        "git",
+        "--git-dir=/workspace/.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "release_evidence/windows_return_20261119/STAGE_STATUS.csv"
+      ],
+      "stderr": "fatal: not a git repository: '/workspace/.git'\n"
+    },
+    {
+      "path": "release_evidence/windows_independent_review_20261119/DATASET_COMPARISON.csv",
+      "expected_ignored": false,
+      "exit_code": 128,
+      "status": "FAIL",
+      "command": [
+        "git",
+        "--git-dir=/workspace/.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "release_evidence/windows_independent_review_20261119/DATASET_COMPARISON.csv"
+      ],
+      "stderr": "fatal: not a git repository: '/workspace/.git'\n"
+    },
+    {
+      "path": "release_evidence/windows_independent_review_20261119/WINDOWS_INPUT_IDENTITIES.csv",
+      "expected_ignored": false,
+      "exit_code": 128,
+      "status": "FAIL",
+      "command": [
+        "git",
+        "--git-dir=/workspace/.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "release_evidence/windows_independent_review_20261119/WINDOWS_INPUT_IDENTITIES.csv"
+      ],
+      "stderr": "fatal: not a git repository: '/workspace/.git'\n"
+    },
+    {
+      "path": "run.py",
+      "expected_ignored": false,
+      "exit_code": 128,
+      "status": "FAIL",
+      "command": [
+        "git",
+        "--git-dir=/workspace/.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "run.py"
+      ],
+      "stderr": "fatal: not a git repository: '/workspace/.git'\n"
+    },
+    {
+      "path": "requirements.txt",
+      "expected_ignored": false,
+      "exit_code": 128,
+      "status": "FAIL",
+      "command": [
+        "git",
+        "--git-dir=/workspace/.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "requirements.txt"
+      ],
+      "stderr": "fatal: not a git repository: '/workspace/.git'\n"
+    },
+    {
+      "path": "private/a.parquet",
+      "expected_ignored": true,
+      "exit_code": 128,
+      "status": "FAIL",
+      "command": [
+        "git",
+        "--git-dir=/workspace/.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "private/a.parquet"
+      ],
+      "stderr": "fatal: not a git repository: '/workspace/.git'\n"
+    },
+    {
+      "path": "a.parquet",
+      "expected_ignored": true,
+      "exit_code": 128,
+      "status": "FAIL",
+      "command": [
+        "git",
+        "--git-dir=/workspace/.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "a.parquet"
+      ],
+      "stderr": "fatal: not a git repository: '/workspace/.git'\n"
+    },
+    {
+      "path": "a.joblib",
+      "expected_ignored": true,
+      "exit_code": 128,
+      "status": "FAIL",
+      "command": [
+        "git",
+        "--git-dir=/workspace/.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "a.joblib"
+      ],
+      "stderr": "fatal: not a git repository: '/workspace/.git'\n"
+    },
+    {
+      "path": "a.npz",
+      "expected_ignored": true,
+      "exit_code": 128,
+      "status": "FAIL",
+      "command": [
+        "git",
+        "--git-dir=/workspace/.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "a.npz"
+      ],
+      "stderr": "fatal: not a git repository: '/workspace/.git'\n"
+    },
+    {
+      "path": "unvetted_raw_rows.csv",
+      "expected_ignored": true,
+      "exit_code": 128,
+      "status": "FAIL",
+      "command": [
+        "git",
+        "--git-dir=/workspace/.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "unvetted_raw_rows.csv"
+      ],
+      "stderr": "fatal: not a git repository: '/workspace/.git'\n"
+    },
+    {
+      "path": "evidence_dump.zip",
+      "expected_ignored": true,
+      "exit_code": 128,
+      "status": "FAIL",
+      "command": [
+        "git",
+        "--git-dir=/workspace/.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "evidence_dump.zip"
+      ],
+      "stderr": "fatal: not a git repository: '/workspace/.git'\n"
+    }
+  ],
+  "git_version": "git version 2.52.0",
+  "python": "3.12.14",
+  "ignore_sha256": "9b1c2fa6cd9d7e569cea565b59f64539b40c0fc0a2839464bbb044590ef34701",
+  "scope": "Read-only local check-ignore, no init/commit/push/network; non-existent sentinel filenames do not create data"
+}

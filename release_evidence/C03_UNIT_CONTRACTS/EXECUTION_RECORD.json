@@ -1,0 +1,55 @@
+{
+  "id": "C03_UNIT_CONTRACTS",
+  "status": "PASS",
+  "exit_code": 0,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_release_contracts.py",
+    "-v"
+  ],
+  "started_utc": "2026-11-18T16:11:18.200550+00:00",
+  "finished_utc": "2026-11-18T16:11:18.323816+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "polars": null,
+      "pyarrow": null,
+      "scikit-learn": "1.8.0",
+      "pyspark": null,
+      "joblib": "1.5.3",
+      "scipy": "1.17.0"
+    }
+  },
+  "input_sha256_before": {
+    "tests/test_release_contracts.py": "d84edbb35a43b8e38f2d0c306179db5db641fa794f98909fe55c2b346b83aef7",
+    "workflow/common.py": "3309843f03ff70e05b295e76a8716845be88a3684b28fffd707db94c911b32f1",
+    "workflow/engine.py": "6d8c96824c579e3446cf5fda5c5e9c436bc00b074b0842b1292c1478e599118b",
+    "workflow/policy.py": "0baea04b8040bfb91db4cc6a0b36d19a7cde65b8ce6410361fc25ab759c55f89",
+    "workflow/compare.py": "0c76a33428ec0fce772ff8a4b50374fb0fcb53fea35f7bcd06d8d5512431599e",
+    "config/default.json": "3d53cbe14f8c3ef3c6197ea4ab48a7f58c3414fba2514bb3f03cf819ccc1a695"
+  },
+  "input_sha256_after": {
+    "tests/test_release_contracts.py": "d84edbb35a43b8e38f2d0c306179db5db641fa794f98909fe55c2b346b83aef7",
+    "workflow/common.py": "3309843f03ff70e05b295e76a8716845be88a3684b28fffd707db94c911b32f1",
+    "workflow/engine.py": "6d8c96824c579e3446cf5fda5c5e9c436bc00b074b0842b1292c1478e599118b",
+    "workflow/policy.py": "0baea04b8040bfb91db4cc6a0b36d19a7cde65b8ce6410361fc25ab759c55f89",
+    "workflow/compare.py": "0c76a33428ec0fce772ff8a4b50374fb0fcb53fea35f7bcd06d8d5512431599e",
+    "config/default.json": "3d53cbe14f8c3ef3c6197ea4ab48a7f58c3414fba2514bb3f03cf819ccc1a695"
+  },
+  "output_sha256": {
+    "STDERR.txt": "8a871ca7fb70ed2296617b0944c56db9e629c42ae8c2aa3aa6b9c58412cb3e0b",
+    "STDOUT.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "scope": "New20stdlibsafety/config/serializationcontracttests,no scienceimports",
+  "new_model_fits": 0
+}

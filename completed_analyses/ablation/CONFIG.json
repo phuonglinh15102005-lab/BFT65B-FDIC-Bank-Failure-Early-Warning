@@ -1,0 +1,50 @@
+{
+  "analysis_id": "BFT65B_NEW_DEVELOPMENT_ONLY_GROWTH_INDICATOR_ABLATION_20261118",
+  "classification": "Newly completed only after actual Windows execution; late execution after original test lock; never backdate",
+  "authorization": "User explicitly authorizes exactly three additional HGB development-fold fits on 2026-11-18",
+  "development_profile_relative_path": "BFT65B_outputs/part4_v2_dev_only_outputs/development_primary_binary_v2.parquet",
+  "development_filename": "development_primary_binary_v2.parquet",
+  "development_sha256": "d365ce25204a3dcace715db4cea259c94b1b1abba4822c7bcf2b050a1c7f6a73",
+  "protocol_sha256": "994f72de6e2446916db8c2fcd36847c45cc68eb6fef5ef67f07acc0476c6d911",
+  "full_config_id": "HGB_L15_LR0p05_I150_L21_CLnone",
+  "HGB": {
+    "max_leaf_nodes": 15,
+    "learning_rate": 0.05,
+    "max_iter": 150,
+    "l2_regularization": 1.0,
+    "random_state": 20261114,
+    "early_stopping": false
+  },
+  "preprocessor": {
+    "clip": false
+  },
+  "drop_transformed_indices": [
+    17,
+    18
+  ],
+  "drop_transformed_names": [
+    "missing__asset_log_growth_1q",
+    "missing__asset_log_growth_4q"
+  ],
+  "keep_continuous_growth_indices": [
+    2,
+    3
+  ],
+  "input_width": 15,
+  "pre_transform_width": 30,
+  "ablated_width": 28,
+  "maximum_new_HGB_fit_attempts": 3,
+  "expected_core": {
+    "python": "3.13.7",
+    "numpy": "2.3.3",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.0",
+    "joblib": "1.5.2"
+  },
+  "additional_current_observed_runtime_pins": {
+    "scipy": "1.16.3",
+    "pyarrow": "26.0.1",
+    "threadpoolctl": "3.6.0"
+  },
+  "additional_pin_scope": "SciPy/PyArrow currently observed in exact-core Windows profile, not established historical transitive lock. threadpoolctl export verified separately before strict pinning."
+}

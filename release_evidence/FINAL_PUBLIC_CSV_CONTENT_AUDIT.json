@@ -1,0 +1,302 @@
+[
+  {
+    "file": "EXECUTION_LOG_INDEX.csv",
+    "rows": 19,
+    "columns": [
+      "test_id",
+      "historical_status",
+      "exit_code",
+      "command",
+      "python",
+      "execution_record",
+      "scope"
+    ],
+    "classification": "VETTED_AGGREGATE_OR_PROVENANCE_METADATA"
+  },
+  {
+    "file": "FINAL_RUBRIC_COMPLIANCE_MATRIX.csv",
+    "rows": 33,
+    "columns": [
+      "id",
+      "parent_part_points_not_additive",
+      "assignment_location",
+      "criterion",
+      "status",
+      "evidence",
+      "remaining_gap"
+    ],
+    "classification": "VETTED_AGGREGATE_OR_PROVENANCE_METADATA"
+  },
+  {
+    "file": "completed_analyses/ablation/REF/hgb_candidate_fold_metrics.csv",
+    "rows": 24,
+    "columns": [
+      "config_id",
+      "max_leaf_nodes",
+      "learning_rate",
+      "max_iter",
+      "l2_regularization",
+      "clipping",
+      "fold",
+      "train_rows",
+      "train_positives",
+      "validation_rows",
+      "validation_positives",
+      "validation_positive_certs",
+      "average_precision",
+      "roc_auc",
+      "brier_score",
+      "prevalence",
+      "mean_prediction",
+      "prediction_to_prevalence_ratio",
+      "alerts_at_1pct_capacity",
+      "tp_at_1pct_capacity",
+      "fp_at_1pct_capacity",
+      "precision_at_1pct_capacity",
+      "recall_at_1pct_capacity",
+      "fit_seconds",
+      "n_iter",
+      "preprocessing_fitted_on_training_only",
+      "final_test_opened",
+      "early_stopping",
+      "prediction_sha256"
+    ],
+    "classification": "VETTED_AGGREGATE_OR_PROVENANCE_METADATA"
+  },
+  {
+    "file": "completed_analyses/test_ci/evidence/007_NEW_POSTHOC_BOOTSTRAP_DRAWS.csv",
+    "rows": 1500,
+    "columns": [
+      "replicate",
+      "AP",
+      "event_recall"
+    ],
+    "classification": "VETTED_AGGREGATE_OR_PROVENANCE_METADATA"
+  },
+  {
+    "file": "outputs/verification/NEW_PRODUCER_REPLAY_STATUS.csv",
+    "rows": 4,
+    "columns": [
+      "dataset",
+      "status",
+      "expected_rows",
+      "observed_rows",
+      "new_sha256",
+      "reference_sha256",
+      "reason"
+    ],
+    "classification": "VETTED_AGGREGATE_OR_PROVENANCE_METADATA"
+  },
+  {
+    "file": "outputs/verification/PRIOR_ABLATION_FOLD_METRICS.csv",
+    "rows": 4,
+    "columns": [
+      "fold",
+      "status",
+      "train_rows",
+      "validation_rows",
+      "full_AP",
+      "ablated_AP",
+      "delta_AP_ablated_minus_full",
+      "full_ROC_AUC",
+      "ablated_ROC_AUC",
+      "delta_ROC_AUC_ablated_minus_full",
+      "transformed_width",
+      "fit_attempt"
+    ],
+    "classification": "VETTED_AGGREGATE_OR_PROVENANCE_METADATA"
+  },
+  {
+    "file": "outputs/verification/PRIOR_NUMERICAL_COMPARISON.csv",
+    "rows": 9,
+    "columns": [
+      "engine",
+      "task",
+      "rows",
+      "numeric_cells",
+      "max_abs_delta",
+      "status",
+      "csv_sha256"
+    ],
+    "classification": "VETTED_AGGREGATE_OR_PROVENANCE_METADATA"
+  },
+  {
+    "file": "outputs/verification/WINDOWS_REPLAY_COLUMN_COMPARISON.csv",
+    "rows": 112,
+    "columns": [
+      "dataset",
+      "column",
+      "rows",
+      "null_mismatches",
+      "nan_mismatches",
+      "value_mismatches",
+      "max_abs_difference",
+      "nonfinite_difference",
+      "rtol",
+      "atol",
+      "status"
+    ],
+    "classification": "VETTED_AGGREGATE_OR_PROVENANCE_METADATA"
+  },
+  {
+    "file": "outputs/verification/WINDOWS_REPLAY_DATASET_COMPARISON.csv",
+    "rows": 4,
+    "columns": [
+      "dataset",
+      "rows",
+      "columns",
+      "compared_nonkey_columns",
+      "schema_equal",
+      "key_mismatches",
+      "null_mismatches",
+      "nan_mismatches",
+      "value_mismatches",
+      "max_abs_difference",
+      "new_sha256",
+      "reference_sha256",
+      "byte_identical",
+      "status"
+    ],
+    "classification": "VETTED_AGGREGATE_OR_PROVENANCE_METADATA"
+  },
+  {
+    "file": "release_evidence/DEPENDENCY_RESOURCE_FILES.csv",
+    "rows": 23,
+    "columns": [
+      "source_file",
+      "line",
+      "resource",
+      "role",
+      "present",
+      "sha256"
+    ],
+    "classification": "VETTED_AGGREGATE_OR_PROVENANCE_METADATA"
+  },
+  {
+    "file": "release_evidence/DEPENDENCY_RESOURCE_IMPORTS.csv",
+    "rows": 804,
+    "columns": [
+      "source_file",
+      "line",
+      "import_name",
+      "classification",
+      "requirement_or_target",
+      "status"
+    ],
+    "classification": "VETTED_AGGREGATE_OR_PROVENANCE_METADATA"
+  },
+  {
+    "file": "release_evidence/EVIDENCE_RELOCATION_MAP.csv",
+    "rows": 14,
+    "columns": [
+      "test_id",
+      "actual_output_path",
+      "packaged_copy",
+      "sha256"
+    ],
+    "classification": "VETTED_AGGREGATE_OR_PROVENANCE_METADATA"
+  },
+  {
+    "file": "release_evidence/EXECUTED_OUTPUTS/C06_ACTUAL_REPLAY_CLOUD_PREFLIGHT/STAGE_STATUS.csv",
+    "rows": 4,
+    "columns": [
+      "stage",
+      "status",
+      "reason",
+      "artifact_directory"
+    ],
+    "classification": "VETTED_AGGREGATE_OR_PROVENANCE_METADATA"
+  },
+  {
+    "file": "release_evidence/PRIOR_RELEASE_ALL_FILE_MANIFEST.csv",
+    "rows": 284,
+    "columns": [
+      "relative_path",
+      "bytes",
+      "sha256"
+    ],
+    "classification": "VETTED_AGGREGATE_OR_PROVENANCE_METADATA"
+  },
+  {
+    "file": "release_evidence/SCIENCE_SOURCE_ORIGIN.csv",
+    "rows": 61,
+    "columns": [
+      "release_relative_path",
+      "prior_repaired_snapshot_path",
+      "prior_sha256",
+      "release_sha256",
+      "classification"
+    ],
+    "classification": "VETTED_AGGREGATE_OR_PROVENANCE_METADATA"
+  },
+  {
+    "file": "release_evidence/windows_independent_review_20261119/DATASET_COMPARISON.csv",
+    "rows": 4,
+    "columns": [
+      "dataset",
+      "rows",
+      "columns",
+      "compared_nonkey_columns",
+      "schema_equal",
+      "key_mismatches",
+      "null_mismatches",
+      "nan_mismatches",
+      "value_mismatches",
+      "max_abs_difference",
+      "new_sha256",
+      "reference_sha256",
+      "byte_identical",
+      "status"
+    ],
+    "classification": "VETTED_AGGREGATE_OR_PROVENANCE_METADATA"
+  },
+  {
+    "file": "release_evidence/windows_independent_review_20261119/EXPORTED_OUTPUT_HASH_CHECKS.csv",
+    "rows": 34,
+    "columns": [
+      "stage",
+      "file",
+      "sha256"
+    ],
+    "classification": "VETTED_AGGREGATE_OR_PROVENANCE_METADATA"
+  },
+  {
+    "file": "release_evidence/windows_independent_review_20261119/WINDOWS_INPUT_IDENTITIES.csv",
+    "rows": 240,
+    "columns": [
+      "stage",
+      "path",
+      "sha256"
+    ],
+    "classification": "VETTED_AGGREGATE_OR_PROVENANCE_METADATA"
+  },
+  {
+    "file": "release_evidence/windows_return_20261119/NUMERICAL_COMPARISON.csv",
+    "rows": 112,
+    "columns": [
+      "dataset",
+      "column",
+      "rows",
+      "null_mismatches",
+      "nan_mismatches",
+      "value_mismatches",
+      "max_abs_difference",
+      "nonfinite_difference",
+      "rtol",
+      "atol",
+      "status"
+    ],
+    "classification": "VETTED_AGGREGATE_OR_PROVENANCE_METADATA"
+  },
+  {
+    "file": "release_evidence/windows_return_20261119/STAGE_STATUS.csv",
+    "rows": 4,
+    "columns": [
+      "stage",
+      "status",
+      "reason",
+      "artifact_directory"
+    ],
+    "classification": "VETTED_AGGREGATE_OR_PROVENANCE_METADATA"
+  }
+]

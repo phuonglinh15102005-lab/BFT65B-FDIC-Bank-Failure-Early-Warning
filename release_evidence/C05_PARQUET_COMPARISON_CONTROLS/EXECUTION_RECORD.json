@@ -1,0 +1,45 @@
+{
+  "id": "C05_PARQUET_COMPARISON_CONTROLS",
+  "status": "BLOCKED",
+  "exit_code": 2,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "workflow/comparison_selftest.py",
+    "--out",
+    "/workspace/work/BFT65B_RELEASE_COMPARISON_CONTROLS_20261118"
+  ],
+  "started_utc": "2026-11-18T16:11:18.820091+00:00",
+  "finished_utc": "2026-11-18T16:11:18.870562+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "polars": null,
+      "pyarrow": null,
+      "scikit-learn": "1.8.0",
+      "pyspark": null,
+      "joblib": "1.5.3",
+      "scipy": "1.17.0"
+    }
+  },
+  "input_sha256_before": {
+    "workflow/comparison_selftest.py": "739af85bea2263db5892f924528f9c53992b38e5652fbf292eba6b49f47632a2",
+    "workflow/compare.py": "0c76a33428ec0fce772ff8a4b50374fb0fcb53fea35f7bcd06d8d5512431599e",
+    "workflow/common.py": "3309843f03ff70e05b295e76a8716845be88a3684b28fffd707db94c911b32f1"
+  },
+  "input_sha256_after": {
+    "workflow/comparison_selftest.py": "739af85bea2263db5892f924528f9c53992b38e5652fbf292eba6b49f47632a2",
+    "workflow/compare.py": "0c76a33428ec0fce772ff8a4b50374fb0fcb53fea35f7bcd06d8d5512431599e",
+    "workflow/common.py": "3309843f03ff70e05b295e76a8716845be88a3684b28fffd707db94c911b32f1"
+  },
+  "output_sha256": {
+    "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "STDOUT.txt": "83daecc4c3ab7dd3eeb137e3c2a62453f8acd5db019db3bbcf0f48d5537b4c2c",
+    "/workspace/work/BFT65B_RELEASE_COMPARISON_CONTROLS_20261118/SELFTEST_RESULT.json": "9dd39999c9abab1273c369f96553473f939dca26d1bd3cdde66415262537f16f"
+  },
+  "scope": "TensyntheticArrow/Polarscontrols only;BLOCKEDifdependenciesabsent,noinstall",
+  "new_model_fits": 0
+}

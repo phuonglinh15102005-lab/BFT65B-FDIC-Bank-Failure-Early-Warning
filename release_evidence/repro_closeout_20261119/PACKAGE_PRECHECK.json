@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/work/finalize_bft65b_repro_closeout_20261119.py"
+  ],
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41"
+  },
+  "input_sha256": {
+    "script": "11474f2cb05256084e979d5fce2561c537a9925619d302c673241a96f63c81bc",
+    "source_manifest": "e9fc39a0cc14cebda64c359cad8dd7cab3eaa251ff8f64fe988d9ef77f9d091e",
+    "old_release_manifest": "fe9a3780148480fecdae5401c3dbbf3df43e1a9f00943a4dcbcc120268d2a1a8"
+  },
+  "output_sha256": {
+    "report": "b4b6a8308937caec73ad8dfef978051367e2dc06ac60a9ffd0b7504904923e25",
+    "checklist": "8122b54ba4b23c83e4b02d7224940251d89a219ef5e7eaaaf7090d4d6e09856e",
+    "source_changes": "a021e8569e75252e36d6830fd2e4a9fa3b4930d1c09cd88872e1e604952a7a57",
+    "publication_eol_qa": "8860a5affe1516a729e32d39f5697f5bd05801863c975afbf320e5e10f234b03"
+  },
+  "science_sources_unchanged": 61
+}

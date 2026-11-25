@@ -1,0 +1,271 @@
+{
+  "status": "PASS",
+  "results": [
+    {
+      "path": "FINAL_RUBRIC_COMPLIANCE_MATRIX.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS",
+      "command": [
+        "git",
+        "--git-dir=/tmp/bft65b_ignore_context_oq1bsjw5/empty.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "FINAL_RUBRIC_COMPLIANCE_MATRIX.csv"
+      ],
+      "stderr": ""
+    },
+    {
+      "path": "FILE_MANIFEST_SHA256.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS",
+      "command": [
+        "git",
+        "--git-dir=/tmp/bft65b_ignore_context_oq1bsjw5/empty.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "FILE_MANIFEST_SHA256.csv"
+      ],
+      "stderr": ""
+    },
+    {
+      "path": "EXECUTION_LOG_INDEX.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS",
+      "command": [
+        "git",
+        "--git-dir=/tmp/bft65b_ignore_context_oq1bsjw5/empty.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "EXECUTION_LOG_INDEX.csv"
+      ],
+      "stderr": ""
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/NUMERICAL_COMPARISON.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS",
+      "command": [
+        "git",
+        "--git-dir=/tmp/bft65b_ignore_context_oq1bsjw5/empty.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "release_evidence/windows_return_20261119/NUMERICAL_COMPARISON.csv"
+      ],
+      "stderr": ""
+    },
+    {
+      "path": "release_evidence/windows_return_20261119/STAGE_STATUS.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS",
+      "command": [
+        "git",
+        "--git-dir=/tmp/bft65b_ignore_context_oq1bsjw5/empty.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "release_evidence/windows_return_20261119/STAGE_STATUS.csv"
+      ],
+      "stderr": ""
+    },
+    {
+      "path": "release_evidence/windows_independent_review_20261119/DATASET_COMPARISON.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS",
+      "command": [
+        "git",
+        "--git-dir=/tmp/bft65b_ignore_context_oq1bsjw5/empty.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "release_evidence/windows_independent_review_20261119/DATASET_COMPARISON.csv"
+      ],
+      "stderr": ""
+    },
+    {
+      "path": "release_evidence/windows_independent_review_20261119/WINDOWS_INPUT_IDENTITIES.csv",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS",
+      "command": [
+        "git",
+        "--git-dir=/tmp/bft65b_ignore_context_oq1bsjw5/empty.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "release_evidence/windows_independent_review_20261119/WINDOWS_INPUT_IDENTITIES.csv"
+      ],
+      "stderr": ""
+    },
+    {
+      "path": "run.py",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS",
+      "command": [
+        "git",
+        "--git-dir=/tmp/bft65b_ignore_context_oq1bsjw5/empty.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "run.py"
+      ],
+      "stderr": ""
+    },
+    {
+      "path": "requirements.txt",
+      "expected_ignored": false,
+      "exit_code": 1,
+      "status": "PASS",
+      "command": [
+        "git",
+        "--git-dir=/tmp/bft65b_ignore_context_oq1bsjw5/empty.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "requirements.txt"
+      ],
+      "stderr": ""
+    },
+    {
+      "path": "private/a.parquet",
+      "expected_ignored": true,
+      "exit_code": 0,
+      "status": "PASS",
+      "command": [
+        "git",
+        "--git-dir=/tmp/bft65b_ignore_context_oq1bsjw5/empty.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "private/a.parquet"
+      ],
+      "stderr": ""
+    },
+    {
+      "path": "a.parquet",
+      "expected_ignored": true,
+      "exit_code": 0,
+      "status": "PASS",
+      "command": [
+        "git",
+        "--git-dir=/tmp/bft65b_ignore_context_oq1bsjw5/empty.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "a.parquet"
+      ],
+      "stderr": ""
+    },
+    {
+      "path": "a.joblib",
+      "expected_ignored": true,
+      "exit_code": 0,
+      "status": "PASS",
+      "command": [
+        "git",
+        "--git-dir=/tmp/bft65b_ignore_context_oq1bsjw5/empty.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "a.joblib"
+      ],
+      "stderr": ""
+    },
+    {
+      "path": "a.npz",
+      "expected_ignored": true,
+      "exit_code": 0,
+      "status": "PASS",
+      "command": [
+        "git",
+        "--git-dir=/tmp/bft65b_ignore_context_oq1bsjw5/empty.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "a.npz"
+      ],
+      "stderr": ""
+    },
+    {
+      "path": "unvetted_raw_rows.csv",
+      "expected_ignored": true,
+      "exit_code": 0,
+      "status": "PASS",
+      "command": [
+        "git",
+        "--git-dir=/tmp/bft65b_ignore_context_oq1bsjw5/empty.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "unvetted_raw_rows.csv"
+      ],
+      "stderr": ""
+    },
+    {
+      "path": "evidence_dump.zip",
+      "expected_ignored": true,
+      "exit_code": 0,
+      "status": "PASS",
+      "command": [
+        "git",
+        "--git-dir=/tmp/bft65b_ignore_context_oq1bsjw5/empty.git",
+        "--work-tree=/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119",
+        "check-ignore",
+        "--no-index",
+        "-q",
+        "--",
+        "evidence_dump.zip"
+      ],
+      "stderr": ""
+    }
+  ],
+  "git_context_setup_command": [
+    "git",
+    "init",
+    "--bare",
+    "--quiet",
+    "/tmp/bft65b_ignore_context_oq1bsjw5/empty.git"
+  ],
+  "git_version": "git version 2.52.0",
+  "python": "3.12.14",
+  "ignore_sha256": "9b1c2fa6cd9d7e569cea565b59f64539b40c0fc0a2839464bbb044590ef34701",
+  "scope": "Source remains read-only; create/remove empty temporary bare Git context only. No commits/remotes/push/network; sentinels do not create data"
+}

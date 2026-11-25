@@ -1,0 +1,27 @@
+{
+  "out": "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\comparison",
+  "datasets": [
+    {
+      "id": "clean",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts\\panel_clean.parquet",
+      "reference": "%USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\panel_clean.parquet",
+      "keys": [
+        "CERT",
+        "REPDTE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    },
+    {
+      "id": "pit",
+      "new": "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\p2-clean\\artifacts\\panel_pit_base.parquet",
+      "reference": "%USERPROFILE%\\BFT65B_outputs\\step2c_20261108_145539_477509\\panel_pit_base.parquet",
+      "keys": [
+        "CERT",
+        "DECISION_DATE"
+      ],
+      "rtol": 0.0,
+      "atol": 0.0
+    }
+  ]
+}

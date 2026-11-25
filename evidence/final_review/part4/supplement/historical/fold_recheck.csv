@@ -1,0 +1,4 @@
+fold,train_rows,train_positive_rows,train_positive_certs,validation_rows,validation_positive_rows,validation_positive_certs,gap_rows_excluded,preprocessing_fit_rows,gap_quarters,output_dimensions,training_median_and_scale_checks
+early_bank_stress,258144,2627,775,121830,2796,932,64799,258144,4,30,36
+post_stress_transition,444773,7305,1948,105645,481,191,56935,444773,4,30,36
+global_financial_crisis,1082562,8833,2242,65622,406,167,33475,1082562,4,30,36

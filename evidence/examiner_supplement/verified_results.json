@@ -1,0 +1,103 @@
+{
+  "storage": {
+    "typed_null_cells": 1330072,
+    "token_bytes": 24,
+    "observed_csv_bytes": 478326701,
+    "observed_zstd_bytes": 159736091,
+    "measured_saving_pct": 66.60523222599693,
+    "one_byte_csv_bytes_conditional": 447735045,
+    "one_byte_csv_MiB_conditional": 426.9934129714966,
+    "one_byte_saving_pct_conditional": 64.3235228549063,
+    "note": "Byte arithmetic with other serialization bytes fixed. No alternative file was timed or round-tripped."
+  },
+  "population": {
+    "lag1_rows": 1629398,
+    "lag2_rows": 1605882,
+    "net_row_difference": 23516,
+    "relative_count_reduction_pct": 1.4432324085337038,
+    "lag1_banks": 23651,
+    "lag2_banks": 23394,
+    "negative_stock_audit": {
+      "by_field": {
+        "CHBAL": 2,
+        "SC": 87,
+        "LNLSGR": 31,
+        "LNLSNET": 49,
+        "LNATRES": 9,
+        "NCLNLS": 2,
+        "NAASSET": 1,
+        "ORE": 641
+      },
+      "affected_reports": 790,
+      "distinct_banks": 290,
+      "total_negative_cells": 822
+    },
+    "development_candidates": 1232375,
+    "unresolved": 744,
+    "labelled_positives": 9246,
+    "observed_prevalence_pct": 0.7507118609388689,
+    "lower_prevalence_pct": 0.7502586469215945,
+    "upper_prevalence_pct": 0.8106298813267065,
+    "note": "Binary outcome envelope after initial risk-set construction; no claim about AP, selection bias size or feasible joint label patterns."
+  },
+  "paired_timings": {
+    "crisis_profile": {
+      "rounds": 12,
+      "polars_faster": 12,
+      "median_ratio": 2.690860355914922,
+      "archived_paired_bootstrap_95": [
+        1.7577214403424326,
+        3.569442805847514
+      ]
+    },
+    "calendar_lag": {
+      "rounds": 12,
+      "polars_faster": 12,
+      "median_ratio": 4.408536353969857,
+      "archived_paired_bootstrap_95": [
+        3.1395620386775223,
+        7.642896488799629
+      ]
+    },
+    "decision_profile": {
+      "rounds": 12,
+      "polars_faster": 12,
+      "median_ratio": 5.021778150314974,
+      "archived_paired_bootstrap_95": [
+        3.4725598116610863,
+        7.326547678038789
+      ]
+    }
+  },
+  "fixed_development_policies": {
+    "adjacent_and_reference_differences": {
+      "5_to_20": {
+        "cert_year_alerts": 3459,
+        "fp_cert_years": 3161,
+        "detected_failure_certs": 286,
+        "extra_false_first_reviews_per_extra_event": 11.052447552447552,
+        "extra_total_first_reviews_per_extra_event": 12.094405594405595
+      },
+      "10_to_20": {
+        "cert_year_alerts": 2099,
+        "fp_cert_years": 1958,
+        "detected_failure_certs": 137,
+        "extra_false_first_reviews_per_extra_event": 14.291970802919709,
+        "extra_total_first_reviews_per_extra_event": 15.321167883211679
+      },
+      "20_to_50": {
+        "cert_year_alerts": 1058,
+        "fp_cert_years": 1023,
+        "detected_failure_certs": 40,
+        "extra_false_first_reviews_per_extra_event": 25.575,
+        "extra_total_first_reviews_per_extra_event": 26.45
+      }
+    },
+    "pairwise_cost_ratio_interval_for_locked_among_four": [
+      14.291970802919709,
+      25.575
+    ],
+    "note": "Comparison of four already-reported fixed OOF policies only; no score thresholds were searched."
+  },
+  "e10_historical_hash_matches": 4
+}

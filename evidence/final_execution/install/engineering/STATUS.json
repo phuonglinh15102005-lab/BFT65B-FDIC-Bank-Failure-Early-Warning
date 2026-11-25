@@ -1,0 +1,25 @@
+{
+  "status": "PASS_CLEAN_INSTALL_IMPORTS_ONLY",
+  "profile": "engineering",
+  "python": "3.13.9",
+  "recipe": "engineering-recorded.txt",
+  "steps": [
+    {
+      "name": "install",
+      "exit_code": 0
+    },
+    {
+      "name": "freeze",
+      "exit_code": 0
+    },
+    {
+      "name": "pip_check",
+      "exit_code": 0
+    },
+    {
+      "name": "imports",
+      "exit_code": 0
+    }
+  ],
+  "scope": "clean install and synthetic imports, not scientific pipeline"
+}

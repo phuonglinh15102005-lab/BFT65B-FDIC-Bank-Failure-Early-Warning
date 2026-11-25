@@ -1,0 +1,4 @@
+Parquet SCAN [D:/BFT_OUT/storage_20362_790/benchmark_data/parquet_zstd.parquet]
+PROJECT 6/33 COLUMNS
+SELECTION: col("REPDTE").is_between([2023-01-01, 2023-03-31])
+ESTIMATED ROWS: 1682616

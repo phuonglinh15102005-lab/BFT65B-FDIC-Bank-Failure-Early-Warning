@@ -1,0 +1,14 @@
+{
+  "status": "PASS_CONTROLLER_BLOCKED_EXPORT_FLOW_ONLY",
+  "platform_scope": "Linux,not native Windows",
+  "actual_producer_execution": "BLOCKED",
+  "new_model_fits": 0,
+  "controller_command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/work/BFT65B_SUBMISSION_CODE_RELEASE_20261118/workflow/windows_start.py"
+  ],
+  "stdout": "\nSTAGE p2-base\nSTAGE_RESULT p2-base BLOCKED\n\nSTAGE p2-clean\nSTAGE_RESULT p2-clean BLOCKED\n\nSTAGE development-features\nSTAGE_RESULT development-features BLOCKED\nSEND_THIS_ZIP /workspace/work/BFT65B_FINAL_CODE_CONTROLLER_SMOKE_20261118/BFT65B_FINAL_CODE_REPLAY/20261118_161425_fbeed054_GUI_LAI_CHO_CODEX.zip\nSEND THIS ZIP: /workspace/work/BFT65B_FINAL_CODE_CONTROLLER_SMOKE_20261118/BFT65B_FINAL_CODE_REPLAY/20261118_161425_fbeed054_GUI_LAI_CHO_CODEX.zip\n",
+  "stderr": "",
+  "exported_zip": "/workspace/work/BFT65B_FINAL_CODE_CONTROLLER_SMOKE_20261118/BFT65B_FINAL_CODE_REPLAY/20261118_161425_fbeed054_GUI_LAI_CHO_CODEX.zip"
+}

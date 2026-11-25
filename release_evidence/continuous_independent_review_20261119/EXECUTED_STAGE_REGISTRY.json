@@ -1,0 +1,239 @@
+[
+  {
+    "id": "acquisition",
+    "source": "01_PART1_ACQUISITION_STORAGE/code/fdic_download_starter.py",
+    "status": "SOURCE_AVAILABLE_PRIOR_SNAPSHOT_VERIFIED__DOWNLOAD_DISABLED",
+    "environment": "engineering",
+    "inputs": "FDIC HTTP date range/field list",
+    "outputs": "Raw quarter Parquet/manifests",
+    "execution": "Historical original acquisition,not dispatched in frozen replay"
+  },
+  {
+    "id": "acquisition-prepare",
+    "source": "01_PART1_ACQUISITION_STORAGE/code/audit_fdic.py",
+    "status": "SOURCE_AVAILABLE_PREPARED_SNAPSHOT_VERIFIED_PRIOR",
+    "environment": "engineering",
+    "inputs": "OriginalrawFinancials/Institutions/Failures+metadata",
+    "outputs": "Typedpreparedsnapshot/reports",
+    "execution": "Historicalpreparation,suppliedpreparedcheckpointsreused"
+  },
+  {
+    "id": "p2-base",
+    "source": "02_PART2_DATA_QUALITY_PANEL/code/02_build_panel_base.py",
+    "status": "VERIFIED_WINDOWS_REPLAY_AND_INDEPENDENT_RETURN_REVIEW_20261119",
+    "environment": "engineering",
+    "inputs": "Exact174preparedsnapshotfiles includingmetadata",
+    "outputs": "NEWpanel_base.parquet/qualityreports",
+    "execution": "Completed on Windows 19 November 2026; no further rerun requested. Original replay command retained for reviewer portability.",
+    "verification_evidence": "release_evidence/windows_return_20261119/; release_evidence/windows_independent_review_20261119/"
+  },
+  {
+    "id": "p2-history",
+    "source": "02_PART2_DATA_QUALITY_PANEL/code/02b_collect_exit_evidence.py",
+    "status": "VERIFIED_PRIOR_OFFLINE_HISTORY_REGISTRY_SCOPE_RETAINED",
+    "environment": "engineering",
+    "inputs": "OriginalStep2A+HTTPcache",
+    "outputs": "OriginalStep2Bregistryevidence",
+    "execution": "Notrerun;immutableStep2Bcheckpointconsumedbynative2C"
+  },
+  {
+    "id": "p2-clean",
+    "source": "02_PART2_DATA_QUALITY_PANEL/code/02c_finalize_panel.py",
+    "status": "VERIFIED_WINDOWS_REPLAY_AND_INDEPENDENT_RETURN_REVIEW_20261119",
+    "environment": "engineering",
+    "inputs": "OriginalStep2A/Bchecksums+read-onlyStep2Ccache",
+    "outputs": "NEWclean/PIT/registrybundle",
+    "execution": "Completed on Windows 19 November 2026; no further rerun requested. Original replay command retained for reviewer portability.",
+    "verification_evidence": "release_evidence/windows_return_20261119/; release_evidence/windows_independent_review_20261119/"
+  },
+  {
+    "id": "part3-polars",
+    "source": "03_PART3_SCALABLE_PROCESSING/code/01_polars_core.py",
+    "status": "VERIFIED_PRIOR_NATIVE_WINDOWS__NOT_REPEATED",
+    "environment": "engineering",
+    "inputs": "Frozenoriginalclean/PIT",
+    "outputs": "3aggregateCSV/plans",
+    "execution": "Prior9CSVacrossengines/1089rowsnumericalcomparisonincluded"
+  },
+  {
+    "id": "part3-pandas",
+    "source": "03_PART3_SCALABLE_PROCESSING/code/02_pandas_parity.py",
+    "status": "VERIFIED_PRIOR_NATIVE_WINDOWS__NOT_REPEATED",
+    "environment": "engineering",
+    "inputs": "Frozenoriginalclean/PIT+Polarsreference",
+    "outputs": "3aggregateCSV",
+    "execution": "Priorclosedparityretained"
+  },
+  {
+    "id": "part3-spark",
+    "source": "03_PART3_SCALABLE_PROCESSING/code/04_spark_parity_fixed.py",
+    "status": "VERIFIED_PRIOR_NATIVE_WINDOWS__NOT_REPEATED",
+    "environment": "engineering+Java17",
+    "inputs": "Frozenoriginalclean/PIT+Polarsreference",
+    "outputs": "3aggregateCSV/SQLplans",
+    "execution": "Priorclosedparityretained;notclusterbenchmark"
+  },
+  {
+    "id": "development-features",
+    "source": "04_PART4_FEATURE_PIPELINE/code/part4_v2_relabel_asof_gate.py",
+    "status": "VERIFIED_WINDOWS_REPLAY_AND_INDEPENDENT_RETURN_REVIEW_20261119",
+    "environment": "engineering",
+    "inputs": "NEWverifiedPart2Cclean/PIT/registryorqualifiedfrozencheckpoint+originalStep01functions",
+    "outputs": "NEW20columnprimarydevelopmentcohort",
+    "execution": "Completed on Windows 19 November 2026; no further rerun requested. Original replay command retained for reviewer portability.",
+    "verification_evidence": "release_evidence/windows_return_20261119/; release_evidence/windows_independent_review_20261119/"
+  },
+  {
+    "id": "development-baseline",
+    "source": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step01_baseline_dev_only.py",
+    "status": "VERIFIED_ARCHIVED_OUTPUTS__FITTING_DISABLED",
+    "environment": "model-recorded",
+    "inputs": "Originaldevelopment+frozenprotocol",
+    "outputs": "ArchivedbaselineOOF/metrics",
+    "execution": "Sourceavailable;noadditionalbaselinefit"
+  },
+  {
+    "id": "development-lr-grid",
+    "source": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step02_logistic_grid_dev.py",
+    "status": "VERIFIED_ARCHIVED_SELECTION__GRID_DISABLED",
+    "environment": "model-recorded",
+    "inputs": "Originaldevelopment+frozenprotocol",
+    "outputs": "ArchivedLRgrid/selectedOOF",
+    "execution": "No search/training/metric recalculation"
+  },
+  {
+    "id": "development-hgb-grid",
+    "source": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step02_hgb_grid_dev.py",
+    "status": "VERIFIED_ARCHIVED_SELECTION__GRID_DISABLED",
+    "environment": "model-recorded",
+    "inputs": "Originaldevelopment+frozenprotocol",
+    "outputs": "ArchivedHGBgrid/selectedOOF",
+    "execution": "MaxmeanAPdirectionretained;no newgrid"
+  },
+  {
+    "id": "development-policy",
+    "source": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step03_development_policy.py",
+    "status": "VERIFIED_PRIOR__THRESHOLD_SEARCH_DISABLED",
+    "environment": "model-recorded",
+    "inputs": "OriginalselectedOOF+devcostproxy",
+    "outputs": "Originaltau0.023971438944668057",
+    "execution": "Separatedevelopment-onlycostpolicy;no change"
+  },
+  {
+    "id": "spark-mllib",
+    "source": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step04_spark_mllib.py",
+    "status": "VERIFIED_ARCHIVED_DEMO__FITTING_DISABLED",
+    "environment": "model-recorded+Spark",
+    "inputs": "Originaldevelopmentfold",
+    "outputs": "ArchivedMLlibdemo/parity",
+    "execution": "Sourcepreserved;no newfitting"
+  },
+  {
+    "id": "refit-lock",
+    "source": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step05_refit_and_lock.py",
+    "status": "IMMUTABLE_NOT_EXECUTED",
+    "environment": "model-recorded",
+    "inputs": "Originalselectedconfiguration/development",
+    "outputs": "Originalfrozenmodel/lock",
+    "execution": "Do notrefitselectedHGB"
+  },
+  {
+    "id": "one-time-final-test",
+    "source": "05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step06b2_one_time_final_evaluation.py",
+    "status": "IMMUTABLE_SCORING_FORBIDDEN",
+    "environment": "model-recorded",
+    "inputs": "Originalmodel/testcohort/lock",
+    "outputs": "Originalsavedtestoutputs",
+    "execution": "Neverdispatchscorer;closedmetricsnotrecomputed"
+  },
+  {
+    "id": "archived-output-verification",
+    "source": "run.py validate",
+    "status": "PRIOR_SCIENTIFIC_VERIFICATION_RETAINED__METADATA_DIGESTS_ONLY",
+    "environment": "stdlib",
+    "inputs": "Publishedaggregateverificationrecords",
+    "outputs": "Code/metadataSHAchecks",
+    "execution": "No privatepredictions/model/testmetrics recalculation"
+  },
+  {
+    "id": "R23",
+    "source": "originalclosedpreprocessingcheckpoint",
+    "status": "CLOSED_PRIOR_NOT_RERUN",
+    "environment": "n/a",
+    "inputs": "n/a",
+    "outputs": "Prior504of504",
+    "execution": "No rerun"
+  },
+  {
+    "id": "R24",
+    "source": "originalcloseddevelopmentCOSTcheckpoint",
+    "status": "CLOSED_PRIOR_NOT_RERUN",
+    "environment": "n/a",
+    "inputs": "n/a",
+    "outputs": "PriorverifiedCOST",
+    "execution": "No rerun"
+  },
+  {
+    "id": "ablation",
+    "source": "completed_analyses/ablation/ablation_runner.py",
+    "status": "CLOSED_PRIOR_NOT_RERUN",
+    "environment": "n/a",
+    "inputs": "n/a",
+    "outputs": "Prior3modelsindependentlyverified",
+    "execution": "No newablationmodel/prediction/metric calculation"
+  },
+  {
+    "id": "posthoc-ci",
+    "source": "completed_analyses/development_ci/CODE/paired_ci.py;completed_analyses/test_ci/bootstrap_locked_scores.py",
+    "status": "CLOSED_PRIOR_NOT_RERUN",
+    "environment": "n/a",
+    "inputs": "n/a",
+    "outputs": "Priorverifiedintervals",
+    "execution": "No resampling/recalculation"
+  },
+  {
+    "id": "continuous-prepare",
+    "source": "01_PART1_ACQUISITION_STORAGE/code/audit_fdic.py",
+    "status": "IMPLEMENTED_REAL_DATA_NOT_EXECUTED",
+    "environment": "engineering",
+    "inputs": "Fresh parents in same run; frozen raw/cache evidence only",
+    "outputs": "New isolated data/provenance outputs",
+    "execution": "run.py continuous; no frozen checkpoint fallback; full model E2E excluded"
+  },
+  {
+    "id": "continuous-base",
+    "source": "02_PART2_DATA_QUALITY_PANEL/code/02_build_panel_base.py",
+    "status": "IMPLEMENTED_REAL_DATA_NOT_EXECUTED",
+    "environment": "engineering",
+    "inputs": "Fresh parents in same run; frozen raw/cache evidence only",
+    "outputs": "New isolated data/provenance outputs",
+    "execution": "run.py continuous; no frozen checkpoint fallback; full model E2E excluded"
+  },
+  {
+    "id": "continuous-exits",
+    "source": "02_PART2_DATA_QUALITY_PANEL/code/02b_collect_exit_evidence.py",
+    "status": "IMPLEMENTED_REAL_DATA_NOT_EXECUTED",
+    "environment": "engineering",
+    "inputs": "Fresh parents in same run; frozen raw/cache evidence only",
+    "outputs": "New isolated data/provenance outputs",
+    "execution": "run.py continuous; no frozen checkpoint fallback; full model E2E excluded"
+  },
+  {
+    "id": "continuous-clean",
+    "source": "02_PART2_DATA_QUALITY_PANEL/code/02c_finalize_panel.py",
+    "status": "IMPLEMENTED_REAL_DATA_NOT_EXECUTED",
+    "environment": "engineering",
+    "inputs": "Fresh parents in same run; frozen raw/cache evidence only",
+    "outputs": "New isolated data/provenance outputs",
+    "execution": "run.py continuous; no frozen checkpoint fallback; full model E2E excluded"
+  },
+  {
+    "id": "continuous-features",
+    "source": "04_PART4_FEATURE_PIPELINE/code/part4_v2_relabel_asof_gate.py",
+    "status": "IMPLEMENTED_REAL_DATA_NOT_EXECUTED",
+    "environment": "engineering",
+    "inputs": "Fresh parents in same run; frozen raw/cache evidence only",
+    "outputs": "New isolated data/provenance outputs",
+    "execution": "run.py continuous; no frozen checkpoint fallback; full model E2E excluded"
+  }
+]

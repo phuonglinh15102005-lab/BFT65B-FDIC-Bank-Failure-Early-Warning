@@ -1,0 +1,7 @@
+check,eligible_rows,flagged_rows,treatment,tolerance
+DEPDOM exceeds DEP,1669801,0,Review only; no automatic correction,"1e-6 + 1e-9 * max(abs(a),abs(b)); USD thousands"
+LNLSNET exceeds LNLSGR,1669801,15,Review only; no automatic correction,"1e-6 + 1e-9 * max(abs(a),abs(b)); USD thousands"
+ASSET <= 0 (candidate denominator),1669802,0,Do not divide by a nonpositive denominator; EQ sign itself is retained,0
+DEP <= 0 (candidate denominator),1669801,1777,Do not divide by a nonpositive denominator; EQ sign itself is retained,0
+LNLSGR <= 0 (candidate denominator),1669801,8691,Do not divide by a nonpositive denominator; EQ sign itself is retained,0
+EQ <= 0 (candidate denominator),1666705,14592,Do not divide by a nonpositive denominator; EQ sign itself is retained,0

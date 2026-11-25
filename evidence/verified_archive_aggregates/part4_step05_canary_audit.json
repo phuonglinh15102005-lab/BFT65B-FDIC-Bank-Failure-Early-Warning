@@ -1,0 +1,91 @@
+{
+  "stage": "PART4_STEP05_DEV_SOURCE_CANARY_AND_TIER2_COVERAGE",
+  "status": "PASS",
+  "scope": "DEVELOPMENT_ONLY; FINAL_TEST_FEATURES_LABELS_AND_METRICS_NEVER_READ",
+  "reference_v2_counts": {
+    "development_decisions_labelled": 1231631,
+    "positive_bank_quarters": 9246
+  },
+  "source_time_contract": {
+    "decision_source_quarter_lag": 1,
+    "development_ended": "2008-12-31",
+    "last_source_for_dev": "2008-09-30",
+    "first_reserved_test_decision": "2010-03-31",
+    "future_data_rejected_by_canary": 29,
+    "illegal_feature_rejected_by_comparator": 29
+  },
+  "asof_experiment": {
+    "quarters_tested": 29,
+    "sampled_bank_quarters": 5148,
+    "positive_rows_sampled": 1668,
+    "post_cutoff_financial_rows_altered": 262590,
+    "raw_fields_poisoned_after_cutoff": [
+      "ASSET",
+      "EQ",
+      "NCLNLS",
+      "LNLSGR",
+      "LNATRES",
+      "CHBAL",
+      "SC",
+      "DEP",
+      "LNLSNET",
+      "ROA",
+      "NIMY"
+    ],
+    "feature_values_compared_by_check": {
+      "baseline": 77220,
+      "truncation": 77220,
+      "future_poison": 77220,
+      "row_shuffle": 77220
+    },
+    "feature_mismatches_by_check": {
+      "baseline": 0,
+      "truncation": 0,
+      "future_poison": 0,
+      "row_shuffle": 0
+    },
+    "canary_control": "deliberately reads financial ASSET from decision quarter; must be rejected by source-date guard"
+  },
+  "candidate_tier2_source_coverage": {
+    "status": "SOURCE_COVERAGE_MEASURED_NOT_MODEL_FEATURES",
+    "source_years_count": 25,
+    "present_fields": [
+      "NAASSET",
+      "P3ASSET",
+      "P9ASSET",
+      "NTLNLS",
+      "ORE",
+      "BRO",
+      "LNRE",
+      "LNCI",
+      "LNCON",
+      "NETINC",
+      "INTINC",
+      "EINTEXP",
+      "NONII",
+      "NONIX",
+      "ELNATR",
+      "ROE",
+      "RBC1AAJ",
+      "RBCRWAJ",
+      "DEPDOM"
+    ],
+    "absent_fields": [],
+    "source_rows_by_year": 1247142
+  },
+  "sha256": {
+    "clean": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107",
+    "pit": "3fce669406ff1898ac85d9c41c6385b7f8c6b27e29ecd041bb0a3c59f6337421",
+    "development_primary_v2": "d365ce25204a3dcace715db4cea259c94b1b1abba4822c7bcf2b050a1c7f6a73",
+    "step01_reference": "a651be686ca57dc65f9e59e444cab99088ce010247fed56d8986a0b7939cc763",
+    "v2_audit_json": "be6d8f1b015634c31f4e5427ccdadb03a85b720e7a5690fcbb559f04bd833745",
+    "v2_fold_audit_json": "264019e181cdf5d74222a995034dc587d2ab67377af167a23f611bea1bbde2f0",
+    "this_script": "fb522eabeacc6509091be7316af2847a450792c519e2e473a66a37c6710843af"
+  },
+  "limitations": [
+    "The decision-quarter future-ASSET canary proves that the source-date guard rejects a deliberately leaky feature; it is not a proof against all conceivable leaks.",
+    "The current Step01 financial builder reads 11 current-report fields from prepared PIT and historical ASSET from clean; post-cutoff poisoning in clean does not directly mutate the frozen PIT.",
+    "Field coverage by source year is not equivalent to fully validated candidate feature coverage, field-unit semantics, or availability at the historical publication vintage.",
+    "No Tier-2 feature, model, calibration, threshold, or final test evaluation was fitted or selected."
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "executed_command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_release_contracts.py"
+  ],
+  "started_utc": "2026-11-18T16:00:08.935578+00:00",
+  "finished_utc": "2026-11-18T16:00:09.121775+00:00",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "metadata_only_package_versions_not_imports": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.8.0",
+      "polars": null,
+      "pyarrow": null
+    }
+  },
+  "exit_code": 0,
+  "input_sha256_before": {
+    "tests/test_release_contracts.py": "d84edbb35a43b8e38f2d0c306179db5db641fa794f98909fe55c2b346b83aef7",
+    "workflow/__init__.py": "bde026e2e09df8bad33050a1344d6000e42eac7a411acdd731dd818255623f33",
+    "workflow/common.py": "3309843f03ff70e05b295e76a8716845be88a3684b28fffd707db94c911b32f1",
+    "workflow/compare.py": "0c76a33428ec0fce772ff8a4b50374fb0fcb53fea35f7bcd06d8d5512431599e",
+    "workflow/compare_worker.py": "1d7128d935298b551fe2ce73e8a5a0810a775d7e36ddd565186aca5f5f49c313",
+    "workflow/comparison_selftest.py": "739af85bea2263db5892f924528f9c53992b38e5652fbf292eba6b49f47632a2",
+    "workflow/engine.py": "40592f60eefa457e4ea25225a2f9d1bf028d646997d8e2ce266e9b98a75ecdd0",
+    "workflow/environment_probe.py": "079e4a74fe071c9a5cc85e3a2b94ba51f7a92b71aea0ed9f88adb9f7ac234214",
+    "workflow/policy.py": "0baea04b8040bfb91db4cc6a0b36d19a7cde65b8ce6410361fc25ab759c55f89",
+    "workflow/worker.py": "94e82c8de557fa4de2127bd956a8dbca293b3005de20ee4a81a5af13c121df29",
+    "config/default.json": "3d53cbe14f8c3ef3c6197ea4ab48a7f58c3414fba2514bb3f03cf819ccc1a695"
+  },
+  "input_sha256_after": {
+    "tests/test_release_contracts.py": "d84edbb35a43b8e38f2d0c306179db5db641fa794f98909fe55c2b346b83aef7",
+    "workflow/__init__.py": "bde026e2e09df8bad33050a1344d6000e42eac7a411acdd731dd818255623f33",
+    "workflow/common.py": "3309843f03ff70e05b295e76a8716845be88a3684b28fffd707db94c911b32f1",
+    "workflow/compare.py": "0c76a33428ec0fce772ff8a4b50374fb0fcb53fea35f7bcd06d8d5512431599e",
+    "workflow/compare_worker.py": "1d7128d935298b551fe2ce73e8a5a0810a775d7e36ddd565186aca5f5f49c313",
+    "workflow/comparison_selftest.py": "739af85bea2263db5892f924528f9c53992b38e5652fbf292eba6b49f47632a2",
+    "workflow/engine.py": "40592f60eefa457e4ea25225a2f9d1bf028d646997d8e2ce266e9b98a75ecdd0",
+    "workflow/environment_probe.py": "079e4a74fe071c9a5cc85e3a2b94ba51f7a92b71aea0ed9f88adb9f7ac234214",
+    "workflow/policy.py": "0baea04b8040bfb91db4cc6a0b36d19a7cde65b8ce6410361fc25ab759c55f89",
+    "workflow/worker.py": "94e82c8de557fa4de2127bd956a8dbca293b3005de20ee4a81a5af13c121df29",
+    "config/default.json": "3d53cbe14f8c3ef3c6197ea4ab48a7f58c3414fba2514bb3f03cf819ccc1a695"
+  },
+  "output_log_sha256": {
+    "CONTRACT_UNIT_TESTS_STDOUT.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "CONTRACT_UNIT_TESTS_STDERR.txt": "62a2ffe5c80036f5db9fa14fbcac2047012347d932552529a35b9e1dd43ff86e"
+  },
+  "scope": "Pure stdlib/unittest release-code contracts;no scientific imports,estimator fitting,raw-data replay,metrics,closed audits or final-test access"
+}

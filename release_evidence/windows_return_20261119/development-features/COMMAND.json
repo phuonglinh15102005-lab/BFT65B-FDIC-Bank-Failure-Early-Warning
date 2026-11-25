@@ -1,0 +1,11 @@
+[
+  "%USERPROFILE%\\miniconda3\\python.exe",
+  "-B",
+  "%USERPROFILE%\\Downloads\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\BFT65B_SUBMISSION_CODE_RELEASE_20261119\\workflow\\worker.py",
+  "--stage",
+  "development-features",
+  "--job",
+  "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\development-features",
+  "--arguments-file",
+  "%USERPROFILE%\\AppData\\Local\\BFT65B_FINAL_CODE_REPLAY\\20261119_082051_38aac2a6\\development-features\\ARGUMENTS.json"
+]

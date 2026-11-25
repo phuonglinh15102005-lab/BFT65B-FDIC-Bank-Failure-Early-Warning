@@ -1,0 +1,6 @@
+{
+  "status": "PASS_SOURCE_RESOURCE_AND_PUBLICATION_CONTENT",
+  "python_sources": 88,
+  "science_python_sources": 61,
+  "errors": []
+}

@@ -1,0 +1,1 @@
+BLOCKED Synthetic Parquet comparator check needs existing Polars/PyArrow: No module named 'pyarrow'

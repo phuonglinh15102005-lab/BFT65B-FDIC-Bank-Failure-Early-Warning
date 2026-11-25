@@ -1,0 +1,29 @@
+{
+  "stage": "PART4_V2_REAUDIT_TRAIN_ONLY_PREPROCESSING",
+  "status": "PASS",
+  "scope": "DEVELOPMENT_ONLY; FINAL_TEST_NOT_READ",
+  "development_rows": 1231631,
+  "positive_rows": 9246,
+  "positive_certs": 2410,
+  "folds_checked": 3,
+  "preprocessor_variants_checked": 2,
+  "fold_preprocessing_runs": 6,
+  "transformed_width": 30,
+  "train_only_preprocessing": true,
+  "estimator_fitted": false,
+  "threshold_selected": false,
+  "input_sha256": {
+    "development_primary_binary_v2_parquet": "d365ce25204a3dcace715db4cea259c94b1b1abba4822c7bcf2b050a1c7f6a73",
+    "part4_v2_development_audit_json": "be6d8f1b015634c31f4e5427ccdadb03a85b720e7a5690fcbb559f04bd833745",
+    "this_script": "ea15c329eff1b772366d5be06d8a8809fd88a2182c263bdddfb1e90fa65592f4",
+    "preprocessor_factory": "168a08f0e3ffb0de3fa9e12e00c6671172a4ecb952fd8f67fc4254469f31b9a3"
+  },
+  "limits": [
+    "No labelled test features or labels opened",
+    "No model tuning or final-test evaluation",
+    "Feature-level formula and event-date checks are evidenced in upstream V2, not rerun here"
+  ],
+  "python": "3.13.7",
+  "pandas": "2.3.3",
+  "sklearn": "1.9.0"
+}

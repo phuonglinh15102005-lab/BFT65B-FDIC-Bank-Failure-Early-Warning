@@ -1,0 +1,31 @@
+{
+  "scope": "Recomputed from archived aggregate ledgers and original Part2 event/coverage review files; no Parquet reads or model scoring. Missing-source diagnostic is bounded to absent internal raw-report quarters within observed raw spans, eligible under retrospective registry, with decision <=2008Q4; not all historical live roster gaps or final labels. First failure reconciliation uses exported event-coverage ledger exported from source, not a reread of failures.parquet.",
+  "hash_links_checked": 6,
+  "dev_candidate_rows": 1232375,
+  "dev_formula_cells": 18485625,
+  "PIT_source_cells": 13556125,
+  "ledger_cells": 504,
+  "populated_cells": 432,
+  "first_four_decision_quarters": [
+    "1984-06-30",
+    "1984-09-30",
+    "1984-12-31",
+    "1985-03-31"
+  ],
+  "structural_4q_missing_minimum": 71150,
+  "first_fold_4q_missing": 76781,
+  "structural_share_of_first_fold_missing": 0.9266615438715308,
+  "failure_event_coverage_rows": 3039,
+  "valid_failure_certs_in_event_ledger": 3036,
+  "invalid_FAILURE_rows": 0,
+  "registry_rows": 24064,
+  "registry_first_failure_dates": 2841,
+  "registry_FIRST_FAILURE_date_mismatches": 0,
+  "failure_CERTs_outside_registry": 195,
+  "internal_gap_diagnostic": {
+    "eligible_internal_missing_source_keys": 91,
+    "no_register_FAILURE": 89,
+    "failure_outside_4q": 2
+  },
+  "internal_gap_CERTs": 31
+}

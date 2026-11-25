@@ -1,0 +1,45 @@
+{
+  "id": "C08_CONTROLLER_SMOKE",
+  "status": "PASS",
+  "exit_code": 0,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "workflow/controller_smoke_test.py"
+  ],
+  "started_utc": "2026-11-18T16:14:25.434518+00:00",
+  "finished_utc": "2026-11-18T16:14:25.818923+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "polars": null,
+      "pyarrow": null,
+      "scikit-learn": "1.8.0",
+      "pyspark": null,
+      "joblib": "1.5.3",
+      "scipy": "1.17.0"
+    }
+  },
+  "input_sha256_before": {
+    "workflow/controller_smoke_test.py": "8e6f88960c6e6bf19ba08c807d51f8d8d1611825867c6f3a33139b43e427a49a",
+    "workflow/windows_start.py": "3627f5206f49f88a82221b28bd136e6b2f413267857ee4aeb1c392837d61bf73",
+    "workflow/engine.py": "6d8c96824c579e3446cf5fda5c5e9c436bc00b074b0842b1292c1478e599118b",
+    "config/source_manifest.json": "97d58bf7bd55a96a4596029acbb81e3b8c67d70179b2f0659f0d531cc02d10bc"
+  },
+  "input_sha256_after": {
+    "workflow/controller_smoke_test.py": "8e6f88960c6e6bf19ba08c807d51f8d8d1611825867c6f3a33139b43e427a49a",
+    "workflow/windows_start.py": "3627f5206f49f88a82221b28bd136e6b2f413267857ee4aeb1c392837d61bf73",
+    "workflow/engine.py": "6d8c96824c579e3446cf5fda5c5e9c436bc00b074b0842b1292c1478e599118b",
+    "config/source_manifest.json": "97d58bf7bd55a96a4596029acbb81e3b8c67d70179b2f0659f0d531cc02d10bc"
+  },
+  "output_sha256": {
+    "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "STDOUT.txt": "ea8b3e357a27b9fdefe8db8cbf9d012558e8c0fc2cf545807479a413d66042a8",
+    "/workspace/work/BFT65B_FINAL_CODE_CONTROLLER_SMOKE_20261118/CONTROLLER_SMOKE_RESULT.json": "0f73793e136c0c6f7487e3472ef6e77eb65399713066f86c366a717a97025fee"
+  },
+  "scope": "Linuxcontrollerexportflowwithmissingprofile;no nativeWindows/realdataPASS",
+  "new_model_fits": 0
+}

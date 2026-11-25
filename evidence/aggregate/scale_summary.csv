@@ -1,0 +1,13 @@
+factor,task,engine,n,median_seconds,median_sampled_peak_rss_mib,max_sampled_peak_rss_mib,incomplete
+1,crisis_profile,polars,3,0.0569324999996752,93.37,95.71,False
+1,crisis_profile,pandas,3,1.70360299999993,183.09,184.59,False
+1,calendar_lag,polars,3,1.221115300000747,580.01,585.18,False
+1,calendar_lag,pandas,3,5.332899799999723,414.44,440.86,False
+3,crisis_profile,polars,3,0.09259740000015881,123.8,124.56,False
+3,crisis_profile,pandas,3,1.4058012000004965,367.39,370.34,False
+3,calendar_lag,polars,3,4.907232899999144,1609.6,1676.56,False
+3,calendar_lag,pandas,3,9.090182600000844,1124.61,1142.18,False
+5,crisis_profile,polars,3,0.16672689999904833,144.66,149.8,False
+5,crisis_profile,pandas,3,7.722868999999264,522.45,525.98,False
+5,calendar_lag,polars,3,8.56731949999994,2689.71,2728.84,False
+5,calendar_lag,pandas,3,27.833779499998855,1785.09,1797.98,False

@@ -1,0 +1,458 @@
+[
+  {
+    "path": "EXECUTION_LOG_INDEX.csv",
+    "rows": 5,
+    "columns": [
+      "case",
+      "status",
+      "scope",
+      "command",
+      "evidence"
+    ]
+  },
+  {
+    "path": "FINAL_RUBRIC_COMPLIANCE_MATRIX.csv",
+    "rows": 33,
+    "columns": [
+      "id",
+      "parent_part_points_not_additive",
+      "assignment_location",
+      "criterion",
+      "status",
+      "evidence",
+      "remaining_gap"
+    ]
+  },
+  {
+    "path": "completed_analyses/ablation/REF/hgb_candidate_fold_metrics.csv",
+    "rows": 24,
+    "columns": [
+      "config_id",
+      "max_leaf_nodes",
+      "learning_rate",
+      "max_iter",
+      "l2_regularization",
+      "clipping",
+      "fold",
+      "train_rows",
+      "train_positives",
+      "validation_rows",
+      "validation_positives",
+      "validation_positive_certs",
+      "average_precision",
+      "roc_auc",
+      "brier_score",
+      "prevalence",
+      "mean_prediction",
+      "prediction_to_prevalence_ratio",
+      "alerts_at_1pct_capacity",
+      "tp_at_1pct_capacity",
+      "fp_at_1pct_capacity",
+      "precision_at_1pct_capacity",
+      "recall_at_1pct_capacity",
+      "fit_seconds",
+      "n_iter",
+      "preprocessing_fitted_on_training_only",
+      "final_test_opened",
+      "early_stopping",
+      "prediction_sha256"
+    ]
+  },
+  {
+    "path": "completed_analyses/test_ci/evidence/007_NEW_POSTHOC_BOOTSTRAP_DRAWS.csv",
+    "rows": 1500,
+    "columns": [
+      "replicate",
+      "AP",
+      "event_recall"
+    ]
+  },
+  {
+    "path": "outputs/verification/CONTINUOUS_COLUMN_COMPARISON.csv",
+    "rows": 5401,
+    "columns": [
+      "dataset",
+      "column",
+      "rows",
+      "null_mismatches",
+      "nan_mismatches",
+      "value_mismatches",
+      "max_abs_difference",
+      "nonfinite_difference",
+      "rtol",
+      "atol",
+      "status"
+    ]
+  },
+  {
+    "path": "outputs/verification/CONTINUOUS_DATASET_VERIFICATION.csv",
+    "rows": 179,
+    "columns": [
+      "stage",
+      "dataset",
+      "kind",
+      "rows",
+      "columns",
+      "byte_identical",
+      "new_sha256",
+      "reference_sha256",
+      "status"
+    ]
+  },
+  {
+    "path": "outputs/verification/CONTINUOUS_REPLAY_STATUS.csv",
+    "rows": 6,
+    "columns": [
+      "stage",
+      "status",
+      "reason"
+    ]
+  },
+  {
+    "path": "outputs/verification/NEW_PRODUCER_REPLAY_STATUS.csv",
+    "rows": 4,
+    "columns": [
+      "dataset",
+      "status",
+      "expected_rows",
+      "observed_rows",
+      "new_sha256",
+      "reference_sha256",
+      "reason"
+    ]
+  },
+  {
+    "path": "outputs/verification/PRIOR_ABLATION_FOLD_METRICS.csv",
+    "rows": 4,
+    "columns": [
+      "fold",
+      "status",
+      "train_rows",
+      "validation_rows",
+      "full_AP",
+      "ablated_AP",
+      "delta_AP_ablated_minus_full",
+      "full_ROC_AUC",
+      "ablated_ROC_AUC",
+      "delta_ROC_AUC_ablated_minus_full",
+      "transformed_width",
+      "fit_attempt"
+    ]
+  },
+  {
+    "path": "outputs/verification/PRIOR_NUMERICAL_COMPARISON.csv",
+    "rows": 9,
+    "columns": [
+      "engine",
+      "task",
+      "rows",
+      "numeric_cells",
+      "max_abs_delta",
+      "status",
+      "csv_sha256"
+    ]
+  },
+  {
+    "path": "outputs/verification/WINDOWS_REPLAY_COLUMN_COMPARISON.csv",
+    "rows": 112,
+    "columns": [
+      "dataset",
+      "column",
+      "rows",
+      "null_mismatches",
+      "nan_mismatches",
+      "value_mismatches",
+      "max_abs_difference",
+      "nonfinite_difference",
+      "rtol",
+      "atol",
+      "status"
+    ]
+  },
+  {
+    "path": "outputs/verification/WINDOWS_REPLAY_DATASET_COMPARISON.csv",
+    "rows": 4,
+    "columns": [
+      "dataset",
+      "rows",
+      "columns",
+      "compared_nonkey_columns",
+      "schema_equal",
+      "key_mismatches",
+      "null_mismatches",
+      "nan_mismatches",
+      "value_mismatches",
+      "max_abs_difference",
+      "new_sha256",
+      "reference_sha256",
+      "byte_identical",
+      "status"
+    ]
+  },
+  {
+    "path": "release_evidence/DEPENDENCY_RESOURCE_FILES.csv",
+    "rows": 23,
+    "columns": [
+      "source_file",
+      "line",
+      "resource",
+      "role",
+      "present",
+      "sha256"
+    ]
+  },
+  {
+    "path": "release_evidence/DEPENDENCY_RESOURCE_IMPORTS.csv",
+    "rows": 804,
+    "columns": [
+      "source_file",
+      "line",
+      "import_name",
+      "classification",
+      "requirement_or_target",
+      "status"
+    ]
+  },
+  {
+    "path": "release_evidence/EVIDENCE_RELOCATION_MAP.csv",
+    "rows": 14,
+    "columns": [
+      "test_id",
+      "actual_output_path",
+      "packaged_copy",
+      "sha256"
+    ]
+  },
+  {
+    "path": "release_evidence/EXECUTED_OUTPUTS/C06_ACTUAL_REPLAY_CLOUD_PREFLIGHT/STAGE_STATUS.csv",
+    "rows": 4,
+    "columns": [
+      "stage",
+      "status",
+      "reason",
+      "artifact_directory"
+    ]
+  },
+  {
+    "path": "release_evidence/PRE_CLOSEOUT_FILE_MANIFEST_SHA256.csv",
+    "rows": 388,
+    "columns": [
+      "relative_path",
+      "bytes",
+      "sha256"
+    ]
+  },
+  {
+    "path": "release_evidence/PRE_CONTINUOUS_VERIFICATION_ALL_FILE_MANIFEST.csv",
+    "rows": 518,
+    "columns": [
+      "relative_path",
+      "bytes",
+      "sha256"
+    ]
+  },
+  {
+    "path": "release_evidence/PRIOR_RELEASE_ALL_FILE_MANIFEST.csv",
+    "rows": 284,
+    "columns": [
+      "relative_path",
+      "bytes",
+      "sha256"
+    ]
+  },
+  {
+    "path": "release_evidence/SCIENCE_SOURCE_ORIGIN.csv",
+    "rows": 61,
+    "columns": [
+      "release_relative_path",
+      "prior_repaired_snapshot_path",
+      "prior_sha256",
+      "release_sha256",
+      "classification"
+    ]
+  },
+  {
+    "path": "release_evidence/continuous_independent_review_20261119/DATASET_VERIFICATION.csv",
+    "rows": 179,
+    "columns": [
+      "stage",
+      "dataset",
+      "kind",
+      "rows",
+      "columns",
+      "byte_identical",
+      "new_sha256",
+      "reference_sha256",
+      "status"
+    ]
+  },
+  {
+    "path": "release_evidence/continuous_independent_review_20261119/EXPORTED_HASH_VERIFICATION.csv",
+    "rows": 256,
+    "columns": [
+      "file",
+      "sha256",
+      "status"
+    ]
+  },
+  {
+    "path": "release_evidence/continuous_independent_review_20261119/PARENT_CONTINUITY.csv",
+    "rows": 4,
+    "columns": [
+      "child",
+      "fresh_parents",
+      "tracked_parent_files",
+      "status"
+    ]
+  },
+  {
+    "path": "release_evidence/continuous_windows_20261119/DATASET_COMPARISON.csv",
+    "rows": 179,
+    "columns": [
+      "dataset",
+      "status",
+      "new_rows",
+      "reference_rows",
+      "schema_equal",
+      "byte_identical",
+      "new_sha256",
+      "reference_sha256"
+    ]
+  },
+  {
+    "path": "release_evidence/continuous_windows_20261119/NUMERICAL_COMPARISON.csv",
+    "rows": 5401,
+    "columns": [
+      "dataset",
+      "column",
+      "rows",
+      "null_mismatches",
+      "nan_mismatches",
+      "value_mismatches",
+      "max_abs_difference",
+      "nonfinite_difference",
+      "rtol",
+      "atol",
+      "status"
+    ]
+  },
+  {
+    "path": "release_evidence/continuous_windows_20261119/STAGE_STATUS.csv",
+    "rows": 6,
+    "columns": [
+      "stage",
+      "status",
+      "reason"
+    ]
+  },
+  {
+    "path": "release_evidence/repro_closeout_20261119/EVIDENCE_RELOCATION.csv",
+    "rows": 32,
+    "columns": [
+      "actual_path",
+      "packaged_path",
+      "sha256"
+    ]
+  },
+  {
+    "path": "release_evidence/repro_closeout_20261119/current_host/continuous/STAGE_STATUS.csv",
+    "rows": 6,
+    "columns": [
+      "stage",
+      "status",
+      "reason"
+    ]
+  },
+  {
+    "path": "release_evidence/repro_closeout_20261119/final/continuous_cloud/continuous/STAGE_STATUS.csv",
+    "rows": 6,
+    "columns": [
+      "stage",
+      "status",
+      "reason"
+    ]
+  },
+  {
+    "path": "release_evidence/repro_closeout_20261119/intermediate/development_43/continuous_cloud/continuous/STAGE_STATUS.csv",
+    "rows": 6,
+    "columns": [
+      "stage",
+      "status",
+      "reason"
+    ]
+  },
+  {
+    "path": "release_evidence/repro_closeout_20261119/intermediate/development_44/continuous_cloud/continuous/STAGE_STATUS.csv",
+    "rows": 6,
+    "columns": [
+      "stage",
+      "status",
+      "reason"
+    ]
+  },
+  {
+    "path": "release_evidence/windows_independent_review_20261119/DATASET_COMPARISON.csv",
+    "rows": 4,
+    "columns": [
+      "dataset",
+      "rows",
+      "columns",
+      "compared_nonkey_columns",
+      "schema_equal",
+      "key_mismatches",
+      "null_mismatches",
+      "nan_mismatches",
+      "value_mismatches",
+      "max_abs_difference",
+      "new_sha256",
+      "reference_sha256",
+      "byte_identical",
+      "status"
+    ]
+  },
+  {
+    "path": "release_evidence/windows_independent_review_20261119/EXPORTED_OUTPUT_HASH_CHECKS.csv",
+    "rows": 34,
+    "columns": [
+      "stage",
+      "file",
+      "sha256"
+    ]
+  },
+  {
+    "path": "release_evidence/windows_independent_review_20261119/WINDOWS_INPUT_IDENTITIES.csv",
+    "rows": 240,
+    "columns": [
+      "stage",
+      "path",
+      "sha256"
+    ]
+  },
+  {
+    "path": "release_evidence/windows_return_20261119/NUMERICAL_COMPARISON.csv",
+    "rows": 112,
+    "columns": [
+      "dataset",
+      "column",
+      "rows",
+      "null_mismatches",
+      "nan_mismatches",
+      "value_mismatches",
+      "max_abs_difference",
+      "nonfinite_difference",
+      "rtol",
+      "atol",
+      "status"
+    ]
+  },
+  {
+    "path": "release_evidence/windows_return_20261119/STAGE_STATUS.csv",
+    "rows": 4,
+    "columns": [
+      "stage",
+      "status",
+      "reason",
+      "artifact_directory"
+    ]
+  }
+]

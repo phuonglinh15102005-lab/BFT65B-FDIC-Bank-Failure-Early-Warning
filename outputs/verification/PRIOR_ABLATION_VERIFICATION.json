@@ -1,0 +1,67 @@
+{
+  "status": "PASS_LATE_DEVELOPMENT_ABLATION_INDEPENDENTLY_VERIFIED",
+  "checks": [
+    {
+      "check": "zip_and_return_manifest",
+      "status": "PASS",
+      "detail": "51 members identical, CRC good;50 manifest entries verified"
+    },
+    {
+      "check": "executed_source_input_output_chain",
+      "status": "PASS",
+      "detail": "20 runtime files match sent bytes;13 original references unchanged;development before/after SHA matches;all run outputs verified"
+    },
+    {
+      "check": "environment_and_three_fit_sequence",
+      "status": "PASS",
+      "detail": "Exact core/current pinned versions;three start/completion pairs;no FAILED/BLOCKED training events. This is execution evidence, not an OS-level proof of absence of all outside activity."
+    },
+    {
+      "check": "features_and_new_preprocessing_comparison",
+      "status": "PASS",
+      "detail": "15 raw /30 original /28 ablated;exactly17/18 removed;10752 retained diagnostic cells unchanged;108 NEW ablation state comparisons against archived FULL preprocessing match. R23 is not recomputed from source."
+    },
+    {
+      "check": "independent_prediction_metrics",
+      "status": "PASS",
+      "detail": "304598 DEVELOPMENT validation rows keyed exactly;18 AP/AUC/delta values recomputed;sklearn and independent grouped-AP/tied-rank AUC agree;archived FULL scores unchanged"
+    },
+    {
+      "check": "unweighted_means_and_mixed_outcome",
+      "status": "PASS",
+      "detail": "Mean AP delta -0.0013494118394952552;two AP decreases and one increase retained;no statistical-significance claim or model re-selection"
+    },
+    {
+      "check": "stderr_classification",
+      "status": "PASS",
+      "detail": "Non-fatal joblib physical-CPU discovery subprocess blocked by guard;logical-core fallback warning. Three fits completed. Preserve warning;do not refit to silence it."
+    }
+  ],
+  "PASS": 7,
+  "FAIL": 0,
+  "validation_rows": 304598,
+  "new_HGB_models_evidenced": 3,
+  "new_models_fitted_in_this_review": 0,
+  "mean": {
+    "fold": "UNWEIGHTED_MEAN",
+    "status": "PASS_INDEPENDENTLY_VERIFIED",
+    "transformed_width": 28,
+    "full_AP": 0.29576629263614845,
+    "ablated_AP": 0.29441688079665324,
+    "delta_AP_ablated_minus_full": -0.0013494118394952552,
+    "full_ROC_AUC": 0.94538427325122,
+    "ablated_ROC_AUC": 0.9445485377307898,
+    "delta_ROC_AUC_ablated_minus_full": -0.0008357355204302216
+  },
+  "execution_date_utc": "2026-11-18T12:20:15.532833+00:00",
+  "execution_finished_utc": "2026-11-18T12:22:29.257525+00:00",
+  "warning": "NONFATAL_JOBLIB_CPU_PROBE_BLOCKED__LOGICAL_CORE_FALLBACK",
+  "remaining": [
+    "Historical bootstrap original provenance not recovered",
+    "Historical release/revision vintages absent",
+    "Cost scenarios remain assumptions",
+    "Full clean-room E2E NOT EXECUTED",
+    "Public submission/report editing pending"
+  ],
+  "scope": "Windows real-data execution record/source hashes plus independent archived-prediction/transform/state calculations. Raw development Parquet and fitted estimators are not reopened/refitted in cloud. No final-test artifacts read for this review."
+}

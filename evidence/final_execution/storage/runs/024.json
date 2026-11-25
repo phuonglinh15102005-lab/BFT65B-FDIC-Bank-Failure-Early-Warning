@@ -1,0 +1,48 @@
+{
+  "variant": "parquet_zstd",
+  "query": "all_rows_six_columns",
+  "seconds": 0.07615650002844632,
+  "baseline_rss_mib": 47.3125,
+  "peak_rss_mib": 171.18359375,
+  "peak_rss_increase_mib": 123.87109375,
+  "memory_samples": 6,
+  "fingerprint": {
+    "rows": 1682616,
+    "schema": [
+      [
+        "CERT",
+        "Int64"
+      ],
+      [
+        "REPDTE",
+        "Date"
+      ],
+      [
+        "ASSET",
+        "Float64"
+      ],
+      [
+        "DEP",
+        "Float64"
+      ],
+      [
+        "EQ",
+        "Float64"
+      ],
+      [
+        "ROA",
+        "Float64"
+      ]
+    ],
+    "null_counts": [
+      0,
+      0,
+      0,
+      1,
+      4148,
+      0
+    ],
+    "row_hash_sum_seed0": "16304019835602148142",
+    "row_hash_sum_seed42": "3837325513436702040"
+  }
+}

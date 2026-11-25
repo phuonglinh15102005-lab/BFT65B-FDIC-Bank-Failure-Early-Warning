@@ -1,0 +1,26 @@
+{
+  "status": "PASS_SOURCE_EVIDENCE_PAYLOAD_PRECHECK",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/work/package_bft65b_verified_release_20261119.py"
+  ],
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41"
+  },
+  "input_sha256": {
+    "packager": "602aa20f0a2939352a186e68995e58137a580f4fcb9868343ae27350ed617818",
+    "old_executed_manifest": "161f2df8be6175e71cfc020ba1291d35f2ac857b54befd0773d485189edba88b",
+    "current_source_manifest": "40baeec061fc243b46ab9c4e5734c586fb56dd4bc75727257714e55fd737d79d",
+    "uploaded_return_archive": "30e4f95b91392916076e48bfa25795582af64bc95ff09ae870ceeefa751ac2a2",
+    "independent_review": "07e7968dd97249f0918ed54740f8393a3e2cd7ecfad194c7a132d1fac57ec543"
+  },
+  "output_sha256": {
+    "final_evidence_status": "58277ce196b493461a9f1b1b516d84163a67a6b5bda50b20f78ce47ed3fa4098",
+    "execution_log_index": "041f43afd63dcbb40406a15e47bab8ed2df3d16f94e9d7a711932cbd9d055160",
+    "csv_content_audit": "a488d3c8d44ddbf8014941f5cdf2e42758c2ac5a783834893426edccc3d6e13c"
+  },
+  "scope": "No science execution; all original code and returned archived bytes preserved; archive hash recorded externally after creation",
+  "timestamp_utc": "2026-11-19T01:33:46.549878+00:00"
+}

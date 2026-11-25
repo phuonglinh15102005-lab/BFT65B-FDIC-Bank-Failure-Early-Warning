@@ -1,0 +1,22 @@
+{
+  "stage": "exits",
+  "status": "PASS_PRODUCER_EXECUTION_COMPARISON_REQUIRED",
+  "error": null,
+  "started_utc": "2026-11-19T12:27:38.166822+00:00",
+  "finished_utc": "2026-11-19T12:28:00.675115+00:00",
+  "source": "%USERPROFILE%\\Downloads\\BFT65B_REPRO_CLOSEOUT_20261119\\BFT65B_REPRO_CLOSEOUT_20261119\\02_PART2_DATA_QUALITY_PANEL\\code\\02b_collect_exit_evidence.py",
+  "source_sha256": "9935d369667b4b5ff17dc5853bc81ccc7ee0af9f87792d2fb62f30c9f021f3ec",
+  "recorded_producer_arguments": [
+    "--step2-dir",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\base\\artifacts",
+    "--out",
+    "%USERPROFILE%\\AppData\\Local\\BFT65B_CONTINUOUS_REPRO\\20261119_192500_59bdf85e\\exits\\artifacts",
+    "--offline",
+    "--cache-dir",
+    "%USERPROFILE%\\BFT65B_outputs\\step2b_20261108_145539_477509\\request_cache"
+  ],
+  "offline": true,
+  "new_model_fits": 0,
+  "final_test_inference": false,
+  "guard": "Python audit hooks, not native-library OS sandbox"
+}

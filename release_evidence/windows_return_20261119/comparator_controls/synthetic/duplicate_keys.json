@@ -1,0 +1,27 @@
+{
+  "dataset": "duplicate_keys",
+  "new_sha256": "15bb947f833bb3c2151e691f2958f99827e90b1c2da540c3966bb07af89f5740",
+  "reference_sha256": "38866e832d5d70ac9a48156673dc0507b33553143e396a93c5426f86b3db509c",
+  "byte_identical": false,
+  "schema_equal": true,
+  "new_schema": "CERT: int64\nx: double\nlabel: int8",
+  "reference_schema": "CERT: int64\nx: double\nlabel: int8",
+  "new_rows": 4,
+  "reference_rows": 4,
+  "keys": [
+    "CERT"
+  ],
+  "rtol": 1e-09,
+  "atol": 1e-10,
+  "columns": [],
+  "status": "FAIL",
+  "key_checks": {
+    "duplicate_new": 1,
+    "duplicate_reference": 0,
+    "null_new": 0,
+    "null_reference": 0,
+    "missing_in_new": 1,
+    "unexpected_in_new": 0
+  },
+  "reason": "Key uniqueness/null/set mismatch"
+}

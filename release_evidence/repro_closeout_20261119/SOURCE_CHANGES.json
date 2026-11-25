@@ -1,0 +1,62 @@
+[
+  {
+    "file": "tests/test_continuous_contracts.py",
+    "original": "",
+    "old_sha256": "",
+    "new_sha256": "19c8439ce053424726c56107cb307788f38f027123ae2065bf21af2d821b8ee2"
+  },
+  {
+    "file": "tests/test_release_contracts.py",
+    "original": "/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119/tests/test_release_contracts.py",
+    "old_sha256": "d84edbb35a43b8e38f2d0c306179db5db641fa794f98909fe55c2b346b83aef7",
+    "new_sha256": "161d88e390c9b5630464479d88e24bb391022a41a80fe242ac33a2f03d336f0d"
+  },
+  {
+    "file": "workflow/closeout_checks.py",
+    "original": "",
+    "old_sha256": "",
+    "new_sha256": "c8a22ffb0f4cc423ba0e80b5a476b3f64500da78235ec3b51f8d7474bedffe40"
+  },
+  {
+    "file": "workflow/continuous.py",
+    "original": "",
+    "old_sha256": "",
+    "new_sha256": "941f2b5884581974befc4e81a2b288aad7350bc29a274c182374513d4d62c422"
+  },
+  {
+    "file": "workflow/continuous_compare.py",
+    "original": "",
+    "old_sha256": "",
+    "new_sha256": "ec00143f8978599a7a334d33a16ecb0f92b8157ca3b60d2e8771f3b357342cb3"
+  },
+  {
+    "file": "workflow/continuous_contract.py",
+    "original": "",
+    "old_sha256": "",
+    "new_sha256": "5e1f9e8d7151a1b6c743f34ec710b6d861a67e1e3e9fe1084af9a4441e2dc9a6"
+  },
+  {
+    "file": "workflow/continuous_worker.py",
+    "original": "",
+    "old_sha256": "",
+    "new_sha256": "7e53c279ad3e1ed58b11940e448848d9eb27d5839cf6e74c476da361f03485b2"
+  },
+  {
+    "file": "workflow/engine.py",
+    "original": "/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119/workflow/engine.py",
+    "old_sha256": "62ad2d20767db2b25c5ccbdf779036db167f0d4a069da4596ad366989de3758b",
+    "new_sha256": "423f9e6b7b6b288c4017656d0e5f5c2e696f890bb02471f87ba3911ad6f17b3a"
+  },
+  {
+    "file": "workflow/offline_part2b.py",
+    "original": "",
+    "old_sha256": "",
+    "new_sha256": "16fef8134f4ae3cc98b985306f521579524c5158dfe1fdbecae643feffed2fe6"
+  },
+  {
+    "file": "workflow/windows_start.py",
+    "original": "/workspace/work/BFT65B_SUBMISSION_CODE_VERIFIED_20261119/workflow/windows_start.py",
+    "old_sha256": "3627f5206f49f88a82221b28bd136e6b2f413267857ee4aeb1c392837d61bf73",
+    "new_sha256": "f57d5cc0e650b9bad7502c3713e4b5ab3a6405a61e43b43f9dd84ad1944c7180"
+  }
+]

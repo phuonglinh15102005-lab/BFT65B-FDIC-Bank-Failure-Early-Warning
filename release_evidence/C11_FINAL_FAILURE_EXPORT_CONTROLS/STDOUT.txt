@@ -1,0 +1,20 @@
+
+STAGE p2-base
+STAGE_RESULT p2-base BLOCKED
+
+STAGE p2-clean
+STAGE_RESULT p2-clean BLOCKED
+
+STAGE development-features
+STAGE_RESULT development-features BLOCKED
+SEND_THIS_ZIP /tmp/tmp90mq4w8q/new_output_GUI_LAI_CHO_CODEX.zip
+
+STAGE p2-base
+STAGE_RESULT p2-base BLOCKED
+
+STAGE p2-clean
+STAGE_RESULT p2-clean BLOCKED
+
+STAGE development-features
+STAGE_RESULT development-features BLOCKED
+SEND_THIS_ZIP /tmp/tmpqzroo9sf/new_output_GUI_LAI_CHO_CODEX.zip

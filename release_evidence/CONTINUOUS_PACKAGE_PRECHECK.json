@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/work/package_bft65b_continuous_verified_20261119.py"
+  ],
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41"
+  },
+  "input_sha256": {
+    "packager": "bf80f927b4c13b4420619970133721c32a578c12056d2c7cd94bda4a3f934e19",
+    "source_manifest": "9abfdb584b88658425bb6b664acaa89880ef9cea17d3101e98ad5e874fde205c",
+    "executed_manifest": "e9fc39a0cc14cebda64c359cad8dd7cab3eaa251ff8f64fe988d9ef77f9d091e",
+    "independent_review": "556be74e04d284885e0528958c648a0bb816de8e35c398e799b63db5537d431f"
+  },
+  "output_sha256": {
+    "report": "ab6358a2f4bb9809cafbc23da70d6e83db7024ad9b79330cf27721e8d174db18",
+    "checklist": "3f286add0be4caf8c23dccfeb28578bd0dcd6b3d6cdb643c66e5943804c53d74",
+    "publication_qa": "3a56364f50d458de71fa46cd3b733756443273bab569bb3e316362d51dda864f"
+  },
+  "science_sources_unchanged": 61,
+  "new_fits": 0,
+  "final_test_inference": false
+}

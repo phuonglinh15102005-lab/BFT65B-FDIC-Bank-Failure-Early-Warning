@@ -1,0 +1,1481 @@
+{
+  "status": "BLOCKED",
+  "inputs": {},
+  "missing": [
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19840331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19840630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19840930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19841231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19850331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19850630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19850930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19851231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19860331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19860630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19860930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19861231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19870331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19870630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19870930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19871231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19880331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19880630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19880930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19881231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19890331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19890630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19890930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19891231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19900331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19900630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19900930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19901231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19910331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19910630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19910930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19911231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19920331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19920630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19920930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19921231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19930331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19930630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19930930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19931231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19940331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19940630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19940930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19941231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19950331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19950630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19950930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19951231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19960331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19960630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19960930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19961231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19970331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19970630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19970930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19971231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19980331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19980630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19980930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19981231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19990331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19990630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19990930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=19991231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20000331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20000630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20000930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20001231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20010331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20010630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20010930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20011231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20020331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20020630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20020930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20021231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20030331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20030630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20030930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20031231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20040331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20040630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20040930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20041231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20050331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20050630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20050930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20051231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20060331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20060630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20060930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20061231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20070331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20070630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20070930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20071231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20080331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20080630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20080930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20081231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20090331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20090630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20090930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20091231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20100331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20100630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20100930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20101231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20110331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20110630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20110930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20111231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20120331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20120630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20120930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20121231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20130331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20130630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20130930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20131231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20140331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20140630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20140930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20141231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20150331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20150630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20150930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20151231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20160331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20160630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20160930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20161231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20170331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20170630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20170930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20171231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20180331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20180630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20180930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20181231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20190331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20190630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20190930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20191231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20200331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20200630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20200930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20201231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20210331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20210630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20210930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20211231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20220331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20220630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20220930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20221231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20230331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20230630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20230930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20231231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20240331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20240630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20240930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20241231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20250331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20250630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20250930.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20251231.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20260331.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/financials/REPDTE=20260630.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/institutions.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/prepared/failures_all.parquet",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/summary.json",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/STANDARDIZATION_COMPLETE.json",
+      "role": "prepared-reference"
+    },
+    {
+      "path": "${HOME}/BFT65B_outputs/step2_20261108_145539_477509/panel_base.parquet",
+      "role": "frozen-output-comparison-only"
+    },
+    {
+      "path": "${HOME}/BFT65B_outputs/step2c_20261108_145539_477509/panel_clean.parquet",
+      "role": "frozen-output-comparison-only"
+    },
+    {
+      "path": "${HOME}/BFT65B_outputs/step2c_20261108_145539_477509/panel_pit_base.parquet",
+      "role": "frozen-output-comparison-only"
+    },
+    {
+      "path": "${HOME}/BFT65B_outputs/step2c_20261108_145539_477509/part2_clean_review_bundle.zip",
+      "role": "frozen-output-comparison-only"
+    },
+    {
+      "path": "${HOME}/BFT65B_outputs/part4_v2_dev_only_outputs/development_primary_binary_v2.parquet",
+      "role": "frozen-output-comparison-only"
+    },
+    {
+      "path": "${HOME}/BFT65B_outputs/step2b_20261108_145539_477509/step2b_summary.json",
+      "role": "frozen-Part2B-reference-only"
+    },
+    {
+      "path": "${HOME}/BFT65B_outputs/step2b_20261108_145539_477509/sources_manifest.json",
+      "role": "frozen-Part2B-reference-only"
+    },
+    {
+      "path": "${HOME}/BFT65B_outputs/step2b_20261108_145539_477509/review_AUDIT_ONLY/history_events_AUDIT_ONLY.csv",
+      "role": "frozen-Part2B-reference-only"
+    },
+    {
+      "path": "${HOME}/BFT65B_outputs/step2b_20261108_145539_477509/review_AUDIT_ONLY/bank_exit_evidence_AUDIT_ONLY.csv",
+      "role": "frozen-Part2B-reference-only"
+    },
+    {
+      "path": "${HOME}/BFT65B_outputs/step2b_20261108_145539_477509/part2_review_bundle.zip",
+      "role": "frozen-Part2B-reference-only"
+    },
+    {
+      "path": "${HOME}/BFT65B_outputs/step2c_20261108_145539_477509/request_cache/0d9e5b4f0985de1f5214407c05d6e328a7e17bf26b8c2c725c4e661ca317e3e8.body",
+      "role": "Part2C-cached-scope-body"
+    },
+    {
+      "path": "${HOME}/BFT65B_outputs/step2c_20261108_145539_477509/request_cache/0d9e5b4f0985de1f5214407c05d6e328a7e17bf26b8c2c725c4e661ca317e3e8.json",
+      "role": "Part2C-cached-scope-metadata"
+    },
+    {
+      "path": "${HOME}/BFT65B_outputs/step2c_20261108_145539_477509/request_cache/dde761e5f8b32124b363b7908cce0b3a616b187c1f1ec31b3bc85ced9c23fa22.body",
+      "role": "Part2C-cached-scope-body"
+    },
+    {
+      "path": "${HOME}/BFT65B_outputs/step2c_20261108_145539_477509/request_cache/dde761e5f8b32124b363b7908cce0b3a616b187c1f1ec31b3bc85ced9c23fa22.json",
+      "role": "Part2C-cached-scope-metadata"
+    },
+    {
+      "path": "${HOME}/BFT65B_outputs/step2c_20261108_145539_477509/request_cache/aaa0e0bc7442ce244b59763aa3ea0572aec482707ec9ef2fbb91d0bb23dc1169.body",
+      "role": "Part2C-cached-scope-body"
+    },
+    {
+      "path": "${HOME}/BFT65B_outputs/step2c_20261108_145539_477509/request_cache/aaa0e0bc7442ce244b59763aa3ea0572aec482707ec9ef2fbb91d0bb23dc1169.json",
+      "role": "Part2C-cached-scope-metadata"
+    },
+    {
+      "path": "${HOME}/BFT65B_outputs/step2c_20261108_145539_477509/request_cache/5ee3a784bcc4325f76388cf238afe9e2cb080e375c45d8d604fe109331d9fcfb.body",
+      "role": "Part2C-cached-scope-body"
+    },
+    {
+      "path": "${HOME}/BFT65B_outputs/step2c_20261108_145539_477509/request_cache/5ee3a784bcc4325f76388cf238afe9e2cb080e375c45d8d604fe109331d9fcfb.json",
+      "role": "Part2C-cached-scope-metadata"
+    },
+    {
+      "path": "${HOME}/BFT65B_outputs/step2b_20261108_145539_477509/request_cache",
+      "role": "required-offline-cache-directory"
+    },
+    {
+      "path": "${HOME}/BFT65B_outputs/step2c_20261108_145539_477509/request_cache",
+      "role": "required-offline-cache-directory"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/audit_results/20261108T032158_540721Z/file_checksums.csv",
+      "role": "original-raw-checksum-ledger"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/manifest_financials.json",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/institutions.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/failures.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19840331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19840630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19840930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19841231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19850331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19850630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19850930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19851231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19860331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19860630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19860930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19861231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19870331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19870630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19870930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19871231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19880331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19880630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19880930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19881231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19890331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19890630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19890930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19891231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19900331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19900630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19900930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19901231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19910331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19910630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19910930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19911231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19920331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19920630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19920930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19921231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19930331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19930630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19930930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19931231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19940331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19940630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19940930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19941231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19950331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19950630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19950930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19951231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19960331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19960630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19960930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19961231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19970331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19970630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19970930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19971231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19980331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19980630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19980930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19981231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19990331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19990630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19990930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=19991231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20000331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20000630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20000930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20001231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20010331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20010630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20010930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20011231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20020331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20020630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20020930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20021231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20030331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20030630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20030930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20031231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20040331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20040630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20040930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20041231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20050331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20050630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20050930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20051231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20060331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20060630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20060930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20061231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20070331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20070630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20070930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20071231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20080331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20080630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20080930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20081231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20090331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20090630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20090930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20091231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20100331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20100630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20100930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20101231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20110331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20110630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20110930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20111231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20120331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20120630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20120930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20121231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20130331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20130630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20130930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20131231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20140331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20140630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20140930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20141231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20150331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20150630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20150930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20151231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20160331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20160630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20160930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20161231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20170331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20170630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20170930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20171231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20180331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20180630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20180930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20181231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20190331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20190630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20190930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20191231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20200331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20200630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20200930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20201231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20210331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20210630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20210930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20211231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20220331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20220630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20220930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20221231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20230331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20230630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20230930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20231231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20240331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20240630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20240930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20241231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20250331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20250630.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20250930.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20251231.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20260331.parquet",
+      "role": "raw-source"
+    },
+    {
+      "path": "${HOME}/data_raw/fdic/financials/REPDTE=20260630.parquet",
+      "role": "raw-source"
+    }
+  ],
+  "errors": [],
+  "raw_ledger_status": "MISSING_REQUIRED_ARCHIVED_RAW_LEDGER",
+  "note": "Ledger hash recorded now; matching 172 prepared Parquet references independently anchors downstream numerical reproduction"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "C07_FAILURE_EXPORT_NEGATIVE_CONTROL",
+  "status": "PASS",
+  "exit_code": 0,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_failure_export.py",
+    "-v"
+  ],
+  "started_utc": "2026-11-18T16:14:25.198757+00:00",
+  "finished_utc": "2026-11-18T16:14:25.352905+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "polars": null,
+      "pyarrow": null,
+      "scikit-learn": "1.8.0",
+      "pyspark": null,
+      "joblib": "1.5.3",
+      "scipy": "1.17.0"
+    }
+  },
+  "input_sha256_before": {
+    "tests/test_failure_export.py": "78bc0afd8c0b5a41f8dee2c5839f58dbe3ee57965b810f194799d6a1420920b9",
+    "workflow/engine.py": "6d8c96824c579e3446cf5fda5c5e9c436bc00b074b0842b1292c1478e599118b",
+    "workflow/common.py": "3309843f03ff70e05b295e76a8716845be88a3684b28fffd707db94c911b32f1",
+    "config/source_manifest.json": "97d58bf7bd55a96a4596029acbb81e3b8c67d70179b2f0659f0d531cc02d10bc"
+  },
+  "input_sha256_after": {
+    "tests/test_failure_export.py": "78bc0afd8c0b5a41f8dee2c5839f58dbe3ee57965b810f194799d6a1420920b9",
+    "workflow/engine.py": "6d8c96824c579e3446cf5fda5c5e9c436bc00b074b0842b1292c1478e599118b",
+    "workflow/common.py": "3309843f03ff70e05b295e76a8716845be88a3684b28fffd707db94c911b32f1",
+    "config/source_manifest.json": "97d58bf7bd55a96a4596029acbb81e3b8c67d70179b2f0659f0d531cc02d10bc"
+  },
+  "output_sha256": {
+    "STDERR.txt": "95f950568d58df549f755eb51391bde3bb85fc6ae6833d33bc7830e605079750",
+    "STDOUT.txt": "e08471d9c03cd57f08211f0985138dc6fee5aaec24caf465a4a1f2b94ac4652e"
+  },
+  "scope": "Puremockedsource-drift/no-environmentcase mustexportFAILZIP,not realproducerfailure",
+  "new_model_fits": 0
+}

@@ -1,0 +1,9 @@
+{
+  "frozen_pipeline": {
+    "part4_v2_train_only_pipeline.py": "168a08f0e3ffb0de3fa9e12e00c6671172a4ecb952fd8f67fc4254469f31b9a3",
+    "part5_protocol_freeze.json": "994f72de6e2446916db8c2fcd36847c45cc68eb6fef5ef67f07acc0476c6d911",
+    "part5_step01_baseline_dev_only.py": "7aa0d432ce85d72ea3af7e16f6085f3622f218db27ece3330c9961217ba84253",
+    "part5_step02_hgb_grid_dev.py": "79d2d6d2f1c8505c444db5dd419a5f90175058e91dc13187c299ab94f097581c"
+  },
+  "e12_script_sha256": "fcefd9ab95c668d019964eab81ca58143cd38f87367db997514679ebeb638fea"
+}

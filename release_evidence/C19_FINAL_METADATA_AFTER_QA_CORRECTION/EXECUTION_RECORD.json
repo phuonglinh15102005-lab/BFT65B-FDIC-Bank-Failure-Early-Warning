@@ -1,0 +1,50 @@
+{
+  "id": "C19_FINAL_METADATA_AFTER_QA_CORRECTION",
+  "status": "PASS",
+  "exit_code": 0,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "run.py",
+    "validate",
+    "--out",
+    "/workspace/work/BFT65B_VERIFIED_RELEASE_FINAL_SOURCE_VALIDATION_20261119"
+  ],
+  "started_utc": "2026-11-19T01:32:19.817282+00:00",
+  "finished_utc": "2026-11-19T01:32:20.049589+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "polars": null,
+      "pyarrow": null,
+      "scikit-learn": "1.8.0",
+      "pyspark": null,
+      "joblib": "1.5.3",
+      "scipy": "1.17.0"
+    }
+  },
+  "input_sha256_before": {
+    "run.py": "83a2514046010be5f6ac51ea2b736e59d94252f8713e355f0597a1579b2b9b12",
+    "workflow/engine.py": "62ad2d20767db2b25c5ccbdf779036db167f0d4a069da4596ad366989de3758b",
+    "config/source_manifest.json": "40baeec061fc243b46ab9c4e5734c586fb56dd4bc75727257714e55fd737d79d",
+    "config/stages.json": "e524333831eb5c4db558cb74120fb55689248ddb6c6b08283da7bc35288f3b71",
+    "config/release_tests.json": "1785120f18b20685340dbffb427eb8f768fb91b7b573ce525a2e0808367f0862"
+  },
+  "input_sha256_after": {
+    "run.py": "83a2514046010be5f6ac51ea2b736e59d94252f8713e355f0597a1579b2b9b12",
+    "workflow/engine.py": "62ad2d20767db2b25c5ccbdf779036db167f0d4a069da4596ad366989de3758b",
+    "config/source_manifest.json": "40baeec061fc243b46ab9c4e5734c586fb56dd4bc75727257714e55fd737d79d",
+    "config/stages.json": "e524333831eb5c4db558cb74120fb55689248ddb6c6b08283da7bc35288f3b71",
+    "config/release_tests.json": "1785120f18b20685340dbffb427eb8f768fb91b7b573ce525a2e0808367f0862"
+  },
+  "output_sha256": {
+    "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "STDOUT.txt": "4d4a6a95536f823aa994aff7610147a4c24fc75cdbe37fbd0d08f65c36e92dbe",
+    "/workspace/work/BFT65B_VERIFIED_RELEASE_FINAL_SOURCE_VALIDATION_20261119/VALIDATION_RESULT.json": "610e08f4139c343071628d84909720d8679d40307a1829e918505ce61d996e1a"
+  },
+  "scope": "Final frozen source/config validation after adding corrected release-QA command record; no bank data/model execution",
+  "new_model_fits": 0
+}

@@ -1,0 +1,62 @@
+{
+  "status": "STORAGE_BENCHMARK_COMPLETE",
+  "run_time_utc": "2026-11-25T05:42:07.870189+00:00",
+  "rows": 1682616,
+  "quarters": 170,
+  "first_quarter": "1984-03-31",
+  "last_quarter": "2026-06-30",
+  "full_assignment_scope": true,
+  "variants": 4,
+  "queries": [
+    "all_rows_all_columns",
+    "all_rows_six_columns",
+    "one_year_six_columns",
+    "one_quarter_six_columns"
+  ],
+  "filter_year": 2023,
+  "filter_quarter": 1,
+  "warmups_per_pair": 2,
+  "timed_repeats_per_pair": 7,
+  "seed": 20261108,
+  "all_equivalence_checks_passed": true,
+  "row_group_size": 100000,
+  "zstd_level": 3,
+  "source_financial_bytes": 162366694,
+  "script_sha256": "9ee23b27e000d5b68472f4c6a25c58bab574981b527f6f202df1095ccfe8ba9a",
+  "environment": {
+    "python": "3.13.9",
+    "polars": "2.1.0",
+    "psutil": "7.2.2",
+    "os": "Windows-11-10.0.26300-SP0",
+    "processor": "Intel64 Family 6 Model 154 Stepping 4, GenuineIntel",
+    "physical_cpu_count": 10,
+    "logical_cpu_count": 12,
+    "ram_gib": 15.568843841552734,
+    "threads": 4
+  },
+  "scope_note": "Financials storage experiment only; small tables remain separate prepared Parquet inputs.",
+  "cache_note": "No OS-cache flush. Warm-up and repeated access; cache residency is not guaranteed. Not cold disk I/O.",
+  "timing_note": "Includes query construction and collection; excludes interpreter/imports, writes, validation hashes and plan generation.",
+  "memory_note": "Native RSS sampled every 10ms plus endpoints; observed peak can miss short spikes. Baseline and incremental RSS reported.",
+  "baseline_note": "Four layouts reconstructed from the exact original prepared snapshot. Explicit schema supplied; empty-null variants use reversible literal-empty encoding; not original FDIC CSV bytes.",
+  "partition_note": "All four single-file layouts project identical source columns. No new partition comparison.",
+  "equivalence_note": "Row counts, schema, null counts and two order-independent row-hash sums checked; hashes are diagnostics, not a proof.",
+  "limitations": [
+    "No pandas comparison or Spark parity in this Part 1 experiment.",
+    "Build times are single observed conversions including source reads, not repeated write benchmarks.",
+    "Gzip is fully decompressed into memory before parsing; this does not measure an optimized streaming gzip reader.",
+    "Hardware and cache affect measurements. Record disk type manually for the final report.",
+    "Choose final layout from measured workload tradeoffs; no assumption that every Parquet variant beats CSV in every query."
+  ],
+  "empty_text_encoding": {
+    "literal_empty_counts": {
+      "STNAME": 191
+    },
+    "escape_token": "~BFT_EMPTY~",
+    "collision_check_passed": true,
+    "synthetic_roundtrip_passed": true,
+    "decoding_inside_timing": true
+  },
+  "snapshot_identity": "170/170 prepared-file digests checked before and after",
+  "gzip_note": "gzip level 6 of identical escaped-empty-null CSV bytes; full decompression inside timing; memory includes decompressed bytes; not an optimized compressed-file engine."
+}

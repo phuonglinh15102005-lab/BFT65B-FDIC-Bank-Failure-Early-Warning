@@ -1,0 +1,6 @@
+E11 read-only audit; frozen source hash verified; data hash verified
+early_bank_stress TRAIN AP 0.391079 VALID AP 0.36044 TRAIN AUC 0.972172 VALID AUC 0.930856
+post_stress_transition TRAIN AP 0.454589 VALID AP 0.246946 TRAIN AUC 0.972957 VALID AUC 0.964905
+global_financial_crisis TRAIN AP 0.42845 VALID AP 0.279913 TRAIN AUC 0.982222 VALID AUC 0.940392
+RBC transitions: 2019Q4 nonzero -> 2020Q1 zero = 1704
+PASS; 3 development refits, no test scoring; read-only input files.

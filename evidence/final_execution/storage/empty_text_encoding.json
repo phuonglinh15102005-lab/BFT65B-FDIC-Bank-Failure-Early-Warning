@@ -1,0 +1,8 @@
+{
+  "literal_empty_counts": {
+    "STNAME": 191
+  },
+  "escape_token": "~BFT_EMPTY~",
+  "collision_check_passed": true,
+  "scope": "only benchmark copies; decoded inside measured CSV query"
+}

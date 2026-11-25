@@ -1,0 +1,32 @@
+[
+  {
+    "name": "storage_review_bundle(1).zip",
+    "bytes": 100198,
+    "sha256": "a0e32f6bc9e194da4bdc2f9dda0d054a9fe9c93949f622b2b96e4c0ffef6a000"
+  },
+  {
+    "name": "BFT65B_DEVELOPMENT_REPLAY_PASS_20261125_105523_945554.zip",
+    "bytes": 3394,
+    "sha256": "5d9fdbf0296ee8e07485365c05bfe6f53b2567f37a2b0c1f328bde9312eccbed"
+  },
+  {
+    "name": "SEND_REPLAY_20261125_130921_f784df.zip",
+    "bytes": 443564,
+    "sha256": "f49fe3ac245d821c89272ab867aed4b7a6912f7948a10fc71264e5da336694b8"
+  },
+  {
+    "name": "SEND_INSTALL_20261125_130916_5fad74.zip",
+    "bytes": 6026,
+    "sha256": "d0baaac4c1477b152e6e8a82e2e9934363129422968c788da552b99b86d37379"
+  },
+  {
+    "name": "20261125_105552_7f2498c8_GUI_LAI_CHO_CODEX.zip",
+    "bytes": 109227,
+    "sha256": "3a6b479c7566467a8f078ac3d94f46fd2e96cd217d7e9b172bf88ada2dd5fcc6"
+  },
+  {
+    "name": "STATUS(2).json",
+    "bytes": 303,
+    "sha256": "8d26c6c3d57a84b3fa263982e3d6bbcf3413123a30e95c527498d1d904da50cd"
+  }
+]

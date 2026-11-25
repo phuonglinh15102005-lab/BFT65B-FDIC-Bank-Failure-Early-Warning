@@ -1,0 +1,36 @@
+"""One final Windows controller: data producers only; export failures as well."""
+from pathlib import Path
+from datetime import datetime
+import hashlib,json,os,subprocess,sys,uuid,zipfile,traceback
+sys.dont_write_bytecode=True
+ROOT=Path(__file__).resolve().parents[1]
+
+def main():
+    base=Path(os.environ.get('LOCALAPPDATA',os.environ.get('TEMP',str(Path.home()))))/'BFT65B_FINAL_CODE_REPLAY'
+    base.mkdir(parents=True,exist_ok=True)
+    stamp=datetime.now().strftime('%Y%m%d_%H%M%S')+'_'+uuid.uuid4().hex[:8]
+    control=base/(stamp+'_controller');control.mkdir(exist_ok=False);out=base/stamp
+    command=[sys.executable,'-B',str(ROOT/'run.py'),'replay','--out',str(out)]
+    (control/'COMMAND.json').write_text(json.dumps(command,indent=2),encoding='utf-8')
+    try:
+        with (control/'STDOUT.txt').open('w',encoding='utf-8') as stdout,(control/'STDERR.txt').open('w',encoding='utf-8') as stderr:
+            child=subprocess.Popen(command,stdout=subprocess.PIPE,stderr=stderr,text=True,encoding='utf-8',bufsize=1,
+                                   env={**os.environ,'PYTHONDONTWRITEBYTECODE':'1','PYTHONUTF8':'1'})
+            for line in child.stdout:print(line,end='',flush=True);stdout.write(line);stdout.flush()
+            child.wait()
+        exported=out.with_name(out.name+'_GUI_LAI_CHO_CODEX.zip')
+        if not exported.is_file():
+            # Even invalid/missing code/config must leave a concrete diagnostic file.
+            record=dict(status='FAIL_CONTROLLER_OR_PREFLIGHT',exit_code=child.returncode,command=command,python=sys.version,
+                        error='Replay did not produce its aggregate evidence ZIP; see controller logs',new_model_fits=0)
+            (control/'RESULT.json').write_text(json.dumps(record,indent=2),encoding='utf-8')
+            exported=control.with_name(control.name+'_GUI_LAI_CHO_CODEX.zip')
+            with zipfile.ZipFile(exported,'x',compression=zipfile.ZIP_DEFLATED) as archive:
+                for p in control.iterdir():
+                    if p.is_file():archive.write(p,p.name)
+        print('SEND THIS ZIP:',exported,flush=True)
+        if os.name=='nt':subprocess.Popen(['explorer.exe','/select,'+str(exported)])
+    except Exception:
+        (control/'CONTROLLER_ERROR.txt').write_text(traceback.format_exc(),encoding='utf-8');raise
+
+if __name__=='__main__':main()

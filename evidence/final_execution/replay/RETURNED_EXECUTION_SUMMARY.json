@@ -1,0 +1,117 @@
+{
+  "status": "PASS_CONTINUOUS_RAW_TO_DEVELOPMENT_REPLAY_REVIEW_REQUIRED",
+  "started_utc": "2026-11-25T06:09:21.997997+00:00",
+  "finished_utc": "2026-11-25T06:11:56.678287+00:00",
+  "source_manifest_sha256": "7c9da966a7554d8cd34b84b9edeceec3795571bbfcd8db266426625dd71599dd",
+  "preflight_status": "PASS",
+  "continuous_data_replay": "COMPLETED",
+  "fresh_parent_required": true,
+  "frozen_checkpoint_fallback": false,
+  "new_model_fits": 0,
+  "final_test_inference": false,
+  "full_clean_room_E2E": "NOT_EXECUTED",
+  "live_acquisition": "NOT_EXECUTED",
+  "model_selection_refit_scoring": "NOT_EXECUTED",
+  "scope": "Redacted summary extracted from returned original logs; no new raw-file inspection",
+  "input_digests": 506,
+  "input_hashes_unchanged": true,
+  "returned_manifest_entries": 256,
+  "stages": [
+    {
+      "stage": "prepare",
+      "status": "PASS",
+      "started_utc": "2026-11-25T06:09:29.653192+00:00",
+      "finished_utc": "2026-11-25T06:10:02.046882+00:00",
+      "lineage_checks": [
+        {
+          "check": "raw_to_preparation",
+          "status": "PASS"
+        }
+      ],
+      "input_digests": 0,
+      "all_stage_inputs_preserved": true,
+      "original_stage_record_sha256": "514ea569ce4bc54c14971b84930b224daa5e091ac25e9d5b134fb9aa83315dbf"
+    },
+    {
+      "stage": "base",
+      "status": "PASS",
+      "started_utc": "2026-11-25T06:10:08.300265+00:00",
+      "finished_utc": "2026-11-25T06:10:27.451823+00:00",
+      "lineage_checks": [
+        {
+          "check": "preparation_to_base",
+          "status": "PASS"
+        }
+      ],
+      "input_digests": 193,
+      "all_stage_inputs_preserved": true,
+      "original_stage_record_sha256": "e6b1712466b4a94f97c73ac6d0e14b26062b9f9d531d77abaee61caaed34c7d2"
+    },
+    {
+      "stage": "exits",
+      "status": "PASS",
+      "started_utc": "2026-11-25T06:10:27.988244+00:00",
+      "finished_utc": "2026-11-25T06:10:43.900767+00:00",
+      "lineage_checks": [
+        {
+          "check": "base_to_new_part2b",
+          "status": "PASS"
+        },
+        {
+          "check": "part2b_signature_parent",
+          "status": "PASS"
+        },
+        {
+          "check": "native_new_signature_and_copied_reports",
+          "status": "PASS"
+        }
+      ],
+      "input_digests": 28,
+      "all_stage_inputs_preserved": true,
+      "original_stage_record_sha256": "898c0e3ad83b93daee10ff8af7d11e122098eb7aa5ce2e5571851575c717f68d"
+    },
+    {
+      "stage": "clean",
+      "status": "PASS",
+      "started_utc": "2026-11-25T06:10:44.397613+00:00",
+      "finished_utc": "2026-11-25T06:11:31.929942+00:00",
+      "lineage_checks": [
+        {
+          "check": "fresh_base_to_part2c",
+          "status": "PASS"
+        },
+        {
+          "check": "fresh_part2b_to_part2c",
+          "status": "PASS"
+        }
+      ],
+      "input_digests": 59,
+      "all_stage_inputs_preserved": true,
+      "original_stage_record_sha256": "8f9afb6d5e9e954c30f04f37014e4b2f81575670b53c7d762fd4121be06a6001"
+    },
+    {
+      "stage": "features",
+      "status": "PASS",
+      "started_utc": "2026-11-25T06:11:33.231197+00:00",
+      "finished_utc": "2026-11-25T06:11:52.046781+00:00",
+      "lineage_checks": [
+        {
+          "check": "--clean",
+          "status": "PASS"
+        },
+        {
+          "check": "--pit",
+          "status": "PASS"
+        },
+        {
+          "check": "--registry-zip",
+          "status": "PASS"
+        }
+      ],
+      "input_digests": 3,
+      "all_stage_inputs_preserved": true,
+      "original_stage_record_sha256": "6168eec45cc7d4d5f4778b4bf041fdadaa06108683d09d8e014e4ee1977dec23"
+    }
+  ],
+  "original_continuous_result_sha256": "972ee704a4fabfe3177db50cf5df1178bbbd39f75ec7f721c9513c53d655bad2"
+}

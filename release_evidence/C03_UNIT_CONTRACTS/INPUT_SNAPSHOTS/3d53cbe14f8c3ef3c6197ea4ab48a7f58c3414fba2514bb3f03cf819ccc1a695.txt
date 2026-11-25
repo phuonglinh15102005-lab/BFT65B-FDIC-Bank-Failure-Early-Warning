@@ -1,0 +1,56 @@
+{
+  "release_id": "BFT65B_SUBMISSION_CODE_20261118",
+  "input_path_rule": "Relative inputs are resolved under --profile / USERPROFILE, never under cwd. Explicit absolute overrides allowed; SHA contracts remain fixed.",
+  "inputs": {
+    "raw_fdic_dir": "data_raw/fdic",
+    "prepared_audit": "data_raw/fdic/audit_results/20261108T032158_540721Z",
+    "step2": "BFT65B_outputs/step2_20261108_145539_477509",
+    "step2b": "BFT65B_outputs/step2b_20261108_145539_477509",
+    "step2c": "BFT65B_outputs/step2c_20261108_145539_477509",
+    "development": "BFT65B_outputs/part4_v2_dev_only_outputs/development_primary_binary_v2.parquet"
+  },
+  "reference_files": {
+    "base": {
+      "input": "step2",
+      "file": "panel_base.parquet",
+      "sha256": "a72a9d24077c0c44149d93c5384d880282c832c576034e42223f299dd0f4778e"
+    },
+    "clean": {
+      "input": "step2c",
+      "file": "panel_clean.parquet",
+      "sha256": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107"
+    },
+    "pit": {
+      "input": "step2c",
+      "file": "panel_pit_base.parquet",
+      "sha256": "3fce669406ff1898ac85d9c41c6385b7f8c6b27e29ecd041bb0a3c59f6337421"
+    },
+    "registry": {
+      "input": "step2c",
+      "file": "part2_clean_review_bundle.zip",
+      "sha256": "09efb2de4574f3abc278aa83ec66d8369d26330258518a7e1963cf810471c395"
+    },
+    "development": {
+      "input": "development",
+      "file": "",
+      "sha256": "d365ce25204a3dcace715db4cea259c94b1b1abba4822c7bcf2b050a1c7f6a73"
+    }
+  },
+  "read_only_cache": "request_cache",
+  "default_new_replay_stages": [
+    "p2-base",
+    "p2-clean",
+    "development-features"
+  ],
+  "forbidden": [
+    "R23",
+    "R24",
+    "ablation",
+    "selected-HGB-refit",
+    "new-grid",
+    "new-threshold-search",
+    "final-test-inference",
+    "model-test-metric-recalculation"
+  ],
+  "reference_policy": "Isolated checkpoint replay. P2A new output compared to original; P2C retains original immutable Step2A/B provenance checkpoints. Development producer uses fresh P2C outputs only after parity PASS; otherwise explicit frozen checkpoints when that parent was not requested/blocked. Never consume failed outputs."
+}

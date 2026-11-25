@@ -1,0 +1,43 @@
+Read 20/170 quarters
+Read 40/170 quarters
+Read 60/170 quarters
+Read 80/170 quarters
+Read 100/170 quarters
+Read 120/170 quarters
+Read 140/170 quarters
+Read 160/170 quarters
+Read 170/170 quarters
+
+BFT65B INITIAL AUDIT v2.0
+Status: ACQUISITION_STRUCTURE_PASS
+Quarters read: 170/170
+Financial rows: 1,682,616
+Distinct valid banks: 24,064
+Duplicate valid-key extra rows: 0
+Errors: 0; review items: 18
+Failure resolution types: [{'RESTYPE': 'ASSISTANCE', 'rows': 593}, {'RESTYPE': 'FAILURE', 'rows': 3524}]
+
+Top financial missingness:
+  P3ASSET: 57.7627% (971,925/1,682,616)
+  NTLNLS: 4.7496% (79,918/1,682,616)
+  P9ASSET: 4.6197% (77,731/1,682,616)
+  NAASSET: 4.6196% (77,730/1,682,616)
+  ELNATR: 2.5654% (43,166/1,682,616)
+  ROE: 1.1139% (18,743/1,682,616)
+  BRO: 0.9961% (16,761/1,682,616)
+  EINTEXP: 0.3826% (6,437/1,682,616)
+  INTINC: 0.2789% (4,692/1,682,616)
+  NONIX: 0.2789% (4,692/1,682,616)
+  NETINC: 0.2789% (4,692/1,682,616)
+  NONII: 0.2789% (4,692/1,682,616)
+  ORE: 0.2466% (4,149/1,682,616)
+  LNATRES: 0.2466% (4,149/1,682,616)
+  EQ: 0.2465% (4,148/1,682,616)
+
+Status concerns acquisition structure only. Review issues.csv and missingness before modelling.
+Read summary.json for scope and limitations. Keep the original data unchanged.
+Reports: %USERPROFILE%\AppData\Local\BFT65B_CONTINUOUS_REPRO\20261119_192500_59bdf85e\prepare\artifacts
+Standardization: STANDARDIZED_FOR_REVIEW
+Financial rows standardized: 1,682,616
+Typed copies: prepared/. Audit-only extracts: review/. No labels or imputation created.
+
