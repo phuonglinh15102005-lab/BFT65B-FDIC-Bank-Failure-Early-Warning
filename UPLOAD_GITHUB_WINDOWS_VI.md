@@ -1,3 +1,5 @@
+> Historical upload guide, written before publication. Public HTTPS base clone passed 25 November 2026; see `REPORT_STATUS.md` for current status and `docs/REPRODUCE_REVIEWER.md` for current commands. Do not recreate the repository or rerun historical scientific stages.
+
 # Hướng dẫn đẩy bộ BFT65B lên GitHub và nhờ Codex kiểm tra
 
 **LƯU Ý:** Đây là ứng viên public-release đã được kiểm tra metadata/unit tests, **không phải** chứng nhận có thể tải FDIC từ đầu và tái chạy toàn bộ mô hình trên máy mới. Báo cáo Word/PDF được cung cấp riêng (không commit vào repo) **CHƯA CÓ GitHub URL thực tế**, nên bạn phải cập nhật trước khi nộp.

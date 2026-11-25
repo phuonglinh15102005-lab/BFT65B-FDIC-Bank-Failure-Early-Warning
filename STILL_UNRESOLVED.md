@@ -1,4 +1,4 @@
-> Historical record, superseded for current execution status by `REPORT_STATUS.md` and S5 (25 November): second upstream replay, policy-only replay, four-layout storage sensitivity and both clean installs passed. Public clone and full E2E remain unverified.
+> Historical record, superseded for current execution status by `REPORT_STATUS.md` and S5 (25 November): second upstream replay, policy-only replay, four-layout storage sensitivity and both clean installs passed. Public HTTPS base clone verified 25 November 2026 (`6258825946139d56b486787b8caf7210a632c326`); full E2E remains unverified. The older checklist below is retained solely as dated history, not current status.
 
 > Current status: the 19 November continuous Windows run has now been reviewed. No further user rerun is requested. See REPRODUCTION_VERIFICATION_REPORT.md and REMAINING_ISSUES_CHECKLIST.md; the text below preserves earlier history.
 
@@ -16,7 +16,7 @@ The original cloud controls/preflight logs remain historically BLOCKED; they are
 
 - **Full clean-room E2E — NOT EXECUTED.** The permitted work is checkpoint replay; fresh acquisition, original grids/refit and one-time final scoring were not replayed. Current restrictions prohibit selected-model training and final-test inference. A scoped replay PASS cannot become full E2E PASS.
 - **Clean install/full historical environment — NOT EXECUTED.** Named pins and current observed distribution exports do not recover every historical native binary/transitive dependency or prove dependency resolution.
-- **Public repository — NOT VERIFIED.** Local source/ignore rules/content can be checked, but no public URL, visibility or deadline continuity was tested. No GitHub commit/push occurred.
+- **Public repository — BASE CLONE VERIFIED (current update).** Public HTTPS access and the base commit audit passed; continuous public availability until grades are released is an ongoing obligation.
 - **Academic report/Part 6 — outside this release.** Identity, first-page metadata, final report citations/AI acknowledgment and the previously oversized appendix must be handled separately. No report was edited.
 
 ## Scientific disclosures remain necessary

@@ -1,6 +1,6 @@
 # Final submission checklist
 
-S4 and S5 are complete evidence: no more storage, preprocessing, policy or upstream reruns are needed for this report. Both clean installs passed. The public repository and anonymous clone remain outstanding.
+S4 and S5 are complete evidence: no more storage, preprocessing, policy or upstream reruns are needed for this report. Both clean installs passed. Public HTTPS base clone and its data-free audit passed 25 November 2026 (`6258825946139d56b486787b8caf7210a632c326`). The final documentation commit must be checked again after publication; record its SHA in the separate report.
 
 1. Extract the source-only ZIP to a short path. Review privacy; do not add the separate report, private return ZIPs, raw files, caches, per-row scores or fitted models.
 2. Create a public GitHub repository. Replace the URL placeholder in README and in the separate DOCX's first page. Refresh `FILE_MANIFEST_SHA256.csv` using `python -B tools/refresh_distribution_manifest.py`; do not modify scientific source pins. Commit/upload the source tree including dotfiles.

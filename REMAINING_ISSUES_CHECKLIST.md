@@ -1,4 +1,4 @@
-> Historical record, superseded for current execution status by `REPORT_STATUS.md` and S5 (25 November): second upstream replay, policy-only replay, four-layout storage sensitivity and both clean installs passed. Public clone and full E2E remain unverified.
+> Historical record, superseded for current execution status by `REPORT_STATUS.md` and S5 (25 November): second upstream replay, policy-only replay, four-layout storage sensitivity and both clean installs passed. Public HTTPS base clone verified 25 November 2026 (`6258825946139d56b486787b8caf7210a632c326`); full E2E remains unverified. The older checklist below is retained solely as dated history, not current status.
 
 # Checklist còn lại sau continuous verification
 
@@ -8,7 +8,7 @@
 - [x] Original references và parent input preservation; source/config/environment identities khớp. Không cần chạy lại BAT cho gate này.
 - [ ] Full clean-room Parts1–5/model E2E, live acquisition và selected-model retraining/final scoring: NOT EXECUTED; không chạy để ép PASS khi đang có safeguard.
 - [ ] Clean dependency installation/full historical transitive-native lock: NOT EXECUTED. Existing named environment đã chạy thành công.
-- [ ] Public GitHub URL/visibility/deadline: NOT VERIFIED; chưa commit/push/publish.
+- [x] Public GitHub URL và base clone đã kiểm tra; final commit audit phải ghi riêng. Giữ Public đến khi có điểm.
 - [ ] Academic report identity/first-page metadata/citations/AI disclosure/appendix page limit và Part6: chưa thực hiện trong code task này.
 
 Giới hạn bắt buộc giữ: historical filing/revision vintages; observed FDIC COST khác assumed review fees/r=20/avoidability; historical bootstrap provenance khác posthoc CI đã kiểm; ablation hoàn tất muộn 18/11/2026; event recall khác COST-weighted recall.
