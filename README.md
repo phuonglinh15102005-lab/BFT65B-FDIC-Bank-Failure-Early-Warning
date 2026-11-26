@@ -1,6 +1,6 @@
 # FDIC Bank Failure Early Warning — BFT65B
 
-**Final submission release — documentation updated 25 November 2026.** National Economics University, BFT65B final individual report. This source-only repository accompanies the separately submitted 30-page English report. It contains the original scientific producers, pinned protocol, tests, output summaries, and supplementary review evidence. Public HTTPS cloning and the data-free audit were verified on 25 November 2026 for base commit `6258825946139d56b486787b8caf7210a632c326`. A full live-data/model rerun has not been verified. See the separately submitted report for the final audited commit.
+**Final submission release — documentation updated 26 November 2026.** National Economics University, BFT65B final individual report. This source-only repository accompanies the separately submitted 30-page English report. It contains the original scientific producers, pinned protocol, tests, output summaries, and supplementary review evidence. Public HTTPS cloning and the data-free audit were verified on 25 November 2026 for the original release and the documentation revision `050889604e449efa26c7bb44943c58cef8477e54`. A full live-data/model rerun has not been verified. See the separately submitted report for the final audited commit.
 
 ## Reproduction levels
 
@@ -23,10 +23,10 @@ Do not merge the two scientific profiles: their NumPy/pandas pins differ. Clean 
 ## A. Quick start (Python standard library)
 
 ```sh
-python -B tools/reviewer\_check.py --out ../BFT65B\_REVIEW\_NEW
+python -B tools/reviewer_check.py --out ../BFT65B_REVIEW_NEW
 ```
 
-Use a new directory outside the repository. This runs 14 checks and verifies every distributed file, 45 original unit tests, 131 protected source pins, S1/E10–E12 and S3 returned-aggregate arithmetic and S4 recovered acquisition manifest and S5 new execution evidence, pilot and development comparator fixtures, and a publication scanner. A PASS means source/aggregate consistency, not live acquisition or scientific rerun. After publishing, clone anonymously (`GIT_TERMINAL_PROMPT=0 git -c credential.helper= clone <PUBLIC_HTTPS_URL>`) and repeat from the clone; record commit, date and Python version outside the repository. Windows convenience: `REVIEW_ON_WINDOWS.cmd`.
+Use a new directory outside the repository. This runs 14 checks and verifies every distributed file, 45 original unit tests, 131 protected source pins, S1/E10–E12 and S3 returned-aggregate arithmetic and S4 recovered acquisition manifest and S5 new execution evidence, pilot and development comparator fixtures, and a publication scanner. A PASS means source/aggregate consistency, not live acquisition or scientific rerun. After publishing, clone anonymously (`GIT_TERMINAL_PROMPT=0 git -c credential.helper= clone <PUBLIC_HTTPS_URL>`) and repeat from the clone; record commit, date and Python version outside the repository. Windows convenience: `REVIEW_ON_WINDOWS.cmd`. The command above is valid in Windows PowerShell as well as POSIX shells. For credential-free cloning in PowerShell, set `$env:GIT_TERMINAL_PROMPT = "0"` and use `git -c credential.helper= -c http.extraHeader= clone <PUBLIC_HTTPS_URL>` (replace the placeholder).
 
 ## B. Original snapshot replay
 
@@ -46,7 +46,7 @@ Use the separate Python 3.13.7 model profile `requirements/model-and-spark-obser
 * `evidence/E1_E9_PUBLIC_EVIDENCE_INDEX.md` maps E1–E12; `evidence/verified_archive_aggregates/` contains recovered outputs. S3: `evidence/final_review/README.md`, with original archive-member/released hash ledger. R23 is recovered 17 Nov V2 preprocessing evidence, not a fresh estimator run. S3 Part 5 includes newly replayed development-only bootstrap and fixed-policy known-COST analysis; no test re-inference.
 * `provenance/FINAL_REVIEW_SOURCE_SCOPE.md` records historical vs current source hashes. The later oracle compatibility copy has a legacy name; original oracle and DEP-only difference documented in S3. The dormant helper is unused.
 * `docs/README_ARCHIVED_20261124.md` is dated historical documentation; historical statuses in other notes are not new claims. Vietnamese launchers and notes are supplementary convenience material.
-* Actual per-review cost and preventable loss are unknown. The 20:1 policy is assumed, not identified by observed costs. Latest-vintage data do not recover historical receipt/amendment history.
+* Actual all-in review cost and preventable loss are unknown. The 20:1 policy is assumed, not identified by observed costs. A post-lock, development-only staffing benchmark uses [FDIC OIG (2019, EVAL-20-002, p. 11)](https://www.fdicoig.gov/sites/default/files/reports/2022-08/20-002EVAL.pdf) and [BLS May 2019 federal financial-examiner wages](https://www.bls.gov/oes/2019/may/naics4_999100.htm); formulas, the four fixed policies and source links are in `docs/STAFFING_COST_BENCHMARK.md`. Latest-vintage data do not recover historical receipt/amendment history.
 
 ## Sources and acknowledgments
 
@@ -58,7 +58,23 @@ The recovered original Financials manifest (170 complete quarters, 1,682,616 row
 
 ## Submission URL
 
-https://github.com/phuonglinh15102005-lab/BFT65B-FDIC-Bank-Failure-Early-Warning.git
+https://github.com/phuonglinh15102005-lab/BFT65B-FDIC-Bank-Failure-Early-Warning
 
 Repository publication is complete. Keep the repository public until grades are released. Use a short extraction path (e.g. D:/BFT) and do not run CMD files from inside ZIPs. The private original evidence ZIPs are not part of the public tree.
 
+
+
+## 26 November supplemental evidence and sources
+
+S6, AI-assisted Linux feature-stage checks and scaling/concurrency trials: `evidence/feature_supplement_20261126/README.md`. Data-free check: `python -B evidence/feature_supplement_20261126/verify_summary.py`. This verifies returned aggregate hashes and arithmetic, not a raw-data rerun. Scientific sources and the held-out model remain unchanged. The 26 November candidate must be audited again after publication.
+
+- Vietnamese Government Portal, 15 October 2022, SCB special-control announcement: <https://xaydungchinhsach.chinhphu.vn/nhnn-cu-can-bo-gioi-tham-gia-quan-tri-dieu-hanh-ngan-hang-scb-119221016071238476.htm>. Publication and legal effective date must be recorded separately.
+- FFIEC CDR public retrieval services: <https://cdr.ffiec.gov/Public/PWS/WebServices/RetrievalService.asmx>. Reporting rosters and submission timestamps do not establish original filing-vintage restoration.
+- WTO WT/TPR/S/490, para. 4.119 and Table 4.6, pp. 178–179: <https://www.wto.org/english/news_e/news_docs/S490.pdf#page=178>.
+- Viet Nam Law 23/2026/QH16, effective 1 December 2026: <https://congbao.chinhphu.vn/van-ban/luat-so-23-2026-qh16-470457.htm>.
+- FDIC OIG EVAL-20-002, printed p. 11: <https://www.fdicoig.gov/sites/default/files/reports/2022-08/20-002EVAL.pdf>; BLS May 2019 federal financial examiners, SOC 13-2061: <https://www.bls.gov/oes/2019/may/naics4_999100.htm>. Direct wages are post-lock scenarios, distinct from the assumed false-review penalty.
+- ChatGPT Work supplied S6 scripts and reported execution; ChatGPT verified the returned archive and integrated it. No new model inference.
+
+## S7 — exact development artifact diagnostic (26 November)
+
+The 26 November Windows read-only diagnostic compares the original and 25 November replay: 1,231,631 unique decision keys, all 18 non-key columns exactly equal after key alignment, zero null/NaN/float-bit mismatches. Row order and row-group layout differ; byte SHA still differs. The writer and Arrow schema metadata match. This does not establish the sole cause of byte divergence or full E2E. Original model SHA guards remain unchanged. See `evidence/development_sha_diagnostic_20261126/README.md`; public aggregate check: `python -B evidence/development_sha_diagnostic_20261126/verify_s7.py`.

@@ -1,0 +1,1332 @@
+{
+  "scope": "read-only development files, aggregate diagnostics only; no model or test inference; not E2E",
+  "original_sha256": "d365ce25204a3dcace715db4cea259c94b1b1abba4822c7bcf2b050a1c7f6a73",
+  "replay_sha256": "a7295637cc68f91bc02aa8c78e8d952b12abffda30fbb420e3c8a0d0d2662b61",
+  "rows": 1231631,
+  "keys": [
+    "CERT",
+    "DECISION_DATE"
+  ],
+  "key_set_equal": true,
+  "key_order_equal": false,
+  "unique_keys": true,
+  "schema_equal_excluding_metadata": true,
+  "arrow_schema_metadata_equal": true,
+  "value_or_null_mismatches": 0,
+  "float_bit_mismatches": 0,
+  "columns": [
+    {
+      "column": "SOURCE_REPDTE",
+      "type": "date32[day]",
+      "null_mismatches": 0,
+      "numeric_exact_mismatches": 0,
+      "float_bit_mismatches": 0,
+      "nan_mask_mismatches": 0
+    },
+    {
+      "column": "SPLIT",
+      "type": "large_string",
+      "null_mismatches": 0,
+      "numeric_exact_mismatches": 0,
+      "float_bit_mismatches": 0,
+      "nan_mask_mismatches": 0
+    },
+    {
+      "column": "log_assets",
+      "type": "double",
+      "null_mismatches": 0,
+      "numeric_exact_mismatches": 0,
+      "nan_mask_mismatches": 0,
+      "float_bit_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    {
+      "column": "equity_to_assets",
+      "type": "double",
+      "null_mismatches": 0,
+      "numeric_exact_mismatches": 0,
+      "nan_mask_mismatches": 0,
+      "float_bit_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    {
+      "column": "negative_equity_flag",
+      "type": "int8",
+      "null_mismatches": 0,
+      "numeric_exact_mismatches": 0,
+      "float_bit_mismatches": 0,
+      "nan_mask_mismatches": 0
+    },
+    {
+      "column": "asset_log_growth_1q",
+      "type": "double",
+      "null_mismatches": 0,
+      "numeric_exact_mismatches": 0,
+      "nan_mask_mismatches": 0,
+      "float_bit_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    {
+      "column": "asset_log_growth_4q",
+      "type": "double",
+      "null_mismatches": 0,
+      "numeric_exact_mismatches": 0,
+      "nan_mask_mismatches": 0,
+      "float_bit_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    {
+      "column": "nclnls_to_loans",
+      "type": "double",
+      "null_mismatches": 0,
+      "numeric_exact_mismatches": 0,
+      "nan_mask_mismatches": 0,
+      "float_bit_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    {
+      "column": "loan_allowance_to_loans",
+      "type": "double",
+      "null_mismatches": 0,
+      "numeric_exact_mismatches": 0,
+      "nan_mask_mismatches": 0,
+      "float_bit_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    {
+      "column": "cash_to_assets",
+      "type": "double",
+      "null_mismatches": 0,
+      "numeric_exact_mismatches": 0,
+      "nan_mask_mismatches": 0,
+      "float_bit_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    {
+      "column": "cash_and_securities_to_assets",
+      "type": "double",
+      "null_mismatches": 0,
+      "numeric_exact_mismatches": 0,
+      "nan_mask_mismatches": 0,
+      "float_bit_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    {
+      "column": "deposits_to_assets",
+      "type": "double",
+      "null_mismatches": 0,
+      "numeric_exact_mismatches": 0,
+      "nan_mask_mismatches": 0,
+      "float_bit_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    {
+      "column": "net_loans_to_assets",
+      "type": "double",
+      "null_mismatches": 0,
+      "numeric_exact_mismatches": 0,
+      "nan_mask_mismatches": 0,
+      "float_bit_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    {
+      "column": "roa_reported_percent",
+      "type": "double",
+      "null_mismatches": 0,
+      "numeric_exact_mismatches": 0,
+      "nan_mask_mismatches": 0,
+      "float_bit_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    {
+      "column": "nimy_reported_percent",
+      "type": "double",
+      "null_mismatches": 0,
+      "numeric_exact_mismatches": 0,
+      "nan_mask_mismatches": 0,
+      "float_bit_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    {
+      "column": "loss_flag_roa_negative",
+      "type": "int8",
+      "null_mismatches": 0,
+      "numeric_exact_mismatches": 0,
+      "float_bit_mismatches": 0,
+      "nan_mask_mismatches": 0
+    },
+    {
+      "column": "loan_denominator_invalid_flag",
+      "type": "int8",
+      "null_mismatches": 0,
+      "numeric_exact_mismatches": 0,
+      "float_bit_mismatches": 0,
+      "nan_mask_mismatches": 0
+    },
+    {
+      "column": "Y_4Q",
+      "type": "int8",
+      "null_mismatches": 0,
+      "numeric_exact_mismatches": 0,
+      "float_bit_mismatches": 0,
+      "nan_mask_mismatches": 0
+    }
+  ],
+  "original_parquet_metadata": {
+    "created_by": "Polars (python) version 2.1.0 (build 7f902bd3ffd27ff82d14278a09a295ff2f7aed92)",
+    "format_version": "1.0",
+    "row_groups": 12,
+    "rows_per_group": [
+      102698,
+      102694,
+      102698,
+      102637,
+      102675,
+      102640,
+      102330,
+      102682,
+      102692,
+      102631,
+      102695,
+      102559
+    ],
+    "footer_serialized_size": 24442,
+    "kv_metadata_value_hashes": {
+      "ARROW:schema": "367992f8125eb47de519a446f2b0446620d30c2ce110e0bc319ed405fc9b58c0"
+    },
+    "columns": [
+      {
+        "field": "CERT",
+        "physical_type": "INT64",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE",
+          "RLE_DICTIONARY"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 101371,
+        "uncompressed_bytes": 282686
+      },
+      {
+        "field": "DECISION_DATE",
+        "physical_type": "INT32",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE",
+          "RLE_DICTIONARY"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 91704,
+        "uncompressed_bytes": 1083536
+      },
+      {
+        "field": "SOURCE_REPDTE",
+        "physical_type": "INT32",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE",
+          "RLE_DICTIONARY"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 91680,
+        "uncompressed_bytes": 1083536
+      },
+      {
+        "field": "SPLIT",
+        "physical_type": "BYTE_ARRAY",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE",
+          "RLE_DICTIONARY"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 1284,
+        "uncompressed_bytes": 1068
+      },
+      {
+        "field": "log_assets",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 8252877,
+        "uncompressed_bytes": 9853708
+      },
+      {
+        "field": "equity_to_assets",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 9144307,
+        "uncompressed_bytes": 9834185
+      },
+      {
+        "field": "negative_equity_flag",
+        "physical_type": "INT32",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE",
+          "RLE_DICTIONARY"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 6925,
+        "uncompressed_bytes": 9100
+      },
+      {
+        "field": "asset_log_growth_1q",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 9203915,
+        "uncompressed_bytes": 9754242
+      },
+      {
+        "field": "asset_log_growth_4q",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 8729714,
+        "uncompressed_bytes": 9206085
+      },
+      {
+        "field": "nclnls_to_loans",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 8517312,
+        "uncompressed_bytes": 9794669
+      },
+      {
+        "field": "loan_allowance_to_loans",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 8939862,
+        "uncompressed_bytes": 9793076
+      },
+      {
+        "field": "cash_to_assets",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 9210554,
+        "uncompressed_bytes": 9853696
+      },
+      {
+        "field": "cash_and_securities_to_assets",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 9185792,
+        "uncompressed_bytes": 9853246
+      },
+      {
+        "field": "deposits_to_assets",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 8969449,
+        "uncompressed_bytes": 9853706
+      },
+      {
+        "field": "net_loans_to_assets",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 9089438,
+        "uncompressed_bytes": 9853439
+      },
+      {
+        "field": "roa_reported_percent",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 9350755,
+        "uncompressed_bytes": 9853708
+      },
+      {
+        "field": "nimy_reported_percent",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 9187444,
+        "uncompressed_bytes": 9853708
+      },
+      {
+        "field": "loss_flag_roa_negative",
+        "physical_type": "INT32",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE",
+          "RLE_DICTIONARY"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 57366,
+        "uncompressed_bytes": 84217
+      },
+      {
+        "field": "loan_denominator_invalid_flag",
+        "physical_type": "INT32",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE",
+          "RLE_DICTIONARY"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 3276,
+        "uncompressed_bytes": 3847
+      },
+      {
+        "field": "Y_4Q",
+        "physical_type": "INT32",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE",
+          "RLE_DICTIONARY"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 7417,
+        "uncompressed_bytes": 11952
+      }
+    ]
+  },
+  "replay_parquet_metadata": {
+    "created_by": "Polars (python) version 2.1.0 (build 7f902bd3ffd27ff82d14278a09a295ff2f7aed92)",
+    "format_version": "1.0",
+    "row_groups": 12,
+    "rows_per_group": [
+      102691,
+      102690,
+      102662,
+      102694,
+      102696,
+      102698,
+      102593,
+      102679,
+      102572,
+      102332,
+      102627,
+      102697
+    ],
+    "footer_serialized_size": 24446,
+    "kv_metadata_value_hashes": {
+      "ARROW:schema": "367992f8125eb47de519a446f2b0446620d30c2ce110e0bc319ed405fc9b58c0"
+    },
+    "columns": [
+      {
+        "field": "CERT",
+        "physical_type": "INT64",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE",
+          "RLE_DICTIONARY"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 102068,
+        "uncompressed_bytes": 282747
+      },
+      {
+        "field": "DECISION_DATE",
+        "physical_type": "INT32",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE",
+          "RLE_DICTIONARY"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 92066,
+        "uncompressed_bytes": 1083543
+      },
+      {
+        "field": "SOURCE_REPDTE",
+        "physical_type": "INT32",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE",
+          "RLE_DICTIONARY"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 92042,
+        "uncompressed_bytes": 1083543
+      },
+      {
+        "field": "SPLIT",
+        "physical_type": "BYTE_ARRAY",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE",
+          "RLE_DICTIONARY"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 1284,
+        "uncompressed_bytes": 1068
+      },
+      {
+        "field": "log_assets",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 8283055,
+        "uncompressed_bytes": 9853708
+      },
+      {
+        "field": "equity_to_assets",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 9155073,
+        "uncompressed_bytes": 9834185
+      },
+      {
+        "field": "negative_equity_flag",
+        "physical_type": "INT32",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE",
+          "RLE_DICTIONARY"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 6904,
+        "uncompressed_bytes": 9102
+      },
+      {
+        "field": "asset_log_growth_1q",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 9202758,
+        "uncompressed_bytes": 9754238
+      },
+      {
+        "field": "asset_log_growth_4q",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 8729512,
+        "uncompressed_bytes": 9206085
+      },
+      {
+        "field": "nclnls_to_loans",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 8518748,
+        "uncompressed_bytes": 9794670
+      },
+      {
+        "field": "loan_allowance_to_loans",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 8948618,
+        "uncompressed_bytes": 9793074
+      },
+      {
+        "field": "cash_to_assets",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 9209911,
+        "uncompressed_bytes": 9853695
+      },
+      {
+        "field": "cash_and_securities_to_assets",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 9190176,
+        "uncompressed_bytes": 9853248
+      },
+      {
+        "field": "deposits_to_assets",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 8978599,
+        "uncompressed_bytes": 9853706
+      },
+      {
+        "field": "net_loans_to_assets",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 9096487,
+        "uncompressed_bytes": 9853441
+      },
+      {
+        "field": "roa_reported_percent",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 9350014,
+        "uncompressed_bytes": 9853708
+      },
+      {
+        "field": "nimy_reported_percent",
+        "physical_type": "DOUBLE",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 9186288,
+        "uncompressed_bytes": 9853708
+      },
+      {
+        "field": "loss_flag_roa_negative",
+        "physical_type": "INT32",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE",
+          "RLE_DICTIONARY"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 57416,
+        "uncompressed_bytes": 84213
+      },
+      {
+        "field": "loan_denominator_invalid_flag",
+        "physical_type": "INT32",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE",
+          "RLE_DICTIONARY"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 3301,
+        "uncompressed_bytes": 3839
+      },
+      {
+        "field": "Y_4Q",
+        "physical_type": "INT32",
+        "compression": [
+          "ZSTD"
+        ],
+        "encodings": [
+          "PLAIN",
+          "RLE",
+          "RLE_DICTIONARY"
+        ],
+        "stats_presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "compressed_bytes": 7492,
+        "uncompressed_bytes": 11950
+      }
+    ]
+  },
+  "metadata_fields_differing": [
+    "rows_per_group",
+    "footer_serialized_size",
+    "columns"
+  ],
+  "conclusion": "EXACT_DECODED_VALUES_MATCH_ROW_ORDER_DIFFERS",
+  "inputs_preserved": true,
+  "python": "3.13.9",
+  "pyarrow": "26.0.1",
+  "numpy": "2.5.4",
+  "warning": "Matching decoded values do not prove the exact cause of byte differences. Never substitute the replay for the frozen original or bypass SHA guards."
+}

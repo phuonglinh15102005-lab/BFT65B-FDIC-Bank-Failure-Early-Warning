@@ -50,7 +50,8 @@ For a new independent study using a fresh FDIC snapshot (not the frozen November
 | Base | `02_PART2_DATA_QUALITY_PANEL/code/02_build_panel_base.py --audit-dir NEW_PREP --out NEW_BASE` | Native DQ and keys. |
 | History | `02_PART2_DATA_QUALITY_PANEL/code/02b_collect_exit_evidence.py --step2-dir NEW_BASE --out NEW_HISTORY` | Live dated event collection; offline mode needs exact cache. |
 | Final panel | `02_PART2_DATA_QUALITY_PANEL/code/02c_finalize_panel.py --step2-dir NEW_BASE --step2b-dir NEW_HISTORY --out NEW_PANEL` | Native exit/PIT contracts; do not substitute original registry for new data. |
-| Development features | `04_PART4_FEATURE_PIPELINE/code/part4_v2_relabel_asof_gate.py --clean CLEAN --pit PIT --registry-zip REGISTRY --step01-source ORIGINAL_FEATURE_SOURCE --out-dir NEW_DEV` | Native audited producer; frozen contracts may fail on changed snapshots. Locate actual source and references under Part4; a changed study requires its own protocol and validation. |
+| Development features (cohort only) | `04_PART4_FEATURE_PIPELINE/code/part4_v2_relabel_asof_gate.py --clean CLEAN --pit PIT --registry-zip REGISTRY --step01-source 04_PART4_FEATURE_PIPELINE/code/part4_step01_reference_UNCHANGED.py --out-dir NEW_DEV --production-only --asof-quarters 0` | Production-only; compare regenerated development outputs with approved reference. No full-audit PASS is implied. See D.2. |
+| Development features (full audit) | Same native producer, separate output, no `--production-only`, and `--pandas-oracle-source 04_PART4_FEATURE_PIPELINE/code/part4_step03_pandas_oracle_UNCHANGED.py` | Requires compatible scientific environment including scikit-learn. See D.2; historical original oracle is retained for provenance only. |
 | Model comparison and policy | `tools/reproduce_development.py` (see C) | **Exact historical inputs only**, not a new-snapshot training interface. |
 | MLlib | `05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step04_spark_mllib.py --protocol PROTOCOL --dev ORIGINAL_DEV --step01 ORIGINAL_BASELINE_ZIP --out NEW_MLLIB` | Requires original pinned baseline ZIP, compatible model/Spark/Java environment. |
 | Final refit | `05_PART5_MODELLING_VALIDATION/code/frozen_pipeline/part5_step05_refit_and_lock.py` | Native `--help` enumerates private protocol/dev/Step01/02a/02b/03/04 inputs. Hardcoded archived digests guard scientific history. Not dispatched in the current release. |
@@ -58,5 +59,36 @@ For a new independent study using a fresh FDIC snapshot (not the frozen November
 
 **Important:** the original fresh-acquisition-to-final-score path cannot be guaranteed to be rerunnable with only public GitHub files because archival versions and caches are deliberately omitted, and the locked model guards require exact historical bytes. A new study using current API data is not a reproduction of the frozen test. The above native route and development adapter make the prerequisites and stop conditions explicit; they do not establish an executed clean-room end-to-end result. No real-data run is represented as PASS unless supported by its returned logs. In particular, do not use results of a new test to revise this locked study.
 
+## D.1. Part 3 processing and cross-engine parity branch (historical snapshot)
+
+This is a side branch after Part 2C, not an input to the Part 4 development feature producer. Run the commands from repository root with the recorded engineering interpreter (Python 3.13.9, `requirements/engineering-recorded.txt`; Polars 2.1.0, pandas 3.1.1, PySpark 4.3.0, Java 17). Substitute `PRIVATE_PANEL_DIR` with the folder containing the exact historical `panel_clean.parquet` and `panel_pit_base.parquet`. The scripts enforce archived input hashes; a newly downloaded or merely logically equivalent file is not automatically interchangeable. Use new output directories outside the repo. The Polars command creates a timestamped output directory with `part3_step01_polars_evidence.zip`. Substitute its exact path for `POLARS_ZIP`. Do not publish the private ZIPs.
+
+```text
+python -B 03_PART3_SCALABLE_PROCESSING/code/01_polars_core.py --data-dir PRIVATE_PANEL_DIR --output-parent ../NEW_POLARS
+python -B 03_PART3_SCALABLE_PROCESSING/code/02_pandas_parity.py --data-dir PRIVATE_PANEL_DIR --polars-zip POLARS_ZIP --output-parent ../NEW_PANDAS
+python -B 03_PART3_SCALABLE_PROCESSING/code/04_spark_parity_fixed.py --data-dir PRIVATE_PANEL_DIR --polars-zip POLARS_ZIP --output-parent ../NEW_SPARK --cores 4 --driver-memory 3g
+```
+
+Confirm the input hashes, reference ZIP provenance, three workload output/key comparisons, numeric tolerance and native execution plan. These native interfaces are documented, not newly executed by this documentation revision. Local parity is not a measured distributed cluster crossover. The report's later benchmark and scale protocols have separate archived evidence and producers; do not treat these three commands as a rerun of every later timing experiment.
+
+## D.2. Part 4: separate production and audit modes
+
+The following commands are alternatives with separate, new output directories. `CLEAN`, `PIT` and `REGISTRY` are placeholders for exact required private inputs. Production-only is for regenerating the development cohort; the continuous orchestrator subsequently compares output to the archived reference. Full audit runs additional controls and requires an independent formula oracle and nonzero as-of sample. Use a compatible environment containing Polars, pandas, NumPy, PyArrow and scikit-learn; the recorded separate model profile is a candidate, not a verified full-audit replay environment. Do not mix incompatible pins or bypass guards. No test inference.
+
+```text
+python -B 04_PART4_FEATURE_PIPELINE/code/part4_v2_relabel_asof_gate.py --clean CLEAN --pit PIT --registry-zip REGISTRY --step01-source 04_PART4_FEATURE_PIPELINE/code/part4_step01_reference_UNCHANGED.py --out-dir NEW_DEV --production-only --asof-quarters 0
+python -B 04_PART4_FEATURE_PIPELINE/code/part4_v2_relabel_asof_gate.py --clean CLEAN --pit PIT --registry-zip REGISTRY --step01-source 04_PART4_FEATURE_PIPELINE/code/part4_step01_reference_UNCHANGED.py --out-dir NEW_DEV_AUDIT --pandas-oracle-source 04_PART4_FEATURE_PIPELINE/code/part4_step03_pandas_oracle_UNCHANGED.py
+```
+
+The second command uses the distributed compatibility oracle (legacy `_UNCHANGED` filename), which applies the nonnegative DEP numerator domain consistent with the feature builder. `evidence/final_review/part4/supplement/original_oracle.py` is the historical oracle, whose DEP treatment differs; retain it as evidence rather than substituting it for the compatible oracle. See `provenance/FINAL_REVIEW_SOURCE_SCOPE.md`. The default full-audit as-of sample is not a guarantee of the archived 29-control experiment. The CLI refuses a full-audit PASS without oracle and canary results; production-only must be followed by archived-reference comparison. Neither documented command is a claim of new execution.
+
 ## Optional Windows convenience launcher
 `REPRODUCE_DEV_POLICY_WINDOWS.cmd` locates five exact digest-matching files in the usual user Downloads/Desktop/Documents, BFT65B_outputs and data_raw folders. It uses the Python launcher (the adapter requires the original 3.13.7 model environment). If a private archive is nested, extract it locally or use the explicit `--search-root` option. It refuses a missing/mismatched input and will not search or score the test. On PASS it exports only the aggregate `BFT65B_DEVELOPMENT_REPLAY_PASS_*.zip` to Downloads; raw and per-row OOF outputs stay outside Git. The locator and comparison contracts have passed synthetic/aggregate self-checks; the native Windows policy-only replay passed on 25 November.
+
+## E. S6 supplementary predictor audit and scaling (26 November)
+
+See `evidence/feature_supplement_20261126/README.md` for exact private-input commands, isolated Linux environment and aggregate verifier. These are post-lock, label-free experiments on the development financial panels, not a complete E2E run.
+
+## S7 — exact development artifact diagnostic (26 November)
+
+The 26 November Windows read-only diagnostic compares the original and 25 November replay: 1,231,631 unique decision keys, all 18 non-key columns exactly equal after key alignment, zero null/NaN/float-bit mismatches. Row order and row-group layout differ; byte SHA still differs. The writer and Arrow schema metadata match. This does not establish the sole cause of byte divergence or full E2E. Original model SHA guards remain unchanged. See `evidence/development_sha_diagnostic_20261126/README.md`; public aggregate check: `python -B evidence/development_sha_diagnostic_20261126/verify_s7.py`.

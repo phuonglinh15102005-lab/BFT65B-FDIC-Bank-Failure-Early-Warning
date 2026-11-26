@@ -1,0 +1,205 @@
+{
+  "status": "PASS",
+  "utc": "2026-11-26T01:36:29.059008+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "polars": "2.1.0",
+  "threads": 4,
+  "host_ram_MiB": 9967.25390625,
+  "source_commit": "050889604e449efa26c7bb44943c58cef8477e54",
+  "reference_output_sha256": "85138090039b489308d34538aa4b7d3189f5e333722e9f01d4e227bc45e16d5d",
+  "panel_sha256": {
+    "panel_clean.parquet": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107",
+    "panel_pit_base.parquet": "3fce669406ff1898ac85d9c41c6385b7f8c6b27e29ecd041bb0a3c59f6337421"
+  },
+  "layouts": {
+    "1": {
+      "panel_clean.parquet": {
+        "rows": 1255456,
+        "columns": 33,
+        "bytes": 108328694,
+        "sha256": "3fdc81f8f09dec27c3296b4b1c3b41b7c42b99dabab8d7474b86071b9e792fea"
+      },
+      "panel_pit_base.parquet": {
+        "rows": 1232375,
+        "columns": 34,
+        "bytes": 106284378,
+        "sha256": "c9dada24933d5544c5342353255b8fe7f9cdb6e4d31f54ac6dc69a91b60c0bd0"
+      }
+    },
+    "2": {
+      "panel_clean.parquet": {
+        "rows": 2510912,
+        "columns": 33,
+        "bytes": 216693383,
+        "sha256": "0831a4699babc1af756c8089e9e4ce7d027962bc286ca94f80dce6ade3babde0"
+      },
+      "panel_pit_base.parquet": {
+        "rows": 2464750,
+        "columns": 34,
+        "bytes": 212578423,
+        "sha256": "34878b50e3b4b5d2919ab3ad81a37ba5e9a60de7d8b58cb3b3b7d778c9f23a89"
+      }
+    },
+    "3": {
+      "panel_clean.parquet": {
+        "rows": 3766368,
+        "columns": 33,
+        "bytes": 325043567,
+        "sha256": "abc222918c7168bb86ffe49001f68ec67f66f0379667b9df02f5567755ce4ac3"
+      },
+      "panel_pit_base.parquet": {
+        "rows": 3697125,
+        "columns": 34,
+        "bytes": 318873168,
+        "sha256": "18d555f6371b82419de3045554deef9e714e45611f85fc006960d814299362e2"
+      }
+    }
+  },
+  "design": "Clean and PIT inputs limited to development dates at all scales; each scale rewritten using ZSTD level 3, 131072-row groups and original column types/order. CERT offset alone distinguishes copies. Exact native feature source. Fresh process per trial. Timers include plan construction and materialization, excluding startup, file generation, parity and output writes. Warm OS cache; sampled worker RSS around 20 ms. Every normalized replica checked on sorted keys and all 15 outputs against the independently validated result.",
+  "scope": "One local feature stage. Replication preserves history shapes; no independent banks, new skew, production refresh latency, Spark cluster or original Windows laptop measurement.",
+  "warmups": [
+    {
+      "block": 0,
+      "scale": 1,
+      "elapsed_s": 0.681398507999802,
+      "sampled_peak_RSS_MiB": 983.0390625,
+      "rss_samples": 35,
+      "output_rows": 1232375,
+      "verified_replicas": 1
+    },
+    {
+      "block": 0,
+      "scale": 2,
+      "elapsed_s": 1.2404053390000627,
+      "sampled_peak_RSS_MiB": 1700.5859375,
+      "rss_samples": 62,
+      "output_rows": 2464750,
+      "verified_replicas": 2
+    },
+    {
+      "block": 0,
+      "scale": 3,
+      "elapsed_s": 2.2121528470001977,
+      "sampled_peak_RSS_MiB": 2581.6484375,
+      "rss_samples": 110,
+      "output_rows": 3697125,
+      "verified_replicas": 3
+    }
+  ],
+  "measured": [
+    {
+      "block": 1,
+      "scale": 1,
+      "elapsed_s": 1.1235207780000565,
+      "sampled_peak_RSS_MiB": 912.79296875,
+      "rss_samples": 56,
+      "output_rows": 1232375,
+      "verified_replicas": 1
+    },
+    {
+      "block": 1,
+      "scale": 2,
+      "elapsed_s": 1.6477506999999605,
+      "sampled_peak_RSS_MiB": 1648.30859375,
+      "rss_samples": 82,
+      "output_rows": 2464750,
+      "verified_replicas": 2
+    },
+    {
+      "block": 1,
+      "scale": 3,
+      "elapsed_s": 2.477519266999934,
+      "sampled_peak_RSS_MiB": 2496.62890625,
+      "rss_samples": 123,
+      "output_rows": 3697125,
+      "verified_replicas": 3
+    },
+    {
+      "block": 2,
+      "scale": 2,
+      "elapsed_s": 1.939399224999761,
+      "sampled_peak_RSS_MiB": 1637.75390625,
+      "rss_samples": 96,
+      "output_rows": 2464750,
+      "verified_replicas": 2
+    },
+    {
+      "block": 2,
+      "scale": 3,
+      "elapsed_s": 2.540321323999706,
+      "sampled_peak_RSS_MiB": 2598.8125,
+      "rss_samples": 126,
+      "output_rows": 3697125,
+      "verified_replicas": 3
+    },
+    {
+      "block": 2,
+      "scale": 1,
+      "elapsed_s": 1.0263257719998364,
+      "sampled_peak_RSS_MiB": 943.93359375,
+      "rss_samples": 50,
+      "output_rows": 1232375,
+      "verified_replicas": 1
+    },
+    {
+      "block": 3,
+      "scale": 3,
+      "elapsed_s": 2.892917592000231,
+      "sampled_peak_RSS_MiB": 2628.0546875,
+      "rss_samples": 142,
+      "output_rows": 3697125,
+      "verified_replicas": 3
+    },
+    {
+      "block": 3,
+      "scale": 1,
+      "elapsed_s": 1.6583890619999693,
+      "sampled_peak_RSS_MiB": 914.83984375,
+      "rss_samples": 83,
+      "output_rows": 1232375,
+      "verified_replicas": 1
+    },
+    {
+      "block": 3,
+      "scale": 2,
+      "elapsed_s": 2.171937452000293,
+      "sampled_peak_RSS_MiB": 1639.22265625,
+      "rss_samples": 104,
+      "output_rows": 2464750,
+      "verified_replicas": 2
+    }
+  ],
+  "summary": {
+    "1": {
+      "output_rows": 1232375,
+      "seconds_median": 1.1235207780000565,
+      "seconds_range": [
+        1.0263257719998364,
+        1.6583890619999693
+      ],
+      "peak_RSS_MiB_median": 914.83984375,
+      "peak_RSS_MiB_max": 943.93359375
+    },
+    "2": {
+      "output_rows": 2464750,
+      "seconds_median": 1.939399224999761,
+      "seconds_range": [
+        1.6477506999999605,
+        2.171937452000293
+      ],
+      "peak_RSS_MiB_median": 1639.22265625,
+      "peak_RSS_MiB_max": 1648.30859375
+    },
+    "3": {
+      "output_rows": 3697125,
+      "seconds_median": 2.540321323999706,
+      "seconds_range": [
+        2.477519266999934,
+        2.892917592000231
+      ],
+      "peak_RSS_MiB_median": 2598.8125,
+      "peak_RSS_MiB_max": 2628.0546875
+    }
+  }
+}

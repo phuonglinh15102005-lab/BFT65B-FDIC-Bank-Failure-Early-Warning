@@ -1,0 +1,206 @@
+{
+  "status": "PASS",
+  "scope": "Full label-free development predictor block on a separate host. Two-job batches run the same input twice, using separate processes and a common start barrier. The first result remains in memory until the second finishes. No fitting, scoring, cluster or SLA test.",
+  "utc": "2026-11-26T01:32:56.856646+00:00",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.12.14",
+  "logical_cpus_available": 9,
+  "host_ram_MiB": 9967.25390625,
+  "polars_threads_per_job": 4,
+  "reference_environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "polars": "2.1.0",
+    "pandas": "2.2.3",
+    "numpy": "2.3.5",
+    "pyarrow": "26.0.1",
+    "scikit_learn_import_only": "1.8.0"
+  },
+  "validated_output_sha256": "85138090039b489308d34538aa4b7d3189f5e333722e9f01d4e227bc45e16d5d",
+  "clock": "Barrier release to latest materialized result. Process startup and result verification excluded.",
+  "memory": "Maximum sampled simultaneous sum of worker RSS; shared pages may be counted twice. Up to 20 ms between polling attempts. Parent process excluded.",
+  "cache": "Input hashes and warmups read files before six measured blocks. OS cache was not flushed.",
+  "warmups": [
+    {
+      "jobs": 1,
+      "batch_seconds": 1.4592487769996296,
+      "job_seconds": [
+        1.4590712059998623
+      ],
+      "peak_sum_RSS_MiB": 1023.53125,
+      "rss_samples": 68,
+      "verified_outputs": 1
+    },
+    {
+      "jobs": 2,
+      "batch_seconds": 1.5205529640002169,
+      "job_seconds": [
+        1.4762545919998047,
+        1.5204148000002533
+      ],
+      "peak_sum_RSS_MiB": 2024.77734375,
+      "rss_samples": 72,
+      "verified_outputs": 2
+    }
+  ],
+  "measured": [
+    {
+      "block": 1,
+      "jobs": 1,
+      "batch_seconds": 0.9745601180002268,
+      "job_seconds": [
+        0.9744528979999814
+      ],
+      "peak_sum_RSS_MiB": 1066.42578125,
+      "rss_samples": 48,
+      "verified_outputs": 1
+    },
+    {
+      "block": 1,
+      "jobs": 2,
+      "batch_seconds": 1.1793151649999345,
+      "job_seconds": [
+        1.1054356720001124,
+        1.1790744229997472
+      ],
+      "peak_sum_RSS_MiB": 2070.6484375,
+      "rss_samples": 58,
+      "verified_outputs": 2
+    },
+    {
+      "block": 2,
+      "jobs": 2,
+      "batch_seconds": 1.3897907380001016,
+      "job_seconds": [
+        1.3803607989998454,
+        1.3896249220001664
+      ],
+      "peak_sum_RSS_MiB": 2014.49609375,
+      "rss_samples": 68,
+      "verified_outputs": 2
+    },
+    {
+      "block": 2,
+      "jobs": 1,
+      "batch_seconds": 1.138384158000008,
+      "job_seconds": [
+        1.137752522000028
+      ],
+      "peak_sum_RSS_MiB": 1033.765625,
+      "rss_samples": 56,
+      "verified_outputs": 1
+    },
+    {
+      "block": 3,
+      "jobs": 1,
+      "batch_seconds": 1.0730470080002306,
+      "job_seconds": [
+        1.0729666070001258
+      ],
+      "peak_sum_RSS_MiB": 1028.7734375,
+      "rss_samples": 53,
+      "verified_outputs": 1
+    },
+    {
+      "block": 3,
+      "jobs": 2,
+      "batch_seconds": 1.3558306390000325,
+      "job_seconds": [
+        1.271572827,
+        1.355556197000169
+      ],
+      "peak_sum_RSS_MiB": 2093.546875,
+      "rss_samples": 64,
+      "verified_outputs": 2
+    },
+    {
+      "block": 4,
+      "jobs": 2,
+      "batch_seconds": 0.944171998999991,
+      "job_seconds": [
+        0.9003339199998663,
+        0.9439894510001068
+      ],
+      "peak_sum_RSS_MiB": 2113.96484375,
+      "rss_samples": 47,
+      "verified_outputs": 2
+    },
+    {
+      "block": 4,
+      "jobs": 1,
+      "batch_seconds": 1.1089280159999362,
+      "job_seconds": [
+        1.1088412010003594
+      ],
+      "peak_sum_RSS_MiB": 1020.703125,
+      "rss_samples": 54,
+      "verified_outputs": 1
+    },
+    {
+      "block": 5,
+      "jobs": 1,
+      "batch_seconds": 1.2960178230000565,
+      "job_seconds": [
+        1.2958113620002223
+      ],
+      "peak_sum_RSS_MiB": 995.12109375,
+      "rss_samples": 64,
+      "verified_outputs": 1
+    },
+    {
+      "block": 5,
+      "jobs": 2,
+      "batch_seconds": 1.604413826000382,
+      "job_seconds": [
+        1.4366362399996433,
+        1.6040263750001031
+      ],
+      "peak_sum_RSS_MiB": 1963.484375,
+      "rss_samples": 79,
+      "verified_outputs": 2
+    },
+    {
+      "block": 6,
+      "jobs": 2,
+      "batch_seconds": 1.15271867499996,
+      "job_seconds": [
+        1.1240696750001007,
+        1.152646685000036
+      ],
+      "peak_sum_RSS_MiB": 2108.515625,
+      "rss_samples": 57,
+      "verified_outputs": 2
+    },
+    {
+      "block": 6,
+      "jobs": 1,
+      "batch_seconds": 0.9113685289999012,
+      "job_seconds": [
+        0.911154629000066
+      ],
+      "peak_sum_RSS_MiB": 1050.57421875,
+      "rss_samples": 46,
+      "verified_outputs": 1
+    }
+  ],
+  "summary": {
+    "1": {
+      "batch_seconds_median": 1.0909875120000834,
+      "batch_seconds_range": [
+        0.9113685289999012,
+        1.2960178230000565
+      ],
+      "sampled_sum_RSS_MiB_median": 1031.26953125,
+      "sampled_sum_RSS_MiB_max": 1066.42578125
+    },
+    "2": {
+      "batch_seconds_median": 1.2675729019999835,
+      "batch_seconds_range": [
+        0.944171998999991,
+        1.604413826000382
+      ],
+      "sampled_sum_RSS_MiB_median": 2082.09765625,
+      "sampled_sum_RSS_MiB_max": 2113.96484375
+    }
+  }
+}

@@ -1,2 +1,3 @@
 # Report (submitted separately)
-The authoritative revised manuscript is `BFT65B_REPORT_FINAL_REVISED_20261125.docx` and its PDF, delivered separately. Do not commit the report containing the student ID or placeholder. Insert the verified public repository URL, export PDF and verify the 20+10 page limit before submission.
+
+The authoritative English report is submitted separately as PDF (20 main pages and 10 appendix pages); an editable DOCX is retained separately. The manuscript records the verified public repository URL, final audited commit SHA, sources, limitations and AI acknowledgments. It is not committed here because it contains student-identifying information. Use the root README and `docs/REPRODUCE_REVIEWER.md` for execution instructions; the separately submitted report, not an earlier draft name or historical upload guide, is authoritative.

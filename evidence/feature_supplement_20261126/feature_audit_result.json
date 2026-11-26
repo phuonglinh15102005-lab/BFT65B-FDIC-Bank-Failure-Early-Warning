@@ -1,0 +1,131 @@
+{
+  "status": "PASS",
+  "scope": "Development financial values only. No labels, fitting or locked scores.",
+  "source_commit": "050889604e449efa26c7bb44943c58cef8477e54",
+  "source_sha256": {
+    "04_PART4_FEATURE_PIPELINE/code/part4_step01_reference_UNCHANGED.py": "a651be686ca57dc65f9e59e444cab99088ce010247fed56d8986a0b7939cc763",
+    "04_PART4_FEATURE_PIPELINE/code/part4_v2_relabel_asof_gate.py": "7807ecebefca1a2d592d450c7c42930578e6d9b5086f39494cf83078c0ff13b3",
+    "evidence/final_review/part4/supplement/original_oracle.py": "3dad2f82a3daf5795426c2705c29cf35a49e23c429cf9ac2a54668ac1e213227"
+  },
+  "panel_sha256": {
+    "panel_clean.parquet": "0d1837815820e93eb71508dabd6f48143e2b596b09453606ccf0070c3717e107",
+    "panel_pit_base.parquet": "3fce669406ff1898ac85d9c41c6385b7f8c6b27e29ecd041bb0a3c59f6337421"
+  },
+  "utc": "2026-11-26T01:31:37.159010+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "polars": "2.1.0",
+    "pandas": "2.2.3",
+    "numpy": "2.3.5",
+    "pyarrow": "26.0.1",
+    "scikit_learn_import_only": "1.8.0"
+  },
+  "rows": 1232375,
+  "features": 15,
+  "cells_compared": 18485625,
+  "source_cells_compared": 13556125,
+  "source_parity": {
+    "status": "PASS",
+    "source_value_rows_checked": 1232375,
+    "source_fields_checked": 11,
+    "field_mismatch_counts": {
+      "ASSET": 0,
+      "EQ": 0,
+      "NCLNLS": 0,
+      "LNLSGR": 0,
+      "LNATRES": 0,
+      "CHBAL": 0,
+      "SC": 0,
+      "DEP": 0,
+      "LNLSNET": 0,
+      "ROA": 0,
+      "NIMY": 0
+    }
+  },
+  "comparison": {
+    "atol": 1e-09,
+    "rtol": 1e-08,
+    "exact_null_mask": true
+  },
+  "per_feature": {
+    "log_assets": {
+      "null_mask_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_finite_difference": 1.7763568394002505e-15
+    },
+    "equity_to_assets": {
+      "null_mask_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    "negative_equity_flag": {
+      "null_mask_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    "asset_log_growth_1q": {
+      "null_mask_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_finite_difference": 1.1102230246251565e-16
+    },
+    "asset_log_growth_4q": {
+      "null_mask_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_finite_difference": 4.440892098500626e-16
+    },
+    "nclnls_to_loans": {
+      "null_mask_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    "loan_allowance_to_loans": {
+      "null_mask_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    "cash_to_assets": {
+      "null_mask_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    "cash_and_securities_to_assets": {
+      "null_mask_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    "deposits_to_assets": {
+      "null_mask_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    "net_loans_to_assets": {
+      "null_mask_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    "roa_reported_percent": {
+      "null_mask_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    "nimy_reported_percent": {
+      "null_mask_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    "loss_flag_roa_negative": {
+      "null_mask_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    },
+    "loan_denominator_invalid_flag": {
+      "null_mask_mismatches": 0,
+      "value_mismatches": 0,
+      "max_abs_finite_difference": 0.0
+    }
+  },
+  "first_decision": "1984-06-30",
+  "last_decision": "2008-12-31",
+  "validated_output_sha256": "85138090039b489308d34538aa4b7d3189f5e333722e9f01d4e227bc45e16d5d"
+}

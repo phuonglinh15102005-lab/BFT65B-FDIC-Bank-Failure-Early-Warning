@@ -60,3 +60,19 @@ The assignment requires source and AI acknowledgments in **both the README and t
 
 ## 25 November corrected release
 The registered development selection objective is stated as prespecified; direct instructor approval is not independently authenticated. The report and README cite the course starter and the recovered original Financials manifest (S4). ChatGPT assisted this correction and archive reconciliation; exact identifiers for earlier AI sessions were not consistently retained. No new model fit or final-test prediction.
+
+## 26 November targeted report and execution-guide revision
+
+External staffing benchmark: FDIC OIG (2019), EVAL-20-002, printed p. 11 <https://www.fdicoig.gov/sites/default/files/reports/2022-08/20-002EVAL.pdf>; U.S. BLS May 2019 OES, Federal Executive Branch, SOC 13-2061 <https://www.bls.gov/oes/2019/may/naics4_999100.htm>. Both are inputs to illustrative 2019 wage scenarios, not an observed all-in review cost. See `docs/STAFFING_COST_BENCHMARK.md`. ChatGPT, GPT Work, Codex and Claude assisted the targeted critique, arithmetic and documentation revision. The frozen protocol, model, cutoff and original test results were not changed or re-executed.
+
+
+## 26 November supplemental evidence and sources
+
+S6, AI-assisted Linux feature-stage checks and scaling/concurrency trials: `evidence/feature_supplement_20261126/README.md`. Data-free check: `python -B evidence/feature_supplement_20261126/verify_summary.py`. This verifies returned aggregate hashes and arithmetic, not a raw-data rerun. Scientific sources and the held-out model remain unchanged. The 26 November candidate must be audited again after publication.
+
+- Vietnamese Government Portal, 15 October 2022, SCB special-control announcement: <https://xaydungchinhsach.chinhphu.vn/nhnn-cu-can-bo-gioi-tham-gia-quan-tri-dieu-hanh-ngan-hang-scb-119221016071238476.htm>. Publication and legal effective date must be recorded separately.
+- FFIEC CDR public retrieval services: <https://cdr.ffiec.gov/Public/PWS/WebServices/RetrievalService.asmx>. Reporting rosters and submission timestamps do not establish original filing-vintage restoration.
+- WTO WT/TPR/S/490, para. 4.119 and Table 4.6, pp. 178–179: <https://www.wto.org/english/news_e/news_docs/S490.pdf#page=178>.
+- Viet Nam Law 23/2026/QH16, effective 1 December 2026: <https://congbao.chinhphu.vn/van-ban/luat-so-23-2026-qh16-470457.htm>.
+- FDIC OIG EVAL-20-002, printed p. 11: <https://www.fdicoig.gov/sites/default/files/reports/2022-08/20-002EVAL.pdf>; BLS May 2019 federal financial examiners, SOC 13-2061: <https://www.bls.gov/oes/2019/may/naics4_999100.htm>. Direct wages are post-lock scenarios, distinct from the assumed false-review penalty.
+- ChatGPT Work supplied S6 scripts and reported execution; ChatGPT verified the returned archive and integrated it. No new model inference.
